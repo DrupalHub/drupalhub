@@ -11,7 +11,7 @@ function drupalhub_pages_follow_node_content_type_render($subtype, $conf, $args,
   global $language;
   $block = new stdClass();
   $node = $context->data;
-
+return;
   watcher_node_view($node, 'full', $language->language);
 
   $block->content = empty($node->content['watcher']['#markup']) ? '' : $node->content['watcher']['#markup'];
