@@ -65,17 +65,17 @@ function drupalhub_settings_submit($form, $form_state) {
  * Migrating content from csv.
  */
 function drupalhub_migrate_content() {
-//  $migrations = migrate_migrations();
-//  foreach ($migrations as $machine_name => $migration) {
-//    $operations[] = array('_drupalhub_migrate_content', array($machine_name, t('Importing content.')));
-//  }
-//
-//  $batch = array(
-//    'title' => t('Importing content'),
-//    'operations' => $operations,
-//  );
+  $migrations = migrate_migrations();
+  foreach ($migrations as $machine_name => $migration) {
+    $operations[] = array('_drupalhub_migrate_content', array($machine_name, t('Importing content.')));
+  }
 
-  return array();
+  $batch = array(
+    'title' => t('Importing content'),
+    'operations' => $operations,
+  );
+
+  return $batch;
 }
 
 /**

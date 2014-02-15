@@ -111,4 +111,3 @@ function drupalhub_install() {
 
   variable_set('menu_rebuild_needed', TRUE);
 }
-

@@ -62,3 +62,4 @@ dependencies[] = drupalhub_notify
 dependencies[] = drupalhub_pages
 dependencies[] = drupalhub_social
 dependencies[] = drupalhub_videos
+dependencies[] = drupalhub_questions
