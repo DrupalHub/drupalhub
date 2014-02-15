@@ -10,13 +10,13 @@
  */
 class DrupalHubIdea extends DrupalHubMigrate {
   public $entityType = 'node';
-  public $bundle = 'idea';
+  public $bundle = 'question';
 
   public $csvColumns = array(
     array('id', 'Unique ID'),
     array('title', 'Title'),
     array('body', 'Body'),
-    array('field_category', 'Category'),
+    array('field_tags', 'Tags'),
     array('uid', 'User'),
   );
 
@@ -27,7 +27,7 @@ class DrupalHubIdea extends DrupalHubMigrate {
 
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('body', 'body');
-    $this->addFieldMapping('field_category', 'field_category')
+    $this->addFieldMapping('field_tags', 'field_tags')
       ->sourceMigration(array('DrupalHubCategoryTerms'))
       ->separator("|")
       ->arguments(array('source_type' => 'tid'));
@@ -116,7 +116,7 @@ class DrupalHubUsers extends Migration {
  */
 class DrupalHubCategoryTerms extends DrupalHubMigrate {
   public $entityType = 'taxonomy_term';
-  public $bundle = 'categories';
+  public $bundle = 'tags';
 }
 
 /**
@@ -124,7 +124,7 @@ class DrupalHubCategoryTerms extends DrupalHubMigrate {
  */
 class DrupalHubIdeaComments extends DrupalHubMigrate {
   public $entityType = 'comment';
-  public $bundle = 'idea';
+  public $bundle = 'question';
 
   public $csvColumns = array(
     array('id', 'ID'),
@@ -161,7 +161,7 @@ class DrupalHubIdeaComments extends DrupalHubMigrate {
 
   public function complete($entity, $row) {
     // Vote for/against this comment.
-    $this->vote($entity->for, 'for', $entity->cid);
-    $this->vote($entity->against, 'against', $entity->cid);
+//    $this->vote($entity->for, 'for', $entity->cid);
+//    $this->vote($entity->against, 'against', $entity->cid);
   }
 }
