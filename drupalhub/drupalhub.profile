@@ -8,7 +8,7 @@ function drupalhub_install_tasks($install_state) {
 
   // OS flavors (production, development, etc).
   $tasks['drupalhub_settings'] = array(
-    'display_name' => t('Set settings'),
+    'display_name' => t('Import content settings'),
     'type' => 'form',
   );
 
@@ -125,8 +125,13 @@ function drupalhub_install_finished(&$install_state) {
   $messages = drupal_get_messages();
   $output = '<p>' . st('Congratulations, you\'ve successfully installed DrupalHub!') . '</p>';
   if (isset($messages['error'])) {
-    $output .= '<p>' . st('Review the messages above before visiting <a href="@url">your new site</a> or <a href="@settings" class="overlay-exclude">change drupalhub settings</a>.', array('@url' => url(''), '@settings' => url('admin/config/drupalhub', array('query' => array('destination' => ''))))) . '</p>';
+    $output .= '<p>' . st('There are some problems. Please check them.') . '</p>';
   }
+  else {
+    $output .= '<p>' . st('Your site has installed fully.') . '</p>';
+  }
+
+  $output .= '<p>' . t('Please go ahead and visit your <a href="@url">Website</a>', array('@url' => url(''))) . '</p>';
 
   // Flush all caches to ensure that any full bootstraps during the installer
   // do not leave stale cached data, and that any content types or other items
