@@ -2,15 +2,15 @@ name = DrupalHub
 description = Drupal Israel's site.
 core = 7.x
 
-;Core.
+; Core
 dependencies[] = block
 dependencies[] = color
 dependencies[] = comment
 dependencies[] = contextual
-dependencies[] = dashboard
 dependencies[] = help
 dependencies[] = image
 dependencies[] = list
+dependencies[] = locale
 dependencies[] = menu
 dependencies[] = number
 dependencies[] = options
@@ -24,7 +24,7 @@ dependencies[] = field_ui
 dependencies[] = file
 dependencies[] = rdf
 
-;contribs
+; Contrib
 dependencies[] = admin_menu
 dependencies[] = date_popup
 dependencies[] = date_views

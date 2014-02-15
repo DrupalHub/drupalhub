@@ -9,7 +9,7 @@ function drupalhub_install_tasks($install_state) {
   // OS flavors (production, development, etc).
   $tasks['drupalhub_settings'] = array(
     'display_name' => t('Set settings'),
-    'type' => 'form'
+    'type' => 'form',
   );
 
   $tasks['drupalhub_migrate_content'] = array(
@@ -65,17 +65,17 @@ function drupalhub_settings_submit($form, $form_state) {
  * Migrating content from csv.
  */
 function drupalhub_migrate_content() {
-  $migrations = migrate_migrations();
-  foreach ($migrations as $machine_name => $migration) {
-    $operations[] = array('_drupalhub_migrate_content', array($machine_name, t('Importing content.')));
-  }
+//  $migrations = migrate_migrations();
+//  foreach ($migrations as $machine_name => $migration) {
+//    $operations[] = array('_drupalhub_migrate_content', array($machine_name, t('Importing content.')));
+//  }
+//
+//  $batch = array(
+//    'title' => t('Importing content'),
+//    'operations' => $operations,
+//  );
 
-  $batch = array(
-    'title' => t('Importing content'),
-    'operations' => $operations,
-  );
-
-  return $batch;
+  return array();
 }
 
 /**
@@ -91,10 +91,29 @@ function _drupalhub_migrate_content($class, $type, &$context) {
  * Step for setting up variables.
  */
 function drupalhub_variables_set() {
-  $variables = array();
+  $variables = array(
+//    'theme_default' => 'drupalhub_basetheme',
+    'theme_default' => 'bootstrap',
+    'admin_theme' => 'seven',
+    'node_options_page',
+    'node_options_page' => array('status'),
+    'comment_page' => COMMENT_NODE_HIDDEN,
+    'node_submitted_page' => FALSE,
+    'user_pictures' => '1',
+    'user_picture_dimensions' => '1024x1024',
+    'user_picture_file_size' => '800',
+    'user_picture_style' => 'thumbnail',
+    'user_register' => USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL,
+    'node_admin_theme' => 1,
+    'jquery_update_jquery_version' => 1.8,
+    'jquery_update_jquery_admin_version' => 1.5,
+    'caret_position' => 'profiles/drupalhub/libraries/jquery_caret_position',
+    'page_manager_node_view_disabled' => FALSE,
+    'site_frontpage' => 'front',
+  );
 
-  foreach ($variables as $key => $value) {
-    variable_set($key, $value);
+  foreach ($variables as $name => $value) {
+    variable_set($name, $value);
   }
 }
 
