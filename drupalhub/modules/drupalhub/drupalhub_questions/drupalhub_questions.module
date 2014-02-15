@@ -1,0 +1,12 @@
+<?php
+/**
+ * @file
+ * Code for the drupalhub_questions feature.
+ */
+
+include_once 'drupalhub_questions.features.inc';
+
+/**
+ * @file
+ * drupalhub_questions.module
+ */

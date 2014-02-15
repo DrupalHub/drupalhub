@@ -66,6 +66,8 @@ function drupalhub_notify_users_autocomplete($string = '') {
  *        messages to send via Message subscribe.
  */
 function drupalhub_notify_comment_insert($comment) {
+  // todo: Get the users who flagged the node of the comment.
+  return;
   $followers = drupalhub_notify_get_nodes_watchers($comment);
 
   foreach ($followers as $follower) {
