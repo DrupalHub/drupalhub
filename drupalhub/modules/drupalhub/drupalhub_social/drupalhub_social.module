@@ -1,0 +1,64 @@
+<?php
+/**
+ * @file
+ * Mail module file for DrupalHub social.
+ */
+
+/**
+ * Twitter local consumer key
+ */
+define('TWITTER_KEY', '31u5KDR3gHY6LwaXuiRg');
+
+/**
+ * Twitter local consumer secret
+ */
+define('TWITTER_SECRET', 'xKZPt7AeiMki3ul4qTAJbkQEv90IVqYW1tiDEAWtuU');
+
+/**
+ * Facebook app ID.
+ */
+define('FACEBOOK_ID', '197114067137623');
+
+/**
+ * Facebook secret.
+ */
+define('FACEBOOK_SECRET', '5413a965a5332ba5bf411eb48a814f27');
+
+/**
+ * Github ID.
+ */
+define('GITHUB_ID', 'fa43e37f80ff324af010');
+
+/**
+ * Github secret
+ */
+define('GITHUB_SECRET', '3aebce3c7902bd954c19eb55647cf2329744aa21');
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function drupalhub_social_form_alter(&$form, $form_state, $form_id) {
+  if ($form_id != 'user_login') {
+    return;
+  }
+
+ $form['#after_build'][] = 'drupalhub_social_set_buttons';
+}
+
+/**
+ * Adding to the button of the twitter the other social networks the user can
+ * logged in with.
+*/
+function drupalhub_social_set_buttons($form, $form_state) {
+  $items = array();
+  $items[] = twitter_signin_button();
+  $items[] = fboauth_action_display('connect');
+
+  $form['twitter_signin'] = array(
+    '#markup' => theme('item_list', array('items' => $items)),
+    '#weight' => 10,
+  );
+
+
+  return $form;
+}

@@ -1,0 +1,13 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the DrupalHub profile.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function drupalhub_install() {
+}
+

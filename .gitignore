@@ -1,0 +1,8 @@
+www
+.idea
+install.sh
+drupalhub/modules/contrib/*
+drupalhub/themes/contrib
+drupalhub/libraries
+drupalhub/themes/bootstrap
+.DS_store

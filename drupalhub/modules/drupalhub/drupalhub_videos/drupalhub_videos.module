@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ * Code for the DrupalHub Videos feature.
+ */
+
+include_once 'drupalhub_videos.features.inc';
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function drupalhub_videos_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}

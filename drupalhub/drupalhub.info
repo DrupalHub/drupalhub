@@ -1,0 +1,64 @@
+name = DrupalHub
+description = Drupal Israel's site.
+core = 7.x
+
+;Core.
+dependencies[] = block
+dependencies[] = color
+dependencies[] = comment
+dependencies[] = contextual
+dependencies[] = dashboard
+dependencies[] = help
+dependencies[] = image
+dependencies[] = list
+dependencies[] = menu
+dependencies[] = number
+dependencies[] = options
+dependencies[] = path
+dependencies[] = taxonomy
+dependencies[] = dblog
+dependencies[] = search
+dependencies[] = shortcut
+dependencies[] = overlay
+dependencies[] = field_ui
+dependencies[] = file
+dependencies[] = rdf
+
+;contribs
+dependencies[] = admin_menu
+dependencies[] = date_popup
+dependencies[] = date_views
+dependencies[] = devel
+dependencies[] = entityreference
+dependencies[] = features
+dependencies[] = flag
+dependencies[] = insert
+dependencies[] = inline_devel
+dependencies[] = jquery_update
+dependencies[] = libraries
+dependencies[] = message
+dependencies[] = message_ui
+dependencies[] = message_notify
+dependencies[] = message_notify_ui
+dependencies[] = message_subscribe
+dependencies[] = migrate
+dependencies[] = migrate_ui
+dependencies[] = module_filter
+dependencies[] = pathauto
+dependencies[] = page_manager
+dependencies[] = panels
+dependencies[] = panels_mini
+dependencies[] = panels_bootstrap_layouts
+dependencies[] = video_embed_field
+dependencies[] = views_bulk_operations
+dependencies[] = views_ui
+dependencies[] = wysiwyg
+
+; DrupalHub
+dependencies[] = drupalhub
+dependencies[] = drupalhub_blog
+dependencies[] = drupalhub_migrate
+dependencies[] = drupalhub_notify
+dependencies[] = drupalhub_pages
+dependencies[] = drupalhub_social
+dependencies[] = drupalhub_videos

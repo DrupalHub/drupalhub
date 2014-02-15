@@ -1,0 +1,307 @@
+<?php
+/**
+ * @file
+ * Main module file for notifying users on actions which they concerned to them.
+ */
+
+include_once('drupalhub_notify.features.inc');
+
+/**
+ * Implements hook_menu().
+ */
+function drupalhub_notify_menu() {
+  $items = array();
+
+  $items['admin/config/system/video-notifications'] = array(
+    'title' => 'New video notifications',
+    'description' => 'Select which users will get notified when a new video is submitted',
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('drupalhub_notify_video_notifications'),
+    // todo: Select a permission for that.
+    'access callback' => TRUE,
+  );
+
+  $items['drupalhub/users-autocomplete'] = array(
+    'title' => 'Users autocomplete',
+    'access callback' => 'user_access',
+    'access arguments' => array('access user profiles'),
+    'page callback' => 'drupalhub_notify_users_autocomplete',
+  );
+
+  return $items;
+}
+
+/**
+ * Custom auto complete users/
+ */
+function drupalhub_notify_users_autocomplete($string = '') {
+  $query = new EntityFieldQuery();
+  $results = $query
+    ->entityCondition('entity_type', 'user')
+    ->propertyCondition('name', $string, 'CONTAINS')
+    ->execute();
+
+  if (empty($results['user'])) {
+    return;
+  }
+
+  $output = array();
+
+  $users = user_load_multiple(array_keys($results['user']));
+  foreach ($users as $user) {
+    $output[check_plain($user->name) . ' (' . $user->uid . ')'] = check_plain($user->name);
+  }
+
+  drupal_json_output($output);
+}
+
+/**
+ * Implements hook_comment_insert().
+ *
+ * When a new comment is created all the subscribed users to the node need to
+ * receive notifications on this action.
+ *
+ * TODO:  When saleability will be needed - use Message subscribe. This should
+ *        be done via a variable that will determine the minimum number of
+ *        messages to send via Message subscribe.
+ */
+function drupalhub_notify_comment_insert($comment) {
+  $followers = drupalhub_notify_get_nodes_watchers($comment);
+
+  foreach ($followers as $follower) {
+    $message = message_create('comment_on_followed_node');
+    $message->uid = $follower->uid;
+
+    $wrapper = entity_metadata_wrapper('message', $message);
+    $wrapper->field_node->set($comment->nid);
+    $wrapper->field_comment->set($comment);
+    $wrapper->field_user->set($comment->uid);
+    $wrapper->save();
+
+    try {
+      message_notify_send_mail($message);
+    }
+    catch (Exception $e) {
+      $text = t('An error has occurred when trying to send the message via email: @message', array('@message' => $e->getMessage()));
+
+      drupal_set_message($text, 'error');
+      watchdog('drupalhub_notify', $text);
+    }
+  }
+}
+
+/**
+ * Get all the users which following the node of the comment.
+ *
+ * @param $comment
+ *  The comment object.
+ * @param $load
+ *  Determine if we need to load the users or just return array of user IDs.
+ *
+ * @return
+ *  Array of users/users ID's which followed the node comment.
+ */
+function drupalhub_notify_get_nodes_watchers($comment, $load = TRUE) {
+  $result = db_select('watcher_nodes', 'wn')
+    ->fields('wn', array('uid'))
+    ->condition('nid', $comment->nid)
+    ->condition('uid', $comment->uid, '!=')
+    ->execute()
+    ->fetchAssoc();
+
+  return $load ? user_load_multiple($result) : $result;
+}
+
+/**
+ * Select how to notified users when a new video is submitted to the site:
+ * specific users or by roles.
+ */
+function drupalhub_notify_video_notifications($form, &$form_state) {
+  $type = variable_get('video_notification_notifiers_users', 'users');
+  $uids = $type == 'users' ? variable_get('drupalhub_video_notification_data', array()) : array();
+  $roles = $type == 'roles' ? variable_get('drupalhub_video_notification_data') : array();
+
+  $form['video_notification_notifiers_users'] = array(
+    '#type' => 'radios',
+    '#title' => t('Select which users to notify.'),
+    '#description' => t("If you'll select users name only they will be notified on a new movie. If you select roles all the users with that roles will be notify"),
+    '#options' => array(
+      'users' => t('Users'),
+      'roles' => t('Roles'),
+    ),
+    '#default_value' => $type,
+  );
+
+  // Multiple users part.
+  $form['users'] = array(
+    '#type' => 'fieldset',
+    '#tree' => TRUE,
+    '#prefix' => '<div id="users">',
+    '#suffix' => '</div>',
+    '#title' => t('Select users'),
+    '#description' => t('Select which users will get notified when a new video is submitted.'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="video_notification_notifiers_users"]' => array('value' => 'users'),
+      ),
+    ),
+  );
+
+  if ($uids) {
+    foreach ($uids as $key => $uid) {
+      $form['users'][$key]['name'] = _drupalhub_notify_video_notifications_element(user_load($uid)->name . ' (' . $uid . ')');
+    }
+
+    // Increase the number by 2. This will generate all the the users and add a
+    // blank one.
+    $start_key = $key + 2;
+  }
+  else {
+    $start_key = 2;
+  }
+
+
+  $form_state['storage']['users'] = isset($form_state['storage']['users']) ? $form_state['storage']['users'] : $start_key;
+
+  if (!empty($form_state['triggering_element'])) {
+    $form_state['storage']['users']++;
+  }
+
+  if ($form_state['storage']['users']) {
+    for ($i = $start_key; $i <= $form_state['storage']['users']; $i++) {
+      $form['users'][$i]['name'] = _drupalhub_notify_video_notifications_element();
+    }
+  }
+
+  $form['users']['add_users'] = array(
+    '#type' => 'button',
+    '#value' => t('Add a user'),
+    '#href' => '',
+    '#ajax' => array(
+      'callback' => 'drupalhub_notify_video_notifications_add_user',
+      'wrapper' => 'users',
+    ),
+  );
+
+  // Roles part.
+  $form['roles'] = array(
+    '#type' => 'fieldset',
+    '#tree' => TRUE,
+    '#title' => t('Select roles'),
+    '#description' => t('When a new video is submitted, all the users that own the selected roles will be notified. Remember to select roles that can edit the Youtube content type.'),
+    '#states' => array(
+      'visible' => array(
+        ':input[name="video_notification_notifiers_users"]' => array('value' => 'roles'),
+      ),
+    ),
+  );
+
+  $form['roles']['roles'] = array(
+    '#type' => 'checkboxes',
+    '#options' => user_roles(),
+    '#default_value' => $roles,
+  );
+
+  $form['submit'] = array(
+    '#value' => t('Submit'),
+    '#type' => 'submit',
+  );
+
+  return $form;
+}
+
+/**
+ * AJAX callback; Add a lot of users.
+ */
+function drupalhub_notify_video_notifications_add_user($form, $form_state) {
+  return $form['users'];
+}
+
+/**
+ * Helper function; Generating the auto complete element.
+ */
+function _drupalhub_notify_video_notifications_element($value = '') {
+  return array(
+    '#type' => 'textfield',
+    '#autocomplete_path' => 'drupalhub/users-autocomplete',
+    '#default_value' => $value,
+  );
+}
+
+/**
+ * Submit handler; Saving the settings of the video notifications.
+ */
+function drupalhub_notify_video_notifications_submit($form, $form_state) {
+  $values = $form_state['values'];
+
+  if ($values['video_notification_notifiers_users'] == 'users') {
+    // Saving the users.
+    $uids = array();
+    foreach ($values['users'] as $key => $info) {
+      if (!is_int($key) || empty($info['name'])) {
+        continue;
+      }
+
+      preg_match("/.+\((\d+)\)/", $info['name'], $matches);
+      $uids[] = $matches[1];
+    }
+
+    $uids = array_unique($uids);
+
+    variable_set('drupalhub_video_notification_data', $uids);
+  }
+  else {
+    // Save the roles.
+    $roles = array();
+    foreach ($values['roles']['roles'] as $rid) {
+      if (!$rid) {
+        continue;
+      }
+
+      $roles[] = $rid;
+    }
+    variable_set('drupalhub_video_notification_data', $roles);
+  }
+
+  variable_set('video_notification_notifiers_users', $values['video_notification_notifiers_users']);
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function drupalhub_notify_node_insert($node) {
+  if ($node->type != 'youtube') {
+    return;
+  }
+
+  if (!$data = variable_get('drupalhub_video_notification_data')) {
+    // There was not roles/users selected. Don't proceed.
+    return;
+  }
+
+  if (variable_get('video_notification_notifiers_users', 'users') == 'users') {
+    // Get all the users the user selected.
+    $uids = $data;
+  }
+  else {
+    // Get all the users in belong to the selected roles.
+    $results = db_select('users_roles', 'r')
+      ->condition('rid', $data, 'IN')
+      ->fields('r', array('uid'))
+      ->execute()
+      ->fetchAllAssoc('uid');
+
+    $uids = array_keys($results);
+  }
+
+  $users = user_load_multiple($uids);
+
+  foreach ($users as $user) {
+    $message = message_create('new_video');
+    $message->uid = $user->uid;
+    $wrapper = entity_metadata_wrapper('message', $message);
+    $wrapper->field_node->set($node);
+    $wrapper->field_user->set($node->uid);
+    message_notify_send_message($wrapper->value());
+  }
+}

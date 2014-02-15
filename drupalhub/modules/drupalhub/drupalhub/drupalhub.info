@@ -1,0 +1,17 @@
+name = DrupalHub
+core = 7.x
+package = DrupalHub
+php = 5.2.4
+dependencies[] = ctools
+dependencies[] = features
+dependencies[] = filter
+dependencies[] = strongarm
+dependencies[] = wysiwyg
+features[ctools][] = strongarm:strongarm:1
+features[features_api][] = api:1
+features[filter][] = filtered_html
+features[filter][] = full_html
+features[variable][] = pathauto_node_pattern
+features[variable][] = pathauto_taxonomy_term_pattern
+features[wysiwyg][] = filtered_html
+features[wysiwyg][] = full_html

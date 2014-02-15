@@ -1,0 +1,22 @@
+<?php
+/**
+ * @file
+ * Main module for for DrupalHub migrate.
+ */
+
+/**
+ * Implements hook_migrate_api().
+ */
+function drupalhub_migrate_migrate_api() {
+  $api = array(
+    'api' => 2,
+    'migrations' => array(
+      'DrupalHubIdea' => array('class_name' => 'DrupalHubIdea'),
+      'DrupalHubUsers' => array('class_name' => 'DrupalHubUsers'),
+      'DrupalHubCategoryTerms' => array('class_name' => 'DrupalHubCategoryTerms'),
+      'DrupalHubIdeaComments' => array('class_name' => 'DrupalHubIdeaComments'),
+      'DrupalHubBlog' => array('class_name' => 'DrupalHubBlog'),
+    ),
+  );
+  return $api;
+}

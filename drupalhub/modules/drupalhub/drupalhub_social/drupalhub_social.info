@@ -1,0 +1,8 @@
+name = DrupalHub social
+description = Managing settings for social networks of DrupalHub
+core = 7.x
+
+dependencies[] = fboauth
+dependencies[] = github_connect
+dependencies[] = twitter
+dependencies[] = twitter_signin

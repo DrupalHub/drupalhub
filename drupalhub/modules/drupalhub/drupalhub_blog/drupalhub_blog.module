@@ -1,0 +1,8 @@
+<?php
+
+/**
+ * @file
+ * Main module file of DrupalHub blog module.
+ */
+
+include_once 'drupalhub_blog.features.inc';
