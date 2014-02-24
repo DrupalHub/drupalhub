@@ -1,0 +1,47 @@
+<?php
+/**
+ * @file
+ * drupalhub_reputation.module
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function drupalhub_reputation_menu() {
+}
+
+/**
+ * Setting the amount of points when a comment/node was updated.
+ */
+function drupalhub_reputation_settings() {
+}
+
+/**
+ * Adding or decreasing amount of the user point.
+ *
+ * @param $user
+ *  The user object or ID.
+ * @param $amount
+ *  The number of points.
+ * @param $action
+ *  The mathematical operation: add/subtract.
+ */
+function drupalhub_reputation_update_score($user, $amount, $action) {
+  $wrapper = entity_metadata_wrapper('user', $user);
+
+  $current_point = $wrapper->field_repuation->value();
+
+  if ($action == 'add') {
+    $new_point = $current_point + $amount;
+  }
+  else {
+    $new_point = $current_point - $amount;
+  }
+
+  $wrapper->field_reputation->set($new_point);
+  $wrapper->save();
+}
+
+/**
+ * Notify user when someone voted for his comment/node.
+ */

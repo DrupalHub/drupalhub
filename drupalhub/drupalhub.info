@@ -52,6 +52,7 @@ dependencies[] = panels_bootstrap_layouts
 dependencies[] = video_embed_field
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
+dependencies[] = votingapi
 dependencies[] = wysiwyg
 
 ; DrupalHub
@@ -62,4 +63,5 @@ dependencies[] = drupalhub_notify
 dependencies[] = drupalhub_pages
 dependencies[] = drupalhub_social
 dependencies[] = drupalhub_videos
+dependencies[] = drupalhub_reputation
 dependencies[] = drupalhub_questions
