@@ -8,12 +8,59 @@
  * Implements hook_menu().
  */
 function drupalhub_reputation_menu() {
+  $items = array();
+
+  $items['admin/config/drupalhub'] = array(
+    'title' => 'DrupalHub',
+    'description' => 'DrupalHub settings.',
+    'position' => 'right',
+    'weight' => -5,
+    'page callback' => 'system_admin_menu_block_page',
+    'access arguments' => array('manage drupalhub settings'),
+    'file' => 'system.admin.inc',
+    'file path' => drupal_get_path('module', 'system'),
+  );
+
+  $items['admin/config/drupalhub/reputation'] = array(
+    'title' => 'Manage reputation',
+    'description' => 'Manage reputation settings',
+    'access arguments' => array('manage drupalhub settings'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('drupalhub_reputation_admin_settings'),
+  );
+
+  return $items;
 }
 
 /**
  * Setting the amount of points when a comment/node was updated.
  */
-function drupalhub_reputation_settings() {
+function drupalhub_reputation_admin_settings($form, $form_state) {
+  $form['drupalhub_points_for_node'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Set the number of points user get when posting for a node'),
+    '#default_value' => variable_get('drupalhub_points_for_node', 1),
+  );
+
+  $form['drupalhub_points_against_node'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Set the number of points user get when posting against a node'),
+    '#default_value' => variable_get('drupalhub_points_against_node', -1),
+  );
+
+  $form['drupalhub_points_for_comment'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Set the number of points user get when posting for a comment'),
+    '#default_value' => variable_get('drupalhub_points_for_comment', 1),
+  );
+
+  $form['drupalhub_points_against_comment'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Set the number of points user get when posting against a comment'),
+    '#default_value' => variable_get('drupalhub_points_against_comment', -1),
+  );
+
+  return system_settings_form($form);
 }
 
 /**
@@ -45,3 +92,11 @@ function drupalhub_reputation_update_score($user, $amount, $action) {
 /**
  * Notify user when someone voted for his comment/node.
  */
+
+/**
+ * Implements hook_vud_votes().
+ */
+function drupalhub_reputation_vud_votes(&$votes) {
+  dpm($votes);
+}
+

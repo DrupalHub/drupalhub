@@ -5,3 +5,15 @@
  */
 
 include_once 'drupalhub.features.inc';
+
+/**
+ * Implements hook_permission().
+ */
+function drupalhub_permissions() {
+  return array(
+    'manage drupalhub settings' => array(
+      'title' => t('Managing DrupalHub'),
+      'description' => t('Grant to the user the permission to manage DrupalHub settings.')
+    ),
+  );
+}
