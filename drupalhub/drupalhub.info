@@ -57,7 +57,7 @@ dependencies[] = vud
 dependencies[] = vud_comment
 dependencies[] = vud_field
 dependencies[] = vud_node
-dependencies[] = wysiwyg
+dependencies[] = ckeditor
 
 ; DrupalHub
 dependencies[] = drupalhub
