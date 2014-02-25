@@ -113,7 +113,7 @@ projects[vote_up_down][subdir] = contrib
 projects[views][subdir] = "contrib"
 projects[views][version] = 3.7
 
-projects[views_bulk_operations][version] = "3.2"
+projects[views_bulk_operations][version] = "3.1"
 projects[views_bulk_operations][subdir] = contrib
 
 projects[ckeditor][version] = "1.13"
