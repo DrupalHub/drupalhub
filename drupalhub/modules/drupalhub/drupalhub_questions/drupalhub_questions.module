@@ -7,6 +7,10 @@
 include_once 'drupalhub_questions.features.inc';
 
 /**
- * @file
- * drupalhub_questions.module
+ * Implements hook_ctools_plugin_directory().
  */
+function drupalhub_questions_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
+}

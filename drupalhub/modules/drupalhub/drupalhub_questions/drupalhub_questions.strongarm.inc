@@ -106,5 +106,118 @@ function drupalhub_questions_strongarm() {
   $strongarm->value = 1;
   $export['node_submitted_question'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_dim_active';
+  $strongarm->value = '0';
+  $export['vud_comment_dim_active'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_dim_threshold';
+  $strongarm->value = '0';
+  $export['vud_comment_dim_threshold'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_node_types';
+  $strongarm->value = array(
+    'question' => 'question',
+    'blog' => 0,
+    'youtube' => 0,
+  );
+  $export['vud_comment_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_reset';
+  $strongarm->value = '0';
+  $export['vud_comment_reset'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_votes';
+  $strongarm->value = '1';
+  $export['vud_comment_votes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_widget';
+  $strongarm->value = 'plain';
+  $export['vud_comment_widget'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_comment_widget_display';
+  $strongarm->value = '0';
+  $export['vud_comment_widget_display'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_message_on_deny';
+  $strongarm->value = 1;
+  $export['vud_message_on_deny'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_node_reset';
+  $strongarm->value = '1';
+  $export['vud_node_reset'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_node_types';
+  $strongarm->value = array(
+    'question' => 'question',
+    'blog' => 0,
+    'youtube' => 0,
+  );
+  $export['vud_node_types'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_node_votes';
+  $strongarm->value = '3';
+  $export['vud_node_votes'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_node_widget';
+  $strongarm->value = 'thumbs';
+  $export['vud_node_widget'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_node_widget_show';
+  $strongarm->value = '3';
+  $export['vud_node_widget_show'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_node_widget_vote_on_teaser';
+  $strongarm->value = 1;
+  $export['vud_node_widget_vote_on_teaser'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'vud_tag';
+  $strongarm->value = 'vote';
+  $export['vud_tag'] = $strongarm;
+
   return $export;
 }
