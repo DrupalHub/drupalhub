@@ -1,3 +1,5 @@
 name = DrupalHub reputation
 description = DrupalHub reputation module
 core = 7.x
+features[features_api][] = api:2
+package = DrupalHub
