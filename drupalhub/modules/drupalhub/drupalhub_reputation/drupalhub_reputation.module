@@ -60,6 +60,10 @@ function drupalhub_reputation_admin_settings($form, $form_state) {
     '#default_value' => variable_get('drupalhub_points_against_comment', -1),
   );
 
+
+  // todo: Add amount of points for posting a question.
+  // todo: Add amount of points for posting a comment.
+
   return system_settings_form($form);
 }
 
@@ -70,33 +74,31 @@ function drupalhub_reputation_admin_settings($form, $form_state) {
  *  The user object or ID.
  * @param $amount
  *  The number of points.
- * @param $action
- *  The mathematical operation: add/subtract.
  */
-function drupalhub_reputation_update_score($user, $amount, $action) {
+function drupalhub_reputation_update_score($user, $amount) {
   $wrapper = entity_metadata_wrapper('user', $user);
 
   $current_point = $wrapper->field_repuation->value();
-
-  if ($action == 'add') {
-    $new_point = $current_point + $amount;
-  }
-  else {
-    $new_point = $current_point - $amount;
-  }
-
+  $new_point = $current_point + $amount;
   $wrapper->field_reputation->set($new_point);
   $wrapper->save();
 }
 
 /**
- * Notify user when someone voted for his comment/node.
- */
-
-/**
  * Implements hook_vud_votes().
  */
 function drupalhub_reputation_vud_votes(&$votes) {
-  dpm($votes);
 }
 
+/**
+ * Implements hook_node_insert().
+ */
+function drupalhub_reputation_node_insert($node) {
+
+}
+
+/**
+ * Implements hook_node_insert().
+ */
+function drupalhub_reputation_comment_insert($comment) {
+}
