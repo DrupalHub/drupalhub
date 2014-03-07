@@ -77,13 +77,46 @@ function drupalhub_reputation_update_score($user, $amount) {
   $wrapper->save();
 }
 
+/*
+* Implements  hook_vud_votes_alter
+*/
+function drupalhub_reputation_vud_votes_alter(&$votes){
+  global $user;
+  dpm($votes);
+  foreach ($votes as &$vote) {
+      //checking if this question
+      if($vote['entity_type'] != 'node')
+        continue;
+      $node = node_load($vote['entity_id']);
+      if( !$node || ! isset($node->type) || $node->type != 'question')
+        continue;
+      //check if user voted already for this question
+      $criteria = array(
+        'entity_id' => $vote['entity_id'],
+        'entity_type' => $vote['entity_type'],
+        'uid' => $user->uid,
+        ); 
+    dpm($criteria);
+//    $check = votingapi_select_votes($criteria,5);
+    dpm($check);
+    if(!count($check)){
+      $vote['add_reputation'] = TRUE;
+      } 
+   
+    }
+  } 
+
 /**
- * Implements hook_votingapi_insert().
+ * Implements hook_vud_votes().
  */
-function drupalhub_reputation_votingapi_insert($vote) { 
-  global $user; //we have uid in $vote, not sure if any time, and why not usin $user->uid?
-  if($user->uid)
-    drupalhub_reputation_update_score($user->uid, variable_get('drupalhub_points_for_vote_question', 1));
+function drupalhub_reputation_votingapi_insert($votes) { 
+   foreach ($votes as $vote) {
+     if(isset($vote['add_reputation']) && $vote['add_reputation']){
+      unset($vote['add_reputation']);
+      drupalhub_reputation_update_score($vote->uid, variable_get('drupalhub_points_for_vote_question', 1));
+      }
+    }
+      
 }
 
 /**
