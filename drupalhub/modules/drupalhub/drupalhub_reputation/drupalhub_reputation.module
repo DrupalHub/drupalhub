@@ -82,13 +82,15 @@ function drupalhub_reputation_update_score($user, $amount) {
 */
 function drupalhub_reputation_vud_votes_alter(&$votes){
   global $user;
-  dpm($votes);
+  global $drupalhub_reputation_remember;
+  $drupalhub_reputation_remember = array();
   foreach ($votes as &$vote) {
-      //checking if this question
+      //checking if this is node question
       if($vote['entity_type'] != 'node')
         continue;
       $node = node_load($vote['entity_id']);
-      if( !$node || ! isset($node->type) || $node->type != 'question')
+      //checking if this is node question and if this node created by the voted
+      if( !$node || ! isset($node->type) || $node->type != 'question' || $node->uid == $user->uid)
         continue;
       //check if user voted already for this question
       $criteria = array(
@@ -96,25 +98,24 @@ function drupalhub_reputation_vud_votes_alter(&$votes){
         'entity_type' => $vote['entity_type'],
         'uid' => $user->uid,
         ); 
-    dpm($criteria);
-//    $check = votingapi_select_votes($criteria,5);
-    dpm($check);
-    if(!count($check)){
-      $vote['add_reputation'] = TRUE;
+   $check = votingapi_select_votes($criteria,1);
+    if(!count($check)){//if first voting, remeber it for the inserting
+     $drupalhub_reputation_remember[$vote['entity_id']] = $vote;
       } 
    
     }
+  //   dpm($drupalhub_reputation_remember);
   } 
 
 /**
  * Implements hook_vud_votes().
  */
 function drupalhub_reputation_votingapi_insert($votes) { 
-   foreach ($votes as $vote) {
-     if(isset($vote['add_reputation']) && $vote['add_reputation']){
-      unset($vote['add_reputation']);
-      drupalhub_reputation_update_score($vote->uid, variable_get('drupalhub_points_for_vote_question', 1));
-      }
+  global $drupalhub_reputation_remember;
+  foreach ($votes as $vote) {
+    
+     if(isset($drupalhub_reputation_remember[$vote['entity_id']]) && $vote['uid']){
+      drupalhub_reputation_update_score($vote['uid'], variable_get('drupalhub_points_for_vote_question', 1));
     }
       
 }
