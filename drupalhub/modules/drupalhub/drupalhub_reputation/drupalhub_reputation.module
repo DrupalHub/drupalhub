@@ -111,7 +111,7 @@ function drupalhub_reputation_votingapi_insert($votes) {
 function drupalhub_reputation_node_insert($node) {
 
  if ( $node->uid && $node->type == 'question' ) {
-     drupalhub_reputation_update_score($user->uid, variable_get('drupalhub_points_for_question_create', 1));
+     drupalhub_reputation_update_score($node->uid, variable_get('drupalhub_points_for_question_create', 1));
     }
 }
 
@@ -119,9 +119,9 @@ function drupalhub_reputation_node_insert($node) {
  * Implements hook_comment insert().
  */
 function drupalhub_reputation_comment_insert($comment) {
-  global $user;
-  if ( $user->uid ) {
-    drupalhub_reputation_update_score($comment->uid, variable_get('drupalhub_points_for_comment_create', 1));
+  $wrapper = entity_metadata_wrapper('comment', $comment->cid);
+  if ( $wrapper->node->getBundle() == 'question' && $wrapper->author->getIdentifier() ) {
+    drupalhub_reputation_update_score($wrapper->author->getIdentifier(), variable_get('drupalhub_points_for_comment_create', 1));
     }
     
 }
