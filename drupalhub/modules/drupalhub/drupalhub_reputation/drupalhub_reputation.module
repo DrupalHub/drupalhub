@@ -114,7 +114,7 @@ function drupalhub_reputation_node_insert($node) {
 }
 
 /**
- * Implements hook_comment insert().
+ * Implements hook_comment_insert().
  */
 function drupalhub_reputation_comment_insert($comment) {
   $wrapper = entity_metadata_wrapper('comment', $comment->cid);
