@@ -53,7 +53,7 @@ function drupalhub_reputation_admin_settings($form, $form_state) {
   );
   $form['drupalhub_points_for_vote_question_comment'] = array(
     '#type' => 'textfield',
-    '#title' => t('Set the number of points user get when voting for his question\'s comment'),
+    '#title' => t("Set the number of points user get when voting for his question's comment"),
     '#default_value' => variable_get('drupalhub_points_for_vote_question_comment', 1),
   );
 
@@ -83,36 +83,34 @@ function drupalhub_reputation_update_score($user, $amount) {
 function drupalhub_reputation_votingapi_insert($votes) { 
   foreach ($votes as $vote) {
     $wrapper = entity_metadata_wrapper($vote['entity_type'], $vote['entity_id']);
-    if ( !$wrapper ) {
+
+    if (!$wrapper) {
       continue;
-      } 
-      
-    if ( $vote['entity_type'] == 'comment' ) {
-       $type =  $wrapper->node->getBundle();
-      }
-    
-    elseif ( $vote['entity_type'] == 'node' ) {
-      $type = $wrapper->getBundle();
-      }
-      
-    if ( $type != 'question' ) {
-      continue;
-      } 
-      
-    $add_points = $vote['value'] * variable_get('drupalhub_points_for_vote_question_' . $vote['entity_type'], 1);
-     drupalhub_reputation_update_score($wrapper->author->getIdentifier(),  $add_points );
     }
       
+    if ($vote['entity_type'] == 'comment') {
+       $type = $wrapper->node->getBundle();
+    }
+    elseif ($vote['entity_type'] == 'node') {
+      $type = $wrapper->getBundle();
+    }
+      
+    if ($type != 'question') {
+      continue;
+    }
+      
+    $add_points = $vote['value'] * variable_get('drupalhub_points_for_vote_question_' . $vote['entity_type'], 1);
+    drupalhub_reputation_update_score($wrapper->author->getIdentifier(), $add_points);
+  }
 }
 
 /**
  * Implements hook_node_insert().
  */
 function drupalhub_reputation_node_insert($node) {
-
- if ( $node->uid && $node->type == 'question' ) {
-     drupalhub_reputation_update_score($node->uid, variable_get('drupalhub_points_for_question_create', 1));
-    }
+  if ($node->uid && $node->type == 'question') {
+    drupalhub_reputation_update_score($node->uid, variable_get('drupalhub_points_for_question_create', 1));
+  }
 }
 
 /**
@@ -120,8 +118,7 @@ function drupalhub_reputation_node_insert($node) {
  */
 function drupalhub_reputation_comment_insert($comment) {
   $wrapper = entity_metadata_wrapper('comment', $comment->cid);
-  if ( $wrapper->node->getBundle() == 'question' && $wrapper->author->getIdentifier() && $wrapper->author->getIdentifier() != $wrapper->node->author->getIdentifier() ) {
+  if ($wrapper->node->getBundle() == 'question' && $wrapper->author->getIdentifier() && $wrapper->author->getIdentifier() != $wrapper->node->author->getIdentifier()) {
     drupalhub_reputation_update_score($wrapper->author->getIdentifier(), variable_get('drupalhub_points_for_comment_create', 1));
-    }
-    
+  }
 }
