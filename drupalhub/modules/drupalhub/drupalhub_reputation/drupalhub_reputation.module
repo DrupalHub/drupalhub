@@ -115,14 +115,15 @@ function drupalhub_reputation_node_insert($node) {
 
 /**
  * Implements hook_comment_insert().
+ * 
+ * call drupalhub_reputation_update_score just if:
+ * A. Comment's node type is question. 
+ * B. Comment belong to authenticated user.
+ * C. User didn't commenting on his own questions.
  */
 function drupalhub_reputation_comment_insert($comment) {
   $wrapper = entity_metadata_wrapper('comment', $comment->cid);
-  /** 
-  * A. Ensure comment's node is question. 
-  * B. Ensure comment has uid.
-  * C. Ensure user didn't comment to his question
-  **/
+  
   if ($wrapper->node->getBundle() == 'question' && $wrapper->author->getIdentifier() && $wrapper->author->getIdentifier() != $wrapper->node->author->getIdentifier()) {
     drupalhub_reputation_update_score($wrapper->author->getIdentifier(), variable_get('drupalhub_points_for_comment_create', 1));
   }
