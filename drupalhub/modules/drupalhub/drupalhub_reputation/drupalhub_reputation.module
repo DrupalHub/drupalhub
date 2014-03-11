@@ -84,10 +84,8 @@ function drupalhub_reputation_votingapi_insert($votes) {
   foreach ($votes as $vote) {
     $wrapper = entity_metadata_wrapper($vote['entity_type'], $vote['entity_id']);
 
-    if (!$wrapper) {
-      continue;
-    }
-      
+    $type = '';
+
     if ($vote['entity_type'] == 'comment') {
        $type = $wrapper->node->getBundle();
     }
