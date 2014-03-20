@@ -11,9 +11,7 @@ projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = 1.13
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][download][type] = git
-projects[ctools][download][branch] = 7.x-1.x
-projects[ctools][download][revision] = be2607142ce97d093acce9417833640680330efe
+projects[ctools][version] = 1.4
 
 projects[date][subdir] = "contrib"
 projects[date][version] = 2.7
@@ -82,6 +80,9 @@ projects[migrate_extras][version] = 2.4
 
 projects[oauth][version] = 3.2
 projects[oauth][subdir] = contrib
+
+projects[og][version] = 2.6
+projects[og][subdir] = contrib
 
 projects[panels][version] = "3.4"
 projects[panels][subdir] = contrib
