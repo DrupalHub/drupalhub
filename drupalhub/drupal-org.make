@@ -116,8 +116,8 @@ projects[views][version] = 3.7
 projects[views_bulk_operations][version] = "3.1"
 projects[views_bulk_operations][subdir] = contrib
 
-projects[wysiwyg][subdir] = "contrib"
-projects[wysiwyg][version] = 2.2
+projects[ckeditor][version] = "1.13"
+projects[ckeditor][subdir] = contrib
 
 ; Themes
 projects[bootstrap] = bootstrap
@@ -129,6 +129,6 @@ libraries[jquery_caret_position][download][type] = "git"
 libraries[jquery_caret_position][type] = "libraries"
 libraries[jquery_caret_position][download][url] = "https://github.com/wolasss/jquery-caret-position-getter.git"
 
-ibraries[tinymce][type] = "libraries"
-libraries[tinymce][download][type] = "file"
-libraries[tinymce][download][url] = "http://github.com/downloads/tinymce/tinymce/tinymce_3.5.8.zip"
+ibraries[ckeditor][type] = "libraries"
+libraries[ckeditor][download][type] = "file"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3.3/ckeditor_4.3.3_full.zip"
