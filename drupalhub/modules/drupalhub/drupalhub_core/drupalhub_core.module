@@ -51,7 +51,7 @@ function drupalhub_core_modal_window($info) {
  * Return a markup for a ctools page markup.
  */
 function drupalhub_core_modal_page() {
-  
+
 }
 
 /**
