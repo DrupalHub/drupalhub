@@ -55,9 +55,7 @@ dependencies[] = views_bulk_operations
 dependencies[] = views_ui
 dependencies[] = votingapi
 dependencies[] = vud
-dependencies[] = vud_comment
-dependencies[] = vud_field
-dependencies[] = vud_node
+dependencies[] = wysiwyg
 
 ; DrupalHub
 dependencies[] = drupalhub
