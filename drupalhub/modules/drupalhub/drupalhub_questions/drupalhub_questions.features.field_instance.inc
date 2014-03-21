@@ -10,6 +10,38 @@
 function drupalhub_questions_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'comment-comment_node_question-field_vote'
+  $field_instances['comment-comment_node_question-field_vote'] = array(
+    'bundle' => 'comment_node_question',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => NULL,
+        'settings' => array(),
+        'type' => 'updown',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'comment',
+    'field_name' => 'field_vote',
+    'label' => 'Vote',
+    'required' => 0,
+    'settings' => array(
+      'appearance' => 'up_only',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'vud',
+      'settings' => array(),
+      'type' => 'thumbs',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-question-body'
   $field_instances['node-question-body'] = array(
     'bundle' => 'question',
@@ -94,10 +126,49 @@ function drupalhub_questions_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-question-field_vote'
+  $field_instances['node-question-field_vote'] = array(
+    'bundle' => 'question',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => NULL,
+        'settings' => array(),
+        'type' => 'updown',
+        'weight' => 2,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_vote',
+    'label' => 'Vote',
+    'required' => 0,
+    'settings' => array(
+      'appearance' => 'up_only',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'vud',
+      'settings' => array(),
+      'type' => 'thumbs',
+      'weight' => 33,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Body');
   t('Tags');
+  t('Vote');
 
   return $field_instances;
 }
