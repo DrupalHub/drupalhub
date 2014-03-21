@@ -57,7 +57,7 @@ dependencies[] = votingapi
 dependencies[] = vud
 
 ; DrupalHub
-dependencies[] = drupalhub
+dependencies[] = drupalhub_core
 dependencies[] = drupalhub_blog
 dependencies[] = drupalhub_migrate
 dependencies[] = drupalhub_notify
