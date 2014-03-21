@@ -44,12 +44,14 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'comment';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_voting']['id'] = 'field_voting';
-  $handler->display->display_options['fields']['field_voting']['table'] = 'field_data_field_voting';
-  $handler->display->display_options['fields']['field_voting']['field'] = 'field_voting';
-  $handler->display->display_options['fields']['field_voting']['label'] = '';
-  $handler->display->display_options['fields']['field_voting']['element_label_colon'] = FALSE;
+  /* Field: Field: Vote */
+  $handler->display->display_options['fields']['field_vote']['id'] = 'field_vote';
+  $handler->display->display_options['fields']['field_vote']['table'] = 'field_data_field_vote';
+  $handler->display->display_options['fields']['field_vote']['field'] = 'field_vote';
+  $handler->display->display_options['fields']['field_vote']['label'] = '';
+  $handler->display->display_options['fields']['field_vote']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_vote']['type'] = 'vud';
+  $handler->display->display_options['fields']['field_vote']['delta_offset'] = '0';
   /* Field: User: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
   $handler->display->display_options['fields']['name']['table'] = 'users';

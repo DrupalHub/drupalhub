@@ -107,8 +107,12 @@ projects[video_embed_field][subdir] = contrib
 projects[votingapi][version] = "2.11"
 projects[votingapi][subdir] = contrib
 
-projects[vote_up_down][version] = "1.0-alpha1"
-projects[vote_up_down][subdir] = contrib
+projects[vote_up_down][download][type] = "git"
+projects[vote_up_down][download][url] = "https://github.com/DrupalHub/voteupdown.git"
+projects[vote_up_down][download][branch] = 7.x-2.x
+projects[vote_up_down][download][tag] = 0.1
+projects[vote_up_down][subdir] = "contrib"
+projects[vote_up_down][type] = "module"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = 3.7
