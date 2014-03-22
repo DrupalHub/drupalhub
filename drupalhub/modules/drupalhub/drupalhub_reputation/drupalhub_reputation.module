@@ -29,21 +29,6 @@ function drupalhub_reputation_menu() {
     'page arguments' => array('drupalhub_reputation_admin_settings'),
   );
 
-  // todo: Remove me after the branch work is finished.
-  $items['foo'] = array(
-    'title' => 'Manage reputation',
-    'access arguments' => array('manage drupalhub settings'),
-    'page callback' => 'foo',
-    'page arguments' => array('drupalhub_reputation_admin_settings'),
-  );
-
-  $items['bar'] = array(
-    'title' => 'Manage reputation',
-    'access arguments' => array('manage drupalhub settings'),
-    'page callback' => 'bar',
-    'page arguments' => array('drupalhub_reputation_admin_settings'),
-  );
-
   return $items;
 }
 
@@ -140,47 +125,4 @@ function drupalhub_reputation_comment_insert($comment) {
   if ($wrapper->node->getBundle() == 'question' && $wrapper->author->getIdentifier() && $wrapper->author->getIdentifier() != $wrapper->node->author->getIdentifier()) {
     drupalhub_reputation_update_score($wrapper->author->getIdentifier(), variable_get('drupalhub_points_for_comment_create', 1));
   }
-}
-
-// todo: Remove me after the branch work is finished.
-
-function foo() {
-  return drupalhub_core_modal_window(array(
-    'text' => 'a',
-    'href' => 'bar',
-    'class' => 'happy-modal-style',
-  ));
-}
-
-function bar() {
-  $form_id = 'fooing';
-
-  return drupalhub_core_modal_form(t('MyModule Modal Form'), $form_id, TRUE);
-}
-
-function fooing($form, $form_state) {
-  $form = array();
-
-  $form['new_link_text'] = array(
-    '#type' => 'textfield',
-    '#title' => t('Link text'),
-  );
-
-  $form['submit'] = array(
-    '#type' => 'submit',
-    '#value' => t('Submit'),
-  );
-
-  return $form;
-}
-
-function fooing_submit(&$form, &$form_state) {
-  // Generate the new link using the submitted text value.
-  $link = l('fioi', 'admin');
-
-  // Tell the browser to close the modal.
-  $form_state['ajax_commands'][] = ctools_modal_command_dismiss();
-
-  // Tell the browser to replace the old link with the new one.
-  $form_state['ajax_commands'][] = ajax_command_replace('#magical-modal-link', $link);
 }
