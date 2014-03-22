@@ -24,6 +24,7 @@ function drupalhub_core_permissions() {
  *    - text: The text for the link.
  *    - href: The path for the page.
  *    - class: The class of the link.
+ *    - modal_settings: Ctools modal settings.
  *
  * @return String
  *  An HTML markup for the ctools modal link.
