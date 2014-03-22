@@ -99,7 +99,7 @@ function drupalhub_core_modal_page_render($title, $content, $js) {
  * @param $form_id
  *  The form ID.
  * @param $ajax
- *  Determine if the JS is enabled.
+ *  Determine if the JS is enabled. Allowed valued: js, nojs.
  *
  * @return Array
  *  The form render-able array or print the ajax render.
