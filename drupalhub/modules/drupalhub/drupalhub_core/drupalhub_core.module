@@ -33,8 +33,20 @@ function drupalhub_core_permissions() {
  *    'text' => 'Happy text!',
  *    'href' => 'happy-text',
  *    'class' => 'happy-text',
+ *    'modal_settings' => array(
+ *      'modalSize' => array(
+ *        'type' => 'fixed',
+ *        'width' => 600,
+ *        'height' => 20,
+ *        'addWidth' => 10,
+ *        'addHeight' => 10,
+ *        'contentRight' => 0,
+ *        'contentBottom' => 0,
+ *      ),
+ *      'modalOptions' => array('opacity' => .6),
+ *      'animation' => 'fadeIn',
+ *    ),
  *  ));
- *
  * @endcode
  */
 function drupalhub_core_modal_window($info) {
@@ -42,16 +54,40 @@ function drupalhub_core_modal_window($info) {
   ctools_include('ajax');
   ctools_include('modal');
   ctools_modal_add_js();
-  $href = $info['href'] . '/nojs';
 
+  // Ctools modal settings.
+  $modal_settings = array(
+    $info['class'] => $info['modal_settings'],
+  );
+  drupal_add_js($modal_settings, 'setting');
+
+  $href = $info['href'] . '/nojs';
   return ctools_modal_text_button($info['text'], $href, '', 'ctools-modal-' . $info['class']);
 }
 
 /**
  * Return a markup for a ctools page markup.
+ *
+ * @param $title
+ *  The title of the page.
+ * @param $content
+ *  The content of the page.
+ * @param $js
+ *  Determine if the JS is enabled or not. Allowed valued: js, nojs.
+ *
+ * @code
+ *  return drupalhub_core_modal_page_render($title, $content, $js);
+ * @endcode
  */
-function drupalhub_core_modal_page() {
-
+function drupalhub_core_modal_page_render($title, $content, $js) {
+  if ($js) {
+    ctools_include('modal');
+    ctools_include('ajax');
+    ctools_modal_render($title, $content);
+  }
+  else {
+    return $content;
+  }
 }
 
 /**
