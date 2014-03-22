@@ -1,0 +1,132 @@
+<?php
+/**
+ * @file
+ * Code for the DrupalHub feature.
+ */
+
+/**
+ * Implements hook_permission().
+ */
+function drupalhub_core_permissions() {
+  return array(
+    'manage drupalhub settings' => array(
+      'title' => t('Managing DrupalHub'),
+      'description' => t('Grant to the user the permission to manage DrupalHub settings.')
+    ),
+  );
+}
+
+/**
+ * Return a link for open a modal window.
+ *
+ * @param $info
+ *  Array with information about the link:
+ *    - text: The text for the link.
+ *    - href: The path for the page.
+ *    - class: The class of the link.
+ *    - modal_settings: Ctools modal settings.
+ *
+ * @return String
+ *  An HTML markup for the ctools modal link.
+ *
+ * @code
+ *  drupalhub_core_modal_window(array(
+ *    'text' => 'Happy text!',
+ *    'href' => 'happy-text',
+ *    'class' => 'happy-text',
+ *    'modal_settings' => array(
+ *      'modalSize' => array(
+ *        'type' => 'fixed',
+ *        'width' => 600,
+ *        'height' => 20,
+ *        'addWidth' => 10,
+ *        'addHeight' => 10,
+ *        'contentRight' => 0,
+ *        'contentBottom' => 0,
+ *      ),
+ *      'modalOptions' => array('opacity' => .6),
+ *      'animation' => 'fadeIn',
+ *    ),
+ *  ));
+ * @endcode
+ */
+function drupalhub_core_modal_window($info) {
+  // Include the CTools tools that we need.
+  ctools_include('ajax');
+  ctools_include('modal');
+  ctools_modal_add_js();
+
+  // Ctools modal settings.
+  $modal_settings = array(
+    $info['class'] => $info['modal_settings'],
+  );
+  drupal_add_js($modal_settings, 'setting');
+
+  $href = $info['href'] . '/nojs';
+  return ctools_modal_text_button($info['text'], $href, '', 'ctools-modal-' . $info['class']);
+}
+
+/**
+ * Return a markup for a ctools page markup.
+ *
+ * @param $title
+ *  The title of the page.
+ * @param $content
+ *  The content of the page.
+ * @param $js
+ *  Determine if the JS is enabled or not. Allowed valued: js, nojs.
+ *
+ * @code
+ *  return drupalhub_core_modal_page_render($title, $content, $js);
+ * @endcode
+ */
+function drupalhub_core_modal_page_render($title, $content, $js) {
+  if ($js) {
+    ctools_include('modal');
+    ctools_include('ajax');
+    ctools_modal_render($title, $content);
+  }
+  else {
+    return $content;
+  }
+}
+
+/**
+ * Return a markup for the ctools form modal.
+ *
+ * @param $title
+ *  The title of the form.
+ * @param $form_id
+ *  The form ID.
+ * @param $ajax
+ *  Determine if the JS is enabled. Allowed valued: js, nojs.
+ *
+ * @return Array
+ *  The form render-able array or print the ajax render.
+ *
+ * @see http://deeson-online.co.uk/labs/insert-form-pop-modal-ctools-and-drupal-7
+ * for reference.
+ *
+ * @code
+ *  return drupalhub_core_modal_form(t('Happy!'), 'happy_modal', TRUE);
+ * @endcode
+ */
+function drupalhub_core_modal_form($title, $form_id, $ajax) {
+  if ($ajax) {
+    ctools_include('modal');
+    ctools_include('ajax');
+
+    $form_state = array(
+      'ajax' => TRUE,
+      'title' => $title,
+    );
+
+    $output = ctools_modal_form_wrapper($form_id, $form_state);
+
+    print ajax_render($output);
+    drupal_exit();
+  }
+  else {
+    return drupal_get_form($form_id);
+  }
+}
