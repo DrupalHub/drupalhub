@@ -26,17 +26,21 @@ dependencies[] = rdf
 
 ; Contrib
 dependencies[] = admin_menu
+dependencies[] = bootstrap_carousel
 dependencies[] = ckeditor
 dependencies[] = date_popup
 dependencies[] = date_views
 dependencies[] = devel
+dependencies[] = email
 dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = flag
+dependencies[] = galleryformatter
 dependencies[] = insert
 dependencies[] = inline_devel
 dependencies[] = jquery_update
 dependencies[] = libraries
+dependencies[] = link
 dependencies[] = message
 dependencies[] = message_ui
 dependencies[] = message_notify
@@ -45,6 +49,7 @@ dependencies[] = message_subscribe
 dependencies[] = migrate
 dependencies[] = migrate_ui
 dependencies[] = module_filter
+dependencies[] = og
 dependencies[] = pathauto
 dependencies[] = page_manager
 dependencies[] = panels
@@ -58,6 +63,7 @@ dependencies[] = vud
 
 ; DrupalHub
 dependencies[] = drupalhub_core
+dependencies[] = drupalhub_group
 dependencies[] = drupalhub_blog
 dependencies[] = drupalhub_migrate
 dependencies[] = drupalhub_notify
