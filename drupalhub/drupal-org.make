@@ -4,6 +4,9 @@ api = 2
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = 3.0-rc4
 
+projects[bootstrap_carousel][subdir] = "contrib"
+projects[bootstrap_carousel][version] = 1.0-rc5
+
 projects[calendar][subdir] = "contrib"
 projects[calendar][version] = 3.4
 
@@ -21,6 +24,9 @@ projects[devel][version] = 1.4
 
 projects[diff][subdir] = "contrib"
 projects[diff][version] = 3.2
+
+projects[email][subdir] = "contrib"
+projects[email][version] = 1.2
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = 1.4
@@ -40,6 +46,9 @@ projects[fboauth][subdir] = contrib
 projects[flag][subdir] = "contrib"
 projects[flag][version] = 2.2
 
+projects[galleryformatter][subdir] = "contrib"
+projects[galleryformatter][version] = 1.3
+
 projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x
 projects[github_connect][download][revision] = e091c59
@@ -56,6 +65,9 @@ projects[jquery_update][subdir] = contrib
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
+
+projects[link][subdir] = "contrib"
+projects[link][version] = 1.2
 
 projects[message][version] = "1.9"
 projects[message][subdir] = contrib
