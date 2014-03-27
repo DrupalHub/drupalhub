@@ -22,6 +22,9 @@ projects[devel][version] = 1.4
 projects[diff][subdir] = "contrib"
 projects[diff][version] = 3.2
 
+projects[email][subdir] = "contrib"
+projects[email][version] = 1.2
+
 projects[entity][subdir] = "contrib"
 projects[entity][version] = 1.4
 
@@ -40,6 +43,9 @@ projects[fboauth][subdir] = contrib
 projects[flag][subdir] = "contrib"
 projects[flag][version] = 2.2
 
+projects[galleryformatter][subdir] = "contrib"
+projects[galleryformatter][version] = 1.3
+
 projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x
 projects[github_connect][download][revision] = e091c59
@@ -53,6 +59,9 @@ projects[insert][subdir] = contrib
 
 projects[jquery_update][version] = "2.x-dev"
 projects[jquery_update][subdir] = contrib
+
+projects[link][subdir] = "contrib"
+projects[link][version] = 1.2
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
@@ -81,8 +90,8 @@ projects[migrate_extras][version] = 2.4
 projects[oauth][version] = 3.2
 projects[oauth][subdir] = contrib
 
-projects[og][version] = 2.6
 projects[og][subdir] = contrib
+projects[og][version] = 2.6
 
 projects[panels][version] = "3.4"
 projects[panels][subdir] = contrib
@@ -120,6 +129,9 @@ projects[vote_up_down][type] = "module"
 
 projects[views][subdir] = "contrib"
 projects[views][version] = 3.7
+
+projects[views_bootstrap][subdir] = "contrib"
+projects[views_bootstrap][version] = 2.0
 
 projects[views_bulk_operations][version] = "3.2"
 projects[views_bulk_operations][subdir] = contrib
