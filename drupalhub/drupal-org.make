@@ -23,10 +23,10 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = 3.2
 
 projects[email][subdir] = "contrib"
-projects[email][version] = 1.2
+projects[email][version] = 1.3
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = 1.4
+projects[entity][version] = 1.5
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = 1.1
@@ -57,7 +57,7 @@ projects[inline_devel][subdir] = contrib
 projects[insert][version] = "1.3"
 projects[insert][subdir] = contrib
 
-projects[jquery_update][version] = "2.x-dev"
+projects[jquery_update][version] = "2.4"
 projects[jquery_update][subdir] = contrib
 
 projects[link][subdir] = "contrib"
@@ -75,7 +75,7 @@ projects[message_ui][subdir] = contrib
 projects[message_notify][version] = "2.5"
 projects[message_notify][subdir] = contrib
 
-projects[message_subscribe][version] = "1.0-rc1"
+projects[message_subscribe][version] = "1.0-rc2"
 projects[message_subscribe][subdir] = contrib
 
 projects[module_filter][subdir] = "contrib"
