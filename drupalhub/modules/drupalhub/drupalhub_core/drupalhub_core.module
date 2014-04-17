@@ -4,6 +4,12 @@
  * Code for the DrupalHub feature.
  */
 
+include_once 'drupalhub_core.features.inc';
+/**
+ * @file
+ * Code for the DrupalHub feature.
+ */
+
 /**
  * Implements hook_permission().
  */
