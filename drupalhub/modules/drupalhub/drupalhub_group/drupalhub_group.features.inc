@@ -87,7 +87,7 @@ function drupalhub_group_image_default_styles() {
 function drupalhub_group_node_info() {
   $items = array(
     'drupalhub_group' => array(
-      'name' => t('Drupalhub Group'),
+      'name' => t('Group'),
       'base' => 'node_content',
       'description' => '',
       'has_title' => '1',
