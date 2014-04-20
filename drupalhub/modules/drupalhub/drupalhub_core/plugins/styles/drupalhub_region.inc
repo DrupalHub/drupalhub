@@ -7,8 +7,8 @@
 
 // Plugin definition
 $plugin = array(
-  'title' => t('Bootstrap'),
-  'description' => t('Bootstrap settings.'),
+  'title' => t('DrupalHub'),
+  'description' => t('DrupalHub settings.'),
 
   'render region'          => 'drupalhub_core_style_region_render',
   'settings form'          => 'drupalhub_core_style_region_settings_form',
@@ -24,7 +24,6 @@ function theme_drupalhub_core_style_region_render($vars) {
   $display = $vars['display'];
   $panes = $vars['panes'];
   $settings = $vars['settings'];
-  dpm('a');
 
   $layouts = array(
     'drupalhub_homepage',
