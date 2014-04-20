@@ -87,6 +87,25 @@ function drupalhub_pages_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-cc00f0fc-9a85-4c53-9c26-a588833d7676';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'front_page_gallery-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'cc00f0fc-9a85-4c53-9c26-a588833d7676';
+    $display->content['new-cc00f0fc-9a85-4c53-9c26-a588833d7676'] = $pane;
+    $display->panels['first'][0] = 'new-cc00f0fc-9a85-4c53-9c26-a588833d7676';
+    $pane = new stdClass();
     $pane->pid = 'new-3b34c93c-18b4-437e-96c3-dd4608e2ad9a';
     $pane->panel = 'fist_right';
     $pane->type = 'popular_tags';
