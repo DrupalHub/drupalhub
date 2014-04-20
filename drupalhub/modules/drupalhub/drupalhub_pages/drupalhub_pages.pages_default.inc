@@ -48,7 +48,7 @@ function drupalhub_pages_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'bootstrap_twocol_stacked';
+  $display->layout = 'drupalhub_homepage';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -67,6 +67,12 @@ function drupalhub_pages_default_page_manager_pages() {
         'offset_size' => '1',
       ),
       'bottom' => NULL,
+      'first' => NULL,
+      'first_left' => NULL,
+      'fist_right' => NULL,
+      'second' => NULL,
+      'second_left' => NULL,
+      'second_right' => NULL,
     ),
     'left' => array(
       'style' => 'bootstrap_region',
@@ -77,88 +83,12 @@ function drupalhub_pages_default_page_manager_pages() {
   );
   $display->cache = array();
   $display->title = '';
+  $display->uuid = 'c816e958-582f-4b0c-a56c-b8c1393d1eb1';
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-1';
-    $pane->panel = 'bottom';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h3>Recent friends activity</h3>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-1'] = $pane;
-    $display->panels['bottom'][0] = 'new-1';
-    $pane = new stdClass();
-    $pane->pid = 'new-2';
-    $pane->panel = 'bottom';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h1>Starred media</h1>
-
-photos, youtube movies.',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-2'] = $pane;
-    $display->panels['bottom'][1] = 'new-2';
-    $pane = new stdClass();
-    $pane->pid = 'new-3';
-    $pane->panel = 'bottom';
-    $pane->type = 'get_involve';
-    $pane->subtype = 'get_involve';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'return' => 'Finish',
-      'cancel' => 'Cancel',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'form_build_id' => 'form-cdQg-WeOSeeM1GMyTeNYiSja91Pb0AfINjJn9W6k_Z4',
-      'form_token' => 'OpoRS5ZIH1qRxRhwaYcC-_qfMN5YVm-a5ltRugT75cQ',
-      'form_id' => 'drupalhub_pages_get_involve_content_type_edit_form',
-      'op' => 'Finish',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $display->content['new-3'] = $pane;
-    $display->panels['bottom'][2] = 'new-3';
-    $pane = new stdClass();
-    $pane->pid = 'new-4';
-    $pane->panel = 'left';
+    $pane->pid = 'new-e233a732-eb40-4f90-809e-4d6cc7e28a6c';
+    $pane->panel = 'first_left';
     $pane->type = 'popular_tags';
     $pane->subtype = 'popular_tags';
     $pane->shown = TRUE;
@@ -172,68 +102,9 @@ photos, youtube movies.',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $display->content['new-4'] = $pane;
-    $display->panels['left'][0] = 'new-4';
-    $pane = new stdClass();
-    $pane->pid = 'new-5';
-    $pane->panel = 'left';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h3>System messages</h3>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-5'] = $pane;
-    $display->panels['left'][1] = 'new-5';
-    $pane = new stdClass();
-    $pane->pid = 'new-6';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'front_page_blogs-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $display->content['new-6'] = $pane;
-    $display->panels['right'][0] = 'new-6';
-    $pane = new stdClass();
-    $pane->pid = 'new-7';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'main_page_questions-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $display->content['new-7'] = $pane;
-    $display->panels['right'][1] = 'new-7';
+    $pane->uuid = 'e233a732-eb40-4f90-809e-4d6cc7e28a6c';
+    $display->content['new-e233a732-eb40-4f90-809e-4d6cc7e28a6c'] = $pane;
+    $display->panels['first_left'][0] = 'new-e233a732-eb40-4f90-809e-4d6cc7e28a6c';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
