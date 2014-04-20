@@ -13,7 +13,7 @@ function drupalhub_pages_popular_tags_content_type_render($subtype, $conf, $args
   $block->title = '';
 
   // Get all the tagged terms.
-  $tagged_tids = drupalhub_pages_tagges_terms();
+  $tagged_tids = drupalhub_pages_tagged_terms();
 
   // Load all the terms.
   $terms = taxonomy_term_load_multiple(array_keys($tagged_tids));
