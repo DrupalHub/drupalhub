@@ -210,6 +210,36 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->uuid = 'bd702e16-7d36-4ad2-8e16-bc0bbe412972';
     $display->content['new-bd702e16-7d36-4ad2-8e16-bc0bbe412972'] = $pane;
     $display->panels['second'][0] = 'new-bd702e16-7d36-4ad2-8e16-bc0bbe412972';
+    $pane = new stdClass();
+    $pane->pid = 'new-77cc6f50-63bc-490f-840b-39cac11209cf';
+    $pane->panel = 'second_left';
+    $pane->type = 'drupal_of_the_month';
+    $pane->subtype = 'drupal_of_the_month';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'title' => 'asdasdasd',
+      'form_build_id' => 'form-dqRTB9UG02STgYJwzDprR3ksUbnBNihzZG_lM0Qu-28',
+      'form_token' => '7-TeL-g2QZf428Zt8y-GdYMolwDrfFU8KN3JbkFyNdU',
+      'form_id' => 'drupalhub_pages_drupal_of_the_month_content_type_edit_form',
+      'op' => 'Finish',
+      'node_id' => '1',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '77cc6f50-63bc-490f-840b-39cac11209cf';
+    $display->content['new-77cc6f50-63bc-490f-840b-39cac11209cf'] = $pane;
+    $display->panels['second_left'][0] = 'new-77cc6f50-63bc-490f-840b-39cac11209cf';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
