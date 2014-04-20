@@ -15,3 +15,5 @@ features[page_manager_pages][] = front_page
 features[panels_mini][] = question_display
 features[views_view][] = front_page_gallery
 features[views_view][] = idea_comments
+features[views_view][] = service_providers
+features[views_view][] = top_users
