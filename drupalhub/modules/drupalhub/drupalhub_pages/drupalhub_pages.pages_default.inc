@@ -192,6 +192,25 @@ function drupalhub_pages_default_page_manager_pages() {
     $display->content['new-3b34c93c-18b4-437e-96c3-dd4608e2ad9a'] = $pane;
     $display->panels['fist_right'][0] = 'new-3b34c93c-18b4-437e-96c3-dd4608e2ad9a';
     $pane = new stdClass();
+    $pane->pid = 'new-85f224dc-24b4-4faf-88e3-86df450a0fb7';
+    $pane->panel = 'fist_right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'main_page_questions-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '85f224dc-24b4-4faf-88e3-86df450a0fb7';
+    $display->content['new-85f224dc-24b4-4faf-88e3-86df450a0fb7'] = $pane;
+    $display->panels['fist_right'][1] = 'new-85f224dc-24b4-4faf-88e3-86df450a0fb7';
+    $pane = new stdClass();
     $pane->pid = 'new-bd702e16-7d36-4ad2-8e16-bc0bbe412972';
     $pane->panel = 'second';
     $pane->type = 'views_panes';
@@ -223,11 +242,11 @@ function drupalhub_pages_default_page_manager_pages() {
       'override_title' => 0,
       'override_title_text' => '',
       'title' => 'asdasdasd',
-      'form_build_id' => 'form-dqRTB9UG02STgYJwzDprR3ksUbnBNihzZG_lM0Qu-28',
+      'form_build_id' => 'form-fzAk4tVjGEQcpyD11QhmYKoZXgdHMwLKCTmWXhzEJMg',
       'form_token' => '7-TeL-g2QZf428Zt8y-GdYMolwDrfFU8KN3JbkFyNdU',
       'form_id' => 'drupalhub_pages_drupal_of_the_month_content_type_edit_form',
       'op' => 'Finish',
-      'node_id' => '1',
+      'node_id' => NULL,
     );
     $pane->cache = array();
     $pane->style = array(
