@@ -7,6 +7,9 @@ projects[admin_menu][version] = 3.0-rc4
 projects[calendar][subdir] = "contrib"
 projects[calendar][version] = 3.4
 
+projects[ckeditor][subdir] = "colorbox"
+projects[ckeditor][version] = 2.5
+
 projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = 1.13
 
@@ -133,6 +136,10 @@ projects[bootstrap][type] = "theme"
 libraries[jquery_caret_position][download][type] = "git"
 libraries[jquery_caret_position][type] = "libraries"
 libraries[jquery_caret_position][download][url] = "https://github.com/wolasss/jquery-caret-position-getter.git"
+
+libraries[colorbox][type] = "libraries"
+libraries[colorbox][download][type] = "file"
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
 
 libraries[ckeditor][type] = "libraries"
 libraries[ckeditor][download][type] = "file"
