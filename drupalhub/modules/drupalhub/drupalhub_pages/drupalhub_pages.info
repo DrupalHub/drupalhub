@@ -3,6 +3,7 @@ description = Managing the pages of DrupalHub
 core = 7.x
 package = DrupalHub
 dependencies[] = ctools
+dependencies[] = drupalhub_group
 dependencies[] = page_manager
 dependencies[] = panels_mini
 dependencies[] = views

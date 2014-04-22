@@ -7,8 +7,8 @@ projects[admin_menu][version] = 3.0-rc4
 projects[calendar][subdir] = "contrib"
 projects[calendar][version] = 3.4
 
-projects[ckeditor][subdir] = "colorbox"
-projects[ckeditor][version] = 2.5
+projects[colorbox][subdir] = "contrib"
+projects[colorbox][version] = 2.5
 
 projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = 1.13
