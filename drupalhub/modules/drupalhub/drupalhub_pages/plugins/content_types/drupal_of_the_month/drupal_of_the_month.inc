@@ -11,7 +11,10 @@ function drupalhub_pages_drupal_of_the_month_content_type_render($subtype, $conf
 
   $block = new stdClass();
   $block->title = '';
-  $block->content = node_view($node, 'full');
+
+  if ($node) {
+    $block->content = node_view($node, 'full');
+  }
 
   return $block;
 }
