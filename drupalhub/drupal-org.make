@@ -60,6 +60,9 @@ projects[jquery_update][subdir] = contrib
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
 
+projects[link][subdir] = "contrib"
+projects[link][version] = 1.2
+
 projects[message][version] = "1.9"
 projects[message][subdir] = contrib
 

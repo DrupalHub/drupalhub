@@ -38,6 +38,7 @@ dependencies[] = insert
 dependencies[] = inline_devel
 dependencies[] = jquery_update
 dependencies[] = libraries
+dependencies[] = link
 dependencies[] = message
 dependencies[] = message_ui
 dependencies[] = message_notify
