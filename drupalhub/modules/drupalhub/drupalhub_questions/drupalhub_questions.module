@@ -14,3 +14,52 @@ function drupalhub_questions_ctools_plugin_directory($module, $plugin) {
     return "plugins/$plugin";
   }
 }
+
+/**
+ * Implements hook_menu().
+ */
+function drupalhub_questions_menu() {
+  $items = array();
+
+  $items['drupalhub_questions/create/%ctools_js'] = array(
+    'title' => 'Create question',
+    'page callback' => 'drupalhub_questions_create_question',
+    'page arguments' => array(2),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback; Modal page for posting a question.
+ */
+function drupalhub_questions_create_question($js = TRUE) {
+  return drupalhub_core_modal_form(t('Create a question'), 'drupalhub_questions_question_form', $js);
+}
+
+/**
+ * Form for create question via ctools modal form.
+ */
+function drupalhub_questions_question_form($form, $form_state) {
+  module_load_include('inc', 'node', 'node.pages');
+  $form = node_add('question');
+  $form['og_group_ref']['#access'] = FALSE;
+  $form['path']['#access'] = FALSE;
+  $form['comment_settings']['#access'] = FALSE;
+  $form['menu']['#access'] = FALSE;
+  $form['revision_information']['#access'] = FALSE;
+  $form['additional_settings']['#access'] = FALSE;
+  $form['body']['#after_build'][] = 'drupalhub_questions_question_form_after_build';
+
+  return $form;
+}
+
+/**
+ * After build for removing the text format selector.
+ */
+function drupalhub_questions_question_form_after_build($form) {
+  hide($form['und'][0]['format']);
+
+  return $form;
+}
