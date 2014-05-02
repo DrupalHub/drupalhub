@@ -146,3 +146,15 @@ function drupalhub_core_ctools_plugin_directory($module, $plugin) {
   }
 }
 
+function drupalhub_core_prepare_node($type) {
+  global $user;
+  $node = (object) array(
+    'uid' => $user->uid,
+    'name' => (isset($user->name) ? $user->name : ''),
+    'type' => $type,
+    'language' => LANGUAGE_NONE
+  );
+
+  return $node;
+}
+
