@@ -192,6 +192,34 @@ function drupalhub_pages_default_page_manager_pages() {
     $display->content['new-3b34c93c-18b4-437e-96c3-dd4608e2ad9a'] = $pane;
     $display->panels['fist_right'][0] = 'new-3b34c93c-18b4-437e-96c3-dd4608e2ad9a';
     $pane = new stdClass();
+    $pane->pid = 'new-b2ab2e6a-f8ba-4f31-82fe-ab25d9c58d3f';
+    $pane->panel = 'fist_right';
+    $pane->type = 'new_question';
+    $pane->subtype = 'new_question';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-TptvpjMG-WmLRy-ED0L_3Tb4ZIZepK8gbbcy4EePQw4',
+      'form_token' => 'Vjs1iCPGV-bg9Luq9-8_PCCi1wPBUapJpIj41-sKaeA',
+      'form_id' => 'drupalhub_questions_new_question_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = 'b2ab2e6a-f8ba-4f31-82fe-ab25d9c58d3f';
+    $display->content['new-b2ab2e6a-f8ba-4f31-82fe-ab25d9c58d3f'] = $pane;
+    $display->panels['fist_right'][1] = 'new-b2ab2e6a-f8ba-4f31-82fe-ab25d9c58d3f';
+    $pane = new stdClass();
     $pane->pid = 'new-85f224dc-24b4-4faf-88e3-86df450a0fb7';
     $pane->panel = 'fist_right';
     $pane->type = 'views_panes';
@@ -205,11 +233,11 @@ function drupalhub_pages_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '85f224dc-24b4-4faf-88e3-86df450a0fb7';
     $display->content['new-85f224dc-24b4-4faf-88e3-86df450a0fb7'] = $pane;
-    $display->panels['fist_right'][1] = 'new-85f224dc-24b4-4faf-88e3-86df450a0fb7';
+    $display->panels['fist_right'][2] = 'new-85f224dc-24b4-4faf-88e3-86df450a0fb7';
     $pane = new stdClass();
     $pane->pid = 'new-bd702e16-7d36-4ad2-8e16-bc0bbe412972';
     $pane->panel = 'second';
