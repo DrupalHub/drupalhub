@@ -54,6 +54,7 @@ dependencies[] = panels
 dependencies[] = panels_mini
 dependencies[] = panels_bootstrap_layouts
 dependencies[] = video_embed_field
+dependencies[] = views_bootstrap
 dependencies[] = views_bulk_operations
 dependencies[] = views_ui
 dependencies[] = votingapi

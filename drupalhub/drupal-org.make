@@ -130,8 +130,11 @@ projects[vote_up_down][type] = "module"
 projects[views][subdir] = "contrib"
 projects[views][version] = 3.7
 
-projects[views_bulk_operations][version] = "3.2"
+projects[views_bootstrap][subdir] = contrib
+projects[views_bootstrap][version] = "2.1"
+
 projects[views_bulk_operations][subdir] = contrib
+projects[views_bulk_operations][version] = "3.2"
 
 ; Themes
 projects[bootstrap] = bootstrap
