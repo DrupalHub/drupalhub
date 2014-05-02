@@ -25,6 +25,9 @@ projects[devel][version] = 1.4
 projects[diff][subdir] = "contrib"
 projects[diff][version] = 3.2
 
+projects[email][subdir] = "contrib"
+project[email][version] = 1.3
+
 projects[entity][subdir] = "contrib"
 projects[entity][version] = 1.4
 
@@ -59,6 +62,9 @@ projects[jquery_update][subdir] = contrib
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
+
+projects[link][subdir] = "contrib"
+projects[link][version] = 1.2
 
 projects[message][version] = "1.9"
 projects[message][subdir] = contrib
