@@ -1,5 +1,5 @@
 name = Drupalhub Group
-description = Adds the group page and some more stuff
+description = Adds the group page, content types: project, news, recommendation, and makes other ct's group content.
 core = 7.x
 package = DrupalHub
 version = 7.x-2.4
