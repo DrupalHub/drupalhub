@@ -916,7 +916,7 @@ function drupalhub_group_field_default_field_instances() {
         'settings' => array(
           'description' => 1,
           'description_position' => 'bottom',
-          'video_style' => 'normal',
+          'video_style' => 'right_sidebar',
         ),
         'type' => 'video_embed_field',
         'weight' => 5,
