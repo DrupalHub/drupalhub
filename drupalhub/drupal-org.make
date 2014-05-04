@@ -29,7 +29,7 @@ projects[email][subdir] = "contrib"
 project[email][version] = 1.3
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = 1.4
+projects[entity][version] = 1.5
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = 1.1
@@ -78,7 +78,7 @@ projects[message_ui][subdir] = contrib
 projects[message_notify][version] = "2.5"
 projects[message_notify][subdir] = contrib
 
-projects[message_subscribe][version] = "1.0-rc1"
+projects[message_subscribe][version] = "1.0-rc2"
 projects[message_subscribe][subdir] = contrib
 
 projects[module_filter][subdir] = "contrib"
@@ -99,7 +99,7 @@ projects[og][subdir] = contrib
 projects[panels][version] = "3.4"
 projects[panels][subdir] = contrib
 
-projects[panels_bootstrap_layouts][version] = "3.x-dev"
+projects[panels_bootstrap_layouts][version] = "3.0"
 projects[panels_bootstrap_layouts][subdir] = contrib
 
 projects[pathauto][subdir] = "contrib"
