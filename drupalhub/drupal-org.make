@@ -46,6 +46,9 @@ projects[fboauth][subdir] = contrib
 projects[flag][subdir] = "contrib"
 projects[flag][version] = 2.2
 
+projects[galleryformatter][subdir] = "contrib"
+projects[galleryformatter][version] = 1.3
+
 projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x
 projects[github_connect][download][revision] = e091c59

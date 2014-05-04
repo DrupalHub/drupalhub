@@ -649,18 +649,16 @@ function drupalhub_group_field_default_field_instances() {
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
-          'colorbox__galleryformatter_slide' => 0,
-          'colorbox__galleryformatter_thumb' => 0,
           'colorbox__large' => 0,
           'colorbox__medium' => 0,
+          'colorbox__sidebar_right' => 0,
           'colorbox__thumbnail' => 0,
           'colorbox__wide_galleryformatter_for_project_pages__700x250_' => 0,
           'icon_link' => 0,
           'image' => 0,
-          'image_galleryformatter_slide' => 0,
-          'image_galleryformatter_thumb' => 0,
           'image_large' => 0,
           'image_medium' => 0,
+          'image_sidebar_right' => 0,
           'image_thumbnail' => 0,
           'image_wide_galleryformatter_for_project_pages__700x250_' => 0,
           'link' => 0,
@@ -1188,6 +1186,65 @@ function drupalhub_group_field_default_field_instances() {
       'settings' => array(),
       'type' => 'video_embed_field_video',
       'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-recommendation-og_group_ref'
+  $field_instances['node-recommendation-og_group_ref'] = array(
+    'bundle' => 'recommendation',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 5,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'og_group_ref',
+    'label' => 'Groups audience',
+    'required' => FALSE,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => FALSE,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 7,
     ),
   );
 

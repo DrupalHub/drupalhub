@@ -130,7 +130,7 @@ function drupalhub_group_field_default_field_bases() {
   // Exported field_base: 'field_project_banner'
   $field_bases['field_project_banner'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_project_banner',
@@ -396,14 +396,7 @@ function drupalhub_group_field_default_field_bases() {
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'og_group_ref',
-    'foreign keys' => array(
-      'node' => array(
-        'columns' => array(
-          'target_id' => 'nid',
-        ),
-        'table' => 'node',
-      ),
-    ),
+    'foreign keys' => array(),
     'indexes' => array(
       'target_id' => array(
         0 => 'target_id',
