@@ -205,7 +205,7 @@ function drupalhub_group_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Group',
+      'override_title_text' => 'Author is in groups:',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -308,10 +308,10 @@ function drupalhub_group_default_page_manager_handlers() {
     $display->content['new-b72330cd-8103-4f0d-b869-1cf056e68f15'] = $pane;
     $display->panels['right'][0] = 'new-b72330cd-8103-4f0d-b869-1cf056e68f15';
     $pane = new stdClass();
-    $pane->pid = 'new-5f6fe971-6e7c-4166-af77-97d46be18280';
+    $pane->pid = 'new-36702ef7-33f4-4f16-bb4e-05f609c408c2';
     $pane->panel = 'right';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_project_gallery';
+    $pane->subtype = 'node:field_project_gallery_cropimage';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
@@ -322,18 +322,12 @@ function drupalhub_group_default_page_manager_handlers() {
       'delta_reversed' => 0,
       'formatter_settings' => array(
         'slide_style' => 'sidebar_right',
-        'thumb_style' => 'galleryformatter_thumb',
-        'style' => 'nostyle',
-        'linking_method' => 'onclick_full',
-        'link_to_full' => 0,
+        'thumb_style' => 'thumbnail_retina',
+        'style' => 'Greenarrows',
+        'linking_method' => 'show_full_link',
+        'link_to_full' => 1,
         'link_to_full_style' => '0',
         'modal' => 'colorbox',
-        'colorbox_node_style' => 'wide_galleryformatter_for_project_pages__700x250_',
-        'colorbox_image_style' => '',
-        'colorbox_gallery' => 'none',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'auto',
-        'colorbox_caption_custom' => '',
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
@@ -347,24 +341,24 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '5f6fe971-6e7c-4166-af77-97d46be18280';
-    $display->content['new-5f6fe971-6e7c-4166-af77-97d46be18280'] = $pane;
-    $display->panels['right'][1] = 'new-5f6fe971-6e7c-4166-af77-97d46be18280';
+    $pane->uuid = '36702ef7-33f4-4f16-bb4e-05f609c408c2';
+    $display->content['new-36702ef7-33f4-4f16-bb4e-05f609c408c2'] = $pane;
+    $display->panels['right'][1] = 'new-36702ef7-33f4-4f16-bb4e-05f609c408c2';
     $pane = new stdClass();
-    $pane->pid = 'new-aef01fcc-da69-4439-8d90-b9c7d28cb31e';
+    $pane->pid = 'new-32a9c5dd-2a30-4d7c-82e2-fc3e45f0490e';
     $pane->panel = 'top';
     $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_project_banner';
+    $pane->subtype = 'node:field_project_banner_cropimage';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
       'formatter' => 'image',
-      'delta_limit' => '0',
+      'delta_limit' => 0,
       'delta_offset' => '0',
-      'delta_reversed' => 0,
+      'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'image_style' => 'wide_galleryformatter_for_project_pages__700x250_',
+        'image_style' => 'large_retina',
         'image_link' => '',
       ),
       'context' => 'argument_entity_id:node_1',
@@ -379,9 +373,9 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'aef01fcc-da69-4439-8d90-b9c7d28cb31e';
-    $display->content['new-aef01fcc-da69-4439-8d90-b9c7d28cb31e'] = $pane;
-    $display->panels['top'][0] = 'new-aef01fcc-da69-4439-8d90-b9c7d28cb31e';
+    $pane->uuid = '32a9c5dd-2a30-4d7c-82e2-fc3e45f0490e';
+    $display->content['new-32a9c5dd-2a30-4d7c-82e2-fc3e45f0490e'] = $pane;
+    $display->panels['top'][0] = 'new-32a9c5dd-2a30-4d7c-82e2-fc3e45f0490e';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

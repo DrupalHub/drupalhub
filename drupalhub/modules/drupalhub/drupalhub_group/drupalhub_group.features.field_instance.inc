@@ -293,7 +293,7 @@ function drupalhub_group_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -312,12 +312,12 @@ function drupalhub_group_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 31,
+      'weight' => 4,
     ),
   );
 
-  // Exported field_instance: 'node-group_banner-field_banner_image'
-  $field_instances['node-group_banner-field_banner_image'] = array(
+  // Exported field_instance: 'node-group_banner-field_group_banner_cropimage'
+  $field_instances['node-group_banner-field_group_banner_cropimage'] = array(
     'bundle' => 'group_banner',
     'deleted' => 0,
     'description' => '',
@@ -330,34 +330,29 @@ function drupalhub_group_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'hidden',
-        'module' => 'colorbox',
+        'module' => 'image',
         'settings' => array(
-          'colorbox_caption' => 'auto',
-          'colorbox_caption_custom' => '',
-          'colorbox_gallery' => 'post',
-          'colorbox_gallery_custom' => '',
-          'colorbox_image_style' => '',
-          'colorbox_multivalue_index' => NULL,
-          'colorbox_node_style' => '',
+          'image_link' => '',
+          'image_style' => 'large_retina',
         ),
-        'type' => 'colorbox',
+        'type' => 'image',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_banner_image',
-    'label' => 'Banner image',
+    'field_name' => 'field_group_banner_cropimage',
+    'label' => 'Group banner CropImage',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '20MB',
+      'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
@@ -365,29 +360,18 @@ function drupalhub_group_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'imagefield_crop',
       'settings' => array(
-        'insert' => 0,
-        'insert_absolute' => 0,
-        'insert_class' => '',
-        'insert_default' => 'auto',
-        'insert_styles' => array(
-          'auto' => 'auto',
-          'icon_link' => 0,
-          'image' => 0,
-          'image_galleryformatter_slide' => 0,
-          'image_galleryformatter_thumb' => 0,
-          'image_large' => 0,
-          'image_medium' => 0,
-          'image_thumbnail' => 0,
-          'link' => 0,
-        ),
-        'insert_width' => '',
+        'collapsible' => 3,
+        'croparea' => '500x500',
+        'enforce_minimum' => 1,
+        'enforce_ratio' => 1,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
+        'resolution' => '200x150',
       ),
-      'type' => 'image_image',
-      'weight' => 32,
+      'type' => 'imagefield_crop_widget',
+      'weight' => 1,
     ),
   );
 
@@ -406,10 +390,10 @@ function drupalhub_group_field_default_field_instances() {
         'weight' => 0,
       ),
       'teaser' => array(
-        'label' => 'above',
+        'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -446,7 +430,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 0,
+      'weight' => 2,
     ),
   );
 
@@ -668,7 +652,7 @@ function drupalhub_group_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -693,12 +677,12 @@ function drupalhub_group_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
-  // Exported field_instance: 'node-project-field_project_banner'
-  $field_instances['node-project-field_project_banner'] = array(
+  // Exported field_instance: 'node-project-field_project_banner_cropimage'
+  $field_instances['node-project-field_project_banner_cropimage'] = array(
     'bundle' => 'project',
     'deleted' => 0,
     'description' => '',
@@ -711,7 +695,7 @@ function drupalhub_group_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 0,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -721,15 +705,15 @@ function drupalhub_group_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_project_banner',
-    'label' => 'Project banner',
+    'field_name' => 'field_project_banner_cropimage',
+    'label' => 'Project banner CropImage',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '5M',
+      'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
@@ -737,39 +721,23 @@ function drupalhub_group_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'imagefield_crop',
       'settings' => array(
-        'insert' => 0,
-        'insert_absolute' => 0,
-        'insert_class' => '',
-        'insert_default' => 'auto',
-        'insert_styles' => array(
-          'auto' => 'auto',
-          'colorbox__large' => 0,
-          'colorbox__medium' => 0,
-          'colorbox__sidebar_right' => 0,
-          'colorbox__thumbnail' => 0,
-          'colorbox__wide_galleryformatter_for_project_pages__700x250_' => 0,
-          'icon_link' => 0,
-          'image' => 0,
-          'image_large' => 0,
-          'image_medium' => 0,
-          'image_sidebar_right' => 0,
-          'image_thumbnail' => 0,
-          'image_wide_galleryformatter_for_project_pages__700x250_' => 0,
-          'link' => 0,
-        ),
-        'insert_width' => '',
+        'collapsible' => 2,
+        'croparea' => '500x500',
+        'enforce_minimum' => 1,
+        'enforce_ratio' => 1,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
+        'resolution' => '200x150',
       ),
-      'type' => 'image_image',
+      'type' => 'imagefield_crop_widget',
       'weight' => 1,
     ),
   );
 
-  // Exported field_instance: 'node-project-field_project_gallery'
-  $field_instances['node-project-field_project_gallery'] = array(
+  // Exported field_instance: 'node-project-field_project_gallery_cropimage'
+  $field_instances['node-project-field_project_gallery_cropimage'] = array(
     'bundle' => 'project',
     'deleted' => 0,
     'description' => '',
@@ -779,42 +747,33 @@ function drupalhub_group_field_default_field_instances() {
         'module' => 'galleryformatter',
         'settings' => array(
           'link_to_full' => 1,
-          'link_to_full_style' => 0,
+          'link_to_full_style' => 'large_retina',
           'linking_method' => 'show_full_link',
-          'modal' => 'none',
+          'modal' => 'colorbox',
           'slide_style' => 'sidebar_right',
           'style' => 'Greenarrows',
-          'thumb_style' => 'galleryformatter_thumb',
+          'thumb_style' => 'thumbnail_retina',
         ),
         'type' => 'galleryformatter_default',
         'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'hidden',
-        'module' => 'galleryformatter',
-        'settings' => array(
-          'link_to_full' => 1,
-          'link_to_full_style' => 0,
-          'linking_method' => 'show_full_link',
-          'modal' => 'colorbox',
-          'slide_style' => 'sidebar_right',
-          'style' => 'Greenarrows',
-          'thumb_style' => 'galleryformatter_thumb',
-        ),
-        'type' => 'galleryformatter_default',
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
         'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_project_gallery',
-    'label' => 'Project gallery',
+    'field_name' => 'field_project_gallery_cropimage',
+    'label' => 'Project gallery CropImage',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
       'default_image' => 0,
       'file_directory' => '',
       'file_extensions' => 'png gif jpg jpeg',
-      'max_filesize' => '20MB',
+      'max_filesize' => '',
       'max_resolution' => '',
       'min_resolution' => '',
       'title_field' => 1,
@@ -822,29 +781,18 @@ function drupalhub_group_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'imagefield_crop',
       'settings' => array(
-        'insert' => 0,
-        'insert_absolute' => 0,
-        'insert_class' => '',
-        'insert_default' => 'auto',
-        'insert_styles' => array(
-          'auto' => 'auto',
-          'icon_link' => 0,
-          'image' => 0,
-          'image_galleryformatter_slide' => 0,
-          'image_galleryformatter_thumb' => 0,
-          'image_large' => 0,
-          'image_medium' => 0,
-          'image_thumbnail' => 0,
-          'link' => 0,
-        ),
-        'insert_width' => '',
+        'collapsible' => 2,
+        'croparea' => '0x0',
+        'enforce_minimum' => 1,
+        'enforce_ratio' => 1,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
+        'resolution' => '320x200',
       ),
-      'type' => 'image_image',
-      'weight' => 4,
+      'type' => 'imagefield_crop_widget',
+      'weight' => 10,
     ),
   );
 
@@ -898,7 +846,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -914,7 +862,7 @@ function drupalhub_group_field_default_field_instances() {
         'module' => 'vud',
         'settings' => array(),
         'type' => 'vud',
-        'weight' => 1,
+        'weight' => 0,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -936,7 +884,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'vud',
       'settings' => array(),
       'type' => 'thumbs',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -979,7 +927,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -994,7 +942,7 @@ function drupalhub_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 6,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1037,7 +985,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1144,8 +1092,8 @@ function drupalhub_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recommendation-field_recommendation_images'
-  $field_instances['node-recommendation-field_recommendation_images'] = array(
+  // Exported field_instance: 'node-recommendation-field_recommendation_cropimage'
+  $field_instances['node-recommendation-field_recommendation_cropimage'] = array(
     'bundle' => 'recommendation',
     'deleted' => 0,
     'description' => '',
@@ -1158,7 +1106,7 @@ function drupalhub_group_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -1168,8 +1116,8 @@ function drupalhub_group_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_recommendation_images',
-    'label' => 'Recommendation Images',
+    'field_name' => 'field_recommendation_cropimage',
+    'label' => 'Recommendation CropImage',
     'required' => 0,
     'settings' => array(
       'alt_field' => 1,
@@ -1184,29 +1132,18 @@ function drupalhub_group_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'image',
+      'module' => 'imagefield_crop',
       'settings' => array(
-        'insert' => 0,
-        'insert_absolute' => 0,
-        'insert_class' => '',
-        'insert_default' => 'auto',
-        'insert_styles' => array(
-          'auto' => 'auto',
-          'icon_link' => 0,
-          'image' => 0,
-          'image_galleryformatter_slide' => 0,
-          'image_galleryformatter_thumb' => 0,
-          'image_large' => 0,
-          'image_medium' => 0,
-          'image_thumbnail' => 0,
-          'link' => 0,
-        ),
-        'insert_width' => '',
+        'collapsible' => 2,
+        'croparea' => '500x500',
+        'enforce_minimum' => 1,
+        'enforce_ratio' => 1,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
+        'resolution' => '200x150',
       ),
-      'type' => 'image_image',
-      'weight' => 4,
+      'type' => 'imagefield_crop_widget',
+      'weight' => 2,
     ),
   );
 
@@ -1297,7 +1234,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'vud',
       'settings' => array(),
       'type' => 'upanddown',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -1340,7 +1277,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -1517,10 +1454,10 @@ function drupalhub_group_field_default_field_instances() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Banner image');
   t('Body');
   t('Determine if this is an OG group.');
   t('Group');
+  t('Group banner CropImage');
   t('Group logo');
   t('Group membership');
   t('Group mission');
@@ -1530,12 +1467,12 @@ function drupalhub_group_field_default_field_instances() {
   t('Multiple values allowed.');
   t('News Image');
   t('News rating');
-  t('Project banner');
-  t('Project gallery');
+  t('Project banner CropImage');
+  t('Project gallery CropImage');
   t('Project links');
   t('Project rating');
   t('Project videos');
-  t('Recommendation Images');
+  t('Recommendation CropImage');
   t('Recommendation Links');
   t('Recommendation rating');
   t('Recommendation video');

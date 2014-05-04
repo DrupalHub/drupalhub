@@ -133,24 +133,12 @@ function drupalhub_group_views_default_views() {
   $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Project gallery */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_project_gallery']['id'] = 'field_project_gallery';
   $handler->display->display_options['fields']['field_project_gallery']['table'] = 'field_data_field_project_gallery';
   $handler->display->display_options['fields']['field_project_gallery']['field'] = 'field_project_gallery';
   $handler->display->display_options['fields']['field_project_gallery']['label'] = '';
   $handler->display->display_options['fields']['field_project_gallery']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_project_gallery']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_project_gallery']['type'] = 'galleryformatter_default';
-  $handler->display->display_options['fields']['field_project_gallery']['settings'] = array(
-    'slide_style' => 'sidebar_right',
-    'thumb_style' => 'galleryformatter_thumb',
-    'style' => 'Greenarrows',
-    'link_to_full' => 0,
-    'link_to_full_style' => '0',
-    'modal' => 'none',
-    'linking_method' => 'show_full_link',
-  );
-  $handler->display->display_options['fields']['field_project_gallery']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
