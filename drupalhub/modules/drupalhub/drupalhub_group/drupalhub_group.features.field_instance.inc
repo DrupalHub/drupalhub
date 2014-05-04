@@ -22,7 +22,7 @@ function drupalhub_group_field_default_field_instances() {
         'module' => 'og_ui',
         'settings' => array(),
         'type' => 'og_list_default',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -65,7 +65,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 42,
+      'weight' => 5,
     ),
   );
 
@@ -462,7 +462,7 @@ function drupalhub_group_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -490,7 +490,7 @@ function drupalhub_group_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -508,7 +508,7 @@ function drupalhub_group_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 2,
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -556,7 +556,44 @@ function drupalhub_group_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 3,
+      'weight' => 4,
+    ),
+  );
+
+  // Exported field_instance: 'node-news-field_news_rating'
+  $field_instances['node-news-field_news_rating'] = array(
+    'bundle' => 'news',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'vud',
+        'settings' => array(),
+        'type' => 'vud',
+        'weight' => 1,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_news_rating',
+    'label' => 'News rating',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'vud',
+      'settings' => array(),
+      'type' => 'upanddown',
+      'weight' => 1,
     ),
   );
 
@@ -615,7 +652,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -891,7 +928,7 @@ function drupalhub_group_field_default_field_instances() {
     'label' => 'Project rating',
     'required' => 0,
     'settings' => array(
-      'appearance' => 'both',
+      'appearance' => 'up_only',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -1492,6 +1529,7 @@ function drupalhub_group_field_default_field_instances() {
   t('Links to he project\'s homepage, or any related resources. Multiple values allowed.');
   t('Multiple values allowed.');
   t('News Image');
+  t('News rating');
   t('Project banner');
   t('Project gallery');
   t('Project links');

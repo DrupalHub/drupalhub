@@ -99,10 +99,49 @@ function drupalhub_videos_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-youtube-field_youtube_rating'
+  $field_instances['node-youtube-field_youtube_rating'] = array(
+    'bundle' => 'youtube',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => NULL,
+        'settings' => array(),
+        'type' => 'updown',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_youtube_rating',
+    'label' => 'Youtube rating',
+    'required' => 0,
+    'settings' => array(
+      'appearance' => 'both',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'vud',
+      'settings' => array(),
+      'type' => 'thumbs',
+      'weight' => 43,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Address');
   t('Body');
+  t('Youtube rating');
 
   return $field_instances;
 }

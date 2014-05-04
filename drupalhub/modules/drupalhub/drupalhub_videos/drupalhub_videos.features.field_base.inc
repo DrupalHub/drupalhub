@@ -29,5 +29,32 @@ function drupalhub_videos_field_default_field_bases() {
     'type' => 'video_embed_field',
   );
 
+  // Exported field_base: 'field_youtube_rating'
+  $field_bases['field_youtube_rating'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_youtube_rating',
+    'foreign keys' => array(
+      'votingapi_vote' => array(
+        'columns' => array(
+          'voteid' => 'voteid',
+        ),
+        'table' => 'votingapi_vote',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'voteid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'vud',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'vud',
+  );
+
   return $field_bases;
 }
