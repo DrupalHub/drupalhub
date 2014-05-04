@@ -290,7 +290,7 @@ function drupalhub_group_default_page_manager_handlers() {
       'delta_offset' => '0',
       'delta_reversed' => 0,
       'formatter_settings' => array(
-        'video_style' => 'teaser',
+        'video_style' => 'right_sidebar',
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
