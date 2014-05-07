@@ -17,4 +17,3 @@ features[features_api][] = api:2
 features[page_manager_pages][] = front_page
 features[panels_mini][] = question_display
 features[views_view][] = idea_comments
-project status url = ../drupalhub/modules/drupalhub/
