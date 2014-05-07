@@ -323,13 +323,15 @@ function drupalhub_group_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'image',
+        'label' => 'hidden',
+        'module' => 'picture',
         'settings' => array(
+          'colorbox' => 'bootstrap_drupalhub',
+          'fallback_image_style' => '',
           'image_link' => '',
-          'image_style' => '',
+          'picture_group' => 'bootstrap_drupalhub',
         ),
-        'type' => 'image',
+        'type' => 'picture',
         'weight' => 3,
       ),
       'teaser' => array(
@@ -363,12 +365,12 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'imagefield_crop',
       'settings' => array(
         'collapsible' => 3,
-        'croparea' => '500x500',
-        'enforce_minimum' => 1,
-        'enforce_ratio' => 1,
+        'croparea' => '250x250',
+        'enforce_minimum' => 0,
+        'enforce_ratio' => 0,
         'preview_image_style' => 'thumbnail',
         'progress_indicator' => 'throbber',
-        'resolution' => '200x150',
+        'resolution' => '250x250',
       ),
       'type' => 'imagefield_crop_widget',
       'weight' => 1,
@@ -652,13 +654,13 @@ function drupalhub_group_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 1,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 6,
       ),
     ),
     'entity_type' => 'node',
@@ -677,7 +679,7 @@ function drupalhub_group_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -688,20 +690,22 @@ function drupalhub_group_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'above',
-        'module' => 'image',
+        'label' => 'hidden',
+        'module' => 'picture',
         'settings' => array(
+          'colorbox' => 'bootstrap_drupalhub',
+          'fallback_image_style' => '',
           'image_link' => '',
-          'image_style' => '',
+          'picture_group' => 'bootstrap_drupalhub',
         ),
-        'type' => 'image',
-        'weight' => 6,
+        'type' => 'picture',
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 5,
       ),
     ),
     'entity_type' => 'node',
@@ -736,6 +740,48 @@ function drupalhub_group_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-project-field_project_banner_text'
+  $field_instances['node-project-field_project_banner_text'] = array(
+    'bundle' => 'project',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'Will appear at top of the project page, to the right of project image',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 7,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_project_banner_text',
+    'label' => 'Project Banner text',
+    'required' => 0,
+    'settings' => array(
+      'display_summary' => 0,
+      'text_processing' => 1,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 20,
+        'summary_rows' => 5,
+      ),
+      'type' => 'text_textarea_with_summary',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-project-field_project_gallery_cropimage'
   $field_instances['node-project-field_project_gallery_cropimage'] = array(
     'bundle' => 'project',
@@ -758,9 +804,18 @@ function drupalhub_group_field_default_field_instances() {
         'weight' => 3,
       ),
       'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
+        'label' => 'hidden',
+        'module' => 'galleryformatter',
+        'settings' => array(
+          'link_to_full' => 1,
+          'link_to_full_style' => 0,
+          'linking_method' => 'show_full_link',
+          'modal' => 'none',
+          'slide_style' => 'sidebar_right',
+          'style' => 'Greenarrows',
+          'thumb_style' => 'galleryformatter_thumb',
+        ),
+        'type' => 'galleryformatter_default',
         'weight' => 0,
       ),
     ),
@@ -792,7 +847,7 @@ function drupalhub_group_field_default_field_instances() {
         'resolution' => '320x200',
       ),
       'type' => 'imagefield_crop_widget',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -814,7 +869,7 @@ function drupalhub_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 4,
       ),
     ),
     'entity_type' => 'node',
@@ -846,7 +901,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -868,7 +923,7 @@ function drupalhub_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 3,
       ),
     ),
     'entity_type' => 'node',
@@ -910,7 +965,7 @@ function drupalhub_group_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 1,
       ),
     ),
     'entity_type' => 'node',
@@ -927,7 +982,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'video_embed_field',
       'settings' => array(),
       'type' => 'video_embed_field_video',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -940,15 +995,18 @@ function drupalhub_group_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 7,
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 0,
+        'weight' => 2,
       ),
     ),
     'entity_type' => 'node',
@@ -1467,6 +1525,7 @@ function drupalhub_group_field_default_field_instances() {
   t('Multiple values allowed.');
   t('News Image');
   t('News rating');
+  t('Project Banner text');
   t('Project banner CropImage');
   t('Project gallery CropImage');
   t('Project links');
@@ -1478,6 +1537,7 @@ function drupalhub_group_field_default_field_instances() {
   t('Recommendation video');
   t('Talk about what you recommend! Add a youtube link to your recommendation. Multiple values allowed.');
   t('Up only.');
+  t('Will appear at top of the project page, to the right of project image');
   t('Youtube links. Multiple videos allowed.');
 
   return $field_instances;

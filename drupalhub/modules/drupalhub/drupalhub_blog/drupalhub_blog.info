@@ -41,3 +41,4 @@ features[variable][] = pathauto_node_blog_pattern
 features[views_view][] = front_page_blogs
 features_exclude[dependencies][og_ui] = og_ui
 features_exclude[field_instance][node-blog-og_group_ref] = node-blog-og_group_ref
+project path = ../drupalhub/modules/drupalhub/

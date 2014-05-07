@@ -153,6 +153,11 @@ projects[bootstrap] = bootstrap
 projects[bootstrap][version] = 3.0
 projects[bootstrap][type] = "theme"
 
+
+projects[bootstrap_drupalhub] = bootstrap_drupalhub
+projects[bootstrap_drupalhub][version] = 3.0
+projects[bootstrap_drupalhub][type] = "theme"
+
 ; Libraries
 libraries[jquery_caret_position][download][type] = "git"
 libraries[jquery_caret_position][type] = "libraries"

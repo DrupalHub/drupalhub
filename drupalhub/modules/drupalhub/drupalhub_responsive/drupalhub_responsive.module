@@ -1,5 +1,7 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
+ * Code for the Drupalhub Responsive feature.
  */
+
+include_once 'drupalhub_responsive.features.inc';

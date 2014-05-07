@@ -74,4 +74,5 @@ dependencies[] = drupalhub_pages
 dependencies[] = drupalhub_social
 dependencies[] = drupalhub_videos
 dependencies[] = drupalhub_reputation
+dependencies[] = drupalhub_responsive
 dependencies[] = drupalhub_questions
