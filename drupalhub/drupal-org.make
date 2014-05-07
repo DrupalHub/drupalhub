@@ -4,6 +4,9 @@ api = 2
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = 3.0-rc4
 
+projects[breakpoints][subdir] = "contrib"
+projects[breakpoints][version] = 1.1
+
 projects[calendar][subdir] = "contrib"
 projects[calendar][version] = 3.4
 
@@ -108,8 +111,8 @@ projects[panels_bootstrap_layouts][subdir] = contrib
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = 1.2
 
-;projects[picture][subdir] = "contrib"
-;projects[picture][version] = 1.2
+projects[picture][subdir] = "contrib"
+projects[picture][version] = 1.2
 
 projects[retina_images][subdir] = "contrib"
 projects[retina_images][version] = "1.0-beta4"

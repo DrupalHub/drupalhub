@@ -26,6 +26,7 @@ dependencies[] = rdf
 
 ; Contrib
 dependencies[] = admin_menu
+dependencies[] = breakpoints
 dependencies[] = ckeditor
 dependencies[] = colorbox
 dependencies[] = date_popup
@@ -55,7 +56,7 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = panels_mini
 dependencies[] = panels_bootstrap_layouts
-;dependencies[] = picture
+dependencies[] = picture
 dependencies[] = retina_images
 dependencies[] = video_embed_field
 dependencies[] = views_bootstrap
