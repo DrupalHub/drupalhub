@@ -108,11 +108,11 @@ projects[panels_bootstrap_layouts][subdir] = contrib
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = 1.2
 
+;projects[picture][subdir] = "contrib"
+;projects[picture][version] = 1.2
+
 projects[retina_images][subdir] = "contrib"
 projects[retina_images][version] = "1.0-beta4"
-
-projects[resp_img][subdir] = "contrib"
-projects[resp_img][version] = "1.3"
 
 projects[restws][subdir] = "contrib"
 projects[restws][version] = "2.0-alpha3"
