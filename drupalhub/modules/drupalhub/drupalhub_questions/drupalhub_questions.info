@@ -5,8 +5,11 @@ package = DrupalHub
 version = 7.x-2.4
 project = drupalhub_questions
 dependencies[] = ctools
+dependencies[] = entityreference
 dependencies[] = features
 dependencies[] = flag
+dependencies[] = og
+dependencies[] = og_ui
 dependencies[] = page_manager
 dependencies[] = strongarm
 dependencies[] = taxonomy
@@ -22,10 +25,12 @@ features[features_api][] = api:2
 features[field_base][] = body
 features[field_base][] = field_tags
 features[field_base][] = field_vote
+features[field_base][] = og_group_ref
 features[field_instance][] = comment-comment_node_question-field_vote
 features[field_instance][] = node-question-body
 features[field_instance][] = node-question-field_tags
 features[field_instance][] = node-question-field_vote
+features[field_instance][] = node-question-og_group_ref
 features[flag][] = node_follow
 features[node][] = question
 features[page_manager_handlers][] = node_view_panel_context
@@ -59,5 +64,8 @@ features[variable][] = vud_node_widget_show
 features[variable][] = vud_node_widget_vote_on_teaser
 features[variable][] = vud_tag
 features[views_view][] = main_page_questions
+<<<<<<< HEAD
 features_exclude[dependencies][og_ui] = og_ui
 features_exclude[field_instance][node-question-og_group_ref] = node-question-og_group_ref
+=======
+>>>>>>> master

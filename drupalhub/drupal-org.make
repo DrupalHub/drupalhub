@@ -60,8 +60,11 @@ projects[inline_devel][subdir] = contrib
 projects[insert][version] = "1.3"
 projects[insert][subdir] = contrib
 
-projects[jquery_update][version] = "2.x-dev"
+projects[jquery_update][version] = "2.4"
 projects[jquery_update][subdir] = contrib
+
+projects[link][subdir] = "contrib"
+projects[link][version] = 1.2
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
@@ -93,8 +96,8 @@ projects[migrate_extras][version] = 2.4
 projects[oauth][version] = 3.2
 projects[oauth][subdir] = contrib
 
-projects[og][version] = 2.6
 projects[og][subdir] = contrib
+projects[og][version] = 2.6
 
 projects[panels][version] = "3.4"
 projects[panels][subdir] = contrib

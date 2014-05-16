@@ -182,6 +182,7 @@ function drupalhub_blog_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Blog rating');
   t('Body');
+  t('Groups audience');
   t('Images');
 
   return $field_instances;

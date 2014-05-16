@@ -48,7 +48,7 @@ function drupalhub_pages_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'bootstrap_twocol_stacked';
+  $display->layout = 'drupalhub_homepage';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -67,12 +67,66 @@ function drupalhub_pages_default_page_manager_pages() {
         'offset_size' => '1',
       ),
       'bottom' => NULL,
+      'first_left' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'fist_right' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'second' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '12',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'second_left' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'second_right' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'first' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '12',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
     ),
     'left' => array(
       'style' => 'bootstrap_region',
     ),
     'right' => array(
       'style' => 'bootstrap_region',
+    ),
+    'first' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'first_left' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'fist_right' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'second' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'second_left' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'second_right' => array(
+      'style' => 'drupalhub_region',
     ),
   );
   $display->cache = array();
@@ -87,13 +141,7 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h3>Recent friends activity</h3>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -112,22 +160,14 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h1>Starred media</h1>
-
-photos, youtube movies.',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'd16b577d-8d6d-4317-adf0-308ee8c59a38';
     $display->content['new-d16b577d-8d6d-4317-adf0-308ee8c59a38'] = $pane;
@@ -139,23 +179,14 @@ photos, youtube movies.',
     $pane->subtype = 'get_involve';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'return' => 'Finish',
-      'cancel' => 'Cancel',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'form_build_id' => 'form-cdQg-WeOSeeM1GMyTeNYiSja91Pb0AfINjJn9W6k_Z4',
-      'form_token' => 'OpoRS5ZIH1qRxRhwaYcC-_qfMN5YVm-a5ltRugT75cQ',
-      'form_id' => 'drupalhub_pages_get_involve_content_type_edit_form',
-      'op' => 'Finish',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '0707b89e-b7a0-4c24-b057-10c767067fbf';
     $display->content['new-0707b89e-b7a0-4c24-b057-10c767067fbf'] = $pane;
@@ -167,14 +198,23 @@ photos, youtube movies.',
     $pane->subtype = 'popular_tags';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-TptvpjMG-WmLRy-ED0L_3Tb4ZIZepK8gbbcy4EePQw4',
+      'form_token' => 'Vjs1iCPGV-bg9Luq9-8_PCCi1wPBUapJpIj41-sKaeA',
+      'form_id' => 'drupalhub_questions_new_question_content_type_edit_form',
+      'op' => 'Finish',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'e74a46dc-4d15-473d-a850-aa8a838a057a';
     $display->content['new-e74a46dc-4d15-473d-a850-aa8a838a057a'] = $pane;
@@ -186,20 +226,14 @@ photos, youtube movies.',
     $pane->subtype = 'custom';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h3>System messages</h3>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '2dd3bedb-c73c-4bd2-b4be-4204a6267d86';
     $display->content['new-2dd3bedb-c73c-4bd2-b4be-4204a6267d86'] = $pane;
@@ -208,7 +242,7 @@ photos, youtube movies.',
     $pane->pid = 'new-c51e31d0-2f07-4a18-abff-79b78fa58ac6';
     $pane->panel = 'right';
     $pane->type = 'views_panes';
-    $pane->subtype = 'front_page_blogs-panel_pane_1';
+    $pane->subtype = 'service_providers-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -230,14 +264,25 @@ photos, youtube movies.',
     $pane->subtype = 'main_page_questions-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'title' => 'asdasdasd',
+      'form_build_id' => 'form-fzAk4tVjGEQcpyD11QhmYKoZXgdHMwLKCTmWXhzEJMg',
+      'form_token' => '7-TeL-g2QZf428Zt8y-GdYMolwDrfFU8KN3JbkFyNdU',
+      'form_id' => 'drupalhub_pages_drupal_of_the_month_content_type_edit_form',
+      'op' => 'Finish',
+      'node_id' => NULL,
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'b3050dad-8e88-4025-8c3f-7f6c3e3c42d2';
     $display->content['new-b3050dad-8e88-4025-8c3f-7f6c3e3c42d2'] = $pane;

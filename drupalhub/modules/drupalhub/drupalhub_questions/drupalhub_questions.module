@@ -14,3 +14,115 @@ function drupalhub_questions_ctools_plugin_directory($module, $plugin) {
     return "plugins/$plugin";
   }
 }
+
+/**
+ * Implements hook_menu().
+ */
+function drupalhub_questions_menu() {
+  $items = array();
+
+  $items['drupalhub_questions/create/%ctools_js'] = array(
+    'title' => 'Create question',
+    'page callback' => 'drupalhub_questions_create_question',
+    'page arguments' => array(2),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback; Modal page for posting a question.
+ */
+function drupalhub_questions_create_question($js = TRUE) {
+  $type = 'question';
+
+  if (!$js) {
+    // We don't have JS go to the original page.
+    drupal_goto('node/add/' . str_replace('_', '-', $type));
+  }
+
+  // Get node form defaults.
+  $types = node_type_get_types();
+  $node = drupalhub_core_prepare_node($type);
+
+  $title = t('Create @name', array('@name' => $types[$type]->name));
+
+  drupalhub_questions_node_form($node, $title, TRUE);
+}
+
+/**
+ * Display the node create form in the modal page according to
+ * http://drupal.stackexchange.com/a/45150/9279
+ *
+ * @param $node
+ *  The node object.
+ * @param $title
+ *  The title of the modal.
+ * @param bool $force_page_reload
+ *  Determine weather to refresh the page.
+ */
+function drupalhub_questions_node_form($node, $title, $force_page_reload = FALSE) {
+  ctools_include('node.pages', 'node', '');
+  ctools_include('modal');
+  ctools_include('ajax');
+
+  $form_state = array(
+    'title' => $title,
+    'ajax'  => TRUE,
+    'build_info' => array(
+      'args'  => array($node),
+    ),
+  );
+
+  $commands = ctools_modal_form_wrapper($node->type . '_node_form', $form_state);
+
+  if (!empty($form_state['executed']) && empty($form_state['rebuild'])) {
+    $commands = array();
+
+    ctools_add_js('ajax-responder');
+    $commands[] = ctools_modal_command_dismiss();
+
+    if ($force_page_reload) {
+      $commands[] = ctools_ajax_command_reload();
+    }
+  }
+
+  // Add CSS class to Modal-Frame.
+  $commands[] = ajax_command_invoke('#modalContent', 'addClass', array('custom-module-node', 'custom-module-node-form'));
+
+  print ajax_render($commands);
+  exit;
+}
+
+/**
+ * Custom node form of question.
+ */
+function drupalhub_questions_form_question_node_form_alter(&$form, $form_state) {
+  if (path_is_admin($_GET['q'])) {
+    return;
+  }
+
+  $form['og_group_ref']['#access'] = FALSE;
+  $form['path']['#access'] = FALSE;
+  $form['comment_settings']['#access'] = FALSE;
+  $form['menu']['#access'] = FALSE;
+  $form['revision_information']['#access'] = FALSE;
+  $form['additional_settings']['#access'] = FALSE;
+  $form['body']['#after_build'][] = 'drupalhub_questions_question_form_after_build';
+  $form['options']['status'] = array(
+    '#type' => 'hidden',
+    '#value' => 1,
+  );
+
+  // No need for preview when using wyw
+  unset($form['actions']['preview']);
+}
+
+/**
+ * After build for removing the text format selector.
+ */
+function drupalhub_questions_question_form_after_build($element) {
+  hide($element['und'][0]['format']);
+  return $element;
+}
