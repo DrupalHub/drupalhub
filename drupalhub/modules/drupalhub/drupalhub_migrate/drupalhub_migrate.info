@@ -5,5 +5,17 @@ package = DrupalHub
 
 dependencies[] = migrate_ui
 
-files[] = drupalhub_migrate.migrate.inc
 files[] = includes/drupalhub_migrate.migrate.entity.inc
+
+; Comment.
+files[] = includes/handlers/comment/Comment.php
+
+; Node.
+files[] = includes/handlers/node/Blog.php
+files[] = includes/handlers/node/Question.php
+
+; Terms.
+files[] = includes/handlers/terms/Category.php
+
+; User.
+files[] = includes/handlers/user/User.php
