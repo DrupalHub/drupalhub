@@ -76,12 +76,6 @@ function drupalhub_group_views_default_views() {
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
-  $handler->display->display_options['defaults']['pager'] = FALSE;
-  $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['pager']['options']['items_per_page'] = '3';
-  $handler->display->display_options['pager']['options']['offset'] = '0';
-  $handler->display->display_options['pager']['options']['id'] = '0';
-  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['argument_input'] = array(
     'gid' => array(
       'type' => 'context',
@@ -95,8 +89,6 @@ function drupalhub_group_views_default_views() {
 
   /* Display: Blogs and News of Group */
   $handler = $view->new_display('panel_pane', 'Blogs and News of Group', 'panel_pane_2');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Blogs & News';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -123,8 +115,6 @@ function drupalhub_group_views_default_views() {
 
   /* Display: Videos of Group */
   $handler = $view->new_display('panel_pane', 'Videos of Group', 'panel_pane_3');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Videos';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -174,8 +164,8 @@ function drupalhub_group_views_default_views() {
     'youtube' => 'youtube',
   );
 
-  /* Display: Latest questions */
-  $handler = $view->new_display('panel_pane', 'Latest questions', 'panel_pane_4');
+  /* Display: Questions of Group */
+  $handler = $view->new_display('panel_pane', 'Questions of Group', 'panel_pane_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Latest questions:';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
@@ -221,10 +211,8 @@ function drupalhub_group_views_default_views() {
     t('Content pane'),
     t('View panes'),
     t('Blogs and News of Group'),
-    t('Blogs & News'),
     t('Videos of Group'),
-    t('Videos'),
-    t('Latest questions'),
+    t('Questions of Group'),
     t('Latest questions:'),
   );
   $export['content_of_group'] = $view;

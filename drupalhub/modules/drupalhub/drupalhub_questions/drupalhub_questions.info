@@ -2,6 +2,8 @@ name = DrupalHub questions
 description = Holds all that realte to question in the DrupalHub project.
 core = 7.x
 package = DrupalHub
+version = 7.x-2.4
+project = drupalhub_questions
 dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = features
@@ -14,6 +16,7 @@ dependencies[] = taxonomy
 dependencies[] = text
 dependencies[] = views
 dependencies[] = views_content
+dependencies[] = votingapi
 dependencies[] = vud
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1
@@ -61,3 +64,8 @@ features[variable][] = vud_node_widget_show
 features[variable][] = vud_node_widget_vote_on_teaser
 features[variable][] = vud_tag
 features[views_view][] = main_page_questions
+<<<<<<< HEAD
+features_exclude[dependencies][og_ui] = og_ui
+features_exclude[field_instance][node-question-og_group_ref] = node-question-og_group_ref
+=======
+>>>>>>> master

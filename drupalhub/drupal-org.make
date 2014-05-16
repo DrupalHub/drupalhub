@@ -7,6 +7,9 @@ projects[admin_menu][version] = 3.0-rc4
 projects[calendar][subdir] = "contrib"
 projects[calendar][version] = 3.4
 
+projects[colorbox][subdir] = "contrib"
+projects[colorbox][version] = 2.5
+
 projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = 1.13
 
@@ -23,7 +26,7 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = 3.2
 
 projects[email][subdir] = "contrib"
-projects[email][version] = 1.3
+project[email][version] = 1.3
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = 1.5
@@ -66,6 +69,9 @@ projects[link][version] = 1.2
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
 
+projects[link][subdir] = "contrib"
+projects[link][version] = 1.2
+
 projects[message][version] = "1.9"
 projects[message][subdir] = contrib
 
@@ -96,7 +102,7 @@ projects[og][version] = 2.6
 projects[panels][version] = "3.4"
 projects[panels][subdir] = contrib
 
-projects[panels_bootstrap_layouts][version] = "3.x-dev"
+projects[panels_bootstrap_layouts][version] = "3.0"
 projects[panels_bootstrap_layouts][subdir] = contrib
 
 projects[pathauto][subdir] = "contrib"
@@ -130,11 +136,11 @@ projects[vote_up_down][type] = "module"
 projects[views][subdir] = "contrib"
 projects[views][version] = 3.7
 
-projects[views_bootstrap][subdir] = "contrib"
-projects[views_bootstrap][version] = 2.0
+projects[views_bootstrap][subdir] = contrib
+projects[views_bootstrap][version] = "2.1"
 
-projects[views_bulk_operations][version] = "3.2"
 projects[views_bulk_operations][subdir] = contrib
+projects[views_bulk_operations][version] = "3.2"
 
 ; Themes
 projects[bootstrap] = bootstrap
@@ -145,6 +151,10 @@ projects[bootstrap][type] = "theme"
 libraries[jquery_caret_position][download][type] = "git"
 libraries[jquery_caret_position][type] = "libraries"
 libraries[jquery_caret_position][download][url] = "https://github.com/wolasss/jquery-caret-position-getter.git"
+
+libraries[colorbox][type] = "libraries"
+libraries[colorbox][download][type] = "file"
+libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
 
 libraries[ckeditor][type] = "libraries"
 libraries[ckeditor][download][type] = "file"

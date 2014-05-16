@@ -28,7 +28,7 @@ function drupalhub_videos_field_default_field_instances() {
         'label' => 'hidden',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
@@ -59,7 +59,7 @@ function drupalhub_videos_field_default_field_instances() {
     'description' => '',
     'display' => array(
       'default' => array(
-        'label' => 'hidden',
+        'label' => 'above',
         'module' => 'video_embed_field',
         'settings' => array(
           'description' => 1,
@@ -75,10 +75,9 @@ function drupalhub_videos_field_default_field_instances() {
         'settings' => array(
           'description' => 1,
           'description_position' => 'bottom',
-          'image_link' => 'content',
-          'image_style' => 'youtube_teaser_preview',
+          'video_style' => 'right_sidebar',
         ),
-        'type' => 'video_embed_field_thumbnail',
+        'type' => 'video_embed_field',
         'weight' => 0,
       ),
     ),
@@ -100,8 +99,8 @@ function drupalhub_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-youtube-og_group_ref'
-  $field_instances['node-youtube-og_group_ref'] = array(
+  // Exported field_instance: 'node-youtube-field_youtube_rating'
+  $field_instances['node-youtube-field_youtube_rating'] = array(
     'bundle' => 'youtube',
     'default_value' => NULL,
     'deleted' => 0,
@@ -109,53 +108,32 @@ function drupalhub_videos_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'og_ui',
+        'module' => NULL,
         'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 2,
+        'type' => 'updown',
+        'weight' => 3,
       ),
       'teaser' => array(
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 2,
+        'weight' => 0,
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
+    'field_name' => 'field_youtube_rating',
+    'label' => 'Youtube rating',
+    'required' => 0,
     'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
+      'appearance' => 'both',
       'user_register_form' => FALSE,
     ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
     'widget' => array(
-      'module' => 'og',
+      'active' => 0,
+      'module' => 'vud',
       'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 42,
+      'type' => 'thumbs',
+      'weight' => 43,
     ),
   );
 
@@ -163,7 +141,7 @@ function drupalhub_videos_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('Body');
-  t('Groups audience');
+  t('Youtube rating');
 
   return $field_instances;
 }

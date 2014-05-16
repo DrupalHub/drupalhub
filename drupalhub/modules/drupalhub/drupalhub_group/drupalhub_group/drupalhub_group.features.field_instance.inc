@@ -10,65 +10,6 @@
 function drupalhub_group_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-blog-og_group_ref'
-  $field_instances['node-blog-og_group_ref'] = array(
-    'bundle' => 'blog',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 5,
-    ),
-  );
-
   // Exported field_instance: 'node-drupalhub_group-body'
   $field_instances['node-drupalhub_group-body'] = array(
     'bundle' => 'drupalhub_group',
@@ -462,7 +403,7 @@ function drupalhub_group_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 2,
+        'weight' => 1,
       ),
       'teaser' => array(
         'label' => 'hidden',
@@ -490,7 +431,7 @@ function drupalhub_group_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -508,7 +449,7 @@ function drupalhub_group_field_default_field_instances() {
           'image_style' => '',
         ),
         'type' => 'image',
-        'weight' => 3,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -556,44 +497,7 @@ function drupalhub_group_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
-    ),
-  );
-
-  // Exported field_instance: 'node-news-field_news_rating'
-  $field_instances['node-news-field_news_rating'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'vud',
-        'settings' => array(),
-        'type' => 'vud',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_rating',
-    'label' => 'News rating',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'vud',
-      'settings' => array(),
-      'type' => 'upanddown',
-      'weight' => 1,
+      'weight' => 3,
     ),
   );
 
@@ -652,7 +556,7 @@ function drupalhub_group_field_default_field_instances() {
       'module' => 'og',
       'settings' => array(),
       'type' => 'og_complex',
-      'weight' => 2,
+      'weight' => 1,
     ),
   );
 
@@ -745,16 +649,18 @@ function drupalhub_group_field_default_field_instances() {
         'insert_default' => 'auto',
         'insert_styles' => array(
           'auto' => 'auto',
+          'colorbox__galleryformatter_slide' => 0,
+          'colorbox__galleryformatter_thumb' => 0,
           'colorbox__large' => 0,
           'colorbox__medium' => 0,
-          'colorbox__sidebar_right' => 0,
           'colorbox__thumbnail' => 0,
           'colorbox__wide_galleryformatter_for_project_pages__700x250_' => 0,
           'icon_link' => 0,
           'image' => 0,
+          'image_galleryformatter_slide' => 0,
+          'image_galleryformatter_thumb' => 0,
           'image_large' => 0,
           'image_medium' => 0,
-          'image_sidebar_right' => 0,
           'image_thumbnail' => 0,
           'image_wide_galleryformatter_for_project_pages__700x250_' => 0,
           'link' => 0,
@@ -928,7 +834,7 @@ function drupalhub_group_field_default_field_instances() {
     'label' => 'Project rating',
     'required' => 0,
     'settings' => array(
-      'appearance' => 'up_only',
+      'appearance' => 'both',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -953,7 +859,7 @@ function drupalhub_group_field_default_field_instances() {
         'settings' => array(
           'description' => 1,
           'description_position' => 'bottom',
-          'video_style' => 'right_sidebar',
+          'video_style' => 'normal',
         ),
         'type' => 'video_embed_field',
         'weight' => 5,
@@ -1038,65 +944,6 @@ function drupalhub_group_field_default_field_instances() {
       'settings' => array(),
       'type' => 'og_complex',
       'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-question-og_group_ref'
-  $field_instances['node-question-og_group_ref'] = array(
-    'bundle' => 'question',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 34,
     ),
   );
 
@@ -1344,177 +1191,6 @@ function drupalhub_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-recommendation-og_group_ref'
-  $field_instances['node-recommendation-og_group_ref'] = array(
-    'bundle' => 'recommendation',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 7,
-    ),
-  );
-
-  // Exported field_instance: 'node-youtube-og_group_ref'
-  $field_instances['node-youtube-og_group_ref'] = array(
-    'bundle' => 'youtube',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 2,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
-    'required' => FALSE,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 42,
-    ),
-  );
-
-  // Exported field_instance: 'user-user-og_user_node'
-  $field_instances['user-user-og_user_node'] = array(
-    'bundle' => 'user',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'og_ui',
-        'settings' => array(),
-        'type' => 'og_list_default',
-        'weight' => 1,
-      ),
-    ),
-    'entity_type' => 'user',
-    'field_name' => 'og_user_node',
-    'label' => 'Group membership',
-    'required' => FALSE,
-    'settings' => array(
-      'behaviors' => array(
-        'og_widget' => array(
-          'admin' => array(
-            'widget_type' => 'entityreference_autocomplete',
-          ),
-          'default' => array(
-            'widget_type' => 'options_select',
-          ),
-          'status' => TRUE,
-        ),
-      ),
-      'user_register_form' => FALSE,
-    ),
-    'view modes' => array(
-      'full' => array(
-        'custom settings' => FALSE,
-        'label' => 'Full',
-        'type' => 'og_list_default',
-      ),
-      'teaser' => array(
-        'custom settings' => FALSE,
-        'label' => 'Teaser',
-        'type' => 'og_list_default',
-      ),
-    ),
-    'widget' => array(
-      'module' => 'og',
-      'settings' => array(),
-      'type' => 'og_complex',
-      'weight' => 11,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Banner image');
@@ -1522,14 +1198,12 @@ function drupalhub_group_field_default_field_instances() {
   t('Determine if this is an OG group.');
   t('Group');
   t('Group logo');
-  t('Group membership');
   t('Group mission');
   t('Group score');
   t('Groups audience');
   t('Links to he project\'s homepage, or any related resources. Multiple values allowed.');
   t('Multiple values allowed.');
   t('News Image');
-  t('News rating');
   t('Project banner');
   t('Project gallery');
   t('Project links');
