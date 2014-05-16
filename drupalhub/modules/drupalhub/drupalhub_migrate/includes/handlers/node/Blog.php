@@ -8,7 +8,7 @@ class Blog extends DrupalHubMigrate {
   public $bundle = 'blog';
 
   public $csvColumns = array(
-    array('id', 'Unique ID'),
+    array('id', 'ID'),
     array('title', 'Title'),
     array('body', 'Body'),
     array('uid', 'User'),
@@ -23,6 +23,6 @@ class Blog extends DrupalHubMigrate {
     $this->addFieldMapping('body', 'body');
 
     $this->addFieldMapping('uid', 'uid')
-      ->sourceMigration('DrupalHubUsers');
+      ->sourceMigration('User');
   }
 }

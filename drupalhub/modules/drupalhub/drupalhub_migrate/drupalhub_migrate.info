@@ -13,6 +13,7 @@ files[] = includes/handlers/comment/Comment.php
 ; Node.
 files[] = includes/handlers/node/Blog.php
 files[] = includes/handlers/node/Question.php
+files[] = includes/handlers/node/Group.php
 
 ; Terms.
 files[] = includes/handlers/terms/Category.php

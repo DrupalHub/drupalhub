@@ -22,21 +22,21 @@ class Comment extends DrupalHubMigrate {
     parent::__construct();
 
     $this->addFieldMapping('nid', 'node')
-      ->sourceMigration('DrupalHubIdea');
+      ->sourceMigration('Question');
 
     // TODO: Fix.
     $this->addFieldMapping('comment_body', 'body');
 
     $this->addFieldMapping('uid', 'uid')
-      ->sourceMigration('DrupalHubUsers');
+      ->sourceMigration('User');
 
     // Get the users which voted against the comment and vor the comment.
     $this->addFieldMapping('for', 'for')
-      ->sourceMigration(array('DrupalHubUsers'))
+      ->sourceMigration(array('User'))
       ->separator('|');
 
     $this->addFieldMapping('against', 'against')
-      ->sourceMigration(array('DrupalHubUsers'))
+      ->sourceMigration(array('User'))
       ->separator('|');
   }
 

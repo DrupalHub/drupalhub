@@ -15,6 +15,7 @@ function drupalhub_migrate_migrate_api() {
     'Category',
     'Comment',
     'Blog',
+    'Group',
   );
 
   $api = array(

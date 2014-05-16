@@ -8,7 +8,7 @@ class Question extends DrupalHubMigrate {
   public $bundle = 'question';
 
   public $csvColumns = array(
-    array('id', 'Unique ID'),
+    array('id', 'ID'),
     array('title', 'Title'),
     array('body', 'Body'),
     array('field_tags', 'Tags'),
@@ -23,11 +23,11 @@ class Question extends DrupalHubMigrate {
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('body', 'body');
     $this->addFieldMapping('field_tags', 'field_tags')
-      ->sourceMigration(array('DrupalHubCategoryTerms'))
+      ->sourceMigration(array('Category'))
       ->separator("|")
       ->arguments(array('source_type' => 'tid'));
 
     $this->addFieldMapping('uid', 'uid')
-      ->sourceMigration('DrupalHubUsers');
+      ->sourceMigration('User');
   }
 }
