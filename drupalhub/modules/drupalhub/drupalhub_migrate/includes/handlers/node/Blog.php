@@ -3,7 +3,7 @@
 /**
  * Migrating ideas.
  */
-class DrupalHubBlog extends DrupalHubMigrate {
+class Blog extends DrupalHubMigrate {
   public $entityType = 'node';
   public $bundle = 'blog';
 
@@ -14,7 +14,7 @@ class DrupalHubBlog extends DrupalHubMigrate {
     array('uid', 'User'),
   );
 
-  public $dependencies = array('DrupalHubUsers', 'DrupalHubCategoryTerms');
+  public $dependencies = array('User', 'Category');
 
   public function __construct() {
     parent::__construct();

@@ -10,11 +10,11 @@
 function drupalhub_migrate_migrate_api() {
 
   $classes = array(
-    'DrupalHubQuestion',
-    'DrupalHubUsers',
-    'DrupalHubCategoryTerms',
-    'DrupalHubIdeaComments',
-    'DrupalHubBlog',
+    'Question',
+    'User',
+    'Category',
+    'Comment',
+    'Blog',
   );
 
   $api = array(

@@ -3,7 +3,7 @@
 /**
  * Migrating users.
  */
-class DrupalHubUsers extends Migration {
+class User extends Migration {
 
   public $csvColumns = array(
     array('id', 'ID'),

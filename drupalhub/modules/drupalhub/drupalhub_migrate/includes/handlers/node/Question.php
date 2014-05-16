@@ -3,7 +3,7 @@
 /**
  * Migrating ideas.
  */
-class DrupalHubQuestion extends DrupalHubMigrate {
+class Question extends DrupalHubMigrate {
   public $entityType = 'node';
   public $bundle = 'question';
 
@@ -15,7 +15,7 @@ class DrupalHubQuestion extends DrupalHubMigrate {
     array('uid', 'User'),
   );
 
-  public $dependencies = array('DrupalHubUsers', 'DrupalHubCategoryTerms');
+  public $dependencies = array('User', 'Category');
 
   public function __construct() {
     parent::__construct();

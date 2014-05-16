@@ -3,7 +3,7 @@
 /**
  * Migrate terms
  */
-class DrupalHubCategoryTerms extends DrupalHubMigrate {
+class Category extends DrupalHubMigrate {
   public $entityType = 'taxonomy_term';
   public $bundle = 'tags';
 }

@@ -3,7 +3,7 @@
 /**
  * Migrate comments.
  */
-class DrupalHubIdeaComments extends DrupalHubMigrate {
+class Comment extends DrupalHubMigrate {
   public $entityType = 'comment';
   public $bundle = 'question';
 
@@ -16,7 +16,7 @@ class DrupalHubIdeaComments extends DrupalHubMigrate {
     array('against', 'Voted against')
   );
 
-  public $dependencies = array('DrupalHubUsers', 'DrupalHubCategoryTerms');
+  public $dependencies = array('User', 'Category');
 
   public function __construct() {
     parent::__construct();
