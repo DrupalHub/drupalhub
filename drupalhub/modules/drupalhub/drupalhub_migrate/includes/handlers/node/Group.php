@@ -2,7 +2,7 @@
 
 class Group extends DrupalHubMigrate {
   public $entityType = 'node';
-  public $bundle = 'group';
+  public $bundle = 'drupalhub_group';
 
   public $csvColumns = array(
     array('id', 'ID'),
