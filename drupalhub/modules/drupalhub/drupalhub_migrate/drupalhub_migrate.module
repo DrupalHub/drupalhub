@@ -8,15 +8,23 @@
  * Implements hook_migrate_api().
  */
 function drupalhub_migrate_migrate_api() {
+
+  $classes = array(
+    'DrupalHubQuestion',
+    'DrupalHubUsers',
+    'DrupalHubCategoryTerms',
+    'DrupalHubIdeaComments',
+    'DrupalHubBlog',
+  );
+
   $api = array(
     'api' => 2,
-    'migrations' => array(
-      'DrupalHubIdea' => array('class_name' => 'DrupalHubIdea'),
-      'DrupalHubUsers' => array('class_name' => 'DrupalHubUsers'),
-      'DrupalHubCategoryTerms' => array('class_name' => 'DrupalHubCategoryTerms'),
-      'DrupalHubIdeaComments' => array('class_name' => 'DrupalHubIdeaComments'),
-      'DrupalHubBlog' => array('class_name' => 'DrupalHubBlog'),
-    ),
+    'migrations' => array(),
   );
+
+  foreach ($classes as $class) {
+    $api['migrations'][$class] = array('class_name' => $class);
+  }
+
   return $api;
 }

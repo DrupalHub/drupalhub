@@ -3,7 +3,7 @@
 /**
  * Migrating ideas.
  */
-class DrupalHubIdea extends DrupalHubMigrate {
+class DrupalHubQuestion extends DrupalHubMigrate {
   public $entityType = 'node';
   public $bundle = 'question';
 
