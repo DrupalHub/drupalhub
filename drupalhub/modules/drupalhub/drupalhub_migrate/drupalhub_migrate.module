@@ -17,6 +17,7 @@ function drupalhub_migrate_migrate_api() {
     'Blog',
     'Group',
     'Youtube',
+    'Recommendation',
   );
 
   $api = array(

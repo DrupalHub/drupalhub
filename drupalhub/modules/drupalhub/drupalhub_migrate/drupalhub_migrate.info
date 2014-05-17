@@ -15,6 +15,7 @@ files[] = includes/handlers/node/Blog.php
 files[] = includes/handlers/node/Question.php
 files[] = includes/handlers/node/Group.php
 files[] = includes/handlers/node/Youtube.php
+files[] = includes/handlers/node/Recommendation.php
 
 ; Terms.
 files[] = includes/handlers/terms/Category.php
