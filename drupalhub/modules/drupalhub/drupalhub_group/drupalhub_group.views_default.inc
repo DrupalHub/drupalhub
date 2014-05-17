@@ -22,6 +22,7 @@ function drupalhub_group_views_default_views() {
 
   /* Display: Defaults */
   $handler = $view->new_display('default', 'Defaults', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'none';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -29,6 +30,10 @@ function drupalhub_group_views_default_views() {
   $handler->display->display_options['query']['options']['query_comment'] = FALSE;
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '1';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['pager']['options']['id'] = '0';
+  $handler->display->display_options['pager']['options']['quantity'] = '9';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'node';
   /* No results behavior: Global: Text area */
@@ -129,28 +134,19 @@ function drupalhub_group_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'node';
-  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Project gallery */
-  $handler->display->display_options['fields']['field_project_gallery']['id'] = 'field_project_gallery';
-  $handler->display->display_options['fields']['field_project_gallery']['table'] = 'field_data_field_project_gallery';
-  $handler->display->display_options['fields']['field_project_gallery']['field'] = 'field_project_gallery';
-  $handler->display->display_options['fields']['field_project_gallery']['label'] = '';
-  $handler->display->display_options['fields']['field_project_gallery']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_project_gallery']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_project_gallery']['type'] = 'galleryformatter_default';
-  $handler->display->display_options['fields']['field_project_gallery']['settings'] = array(
-    'slide_style' => 'sidebar_right',
-    'thumb_style' => 'galleryformatter_thumb',
-    'style' => 'Greenarrows',
-    'link_to_full' => 0,
-    'link_to_full_style' => '0',
-    'modal' => 'none',
-    'linking_method' => 'show_full_link',
+  /* Field: Content: Address */
+  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
+  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
+  $handler->display->display_options['fields']['field_address']['label'] = '';
+  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_address']['settings'] = array(
+    'video_style' => 'right_sidebar',
   );
-  $handler->display->display_options['fields']['field_project_gallery']['delta_offset'] = '0';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
