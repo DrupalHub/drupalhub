@@ -305,6 +305,25 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->uuid = 'b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
     $display->content['new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532'] = $pane;
     $display->panels['second_left'][0] = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
+    $pane = new stdClass();
+    $pane->pid = 'new-d3a38bbe-11a0-46f5-a087-e21775d99ed7';
+    $pane->panel = 'second_right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'recommandation-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'd3a38bbe-11a0-46f5-a087-e21775d99ed7';
+    $display->content['new-d3a38bbe-11a0-46f5-a087-e21775d99ed7'] = $pane;
+    $display->panels['second_right'][0] = 'new-d3a38bbe-11a0-46f5-a087-e21775d99ed7';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

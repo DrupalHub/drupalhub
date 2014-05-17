@@ -230,9 +230,15 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
-  $handler->display->display_options['style_plugin'] = 'views_bootstrap_grid_plugin_style';
-  $handler->display->display_options['style_options']['columns'] = '2';
+  $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title']['id'] = 'title';
+  $handler->display->display_options['fields']['title']['table'] = 'node';
+  $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Field: Content: Group logo */
   $handler->display->display_options['fields']['field_group_logo']['id'] = 'field_group_logo';
   $handler->display->display_options['fields']['field_group_logo']['table'] = 'field_data_field_group_logo';
@@ -241,16 +247,9 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['field_group_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_group_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_group_logo']['settings'] = array(
-    'image_style' => '',
+    'image_style' => 'thumbnail',
     'image_link' => 'content',
   );
-  /* Field: Content: Title */
-  $handler->display->display_options['fields']['title']['id'] = 'title';
-  $handler->display->display_options['fields']['title']['table'] = 'node';
-  $handler->display->display_options['fields']['title']['field'] = 'title';
-  $handler->display->display_options['fields']['title']['label'] = '';
-  $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
-  $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
