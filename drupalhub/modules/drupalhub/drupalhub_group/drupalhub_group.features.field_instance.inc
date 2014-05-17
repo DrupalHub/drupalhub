@@ -1215,7 +1215,7 @@ function drupalhub_group_field_default_field_instances() {
     'bundle' => 'recommendation',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Multiple values allowed.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
@@ -1233,7 +1233,7 @@ function drupalhub_group_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_recommendation_links',
-    'label' => 'Recommendation Links',
+    'label' => 'Recommendation Link',
     'required' => 0,
     'settings' => array(
       'attributes' => array(
@@ -1527,7 +1527,6 @@ function drupalhub_group_field_default_field_instances() {
   t('Group score');
   t('Groups audience');
   t('Links to he project\'s homepage, or any related resources. Multiple values allowed.');
-  t('Multiple values allowed.');
   t('News Image');
   t('News rating');
   t('Project banner');
@@ -1536,7 +1535,7 @@ function drupalhub_group_field_default_field_instances() {
   t('Project rating');
   t('Project videos');
   t('Recommendation Images');
-  t('Recommendation Links');
+  t('Recommendation Link');
   t('Recommendation rating');
   t('Recommendation video');
   t('Talk about what you recommend! Add a youtube link to your recommendation. Multiple values allowed.');
