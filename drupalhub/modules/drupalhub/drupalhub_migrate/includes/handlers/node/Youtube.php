@@ -17,7 +17,7 @@ class Youtube extends DrupalHubMigrate {
     parent::__construct();
 
     $this->addFieldMapping('title', 'title');
-    $this->addFieldMapping('address', 'field_address');
+    $this->addFieldMapping('field_address', 'youtube');
     $this->addFieldMapping(OG_AUDIENCE_FIELD, OG_AUDIENCE_FIELD)
       ->sourceMigration('Group');
   }
