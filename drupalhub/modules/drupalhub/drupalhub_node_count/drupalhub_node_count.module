@@ -3,8 +3,12 @@
  * @file
  * Code for the drupalhub_node_count
  */
-define('DRUPALHUB_NODE_COUNT_FIELDNAME', 'drupalhub_node_count');
 
+function drupalhub_node_count_init(){
+  module_load_include('install', 'drupalhub_node_count', 'drupalhub_node_count');
+  drupalhub_node_count_enable();
+  dpm('sss');
+  }
 /**
  * Implements hook_node_type_insert().
  * 
@@ -13,7 +17,8 @@ define('DRUPALHUB_NODE_COUNT_FIELDNAME', 'drupalhub_node_count');
 function drupalhub_node_count_node_type_insert($info){
 	//include install file to use function
 	module_load_include('install', 'drupalhub_node_count', 'drupalhub_node_count');
-	drupalhub_node_count_add_instance($info->type);
+
+	drupalhub_node_count_drupalhub_node_count_add_instance($info->type);
 	}
 /*
  Implements hook_permission().

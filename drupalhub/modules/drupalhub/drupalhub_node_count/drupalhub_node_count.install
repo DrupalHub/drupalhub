@@ -1,7 +1,9 @@
 <?php
 
+define('DRUPALHUB_NODE_COUNT_FIELDNAME', 'drupalhub_node_count');
+
 function drupalhub_node_count_enable(){
-	$node_types = node_type_get_types();
+	$node_types = array_keys(node_type_get_types());
 	foreach ($node_types as $type) {
 	  	drupalhub_node_count_add_instance($type);
 	  }  
