@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * Code for the drupalhub_node_count
+ */
+define('DRUPALHUB_NODE_COUNT_FIELDNAME', 'drupalhub_node_count');
+
+/**
+ * Implements hook_node_type_insert().
+ * 
+ * adding count_node field to all new node types
+ */
+function drupalhub_node_count_node_type_insert($info){
+	//include install file to use function
+	module_load_include('install', 'drupalhub_node_count', 'drupalhub_node_count');
+	drupalhub_node_count_add_instance($info->type);
+	}
+/*
+ Implements hook_permission().
+
+function drupalhub_node_count_permissions() {
+  return array(
+    'manage drupalhub settings' => array(
+      'title' => t('Managing DrupalHub'),
+      'description' => t('Grant to the user the permission to manage DrupalHub settings.')
+    ),
+  );
+} */
