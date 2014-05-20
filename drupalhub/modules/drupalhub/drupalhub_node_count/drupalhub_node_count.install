@@ -28,9 +28,9 @@ function drupalhub_node_count_add_instance($type){
           'label' => 'hidden',
             'type' => 'hidden',
              ),
-      'teader' => array(
+      'teaser' => array(
         'label' => 'inline',
-        'type' => 'default',
+        'type' => 'number_integer',
             ),
           ),
     	);
