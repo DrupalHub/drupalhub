@@ -2,6 +2,12 @@
 
 define('DRUPALHUB_NODE_COUNT_FIELDNAME', 'drupalhub_node_count');
 
+
+/**
+ * Implements hook_node_type_enable().
+ * 
+ * adding count_node field to all exist node types
+ */
 function drupalhub_node_count_enable(){
 	$node_types = array_keys(node_type_get_types());
 	foreach ($node_types as $type) {
