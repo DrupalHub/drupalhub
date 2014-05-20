@@ -407,6 +407,14 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['picture']['empty_zero'] = TRUE;
   /* Field: User: Reputation */
   $handler->display->display_options['fields']['field_reputation']['id'] = 'field_reputation';
   $handler->display->display_options['fields']['field_reputation']['table'] = 'field_data_field_reputation';

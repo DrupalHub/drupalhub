@@ -23,7 +23,7 @@ class Group extends DrupalHubMigrate {
     $this->addFieldMapping('field_group_logo:file_replace')
       ->defaultValue(FILE_EXISTS_REPLACE);
     $this->addFieldMapping('field_group_logo:source_dir')
-      ->defaultValue(drupal_get_path('module', 'drupalhub_migrate') . '/includes/images');
+      ->defaultValue(drupal_get_path('module', 'drupalhub_migrate') . '/includes/images/nodes');
     $this->addFieldMapping('field_group_logo:destination_dir', 'destination');
 
     $this->addFieldMapping('uid', 'uid')

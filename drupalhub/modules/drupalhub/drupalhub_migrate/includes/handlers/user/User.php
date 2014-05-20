@@ -10,6 +10,7 @@ class User extends Migration {
     array('name', 'Username'),
     array('pass', 'Password'),
     array('mail', 'Email'),
+    array('picture', 'Picture'),
   );
 
   public function __construct() {
@@ -19,6 +20,7 @@ class User extends Migration {
     $this->addFieldMapping('name', 'name');
     $this->addFieldMapping('pass', 'pass');
     $this->addFieldMapping('mail', 'mail');
+    $this->addFieldMapping('picture', 'picture');
     $this->addFieldMapping('status')
       ->defaultValue(TRUE);
 
@@ -39,10 +41,24 @@ class User extends Migration {
   }
 
   /**
-   * Granting a role to the user from the CSV.
+   * Add picture for the user.
    */
   function complete($entity, $row) {
-    $edit = array();
+    // Copy the file.
+    $uri = file_unmanaged_copy(DRUPAL_ROOT . '/' . drupal_get_path('module', 'drupalhub_migrate') . '/includes/images/users/' . $row->picture, 'public://pictures');
+
+    // Create the file manage entry.
+    $file = new stdClass;
+    $file->uid = $entity->uid;
+    $file->filename = $row->picture;
+    $file->uri = $uri;
+    $file->status = 1;
+    $file->filemime = 'image/jpg';
+    file_save($file);
+
+    // Update the user picture.
+    $file->status = 0;
+    $edit = array ('picture' => $file);
     user_save($entity, $edit);
   }
 }

@@ -27,7 +27,7 @@ class Recommendation extends DrupalHubMigrate {
     $this->addFieldMapping('field_recommendation_images:file_replace')
       ->defaultValue(FILE_EXISTS_REPLACE);
     $this->addFieldMapping('field_recommendation_images:source_dir')
-      ->defaultValue(drupal_get_path('module', 'drupalhub_migrate') . '/includes/images');
+      ->defaultValue(drupal_get_path('module', 'drupalhub_migrate') . '/includes/images/nodes');
     $this->addFieldMapping('field_recommendation_images:destination_dir', 'destination');
   }
 
