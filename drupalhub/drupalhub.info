@@ -38,6 +38,7 @@ dependencies[] = email
 dependencies[] = features
 dependencies[] = flag
 dependencies[] = galleryformatter
+dependencies[] = gravatar
 dependencies[] = insert
 dependencies[] = inline_devel
 dependencies[] = jquery_update

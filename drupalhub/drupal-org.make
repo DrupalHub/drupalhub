@@ -54,6 +54,9 @@ projects[github_connect][download][branch] = 7.x-1.x
 projects[github_connect][download][revision] = e091c59
 projects[github_connect][subdir] = contrib
 
+projects[gravatar][version] = "1.1"
+projects[gravatar][subdir] = contrib
+
 projects[inline_devel][version] = "2.0"
 projects[inline_devel][subdir] = contrib
 
