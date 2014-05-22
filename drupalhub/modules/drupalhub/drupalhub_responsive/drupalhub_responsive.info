@@ -35,4 +35,3 @@ features[image][] = large_breakpoints_theme_bootstrap_drupalhub_narrow_1x
 features[image][] = large_breakpoints_theme_bootstrap_drupalhub_tv_1x
 features[image][] = large_breakpoints_theme_bootstrap_drupalhub_wide_1x
 features[picture_mapping][] = bootstrap_drupalhub
-project path = ../drupalhub/modules/drupalhub

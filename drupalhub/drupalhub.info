@@ -55,6 +55,7 @@ dependencies[] = migrate
 dependencies[] = migrate_ui
 dependencies[] = module_filter
 dependencies[] = og
+dependencies[] = og_ui
 dependencies[] = pathauto
 dependencies[] = page_manager
 dependencies[] = panels
