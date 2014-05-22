@@ -87,7 +87,7 @@ function drupalhub_install() {
 
   // Set admin and default theme.
   $enable = array(
-    'theme_default' => 'drupalhub_basetheme',
+    'theme_default' => 'drupalhub',
     'admin_theme' => 'seven',
   );
   theme_enable($enable);
