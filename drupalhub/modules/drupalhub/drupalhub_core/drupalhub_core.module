@@ -11,6 +11,13 @@ include_once 'drupalhub_core.features.inc';
  */
 
 /**
+ * Implements hook_init().
+ */
+function drupalhub_core_init() {
+  drupal_add_css(drupal_get_path('theme', 'drupalhub') . '/FontAwesome/css/font-awesome.min.css');
+}
+
+/**
  * Implements hook_permission().
  */
 function drupalhub_core_permissions() {

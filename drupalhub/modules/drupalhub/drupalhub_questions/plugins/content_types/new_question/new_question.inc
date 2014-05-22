@@ -10,7 +10,7 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
 
   $block = new stdClass();
   $block->title = '';
-  $block->content = drupalhub_core_modal_window(array(
+  $block->content = '<i class="fa fa-plus"></i>' . drupalhub_core_modal_window(array(
     'text' => t('Post a question!'),
     'href' => 'drupalhub_questions/create',
     'class' => 'create-question',
