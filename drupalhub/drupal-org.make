@@ -4,6 +4,9 @@ api = 2
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = 3.0-rc4
 
+projects[breakpoints][subdir] = "contrib"
+projects[breakpoints][version] = 1.1
+
 projects[calendar][subdir] = "contrib"
 projects[calendar][version] = 3.4
 
@@ -53,6 +56,9 @@ projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x
 projects[github_connect][download][revision] = e091c59
 projects[github_connect][subdir] = contrib
+
+projects[imagefield_crop][subdir] = contrib
+projects[imagefield_crop][version] = "1.1"
 
 projects[gravatar][version] = "1.1"
 projects[gravatar][subdir] = contrib
@@ -111,6 +117,12 @@ projects[panels_bootstrap_layouts][subdir] = contrib
 projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = 1.2
 
+projects[picture][subdir] = "contrib"
+projects[picture][version] = 1.2
+
+projects[retina_images][subdir] = "contrib"
+projects[retina_images][version] = "1.0-beta4"
+
 projects[restws][subdir] = "contrib"
 projects[restws][version] = "2.0-alpha3"
 
@@ -149,6 +161,7 @@ projects[views_bulk_operations][version] = "3.2"
 projects[bootstrap] = bootstrap
 projects[bootstrap][version] = 3.0
 projects[bootstrap][type] = "theme"
+
 
 ; Libraries
 libraries[jquery_caret_position][download][type] = "git"

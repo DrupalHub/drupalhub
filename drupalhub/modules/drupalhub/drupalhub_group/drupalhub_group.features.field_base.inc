@@ -10,13 +10,13 @@
 function drupalhub_group_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_banner_image'
-  $field_bases['field_banner_image'] = array(
+  // Exported field_base: 'field_group_banner_cropimage'
+  $field_bases['field_group_banner_cropimage'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_banner_image',
+    'field_name' => 'field_group_banner_cropimage',
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -154,13 +154,13 @@ function drupalhub_group_field_default_field_bases() {
     'type' => 'vud',
   );
 
-  // Exported field_base: 'field_project_banner'
-  $field_bases['field_project_banner'] = array(
+  // Exported field_base: 'field_project_banner_cropimage'
+  $field_bases['field_project_banner_cropimage'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_project_banner',
+    'field_name' => 'field_project_banner_cropimage',
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -184,13 +184,40 @@ function drupalhub_group_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_project_gallery'
-  $field_bases['field_project_gallery'] = array(
+  // Exported field_base: 'field_project_banner_text'
+  $field_bases['field_project_banner_text'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_project_banner_text',
+    'foreign keys' => array(
+      'format' => array(
+        'columns' => array(
+          'format' => 'format',
+        ),
+        'table' => 'filter_format',
+      ),
+    ),
+    'indexes' => array(
+      'format' => array(
+        0 => 'format',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'text',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'text_with_summary',
+  );
+
+  // Exported field_base: 'field_project_gallery_cropimage'
+  $field_bases['field_project_gallery_cropimage'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_project_gallery',
+    'field_name' => 'field_project_gallery_cropimage',
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -287,13 +314,13 @@ function drupalhub_group_field_default_field_bases() {
     'type' => 'video_embed_field',
   );
 
-  // Exported field_base: 'field_recommendation_images'
-  $field_bases['field_recommendation_images'] = array(
+  // Exported field_base: 'field_recommendation_cropimage'
+  $field_bases['field_recommendation_cropimage'] = array(
     'active' => 1,
-    'cardinality' => -1,
+    'cardinality' => 10,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_recommendation_images',
+    'field_name' => 'field_recommendation_cropimage',
     'foreign keys' => array(
       'fid' => array(
         'columns' => array(
@@ -320,7 +347,7 @@ function drupalhub_group_field_default_field_bases() {
   // Exported field_base: 'field_recommendation_links'
   $field_bases['field_recommendation_links'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
     'field_name' => 'field_recommendation_links',
@@ -414,6 +441,42 @@ function drupalhub_group_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'list_boolean',
+  );
+
+  // Exported field_base: 'og_group_ref'
+  $field_bases['og_group_ref'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'og_group_ref',
+    'foreign keys' => array(),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'handler' => 'og',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'og_behavior' => array(
+            'status' => TRUE,
+          ),
+        ),
+        'membership_type' => 'og_membership_type_default',
+        'target_bundles' => array(
+          0 => 'drupalhub_group',
+        ),
+      ),
+      'handler_submit' => 'Change handler',
+      'target_type' => 'node',
+    ),
+    'target_type' => 'node',
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'og_user_node'

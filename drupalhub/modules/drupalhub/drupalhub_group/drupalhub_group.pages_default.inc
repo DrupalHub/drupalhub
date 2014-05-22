@@ -45,7 +45,7 @@ function drupalhub_group_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'threecol_33_34_33_stacked';
+  $display->layout = 'bootstrap_threecol_stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -54,13 +54,22 @@ function drupalhub_group_default_page_manager_handlers() {
         'corner_location' => 'panel',
       ),
       'left' => array(
-        'corner_location' => 'panel',
+        'column_type' => 'col-lg',
+        'column_size' => '4',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
       ),
       'middle' => array(
-        'corner_location' => 'pane',
+        'column_type' => 'col-lg',
+        'column_size' => '4',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
       ),
       'right' => array(
-        'corner_location' => 'pane',
+        'column_type' => 'col-lg',
+        'column_size' => '4',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
       ),
       'bottom' => NULL,
     ),
@@ -68,13 +77,13 @@ function drupalhub_group_default_page_manager_handlers() {
       'style' => 'rounded_corners',
     ),
     'right' => array(
-      'style' => 'rounded_corners',
+      'style' => 'bootstrap_region',
     ),
     'middle' => array(
-      'style' => 'rounded_corners',
+      'style' => 'bootstrap_region',
     ),
     'left' => array(
-      'style' => 'rounded_corners',
+      'style' => 'bootstrap_region',
     ),
   );
   $display->cache = array();
@@ -101,6 +110,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -130,6 +140,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -154,6 +165,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -178,7 +190,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
-      'style' => 'default',
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -205,11 +217,12 @@ function drupalhub_group_default_page_manager_handlers() {
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 1,
-      'override_title_text' => 'Group',
+      'override_title_text' => 'Author is in groups:',
     );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -268,6 +281,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -276,6 +290,44 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->uuid = '422b0f9c-7995-4c95-8234-4e32edf731cc';
     $display->content['new-422b0f9c-7995-4c95-8234-4e32edf731cc'] = $pane;
     $display->panels['middle'][0] = 'new-422b0f9c-7995-4c95-8234-4e32edf731cc';
+    $pane = new stdClass();
+    $pane->pid = 'new-36702ef7-33f4-4f16-bb4e-05f609c408c2';
+    $pane->panel = 'right';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:field_project_gallery_cropimage';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'galleryformatter_default',
+      'delta_limit' => '0',
+      'delta_offset' => '0',
+      'delta_reversed' => 0,
+      'formatter_settings' => array(
+        'slide_style' => 'sidebar_right',
+        'thumb_style' => 'thumbnail_retina',
+        'style' => 'Greenarrows',
+        'linking_method' => 'show_full_link',
+        'link_to_full' => 1,
+        'link_to_full_style' => '0',
+        'modal' => 'colorbox',
+      ),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+      'style' => 'rounded_corners',
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '36702ef7-33f4-4f16-bb4e-05f609c408c2';
+    $display->content['new-36702ef7-33f4-4f16-bb4e-05f609c408c2'] = $pane;
+    $display->panels['right'][0] = 'new-36702ef7-33f4-4f16-bb4e-05f609c408c2';
     $pane = new stdClass();
     $pane->pid = 'new-b72330cd-8103-4f0d-b869-1cf056e68f15';
     $pane->panel = 'right';
@@ -299,78 +351,23 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'b72330cd-8103-4f0d-b869-1cf056e68f15';
-    $display->content['new-b72330cd-8103-4f0d-b869-1cf056e68f15'] = $pane;
-    $display->panels['right'][0] = 'new-b72330cd-8103-4f0d-b869-1cf056e68f15';
-    $pane = new stdClass();
-    $pane->pid = 'new-5f6fe971-6e7c-4166-af77-97d46be18280';
-    $pane->panel = 'right';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_project_gallery';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'galleryformatter_default',
-      'delta_limit' => '0',
-      'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(
-        'slide_style' => 'sidebar_right',
-        'thumb_style' => 'galleryformatter_thumb',
-        'style' => 'nostyle',
-        'linking_method' => 'onclick_full',
-        'link_to_full' => 0,
-        'link_to_full_style' => '0',
-        'modal' => 'colorbox',
-        'colorbox_node_style' => 'wide_galleryformatter_for_project_pages__700x250_',
-        'colorbox_image_style' => '',
-        'colorbox_gallery' => 'none',
-        'colorbox_gallery_custom' => '',
-        'colorbox_caption' => 'auto',
-        'colorbox_caption_custom' => '',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '5f6fe971-6e7c-4166-af77-97d46be18280';
-    $display->content['new-5f6fe971-6e7c-4166-af77-97d46be18280'] = $pane;
-    $display->panels['right'][1] = 'new-5f6fe971-6e7c-4166-af77-97d46be18280';
+    $pane->uuid = 'b72330cd-8103-4f0d-b869-1cf056e68f15';
+    $display->content['new-b72330cd-8103-4f0d-b869-1cf056e68f15'] = $pane;
+    $display->panels['right'][1] = 'new-b72330cd-8103-4f0d-b869-1cf056e68f15';
     $pane = new stdClass();
-    $pane->pid = 'new-aef01fcc-da69-4439-8d90-b9c7d28cb31e';
+    $pane->pid = 'new-1692301a-5d80-491d-bc09-49b3a27518f8';
     $pane->panel = 'top';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_project_banner';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'group_banners-panel_pane_3';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'image',
-      'delta_limit' => '0',
-      'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(
-        'image_style' => 'wide_galleryformatter_for_project_pages__700x250_',
-        'image_link' => '',
-      ),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -379,9 +376,9 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'aef01fcc-da69-4439-8d90-b9c7d28cb31e';
-    $display->content['new-aef01fcc-da69-4439-8d90-b9c7d28cb31e'] = $pane;
-    $display->panels['top'][0] = 'new-aef01fcc-da69-4439-8d90-b9c7d28cb31e';
+    $pane->uuid = '1692301a-5d80-491d-bc09-49b3a27518f8';
+    $display->content['new-1692301a-5d80-491d-bc09-49b3a27518f8'] = $pane;
+    $display->panels['top'][0] = 'new-1692301a-5d80-491d-bc09-49b3a27518f8';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -422,36 +419,48 @@ function drupalhub_group_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'threecol_33_34_33_stacked';
+  $display->layout = 'bootstrap_threecol_stacked';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
       'default' => NULL,
       'top' => array(
-        'corner_location' => 'pane',
+        'column_type' => 'col-lg',
+        'column_size' => '12',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
       ),
       'left' => array(
-        'corner_location' => 'panel',
+        'column_type' => 'col-lg',
+        'column_size' => '4',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
       ),
       'middle' => array(
-        'corner_location' => 'pane',
+        'column_type' => 'col-lg',
+        'column_size' => '4',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
       ),
       'right' => array(
-        'corner_location' => 'pane',
+        'column_type' => 'col-lg',
+        'column_size' => '4',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
       ),
       'bottom' => NULL,
     ),
     'left' => array(
-      'style' => 'rounded_corners',
+      'style' => 'bootstrap_region',
     ),
     'middle' => array(
-      'style' => 'rounded_corners',
+      'style' => 'bootstrap_region',
     ),
     'right' => array(
-      'style' => 'rounded_corners',
+      'style' => 'bootstrap_region',
     ),
     'top' => array(
-      'style' => 'rounded_corners',
+      'style' => 'bootstrap_region',
     ),
   );
   $display->cache = array();
@@ -468,13 +477,16 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->access = array();
     $pane->configuration = array(
       'label' => 'hidden',
-      'formatter' => 'image',
+      'formatter' => 'picture',
       'delta_limit' => 0,
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
         'image_style' => 'medium',
         'image_link' => '',
+        'picture_group' => 'bootstrap_drupalhub',
+        'fallback_image_style' => '',
+        'colorbox' => 'bootstrap_drupalhub',
       ),
       'context' => 'argument_entity_id:node_1',
       'override_title' => 0,
@@ -483,6 +495,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -512,6 +525,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -535,6 +549,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -572,6 +587,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -591,6 +607,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -610,6 +627,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -629,6 +647,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -648,6 +667,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
@@ -657,7 +677,7 @@ function drupalhub_group_default_page_manager_handlers() {
     $display->content['new-9d6e9dac-13a1-452d-a11c-9a136d93de81'] = $pane;
     $display->panels['right'][1] = 'new-9d6e9dac-13a1-452d-a11c-9a136d93de81';
     $pane = new stdClass();
-    $pane->pid = 'new-6c9fda00-e98d-4d53-9b59-3cf98dff91bc';
+    $pane->pid = 'new-7832d8d7-9f9d-4081-a099-7815375b4f7a';
     $pane->panel = 'top';
     $pane->type = 'views_panes';
     $pane->subtype = 'group_banners-panel_pane_1';
@@ -667,14 +687,15 @@ function drupalhub_group_default_page_manager_handlers() {
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
+      'style' => 'rounded_corners',
     );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '6c9fda00-e98d-4d53-9b59-3cf98dff91bc';
-    $display->content['new-6c9fda00-e98d-4d53-9b59-3cf98dff91bc'] = $pane;
-    $display->panels['top'][0] = 'new-6c9fda00-e98d-4d53-9b59-3cf98dff91bc';
+    $pane->uuid = '7832d8d7-9f9d-4081-a099-7815375b4f7a';
+    $display->content['new-7832d8d7-9f9d-4081-a099-7815375b4f7a'] = $pane;
+    $display->panels['top'][0] = 'new-7832d8d7-9f9d-4081-a099-7815375b4f7a';
   $display->hide_title = PANELS_TITLE_NONE;
   $display->title_pane = 'new-e5390451-13ae-4b4b-a478-7e33e1c4e429';
   $handler->conf['display'] = $display;

@@ -63,3 +63,13 @@ stylesheets[all][] = css/style.css
 ; Method 2 uses BootstrapCDN, the only thing you might need to provide here
 ; is overrides to Bootstrap theme settings. Copy them here from the base theme
 ; to override.
+
+; ;---------------------------------------------------
+; ; Responsive image breakpoints (Breakpoints module)
+; ;---------------------------------------------------
+;
+
+breakpoints[mobile] = (min-width: 0px)
+breakpoints[narrow] = (min-width: 560px)
+breakpoints[wide] = (min-width: 851px)
+breakpoints[tv] = only screen and (min-width: 3456px)

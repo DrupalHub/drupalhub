@@ -134,19 +134,16 @@ function drupalhub_group_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
-  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Address */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'video_url';
-  $handler->display->display_options['fields']['field_address']['settings'] = array(
-    'video_style' => 'right_sidebar',
-  );
+  /* Field: Broken/missing handler */
+  $handler->display->display_options['fields']['field_project_gallery']['id'] = 'field_project_gallery';
+  $handler->display->display_options['fields']['field_project_gallery']['table'] = 'field_data_field_project_gallery';
+  $handler->display->display_options['fields']['field_project_gallery']['field'] = 'field_project_gallery';
+  $handler->display->display_options['fields']['field_project_gallery']['label'] = '';
+  $handler->display->display_options['fields']['field_project_gallery']['element_label_colon'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -246,8 +243,16 @@ function drupalhub_group_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['pager']['options']['items_per_page'] = '10';
   $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = '5000';
+  $handler->display->display_options['style_options']['navigation'] = 0;
+  $handler->display->display_options['style_options']['indicators'] = 0;
+  $handler->display->display_options['style_options']['pause'] = 0;
   $handler->display->display_options['row_plugin'] = 'node';
   $handler->display->display_options['row_options']['links'] = FALSE;
+  /* Relationship: Content revision: Content */
+  $handler->display->display_options['relationships']['nid']['id'] = 'nid';
+  $handler->display->display_options['relationships']['nid']['table'] = 'node_revision';
+  $handler->display->display_options['relationships']['nid']['field'] = 'nid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -287,16 +292,184 @@ function drupalhub_group_views_default_views() {
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'panels_fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['row_options']['regions'] = array(
+    'body' => 'right',
+    'field_group_banner_cropimage' => 'left',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
+  /* Field: Content: Group banner CropImage */
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['id'] = 'field_group_banner_cropimage';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['table'] = 'field_data_field_group_banner_cropimage';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['field'] = 'field_group_banner_cropimage';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['label'] = '';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['settings'] = array(
+    'picture_group' => 'bootstrap_drupalhub',
+    'fallback_image_style' => '',
+    'image_link' => '',
+    'colorbox' => 'bootstrap_drupalhub',
+  );
   $handler->display->display_options['path'] = 'group-banners';
 
   /* Display: Group banners */
   $handler = $view->new_display('panel_pane', 'Group banners', 'panel_pane_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = '5000';
+  $handler->display->display_options['style_options']['navigation'] = 0;
+  $handler->display->display_options['style_options']['indicators'] = 0;
+  $handler->display->display_options['style_options']['pause'] = 0;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'panels_fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['row_options']['regions'] = array(
+    'field_group_banner_cropimage' => 'left',
+    'body' => 'right',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Group banner CropImage */
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['id'] = 'field_group_banner_cropimage';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['table'] = 'field_data_field_group_banner_cropimage';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['field'] = 'field_group_banner_cropimage';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['label'] = '';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_group_banner_cropimage']['settings'] = array(
+    'picture_group' => 'bootstrap_drupalhub',
+    'fallback_image_style' => '',
+    'image_link' => '',
+    'colorbox' => 'bootstrap_drupalhub',
+  );
+  /* Field: Content: Body */
+  $handler->display->display_options['fields']['body']['id'] = 'body';
+  $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
+  $handler->display->display_options['fields']['body']['field'] = 'body';
+  $handler->display->display_options['fields']['body']['label'] = '';
+  $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
 
   /* Display: Group projects carousel */
   $handler = $view->new_display('panel_pane', 'Group projects carousel', 'panel_pane_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Selected projects';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = '5000';
+  $handler->display->display_options['style_options']['navigation'] = 0;
+  $handler->display->display_options['style_options']['indicators'] = 0;
+  $handler->display->display_options['style_options']['pause'] = 0;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'node';
+  $handler->display->display_options['row_options']['links'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Project gallery CropImage */
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['id'] = 'field_project_gallery_cropimage';
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['table'] = 'field_data_field_project_gallery_cropimage';
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['field'] = 'field_project_gallery_cropimage';
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['label'] = '';
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['type'] = 'galleryformatter_default';
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['settings'] = array(
+    'slide_style' => 'sidebar_right',
+    'thumb_style' => 'galleryformatter_thumb',
+    'style' => 'Greenarrows',
+    'link_to_full' => 1,
+    'link_to_full_style' => '0',
+    'modal' => 'colorbox',
+    'linking_method' => 'show_full_link',
+  );
+  $handler->display->display_options['fields']['field_project_gallery_cropimage']['delta_offset'] = '0';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
+  /* Filter criterion: Content: Type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'node';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'project' => 'project',
+  );
+
+  /* Display: Project banner */
+  $handler = $view->new_display('panel_pane', 'Project banner', 'panel_pane_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'views_bootstrap_carousel_plugin_style';
+  $handler->display->display_options['style_options']['interval'] = '5000';
+  $handler->display->display_options['style_options']['navigation'] = 0;
+  $handler->display->display_options['style_options']['indicators'] = 0;
+  $handler->display->display_options['style_options']['pause'] = 0;
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'panels_fields';
+  $handler->display->display_options['row_options']['default_field_elements'] = FALSE;
+  $handler->display->display_options['row_options']['regions'] = array(
+    'field_project_banner_cropimage' => 'left',
+    'field_project_banner_text' => 'right',
+  );
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Content: Project banner CropImage */
+  $handler->display->display_options['fields']['field_project_banner_cropimage']['id'] = 'field_project_banner_cropimage';
+  $handler->display->display_options['fields']['field_project_banner_cropimage']['table'] = 'field_data_field_project_banner_cropimage';
+  $handler->display->display_options['fields']['field_project_banner_cropimage']['field'] = 'field_project_banner_cropimage';
+  $handler->display->display_options['fields']['field_project_banner_cropimage']['label'] = '';
+  $handler->display->display_options['fields']['field_project_banner_cropimage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_banner_cropimage']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_project_banner_cropimage']['type'] = 'picture';
+  $handler->display->display_options['fields']['field_project_banner_cropimage']['settings'] = array(
+    'picture_group' => 'bootstrap_drupalhub',
+    'fallback_image_style' => '',
+    'image_link' => '',
+    'colorbox' => 'bootstrap_drupalhub',
+  );
+  /* Field: Content: Project Banner text */
+  $handler->display->display_options['fields']['field_project_banner_text']['id'] = 'field_project_banner_text';
+  $handler->display->display_options['fields']['field_project_banner_text']['table'] = 'field_data_field_project_banner_text';
+  $handler->display->display_options['fields']['field_project_banner_text']['field'] = 'field_project_banner_text';
+  $handler->display->display_options['fields']['field_project_banner_text']['label'] = '';
+  $handler->display->display_options['fields']['field_project_banner_text']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_project_banner_text']['settings'] = array(
+    'trim_length' => '600',
+  );
+  $handler->display->display_options['defaults']['arguments'] = FALSE;
+  /* Contextual filter: Content: Nid */
+  $handler->display->display_options['arguments']['nid']['id'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['table'] = 'node';
+  $handler->display->display_options['arguments']['nid']['field'] = 'nid';
+  $handler->display->display_options['arguments']['nid']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['nid']['default_argument_type'] = 'node';
+  $handler->display->display_options['arguments']['nid']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['nid']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['nid']['summary_options']['items_per_page'] = '25';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -329,11 +502,13 @@ function drupalhub_group_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Get the actual content from a content revision.'),
     t('All'),
     t('Page'),
     t('View panes'),
     t('Group projects carousel'),
     t('Selected projects'),
+    t('Project banner'),
   );
   $export['group_banners'] = $view;
 

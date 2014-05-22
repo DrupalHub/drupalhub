@@ -64,8 +64,7 @@ features[variable][] = vud_node_widget_show
 features[variable][] = vud_node_widget_vote_on_teaser
 features[variable][] = vud_tag
 features[views_view][] = main_page_questions
-<<<<<<< HEAD
 features_exclude[dependencies][og_ui] = og_ui
 features_exclude[field_instance][node-question-og_group_ref] = node-question-og_group_ref
-=======
->>>>>>> master
+features_exclude[dependencies][og_ui] = og_ui
+features_exclude[field_instance][node-question-og_group_ref] = node-question-og_group_ref
