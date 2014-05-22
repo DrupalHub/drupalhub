@@ -136,3 +136,25 @@ function drupalhub_core_modal_form($title, $form_id, $ajax) {
     return drupal_get_form($form_id);
   }
 }
+
+/**
+ * Implements hook_ctools_plugin_directory()
+ */
+function drupalhub_core_ctools_plugin_directory($module, $plugin) {
+  if ($module == "panels" && in_array($plugin, array('layouts', 'styles'))) {
+    return "plugins/$plugin";
+  }
+}
+
+function drupalhub_core_prepare_node($type) {
+  global $user;
+  $node = (object) array(
+    'uid' => $user->uid,
+    'name' => (isset($user->name) ? $user->name : ''),
+    'type' => $type,
+    'language' => LANGUAGE_NONE
+  );
+
+  return $node;
+}
+

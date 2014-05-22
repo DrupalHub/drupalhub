@@ -178,4 +178,3 @@ features[variable][] = node_submitted_project
 features[variable][] = node_submitted_recommendation
 features[views_view][] = content_of_group
 features[views_view][] = group_banners
-project path = ../drupalhub/modules/drupalhub

@@ -48,7 +48,7 @@ function drupalhub_pages_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'bootstrap_twocol_stacked';
+  $display->layout = 'drupalhub_homepage';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -67,12 +67,66 @@ function drupalhub_pages_default_page_manager_pages() {
         'offset_size' => '1',
       ),
       'bottom' => NULL,
+      'first_left' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'fist_right' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'second' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '12',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'second_left' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'second_right' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '6',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
+      'first' => array(
+        'column_type' => 'col-lg',
+        'column_size' => '12',
+        'offset_type' => 'col-lg-offset',
+        'offset_size' => '0',
+      ),
     ),
     'left' => array(
       'style' => 'bootstrap_region',
     ),
     'right' => array(
       'style' => 'bootstrap_region',
+    ),
+    'first' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'first_left' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'fist_right' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'second' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'second_left' => array(
+      'style' => 'drupalhub_region',
+    ),
+    'second_right' => array(
+      'style' => 'drupalhub_region',
     ),
   );
   $display->cache = array();
@@ -81,90 +135,10 @@ function drupalhub_pages_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-de35b5a0-66b7-4533-a771-0cd7f917863c';
-    $pane->panel = 'bottom';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h3>Recent friends activity</h3>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = 'de35b5a0-66b7-4533-a771-0cd7f917863c';
-    $display->content['new-de35b5a0-66b7-4533-a771-0cd7f917863c'] = $pane;
-    $display->panels['bottom'][0] = 'new-de35b5a0-66b7-4533-a771-0cd7f917863c';
-    $pane = new stdClass();
-    $pane->pid = 'new-d16b577d-8d6d-4317-adf0-308ee8c59a38';
-    $pane->panel = 'bottom';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h1>Starred media</h1>
-
-photos, youtube movies.',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'd16b577d-8d6d-4317-adf0-308ee8c59a38';
-    $display->content['new-d16b577d-8d6d-4317-adf0-308ee8c59a38'] = $pane;
-    $display->panels['bottom'][1] = 'new-d16b577d-8d6d-4317-adf0-308ee8c59a38';
-    $pane = new stdClass();
-    $pane->pid = 'new-0707b89e-b7a0-4c24-b057-10c767067fbf';
-    $pane->panel = 'bottom';
-    $pane->type = 'get_involve';
-    $pane->subtype = 'get_involve';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'return' => 'Finish',
-      'cancel' => 'Cancel',
-      'override_title' => 1,
-      'override_title_text' => '',
-      'form_build_id' => 'form-cdQg-WeOSeeM1GMyTeNYiSja91Pb0AfINjJn9W6k_Z4',
-      'form_token' => 'OpoRS5ZIH1qRxRhwaYcC-_qfMN5YVm-a5ltRugT75cQ',
-      'form_id' => 'drupalhub_pages_get_involve_content_type_edit_form',
-      'op' => 'Finish',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '0707b89e-b7a0-4c24-b057-10c767067fbf';
-    $display->content['new-0707b89e-b7a0-4c24-b057-10c767067fbf'] = $pane;
-    $display->panels['bottom'][2] = 'new-0707b89e-b7a0-4c24-b057-10c767067fbf';
-    $pane = new stdClass();
-    $pane->pid = 'new-e74a46dc-4d15-473d-a850-aa8a838a057a';
-    $pane->panel = 'left';
-    $pane->type = 'popular_tags';
-    $pane->subtype = 'popular_tags';
+    $pane->pid = 'new-03462688-14d9-4eb8-b9be-56efac88ab3c';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'front_page_gallery-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -176,37 +150,31 @@ photos, youtube movies.',
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'e74a46dc-4d15-473d-a850-aa8a838a057a';
-    $display->content['new-e74a46dc-4d15-473d-a850-aa8a838a057a'] = $pane;
-    $display->panels['left'][0] = 'new-e74a46dc-4d15-473d-a850-aa8a838a057a';
+    $pane->uuid = '03462688-14d9-4eb8-b9be-56efac88ab3c';
+    $display->content['new-03462688-14d9-4eb8-b9be-56efac88ab3c'] = $pane;
+    $display->panels['first'][0] = 'new-03462688-14d9-4eb8-b9be-56efac88ab3c';
     $pane = new stdClass();
-    $pane->pid = 'new-2dd3bedb-c73c-4bd2-b4be-4204a6267d86';
-    $pane->panel = 'left';
-    $pane->type = 'custom';
-    $pane->subtype = 'custom';
+    $pane->pid = 'new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
+    $pane->panel = 'first_left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'top_users-panel_pane_1';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array(
-      'admin_title' => '',
-      'title' => '',
-      'body' => '<h3>System messages</h3>',
-      'format' => 'filtered_html',
-      'substitute' => TRUE,
-    );
+    $pane->configuration = array();
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '2dd3bedb-c73c-4bd2-b4be-4204a6267d86';
-    $display->content['new-2dd3bedb-c73c-4bd2-b4be-4204a6267d86'] = $pane;
-    $display->panels['left'][1] = 'new-2dd3bedb-c73c-4bd2-b4be-4204a6267d86';
+    $pane->uuid = '7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
+    $display->content['new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec'] = $pane;
+    $display->panels['first_left'][0] = 'new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
     $pane = new stdClass();
-    $pane->pid = 'new-c51e31d0-2f07-4a18-abff-79b78fa58ac6';
-    $pane->panel = 'right';
+    $pane->pid = 'new-89bc83fa-12b3-4930-94df-c21443cf8ef0';
+    $pane->panel = 'first_left';
     $pane->type = 'views_panes';
     $pane->subtype = 'front_page_blogs-panel_pane_1';
     $pane->shown = TRUE;
@@ -218,16 +186,44 @@ photos, youtube movies.',
     );
     $pane->css = array();
     $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '89bc83fa-12b3-4930-94df-c21443cf8ef0';
+    $display->content['new-89bc83fa-12b3-4930-94df-c21443cf8ef0'] = $pane;
+    $display->panels['first_left'][1] = 'new-89bc83fa-12b3-4930-94df-c21443cf8ef0';
+    $pane = new stdClass();
+    $pane->pid = 'new-c08be55b-8548-4bc1-9628-572536a43b2e';
+    $pane->panel = 'fist_right';
+    $pane->type = 'new_question';
+    $pane->subtype = 'new_question';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-FCm5Aaa2mKY7BBz_GUfGi5XYn0u3kKUN0mpcs946s00',
+      'form_token' => '-6P4dfQdr9xdAN92E4IBF4GbMHt7opSPYQm_GgoVDSw',
+      'form_id' => 'drupalhub_questions_new_question_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c51e31d0-2f07-4a18-abff-79b78fa58ac6';
-    $display->content['new-c51e31d0-2f07-4a18-abff-79b78fa58ac6'] = $pane;
-    $display->panels['right'][0] = 'new-c51e31d0-2f07-4a18-abff-79b78fa58ac6';
+    $pane->uuid = 'c08be55b-8548-4bc1-9628-572536a43b2e';
+    $display->content['new-c08be55b-8548-4bc1-9628-572536a43b2e'] = $pane;
+    $display->panels['fist_right'][0] = 'new-c08be55b-8548-4bc1-9628-572536a43b2e';
     $pane = new stdClass();
-    $pane->pid = 'new-b3050dad-8e88-4025-8c3f-7f6c3e3c42d2';
-    $pane->panel = 'right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'main_page_questions-panel_pane_1';
+    $pane->pid = 'new-45565fc7-bff8-4186-b408-5b2de3de4c2e';
+    $pane->panel = 'fist_right';
+    $pane->type = 'popular_tags';
+    $pane->subtype = 'popular_tags';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -239,9 +235,95 @@ photos, youtube movies.',
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'b3050dad-8e88-4025-8c3f-7f6c3e3c42d2';
-    $display->content['new-b3050dad-8e88-4025-8c3f-7f6c3e3c42d2'] = $pane;
-    $display->panels['right'][1] = 'new-b3050dad-8e88-4025-8c3f-7f6c3e3c42d2';
+    $pane->uuid = '45565fc7-bff8-4186-b408-5b2de3de4c2e';
+    $display->content['new-45565fc7-bff8-4186-b408-5b2de3de4c2e'] = $pane;
+    $display->panels['fist_right'][1] = 'new-45565fc7-bff8-4186-b408-5b2de3de4c2e';
+    $pane = new stdClass();
+    $pane->pid = 'new-aff4e697-4747-4475-bd7e-96bd2e0df875';
+    $pane->panel = 'fist_right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'main_page_questions-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'aff4e697-4747-4475-bd7e-96bd2e0df875';
+    $display->content['new-aff4e697-4747-4475-bd7e-96bd2e0df875'] = $pane;
+    $display->panels['fist_right'][2] = 'new-aff4e697-4747-4475-bd7e-96bd2e0df875';
+    $pane = new stdClass();
+    $pane->pid = 'new-477f3a22-8662-484c-921a-48d11be1f560';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'service_providers-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '477f3a22-8662-484c-921a-48d11be1f560';
+    $display->content['new-477f3a22-8662-484c-921a-48d11be1f560'] = $pane;
+    $display->panels['second'][0] = 'new-477f3a22-8662-484c-921a-48d11be1f560';
+    $pane = new stdClass();
+    $pane->pid = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
+    $pane->panel = 'second_left';
+    $pane->type = 'drupal_of_the_month';
+    $pane->subtype = 'drupal_of_the_month';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'node_id' => NULL,
+      'form_build_id' => 'form-wRdOSddCpkxQ03f9Xmj0vXYL1DQioJaqJuGHxNK93TU',
+      'form_token' => 'MI69j11nIJ_A288BsplGcDsCIGJQbgR7IWrwL9Ud2YU',
+      'form_id' => 'drupalhub_pages_drupal_of_the_month_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
+    $display->content['new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532'] = $pane;
+    $display->panels['second_left'][0] = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
+    $pane = new stdClass();
+    $pane->pid = 'new-0606616b-f496-4afa-8d0f-f41302317fe1';
+    $pane->panel = 'second_right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'recommendation-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0606616b-f496-4afa-8d0f-f41302317fe1';
+    $display->content['new-0606616b-f496-4afa-8d0f-f41302317fe1'] = $pane;
+    $display->panels['second_right'][0] = 'new-0606616b-f496-4afa-8d0f-f41302317fe1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
