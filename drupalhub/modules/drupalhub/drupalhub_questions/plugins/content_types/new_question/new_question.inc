@@ -10,7 +10,7 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
 
   $block = new stdClass();
   $block->title = '';
-  $block->content = '<i class="fa fa-plus"></i>' . drupalhub_core_modal_window(array(
+  $question_link = drupalhub_core_modal_window(array(
     'text' => t('Post a question!'),
     'href' => 'drupalhub_questions/create',
     'class' => 'create-question',
@@ -28,6 +28,8 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
       'animation' => 'fadeIn',
     ),
   ));
+
+  $block->content = "<div class='new new-question'><i class='fa fa-plus'></i>" . $question_link . '</div>';
   return $block;
 }
 

@@ -8,11 +8,20 @@
   .view-id-top_users .views-row .views-field-picture {
     float: left;
     /* LTR */
-    padding-right: 25px; }
+    padding-right: 25px;
+    /* LTR */ }
   .view-id-top_users .views-row .fa {
     color: #008000; }
 
 .pane-popular-tags .tagged_items li {
   display: inline;
   list-style-type: none;
-  padding-right: 20px; }
+  padding-right: 20px;
+  /* LTR */ }
+
+.new.new-question {
+  width: 150px;
+  font-weight: bold; }
+  .new.new-question i {
+    padding-right: 10px;
+    /* LTR */ }

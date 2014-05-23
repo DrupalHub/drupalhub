@@ -2,12 +2,13 @@
 
   .views-row {
     @include clearfix;
+
     padding-top: 15px;
     padding-bottom: 15px;
 
     .views-field-picture {
       float: left; /* LTR */
-      padding-right: 25px;
+      padding-right: 25px; /* LTR */
     }
 
     .fa {
@@ -23,7 +24,19 @@
     li {
       display: inline;
       list-style-type: none;
-      padding-right: 20px;
+      padding-right: 20px; /* LTR */
+    }
+  }
+}
+
+.new {
+
+  &.new-question {
+    width: 150px;
+    font-weight: bold;
+
+    i {
+      padding-right: 10px; /* LTR */
     }
   }
 }
