@@ -1,4 +1,12 @@
-// Global css design.
+// Variables.
+$blue-bright: #21a8e0;
+$orange-button-background: #f7b700;
+$orange-button-circle: #fdf1cc;
+$orange-button-plus: #f7b800;
+$blue-title: #20aae4;
+$grey1: #e6e6e6;
+
+  // Global css design.
 @mixin clearfix {
 
   &:after {
