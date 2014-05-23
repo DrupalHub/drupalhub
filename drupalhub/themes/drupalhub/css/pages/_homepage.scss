@@ -9,6 +9,21 @@
       float: left; /* LTR */
       padding-right: 25px;
     }
-  }
 
+    .fa {
+      color: #008000;
+    }
+  }
+}
+
+.pane-popular-tags {
+
+  .tagged_items {
+
+    li {
+      display: inline;
+      list-style-type: none;
+      padding-right: 20px;
+    }
+  }
 }
