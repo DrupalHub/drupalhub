@@ -245,19 +245,13 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Content: Recommendation Images */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_recommendation_images']['id'] = 'field_recommendation_images';
   $handler->display->display_options['fields']['field_recommendation_images']['table'] = 'field_data_field_recommendation_images';
   $handler->display->display_options['fields']['field_recommendation_images']['field'] = 'field_recommendation_images';
   $handler->display->display_options['fields']['field_recommendation_images']['label'] = '';
   $handler->display->display_options['fields']['field_recommendation_images']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_recommendation_images']['click_sort_column'] = 'fid';
-  $handler->display->display_options['fields']['field_recommendation_images']['settings'] = array(
-    'image_style' => 'medium',
-    'image_link' => '',
-  );
-  $handler->display->display_options['fields']['field_recommendation_images']['delta_offset'] = '0';
-  /* Field: Content: Recommendation Link */
+  /* Field: Content: Recommendation Links */
   $handler->display->display_options['fields']['field_recommendation_links']['id'] = 'field_recommendation_links';
   $handler->display->display_options['fields']['field_recommendation_links']['table'] = 'field_data_field_recommendation_links';
   $handler->display->display_options['fields']['field_recommendation_links']['field'] = 'field_recommendation_links';
@@ -404,7 +398,9 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
-  $handler->display->display_options['pager']['type'] = 'full';
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '5';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
   /* Field: User: Picture */
@@ -415,6 +411,7 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['hide_empty'] = TRUE;
   $handler->display->display_options['fields']['picture']['empty_zero'] = TRUE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'top_users';
   /* Field: User: Reputation */
   $handler->display->display_options['fields']['field_reputation']['id'] = 'field_reputation';
   $handler->display->display_options['fields']['field_reputation']['table'] = 'field_data_field_reputation';
@@ -433,11 +430,17 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['name']['table'] = 'users';
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['name']['alter']['text'] = '[name] ([field_reputation])';
   $handler->display->display_options['fields']['name']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['name']['alter']['ellipsis'] = FALSE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Global: Custom text */
+  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['table'] = 'views';
+  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
+  $handler->display->display_options['fields']['nothing']['label'] = '';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<i class="fa fa-heart"></i> [field_reputation]';
+  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: User: Created date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'users';
@@ -466,14 +469,8 @@ function drupalhub_pages_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Items per page'),
-    t('- All -'),
-    t('Offset'),
-    t('« first'),
-    t('‹ previous'),
-    t('next ›'),
-    t('last »'),
     t('[name] ([field_reputation])'),
+    t('<i class="fa fa-heart"></i> [field_reputation]'),
     t('Content pane'),
     t('View panes'),
   );

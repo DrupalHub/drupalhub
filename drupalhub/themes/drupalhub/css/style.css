@@ -1,4 +1,11 @@
-/**
- * This file should get overwritten if Method 1 is used. If Method 2 is chosen,
- * remove this comment and start adding your styles to this file.
- */
+.view-id-top_users .views-row {
+  padding-top: 15px;
+  padding-bottom: 15px; }
+  .view-id-top_users .views-row:after {
+    content: "";
+    display: table;
+    clear: both; }
+  .view-id-top_users .views-row .views-field-picture {
+    float: left;
+    /* LTR */
+    padding-right: 25px; }
