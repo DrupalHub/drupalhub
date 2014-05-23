@@ -31,12 +31,28 @@
 
 .new {
 
-  &.new-question {
-    width: 150px;
-    font-weight: bold;
+  @include rounded(10px, 10px);
+  background: $orange-button-background;
+  width: 170px;
+  height: 40px;
+  font-weight: bold;
+  padding-left: 8px;
+  padding-top: 7px;
 
-    i {
-      padding-right: 10px; /* LTR */
+  .plus-wrapper {
+    background: $orange-button-circle;
+    @include rounded(15px, 15px);
+
+    .fa {
+      color: $orange-button-plus;
+      margin: 5px 5px 0px 5px;
     }
+  }
+
+  a {
+    color: white;
+  }
+
+  &.new-question {
   }
 }

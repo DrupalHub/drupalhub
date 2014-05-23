@@ -19,9 +19,25 @@
   padding-right: 20px;
   /* LTR */ }
 
-.new.new-question {
-  width: 150px;
-  font-weight: bold; }
-  .new.new-question i {
-    padding-right: 10px;
-    /* LTR */ }
+.new {
+  -webkit-border-radius: 10px 10px;
+  -moz-border-radius: 1;
+  -khtml-border-radius: 1;
+  border-radius: 1;
+  background: #f7b700;
+  width: 170px;
+  height: 40px;
+  font-weight: bold;
+  padding-left: 8px;
+  padding-top: 7px; }
+  .new .plus-wrapper {
+    background: #fdf1cc;
+    -webkit-border-radius: 15px 15px;
+    -moz-border-radius: 1;
+    -khtml-border-radius: 1;
+    border-radius: 1; }
+    .new .plus-wrapper .fa {
+      color: #f7b800;
+      margin: 5px 5px 0px 5px; }
+  .new a {
+    color: white; }

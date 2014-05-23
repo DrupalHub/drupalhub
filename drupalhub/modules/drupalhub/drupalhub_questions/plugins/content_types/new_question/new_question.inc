@@ -29,7 +29,11 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
     ),
   ));
 
-  $block->content = "<div class='new new-question'><i class='fa fa-plus'></i>" . $question_link . '</div>';
+  $block->content = "
+    <div class='new new-question'>
+      <span class='plus-wrapper'><i class='fa fa-plus'></i></span>
+      <span class='link-wrapper'>" . $question_link . '</span>
+    </div>';
   return $block;
 }
 
