@@ -1,0 +1,13 @@
+// Global css design.
+@mixin clearfix {
+
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+// This is the part when we import css style per page.
+@import "pages/homepage.scss";

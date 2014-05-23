@@ -1,0 +1,14 @@
+.view-id-top_users {
+
+  .views-row {
+    @include clearfix;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    .views-field-picture {
+      float: left; /* LTR */
+      padding-right: 25px;
+    }
+  }
+
+}
