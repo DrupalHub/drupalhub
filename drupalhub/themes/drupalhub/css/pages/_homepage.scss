@@ -74,12 +74,12 @@ body.front {
     .views-row {
       padding-bottom: 40px;
 
-      .views-field-picture {
+      .image {
         float: left;
         padding-right: 40px;
       }
 
-      .views-field-title {
+      .title {
 
         a {
           color: $darker-blue;
@@ -87,12 +87,20 @@ body.front {
         }
       }
 
-      .views-field-nothing {
+      .body-stats {
 
-        .body-stats {
+        .stats {
 
           .fa-heart {
             color: #008000;
+          }
+        }
+
+        .body {
+
+          .user {
+            float: left;
+            padding-right: 10px;
           }
         }
       }

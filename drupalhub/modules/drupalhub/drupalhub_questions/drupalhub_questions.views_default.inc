@@ -65,21 +65,18 @@ function drupalhub_questions_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
-  $handler->display->display_options['fields']['body']['exclude'] = TRUE;
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
   /* Field: Field: Vote */
   $handler->display->display_options['fields']['field_vote']['id'] = 'field_vote';
   $handler->display->display_options['fields']['field_vote']['table'] = 'field_data_field_vote';
   $handler->display->display_options['fields']['field_vote']['field'] = 'field_vote';
   $handler->display->display_options['fields']['field_vote']['label'] = '';
-  $handler->display->display_options['fields']['field_vote']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_vote']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_vote']['type'] = 'drupalhub_questions';
   $handler->display->display_options['fields']['field_vote']['delta_offset'] = '0';
@@ -88,18 +85,7 @@ function drupalhub_questions_views_default_views() {
   $handler->display->display_options['fields']['comment_count']['table'] = 'node_comment_statistics';
   $handler->display->display_options['fields']['comment_count']['field'] = 'comment_count';
   $handler->display->display_options['fields']['comment_count']['label'] = '';
-  $handler->display->display_options['fields']['comment_count']['exclude'] = TRUE;
   $handler->display->display_options['fields']['comment_count']['element_label_colon'] = FALSE;
-  /* Field: Global: Custom text */
-  $handler->display->display_options['fields']['nothing']['id'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['table'] = 'views';
-  $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
-  $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<div class=\'body-stats\'>
-  <div class=\'stats\'><i class="fa fa-comment"></i> [comment_count] <i class="fa fa-heart"></i> [field_vote]</div>
-  <div class=\'body\'>[name] [body]</div>
-</div>';
-  $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -134,10 +120,6 @@ function drupalhub_questions_views_default_views() {
     t('Published at'),
     t('.'),
     t(','),
-    t('<div class=\'body-stats\'>
-  <div class=\'stats\'><i class="fa fa-comment"></i> [comment_count] <i class="fa fa-heart"></i> [field_vote]</div>
-  <div class=\'body\'>[name] [body]</div>
-</div>'),
     t('Content pane'),
     t('View panes'),
   );

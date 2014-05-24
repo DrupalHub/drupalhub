@@ -72,11 +72,14 @@ body.front .pane-new-question .link-new-question a {
     padding: 3px 5px 3px 5px; }
 body.front .view-main-page-questions .views-row {
   padding-bottom: 40px; }
-  body.front .view-main-page-questions .views-row .views-field-picture {
+  body.front .view-main-page-questions .views-row .image {
     float: left;
     padding-right: 40px; }
-  body.front .view-main-page-questions .views-row .views-field-title a {
+  body.front .view-main-page-questions .views-row .title a {
     color: #20a8e0;
     font-size: 20px; }
-  body.front .view-main-page-questions .views-row .views-field-nothing .body-stats .fa-heart {
+  body.front .view-main-page-questions .views-row .body-stats .stats .fa-heart {
     color: #008000; }
+  body.front .view-main-page-questions .views-row .body-stats .body .user {
+    float: left;
+    padding-right: 10px; }
