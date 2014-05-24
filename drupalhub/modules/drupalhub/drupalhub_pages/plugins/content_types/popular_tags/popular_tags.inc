@@ -7,8 +7,6 @@ $plugin = array(
 );
 
 function drupalhub_pages_popular_tags_content_type_render($subtype, $conf, $args, $context) {
-  drupal_add_css(drupal_get_path('module', 'drupalhub_pages') . '/css/drupalhub_pages.css');
-
   $block = new stdClass();
   $block->title = '';
 

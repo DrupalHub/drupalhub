@@ -41,41 +41,21 @@ body.front {
 
   .pane-new-question {
 
-    h2.pane-title {
+    .title {
       float: left;
       margin: 0px;
       padding: 0px;
       color: $blue-title;
       font-size: 20px;
+      padding-right: 5px;
+      font-weight: bold;
     }
 
-    .pane-content {
-      float: right;
-    }
-  }
+    .link-new-question {
 
-  .new {
-
-    @include rounded(10px, 10px);
-    background: $orange-button-background;
-    width: 170px;
-    height: 40px;
-    font-weight: bold;
-    padding-left: 8px;
-    padding-top: 7px;
-
-    .plus-wrapper {
-      background: $orange-button-circle;
-      @include rounded(15px, 15px);
-
-      .fa {
-        color: $orange-button-plus;
-        margin: 5px 5px 0px 5px;
+      a {
+        @include orange-button;
       }
-    }
-
-    a {
-      color: white;
     }
   }
 }

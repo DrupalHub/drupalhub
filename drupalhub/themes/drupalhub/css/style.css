@@ -31,15 +31,15 @@ body.front .pane-popular-tags ul.tagged_items {
     list-style-type: none; }
     body.front .pane-popular-tags ul.tagged_items li a {
       color: white; }
-body.front .pane-new-question h2.pane-title {
+body.front .pane-new-question .title {
   float: left;
   margin: 0px;
   padding: 0px;
   color: #20aae4;
-  font-size: 20px; }
-body.front .pane-new-question .pane-content {
-  float: right; }
-body.front .new {
+  font-size: 20px;
+  padding-right: 5px;
+  font-weight: bold; }
+body.front .pane-new-question .link-new-question a {
   -webkit-border-radius: 10px 10px;
   -moz-border-radius: 1;
   -khtml-border-radius: 1;
@@ -48,16 +48,17 @@ body.front .new {
   width: 170px;
   height: 40px;
   font-weight: bold;
-  padding-left: 8px;
-  padding-top: 7px; }
-  body.front .new .plus-wrapper {
+  color: white;
+  padding: 10px 10px 10px 5px; }
+  body.front .pane-new-question .link-new-question a:before {
+    font-family: FontAwesome;
+    font-weight: none;
+    content: "\f067";
     background: #fdf1cc;
     -webkit-border-radius: 15px 15px;
     -moz-border-radius: 1;
     -khtml-border-radius: 1;
-    border-radius: 1; }
-    body.front .new .plus-wrapper .fa {
-      color: #f7b800;
-      margin: 5px 5px 0px 5px; }
-  body.front .new a {
-    color: white; }
+    border-radius: 1;
+    color: #f7b800;
+    margin: 5px 5px 0px 5px;
+    padding: 3px 5px 3px 5px; }

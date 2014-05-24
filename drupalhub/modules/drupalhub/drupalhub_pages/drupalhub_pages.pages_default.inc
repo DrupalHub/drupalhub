@@ -201,9 +201,9 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'return' => 'Finish',
       'cancel' => 'Cancel',
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => 'Help and support',
-      'form_build_id' => 'form-sXY8enpXus1qTZeeN3rpjiGgNE4xD_YX0Ns-poD95ck',
+      'form_build_id' => 'form-Zizgk-Egi6MFMPdd6nqKofna7TxJC6OdOpL3FsYJlsU',
       'form_token' => '8_yse4_FfeeGyL5X8uPMYtr2sfl9Ygk-3nrHOrCDUVs',
       'form_id' => 'drupalhub_questions_new_question_content_type_edit_form',
       'op' => 'Finish',

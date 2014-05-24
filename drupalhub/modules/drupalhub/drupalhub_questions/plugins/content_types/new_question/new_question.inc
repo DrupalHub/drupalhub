@@ -30,10 +30,9 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
   ));
 
   $block->content = "
-    <div class='new new-question'>
-      <span class='plus-wrapper'><i class='fa fa-plus'></i></span>
-      <span class='link-wrapper'>" . $question_link . '</span>
-    </div>';
+    <span class='title'>" . t("Help and support") . "</span>
+    <span class='link-new-question'>" . $question_link . '</span>
+  ';
   return $block;
 }
 

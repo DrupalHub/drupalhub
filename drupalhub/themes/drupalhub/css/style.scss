@@ -26,6 +26,27 @@ $grey2: #d7d7d7;
   border-radius: $top / $left;
 }
 
+@mixin orange-button {
+  @include rounded(10px, 10px);
+  background: $orange-button-background;
+  width: 170px;
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 10px 10px 5px;
+
+  &:before {
+    font-family: FontAwesome;
+    font-weight: none;
+    content: "\f067";
+    background: $orange-button-circle;
+    @include rounded(15px, 15px);
+    color: $orange-button-plus;
+    margin: 5px 5px 0px 5px;
+    padding: 3px 5px 3px 5px;
+  }
+}
+
 .clearfix:after {
   content: "." !important;
   display: "hidden" !important;
