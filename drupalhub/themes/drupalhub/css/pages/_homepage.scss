@@ -68,4 +68,34 @@ body.front {
       }
     }
   }
+
+  .view-main-page-questions {
+
+    .views-row {
+      padding-bottom: 40px;
+
+      .views-field-picture {
+        float: left;
+        padding-right: 40px;
+      }
+
+      .views-field-title {
+
+        a {
+          color: $darker-blue;
+          font-size: 20px;
+        }
+      }
+
+      .views-field-nothing {
+
+        .body-stats {
+
+          .fa-heart {
+            color: #008000;
+          }
+        }
+      }
+    }
+  }
 }

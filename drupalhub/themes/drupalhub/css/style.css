@@ -70,3 +70,13 @@ body.front .pane-new-question .link-new-question a {
     color: #f7b800;
     margin: 5px 5px 0px 5px;
     padding: 3px 5px 3px 5px; }
+body.front .view-main-page-questions .views-row {
+  padding-bottom: 40px; }
+  body.front .view-main-page-questions .views-row .views-field-picture {
+    float: left;
+    padding-right: 40px; }
+  body.front .view-main-page-questions .views-row .views-field-title a {
+    color: #20a8e0;
+    font-size: 20px; }
+  body.front .view-main-page-questions .views-row .views-field-nothing .body-stats .fa-heart {
+    color: #008000; }
