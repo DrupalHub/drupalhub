@@ -11,9 +11,11 @@ $grey2: #d7d7d7;
 @mixin clearfix {
 
   &:after {
-    content: "";
-    display: table;
+    content: ".";
+    display: block;
+    height: 0;
     clear: both;
+    visibility: hidden;
   }
 }
 
@@ -22,6 +24,11 @@ $grey2: #d7d7d7;
   -moz-border-radius: $top / $left;
   -khtml-border-radius: $top / $left;
   border-radius: $top / $left;
+}
+
+.clearfix:after {
+  content: "." !important;
+  display: "hidden" !important;
 }
 
 // This is the part when we import css style per page.

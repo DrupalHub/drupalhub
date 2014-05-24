@@ -1,25 +1,45 @@
-.view-id-top_users .views-row {
+.clearfix:after {
+  content: "." !important;
+  display: "hidden" !important; }
+
+body.front .view-id-top_users .views-row {
   padding-top: 15px;
   padding-bottom: 15px; }
-  .view-id-top_users .views-row:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .view-id-top_users .views-row .views-field-picture {
+  body.front .view-id-top_users .views-row:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
+  body.front .view-id-top_users .views-row .views-field-picture {
     float: left;
     /* LTR */
     padding-right: 25px;
     /* LTR */ }
-  .view-id-top_users .views-row .fa {
+  body.front .view-id-top_users .views-row .fa {
     color: #008000; }
-
-.pane-popular-tags .tagged_items li {
-  display: inline;
-  list-style-type: none;
-  padding-right: 20px;
-  /* LTR */ }
-
-.new {
+body.front .pane-popular-tags ul.tagged_items {
+  -webkit-padding-start: 0px; }
+  body.front .pane-popular-tags ul.tagged_items li {
+    background: #d7d7d7;
+    padding: 10px 20px;
+    -webkit-border-radius: 10px 10px;
+    -moz-border-radius: 1;
+    -khtml-border-radius: 1;
+    border-radius: 1;
+    display: inline;
+    list-style-type: none; }
+    body.front .pane-popular-tags ul.tagged_items li a {
+      color: white; }
+body.front .pane-new-question h2.pane-title {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  color: #20aae4;
+  font-size: 20px; }
+body.front .pane-new-question .pane-content {
+  float: right; }
+body.front .new {
   -webkit-border-radius: 10px 10px;
   -moz-border-radius: 1;
   -khtml-border-radius: 1;
@@ -30,14 +50,14 @@
   font-weight: bold;
   padding-left: 8px;
   padding-top: 7px; }
-  .new .plus-wrapper {
+  body.front .new .plus-wrapper {
     background: #fdf1cc;
     -webkit-border-radius: 15px 15px;
     -moz-border-radius: 1;
     -khtml-border-radius: 1;
     border-radius: 1; }
-    .new .plus-wrapper .fa {
+    body.front .new .plus-wrapper .fa {
       color: #f7b800;
       margin: 5px 5px 0px 5px; }
-  .new a {
+  body.front .new a {
     color: white; }

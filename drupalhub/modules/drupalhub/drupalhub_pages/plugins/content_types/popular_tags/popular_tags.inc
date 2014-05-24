@@ -37,7 +37,7 @@ function drupalhub_pages_popular_tags_content_type_render($subtype, $conf, $args
   $items = array();
 
   foreach ($tagged_items as $item) {
-    $items[] = $item['link'] . ' (' . $item['tagged'] . ')';
+    $items[] = $item['link'];
   }
 
   $variables = array(

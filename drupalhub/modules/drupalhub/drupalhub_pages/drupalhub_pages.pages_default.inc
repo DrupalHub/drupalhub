@@ -201,10 +201,10 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'return' => 'Finish',
       'cancel' => 'Cancel',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'form_build_id' => 'form-FCm5Aaa2mKY7BBz_GUfGi5XYn0u3kKUN0mpcs946s00',
-      'form_token' => '-6P4dfQdr9xdAN92E4IBF4GbMHt7opSPYQm_GgoVDSw',
+      'override_title' => 1,
+      'override_title_text' => 'Help and support',
+      'form_build_id' => 'form-sXY8enpXus1qTZeeN3rpjiGgNE4xD_YX0Ns-poD95ck',
+      'form_token' => '8_yse4_FfeeGyL5X8uPMYtr2sfl9Ygk-3nrHOrCDUVs',
       'form_id' => 'drupalhub_questions_new_question_content_type_edit_form',
       'op' => 'Finish',
     );
@@ -212,7 +212,10 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();

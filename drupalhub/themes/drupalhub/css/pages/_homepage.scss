@@ -1,58 +1,81 @@
-.view-id-top_users {
+body.front {
 
-  .views-row {
-    @include clearfix;
+  .view-id-top_users {
 
-    padding-top: 15px;
-    padding-bottom: 15px;
+    .views-row {
+      @include clearfix;
 
-    .views-field-picture {
-      float: left; /* LTR */
-      padding-right: 25px; /* LTR */
-    }
+      padding-top: 15px;
+      padding-bottom: 15px;
 
-    .fa {
-      color: #008000;
-    }
-  }
-}
+      .views-field-picture {
+        float: left; /* LTR */
+        padding-right: 25px; /* LTR */
+      }
 
-.pane-popular-tags {
-
-  .tagged_items {
-
-    li {
-      display: inline;
-      list-style-type: none;
-      padding-right: 20px; /* LTR */
-    }
-  }
-}
-
-.new {
-
-  @include rounded(10px, 10px);
-  background: $orange-button-background;
-  width: 170px;
-  height: 40px;
-  font-weight: bold;
-  padding-left: 8px;
-  padding-top: 7px;
-
-  .plus-wrapper {
-    background: $orange-button-circle;
-    @include rounded(15px, 15px);
-
-    .fa {
-      color: $orange-button-plus;
-      margin: 5px 5px 0px 5px;
+      .fa {
+        color: #008000;
+      }
     }
   }
 
-  a {
-    color: white;
+  .pane-popular-tags {
+
+    ul.tagged_items {
+      // Look odd, i know.
+      -webkit-padding-start: 0px;
+
+      li {
+        background: $grey2;
+        padding: 10px 20px;
+        @include rounded(10px, 10px);
+        display: inline;
+        list-style-type: none;
+
+        a {
+          color: white;
+        }
+      }
+    }
   }
 
-  &.new-question {
+  .pane-new-question {
+
+    h2.pane-title {
+      float: left;
+      margin: 0px;
+      padding: 0px;
+      color: $blue-title;
+      font-size: 20px;
+    }
+
+    .pane-content {
+      float: right;
+    }
+  }
+
+  .new {
+
+    @include rounded(10px, 10px);
+    background: $orange-button-background;
+    width: 170px;
+    height: 40px;
+    font-weight: bold;
+    padding-left: 8px;
+    padding-top: 7px;
+
+    .plus-wrapper {
+      background: $orange-button-circle;
+      @include rounded(15px, 15px);
+
+      .fa {
+        color: $orange-button-plus;
+        margin: 5px 5px 0px 5px;
+      }
+    }
+
+    a {
+      color: white;
+    }
   }
 }
