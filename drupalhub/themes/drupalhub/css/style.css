@@ -18,6 +18,13 @@ body.front .view-id-top_users .views-row {
     /* LTR */ }
   body.front .view-id-top_users .views-row .fa {
     color: #008000; }
+body.front .pane-popular-tags .pane-title {
+  float: left;
+  margin: 0px;
+  padding: 0px;
+  font-size: 15px;
+  color: #a3a1a1;
+  margin-right: 10px; }
 body.front .pane-popular-tags ul.tagged_items {
   -webkit-padding-start: 0px; }
   body.front .pane-popular-tags ul.tagged_items li {
@@ -31,16 +38,17 @@ body.front .pane-popular-tags ul.tagged_items {
     list-style-type: none; }
     body.front .pane-popular-tags ul.tagged_items li a {
       color: white; }
-body.front .pane-new-question .title {
+body.front .pane-new-question .pane-title {
   float: left;
   margin: 0px;
   padding: 0px;
   color: #20aae4;
   font-size: 20px;
   padding-right: 5px;
-  font-weight: bold; }
+  font-weight: bold;
+  margin-right: 10px; }
 body.front .pane-new-question .link-new-question a {
-  -webkit-border-radius: 10px 10px;
+  -webkit-border-radius: 5px 5px;
   -moz-border-radius: 1;
   -khtml-border-radius: 1;
   border-radius: 1;

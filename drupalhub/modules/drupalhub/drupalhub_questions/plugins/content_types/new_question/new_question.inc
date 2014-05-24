@@ -30,7 +30,6 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
   ));
 
   $block->content = "
-    <span class='title'>" . t("Help and support") . "</span>
     <span class='link-new-question'>" . $question_link . '</span>
   ';
   return $block;

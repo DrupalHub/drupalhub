@@ -201,9 +201,9 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'return' => 'Finish',
       'cancel' => 'Cancel',
-      'override_title' => 0,
+      'override_title' => 1,
       'override_title_text' => 'Help and support',
-      'form_build_id' => 'form-Zizgk-Egi6MFMPdd6nqKofna7TxJC6OdOpL3FsYJlsU',
+      'form_build_id' => 'form-QLeYSyBRhNF3xIuXqXJSK8Xfvl-YGh04mCQsrEUIB8o',
       'form_token' => '8_yse4_FfeeGyL5X8uPMYtr2sfl9Ygk-3nrHOrCDUVs',
       'form_id' => 'drupalhub_questions_new_question_content_type_edit_form',
       'op' => 'Finish',
@@ -229,12 +229,24 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->subtype = 'popular_tags';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 1,
+      'override_title_text' => 'Popular tags: ',
+      'form_build_id' => 'form-vl9c7IKhYsqRoUoCLC4s5GEImPTcD6514KQQMWr6vWY',
+      'form_token' => 'ALSupKa_8bpKXADDd45pPPxgB8r63z-lrY575QrakxQ',
+      'form_id' => 'drupalhub_pages_popular_tags_content_type_edit_form',
+      'op' => 'Finish',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();

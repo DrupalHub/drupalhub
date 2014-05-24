@@ -21,6 +21,15 @@ body.front {
 
   .pane-popular-tags {
 
+    .pane-title {
+      float: left;
+      margin: 0px;
+      padding: 0px;
+      font-size: 15px;
+      color: $grey3;
+      margin-right: 10px;
+    }
+
     ul.tagged_items {
       // Look odd, i know.
       -webkit-padding-start: 0px;
@@ -41,7 +50,7 @@ body.front {
 
   .pane-new-question {
 
-    .title {
+    .pane-title {
       float: left;
       margin: 0px;
       padding: 0px;
@@ -49,6 +58,7 @@ body.front {
       font-size: 20px;
       padding-right: 5px;
       font-weight: bold;
+      margin-right: 10px;
     }
 
     .link-new-question {
