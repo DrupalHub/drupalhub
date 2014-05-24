@@ -81,7 +81,7 @@ function drupalhub_questions_views_default_views() {
   $handler->display->display_options['fields']['field_vote']['label'] = '';
   $handler->display->display_options['fields']['field_vote']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_vote']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_vote']['type'] = 'vud';
+  $handler->display->display_options['fields']['field_vote']['type'] = 'drupalhub_questions';
   $handler->display->display_options['fields']['field_vote']['delta_offset'] = '0';
   /* Field: Content: Comment count */
   $handler->display->display_options['fields']['comment_count']['id'] = 'comment_count';
