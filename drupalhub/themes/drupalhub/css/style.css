@@ -4,6 +4,11 @@
 
 body.front .view-id-top_users {
   background: #e5e5e5; }
+  body.front .view-id-top_users hr {
+    border-top: 1px solid #888;
+    margin: 15px 0px 0px 0px;
+    padding: 0px;
+    width: 95%; }
   body.front .view-id-top_users .top-most-active-user {
     background: #21a8e0;
     color: white;

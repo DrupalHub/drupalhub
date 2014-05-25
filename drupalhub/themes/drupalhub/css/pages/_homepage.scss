@@ -3,6 +3,13 @@ body.front {
   .view-id-top_users {
     background: $grey4;
 
+    hr {
+      border-top: 1px solid #888;
+      margin: 15px 0px 0px 0px;
+      padding: 0px;
+      width: 95%;
+    }
+
     .top-most-active-user {
       background: $blue-bright;
       color: white;
