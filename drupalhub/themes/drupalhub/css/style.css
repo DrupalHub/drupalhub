@@ -110,3 +110,18 @@ body.front .view-main-page-questions .views-row {
     /* LTR */
     padding-right: 10px;
     /* LTR */ }
+body.front .pane-front-page-blogs-panel-pane-1 {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  body.front .pane-front-page-blogs-panel-pane-1 .pane-title {
+    color: #20aae4;
+    padding-bottom: 20px; }
+  body.front .pane-front-page-blogs-panel-pane-1 .view-id-front_page_blogs .title {
+    margin-top: 0px; }
+    body.front .pane-front-page-blogs-panel-pane-1 .view-id-front_page_blogs .title a {
+      color: #000;
+      font-weight: normal; }
+  body.front .pane-front-page-blogs-panel-pane-1 .view-id-front_page_blogs .field-image {
+    float: left;
+    /* LTR */
+    padding-right: 20px; }

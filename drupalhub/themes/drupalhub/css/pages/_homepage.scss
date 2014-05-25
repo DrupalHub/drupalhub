@@ -124,4 +124,31 @@ body.front {
       }
     }
   }
+
+  .pane-front-page-blogs-panel-pane-1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .pane-title {
+      color: $blue-title;
+      padding-bottom: 20px;
+    }
+
+    .view-id-front_page_blogs {
+
+      .title {
+        margin-top: 0px;
+
+        a {
+          color: #000;
+          font-weight: normal;
+        }
+      }
+
+      .field-image {
+        float: left; /* LTR */
+        padding-right: 20px;
+      }
+    }
+  }
 }
