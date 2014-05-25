@@ -1,12 +1,21 @@
 body.front {
 
   .view-id-top_users {
+    background: $grey4;
+
+    .top-most-active-user {
+      background: $blue-bright;
+      color: white;
+      padding: 15px;
+      font-size: 30px;
+    }
 
     .views-row {
       @include clearfix;
 
       padding-top: 15px;
       padding-bottom: 15px;
+      padding-left: 10px; /* LTR */
 
       .views-field-picture {
         float: left; /* LTR */
@@ -23,12 +32,12 @@ body.front {
     padding-bottom: 40px;
 
     .pane-title {
-      float: left;
+      float: left; /* LTR */
       margin: 0px;
       padding: 0px;
       font-size: 15px;
       color: $grey3;
-      margin-right: 10px;
+      margin-right: 10px; /* LTR */
     }
 
     ul.tagged_items {
@@ -53,14 +62,14 @@ body.front {
     padding-bottom: 30px;
 
     .pane-title {
-      float: left;
+      float: left; /* LTR */
       margin: 0px;
       padding: 0px;
       color: $blue-title;
       font-size: 20px;
-      padding-right: 5px;
+      padding-right: 5px; /* LTR */
       font-weight: bold;
-      margin-right: 10px;
+      margin-right: 10px; /* LTR */
     }
 
     .link-new-question {
@@ -77,8 +86,8 @@ body.front {
       padding-bottom: 40px;
 
       .image {
-        float: left;
-        padding-right: 40px;
+        float: left; /* LTR */
+        padding-right: 40px; /* LTR */
       }
 
       .title {
@@ -101,8 +110,8 @@ body.front {
         .body {
 
           .user {
-            float: left;
-            padding-right: 10px;
+            float: left; /* LTR */
+            padding-right: 10px; /* LTR */
           }
         }
       }
