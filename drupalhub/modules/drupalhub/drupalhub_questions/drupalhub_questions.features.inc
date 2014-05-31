@@ -70,6 +70,39 @@ function drupalhub_questions_flag_default_flags() {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function drupalhub_questions_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: front_page_question.
+  $styles['front_page_question'] = array(
+    'name' => 'front_page_question',
+    'label' => 'Front page question',
+    'effects' => array(
+      7 => array(
+        'label' => 'Scale and crop',
+        'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
+        'effect callback' => 'retina_images_image_scale_and_crop_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'retina_images_image_resize_form',
+        'summary theme' => 'retina_images_image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_scale_and_crop',
+        'data' => array(
+          'width' => 80,
+          'height' => 80,
+          'retinafy' => 1,
+        ),
+        'weight' => 2,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_node_info().
  */
 function drupalhub_questions_node_info() {

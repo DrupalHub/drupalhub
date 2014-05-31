@@ -16,13 +16,7 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
     'class' => 'create-question',
     'modal_settings' => array(
       'modalSize' => array(
-        'type' => 'fixed',
-        'width' => 1000,
-        'height' => 600,
-        'addWidth' => 10,
-        'addHeight' => 10,
-        'contentRight' => 0,
-        'contentBottom' => 0,
+        'type' => 'scale',
       ),
       'modalOptions' => array('opacity' => .6),
       'animation' => 'fadeIn',
