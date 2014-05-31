@@ -164,4 +164,27 @@ body.front {
       float: right; /* LTR */
     }
   }
+
+  .view-id-service_providers {
+
+    .service_item {
+      border: $gery5 solid 1px;
+      margin: 0px 15px;
+      min-width: 140px;
+
+      .overflow {
+        min-height: 100px;
+        text-align: center;
+      }
+
+      .text {
+        min-height: 50px;
+        background: $grey2;
+
+        a {
+          color: #5d5a5a;
+        }
+      }
+    }
+  }
 }
