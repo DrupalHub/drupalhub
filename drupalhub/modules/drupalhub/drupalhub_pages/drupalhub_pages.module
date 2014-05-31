@@ -102,3 +102,14 @@ function drupalhub_pages_autocomplete($string = '') {
   drupal_json_output($data);
 }
 
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function drupalhub_pages_form_views_exposed_form_alter(&$form, $form_state) {
+  if ($form['#id'] != 'views-exposed-form-service-providers-panel-pane-1') {
+    return;
+  }
+
+  $form['title']['#attributes']['placeholder'][] = t('Search for service provider');
+}
+

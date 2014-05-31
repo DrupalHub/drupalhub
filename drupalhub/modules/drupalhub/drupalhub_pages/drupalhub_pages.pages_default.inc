@@ -246,7 +246,10 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'hidden-phone',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
@@ -273,6 +276,29 @@ function drupalhub_pages_default_page_manager_pages() {
     $display->content['new-89bc83fa-12b3-4930-94df-c21443cf8ef0'] = $pane;
     $display->panels['second'][0] = 'new-89bc83fa-12b3-4930-94df-c21443cf8ef0';
     $pane = new stdClass();
+    $pane->pid = 'new-89240efd-0741-431d-9cf5-81da213224f7';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'views-4f38a94f8f8593f6260a41a3a1257f13';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'inherit_path' => 1,
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '89240efd-0741-431d-9cf5-81da213224f7';
+    $display->content['new-89240efd-0741-431d-9cf5-81da213224f7'] = $pane;
+    $display->panels['second'][1] = 'new-89240efd-0741-431d-9cf5-81da213224f7';
+    $pane = new stdClass();
     $pane->pid = 'new-477f3a22-8662-484c-921a-48d11be1f560';
     $pane->panel = 'second';
     $pane->type = 'views_panes';
@@ -286,11 +312,11 @@ function drupalhub_pages_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '477f3a22-8662-484c-921a-48d11be1f560';
     $display->content['new-477f3a22-8662-484c-921a-48d11be1f560'] = $pane;
-    $display->panels['second'][1] = 'new-477f3a22-8662-484c-921a-48d11be1f560';
+    $display->panels['second'][2] = 'new-477f3a22-8662-484c-921a-48d11be1f560';
     $pane = new stdClass();
     $pane->pid = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
     $pane->panel = 'second_left';

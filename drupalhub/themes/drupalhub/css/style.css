@@ -59,11 +59,12 @@ body.front .pane-popular-tags {
 body.front .pane-new-question {
   padding-bottom: 30px; }
   body.front .pane-new-question .pane-title {
+    color: #20aae4;
+    padding-bottom: 20px;
     float: left;
     /* LTR */
     margin: 0px;
     padding: 0px;
-    color: #20aae4;
     font-size: 20px;
     padding-right: 5px;
     /* LTR */
@@ -101,8 +102,8 @@ body.front .view-main-page-questions .views-row {
     padding-right: 40px;
     /* LTR */ }
   body.front .view-main-page-questions .views-row .title a {
-    color: #20a8e0;
-    font-size: 20px; }
+    color: #20aae4;
+    padding-bottom: 20px; }
   body.front .view-main-page-questions .views-row .body-stats .stats .fa-heart {
     color: #008000; }
   body.front .view-main-page-questions .views-row .body-stats .body .user {
@@ -125,3 +126,16 @@ body.front .pane-front-page-blogs-panel-pane-1 {
     float: left;
     /* LTR */
     padding-right: 20px; }
+body.front .views-exposed-widget.views-widget-filter-title {
+  width: 100%; }
+  body.front .views-exposed-widget.views-widget-filter-title label {
+    color: #20aae4;
+    padding-bottom: 20px;
+    font-size: 20px;
+    float: left;
+    /* LTR */
+    margin-right: 20px;
+    /* LTR */ }
+  body.front .views-exposed-widget.views-widget-filter-title .form-item-title.form-item {
+    float: left;
+    /* LTR */ }

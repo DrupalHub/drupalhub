@@ -51,6 +51,11 @@ $grey4: #e5e5e5;
   }
 }
 
+@mixin title {
+  color: $blue-title;
+  padding-bottom: 20px;
+}
+
 .clearfix:after {
   content: "." !important;
   display: "hidden" !important;

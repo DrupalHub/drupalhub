@@ -69,10 +69,10 @@ body.front {
     padding-bottom: 30px;
 
     .pane-title {
+      @include title;
       float: left; /* LTR */
       margin: 0px;
       padding: 0px;
-      color: $blue-title;
       font-size: 20px;
       padding-right: 5px; /* LTR */
       font-weight: bold;
@@ -100,8 +100,7 @@ body.front {
       .title {
 
         a {
-          color: $darker-blue;
-          font-size: 20px;
+          @include title;
         }
       }
 
@@ -130,8 +129,7 @@ body.front {
     padding-bottom: 30px;
 
     .pane-title {
-      color: $blue-title;
-      padding-bottom: 20px;
+      @include title;
     }
 
     .view-id-front_page_blogs {
@@ -149,6 +147,21 @@ body.front {
         float: left; /* LTR */
         padding-right: 20px;
       }
+    }
+  }
+
+  .views-exposed-widget.views-widget-filter-title {
+    width: 100%;
+
+    label {
+      @include title;
+      font-size: 20px;
+      float: left; /* LTR */
+      margin-right: 20px; /* LTR */
+    }
+
+    .form-item-title.form-item {
+      float: left; /* LTR */
     }
   }
 }
