@@ -126,3 +126,39 @@ function drupalhub_questions_question_form_after_build($element) {
   hide($element['und'][0]['format']);
   return $element;
 }
+
+function drupalhub_questions_field_formatter_info() {
+  return array(
+    'drupalhub_questions' => array( //Machine name of the formatter
+      'label' => t('DrupalHub questions'),
+      'field types' => array('vud'), //This will only be available to text fields
+    ),
+  );
+}
+
+/**
+ * Implements hook_field_formatter_view().
+ */
+function drupalhub_questions_field_formatter_view($entity_type, $entity, $field, $instance, $langcode, $items, $display) {
+  $wrapper = entity_metadata_wrapper($entity_type, $entity);
+
+  if ($entity_type != 'node') {
+    return;
+  }
+
+  if ($wrapper->getBundle() != 'question') {
+    return;
+  }
+
+  $votes = new VoteUpDown($entity_type, $entity);
+
+  $value = 0;
+
+  foreach ($votes->getVotes() as $vote) {
+    $value += $vote->value;
+  }
+
+  $element[0]['#markup'] = $value;
+
+  return $element;
+}

@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the Drupalhub Group feature.
- */
-
-include_once 'drupalhub_group.features.inc';

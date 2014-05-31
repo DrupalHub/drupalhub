@@ -69,13 +69,13 @@ function drupalhub_pages_default_page_manager_pages() {
       'bottom' => NULL,
       'first_left' => array(
         'column_type' => 'col-lg',
-        'column_size' => '6',
+        'column_size' => '8',
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
       'fist_right' => array(
         'column_type' => 'col-lg',
-        'column_size' => '6',
+        'column_size' => '4',
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
@@ -154,46 +154,8 @@ function drupalhub_pages_default_page_manager_pages() {
     $display->content['new-03462688-14d9-4eb8-b9be-56efac88ab3c'] = $pane;
     $display->panels['first'][0] = 'new-03462688-14d9-4eb8-b9be-56efac88ab3c';
     $pane = new stdClass();
-    $pane->pid = 'new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
-    $pane->panel = 'first_left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'top_users-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
-    $display->content['new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec'] = $pane;
-    $display->panels['first_left'][0] = 'new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
-    $pane = new stdClass();
-    $pane->pid = 'new-89bc83fa-12b3-4930-94df-c21443cf8ef0';
-    $pane->panel = 'first_left';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'front_page_blogs-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '89bc83fa-12b3-4930-94df-c21443cf8ef0';
-    $display->content['new-89bc83fa-12b3-4930-94df-c21443cf8ef0'] = $pane;
-    $display->panels['first_left'][1] = 'new-89bc83fa-12b3-4930-94df-c21443cf8ef0';
-    $pane = new stdClass();
     $pane->pid = 'new-c08be55b-8548-4bc1-9628-572536a43b2e';
-    $pane->panel = 'fist_right';
+    $pane->panel = 'first_left';
     $pane->type = 'new_question';
     $pane->subtype = 'new_question';
     $pane->shown = TRUE;
@@ -201,10 +163,10 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->configuration = array(
       'return' => 'Finish',
       'cancel' => 'Cancel',
-      'override_title' => 0,
-      'override_title_text' => '',
-      'form_build_id' => 'form-FCm5Aaa2mKY7BBz_GUfGi5XYn0u3kKUN0mpcs946s00',
-      'form_token' => '-6P4dfQdr9xdAN92E4IBF4GbMHt7opSPYQm_GgoVDSw',
+      'override_title' => 1,
+      'override_title_text' => 'Help and support',
+      'form_build_id' => 'form-QLeYSyBRhNF3xIuXqXJSK8Xfvl-YGh04mCQsrEUIB8o',
+      'form_token' => '8_yse4_FfeeGyL5X8uPMYtr2sfl9Ygk-3nrHOrCDUVs',
       'form_id' => 'drupalhub_questions_new_question_content_type_edit_form',
       'op' => 'Finish',
     );
@@ -212,35 +174,50 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'c08be55b-8548-4bc1-9628-572536a43b2e';
     $display->content['new-c08be55b-8548-4bc1-9628-572536a43b2e'] = $pane;
-    $display->panels['fist_right'][0] = 'new-c08be55b-8548-4bc1-9628-572536a43b2e';
+    $display->panels['first_left'][0] = 'new-c08be55b-8548-4bc1-9628-572536a43b2e';
     $pane = new stdClass();
     $pane->pid = 'new-45565fc7-bff8-4186-b408-5b2de3de4c2e';
-    $pane->panel = 'fist_right';
+    $pane->panel = 'first_left';
     $pane->type = 'popular_tags';
     $pane->subtype = 'popular_tags';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 1,
+      'override_title_text' => 'Popular tags: ',
+      'form_build_id' => 'form-vl9c7IKhYsqRoUoCLC4s5GEImPTcD6514KQQMWr6vWY',
+      'form_token' => 'ALSupKa_8bpKXADDd45pPPxgB8r63z-lrY575QrakxQ',
+      'form_id' => 'drupalhub_pages_popular_tags_content_type_edit_form',
+      'op' => 'Finish',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = '45565fc7-bff8-4186-b408-5b2de3de4c2e';
     $display->content['new-45565fc7-bff8-4186-b408-5b2de3de4c2e'] = $pane;
-    $display->panels['fist_right'][1] = 'new-45565fc7-bff8-4186-b408-5b2de3de4c2e';
+    $display->panels['first_left'][1] = 'new-45565fc7-bff8-4186-b408-5b2de3de4c2e';
     $pane = new stdClass();
     $pane->pid = 'new-aff4e697-4747-4475-bd7e-96bd2e0df875';
-    $pane->panel = 'fist_right';
+    $pane->panel = 'first_left';
     $pane->type = 'views_panes';
     $pane->subtype = 'main_page_questions-panel_pane_1';
     $pane->shown = TRUE;
@@ -256,7 +233,71 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'aff4e697-4747-4475-bd7e-96bd2e0df875';
     $display->content['new-aff4e697-4747-4475-bd7e-96bd2e0df875'] = $pane;
-    $display->panels['fist_right'][2] = 'new-aff4e697-4747-4475-bd7e-96bd2e0df875';
+    $display->panels['first_left'][2] = 'new-aff4e697-4747-4475-bd7e-96bd2e0df875';
+    $pane = new stdClass();
+    $pane->pid = 'new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
+    $pane->panel = 'fist_right';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'top_users-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'hidden-phone',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
+    $display->content['new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec'] = $pane;
+    $display->panels['fist_right'][0] = 'new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
+    $pane = new stdClass();
+    $pane->pid = 'new-89bc83fa-12b3-4930-94df-c21443cf8ef0';
+    $pane->panel = 'second';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'front_page_blogs-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '89bc83fa-12b3-4930-94df-c21443cf8ef0';
+    $display->content['new-89bc83fa-12b3-4930-94df-c21443cf8ef0'] = $pane;
+    $display->panels['second'][0] = 'new-89bc83fa-12b3-4930-94df-c21443cf8ef0';
+    $pane = new stdClass();
+    $pane->pid = 'new-89240efd-0741-431d-9cf5-81da213224f7';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'views-4f38a94f8f8593f6260a41a3a1257f13';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'inherit_path' => 1,
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '89240efd-0741-431d-9cf5-81da213224f7';
+    $display->content['new-89240efd-0741-431d-9cf5-81da213224f7'] = $pane;
+    $display->panels['second'][1] = 'new-89240efd-0741-431d-9cf5-81da213224f7';
     $pane = new stdClass();
     $pane->pid = 'new-477f3a22-8662-484c-921a-48d11be1f560';
     $pane->panel = 'second';
@@ -271,11 +312,11 @@ function drupalhub_pages_default_page_manager_pages() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '477f3a22-8662-484c-921a-48d11be1f560';
     $display->content['new-477f3a22-8662-484c-921a-48d11be1f560'] = $pane;
-    $display->panels['second'][0] = 'new-477f3a22-8662-484c-921a-48d11be1f560';
+    $display->panels['second'][2] = 'new-477f3a22-8662-484c-921a-48d11be1f560';
     $pane = new stdClass();
     $pane->pid = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
     $pane->panel = 'second_left';

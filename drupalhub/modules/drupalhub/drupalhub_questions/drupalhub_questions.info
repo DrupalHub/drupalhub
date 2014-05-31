@@ -32,6 +32,7 @@ features[field_instance][] = node-question-field_tags
 features[field_instance][] = node-question-field_vote
 features[field_instance][] = node-question-og_group_ref
 features[flag][] = node_follow
+features[image][] = front_page_question
 features[node][] = question
 features[page_manager_handlers][] = node_view_panel_context
 features[taxonomy][] = tags

@@ -1,20 +1,64 @@
 // Variables.
 $blue-bright: #21a8e0;
+$darker-blue: #20A8E0;
 $orange-button-background: #f7b700;
 $orange-button-circle: #fdf1cc;
 $orange-button-plus: #f7b800;
 $blue-title: #20aae4;
 $grey1: #e6e6e6;
 $grey2: #d7d7d7;
+$grey3: #a3a1a1;
+$grey4: #e5e5e5;
+$gery5: #e7e7e7;
 
-  // Global css design.
+// Global css design.
 @mixin clearfix {
 
   &:after {
-    content: "";
-    display: table;
+    content: ".";
+    display: block;
+    height: 0;
     clear: both;
+    visibility: hidden;
   }
+}
+
+@mixin rounded($top, $left) {
+  -webkit-border-radius: $top $left;
+  -moz-border-radius: $top / $left;
+  -khtml-border-radius: $top / $left;
+  border-radius: $top / $left;
+}
+
+@mixin orange-button {
+  @include rounded(5px, 5px);
+  background: $orange-button-background;
+  width: 170px;
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 10px 10px 5px;
+
+  &:before {
+    font-family: FontAwesome;
+    font-weight: none;
+    content: "\f067";
+    background: $orange-button-circle;
+    @include rounded(15px, 15px);
+    color: $orange-button-plus;
+    margin: 5px 5px 0px 5px;
+    padding: 3px 5px 3px 5px;
+  }
+}
+
+@mixin title {
+  color: $blue-title;
+  padding-bottom: 20px;
+}
+
+.clearfix:after {
+  content: "." !important;
+  display: "hidden" !important;
 }
 
 // This is the part when we import css style per page.
