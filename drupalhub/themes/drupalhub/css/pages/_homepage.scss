@@ -187,4 +187,20 @@ body.front {
       }
     }
   }
+
+  .view-id-recommendation {
+
+    .project-label {
+      float: left;
+      padding-right: 10px;
+    }
+
+    .lt_blue {
+      @include title;
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
 }

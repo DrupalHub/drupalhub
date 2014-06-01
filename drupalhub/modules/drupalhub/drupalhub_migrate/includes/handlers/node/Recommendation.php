@@ -23,12 +23,12 @@ class Recommendation extends DrupalHubMigrate {
     $this->addFieldMapping('links', 'links');
     $this->addFieldMapping(OG_AUDIENCE_FIELD, OG_AUDIENCE_FIELD)
       ->sourceMigration('Group');
-    $this->addFieldMapping('field_recommendation_images', 'images');
-    $this->addFieldMapping('field_recommendation_images:file_replace')
+    $this->addFieldMapping('field_recommendation_cropimage', 'images');
+    $this->addFieldMapping('field_recommendation_cropimage:file_replace')
       ->defaultValue(FILE_EXISTS_REPLACE);
-    $this->addFieldMapping('field_recommendation_images:source_dir')
+    $this->addFieldMapping('field_recommendation_cropimage:source_dir')
       ->defaultValue(drupal_get_path('module', 'drupalhub_migrate') . '/includes/images/nodes');
-    $this->addFieldMapping('field_recommendation_images:destination_dir', 'destination');
+    $this->addFieldMapping('field_recommendation_cropimage:destination_dir', 'destination');
   }
 
   /**

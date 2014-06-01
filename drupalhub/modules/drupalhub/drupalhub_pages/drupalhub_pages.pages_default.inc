@@ -68,37 +68,37 @@ function drupalhub_pages_default_page_manager_pages() {
       ),
       'bottom' => NULL,
       'first_left' => array(
-        'column_type' => 'col-lg',
+        'column_type' => 'col-sm',
         'column_size' => '8',
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
       'fist_right' => array(
-        'column_type' => 'col-lg',
+        'column_type' => 'col-sm',
         'column_size' => '4',
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
       'second' => array(
-        'column_type' => 'col-lg',
+        'column_type' => 'col-sm',
         'column_size' => '12',
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
       'second_left' => array(
         'column_type' => 'col-lg',
-        'column_size' => '6',
-        'offset_type' => 'col-lg-offset',
+        'column_size' => '8',
+        'offset_type' => 'col-sm-offset',
         'offset_size' => '0',
       ),
       'second_right' => array(
-        'column_type' => 'col-lg',
-        'column_size' => '6',
+        'column_type' => 'col-sm',
+        'column_size' => '4',
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
       'first' => array(
-        'column_type' => 'col-lg',
+        'column_type' => 'col-sm',
         'column_size' => '12',
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
@@ -318,8 +318,27 @@ function drupalhub_pages_default_page_manager_pages() {
     $display->content['new-477f3a22-8662-484c-921a-48d11be1f560'] = $pane;
     $display->panels['second'][2] = 'new-477f3a22-8662-484c-921a-48d11be1f560';
     $pane = new stdClass();
-    $pane->pid = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
+    $pane->pid = 'new-0606616b-f496-4afa-8d0f-f41302317fe1';
     $pane->panel = 'second_left';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'recommendation-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '0606616b-f496-4afa-8d0f-f41302317fe1';
+    $display->content['new-0606616b-f496-4afa-8d0f-f41302317fe1'] = $pane;
+    $display->panels['second_left'][0] = 'new-0606616b-f496-4afa-8d0f-f41302317fe1';
+    $pane = new stdClass();
+    $pane->pid = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
+    $pane->panel = 'second_right';
     $pane->type = 'drupal_of_the_month';
     $pane->subtype = 'drupal_of_the_month';
     $pane->shown = TRUE;
@@ -345,26 +364,7 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
     $display->content['new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532'] = $pane;
-    $display->panels['second_left'][0] = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
-    $pane = new stdClass();
-    $pane->pid = 'new-0606616b-f496-4afa-8d0f-f41302317fe1';
-    $pane->panel = 'second_right';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'recommendation-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '0606616b-f496-4afa-8d0f-f41302317fe1';
-    $display->content['new-0606616b-f496-4afa-8d0f-f41302317fe1'] = $pane;
-    $display->panels['second_right'][0] = 'new-0606616b-f496-4afa-8d0f-f41302317fe1';
+    $display->panels['second_right'][0] = 'new-b2093d4b-5cb2-4da3-9b33-4f797b5cb532';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

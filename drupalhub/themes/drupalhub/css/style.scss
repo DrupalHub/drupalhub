@@ -61,5 +61,9 @@ $gery5: #e7e7e7;
   display: "hidden" !important;
 }
 
+.padding-top-50 {
+  padding-top: 50px;
+}
+
 // This is the part when we import css style per page.
 @import "pages/homepage.scss";
