@@ -93,7 +93,7 @@ function _drupalhub_migrate_content($class, $type, &$context) {
 function drupalhub_variables_set() {
   $variables = array(
 //    'theme_default' => 'drupalhub_basetheme',
-    'theme_default' => 'bootstrap',
+    'theme_default' => 'drupalhub',
     'admin_theme' => 'seven',
     'node_options_page',
     'node_options_page' => array('status'),

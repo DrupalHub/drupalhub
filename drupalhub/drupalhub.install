@@ -85,24 +85,12 @@ function drupalhub_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
-  // Set admin and default theme.
+  // Enable the admin theme.
   $enable = array(
-    'theme_default' => 'drupalhub',
-    'admin_theme' => 'seven',
+    'bootstrap',
+    'drupalhub',
   );
   theme_enable($enable);
-
-  variable_set('theme_default', 'drupalhub');
-
-  // Disable the default Bartik theme.
-  theme_disable(array('bartik', 'seven'));
-
-  // Enable the admin theme.
-  db_update('system')
-    ->fields(array('status' => 1))
-    ->condition('type', 'theme')
-    ->condition('name', 'seven')
-    ->execute();
 
   // Installing Hebrew
   locale_add_language('he', 'Hebrew', 'עברית', LANGUAGE_RTL, '', '', TRUE, FALSE);
