@@ -11,6 +11,29 @@ include_once 'drupalhub_core.features.inc';
  */
 
 /**
+ * Implements hook_menu().
+ */
+function drupalhub_core_menu() {
+  $items = array();
+
+  $items['admin/config/drupalhub/global-settings'] = array(
+    'title' => 'Manage settings',
+    'description' => 'Manage reputation settings',
+    'access arguments' => array('manage drupalhub settings'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('drupalhub_core_settings'),
+  );
+
+  $items['drupalhub_core/autocomplete'] = array(
+    'title' => 'Node autocomplete',
+    'page callback' => 'drupalhub_core_autocomplete',
+    'access arguments' => array('administer site configuration'),
+  );
+
+  return $items;
+}
+
+/**
  * Implements hook_init().
  */
 function drupalhub_core_init() {
@@ -163,5 +186,61 @@ function drupalhub_core_prepare_node($type) {
   );
 
   return $node;
+}
+
+/**
+ * Settings form.
+ */
+function drupalhub_core_settings($form, $form_settings) {
+  $form['drupal_of_the_month'] = array(
+    '#type' => 'textfield',
+    '#title' => 'Drupal of the month',
+    '#autocomplete_path' => 'drupalhub_core/autocomplete',
+  );
+
+  if ($node = node_load(variable_get('drupal_of_the_month'))) {
+    $form['drupal_of_the_month']['#default_value'] = $node->title . ' (' . $node->nid . ')';
+  }
+
+  $form = system_settings_form($form);
+
+  $form['#submit'][] = 'drupalhub_core_set_drupal_of_the_month';
+  return $form;
+}
+
+/**
+ * Submit handler; Set the ID of the drupal of the month properly.
+ */
+function drupalhub_core_set_drupal_of_the_month($form, $form_state) {
+  $form_state['values']['drupal_of_the_month'];
+
+  preg_match("/.+\((\d+)\)/", $form_state['values']['drupal_of_the_month'], $matches);
+
+  variable_set('drupal_of_the_month', $matches[1]);
+}
+
+/**
+ * Return list of nodes for the drupal of the month plugin.
+ */
+function drupalhub_core_autocomplete($string = '') {
+  $query = new EntityFieldQuery();
+  $results = $query
+    ->entityCondition('entity_type', 'node')
+    ->propertyCondition('title', '%' . $string . '%', 'LIKE')
+    ->execute();
+
+  if (empty($results['node'])) {
+    return;
+  }
+
+  $nodes = node_load_multiple(array_keys($results['node']));
+
+  $data = array();
+
+  foreach ($nodes as $node) {
+    $data[$node->title . ' (' . $node->nid . ')'] = $node->title;
+  }
+
+  drupal_json_output($data);
 }
 

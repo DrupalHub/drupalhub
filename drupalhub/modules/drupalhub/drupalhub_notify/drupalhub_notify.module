@@ -21,13 +21,6 @@ function drupalhub_notify_menu() {
     'access callback' => TRUE,
   );
 
-  $items['drupalhub/users-autocomplete'] = array(
-    'title' => 'Users autocomplete',
-    'access callback' => 'user_access',
-    'access arguments' => array('access user profiles'),
-    'page callback' => 'drupalhub_notify_users_autocomplete',
-  );
-
   return $items;
 }
 
