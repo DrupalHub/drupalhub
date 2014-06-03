@@ -21,6 +21,12 @@ function drupalhub_pages_drupal_of_the_month_content_type_render($subtype, $conf
       'title' => $wrapper->label(),
       'body' => $wrapper->body->value->value(),
       'group_link' => l($group->label(), 'node/' . $group->getIdentifier()),
+      'strip' => theme('image', array(
+        'path' => drupal_get_path('theme', 'drupalhub') . '/images/month_screen_overlay.png',
+        'attributes' => array(
+          'class' => array('strip'),
+        ),
+      )),
     ));
   }
 

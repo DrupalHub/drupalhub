@@ -65,5 +65,12 @@ $gery5: #e7e7e7;
   padding-top: 50px;
 }
 
+.star {
+  background-image: url("../images/large_star.png");
+  height: 23px;
+  width: 24px;
+}
+
+
 // This is the part when we import css style per page.
 @import "pages/homepage.scss";

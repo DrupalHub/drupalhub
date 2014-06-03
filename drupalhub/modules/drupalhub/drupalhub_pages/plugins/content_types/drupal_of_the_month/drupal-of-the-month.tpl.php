@@ -5,8 +5,16 @@
   <div class="row grey-bg month_overlay">
     <div class="col-xs-12">
       <div class="text-center title large"><?php print $title; ?></div>
-      <div class="relative" style="padding:0 12px">
+      <ul class="stars">
+        <li class="star"></li>
+        <li class="star"></li>
+        <li class="star"></li>
+        <li class="star"></li>
+        <li class="star"></li>
+      </div>
+      <div class="image" style="padding:0 12px">
         <?php print $image; ?>
+        <?php print $strip; ?>
       </div>
       <div class="row text-center ratings">
         <div class="col-xs-3"></div>

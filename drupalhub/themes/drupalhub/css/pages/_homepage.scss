@@ -214,6 +214,18 @@ body.front {
     .month_overlay {
       background: $grey4;
 
+      .stars {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 0px;
+        text-align: center;
+
+        li {
+          margin-right: 5px;
+          display: inline-block;
+        }
+      }
+
       .title {
         color: #5A5A65;
         font-size: 20px;
@@ -227,6 +239,16 @@ body.front {
       .group {
         padding-top: 15px;
         padding-bottom: 15px;
+      }
+
+      .image {
+        position: relative;
+
+        .strip {
+          position: absolute;
+          left: -15px; /* LTR */
+          top: 90px;
+        }
       }
     }
   }

@@ -5,6 +5,11 @@
 .padding-top-50 {
   padding-top: 50px; }
 
+.star {
+  background-image: url("../images/large_star.png");
+  height: 23px;
+  width: 24px; }
+
 body.front .view-id-top_users {
   background: #e5e5e5; }
   body.front .view-id-top_users hr {
@@ -167,6 +172,14 @@ body.front .pane-drupal-of-the-month .header {
   color: white; }
 body.front .pane-drupal-of-the-month .month_overlay {
   background: #e5e5e5; }
+  body.front .pane-drupal-of-the-month .month_overlay .stars {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+    text-align: center; }
+    body.front .pane-drupal-of-the-month .month_overlay .stars li {
+      margin-right: 5px;
+      display: inline-block; }
   body.front .pane-drupal-of-the-month .month_overlay .title {
     color: #5A5A65;
     font-size: 20px; }
@@ -176,3 +189,10 @@ body.front .pane-drupal-of-the-month .month_overlay {
   body.front .pane-drupal-of-the-month .month_overlay .group {
     padding-top: 15px;
     padding-bottom: 15px; }
+  body.front .pane-drupal-of-the-month .month_overlay .image {
+    position: relative; }
+    body.front .pane-drupal-of-the-month .month_overlay .image .strip {
+      position: absolute;
+      left: -15px;
+      /* LTR */
+      top: 90px; }
