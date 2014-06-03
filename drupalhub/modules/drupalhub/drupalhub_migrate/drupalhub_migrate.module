@@ -10,13 +10,14 @@
 function drupalhub_migrate_migrate_api() {
 
   $classes = array(
-    'Question',
     'User',
-    'Category',
-    'Comment',
     'Blog',
     'Group',
+    'Project',
     'Youtube',
+    'Comment',
+    'Category',
+    'Question',
     'Recommendation',
   );
 

@@ -232,31 +232,65 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: OG membership: Group Node from OG membership */
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['id'] = 'og_membership_related_node_group';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['table'] = 'og_membership';
+  $handler->display->display_options['relationships']['og_membership_related_node_group']['field'] = 'og_membership_related_node_group';
+  /* Field: Content: Recommendation CropImage */
+  $handler->display->display_options['fields']['field_recommendation_cropimage']['id'] = 'field_recommendation_cropimage';
+  $handler->display->display_options['fields']['field_recommendation_cropimage']['table'] = 'field_data_field_recommendation_cropimage';
+  $handler->display->display_options['fields']['field_recommendation_cropimage']['field'] = 'field_recommendation_cropimage';
+  $handler->display->display_options['fields']['field_recommendation_cropimage']['label'] = '';
+  $handler->display->display_options['fields']['field_recommendation_cropimage']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_recommendation_cropimage']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_recommendation_cropimage']['settings'] = array(
+    'image_style' => 'recomendations',
+    'image_link' => '',
+  );
+  $handler->display->display_options['fields']['field_recommendation_cropimage']['delta_offset'] = '0';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['exclude'] = TRUE;
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
+  /* Field: Content: Title */
+  $handler->display->display_options['fields']['title_1']['id'] = 'title_1';
+  $handler->display->display_options['fields']['title_1']['table'] = 'node';
+  $handler->display->display_options['fields']['title_1']['field'] = 'title';
+  $handler->display->display_options['fields']['title_1']['relationship'] = 'og_membership_related_node_group';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  /* Field: Content: Recommendation Links */
+  $handler->display->display_options['fields']['field_recommendation_links']['id'] = 'field_recommendation_links';
+  $handler->display->display_options['fields']['field_recommendation_links']['table'] = 'field_data_field_recommendation_links';
+  $handler->display->display_options['fields']['field_recommendation_links']['field'] = 'field_recommendation_links';
+  $handler->display->display_options['fields']['field_recommendation_links']['label'] = '';
+  $handler->display->display_options['fields']['field_recommendation_links']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_recommendation_links']['alter']['text'] = '[title]';
+  $handler->display->display_options['fields']['field_recommendation_links']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_recommendation_links']['alter']['path'] = '[field_recommendation_links-url]';
+  $handler->display->display_options['fields']['field_recommendation_links']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_recommendation_links']['click_sort_column'] = 'url';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = '';
   $handler->display->display_options['fields']['body']['element_label_colon'] = FALSE;
-  /* Field: Broken/missing handler */
-  $handler->display->display_options['fields']['field_recommendation_images']['id'] = 'field_recommendation_images';
-  $handler->display->display_options['fields']['field_recommendation_images']['table'] = 'field_data_field_recommendation_images';
-  $handler->display->display_options['fields']['field_recommendation_images']['field'] = 'field_recommendation_images';
-  $handler->display->display_options['fields']['field_recommendation_images']['label'] = '';
-  $handler->display->display_options['fields']['field_recommendation_images']['element_label_colon'] = FALSE;
-  /* Field: Content: Recommendation Links */
-  $handler->display->display_options['fields']['field_recommendation_links']['id'] = 'field_recommendation_links';
-  $handler->display->display_options['fields']['field_recommendation_links']['table'] = 'field_data_field_recommendation_links';
-  $handler->display->display_options['fields']['field_recommendation_links']['field'] = 'field_recommendation_links';
-  $handler->display->display_options['fields']['field_recommendation_links']['label'] = 'Project link';
-  $handler->display->display_options['fields']['field_recommendation_links']['click_sort_column'] = 'url';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -294,7 +328,10 @@ function drupalhub_pages_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Project link'),
+    t('author'),
+    t('Group node from OG membership'),
+    t('Title'),
+    t('[title]'),
     t('Content pane'),
     t('View panes'),
   );
@@ -312,11 +349,13 @@ function drupalhub_pages_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
   $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'grid';
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -335,7 +374,7 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['field_group_logo']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_group_logo']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_group_logo']['settings'] = array(
-    'image_style' => 'thumbnail',
+    'image_style' => 'service_provider_front_pager',
     'image_link' => 'content',
   );
   /* Sort criterion: Content: Post date */
@@ -357,9 +396,25 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'drupalhub_group' => 'drupalhub_group',
   );
+  /* Filter criterion: Content: Title */
+  $handler->display->display_options['filters']['title']['id'] = 'title';
+  $handler->display->display_options['filters']['title']['table'] = 'node';
+  $handler->display->display_options['filters']['title']['field'] = 'title';
+  $handler->display->display_options['filters']['title']['operator'] = 'contains';
+  $handler->display->display_options['filters']['title']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['title']['expose']['operator_id'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['label'] = 'Service provider';
+  $handler->display->display_options['filters']['title']['expose']['operator'] = 'title_op';
+  $handler->display->display_options['filters']['title']['expose']['identifier'] = 'title';
+  $handler->display->display_options['filters']['title']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+  );
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
+  $handler->display->display_options['exposed_block'] = TRUE;
   $translatables['service_providers'] = array(
     t('Master'),
     t('more'),
@@ -375,6 +430,7 @@ function drupalhub_pages_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('Service provider'),
     t('Content pane'),
     t('View panes'),
   );

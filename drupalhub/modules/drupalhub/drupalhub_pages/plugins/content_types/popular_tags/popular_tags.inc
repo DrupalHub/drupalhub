@@ -7,8 +7,6 @@ $plugin = array(
 );
 
 function drupalhub_pages_popular_tags_content_type_render($subtype, $conf, $args, $context) {
-  drupal_add_css(drupal_get_path('module', 'drupalhub_pages') . '/css/drupalhub_pages.css');
-
   $block = new stdClass();
   $block->title = '';
 
@@ -37,7 +35,7 @@ function drupalhub_pages_popular_tags_content_type_render($subtype, $conf, $args
   $items = array();
 
   foreach ($tagged_items as $item) {
-    $items[] = $item['link'] . ' (' . $item['tagged'] . ')';
+    $items[] = $item['link'];
   }
 
   $variables = array(
@@ -51,3 +49,20 @@ function drupalhub_pages_popular_tags_content_type_render($subtype, $conf, $args
 
   return $block;
 }
+
+/**
+ * Form settings.
+ */
+function drupalhub_pages_popular_tags_content_type_edit_form($form, &$form_state) {
+  return $form;
+}
+
+/**
+ * Submitting the form and save the value of the form elements.
+ */
+function drupalhub_pages_popular_tags_content_type_edit_form_submit(&$form, &$form_state) {
+  foreach (array_keys($form_state['values']) as $key) {
+    $form_state['conf'][$key] = $form_state['values'][$key];
+  }
+}
+
