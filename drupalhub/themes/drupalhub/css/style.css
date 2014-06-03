@@ -13,6 +13,51 @@
 .fa-heart {
   color: #008000; }
 
+.top-navbar {
+  padding: 0px;
+  background: #e6e6e6; }
+  .top-navbar .nav.navbar-nav {
+    width: 100%; }
+    .top-navbar .nav.navbar-nav .search input {
+      border: 1px solid #BDBFBF;
+      border-radius: 5px;
+      padding: 2px 5px;
+      color: #BDBFBF;
+      background: url("../images/search.png") no-repeat 135px center white; }
+    .top-navbar .nav.navbar-nav .social {
+      float: right; }
+      .top-navbar .nav.navbar-nav .social a {
+        float: right; }
+        .top-navbar .nav.navbar-nav .social a i {
+          font-size: 30px; }
+          .top-navbar .nav.navbar-nav .social a i.fa-facebook-square {
+            color: #4f62ae; }
+          .top-navbar .nav.navbar-nav .social a i.fa-google-plus {
+            color: #ee4e10; }
+          .top-navbar .nav.navbar-nav .social a i.fa-twitter {
+            color: #2aa0d3; }
+          .top-navbar .nav.navbar-nav .social a i.fa-youtube-play {
+            color: #e73d31; }
+          .top-navbar .nav.navbar-nav .social a i.fa-github-alt {
+            color: #333333; }
+
+#navbar {
+  margin: 0px;
+  width: 100%;
+  clear: both;
+  margin-bottom: 50px;
+  max-width: 100%;
+  border-color: #e7e7e7;
+  background: #21a8e6;
+  padding: 20px 0; }
+  #navbar .container {
+    width: 1170px;
+    margin: 0 auto; }
+    #navbar .container a {
+      color: white; }
+    #navbar .container .navbar-brand {
+      padding: 40px 35px; }
+
 body.front .view-id-top_users {
   background: #e5e5e5; }
   body.front .view-id-top_users hr {
@@ -158,52 +203,54 @@ body.front .view-id-service_providers .service_item {
     background: #d7d7d7; }
     body.front .view-id-service_providers .service_item .text a {
       color: #5d5a5a; }
-body.front .view-id-recommendation .project-label {
-  float: left;
-  padding-right: 10px; }
-body.front .view-id-recommendation .lt_blue {
-  color: #20aae4;
-  padding-bottom: 20px; }
-  body.front .view-id-recommendation .lt_blue p {
-    font-size: 20px; }
-body.front .pane-drupal-of-the-month .header {
-  background: #20aae4;
-  color: white; }
-  body.front .pane-drupal-of-the-month .header h2 {
-    margin-bottom: 20px; }
-body.front .pane-drupal-of-the-month .month_overlay {
-  background: #e5e5e5; }
-  body.front .pane-drupal-of-the-month .month_overlay .stars {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 0px;
-    text-align: center; }
-    body.front .pane-drupal-of-the-month .month_overlay .stars li {
-      margin-right: 5px;
-      display: inline-block; }
-  body.front .pane-drupal-of-the-month .month_overlay .title {
-    color: #5A5A65;
-    font-size: 20px; }
-  body.front .pane-drupal-of-the-month .month_overlay .ratings {
-    padding-top: 15px;
-    padding-bottom: 15px; }
-  body.front .pane-drupal-of-the-month .month_overlay .group {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 10px;
-    /* LTR */ }
-  body.front .pane-drupal-of-the-month .month_overlay .text {
-    padding-right: 10px;
-    /* LTR */
-    padding-left: 10px;
-    /* LTR */ }
-  body.front .pane-drupal-of-the-month .month_overlay .image {
-    position: relative;
-    text-align: center; }
-    body.front .pane-drupal-of-the-month .month_overlay .image img.logo {
-      border: #ffffff solid 1px; }
-    body.front .pane-drupal-of-the-month .month_overlay .image .strip {
-      position: absolute;
-      left: -5px;
+body.front .second-left-right {
+  padding-top: 50px; }
+  body.front .second-left-right .view-id-recommendation .project-label {
+    float: left;
+    padding-right: 10px; }
+  body.front .second-left-right .view-id-recommendation .lt_blue {
+    color: #20aae4;
+    padding-bottom: 20px; }
+    body.front .second-left-right .view-id-recommendation .lt_blue p {
+      font-size: 20px; }
+  body.front .second-left-right .pane-drupal-of-the-month .header {
+    background: #20aae4;
+    color: white; }
+    body.front .second-left-right .pane-drupal-of-the-month .header h2 {
+      margin-bottom: 20px; }
+  body.front .second-left-right .pane-drupal-of-the-month .month_overlay {
+    background: #e5e5e5; }
+    body.front .second-left-right .pane-drupal-of-the-month .month_overlay .stars {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 0px;
+      text-align: center; }
+      body.front .second-left-right .pane-drupal-of-the-month .month_overlay .stars li {
+        margin-right: 5px;
+        display: inline-block; }
+    body.front .second-left-right .pane-drupal-of-the-month .month_overlay .title {
+      color: #5A5A65;
+      font-size: 20px; }
+    body.front .second-left-right .pane-drupal-of-the-month .month_overlay .ratings {
+      padding-top: 15px;
+      padding-bottom: 15px; }
+    body.front .second-left-right .pane-drupal-of-the-month .month_overlay .group {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 10px;
+      /* LTR */ }
+    body.front .second-left-right .pane-drupal-of-the-month .month_overlay .text {
+      padding-right: 10px;
       /* LTR */
-      top: 90px; }
+      padding-left: 10px;
+      /* LTR */ }
+    body.front .second-left-right .pane-drupal-of-the-month .month_overlay .image {
+      position: relative;
+      text-align: center; }
+      body.front .second-left-right .pane-drupal-of-the-month .month_overlay .image img.logo {
+        border: #ffffff solid 1px; }
+      body.front .second-left-right .pane-drupal-of-the-month .month_overlay .image .strip {
+        position: absolute;
+        left: -5px;
+        /* LTR */
+        top: 90px; }

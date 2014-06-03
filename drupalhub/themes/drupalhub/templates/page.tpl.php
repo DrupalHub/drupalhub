@@ -73,6 +73,24 @@
  * @ingroup themeable
  */
 ?>
+<div class="top-navbar no_border hidden-xs">
+  <div class="navbar-inner">
+    <div class="container">
+      <div class="nav-collapsee collapsee">
+        <ul class="nav navbar-nav">
+          <li class="search"><a><input type="text" placeholder="<?php print t('Search'); ?>" class="search _w240"></a></li>
+          <li class="social">
+            <a class="youtube"><i class="fa fa-youtube-play"></i></a>
+            <a class="twitter"><i class="fa fa-twitter"></i></a>
+            <a class="google"><i class="fa fa-google-plus"></i></a>
+            <a class="facebook"><i class="fa fa-facebook-square"></i></a>
+            <a class="github"><i class="fa fa-github-alt"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
   <div class="container">
     <div class="navbar-header">
@@ -85,15 +103,6 @@
       <?php if (!empty($site_name)): ?>
       <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
       <?php endif; ?>
-
-      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-    </div>
 
     <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
       <div class="navbar-collapse collapse">
