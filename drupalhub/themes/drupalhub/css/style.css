@@ -1,27 +1,209 @@
-.view-id-top_users .views-row {
-  padding-top: 15px;
-  padding-bottom: 15px; }
-  .view-id-top_users .views-row:after {
-    content: "";
-    display: table;
-    clear: both; }
-  .view-id-top_users .views-row .views-field-picture {
+.clearfix:after {
+  content: "." !important;
+  display: "hidden" !important; }
+
+.padding-top-50 {
+  padding-top: 50px; }
+
+.star {
+  background-image: url("../images/large_star.png");
+  height: 23px;
+  width: 24px; }
+
+.fa-heart {
+  color: #008000; }
+
+body.front .view-id-top_users {
+  background: #e5e5e5; }
+  body.front .view-id-top_users hr {
+    border-top: 1px solid #888;
+    margin: 15px 0px 0px 0px;
+    padding: 0px;
+    width: 95%; }
+  body.front .view-id-top_users .top-most-active-user {
+    background: #21a8e0;
+    color: white;
+    padding: 15px;
+    font-size: 30px; }
+  body.front .view-id-top_users .views-row {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    /* LTR */ }
+    body.front .view-id-top_users .views-row:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    body.front .view-id-top_users .views-row .views-field-picture {
+      float: left;
+      /* LTR */
+      padding-right: 25px;
+      /* LTR */ }
+body.front .pane-popular-tags {
+  padding-bottom: 40px; }
+  body.front .pane-popular-tags .pane-title {
     float: left;
     /* LTR */
-    padding-right: 25px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 15px;
+    color: #a3a1a1;
+    margin-right: 10px;
     /* LTR */ }
-  .view-id-top_users .views-row .fa {
-    color: #008000; }
-
-.pane-popular-tags .tagged_items li {
-  display: inline;
-  list-style-type: none;
-  padding-right: 20px;
-  /* LTR */ }
-
-.new.new-question {
-  width: 150px;
-  font-weight: bold; }
-  .new.new-question i {
+  body.front .pane-popular-tags ul.tagged_items {
+    -webkit-padding-start: 0px; }
+    body.front .pane-popular-tags ul.tagged_items li {
+      background: #d7d7d7;
+      padding: 10px 20px;
+      -webkit-border-radius: 10px 10px;
+      -moz-border-radius: 1;
+      -khtml-border-radius: 1;
+      border-radius: 1;
+      display: inline;
+      list-style-type: none; }
+      body.front .pane-popular-tags ul.tagged_items li a {
+        color: white; }
+body.front .pane-new-question {
+  padding-bottom: 30px; }
+  body.front .pane-new-question .pane-title {
+    color: #20aae4;
+    padding-bottom: 20px;
+    float: left;
+    /* LTR */
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    padding-right: 5px;
+    /* LTR */
+    font-weight: bold;
+    margin-right: 10px;
+    /* LTR */ }
+  body.front .pane-new-question .link-new-question a {
+    -webkit-border-radius: 5px 5px;
+    -moz-border-radius: 1;
+    -khtml-border-radius: 1;
+    border-radius: 1;
+    background: #f7b700;
+    width: 170px;
+    height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 10px 10px 5px; }
+    body.front .pane-new-question .link-new-question a:before {
+      font-family: FontAwesome;
+      font-weight: none;
+      content: "\f067";
+      background: #fdf1cc;
+      -webkit-border-radius: 15px 15px;
+      -moz-border-radius: 1;
+      -khtml-border-radius: 1;
+      border-radius: 1;
+      color: #f7b800;
+      margin: 5px 5px 0px 5px;
+      padding: 3px 5px 3px 5px; }
+body.front .view-main-page-questions .views-row {
+  padding-bottom: 40px; }
+  body.front .view-main-page-questions .views-row .image {
+    float: left;
+    /* LTR */
+    padding-right: 40px;
+    /* LTR */ }
+  body.front .view-main-page-questions .views-row .title a {
+    color: #20aae4;
+    padding-bottom: 20px; }
+  body.front .view-main-page-questions .views-row .body-stats .body .user {
+    float: left;
+    /* LTR */
     padding-right: 10px;
     /* LTR */ }
+body.front .pane-front-page-blogs-panel-pane-1 {
+  padding-top: 30px;
+  padding-bottom: 30px; }
+  body.front .pane-front-page-blogs-panel-pane-1 .pane-title {
+    color: #20aae4;
+    padding-bottom: 20px; }
+  body.front .pane-front-page-blogs-panel-pane-1 .view-id-front_page_blogs .title {
+    margin-top: 0px; }
+    body.front .pane-front-page-blogs-panel-pane-1 .view-id-front_page_blogs .title a {
+      color: #000;
+      font-weight: normal; }
+  body.front .pane-front-page-blogs-panel-pane-1 .view-id-front_page_blogs .field-image {
+    float: left;
+    /* LTR */
+    padding-right: 20px; }
+body.front .views-exposed-widget.views-widget-filter-title {
+  width: 100%; }
+  body.front .views-exposed-widget.views-widget-filter-title label {
+    color: #20aae4;
+    padding-bottom: 20px;
+    font-size: 20px;
+    float: left;
+    /* LTR */
+    margin-right: 20px;
+    /* LTR */ }
+  body.front .views-exposed-widget.views-widget-filter-title .form-item-title.form-item {
+    float: right;
+    /* LTR */ }
+body.front .view-id-service_providers .service_item {
+  border: #e7e7e7 solid 1px;
+  margin: 0px 15px;
+  min-width: 140px; }
+  body.front .view-id-service_providers .service_item .overflow {
+    min-height: 100px;
+    text-align: center; }
+  body.front .view-id-service_providers .service_item .text {
+    min-height: 50px;
+    background: #d7d7d7; }
+    body.front .view-id-service_providers .service_item .text a {
+      color: #5d5a5a; }
+body.front .view-id-recommendation .project-label {
+  float: left;
+  padding-right: 10px; }
+body.front .view-id-recommendation .lt_blue {
+  color: #20aae4;
+  padding-bottom: 20px; }
+  body.front .view-id-recommendation .lt_blue p {
+    font-size: 20px; }
+body.front .pane-drupal-of-the-month .header {
+  background: #20aae4;
+  color: white; }
+  body.front .pane-drupal-of-the-month .header h2 {
+    margin-bottom: 20px; }
+body.front .pane-drupal-of-the-month .month_overlay {
+  background: #e5e5e5; }
+  body.front .pane-drupal-of-the-month .month_overlay .stars {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 0px;
+    text-align: center; }
+    body.front .pane-drupal-of-the-month .month_overlay .stars li {
+      margin-right: 5px;
+      display: inline-block; }
+  body.front .pane-drupal-of-the-month .month_overlay .title {
+    color: #5A5A65;
+    font-size: 20px; }
+  body.front .pane-drupal-of-the-month .month_overlay .ratings {
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  body.front .pane-drupal-of-the-month .month_overlay .group {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    /* LTR */ }
+  body.front .pane-drupal-of-the-month .month_overlay .text {
+    padding-right: 10px;
+    /* LTR */
+    padding-left: 10px;
+    /* LTR */ }
+  body.front .pane-drupal-of-the-month .month_overlay .image {
+    position: relative;
+    text-align: center; }
+    body.front .pane-drupal-of-the-month .month_overlay .image img.logo {
+      border: #ffffff solid 1px; }
+    body.front .pane-drupal-of-the-month .month_overlay .image .strip {
+      position: absolute;
+      left: -5px;
+      /* LTR */
+      top: 90px; }

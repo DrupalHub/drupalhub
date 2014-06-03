@@ -7,21 +7,6 @@
 include_once 'drupalhub_pages.features.inc';
 
 /**
- * Implements hook_menu().
- */
-function drupalhub_pages_menu() {
-  $items = array();
-
-  $items['drupalhub_pages/autocomplete'] = array(
-    'title' => 'Node autocomplete',
-    'page callback' => 'drupalhub_pages_autocomplete',
-    'access arguments' => array('administer site configuration'),
-  );
-
-  return $items;
-}
-
-/**
  * Implements hook_ctools_plugin_directory().
  */
 function drupalhub_pages_ctools_plugin_directory($module, $plugin) {
@@ -80,25 +65,13 @@ function drupalhub_pages_order_terms($a, $b) {
 }
 
 /**
- * Return list of nodes for the drupal of the month plugin.
+ * Implements hook_form_FORM_ID_alter().
  */
-function drupalhub_pages_autocomplete($string = '') {
-  $query = new EntityFieldQuery();
-  $results = $query
-    ->entityCondition('entity_type', 'node')
-    ->propertyCondition('title', '%' . $string . '%', 'LIKE')
-    ->execute();
-
-  if (empty($results['node'])) {
+function drupalhub_pages_form_views_exposed_form_alter(&$form, $form_state) {
+  if ($form['#id'] != 'views-exposed-form-service-providers-panel-pane-1') {
     return;
   }
 
-  $nodes = node_load_multiple(array_keys($results['node']));
-
-  foreach ($nodes as $node) {
-    $data[$node->title . ' (' . $node->nid . ')'] = $node->title;
-  }
-
-  drupal_json_output($data);
+  $form['title']['#attributes']['placeholder'][] = t('Search for service provider');
 }
 

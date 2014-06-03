@@ -1,42 +1,259 @@
-.view-id-top_users {
+body.front {
 
-  .views-row {
-    @include clearfix;
+  .view-id-top_users {
+    background: $grey4;
 
-    padding-top: 15px;
-    padding-bottom: 15px;
+    hr {
+      border-top: 1px solid #888;
+      margin: 15px 0px 0px 0px;
+      padding: 0px;
+      width: 95%;
+    }
 
-    .views-field-picture {
+    .top-most-active-user {
+      background: $blue-bright;
+      color: white;
+      padding: 15px;
+      font-size: 30px;
+    }
+
+    .views-row {
+      @include clearfix;
+
+      padding-top: 15px;
+      padding-bottom: 15px;
+      padding-left: 10px; /* LTR */
+
+      .views-field-picture {
+        float: left; /* LTR */
+        padding-right: 25px; /* LTR */
+      }
+    }
+  }
+
+  .pane-popular-tags {
+    padding-bottom: 40px;
+
+    .pane-title {
       float: left; /* LTR */
-      padding-right: 25px; /* LTR */
+      margin: 0px;
+      padding: 0px;
+      font-size: 15px;
+      color: $grey3;
+      margin-right: 10px; /* LTR */
     }
 
-    .fa {
-      color: #008000;
+    ul.tagged_items {
+      // Look odd, i know.
+      -webkit-padding-start: 0px;
+
+      li {
+        background: $grey2;
+        padding: 10px 20px;
+        @include rounded(10px, 10px);
+        display: inline;
+        list-style-type: none;
+
+        a {
+          color: white;
+        }
+      }
     }
   }
-}
 
-.pane-popular-tags {
+  .pane-new-question {
+    padding-bottom: 30px;
 
-  .tagged_items {
+    .pane-title {
+      @include title;
+      float: left; /* LTR */
+      margin: 0px;
+      padding: 0px;
+      font-size: 20px;
+      padding-right: 5px; /* LTR */
+      font-weight: bold;
+      margin-right: 10px; /* LTR */
+    }
 
-    li {
-      display: inline;
-      list-style-type: none;
-      padding-right: 20px; /* LTR */
+    .link-new-question {
+
+      a {
+        @include orange-button;
+      }
     }
   }
-}
 
-.new {
+  .view-main-page-questions {
 
-  &.new-question {
-    width: 150px;
-    font-weight: bold;
+    .views-row {
+      padding-bottom: 40px;
 
-    i {
-      padding-right: 10px; /* LTR */
+      .image {
+        float: left; /* LTR */
+        padding-right: 40px; /* LTR */
+      }
+
+      .title {
+
+        a {
+          @include title;
+        }
+      }
+
+      .body-stats {
+
+        .body {
+
+          .user {
+            float: left; /* LTR */
+            padding-right: 10px; /* LTR */
+          }
+        }
+      }
+    }
+  }
+
+  .pane-front-page-blogs-panel-pane-1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+
+    .pane-title {
+      @include title;
+    }
+
+    .view-id-front_page_blogs {
+
+      .title {
+        margin-top: 0px;
+
+        a {
+          color: #000;
+          font-weight: normal;
+        }
+      }
+
+      .field-image {
+        float: left; /* LTR */
+        padding-right: 20px;
+      }
+    }
+  }
+
+  .views-exposed-widget.views-widget-filter-title {
+    width: 100%;
+
+    label {
+      @include title;
+      font-size: 20px;
+      float: left; /* LTR */
+      margin-right: 20px; /* LTR */
+    }
+
+    .form-item-title.form-item {
+      float: right; /* LTR */
+    }
+  }
+
+  .view-id-service_providers {
+
+    .service_item {
+      border: $gery5 solid 1px;
+      margin: 0px 15px;
+      min-width: 140px;
+
+      .overflow {
+        min-height: 100px;
+        text-align: center;
+      }
+
+      .text {
+        min-height: 50px;
+        background: $grey2;
+
+        a {
+          color: #5d5a5a;
+        }
+      }
+    }
+  }
+
+  .view-id-recommendation {
+
+    .project-label {
+      float: left;
+      padding-right: 10px;
+    }
+
+    .lt_blue {
+      @include title;
+
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+  
+  .pane-drupal-of-the-month {
+
+    .header {
+      background: $blue-title;
+      color: white;
+
+      h2 {
+        margin-bottom: 20px;
+      }
+    }
+
+    .month_overlay {
+      background: $grey4;
+
+      .stars {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 0px;
+        text-align: center;
+
+        li {
+          margin-right: 5px;
+          display: inline-block;
+        }
+      }
+
+      .title {
+        color: #5A5A65;
+        font-size: 20px;
+      }
+
+      .ratings {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .group {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-left: 10px; /* LTR */
+      }
+
+      .text {
+        padding-right: 10px; /* LTR */
+        padding-left: 10px; /* LTR */
+      }
+
+      .image {
+        position: relative;
+        text-align: center;
+
+        img.logo {
+          border: #ffffff solid 1px;
+        }
+
+        .strip {
+          position: absolute;
+          left: -5px; /* LTR */
+          top: 90px;
+        }
+      }
     }
   }
 }
