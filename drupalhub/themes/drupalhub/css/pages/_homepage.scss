@@ -28,10 +28,6 @@ body.front {
         float: left; /* LTR */
         padding-right: 25px; /* LTR */
       }
-
-      .fa {
-        color: #008000;
-      }
     }
   }
 
@@ -105,13 +101,6 @@ body.front {
       }
 
       .body-stats {
-
-        .stats {
-
-          .fa-heart {
-            color: #008000;
-          }
-        }
 
         .body {
 
@@ -243,10 +232,11 @@ body.front {
 
       .image {
         position: relative;
+        text-align: center;
 
         .strip {
           position: absolute;
-          left: -15px; /* LTR */
+          left: -5px; /* LTR */
           top: 90px;
         }
       }

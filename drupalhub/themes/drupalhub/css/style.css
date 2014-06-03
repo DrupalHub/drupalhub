@@ -10,6 +10,9 @@
   height: 23px;
   width: 24px; }
 
+.fa-heart {
+  color: #008000; }
+
 body.front .view-id-top_users {
   background: #e5e5e5; }
   body.front .view-id-top_users hr {
@@ -38,8 +41,6 @@ body.front .view-id-top_users {
       /* LTR */
       padding-right: 25px;
       /* LTR */ }
-    body.front .view-id-top_users .views-row .fa {
-      color: #008000; }
 body.front .pane-popular-tags {
   padding-bottom: 40px; }
   body.front .pane-popular-tags .pane-title {
@@ -112,8 +113,6 @@ body.front .view-main-page-questions .views-row {
   body.front .view-main-page-questions .views-row .title a {
     color: #20aae4;
     padding-bottom: 20px; }
-  body.front .view-main-page-questions .views-row .body-stats .stats .fa-heart {
-    color: #008000; }
   body.front .view-main-page-questions .views-row .body-stats .body .user {
     float: left;
     /* LTR */
@@ -190,9 +189,10 @@ body.front .pane-drupal-of-the-month .month_overlay {
     padding-top: 15px;
     padding-bottom: 15px; }
   body.front .pane-drupal-of-the-month .month_overlay .image {
-    position: relative; }
+    position: relative;
+    text-align: center; }
     body.front .pane-drupal-of-the-month .month_overlay .image .strip {
       position: absolute;
-      left: -15px;
+      left: -5px;
       /* LTR */
       top: 90px; }

@@ -14,7 +14,7 @@ function drupalhub_pages_drupal_of_the_month_content_type_render($subtype, $conf
   $block->title = '';
 
   if ($wrapper->value()) {
-    $file = $wrapper->field_recommendation_cropimage->get(0)->value();
+    $file = $wrapper->field_project_banner_cropimage->value();
     $group = $wrapper->{OG_AUDIENCE_FIELD}->get(0);
     $block->content = theme('drupal_of_the_month', array(
       'image' => theme('image_style', array('path' => $file['uri'], 'style_name' => 'drupal_of_the_month')),

@@ -10,7 +10,7 @@ class Recommendation extends DrupalHubMigrate {
     array('body', 'Body'),
     array('links', 'Links'),
     array('images', 'Images'),
-    array(OG_AUDIENCE_FIELD,'Group')
+    array(OG_AUDIENCE_FIELD,'Group'),
   );
 
   public $dependencies = array('Group');
