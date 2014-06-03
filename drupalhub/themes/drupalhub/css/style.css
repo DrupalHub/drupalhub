@@ -156,9 +156,23 @@ body.front .view-id-service_providers .service_item {
       color: #5d5a5a; }
 body.front .view-id-recommendation .project-label {
   float: left;
-  padding-right: 1px; }
+  padding-right: 10px; }
 body.front .view-id-recommendation .lt_blue {
   color: #20aae4;
   padding-bottom: 20px; }
   body.front .view-id-recommendation .lt_blue p {
     font-size: 20px; }
+body.front .pane-drupal-of-the-month .header {
+  background: #20aae4;
+  color: white; }
+body.front .pane-drupal-of-the-month .month_overlay {
+  background: #e5e5e5; }
+  body.front .pane-drupal-of-the-month .month_overlay .title {
+    color: #5A5A65;
+    font-size: 20px; }
+  body.front .pane-drupal-of-the-month .month_overlay .ratings {
+    padding-top: 15px;
+    padding-bottom: 15px; }
+  body.front .pane-drupal-of-the-month .month_overlay .group {
+    padding-top: 15px;
+    padding-bottom: 15px; }

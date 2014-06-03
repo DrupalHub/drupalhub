@@ -8,14 +8,22 @@ $plugin = array(
 );
 
 function drupalhub_pages_drupal_of_the_month_content_type_render($subtype, $conf, $args, $context) {
-  $node = node_load(variable_get('drupal_of_the_month'));
+  $wrapper = entity_metadata_wrapper('node', variable_get('drupal_of_the_month'));
 
   $block = new stdClass();
   $block->title = '';
 
-  if ($node) {
-    $block->content = theme('drupal_of_the_month');
+  if ($wrapper->value()) {
+    $file = $wrapper->field_recommendation_cropimage->get(0)->value();
+    $group = $wrapper->{OG_AUDIENCE_FIELD}->get(0);
+    $block->content = theme('drupal_of_the_month', array(
+      'image' => theme('image_style', array('path' => $file['uri'], 'style_name' => 'drupal_of_the_month')),
+      'title' => $wrapper->label(),
+      'body' => $wrapper->body->value->value(),
+      'group_link' => l($group->label(), 'node/' . $group->getIdentifier()),
+    ));
   }
+
 
   return $block;
 }

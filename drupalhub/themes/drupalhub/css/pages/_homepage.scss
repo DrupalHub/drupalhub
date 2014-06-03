@@ -203,4 +203,31 @@ body.front {
       }
     }
   }
+  
+  .pane-drupal-of-the-month {
+
+    .header {
+      background: $blue-title;
+      color: white;
+    }
+
+    .month_overlay {
+      background: $grey4;
+
+      .title {
+        color: #5A5A65;
+        font-size: 20px;
+      }
+
+      .ratings {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+
+      .group {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+  }
 }
