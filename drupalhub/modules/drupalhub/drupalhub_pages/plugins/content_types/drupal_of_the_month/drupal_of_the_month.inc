@@ -17,7 +17,13 @@ function drupalhub_pages_drupal_of_the_month_content_type_render($subtype, $conf
     $file = $wrapper->field_project_banner_cropimage->value();
     $group = $wrapper->{OG_AUDIENCE_FIELD}->get(0);
     $block->content = theme('drupal_of_the_month', array(
-      'image' => theme('image_style', array('path' => $file['uri'], 'style_name' => 'drupal_of_the_month')),
+      'image' => theme('image_style', array(
+        'path' => $file['uri'],
+        'style_name' => 'drupal_of_the_month',
+        'attributes' => array(
+          'class' => array('logo'),
+        ),
+      )),
       'title' => $wrapper->label(),
       'body' => $wrapper->body->value->value(),
       'group_link' => l($group->label(), 'node/' . $group->getIdentifier()),

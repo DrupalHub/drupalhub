@@ -25,7 +25,7 @@
         </div>
         <div class="col-xs-3"></div>
       </div>
-      <div class="text-center">
+      <div class="text-center text">
         <?php print $body; ?>
       </div>
       <div class="group"><?php print t('From the portfolio of: '); ?> <?php print $group_link; ?></div>

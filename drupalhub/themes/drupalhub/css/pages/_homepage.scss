@@ -198,6 +198,10 @@ body.front {
     .header {
       background: $blue-title;
       color: white;
+
+      h2 {
+        margin-bottom: 20px;
+      }
     }
 
     .month_overlay {
@@ -228,15 +232,25 @@ body.front {
       .group {
         padding-top: 15px;
         padding-bottom: 15px;
+        padding-left: 10px; /* LTR */
+      }
+
+      .text {
+        padding-right: 10px; /* LTR */
+        padding-left: 10px; /* LTR */
       }
 
       .image {
         position: relative;
         text-align: center;
 
+        img.logo {
+          border: #ffffff solid 1px;
+        }
+
         .strip {
           position: absolute;
-          left: -1px; /* LTR */
+          left: -5px; /* LTR */
           top: 90px;
         }
       }
