@@ -22,7 +22,7 @@ class Project extends DrupalHubMigrate {
     $this->addFieldMapping('body', 'body');
     $this->addFieldMapping(OG_AUDIENCE_FIELD, OG_AUDIENCE_FIELD)
       ->sourceMigration('Group');
-    $this->addFieldMapping('field_project_banner_cropimage', 'images');
+    $this->addFieldMapping('field_project_banner_cropimage', 'image');
     $this->addFieldMapping('field_project_banner_cropimage:file_replace')
       ->defaultValue(FILE_EXISTS_REPLACE);
     $this->addFieldMapping('field_project_banner_cropimage:source_dir')

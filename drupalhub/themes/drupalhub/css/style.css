@@ -193,6 +193,6 @@ body.front .pane-drupal-of-the-month .month_overlay {
     text-align: center; }
     body.front .pane-drupal-of-the-month .month_overlay .image .strip {
       position: absolute;
-      left: -5px;
+      left: -1px;
       /* LTR */
       top: 90px; }
