@@ -213,11 +213,11 @@ body.front {
         .stars {
           padding-top: 15px;
           padding-bottom: 15px;
-          padding-left: 0px;
+          padding-left: 0px; /* LTR */
           text-align: center;
 
           li {
-            margin-right: 5px;
+            margin-right: 5px; /* LTR */
             display: inline-block;
           }
         }

@@ -224,9 +224,11 @@ body.front .second-left-right {
       padding-top: 15px;
       padding-bottom: 15px;
       padding-left: 0px;
+      /* LTR */
       text-align: center; }
       body.front .second-left-right .pane-drupal-of-the-month .month_overlay .stars li {
         margin-right: 5px;
+        /* LTR */
         display: inline-block; }
     body.front .second-left-right .pane-drupal-of-the-month .month_overlay .title {
       color: #5A5A65;
