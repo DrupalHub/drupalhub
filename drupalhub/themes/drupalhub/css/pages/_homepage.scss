@@ -6,13 +6,22 @@ body.front {
     padding-bottom: 40px;
     padding-top: 35px;
 
+    .carousel-inner {
+      min-height: 350px;
+    }
+
     .carousel-caption {
       text-align: right;
       vertical-align: top;
-      top: 30%;
-      right: 10%;
+      top: 20%;
+      right: 0;
       text-shadow: none;
       color: $blue-title;
+
+
+      h1 {
+        padding-bottom: 20px;
+      }
     }
 
     .carousel-indicators {

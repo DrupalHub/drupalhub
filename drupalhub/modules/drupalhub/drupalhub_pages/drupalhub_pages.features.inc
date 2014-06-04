@@ -70,7 +70,7 @@ function drupalhub_pages_image_default_styles() {
         'data' => array(
           'width' => 479,
           'height' => 380,
-          'upscale' => 1,
+          'upscale' => 0,
           'retinafy' => 1,
         ),
         'weight' => 1,

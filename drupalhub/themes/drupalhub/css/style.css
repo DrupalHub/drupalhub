@@ -82,13 +82,17 @@ body.front .view-gallery {
   margin-bottom: 50px;
   padding-bottom: 40px;
   padding-top: 35px; }
+  body.front .view-gallery .carousel-inner {
+    min-height: 350px; }
   body.front .view-gallery .carousel-caption {
     text-align: right;
     vertical-align: top;
-    top: 30%;
-    right: 10%;
+    top: 20%;
+    right: 0;
     text-shadow: none;
     color: #20aae4; }
+    body.front .view-gallery .carousel-caption h1 {
+      padding-bottom: 20px; }
   body.front .view-gallery .carousel-indicators {
     bottom: -40px; }
     body.front .view-gallery .carousel-indicators li {
