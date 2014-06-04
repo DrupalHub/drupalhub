@@ -18,6 +18,12 @@ function drupalhub_preprocess_page(&$variables) {
   );
 
   $variables['loggin_button'] = l(t('Login'), 'user/login', array('attributes' => array('class' => array('login'))));
+
+  // Adding slide show.
+  $variables['slide_show'] = '';
+  if (drupal_is_front_page()) {
+    $variables['slide_show'] = views_embed_view('gallery');
+  }
 }
 
 /**

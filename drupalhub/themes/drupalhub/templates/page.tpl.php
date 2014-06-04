@@ -132,7 +132,7 @@
       </div>
     <?php endif; ?>
 </header>
-
+<?php print $slide_show; ?>
 <div class="main-container container">
 
   <header role="banner" id="page-header">

@@ -34,7 +34,7 @@ function drupalhub_pages_image_default_styles() {
     'name' => 'drupal_of_the_month',
     'label' => 'Drupal of the month',
     'effects' => array(
-      2 => array(
+      1 => array(
         'label' => 'Scale and crop',
         'help' => 'Scale and crop will maintain the aspect-ratio of the original image, then crop the larger dimension. This is most useful for creating perfectly square thumbnails without stretching the image.',
         'effect callback' => 'retina_images_image_scale_and_crop_effect',
@@ -49,6 +49,31 @@ function drupalhub_pages_image_default_styles() {
           'retinafy' => 1,
         ),
         'weight' => 2,
+      ),
+    ),
+  );
+
+  // Exported image style: font_page_gallery.
+  $styles['font_page_gallery'] = array(
+    'name' => 'font_page_gallery',
+    'label' => 'Font page gallery',
+    'effects' => array(
+      2 => array(
+        'label' => 'Scale',
+        'help' => 'Scaling will maintain the aspect-ratio of the original image. If only a single dimension is specified, the other dimension will be calculated.',
+        'effect callback' => 'retina_images_image_scale_effect',
+        'dimensions callback' => 'image_scale_dimensions',
+        'form callback' => 'retina_images_image_scale_form',
+        'summary theme' => 'retina_images_image_scale_summary',
+        'module' => 'image',
+        'name' => 'image_scale',
+        'data' => array(
+          'width' => 479,
+          'height' => 380,
+          'upscale' => 1,
+          'retinafy' => 1,
+        ),
+        'weight' => 1,
       ),
     ),
   );

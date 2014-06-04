@@ -45,7 +45,6 @@
   margin: 0px;
   width: 100%;
   clear: both;
-  margin-bottom: 50px;
   max-width: 100%;
   border-color: #e7e7e7;
   background: #21a8e6;
@@ -78,6 +77,9 @@
     color: white;
     padding: 10px 10px 10px 5px; }
 
+body.front .view-gallery {
+  background: #e6e6e6;
+  margin-bottom: 50px; }
 body.front .view-id-top_users {
   background: #e5e5e5; }
   body.front .view-id-top_users hr {

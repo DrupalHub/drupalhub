@@ -138,25 +138,6 @@ function drupalhub_pages_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-03462688-14d9-4eb8-b9be-56efac88ab3c';
-    $pane->panel = 'first';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'front_page_gallery-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '03462688-14d9-4eb8-b9be-56efac88ab3c';
-    $display->content['new-03462688-14d9-4eb8-b9be-56efac88ab3c'] = $pane;
-    $display->panels['first'][0] = 'new-03462688-14d9-4eb8-b9be-56efac88ab3c';
-    $pane = new stdClass();
     $pane->pid = 'new-c08be55b-8548-4bc1-9628-572536a43b2e';
     $pane->panel = 'first_left';
     $pane->type = 'new_question';
