@@ -51,12 +51,33 @@
   background: #21a8e6;
   padding: 20px 0; }
   #navbar .container {
-    width: 1170px;
-    margin: 0 auto; }
+    max-width: 1170px;
+    margin: 0px auto; }
+    #navbar .container .navbar-header {
+      margin: 0px; }
+    #navbar .container .navbar-collapse.in {
+      margin: 0px;
+      height: 80px !important; }
     #navbar .container a {
       color: white; }
     #navbar .container .navbar-brand {
       padding: 40px 35px; }
+
+.not-logged-in nav {
+  padding-top: 40px;
+  float: right;
+  /* LTR */ }
+  .not-logged-in nav a {
+    -webkit-border-radius: 5px 5px;
+    -moz-border-radius: 1;
+    -khtml-border-radius: 1;
+    border-radius: 1;
+    background: #f7b700;
+    width: 170px;
+    height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 10px 10px 5px; }
 
 body.front .view-id-top_users {
   background: #e5e5e5; }
