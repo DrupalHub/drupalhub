@@ -241,10 +241,10 @@ function drupalhub_pages_default_page_manager_pages() {
     $display->content['new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec'] = $pane;
     $display->panels['fist_right'][0] = 'new-7535806c-7fcb-4ea9-8c40-7c00fe95f7ec';
     $pane = new stdClass();
-    $pane->pid = 'new-477f3a22-8662-484c-921a-48d11be1f560';
+    $pane->pid = 'new-f0566537-3a92-4e2e-93e5-84c56526807f';
     $pane->panel = 'second-last';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'service_providers-panel_pane_1';
+    $pane->type = 'service_provider';
+    $pane->subtype = 'service_provider';
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array();
@@ -256,9 +256,9 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '477f3a22-8662-484c-921a-48d11be1f560';
-    $display->content['new-477f3a22-8662-484c-921a-48d11be1f560'] = $pane;
-    $display->panels['second-last'][0] = 'new-477f3a22-8662-484c-921a-48d11be1f560';
+    $pane->uuid = 'f0566537-3a92-4e2e-93e5-84c56526807f';
+    $display->content['new-f0566537-3a92-4e2e-93e5-84c56526807f'] = $pane;
+    $display->panels['second-last'][0] = 'new-f0566537-3a92-4e2e-93e5-84c56526807f';
     $pane = new stdClass();
     $pane->pid = 'new-89240efd-0741-431d-9cf5-81da213224f7';
     $pane->panel = 'second-middle';
