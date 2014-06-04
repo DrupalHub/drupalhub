@@ -124,6 +124,7 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['title']['link_to_node'] = FALSE;
   /* Field: Content: Group banner CropImage */
   $handler->display->display_options['fields']['field_group_banner_cropimage']['id'] = 'field_group_banner_cropimage';
   $handler->display->display_options['fields']['field_group_banner_cropimage']['table'] = 'field_data_field_group_banner_cropimage';
@@ -154,6 +155,11 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'group_banner' => 'group_banner',
   );
+  /* Filter criterion: Content: Promoted to front page */
+  $handler->display->display_options['filters']['promote']['id'] = 'promote';
+  $handler->display->display_options['filters']['promote']['table'] = 'node';
+  $handler->display->display_options['filters']['promote']['field'] = 'promote';
+  $handler->display->display_options['filters']['promote']['value'] = '1';
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');

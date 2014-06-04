@@ -79,7 +79,35 @@
 
 body.front .view-gallery {
   background: #e6e6e6;
-  margin-bottom: 50px; }
+  margin-bottom: 50px;
+  padding-bottom: 40px;
+  padding-top: 35px; }
+  body.front .view-gallery .carousel-caption {
+    text-align: right;
+    vertical-align: top;
+    top: 30%;
+    right: 10%;
+    text-shadow: none;
+    color: #20aae4; }
+  body.front .view-gallery .carousel-indicators {
+    bottom: -40px; }
+    body.front .view-gallery .carousel-indicators li {
+      height: 16px;
+      width: 16px;
+      border-radius: 5px;
+      background: #FFF;
+      margin: 0;
+      position: relative;
+      border: 1px solid #777; }
+    body.front .view-gallery .carousel-indicators li.active::after {
+      content: '';
+      position: absolute;
+      height: 10px;
+      width: 10px;
+      background: #777;
+      left: 2px;
+      top: 2px;
+      border-radius: 3px; }
 body.front .view-id-top_users {
   background: #e5e5e5; }
   body.front .view-id-top_users hr {
