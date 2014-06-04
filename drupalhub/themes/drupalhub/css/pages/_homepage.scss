@@ -296,6 +296,8 @@ body.front {
         .image {
           position: relative;
           text-align: center;
+          width: 346px;
+          margin: 0px auto;
 
           img.logo {
             border: #ffffff solid 1px;
@@ -303,7 +305,7 @@ body.front {
 
           .strip {
             position: absolute;
-            left: -5px; /* LTR */
+            left: -15px; /* LTR */
             top: 90px;
           }
         }
