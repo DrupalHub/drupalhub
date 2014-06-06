@@ -204,24 +204,35 @@ body.front {
     }
   }
 
-  .view-id-service_providers {
+  .pane-service-provider {
 
-    .service_item {
-      border: $gery5 solid 1px;
-      margin: 0px 15px;
-      min-width: 140px;
+    .first,
+    .second {
+      top: 90px;
+      left: 30px;
+    }
 
-      .overflow {
-        min-height: 100px;
-        text-align: center;
+    .arrow {
+
+      &.first_arrow {
+        background-image: url("../images/arrows.png");
+        background-repeat: no-repeat;
+        height: 100px;
+        background-position-x: -264px;
+
+        &.disabled {
+          background-position-x: 0px;
+        }
       }
 
-      .text {
-        min-height: 50px;
-        background: $grey2;
+      &.second_arrow {
+        background-image: url("../images/arrows.png");
+        background-repeat: no-repeat;
+        height: 100px;
+        background-position-x: -80px;
 
-        a {
-          color: #5d5a5a;
+        &.disabled {
+          background-position-x: -162px;
         }
       }
     }

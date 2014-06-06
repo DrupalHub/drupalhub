@@ -245,18 +245,24 @@ body.front .views-exposed-widget.views-widget-filter-title {
   body.front .views-exposed-widget.views-widget-filter-title .form-item-title.form-item {
     float: right;
     /* LTR */ }
-body.front .view-id-service_providers .service_item {
-  border: #e7e7e7 solid 1px;
-  margin: 0px 15px;
-  min-width: 140px; }
-  body.front .view-id-service_providers .service_item .overflow {
-    min-height: 100px;
-    text-align: center; }
-  body.front .view-id-service_providers .service_item .text {
-    min-height: 50px;
-    background: #d7d7d7; }
-    body.front .view-id-service_providers .service_item .text a {
-      color: #5d5a5a; }
+body.front .pane-service-provider .first,
+body.front .pane-service-provider .second {
+  top: 90px;
+  left: 30px; }
+body.front .pane-service-provider .arrow.first_arrow {
+  background-image: url("../images/arrows.png");
+  background-repeat: no-repeat;
+  height: 100px;
+  background-position-x: -264px; }
+  body.front .pane-service-provider .arrow.first_arrow.disabled {
+    background-position-x: 0px; }
+body.front .pane-service-provider .arrow.second_arrow {
+  background-image: url("../images/arrows.png");
+  background-repeat: no-repeat;
+  height: 100px;
+  background-position-x: -80px; }
+  body.front .pane-service-provider .arrow.second_arrow.disabled {
+    background-position-x: -162px; }
 body.front .second-left-right {
   padding-top: 50px; }
   body.front .second-left-right .view-id-recommendation .project-label {
