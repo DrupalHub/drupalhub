@@ -12,6 +12,10 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
     return;
   }
 
+  $path = drupal_get_path('module', 'drupalhub_pages') . '/plugins/content_types/service_provider/assets';
+
+  drupal_add_js($path . '/slideshow.js');
+
   $chunks = array_chunk($nodes, 20);
   $providers = '';
 

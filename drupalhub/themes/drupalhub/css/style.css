@@ -245,11 +245,14 @@ body.front .views-exposed-widget.views-widget-filter-title {
   body.front .views-exposed-widget.views-widget-filter-title .form-item-title.form-item {
     float: right;
     /* LTR */ }
+body.front .pane-service-provider .carousel {
+  min-height: 380px; }
 body.front .pane-service-provider .first,
 body.front .pane-service-provider .second {
   top: 90px;
   left: 30px; }
 body.front .pane-service-provider .arrow.first_arrow {
+  width: 35px;
   background-image: url("../images/arrows.png");
   background-repeat: no-repeat;
   height: 100px;
@@ -257,6 +260,7 @@ body.front .pane-service-provider .arrow.first_arrow {
   body.front .pane-service-provider .arrow.first_arrow.disabled {
     background-position-x: 0px; }
 body.front .pane-service-provider .arrow.second_arrow {
+  width: 45px;
   background-image: url("../images/arrows.png");
   background-repeat: no-repeat;
   height: 100px;

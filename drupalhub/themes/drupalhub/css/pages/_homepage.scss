@@ -206,6 +206,10 @@ body.front {
 
   .pane-service-provider {
 
+    .carousel {
+      min-height: 380px;
+    }
+
     .first,
     .second {
       top: 90px;
@@ -215,6 +219,7 @@ body.front {
     .arrow {
 
       &.first_arrow {
+        width: 35px;
         background-image: url("../images/arrows.png");
         background-repeat: no-repeat;
         height: 100px;
@@ -226,6 +231,7 @@ body.front {
       }
 
       &.second_arrow {
+        width: 45px;
         background-image: url("../images/arrows.png");
         background-repeat: no-repeat;
         height: 100px;
