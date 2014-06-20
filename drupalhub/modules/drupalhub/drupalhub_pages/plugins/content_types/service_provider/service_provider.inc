@@ -16,7 +16,8 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
 
   drupal_add_js($path . '/slideshow.js');
 
-  $chunks = array_chunk($nodes, 20);
+
+  $chunks = array_chunk($nodes, 12);
   $providers = '';
 
   $i = $j = 0;
@@ -27,13 +28,17 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
       $providers .= '<div class="row">';
 
       foreach ($nodes as $node) {
-        $providers .= '<div class="col-xs-2">' . theme('service_provider', array('title' => $node->title)) . '</div>';
+        $params = array(
+          'title' => views_trim_text(array('max_length' => 20, 'html' => TRUE), $node->title),
+          'image' => 'a',
+        );
+        $providers .= '<div class="col-xs-2">' . theme('service_provider', $params) . '</div>';
         $j++;
 
         // Each row need to have 10 providers. When the $j is smaller then 20
         // that's mean we didn't got to end of the provider in the current
         // carousel item.
-        if ($j % 10 == 0 && $j < 20) {
+        if ($j % 6 == 0) {
           $providers .= '</div><div class="row">';
         }
       }

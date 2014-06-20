@@ -206,8 +206,19 @@ body.front {
 
   .pane-service-provider {
 
-    .carousel {
-      min-height: 380px;
+    .carousel,
+    .col-xs-1 {
+      min-height: 400px;
+    }
+
+    .col-xs-1 {
+      position: relative;
+
+      .carousel-control {
+        position: absolute;
+        top: 40%;
+        left: 30%;
+      }
     }
 
     .first,
@@ -241,6 +252,23 @@ body.front {
           background-position-x: -162px;
         }
       }
+    }
+
+    .service_item {
+      border: 1px solid #d7d7d7;
+
+      .image {
+        min-height: 100px;
+      }
+
+      .text {
+        background: $gery5;
+        min-height: 50px;
+      }
+    }
+
+    .row {
+      padding-top: 30px;
     }
   }
 
