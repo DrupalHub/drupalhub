@@ -27,7 +27,7 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
       $providers .= '<div class="row">';
 
       foreach ($nodes as $node) {
-        $providers .= '<div class="col-xs-2">' . $node->title . '</div>';
+        $providers .= '<div class="col-xs-2">' . theme('service_provider', array('title' => $node->title)) . '</div>';
         $j++;
 
         // Each row need to have 10 providers. When the $j is smaller then 20
@@ -46,7 +46,7 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
 
   $block = new stdClass();
 
-  $block->content = theme('service_provider', array('providers' => $providers));
+  $block->content = theme('service_providers', array('providers' => $providers));
 
   return $block;
 }
@@ -55,11 +55,20 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
  * Delegating hook_theme().
  */
 function drupalhub_pages_service_provider_content_type_theme(&$theme, $plugin) {
-  $theme['service_provider'] = array(
-    'path' => $plugin['path'],
-    'template' => 'service-provider',
+  $theme['service_providers'] = array(
+    'path' => $plugin['path'] . '/templates',
+    'template' => 'service-providers',
     'variables' => array(
       'providers' => '',
+    ),
+  );
+
+  $theme['service_provider'] = array(
+    'path' => $plugin['path'] . '/templates',
+    'template' => 'service-provider',
+    'variables' => array(
+      'title' => '',
+      'image' => '',
     ),
   );
 }
