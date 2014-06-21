@@ -5,3 +5,23 @@
  */
 
 include_once 'drupalhub_group.features.inc';
+
+
+/**
+ * Get list of service providers.
+ *
+ * @return stdClass[];
+ */
+function drupalhub_group_get_service_providers() {
+  $query = new EntityFieldQuery();
+  $results = $query
+    ->entityCondition('entity_type', 'node')
+    ->propertyCondition('type', 'drupalhub_group')
+    ->execute();
+
+  if (empty($results['node'])) {
+    return;
+  }
+
+  return node_load_multiple(array_keys($results['node']));
+}

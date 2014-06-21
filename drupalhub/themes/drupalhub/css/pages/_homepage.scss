@@ -204,26 +204,82 @@ body.front {
     }
   }
 
-  .view-id-service_providers {
+  .pane-service-provider {
+
+    .carousel,
+    .col-xs-1 {
+      min-height: 400px;
+    }
+
+    .col-xs-1 {
+      position: relative;
+
+      .carousel-control {
+        position: absolute;
+        top: 40%;
+        left: 30%;
+      }
+    }
+
+    .first,
+    .second {
+      top: 90px;
+      left: 30px;
+    }
+
+    .arrow {
+
+      &.first_arrow {
+        width: 35px;
+        background-image: url("../images/arrows.png");
+        background-repeat: no-repeat;
+        height: 100px;
+        background-position-x: -264px;
+
+        &.disabled {
+          background-position-x: 0px;
+        }
+      }
+
+      &.second_arrow {
+        width: 45px;
+        background-image: url("../images/arrows.png");
+        background-repeat: no-repeat;
+        height: 100px;
+        background-position-x: -80px;
+
+        &.disabled {
+          background-position-x: -162px;
+        }
+      }
+    }
 
     .service_item {
-      border: $gery5 solid 1px;
-      margin: 0px 15px;
-      min-width: 140px;
+      border: 1px solid #d7d7d7;
 
-      .overflow {
-        min-height: 100px;
+      .image {
         text-align: center;
+        height: 100px;
+
+        .helper {
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
+
+        img {
+          vertical-align: middle;
+        }
       }
 
       .text {
-        min-height: 50px;
-        background: $grey2;
-
-        a {
-          color: #5d5a5a;
-        }
+        background: $gery5;
+        min-height: 40px;
       }
+    }
+
+    .row {
+      padding-top: 30px;
     }
   }
 
