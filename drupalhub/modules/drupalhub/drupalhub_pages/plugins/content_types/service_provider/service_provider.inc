@@ -28,9 +28,12 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
       $providers .= '<div class="row">';
 
       foreach ($nodes as $node) {
+
+        $wrapper = entity_metadata_wrapper('node', $node);
+        $file = $wrapper->field_group_logo->value();
         $params = array(
-          'title' => views_trim_text(array('max_length' => 20, 'html' => TRUE), $node->title),
-          'image' => 'a',
+          'title' => l(views_trim_text(array('max_length' => 20, 'html' => TRUE, 'ellipsis' => TRUE), $node->title), 'node/' . $node->nid),
+          'image' => theme('image_style', array('path' => $file['uri'], 'style_name' => 'thumbnail')),
         );
         $providers .= '<div class="col-xs-2">' . theme('service_provider', $params) . '</div>';
         $j++;

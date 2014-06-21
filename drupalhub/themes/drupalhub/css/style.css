@@ -277,10 +277,17 @@ body.front .pane-service-provider .arrow.second_arrow {
 body.front .pane-service-provider .service_item {
   border: 1px solid #d7d7d7; }
   body.front .pane-service-provider .service_item .image {
-    min-height: 100px; }
+    text-align: center;
+    height: 100px; }
+    body.front .pane-service-provider .service_item .image .helper {
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle; }
+    body.front .pane-service-provider .service_item .image img {
+      vertical-align: middle; }
   body.front .pane-service-provider .service_item .text {
     background: #e7e7e7;
-    min-height: 50px; }
+    min-height: 40px; }
 body.front .pane-service-provider .row {
   padding-top: 30px; }
 body.front .second-left-right {

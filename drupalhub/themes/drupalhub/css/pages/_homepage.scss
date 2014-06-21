@@ -258,12 +258,23 @@ body.front {
       border: 1px solid #d7d7d7;
 
       .image {
-        min-height: 100px;
+        text-align: center;
+        height: 100px;
+
+        .helper {
+          display: inline-block;
+          height: 100%;
+          vertical-align: middle;
+        }
+
+        img {
+          vertical-align: middle;
+        }
       }
 
       .text {
         background: $gery5;
-        min-height: 50px;
+        min-height: 40px;
       }
     }
 
