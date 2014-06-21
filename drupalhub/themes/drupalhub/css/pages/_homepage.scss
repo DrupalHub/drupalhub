@@ -189,6 +189,19 @@ body.front {
     }
   }
 
+  .pane-service-provider-search {
+
+    .ajax-progress {
+      width: 100%;
+    }
+
+    .placeholder_search {
+      width: auto;
+      float: right; /* LTR */
+    }
+  }
+
+
   .views-exposed-widget.views-widget-filter-title {
     width: 100%;
 

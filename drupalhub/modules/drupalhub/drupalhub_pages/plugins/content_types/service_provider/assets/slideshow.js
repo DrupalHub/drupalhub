@@ -1,7 +1,7 @@
 
 (function ($) {
 
-  Drupal.behaviors.nodeFieldsetSummaries = {
+  Drupal.behaviors.DrupalHubPagesSlideShow = {
     attach: function (context) {
       $('.carousel').carousel('pause');
     }

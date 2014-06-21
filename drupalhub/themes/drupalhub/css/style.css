@@ -232,6 +232,12 @@ body.front .pane-front-page-blogs-panel-pane-1 {
     float: left;
     /* LTR */
     padding-right: 20px; }
+body.front .pane-service-provider-search .ajax-progress {
+  width: 100%; }
+body.front .pane-service-provider-search .placeholder_search {
+  width: auto;
+  float: right;
+  /* LTR */ }
 body.front .views-exposed-widget.views-widget-filter-title {
   width: 100%; }
   body.front .views-exposed-widget.views-widget-filter-title label {
