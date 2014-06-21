@@ -13,50 +13,12 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
   }
 
   $path = drupal_get_path('module', 'drupalhub_pages') . '/plugins/content_types/service_provider/assets';
-
   drupal_add_js($path . '/slideshow.js');
 
-
-  $chunks = array_chunk($nodes, 12);
-  $providers = '';
-
-  $i = $j = 0;
-  foreach ($chunks as $nodes) {
-
-    $active = $i == 0 ? 'active' : '';
-    $providers .= '<div class="item ' . $active . '">';
-      $providers .= '<div class="row">';
-
-      foreach ($nodes as $node) {
-
-        $wrapper = entity_metadata_wrapper('node', $node);
-        $file = $wrapper->field_group_logo->value();
-        $params = array(
-          'title' => l(views_trim_text(array('max_length' => 20, 'html' => TRUE, 'ellipsis' => TRUE), $node->title), 'node/' . $node->nid),
-          'image' => theme('image_style', array('path' => $file['uri'], 'style_name' => 'thumbnail')),
-        );
-        $providers .= '<div class="col-xs-2">' . theme('service_provider', $params) . '</div>';
-        $j++;
-
-        // Each row need to have 10 providers. When the $j is smaller then 20
-        // that's mean we didn't got to end of the provider in the current
-        // carousel item.
-        if ($j % 6 == 0) {
-          $providers .= '</div><div class="row">';
-        }
-      }
-
-      $providers .= '</div>';
-    $providers .= '</div>';
-
-    $i++;
-  }
+  $results = drupalhub_pages_services_providers($nodes);
 
   $block = new stdClass();
-
-  $navigation = count($chunks) > 1;
-
-  $block->content = theme('service_providers', array('providers' => $providers, 'navigation' => $navigation));
+  $block->content = theme('service_providers', array('providers' => $results['providers'], 'navigation' => $results['navigation']));
 
   return $block;
 }
