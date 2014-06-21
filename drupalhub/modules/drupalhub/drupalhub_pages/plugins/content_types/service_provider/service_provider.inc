@@ -54,7 +54,9 @@ function drupalhub_pages_service_provider_content_type_render($subtype, $conf, $
 
   $block = new stdClass();
 
-  $block->content = theme('service_providers', array('providers' => $providers));
+  $navigation = count($chunks) > 1;
+
+  $block->content = theme('service_providers', array('providers' => $providers, 'navigation' => $navigation));
 
   return $block;
 }
