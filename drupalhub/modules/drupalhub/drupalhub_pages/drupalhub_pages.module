@@ -13,11 +13,14 @@ include_once 'drupalhub_pages.features.inc';
 function drupalhub_pages_menu() {
   $items = array();
 
-  $items['service_provider/%'] = array(
+  $items['service_provider'] = $items['service_provider/%'] = array(
     'page arguments' => array(1),
     'page callback' => 'drupalhub_pages_service_providers_search',
     'access callback' => TRUE,
   );
+
+
+  $items['service_provider']['page arguments'] = array();
 
   return $items;
 }
