@@ -3,7 +3,7 @@
 
   Drupal.behaviors.DrupalHubPagesSlideShow = {
     attach: function (context) {
-      $('.carousel').carousel('pause');
+      $('.pane-service-provider .carousel').carousel('pause');
     }
   };
 
