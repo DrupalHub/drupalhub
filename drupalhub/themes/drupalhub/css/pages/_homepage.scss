@@ -198,6 +198,9 @@ body.front {
     .placeholder_search {
       width: auto;
       float: right; /* LTR */
+      background-image: url("../images/search.png");
+      background-repeat: no-repeat;
+      background-position: 289px 10px;
     }
   }
 
@@ -218,6 +221,7 @@ body.front {
   }
 
   .pane-service-provider {
+    text-align: center;
 
     .carousel,
     .col-xs-1 {
