@@ -1,0 +1,51 @@
+<?php
+/**
+ * @file
+ * Code for the drupalhub_node_count
+ */
+
+/**
+ * Implements hook_form_alter().
+ * 
+ * disable editing of drupalhub_node_count in edit form
+ */
+function drupalhub_node_count_form_alter(&$form, &$form_state, $form_id){
+  //change all edit node forms
+  if(preg_match("/.+?_node_form/",$form_id)){
+    if(isset($form['drupalhub_node_count'])){
+      unset($form['drupalhub_node_count']);
+      }
+    }
+  }
+/**
+ * Implements hook_node_type_insert().
+ * 
+ * adding count_node field to all new node types
+ */
+function drupalhub_node_count_node_type_insert($info){
+	//include install file to use function
+	module_load_include('install', 'drupalhub_node_count', 'drupalhub_node_count');
+
+	drupalhub_node_count_add_instance($info->type);
+	}
+
+/**
+ * Implements hook_node_view().
+ * 
+ * increasing drupalhub_node_count if node is viewing  in full mode
+ * excluding author viewing
+ */  
+function drupalhub_node_count_node_view($node, $view_mode, $langcode){
+if($view_mode == 'full'){
+  global $user;
+  if($user->uid != $node->uid){
+    try{
+      $node_wrap = entity_metadata_wrapper('node', $node);
+      $node_wrap->drupalhub_node_count = $node_wrap->drupalhub_node_count->value() + 1;
+      $node_wrap->save();
+      }
+    catch(Exception $e){}
+    }
+  };  
+}
+

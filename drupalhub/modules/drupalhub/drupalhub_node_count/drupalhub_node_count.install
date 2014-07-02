@@ -1,0 +1,58 @@
+<?php
+
+define('DRUPALHUB_NODE_COUNT_FIELDNAME', 'drupalhub_node_count');
+
+
+/**
+ * Implements hook_node_type_enable().
+ * 
+ * adding count_node field to all exist node types
+ */
+function drupalhub_node_count_enable(){
+	$node_types = array_keys(node_type_get_types());
+	foreach ($node_types as $type) {
+	  	drupalhub_node_count_add_instance($type);
+	  }  
+	}
+
+function drupalhub_node_count_add_instance($type){
+	if( ! field_info_field(DRUPALHUB_NODE_COUNT_FIELDNAME) ){
+		drupalhub_node_count_add_field();
+		}
+	if( ! field_info_instance('node', DRUPALHUB_NODE_COUNT_FIELDNAME, $type) ){
+      $instance = array(
+      'field_name' => DRUPALHUB_NODE_COUNT_FIELDNAME,
+      'entity_type' => 'node',
+      'bundle' => $type,
+      'label' => 'watch counter',
+      'widget' => array(
+        'type' => 'number',
+        'module' => 'number',
+        ),
+      'display' => array(
+        'default' => array(
+          'label' => 'hidden',
+            'type' => 'hidden',
+             ),
+      'teaser' => array(
+        'label' => 'inline',
+        'type' => 'number_integer',
+            ),
+          ),
+    	);
+    	field_create_instance($instance);
+  		}
+	}
+
+function drupalhub_node_count_add_field(){
+	if( ! field_info_field(DRUPALHUB_NODE_COUNT_FIELDNAME) ){
+      $field = array(
+        'field_name' => DRUPALHUB_NODE_COUNT_FIELDNAME,
+        'type' => 'number_integer',
+        'cardinality' => 1,
+        'translatable' => 0,
+        'locked' => TRUE,
+      );
+      field_create_field($field);
+    	}
+	}
