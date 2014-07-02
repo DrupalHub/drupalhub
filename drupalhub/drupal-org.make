@@ -40,6 +40,12 @@ projects[entityreference][version] = 1.1
 projects[entityreference_prepopulate][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = 1.3
 
+projects[entity_view_count][download][type] = "git"
+projects[entity_view_count][download][url] = "https://github.com/DrupalHub/entity_view_count.git"
+projects[entity_view_count][download][branch] = 7.x-1.x
+projects[entity_view_count][subdir] = "contrib"
+projects[entity_view_count][type] = "module"
+
 projects[features][subdir] = "contrib"
 projects[features][version] = 2.0
 

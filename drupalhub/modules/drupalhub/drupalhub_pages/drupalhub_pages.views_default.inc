@@ -241,6 +241,13 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['comment_body']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['comment_body']['alter']['text'] = '[name]: [comment_body]';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
+  /* Field: Comment: Increase count for Comment */
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['id'] = 'comment_entity_view_count_increase';
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['table'] = 'comment';
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['field'] = 'comment_entity_view_count_increase';
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['label'] = '';
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['element_label_colon'] = FALSE;
   /* Sort criterion: Comment: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
@@ -454,6 +461,18 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: User: User's view count */
+  $handler->display->display_options['relationships']['user_entity_view_count']['id'] = 'user_entity_view_count';
+  $handler->display->display_options['relationships']['user_entity_view_count']['table'] = 'users';
+  $handler->display->display_options['relationships']['user_entity_view_count']['field'] = 'user_entity_view_count';
+  /* Field: User: Entity view count */
+  $handler->display->display_options['fields']['field_entity_view_count']['id'] = 'field_entity_view_count';
+  $handler->display->display_options['fields']['field_entity_view_count']['table'] = 'field_data_field_entity_view_count';
+  $handler->display->display_options['fields']['field_entity_view_count']['field'] = 'field_entity_view_count';
+  $handler->display->display_options['fields']['field_entity_view_count']['label'] = '';
+  $handler->display->display_options['fields']['field_entity_view_count']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['field_entity_view_count']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_entity_view_count']['type'] = 'user_owned_entities_viewed';
   /* Field: User: Picture */
   $handler->display->display_options['fields']['picture']['id'] = 'picture';
   $handler->display->display_options['fields']['picture']['table'] = 'users';
@@ -490,18 +509,21 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['nothing']['table'] = 'views';
   $handler->display->display_options['fields']['nothing']['field'] = 'nothing';
   $handler->display->display_options['fields']['nothing']['label'] = '';
-  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<i class="fa fa-heart"></i> [field_reputation]';
+  $handler->display->display_options['fields']['nothing']['alter']['text'] = '<i class="fa fa-heart"></i> [field_reputation] <i class="fa fa-eye"></i> [field_entity_view_count]';
   $handler->display->display_options['fields']['nothing']['element_label_colon'] = FALSE;
-  /* Sort criterion: User: Created date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'users';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Sort criterion: User: Reputation (field_reputation) */
   $handler->display->display_options['sorts']['field_reputation_value']['id'] = 'field_reputation_value';
   $handler->display->display_options['sorts']['field_reputation_value']['table'] = 'field_data_field_reputation';
   $handler->display->display_options['sorts']['field_reputation_value']['field'] = 'field_reputation_value';
   $handler->display->display_options['sorts']['field_reputation_value']['order'] = 'DESC';
+  /* Sort criterion: Entity view count: Entity view count sort results */
+  $handler->display->display_options['sorts']['order']['id'] = 'order';
+  $handler->display->display_options['sorts']['order']['table'] = 'entity_view_count';
+  $handler->display->display_options['sorts']['order']['field'] = 'order';
+  $handler->display->display_options['sorts']['order']['relationship'] = 'user_entity_view_count';
+  $handler->display->display_options['sorts']['order']['order'] = 'DESC';
+  $handler->display->display_options['sorts']['order']['sort_style'] = 'user_viewed_entities';
+  $handler->display->display_options['sorts']['order']['entity_type'] = 'comment';
   /* Filter criterion: User: Active */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'users';
@@ -520,8 +542,9 @@ function drupalhub_pages_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('uid'),
     t('[name] ([field_reputation])'),
-    t('<i class="fa fa-heart"></i> [field_reputation]'),
+    t('<i class="fa fa-heart"></i> [field_reputation] <i class="fa fa-eye"></i> [field_entity_view_count]'),
     t('Content pane'),
     t('View panes'),
   );

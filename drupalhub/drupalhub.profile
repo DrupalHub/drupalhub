@@ -92,7 +92,6 @@ function _drupalhub_migrate_content($class, $type, &$context) {
  */
 function drupalhub_variables_set() {
   $variables = array(
-//    'theme_default' => 'drupalhub_basetheme',
     'theme_default' => 'drupalhub',
     'admin_theme' => 'seven',
     'node_options_page',
@@ -110,6 +109,7 @@ function drupalhub_variables_set() {
     'caret_position' => 'profiles/drupalhub/libraries/jquery_caret_position',
     'page_manager_node_view_disabled' => FALSE,
     'site_frontpage' => 'front',
+    'entity_view_count_track_user' => array(),
   );
 
   foreach ($variables as $name => $value) {

@@ -1,0 +1,8 @@
+name = drupalhub_users
+core = 7.x
+package = Features
+dependencies[] = entity_view_count
+dependencies[] = features
+features[features_api][] = api:2
+features[field_base][] = field_entity_view_count
+features[field_instance][] = user-user-field_entity_view_count
