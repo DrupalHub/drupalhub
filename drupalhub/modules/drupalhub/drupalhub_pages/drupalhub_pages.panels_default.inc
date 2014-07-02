@@ -44,35 +44,6 @@ function drupalhub_pages_default_panels_mini() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-10ab30a1-1c28-40e7-b979-4e218f8a2915';
-    $pane->panel = 'left';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_vote';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'default',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(),
-      'context' => 'requiredcontext_entity:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '10ab30a1-1c28-40e7-b979-4e218f8a2915';
-    $display->content['new-10ab30a1-1c28-40e7-b979-4e218f8a2915'] = $pane;
-    $display->panels['left'][0] = 'new-10ab30a1-1c28-40e7-b979-4e218f8a2915';
-    $pane = new stdClass();
     $pane->pid = 'new-ede2bc13-8055-4590-867a-5acb735f4644';
     $pane->panel = 'right';
     $pane->type = 'node_author';
@@ -91,7 +62,7 @@ function drupalhub_pages_default_panels_mini() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'ede2bc13-8055-4590-867a-5acb735f4644';
     $display->content['new-ede2bc13-8055-4590-867a-5acb735f4644'] = $pane;
@@ -115,7 +86,7 @@ function drupalhub_pages_default_panels_mini() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
     $pane->uuid = 'a988e3ca-3f26-4f9c-b685-b6331ae4a634';
     $display->content['new-a988e3ca-3f26-4f9c-b685-b6331ae4a634'] = $pane;
@@ -138,7 +109,7 @@ function drupalhub_pages_default_panels_mini() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = 'c5dae5c3-f046-4a8a-a98a-4d2114ade46c';
     $display->content['new-c5dae5c3-f046-4a8a-a98a-4d2114ade46c'] = $pane;
@@ -167,13 +138,13 @@ function drupalhub_pages_default_panels_mini() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = '2348e651-915e-40ae-9128-33abd90d1d3f';
     $display->content['new-2348e651-915e-40ae-9128-33abd90d1d3f'] = $pane;
     $display->panels['right'][3] = 'new-2348e651-915e-40ae-9128-33abd90d1d3f';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-10ab30a1-1c28-40e7-b979-4e218f8a2915';
+  $display->title_pane = '0';
   $mini->display = $display;
   $export['question_display'] = $mini;
 

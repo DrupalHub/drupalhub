@@ -241,6 +241,13 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['comment_body']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['comment_body']['alter']['text'] = '[name]: [comment_body]';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
+  /* Field: Comment: Increase count for Comment */
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['id'] = 'comment_entity_view_count_increase';
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['table'] = 'comment';
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['field'] = 'comment_entity_view_count_increase';
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['label'] = '';
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['comment_entity_view_count_increase']['element_label_colon'] = FALSE;
   /* Sort criterion: Comment: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
@@ -514,6 +521,7 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['sorts']['order']['table'] = 'entity_view_count';
   $handler->display->display_options['sorts']['order']['field'] = 'order';
   $handler->display->display_options['sorts']['order']['relationship'] = 'user_entity_view_count';
+  $handler->display->display_options['sorts']['order']['order'] = 'DESC';
   $handler->display->display_options['sorts']['order']['sort_style'] = 'user_viewed_entities';
   $handler->display->display_options['sorts']['order']['entity_type'] = 'comment';
   /* Filter criterion: User: Active */
