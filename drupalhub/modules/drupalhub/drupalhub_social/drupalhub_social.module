@@ -50,15 +50,20 @@ function drupalhub_social_form_alter(&$form, $form_state, $form_id) {
  * logged in with.
 */
 function drupalhub_social_set_buttons($form, $form_state) {
-  $items = array();
-  $items[] = twitter_signin_button();
-  $items[] = fboauth_action_display('connect');
-
   $form['twitter_signin'] = array(
-    '#markup' => theme('item_list', array('items' => $items)),
+    '#markup' => twitter_signin_button(),
     '#weight' => 10,
   );
 
+  $form['facebook_signin'] = array(
+    '#markup' => fboauth_action_display('connect'),
+    '#weight' => 10,
+  );
+
+  $form['github_signin'] = array(
+    '#markup' => github_connect_connect_block(),
+    '#weight' => 10,
+  );
 
   return $form;
 }

@@ -1,5 +1,32 @@
 <?php
 /**
  * @file
- * Drupal needs this blank file.
  */
+
+
+/**
+ * Implement hook_theme().
+ */
+function drupalhub_users_theme() {
+  return array(
+    'drupalhub_users_login_form' => array(
+      'render element' => 'form',
+      'template' => 'login-form',
+      'path' => drupal_get_path('module', 'drupalhub_users') . '/templates',
+    ),
+  );
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function drupalhub_users_form_user_login_alter(&$form, $form_state) {
+  $form['#theme'] = 'drupalhub_users_login_form';
+}
+
+/**
+ * Theme callback.
+ */
+function theme_drupalhub_users_login_form() {
+  return 'a';
+}
