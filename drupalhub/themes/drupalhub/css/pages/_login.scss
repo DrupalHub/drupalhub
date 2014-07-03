@@ -1,7 +1,8 @@
-.page-user-login {
+.page-user.not-logged-in {
 
-  .nav.nav-tabs {
+  .tabs--primary {
     padding-top: 20px;
+    visibility: none;
   }
 
   .login-form-wrapper {
@@ -74,7 +75,12 @@
       }
 
       .buttons {
-        clear: both;
+
+        #edit-submit {
+          background-color: #4aa5d2;
+          border-color: #2979a1;
+          color: white;
+        }
       }
     }
   }
