@@ -16,18 +16,13 @@
   <div class="social-login-buttons">
 
     <div class="social-login">
-      <div class="github">
+      <div class="element twitter clearfix"><?php print render($form['twitter_signin']); ?></div>
+      <div class="element facebook clearfix"><?php print render($form['facebook_signin']); ?></div>
+      <div class="element github clearfix">
         <?php print render($form['github_signin']); ?>
         <?php print render($form['github_connect.return_to']); ?>
       </div>
 
-      <div class="twitter">
-        <?php print render($form['twitter_signin']); ?>
-      </div>
-
-      <div class="facebook"
-        <?php print render($form['facebook_signin']); ?>
-     </div>
     </div>
 
     <div class="buttons clearfix">

@@ -26,7 +26,7 @@
       }
 
       .login-input {
-        padding-bottom: 40px;
+        padding-bottom: 50px;
       }
 
       .fa.fa-lock {
@@ -41,6 +41,36 @@
 
       .social-login {
         padding-bottom: 30px;
+
+        .element {
+          display: inline-block;
+
+          .social-icon {
+            height: 35px;
+            width: 35px;
+            display: inline-block;
+            font-size: 21px;
+            line-height: 35px;
+            text-align: center;
+            margin-left: 6px;
+            border: black 1px solid;
+          }
+
+          .facebook {
+            background-color: #0173b2;
+            color: #fff;
+          }
+
+          .github {
+            color: black;
+          }
+
+          .twitter {
+            background-color: #00acee;
+            color: white;
+
+          }
+        }
       }
 
       .buttons {
