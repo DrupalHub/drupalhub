@@ -356,3 +356,35 @@ body.front .second-left-right {
         left: -15px;
         /* LTR */
         top: 90px; }
+
+.page-user-login .nav.nav-tabs {
+  padding-top: 20px; }
+.page-user-login .login-form-wrapper {
+  padding-top: 30px; }
+  .page-user-login .login-form-wrapper .standard-login {
+    width: 50%;
+    float: left; }
+    .page-user-login .login-form-wrapper .standard-login .form-item-name,
+    .page-user-login .login-form-wrapper .standard-login .form-item-pass {
+      margin-bottom: 0px; }
+      .page-user-login .login-form-wrapper .standard-login .form-item-name label,
+      .page-user-login .login-form-wrapper .standard-login .form-item-pass label {
+        margin-bottom: 0px;
+        display: none; }
+      .page-user-login .login-form-wrapper .standard-login .form-item-name input,
+      .page-user-login .login-form-wrapper .standard-login .form-item-pass input {
+        border-radius: 0px; }
+    .page-user-login .login-form-wrapper .standard-login .login-input {
+      padding-bottom: 40px; }
+    .page-user-login .login-form-wrapper .standard-login .fa.fa-lock {
+      padding-right: 2px; }
+  .page-user-login .login-form-wrapper .social-login-buttons {
+    width: 50%;
+    float: right;
+    text-align: center; }
+    .page-user-login .login-form-wrapper .social-login-buttons .social-login {
+      padding-bottom: 30px; }
+    .page-user-login .login-form-wrapper .social-login-buttons .buttons {
+      clear: both; }
+.page-user-login .footer.container {
+  border-top: none; }

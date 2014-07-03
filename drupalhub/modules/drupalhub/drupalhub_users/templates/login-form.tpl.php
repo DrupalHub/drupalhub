@@ -1,16 +1,38 @@
-<div class="regular-login clearfix">
-  <?php print render($form['name']); ?>
-  <?php print render($form['pass']); ?>
-  <?php print render($form['form_id']); ?>
-</div>
+<div class="login-form-wrapper">
 
-<div class="social clearfix">
-  <?php print render($form['github_signin']); ?>
-  <?php print render($form['github_connect.return_to']); ?>
-  <?php print render($form['twitter_signin']); ?>
-  <?php print render($form['facebook_signin']); ?>
-</div>
+  <div class="standard-login">
+    <div class="input-group login-input user">
+      <span class="input-group-addon"><i class="fa fa-user"></i></span>
+      <?php print render($form['name']); ?>
+    </div>
 
-<div class="actions">
-  <?php print render($form['actions']); ?>
+    <div class="input-group login-input pass">
+      <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+      <?php print render($form['pass']); ?>
+    </div>
+    <?php print render($form['form_id']); ?>
+  </div>
+
+  <div class="social-login-buttons">
+
+    <div class="social-login">
+      <div class="github">
+        <?php print render($form['github_signin']); ?>
+        <?php print render($form['github_connect.return_to']); ?>
+      </div>
+
+      <div class="twitter">
+        <?php print render($form['twitter_signin']); ?>
+      </div>
+
+      <div class="facebook"
+        <?php print render($form['facebook_signin']); ?>
+     </div>
+    </div>
+
+    <div class="buttons clearfix">
+      <?php print render($form['actions']); ?>
+    </div>
+  </div>
+
 </div>

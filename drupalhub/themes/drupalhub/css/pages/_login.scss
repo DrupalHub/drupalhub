@@ -1,0 +1,55 @@
+.page-user-login {
+
+  .nav.nav-tabs {
+    padding-top: 20px;
+  }
+
+  .login-form-wrapper {
+    padding-top: 30px;
+
+    .standard-login {
+      width: 50%;
+      float: left;
+
+      .form-item-name,
+      .form-item-pass, {
+        margin-bottom: 0px;
+
+        label {
+          margin-bottom: 0px;
+          display: none;
+        }
+
+        input {
+          border-radius: 0px;
+        }
+      }
+
+      .login-input {
+        padding-bottom: 40px;
+      }
+
+      .fa.fa-lock {
+        padding-right: 2px;
+      }
+    }
+
+    .social-login-buttons {
+      width: 50%;
+      float: right;
+      text-align: center;
+
+      .social-login {
+        padding-bottom: 30px;
+      }
+
+      .buttons {
+        clear: both;
+      }
+    }
+  }
+
+  .footer.container {
+    border-top: none;
+  }
+}

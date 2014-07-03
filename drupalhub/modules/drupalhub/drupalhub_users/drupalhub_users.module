@@ -22,11 +22,9 @@ function drupalhub_users_theme() {
  */
 function drupalhub_users_form_user_login_alter(&$form, $form_state) {
   $form['#theme'] = 'drupalhub_users_login_form';
-}
+  $form['name']['#title'] = '';
+  $form['pass']['#title'] = '';
 
-/**
- * Theme callback.
- */
-function theme_drupalhub_users_login_form() {
-  return 'a';
+  $form['name']['#show-required'] = FALSE;
+  $form['pass']['#show-required'] = FALSE;
 }
