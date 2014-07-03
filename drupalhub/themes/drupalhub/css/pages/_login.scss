@@ -1,0 +1,91 @@
+.page-user.not-logged-in {
+
+  .tabs--primary {
+    padding-top: 20px;
+    visibility: none;
+  }
+
+  .login-form-wrapper {
+    padding-top: 30px;
+
+    .standard-login {
+      width: 50%;
+      float: left;
+
+      .form-item-name,
+      .form-item-pass, {
+        margin-bottom: 0px;
+
+        label {
+          margin-bottom: 0px;
+          display: none;
+        }
+
+        input {
+          border-radius: 0px;
+        }
+      }
+
+      .login-input {
+        padding-bottom: 50px;
+      }
+
+      .fa.fa-lock {
+        padding-right: 2px;
+      }
+    }
+
+    .social-login-buttons {
+      width: 50%;
+      float: right;
+      text-align: center;
+
+      .social-login {
+        padding-bottom: 30px;
+
+        .element {
+          display: inline-block;
+
+          .social-icon {
+            height: 35px;
+            width: 35px;
+            display: inline-block;
+            font-size: 21px;
+            line-height: 35px;
+            text-align: center;
+            margin-left: 6px;
+            border: black 1px solid;
+          }
+
+          .facebook {
+            background-color: #0173b2;
+            color: #fff;
+          }
+
+          .github {
+            color: black;
+          }
+
+          .twitter {
+            background-color: #00acee;
+            color: white;
+
+          }
+        }
+      }
+
+      .buttons {
+
+        #edit-submit {
+          background-color: #4aa5d2;
+          border-color: #2979a1;
+          color: white;
+        }
+      }
+    }
+  }
+
+  .footer.container {
+    border-top: none;
+  }
+}

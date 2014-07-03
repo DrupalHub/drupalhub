@@ -356,3 +356,57 @@ body.front .second-left-right {
         left: -15px;
         /* LTR */
         top: 90px; }
+
+.page-user.not-logged-in .tabs--primary {
+  padding-top: 20px;
+  visibility: none; }
+.page-user.not-logged-in .login-form-wrapper {
+  padding-top: 30px; }
+  .page-user.not-logged-in .login-form-wrapper .standard-login {
+    width: 50%;
+    float: left; }
+    .page-user.not-logged-in .login-form-wrapper .standard-login .form-item-name,
+    .page-user.not-logged-in .login-form-wrapper .standard-login .form-item-pass {
+      margin-bottom: 0px; }
+      .page-user.not-logged-in .login-form-wrapper .standard-login .form-item-name label,
+      .page-user.not-logged-in .login-form-wrapper .standard-login .form-item-pass label {
+        margin-bottom: 0px;
+        display: none; }
+      .page-user.not-logged-in .login-form-wrapper .standard-login .form-item-name input,
+      .page-user.not-logged-in .login-form-wrapper .standard-login .form-item-pass input {
+        border-radius: 0px; }
+    .page-user.not-logged-in .login-form-wrapper .standard-login .login-input {
+      padding-bottom: 50px; }
+    .page-user.not-logged-in .login-form-wrapper .standard-login .fa.fa-lock {
+      padding-right: 2px; }
+  .page-user.not-logged-in .login-form-wrapper .social-login-buttons {
+    width: 50%;
+    float: right;
+    text-align: center; }
+    .page-user.not-logged-in .login-form-wrapper .social-login-buttons .social-login {
+      padding-bottom: 30px; }
+      .page-user.not-logged-in .login-form-wrapper .social-login-buttons .social-login .element {
+        display: inline-block; }
+        .page-user.not-logged-in .login-form-wrapper .social-login-buttons .social-login .element .social-icon {
+          height: 35px;
+          width: 35px;
+          display: inline-block;
+          font-size: 21px;
+          line-height: 35px;
+          text-align: center;
+          margin-left: 6px;
+          border: black 1px solid; }
+        .page-user.not-logged-in .login-form-wrapper .social-login-buttons .social-login .element .facebook {
+          background-color: #0173b2;
+          color: #fff; }
+        .page-user.not-logged-in .login-form-wrapper .social-login-buttons .social-login .element .github {
+          color: black; }
+        .page-user.not-logged-in .login-form-wrapper .social-login-buttons .social-login .element .twitter {
+          background-color: #00acee;
+          color: white; }
+    .page-user.not-logged-in .login-form-wrapper .social-login-buttons .buttons #edit-submit {
+      background-color: #4aa5d2;
+      border-color: #2979a1;
+      color: white; }
+.page-user.not-logged-in .footer.container {
+  border-top: none; }

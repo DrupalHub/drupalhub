@@ -70,3 +70,21 @@ function drupalhub_css_alter(&$css) {
     $css = array_diff_key($css, drupal_map_assoc($excludes));
   }
 }
+
+function drupalhub_form_required_marker($variables) {
+  $variables['element'] += array(
+    '#show-required' => TRUE,
+  );
+
+  if (!$variables['element']['#show-required']) {
+    return;
+  }
+
+  // This is also used in the installer, pre-database setup.
+  $t = get_t();
+  $attributes = array(
+    'class' => 'form-required',
+    'title' => $t('This field is required.'),
+  );
+  return '<span' . drupal_attributes($attributes) . '>*</span>';
+}
