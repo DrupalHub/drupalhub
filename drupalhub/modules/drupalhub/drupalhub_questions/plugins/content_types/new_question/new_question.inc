@@ -10,7 +10,8 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
 
   $block = new stdClass();
   $block->title = '';
-  $question_link = drupalhub_core_modal_window(array(
+
+  $question_array_large = array(
     'text' => t('Post a question!'),
     'href' => 'drupalhub_questions/create',
     'class' => 'create-question',
@@ -21,11 +22,20 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
       'modalOptions' => array('opacity' => .6),
       'animation' => 'fadeIn',
     ),
-  ));
+  );
+
+  $question_array_small = array(
+    'text' => '',
+  ) + $question_array_large ;
+
+
+  $question_link_large = drupalhub_core_modal_window($question_array_large);
+  $question_link_small = drupalhub_core_modal_window($question_array_small);
 
   $block->content = "
-    <span class='link-new-question'>" . $question_link . '</span>
-  ';
+    <span class='link-new-question hidden-xs'>" . $question_link_large . "</span>
+    <span class='link-new-question visible-xs'>" . $question_link_small . "</span>
+  ";
   return $block;
 }
 

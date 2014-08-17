@@ -101,7 +101,7 @@ body.front {
         background: $grey2;
         padding: 10px 20px;
         @include rounded(10px, 10px);
-        display: inline;
+        display: inline-block;
         list-style-type: none;
 
         a {
