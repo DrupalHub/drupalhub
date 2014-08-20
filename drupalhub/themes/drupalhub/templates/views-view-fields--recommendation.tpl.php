@@ -26,8 +26,8 @@
 
 ?>
 <div class="row padding-top-50">
-  <div class="col-xs-2"><?php print $fields['field_recommendation_cropimage']->content; ?></div>
-  <div class="col-xs-10">
+  <div class="col-md-2 col-xs-12"><?php print $fields['field_recommendation_cropimage']->content; ?></div>
+  <div class="col-md-10 col-xs-12">
     <div class="row">
       <div><span class="project-label"><?php print t('Project:'); ?></span> <?php print $fields['field_recommendation_links']->content; ?></div>
       <div><?php print t('Recommended by: '); ?> <strong><?php print $fields['name']->content; ?></strong> <?php print t('Made by: '); ?> <a><?php print $fields['title_1']->content; ?></a></div>

@@ -311,6 +311,10 @@ body.front .second-left-right {
     padding-bottom: 20px; }
     body.front .second-left-right .view-id-recommendation .lt_blue p {
       font-size: 20px; }
+  body.front .second-left-right .view-id-recommendation img {
+    display: block;
+    max-width: 100%;
+    height: auto; }
   body.front .second-left-right .pane-drupal-of-the-month .header {
     background: #20aae4;
     color: white; }

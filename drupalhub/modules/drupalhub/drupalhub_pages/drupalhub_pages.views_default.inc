@@ -350,7 +350,7 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['field_recommendation_cropimage']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_recommendation_cropimage']['click_sort_column'] = 'fid';
   $handler->display->display_options['fields']['field_recommendation_cropimage']['settings'] = array(
-    'image_style' => 'recomendations',
+    'image_style' => '',
     'image_link' => '',
   );
   $handler->display->display_options['fields']['field_recommendation_cropimage']['delta_offset'] = '0';

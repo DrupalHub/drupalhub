@@ -16,7 +16,7 @@
         <?php print $image; ?>
         <?php print $strip; ?>
       </div>
-      <div class="row text-center ratings">
+      <div class="row text-center ratings img-responsive">
         <div class="col-xs-3"></div>
         <div class="col-xs-6">
           <div class="row">
