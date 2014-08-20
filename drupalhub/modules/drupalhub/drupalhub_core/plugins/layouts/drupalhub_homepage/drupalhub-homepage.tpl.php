@@ -30,7 +30,7 @@
   <?php endif ?>
 
   <?php if ($content['second_left'] || $content['second_right']): ?>
-    <div class="second-left-right row">
+    <div class="second-left-right">
       <?php print $content['second_left']; ?>
       <?php print $content['second_right']; ?>
     </div>

@@ -21,7 +21,7 @@ function drupalhub_pages_drupal_of_the_month_content_type_render($subtype, $conf
         'path' => $file['uri'],
         'style_name' => 'drupal_of_the_month',
         'attributes' => array(
-          'class' => array('logo'),
+          'class' => array('drupal-of-the-month', 'img-responsive'),
         ),
       )),
       'title' => $wrapper->label(),

@@ -375,11 +375,15 @@ body.front {
         .image {
           position: relative;
           text-align: center;
-          width: 346px;
           margin: 0px auto;
 
-          img.logo {
+          img.drupal-of-the-month {
             border: #ffffff solid 1px;
+            display: block;
+            max-width: 100%; // Part 1: Set a maximum relative to the parent
+            // Part 2: Scale the height according to the width, otherwise you get stretching
+            height: auto;
+            margin: 0px auto;
           }
 
           .strip {

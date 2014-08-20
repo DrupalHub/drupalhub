@@ -351,10 +351,13 @@ body.front .second-left-right {
     body.front .second-left-right .pane-drupal-of-the-month .month_overlay .image {
       position: relative;
       text-align: center;
-      width: 346px;
       margin: 0px auto; }
-      body.front .second-left-right .pane-drupal-of-the-month .month_overlay .image img.logo {
-        border: #ffffff solid 1px; }
+      body.front .second-left-right .pane-drupal-of-the-month .month_overlay .image img.drupal-of-the-month {
+        border: #ffffff solid 1px;
+        display: block;
+        max-width: 100%;
+        height: auto;
+        margin: 0px auto; }
       body.front .second-left-right .pane-drupal-of-the-month .month_overlay .image .strip {
         position: absolute;
         left: -15px;
