@@ -127,13 +127,23 @@ function drupalhub_questions_default_page_manager_handlers() {
     $display->content['new-0e9720c7-e43d-4a05-8505-0f24be46c250'] = $pane;
     $display->panels['middle'][1] = 'new-0e9720c7-e43d-4a05-8505-0f24be46c250';
     $pane = new stdClass();
-    $pane->pid = 'new-100fdcfb-4e76-4b9f-be0e-997bd235790e';
+    $pane->pid = 'new-5a225a5e-c342-49f4-86e9-87edc792ecb8';
     $pane->panel = 'middle';
-    $pane->type = 'increase_count';
-    $pane->subtype = 'increase_count';
+    $pane->type = 'node_metatags';
+    $pane->subtype = 'node_metatags';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+      'form_build_id' => 'form-03YJIQhPNIizsGdR2g_JT20XAoOywSIz8wna44HgA6k',
+      'form_token' => 'yjPS_pCxPKq-MJ45c1h8ssdKtacY4PX1bi8yxrLmtgM',
+      'form_id' => 'drupalhub_core_node_metatags_content_type_edit_form',
+      'op' => 'Finish',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -142,9 +152,9 @@ function drupalhub_questions_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '100fdcfb-4e76-4b9f-be0e-997bd235790e';
-    $display->content['new-100fdcfb-4e76-4b9f-be0e-997bd235790e'] = $pane;
-    $display->panels['middle'][2] = 'new-100fdcfb-4e76-4b9f-be0e-997bd235790e';
+    $pane->uuid = '5a225a5e-c342-49f4-86e9-87edc792ecb8';
+    $display->content['new-5a225a5e-c342-49f4-86e9-87edc792ecb8'] = $pane;
+    $display->panels['middle'][2] = 'new-5a225a5e-c342-49f4-86e9-87edc792ecb8';
     $pane = new stdClass();
     $pane->pid = 'new-ccb07d60-8afc-41e2-bcd2-ae2758e9187f';
     $pane->panel = 'middle';
@@ -175,6 +185,35 @@ function drupalhub_questions_default_page_manager_handlers() {
     $display->content['new-ccb07d60-8afc-41e2-bcd2-ae2758e9187f'] = $pane;
     $display->panels['middle'][3] = 'new-ccb07d60-8afc-41e2-bcd2-ae2758e9187f';
     $pane = new stdClass();
+    $pane->pid = 'new-a69beb2d-1387-43da-8673-d3850142d632';
+    $pane->panel = 'middle';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'node:body';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 4;
+    $pane->locks = array();
+    $pane->uuid = 'a69beb2d-1387-43da-8673-d3850142d632';
+    $display->content['new-a69beb2d-1387-43da-8673-d3850142d632'] = $pane;
+    $display->panels['middle'][4] = 'new-a69beb2d-1387-43da-8673-d3850142d632';
+    $pane = new stdClass();
     $pane->pid = 'new-d795f590-ca63-43a6-af05-a8747b8a80a8';
     $pane->panel = 'middle';
     $pane->type = 'views_panes';
@@ -192,11 +231,11 @@ function drupalhub_questions_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = 'd795f590-ca63-43a6-af05-a8747b8a80a8';
     $display->content['new-d795f590-ca63-43a6-af05-a8747b8a80a8'] = $pane;
-    $display->panels['middle'][4] = 'new-d795f590-ca63-43a6-af05-a8747b8a80a8';
+    $display->panels['middle'][5] = 'new-d795f590-ca63-43a6-af05-a8747b8a80a8';
     $pane = new stdClass();
     $pane->pid = 'new-f2a6e3df-a0eb-4720-8c1c-2d93761c97b8';
     $pane->panel = 'middle';
@@ -216,11 +255,11 @@ function drupalhub_questions_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 5;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = 'f2a6e3df-a0eb-4720-8c1c-2d93761c97b8';
     $display->content['new-f2a6e3df-a0eb-4720-8c1c-2d93761c97b8'] = $pane;
-    $display->panels['middle'][5] = 'new-f2a6e3df-a0eb-4720-8c1c-2d93761c97b8';
+    $display->panels['middle'][6] = 'new-f2a6e3df-a0eb-4720-8c1c-2d93761c97b8';
     $pane = new stdClass();
     $pane->pid = 'new-0710523a-30a2-4cb4-ae2e-503d783e67c6';
     $pane->panel = 'middle';
@@ -240,11 +279,30 @@ function drupalhub_questions_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 6;
+    $pane->position = 7;
     $pane->locks = array();
     $pane->uuid = '0710523a-30a2-4cb4-ae2e-503d783e67c6';
     $display->content['new-0710523a-30a2-4cb4-ae2e-503d783e67c6'] = $pane;
-    $display->panels['middle'][6] = 'new-0710523a-30a2-4cb4-ae2e-503d783e67c6';
+    $display->panels['middle'][7] = 'new-0710523a-30a2-4cb4-ae2e-503d783e67c6';
+    $pane = new stdClass();
+    $pane->pid = 'new-100fdcfb-4e76-4b9f-be0e-997bd235790e';
+    $pane->panel = 'middle';
+    $pane->type = 'increase_count';
+    $pane->subtype = 'increase_count';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 8;
+    $pane->locks = array();
+    $pane->uuid = '100fdcfb-4e76-4b9f-be0e-997bd235790e';
+    $display->content['new-100fdcfb-4e76-4b9f-be0e-997bd235790e'] = $pane;
+    $display->panels['middle'][8] = 'new-100fdcfb-4e76-4b9f-be0e-997bd235790e';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -1,7 +1,26 @@
 .node-type-question {
 
+  .pane-node-title {
+    color: $blue-title;
+  }
+
   .pane-user-picture {
     float: left; /* LTR */
-    padding: 10px;
-   }
+    padding-right: 20px; /* LTR */
+  }
+
+  .pane-node-metatags {
+
+    .fa-tags,
+    .fa-user {
+      padding-left: 10px; /* LTR */
+    }
+
+    .tags {
+
+      li {
+        display: inline;
+      }
+    }
+  }
 }

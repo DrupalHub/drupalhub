@@ -418,7 +418,15 @@ body.front .second-left-right {
 .page-user.not-logged-in .footer.container {
   border-top: none; }
 
+.node-type-question .pane-node-title {
+  color: #20aae4; }
 .node-type-question .pane-user-picture {
   float: left;
   /* LTR */
-  padding: 10px; }
+  padding-right: 20px;
+  /* LTR */ }
+.node-type-question .pane-node-metatags .fa-tags,
+.node-type-question .pane-node-metatags .fa-user {
+  padding-left: 10px; }
+.node-type-question .pane-node-metatags .tags li {
+  display: inline; }
