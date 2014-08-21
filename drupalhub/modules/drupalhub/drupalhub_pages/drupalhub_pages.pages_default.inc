@@ -67,33 +67,9 @@ function drupalhub_pages_default_page_manager_pages() {
         'offset_size' => '1',
       ),
       'bottom' => NULL,
-      'first_left' => array(
-        'column_type' => 'col-sm',
-        'column_size' => '8',
-        'offset_type' => 'col-lg-offset',
-        'offset_size' => '0',
-      ),
-      'fist_right' => array(
-        'column_type' => 'col-sm',
-        'column_size' => '4',
-        'offset_type' => 'col-lg-offset',
-        'offset_size' => '0',
-      ),
       'second' => array(
         'column_type' => 'col-sm',
         'column_size' => '12',
-        'offset_type' => 'col-lg-offset',
-        'offset_size' => '0',
-      ),
-      'second_left' => array(
-        'column_type' => 'col-lg',
-        'column_size' => '8',
-        'offset_type' => 'col-sm-offset',
-        'offset_size' => '0',
-      ),
-      'second_right' => array(
-        'column_type' => 'col-sm',
-        'column_size' => '4',
         'offset_type' => 'col-lg-offset',
         'offset_size' => '0',
       ),
@@ -105,7 +81,11 @@ function drupalhub_pages_default_page_manager_pages() {
       ),
       'second-top' => NULL,
       'second-middle' => NULL,
+      'first_left' => NULL,
+      'fist_right' => NULL,
       'second-last' => NULL,
+      'second_left' => NULL,
+      'second_right' => NULL,
     ),
     'left' => array(
       'style' => 'bootstrap_region',
@@ -117,19 +97,22 @@ function drupalhub_pages_default_page_manager_pages() {
       'style' => 'drupalhub_region',
     ),
     'first_left' => array(
-      'style' => 'drupalhub_region',
+      'style' => '-1',
     ),
     'fist_right' => array(
-      'style' => 'drupalhub_region',
+      'style' => '-1',
     ),
     'second' => array(
       'style' => 'drupalhub_region',
     ),
     'second_left' => array(
-      'style' => 'drupalhub_region',
+      'style' => 'default',
     ),
     'second_right' => array(
-      'style' => 'drupalhub_region',
+      'style' => 'default',
+    ),
+    'second-last' => array(
+      'style' => 'default',
     ),
   );
   $display->cache = array();

@@ -27,7 +27,15 @@ function drupalhub_questions_default_page_manager_handlers() {
     'css_id' => '',
     'css' => '',
     'contexts' => array(),
-    'relationships' => array(),
+    'relationships' => array(
+      0 => array(
+        'identifier' => 'User from Node (on node.node_author)',
+        'keyword' => 'user',
+        'name' => 'entity_from_schema:uid-node-user',
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
+    ),
     'access' => array(
       'plugins' => array(
         0 => array(
@@ -45,7 +53,7 @@ function drupalhub_questions_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'twocol';
+  $display->layout = 'onecol';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -53,6 +61,7 @@ function drupalhub_questions_default_page_manager_handlers() {
       'center' => NULL,
       'left' => NULL,
       'right' => NULL,
+      'middle' => NULL,
     ),
   );
   $display->cache = array();
@@ -61,8 +70,65 @@ function drupalhub_questions_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-36ddeffb-4d5a-424f-a0bf-c414a33eca77';
+    $pane->panel = 'middle';
+    $pane->type = 'user_picture';
+    $pane->subtype = 'user_picture';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'relationship_entity_from_schema:uid-node-user_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-OkUyV8PXezkuNEmm3xxIhPiENH8s1K27TLLplxQAC-s',
+      'form_token' => '_ePfOZb6PxOzqb1nZeIUJaydQ3Ad2y3hqndGtOmxcMg',
+      'form_id' => 'drupalhub_users_user_picture_content_type_edit_form',
+      'op' => 'Finish',
+      'image_styles' => 'thumbnail_retina',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '36ddeffb-4d5a-424f-a0bf-c414a33eca77';
+    $display->content['new-36ddeffb-4d5a-424f-a0bf-c414a33eca77'] = $pane;
+    $display->panels['middle'][0] = 'new-36ddeffb-4d5a-424f-a0bf-c414a33eca77';
+    $pane = new stdClass();
+    $pane->pid = 'new-0e9720c7-e43d-4a05-8505-0f24be46c250';
+    $pane->panel = 'middle';
+    $pane->type = 'node_title';
+    $pane->subtype = 'node_title';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'link' => 0,
+      'markup' => 'h1',
+      'id' => '',
+      'class' => '',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '0e9720c7-e43d-4a05-8505-0f24be46c250';
+    $display->content['new-0e9720c7-e43d-4a05-8505-0f24be46c250'] = $pane;
+    $display->panels['middle'][1] = 'new-0e9720c7-e43d-4a05-8505-0f24be46c250';
+    $pane = new stdClass();
     $pane->pid = 'new-100fdcfb-4e76-4b9f-be0e-997bd235790e';
-    $pane->panel = 'left';
+    $pane->panel = 'middle';
     $pane->type = 'increase_count';
     $pane->subtype = 'increase_count';
     $pane->shown = TRUE;
@@ -74,14 +140,14 @@ function drupalhub_questions_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 2;
     $pane->locks = array();
     $pane->uuid = '100fdcfb-4e76-4b9f-be0e-997bd235790e';
     $display->content['new-100fdcfb-4e76-4b9f-be0e-997bd235790e'] = $pane;
-    $display->panels['left'][0] = 'new-100fdcfb-4e76-4b9f-be0e-997bd235790e';
+    $display->panels['middle'][2] = 'new-100fdcfb-4e76-4b9f-be0e-997bd235790e';
     $pane = new stdClass();
     $pane->pid = 'new-ccb07d60-8afc-41e2-bcd2-ae2758e9187f';
-    $pane->panel = 'left';
+    $pane->panel = 'middle';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_vote';
     $pane->shown = TRUE;
@@ -103,39 +169,14 @@ function drupalhub_questions_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 3;
     $pane->locks = array();
     $pane->uuid = 'ccb07d60-8afc-41e2-bcd2-ae2758e9187f';
     $display->content['new-ccb07d60-8afc-41e2-bcd2-ae2758e9187f'] = $pane;
-    $display->panels['left'][1] = 'new-ccb07d60-8afc-41e2-bcd2-ae2758e9187f';
-    $pane = new stdClass();
-    $pane->pid = 'new-ef0dd499-00e7-4213-9dc8-f275a49011d3';
-    $pane->panel = 'left';
-    $pane->type = 'panels_mini';
-    $pane->subtype = 'question_display';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'context' => array(
-        0 => 'argument_entity_id:node_1',
-      ),
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = 'ef0dd499-00e7-4213-9dc8-f275a49011d3';
-    $display->content['new-ef0dd499-00e7-4213-9dc8-f275a49011d3'] = $pane;
-    $display->panels['left'][2] = 'new-ef0dd499-00e7-4213-9dc8-f275a49011d3';
+    $display->panels['middle'][3] = 'new-ccb07d60-8afc-41e2-bcd2-ae2758e9187f';
     $pane = new stdClass();
     $pane->pid = 'new-d795f590-ca63-43a6-af05-a8747b8a80a8';
-    $pane->panel = 'left';
+    $pane->panel = 'middle';
     $pane->type = 'views_panes';
     $pane->subtype = 'idea_comments-panel_pane_1';
     $pane->shown = TRUE;
@@ -151,14 +192,14 @@ function drupalhub_questions_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 4;
     $pane->locks = array();
     $pane->uuid = 'd795f590-ca63-43a6-af05-a8747b8a80a8';
     $display->content['new-d795f590-ca63-43a6-af05-a8747b8a80a8'] = $pane;
-    $display->panels['left'][3] = 'new-d795f590-ca63-43a6-af05-a8747b8a80a8';
+    $display->panels['middle'][4] = 'new-d795f590-ca63-43a6-af05-a8747b8a80a8';
     $pane = new stdClass();
     $pane->pid = 'new-f2a6e3df-a0eb-4720-8c1c-2d93761c97b8';
-    $pane->panel = 'left';
+    $pane->panel = 'middle';
     $pane->type = 'node_comment_form';
     $pane->subtype = 'node_comment_form';
     $pane->shown = TRUE;
@@ -175,14 +216,14 @@ function drupalhub_questions_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 4;
+    $pane->position = 5;
     $pane->locks = array();
     $pane->uuid = 'f2a6e3df-a0eb-4720-8c1c-2d93761c97b8';
     $display->content['new-f2a6e3df-a0eb-4720-8c1c-2d93761c97b8'] = $pane;
-    $display->panels['left'][4] = 'new-f2a6e3df-a0eb-4720-8c1c-2d93761c97b8';
+    $display->panels['middle'][5] = 'new-f2a6e3df-a0eb-4720-8c1c-2d93761c97b8';
     $pane = new stdClass();
     $pane->pid = 'new-0710523a-30a2-4cb4-ae2e-503d783e67c6';
-    $pane->panel = 'right';
+    $pane->panel = 'middle';
     $pane->type = 'token';
     $pane->subtype = 'node:flag-node-follow-link';
     $pane->shown = TRUE;
@@ -199,40 +240,11 @@ function drupalhub_questions_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 0;
+    $pane->position = 6;
     $pane->locks = array();
     $pane->uuid = '0710523a-30a2-4cb4-ae2e-503d783e67c6';
     $display->content['new-0710523a-30a2-4cb4-ae2e-503d783e67c6'] = $pane;
-    $display->panels['right'][0] = 'new-0710523a-30a2-4cb4-ae2e-503d783e67c6';
-    $pane = new stdClass();
-    $pane->pid = 'new-2c3bb982-429d-4ca6-b69e-8dbf93b9e8ac';
-    $pane->panel = 'right';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'node:field_tags';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'hidden',
-      'formatter' => 'taxonomy_term_reference_link',
-      'delta_limit' => '0',
-      'delta_offset' => '0',
-      'delta_reversed' => 0,
-      'formatter_settings' => array(),
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '2c3bb982-429d-4ca6-b69e-8dbf93b9e8ac';
-    $display->content['new-2c3bb982-429d-4ca6-b69e-8dbf93b9e8ac'] = $pane;
-    $display->panels['right'][1] = 'new-2c3bb982-429d-4ca6-b69e-8dbf93b9e8ac';
+    $display->panels['middle'][6] = 'new-0710523a-30a2-4cb4-ae2e-503d783e67c6';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

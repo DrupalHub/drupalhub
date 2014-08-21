@@ -417,3 +417,8 @@ body.front .second-left-right {
       color: white; }
 .page-user.not-logged-in .footer.container {
   border-top: none; }
+
+.node-type-question .pane-user-picture {
+  float: left;
+  /* LTR */
+  padding: 10px; }

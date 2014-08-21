@@ -3,7 +3,6 @@
  * @file
  */
 
-
 /**
  * Implement hook_theme().
  */
@@ -27,4 +26,13 @@ function drupalhub_users_form_user_login_alter(&$form, $form_state) {
 
   $form['name']['#show-required'] = FALSE;
   $form['pass']['#show-required'] = FALSE;
+}
+
+/**
+ * Implements hook_ctools_plugins_directory().
+ */
+function drupalhub_users_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
 }
