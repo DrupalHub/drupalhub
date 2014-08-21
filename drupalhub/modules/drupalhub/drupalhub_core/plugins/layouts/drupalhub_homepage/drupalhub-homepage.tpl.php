@@ -32,7 +32,7 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="second-left-right row">
     <div class="col-md-6 col-xs-12">
       <?php print $content['second_left']; ?>
     </div>

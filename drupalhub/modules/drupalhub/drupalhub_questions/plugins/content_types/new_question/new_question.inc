@@ -24,13 +24,12 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
     ),
   );
 
-  $question_array_small = array(
-    'text' => '',
-  ) + $question_array_large ;
+  $question_array_small = $question_array_large ;
 
+  unset($question_array_small['modal_settings']);
 
   $question_link_large = drupalhub_core_modal_window($question_array_large);
-  $question_link_small = drupalhub_core_modal_window($question_array_small);
+  $question_link_small = l('', 'node/add/question');
 
   $block->content = "
     <span class='link-new-question hidden-xs'>" . $question_link_large . "</span>
