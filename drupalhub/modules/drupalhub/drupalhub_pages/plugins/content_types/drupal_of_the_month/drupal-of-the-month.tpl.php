@@ -14,7 +14,7 @@
       </div>
       <div class="image" style="padding:0 12px">
         <?php print $image; ?>
-        <?php print $strip; ?>
+<!--        --><?php //print $strip; ?>
       </div>
       <div class="row text-center ratings img-responsive">
         <div class="col-xs-3"></div>

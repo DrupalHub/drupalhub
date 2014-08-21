@@ -24,7 +24,7 @@
  * @ingroup views_templates
  */
 ?>
-<div class="clearfix container">
+<div class="clearfix">
   <div class="field-image">
     <?php print $fields['picture']->content; ?>
   </div>

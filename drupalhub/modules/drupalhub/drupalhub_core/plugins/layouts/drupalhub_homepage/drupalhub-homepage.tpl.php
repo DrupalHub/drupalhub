@@ -1,38 +1,43 @@
 <div class="<?php print $classes ?>" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
-  <?php if ($content['first']): ?>
-    <div class="first row">
+  <div class="row">
+    <div class="col-md-12">
       <?php print $content['first']; ?>
     </div>
-  <?php endif ?>
+  </div>
 
-  <?php if ($content['first_left'] || $content['fist_right']): ?>
-    <div class="first-left-rigjt row">
+  <div class="row">
+    <div class="col-md-8 col-xs-12">
       <?php print $content['first_left']; ?>
+    </div>
+    <div class="col-md-4 col-xs-12">
       <?php print $content['fist_right']; ?>
     </div>
-  <?php endif ?>
+  </div>
 
-  <?php if ($content['second-top']): ?>
-    <div class="second-top row">
+  <div class="row">
+    <div class="col-md-12">
       <?php print $content['second-top']; ?>
     </div>
-  <?php endif ?>
-  <?php if ($content['second-middle']): ?>
-    <div class="second-middle row">
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
       <?php print $content['second-middle']; ?>
     </div>
-  <?php endif ?>
+  </div>
 
-  <?php if ($content['second-last']): ?>
-    <div class="second-last row">
+  <div class="row">
+    <div class="col-md-12">
       <?php print $content['second-last']; ?>
     </div>
-  <?php endif ?>
+  </div>
 
-  <?php if ($content['second_left'] || $content['second_right']): ?>
-    <div class="second-left-right">
+  <div class="row">
+    <div class="col-md-6 col-xs-12">
       <?php print $content['second_left']; ?>
+    </div>
+    <div class="col-md-6 col-xs-12">
       <?php print $content['second_right']; ?>
     </div>
-  <?php endif ?>
+  </div>
 </div>
