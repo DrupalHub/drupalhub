@@ -11,19 +11,19 @@ projects[calendar][subdir] = "contrib"
 projects[calendar][version] = 3.4
 
 projects[colorbox][subdir] = "contrib"
-projects[colorbox][version] = 2.5
+projects[colorbox][version] = 2.7
 
 projects[ckeditor][subdir] = "contrib"
-projects[ckeditor][version] = 1.13
+projects[ckeditor][version] = 1.15
 
 projects[ctools][subdir] = "contrib"
 projects[ctools][version] = 1.4
 
 projects[date][subdir] = "contrib"
-projects[date][version] = 2.7
+projects[date][version] = 2.8
 
 projects[devel][subdir] = "contrib"
-projects[devel][version] = 1.4
+projects[devel][version] = 1.5
 
 projects[diff][subdir] = "contrib"
 projects[diff][version] = 3.2
@@ -47,7 +47,7 @@ projects[entity_view_count][subdir] = "contrib"
 projects[entity_view_count][type] = "module"
 
 projects[features][subdir] = "contrib"
-projects[features][version] = 2.0
+projects[features][version] = 2.2
 
 projects[fboauth][version] = "1.6"
 projects[fboauth][subdir] = contrib
@@ -112,7 +112,7 @@ projects[oauth][version] = 3.2
 projects[oauth][subdir] = contrib
 
 projects[og][subdir] = contrib
-projects[og][version] = 2.6
+projects[og][version] = 2.7
 
 projects[panels][version] = "3.4"
 projects[panels][subdir] = contrib

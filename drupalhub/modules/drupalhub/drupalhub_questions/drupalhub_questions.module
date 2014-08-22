@@ -167,6 +167,18 @@ function drupalhub_questions_field_formatter_view($entity_type, $entity, $field,
  * Implements hook_form_FORM_ID_alter().
  */
 function drupalhub_questions_form_comment_node_question_form_alter(&$form, $form_state) {
+  $form['#after_build'][] = 'drupalhub_questions_comment_question_form_after_build';
+
+  $form['comment_body'][LANGUAGE_NONE][0]['#title'] = t('Add comment:');
+}
+
+/**
+ * After build callback; Hide elements from the comment form.
+ */
+function drupalhub_questions_comment_question_form_after_build($form, $form_state) {
   hide($form['author']);
   hide($form['subject']);
+  hide($form['comment_body'][LANGUAGE_NONE][0]['format']);
+
+  return $form;
 }
