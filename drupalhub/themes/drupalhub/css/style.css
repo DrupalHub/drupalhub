@@ -418,16 +418,29 @@ body.front .second-left-right {
 .page-user.not-logged-in .footer.container {
   border-top: none; }
 
-.node-type-question .pane-node-title {
+.node-type-question .panel-col-top:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+.node-type-question .panel-col-top .pane-node-title {
   color: #20aae4; }
-.node-type-question .pane-user-picture {
+.node-type-question .panel-col-top .pane-user-picture {
   float: left;
   /* LTR */
   padding-right: 20px;
   /* LTR */ }
-.node-type-question .pane-node-metatags .fa-tags,
-.node-type-question .pane-node-metatags .fa-user {
+  .node-type-question .panel-col-top .pane-user-picture img {
+    border: black solid 1px; }
+.node-type-question .panel-col-top .vud-widget-upanddown {
+  float: left;
+  /* LTR */ }
+.node-type-question .panel-col-top .pane-node-metatags .fa-tags,
+.node-type-question .panel-col-top .pane-node-metatags .fa-user,
+.node-type-question .panel-col-top .pane-node-metatags .fa-square-o,
+.node-type-question .panel-col-top .pane-node-metatags .fa-clock-o {
   padding-left: 10px;
   /* LTR */ }
-.node-type-question .pane-node-metatags .tags li {
+.node-type-question .panel-col-top .pane-node-metatags .tags li {
   display: inline; }

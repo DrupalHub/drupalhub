@@ -9,11 +9,6 @@ $plugin = array(
 );
 
 function drupalhub_core_node_metatags_content_type_render($subtype, $conf, $args, $context) {
-
-  if (!$context->data->picture) {
-    return;
-  }
-
   $wrapper = entity_metadata_wrapper('node', $context->data);
 
   $terms = array();
@@ -27,11 +22,27 @@ function drupalhub_core_node_metatags_content_type_render($subtype, $conf, $args
 
   $uri = entity_uri('user', $wrapper->value());
   $block = new stdClass();
-  $block->content = theme('node_metatags', array(
+
+  $params = array(
     'author' => l($wrapper->author->label(), $uri['path']),
     'tags' => implode(" " , $terms),
     'time' => format_date($wrapper->created->value()),
-  ));
+    'vote' => '',
+    'follow' => '',
+  );
+
+  if ($wrapper->getBundle() == 'question') {
+    $params['vote'] = theme('vud_drupalhub_vud', array('entity_type' => 'node', 'entity_id' => $context->data->nid));
+    $flag_link = flag_create_link('node_follow', $context->data->nid);
+
+    $flag = flag_get_flag('node_follow');
+
+    $symbol = !$flag->is_flagged($context->data->nid) ? '<i class="fa fa-square-o"></i>' : '<i class="fa fa-check-square-o"></i>';
+
+    $params['follow'] = $symbol . $flag_link;
+  }
+
+  $block->content = theme('node_metatags', $params);
   return $block;
 }
 

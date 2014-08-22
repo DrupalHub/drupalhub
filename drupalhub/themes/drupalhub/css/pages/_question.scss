@@ -1,30 +1,41 @@
 .node-type-question {
 
-  .pane-node-title {
-    color: $blue-title;
-  }
+  .panel-col-top {
+    @include clearfix;
 
-  .pane-user-picture {
-    float: left; /* LTR */
-    padding-right: 20px; /* LTR */
-  }
-
-  .vote,
-  .points {
-  }
-
-  .pane-node-metatags {
-
-    .fa-tags,
-    .fa-user {
-      padding-left: 10px; /* LTR */
+    .pane-node-title {
+      color: $blue-title;
     }
 
-    .tags {
+    .pane-user-picture {
+      float: left; /* LTR */
+      padding-right: 20px; /* LTR */
 
-      li {
-        display: inline;
+      img {
+        border: black solid 1px;
+      }
+    }
+
+    .vud-widget-upanddown {
+      float: left; /* LTR */
+    }
+
+    .pane-node-metatags {
+
+      .fa-tags,
+      .fa-user,
+      .fa-square-o,
+      .fa-clock-o {
+        padding-left: 10px; /* LTR */
+      }
+
+      .tags {
+
+        li {
+          display: inline;
+        }
       }
     }
   }
+
 }
