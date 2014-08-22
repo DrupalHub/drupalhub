@@ -444,3 +444,31 @@ body.front .second-left-right {
   /* LTR */ }
 .node-type-question .panel-col-top .pane-node-metatags .tags li {
   display: inline; }
+.node-type-question .comment-wrapper .wrapper-top {
+  border: solid 1px #cce8ff;
+  border-bottom: none;
+  padding-top: 15px;
+  background: #f7f7f7; }
+  .node-type-question .comment-wrapper .wrapper-top .picture img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    padding: 5px;
+    border: #4D7FB6 solid 1px; }
+.node-type-question .comment-wrapper .wrapper-bottom {
+  border: solid 1px #cce8ff;
+  padding-top: 15px;
+  background-color: #eee; }
+  .node-type-question .comment-wrapper .wrapper-bottom .vud-widget-upanddown {
+    float: left;
+    /* LTR */ }
+  .node-type-question .comment-wrapper .wrapper-bottom .fa-user,
+  .node-type-question .comment-wrapper .wrapper-bottom .fa-clock-o,
+  .node-type-question .comment-wrapper .wrapper-bottom .fa-pencil,
+  .node-type-question .comment-wrapper .wrapper-bottom .fa-trash-o {
+    margin-left: 10px;
+    /* LTR */ }
+  .node-type-question .comment-wrapper .wrapper-bottom .fa-pencil,
+  .node-type-question .comment-wrapper .wrapper-bottom .fa-trash-o {
+    margin-right: 10px;
+    /* LTR */ }
