@@ -171,6 +171,10 @@ function drupalhub_core_ctools_plugin_directory($module, $plugin) {
   if (in_array($module, array("panels", 'ctools')) && !empty($plugin)) {
     return "plugins/$plugin";
   }
+
+  if ($module == 'vud' && $plugin == 'widgets') {
+    return 'plugins/widgets';
+  }
 }
 
 function drupalhub_core_prepare_node($type) {
