@@ -9,7 +9,7 @@
  */
 ?>
 
-<div class="vud-widget vud-widget-upanddown clearfix" id="<?php print $id; ?>">
+<div class="vud-widget vud-widget-upanddown" id="<?php print $id; ?>">
   <span class="points"><?php print $points; ?></span>
 
   <?php if($show_up_as_link): ?>

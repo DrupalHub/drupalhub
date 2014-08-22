@@ -9,6 +9,10 @@
     padding-right: 20px; /* LTR */
   }
 
+  .vote,
+  .points {
+  }
+
   .pane-node-metatags {
 
     .fa-tags,
@@ -22,10 +26,5 @@
         display: inline;
       }
     }
-  }
-
-  .vote,
-  .points {
-    font-size: 20px;
   }
 }

@@ -431,6 +431,3 @@ body.front .second-left-right {
   /* LTR */ }
 .node-type-question .pane-node-metatags .tags li {
   display: inline; }
-.node-type-question .vote,
-.node-type-question .points {
-  font-size: 20px; }
