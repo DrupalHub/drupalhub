@@ -39,45 +39,58 @@
   }
 
 
-  .comment-wrapper {
+  .pane-idea-comments-panel-pane-1 {
 
-    .wrapper-top {
-      border: solid 1px #cce8ff;
-      border-bottom: none;
-      padding-top: 15px;
-      background: #f7f7f7;
-
-      .picture {
-
-        img {
-          display: block;
-          max-width: 100%;
-          height: auto;
-          padding: 5px;
-          border: #4D7FB6 solid 1px;
-        }
-      }
+    h2.pane-title {
+      padding-top: 30px;
+      padding-bottom: 10px;
+      border-bottom: solid 1px #ddd;
     }
 
-    .wrapper-bottom {
-      border: solid 1px #cce8ff;
+    .views-row {
       padding-top: 15px;
-      background-color: #eee;
 
-      .vud-widget-upanddown {
-        float: left; /* LTR */
-      }
+      .comment-wrapper {
 
-      .fa-user,
-      .fa-clock-o,
-      .fa-pencil,
-      .fa-trash-o {
-        margin-left: 10px; /* LTR */
-      }
+        .wrapper-top {
+          border: solid 1px #cce8ff;
+          border-bottom: none;
+          padding-top: 15px;
+          background: #f7f7f7;
 
-      .fa-pencil,
-      .fa-trash-o {
-        margin-right: 10px; /* LTR */
+          .picture {
+
+            img {
+              display: block;
+              max-width: 100%;
+              height: auto;
+              padding: 5px;
+              border: #4D7FB6 solid 1px;
+            }
+          }
+        }
+
+        .wrapper-bottom {
+          border: solid 1px #cce8ff;
+          padding-top: 15px;
+          background-color: #eee;
+
+          .vud-widget-upanddown {
+            float: left; /* LTR */
+          }
+
+          .fa-user,
+          .fa-clock-o,
+          .fa-pencil,
+          .fa-trash-o {
+            margin-left: 10px; /* LTR */
+          }
+
+          .fa-pencil,
+          .fa-trash-o {
+            margin-right: 10px; /* LTR */
+          }
+        }
       }
     }
   }

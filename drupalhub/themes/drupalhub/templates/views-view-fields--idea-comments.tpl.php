@@ -22,9 +22,11 @@
  *
  * @ingroup views_templates
  */
+
+  $edit = strip_tags($fields['edit_comment']->content, 'span');
 ?>
 
-<div class="clearfix comment-wrapper">
+<div class="comment-wrapper">
   <div class="wrapper-top clearfix">
     <div class="col-md-2 col-xs-12 picture"><?php print $fields['picture']->content; ?></div>
     <div class="col-md-10 col-xs-12 text"><?php print $fields['comment_body']->content; ?></div>
@@ -36,10 +38,10 @@
       <i class="fa fa-user"></i> <?php print $fields['name']->content; ?>
     </div>
     <div class="col-md-2 links">
-      <?php if($fields['edit_comment']->content): ?>
+      <?php if(!empty($edit)): ?>
         <i class="fa fa-pencil"></i><?php print $fields['edit_comment']->content; ?>
       <?php endif; ?>
-      <?php if($fields['delete_comment']->content): ?>
+      <?php if(!empty($fields['delete_comment'])): ?>
         <i class="fa fa-trash-o"></i> <?php print $fields['delete_comment']->content; ?>
       <?php endif; ?>
     </div>
