@@ -217,6 +217,15 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'comment';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Field: User: Picture */
+  $handler->display->display_options['fields']['picture']['id'] = 'picture';
+  $handler->display->display_options['fields']['picture']['table'] = 'users';
+  $handler->display->display_options['fields']['picture']['field'] = 'picture';
+  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['picture']['label'] = '';
+  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail_retina';
   /* Field: Field: Vote */
   $handler->display->display_options['fields']['field_vote']['id'] = 'field_vote';
   $handler->display->display_options['fields']['field_vote']['table'] = 'field_data_field_vote';
@@ -231,15 +240,12 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = '';
-  $handler->display->display_options['fields']['name']['exclude'] = TRUE;
   $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
   /* Field: Comment: Comment */
   $handler->display->display_options['fields']['comment_body']['id'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['table'] = 'field_data_comment_body';
   $handler->display->display_options['fields']['comment_body']['field'] = 'comment_body';
   $handler->display->display_options['fields']['comment_body']['label'] = '';
-  $handler->display->display_options['fields']['comment_body']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['comment_body']['alter']['text'] = '[name]: [comment_body]';
   $handler->display->display_options['fields']['comment_body']['element_label_colon'] = FALSE;
   /* Field: Comment: Increase count for Comment */
   $handler->display->display_options['fields']['comment_entity_view_count_increase']['id'] = 'comment_entity_view_count_increase';
@@ -248,11 +254,29 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['comment_entity_view_count_increase']['label'] = '';
   $handler->display->display_options['fields']['comment_entity_view_count_increase']['exclude'] = TRUE;
   $handler->display->display_options['fields']['comment_entity_view_count_increase']['element_label_colon'] = FALSE;
+  /* Field: Comment: Post date */
+  $handler->display->display_options['fields']['created']['id'] = 'created';
+  $handler->display->display_options['fields']['created']['table'] = 'comment';
+  $handler->display->display_options['fields']['created']['field'] = 'created';
+  $handler->display->display_options['fields']['created']['label'] = '';
+  $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: Comment: Delete link */
+  $handler->display->display_options['fields']['delete_comment']['id'] = 'delete_comment';
+  $handler->display->display_options['fields']['delete_comment']['table'] = 'comment';
+  $handler->display->display_options['fields']['delete_comment']['field'] = 'delete_comment';
+  $handler->display->display_options['fields']['delete_comment']['label'] = '';
+  $handler->display->display_options['fields']['delete_comment']['element_label_colon'] = FALSE;
+  /* Field: Comment: Edit link */
+  $handler->display->display_options['fields']['edit_comment']['id'] = 'edit_comment';
+  $handler->display->display_options['fields']['edit_comment']['table'] = 'comment';
+  $handler->display->display_options['fields']['edit_comment']['field'] = 'edit_comment';
+  $handler->display->display_options['fields']['edit_comment']['label'] = '';
+  $handler->display->display_options['fields']['edit_comment']['element_label_colon'] = FALSE;
   /* Sort criterion: Comment: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'comment';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Contextual filter: Comment: Nid */
   $handler->display->display_options['arguments']['nid']['id'] = 'nid';
   $handler->display->display_options['arguments']['nid']['table'] = 'comment';
@@ -307,7 +331,6 @@ function drupalhub_pages_views_default_views() {
     t('last »'),
     t('Content'),
     t('author'),
-    t('[name]: [comment_body]'),
     t('All'),
     t('Content pane'),
     t('View panes'),

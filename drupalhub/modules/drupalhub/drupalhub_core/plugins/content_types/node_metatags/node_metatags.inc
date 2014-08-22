@@ -37,9 +37,12 @@ function drupalhub_core_node_metatags_content_type_render($subtype, $conf, $args
 
     $flag = flag_get_flag('node_follow');
 
-    $symbol = !$flag->is_flagged($context->data->nid) ? '<i class="fa fa-square-o"></i>' : '<i class="fa fa-check-square-o"></i>';
+    if ($flag->access($context->data->nid) && ($flag->is_flagged($context->data->nid) || $flag->access($context->data->nid, 'flag'))) {
+      $symbol = !$flag->is_flagged($context->data->nid) ? '<i class="fa fa-square-o"></i>' : '<i class="fa fa-check-square-o"></i>';
 
-    $params['follow'] = $symbol . $flag_link;
+      $params['follow'] = $symbol . $flag_link;
+    }
+
   }
 
   $block->content = theme('node_metatags', $params);

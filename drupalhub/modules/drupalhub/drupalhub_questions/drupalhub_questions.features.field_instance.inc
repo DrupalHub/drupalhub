@@ -37,7 +37,7 @@ function drupalhub_questions_field_default_field_instances() {
       'active' => 0,
       'module' => 'vud',
       'settings' => array(),
-      'type' => 'thumbs',
+      'type' => 'drupalhub_vud',
       'weight' => 2,
     ),
   );
