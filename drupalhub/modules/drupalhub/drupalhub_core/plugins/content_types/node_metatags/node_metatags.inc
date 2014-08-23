@@ -31,7 +31,7 @@ function drupalhub_core_node_metatags_content_type_render($subtype, $conf, $args
     'follow' => '',
   );
 
-  if ($wrapper->getBundle() == 'question') {
+  if (in_array($wrapper->getBundle(), array('blog', 'question'))) {
     $params['vote'] = theme('vud_drupalhub_vud', array('entity_type' => 'node', 'entity_id' => $context->data->nid));
     $flag_link = flag_create_link('node_follow', $context->data->nid);
 

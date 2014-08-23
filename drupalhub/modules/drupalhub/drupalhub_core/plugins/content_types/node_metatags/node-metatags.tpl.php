@@ -6,4 +6,6 @@
 <?php if($follow): ?>
   <?php print $follow; ?>
 <?php endif; ?>
-<i class="fa fa-tags"></i> <?php print $tags; ?>
+<?php if($tags): ?>
+  <i class="fa fa-tags"></i> <?php print $tags; ?>
+<?php endif; ?>

@@ -12,7 +12,7 @@ $grey3: #a3a1a1;
 $grey4: #e5e5e5;
 $gery5: #e7e7e7;
 
-// Global css design.
+// Mixin part.
 @mixin clearfix {
 
   &:after {
@@ -59,6 +59,62 @@ $gery5: #e7e7e7;
   padding-bottom: 20px;
 }
 
+@mixin comment_view {
+  h2.pane-title {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #ddd;
+  }
+
+  .views-row {
+    padding-top: 15px;
+
+    .comment-wrapper {
+
+      .wrapper-top {
+        border: solid 1px #cce8ff;
+        border-bottom: none;
+        padding-top: 15px;
+        background: #f7f7f7;
+
+        .picture {
+
+          img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            padding: 5px;
+            border: #4D7FB6 solid 1px;
+          }
+        }
+      }
+
+      .wrapper-bottom {
+        border: solid 1px #cce8ff;
+        padding-top: 15px;
+        background-color: #eee;
+
+        .vud-widget-upanddown {
+          float: left; /* LTR */
+        }
+
+        .fa-user,
+        .fa-clock-o,
+        .fa-pencil,
+        .fa-trash-o {
+          margin-left: 10px; /* LTR */
+        }
+
+        .fa-pencil,
+        .fa-trash-o {
+          margin-right: 10px; /* LTR */
+        }
+      }
+    }
+  }
+}
+
+// Global CSS.
 .clearfix:after {
   content: "." !important;
   display: "hidden" !important;
@@ -178,3 +234,4 @@ $gery5: #e7e7e7;
 @import "pages/homepage.scss";
 @import "pages/login.scss";
 @import "pages/question";
+@import "pages/blog";

@@ -1,0 +1,6 @@
+.node-type-blog {
+
+  .pane-idea-comments-panel-pane-1 {
+    @include comment_view;
+  }
+}
