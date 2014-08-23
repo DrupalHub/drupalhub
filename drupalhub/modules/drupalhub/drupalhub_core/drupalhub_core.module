@@ -35,11 +35,11 @@ function drupalhub_core_menu() {
 function drupalhub_core_init() {
   drupal_add_css(drupal_get_path('theme', 'drupalhub') . '/FontAwesome/css/font-awesome.min.css');
 
-  if (drupal_is_front_page()) {
+  $item = menu_get_item();
+  if (drupal_is_front_page() || path_is_admin($item['path'])) {
     return;
   }
 
-  $item = menu_get_item();
   $breadcrumbs = array(l(t('Home'), 'front'));
 
   if ($item['path'] == 'questions') {
