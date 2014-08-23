@@ -25,6 +25,12 @@ regions[page_bottom]    = 'Page bottom'
 
 stylesheets[all][] = css/style.css
 
+; Breadcrumbs
+; --------------
+settings[bootstrap_breadcrumb] = 1
+settings[bootstrap_breadcrumb_home] = 1
+settings[bootstrap_breadcrumb_title] = 1
+
 
 ; For information on choosing the desired method, please read the Drupal
 ; Bootstrap sub-theme "how-to" documentation:
