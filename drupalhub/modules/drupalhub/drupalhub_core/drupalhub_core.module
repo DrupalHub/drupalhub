@@ -6,7 +6,6 @@
 
 include_once 'drupalhub_core.features.inc';
 
-
 /**
  * Implements hook_menu().
  */
@@ -35,6 +34,31 @@ function drupalhub_core_menu() {
  */
 function drupalhub_core_init() {
   drupal_add_css(drupal_get_path('theme', 'drupalhub') . '/FontAwesome/css/font-awesome.min.css');
+
+  if (drupal_is_front_page()) {
+    return;
+  }
+
+  $item = menu_get_item();
+  $breadcrumbs = array(l(t('Home'), 'front'));
+
+  if ($item['path'] == 'questions') {
+    drupal_set_title(t('Questions'));
+  }
+  elseif ($item['path'] == 'blogs') {
+    drupal_set_title(t('Blogs'));
+  }
+  elseif ($item['path'] == 'node/%') {
+    $object = menu_get_object();
+    if ($object->type == 'question') {
+      $breadcrumbs[] = l(t('Question'), 'questions');
+    }
+    elseif ($object->type == 'blog') {
+      $breadcrumbs[] = l(t('Blogs'), 'blogs');
+    }
+  }
+
+  drupal_set_breadcrumb($breadcrumbs);
 }
 
 /**
