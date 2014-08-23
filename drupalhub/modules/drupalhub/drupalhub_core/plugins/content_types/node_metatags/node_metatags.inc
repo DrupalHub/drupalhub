@@ -23,9 +23,10 @@ function drupalhub_core_node_metatags_content_type_render($subtype, $conf, $args
   $uri = entity_uri('user', $wrapper->value());
   $block = new stdClass();
 
+  $author_link_item = menu_get_item($uri['path']);
   $params = array(
-    'author' => l($wrapper->author->label(), $uri['path']),
-    'tags' => implode(" " , $terms),
+    'author' => $author_link_item['access'] ? l($wrapper->author->label(), $uri['path']) : $wrapper->author->label(),
+    'tags' => implode(", " , $terms),
     'time' => format_date($wrapper->created->value()),
     'vote' => '',
     'follow' => '',

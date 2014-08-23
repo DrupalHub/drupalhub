@@ -251,6 +251,10 @@ $profile-picture-wrapper: #4D7FB6;
   }
 }
 
+.main-container.container {
+  padding-top: 20px;
+}
+
 // This is the part when we import css style per page.
 @import "pages/homepage.scss";
 @import "pages/login.scss";

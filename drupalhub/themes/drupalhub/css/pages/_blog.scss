@@ -1,10 +1,17 @@
 .node-type-blog {
 
-  .pane-node-title {
-    color: $blue-title;
+  .top-first {
+
+    .pane-node-title {
+      color: $blue-title;
+    }
+
+    .pane-node-metatags {
+      @include meta-tags;
+    }
   }
 
-  .panel-col-last {
+  .top-second {
 
     img {
       float: left; /* LTR */
@@ -14,11 +21,16 @@
     }
   }
 
-  .pane-node-metatags {
-    @include meta-tags;
+  .bottom {
+
+    .pane-idea-comments-panel-pane-1 {
+      @include comment_view;
+    }
   }
 
-  .pane-idea-comments-panel-pane-1 {
-    @include comment_view;
+  @media (max-width: 768px) {
+    .top-second {
+      padding-top: 50px;
+    }
   }
 }
