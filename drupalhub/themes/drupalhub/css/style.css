@@ -482,6 +482,27 @@ body.front .second-left-right {
       margin-right: 10px;
       /* LTR */ }
 
+.page-questions .top-wrapper {
+  border: #cce8ff solid 1px;
+  background: #f7f7f7;
+  padding: 15px; }
+  .page-questions .top-wrapper .icons span {
+    display: block; }
+.page-questions .bottom-wrapper {
+  border: #cce8ff solid 1px;
+  padding-top: 15px;
+  background-color: #eee;
+  border-top: none; }
+  .page-questions .bottom-wrapper .fa-user,
+  .page-questions .bottom-wrapper .fa-tags {
+    margin-left: 10px; }
+  .page-questions .bottom-wrapper .fa-pencil,
+  .page-questions .bottom-wrapper .fa-trash-o {
+    margin-right: 10px;
+    margin-left: 10px; }
+  .page-questions .bottom-wrapper .tags .field-content {
+    display: inline; }
+
 .node-type-blog .top-first .pane-node-title {
   color: #20aae4; }
 .node-type-blog .top-first .pane-node-metatags .fa-tags,

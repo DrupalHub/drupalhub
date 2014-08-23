@@ -23,7 +23,6 @@
  * @ingroup views_templates
  */
 
-
   // Clean the link from span se we could if there any text.
   $edit = strip_tags($fields['edit_comment']->content, 'span');
 ?>
