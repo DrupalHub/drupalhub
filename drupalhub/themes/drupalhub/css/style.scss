@@ -97,7 +97,6 @@ $blue-border: #cce8ff;
         border: solid 1px #cce8ff;
         border-bottom: none;
         padding-top: 15px;
-        background: #f7f7f7;
 
         .picture {
 
@@ -114,7 +113,7 @@ $blue-border: #cce8ff;
       .wrapper-bottom {
         border: solid 1px #cce8ff;
         padding-top: 15px;
-        background-color: #eee;
+        background-color: #f7f7f7;
 
         .vud-widget-upanddown {
           float: left; /* LTR */
@@ -132,6 +131,26 @@ $blue-border: #cce8ff;
           margin-right: 10px; /* LTR */
         }
       }
+    }
+  }
+}
+
+@mixin bottom-wrapper {
+  .fa-user,
+  .fa-tags {
+    margin-left: 10px;
+  }
+
+  .fa-pencil,
+  .fa-trash-o {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .tags {
+
+    .field-content {
+      display: inline;
     }
   }
 }

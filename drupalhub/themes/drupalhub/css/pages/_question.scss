@@ -32,7 +32,6 @@
 
   .top-wrapper {
     border: $blue-border solid 1px;
-    background: #f7f7f7;
     padding: 15px;
 
     .icons span {
@@ -43,25 +42,9 @@
   .bottom-wrapper {
     border: $blue-border solid 1px;
     padding-top: 15px;
-    background-color: #eee;
+    background-color: #f7f7f7;
     border-top: none;
 
-    .fa-user,
-    .fa-tags {
-      margin-left: 10px;
-    }
-
-    .fa-pencil,
-    .fa-trash-o {
-      margin-right: 10px;
-      margin-left: 10px;
-    }
-
-    .tags {
-
-      .field-content {
-        display: inline;
-      }
-    }
+    @include bottom-wrapper;
   }
 }

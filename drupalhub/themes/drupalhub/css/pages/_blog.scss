@@ -1,3 +1,4 @@
+// Single blog page.
 .node-type-blog {
 
   .top-first {
@@ -31,6 +32,26 @@
   @media (max-width: 768px) {
     .top-second {
       padding-top: 50px;
+    }
+  }
+}
+
+// List of all blogs.
+.page-blogs {
+
+  .blogs-wrapper {
+
+    .top-wrapper {
+      border: $blue-border solid 1px;
+      padding: 15px;
+    }
+
+    .bottom-wrapper {
+      padding: 15px;
+      border: $blue-border solid 1px;
+      border-top: none;
+      background-color: #f7f7f7;
+      @include bottom-wrapper;
     }
   }
 }
