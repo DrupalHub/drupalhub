@@ -22,6 +22,7 @@ features[field_base][] = field_images
 features[field_instance][] = node-blog-body
 features[field_instance][] = node-blog-field_blog_rating
 features[field_instance][] = node-blog-field_images
+features[field_instance][] = node-blog-field_tags
 features[image][] = blog_posts_front_page
 features[node][] = blog
 features[variable][] = comment_anonymous_blog
