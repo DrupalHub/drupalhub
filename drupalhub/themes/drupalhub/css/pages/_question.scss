@@ -12,29 +12,12 @@
       padding-right: 20px; /* LTR */
 
       img {
-        border: black solid 1px;
+        border: $profile-picture-wrapper solid 1px;
       }
-    }
-
-    .vud-widget-upanddown {
-      float: left; /* LTR */
     }
 
     .pane-node-metatags {
-
-      .fa-tags,
-      .fa-user,
-      .fa-square-o,
-      .fa-clock-o {
-        padding-left: 10px; /* LTR */
-      }
-
-      .tags {
-
-        li {
-          display: inline;
-        }
-      }
+      @include meta-tags;
     }
   }
 

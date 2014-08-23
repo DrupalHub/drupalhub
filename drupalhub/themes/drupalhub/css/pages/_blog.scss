@@ -1,5 +1,23 @@
 .node-type-blog {
 
+  .pane-node-title {
+    color: $blue-title;
+  }
+
+  .panel-col-last {
+
+    img {
+      float: left; /* LTR */
+      padding: 5px; /* LTR */
+      border: 1px solid $profile-picture-wrapper;
+      margin-right: 5px; /* LTR */
+    }
+  }
+
+  .pane-node-metatags {
+    @include meta-tags;
+  }
+
   .pane-idea-comments-panel-pane-1 {
     @include comment_view;
   }

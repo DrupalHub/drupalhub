@@ -432,15 +432,15 @@ body.front .second-left-right {
   padding-right: 20px;
   /* LTR */ }
   .node-type-question .panel-col-top .pane-user-picture img {
-    border: black solid 1px; }
-.node-type-question .panel-col-top .vud-widget-upanddown {
-  float: left;
-  /* LTR */ }
+    border: #4d7fb6 solid 1px; }
 .node-type-question .panel-col-top .pane-node-metatags .fa-tags,
 .node-type-question .panel-col-top .pane-node-metatags .fa-user,
 .node-type-question .panel-col-top .pane-node-metatags .fa-square-o,
 .node-type-question .panel-col-top .pane-node-metatags .fa-clock-o {
   padding-left: 10px;
+  /* LTR */ }
+.node-type-question .panel-col-top .pane-node-metatags .vud-widget-upanddown {
+  float: left;
   /* LTR */ }
 .node-type-question .panel-col-top .pane-node-metatags .tags li {
   display: inline; }
@@ -460,7 +460,7 @@ body.front .second-left-right {
       max-width: 100%;
       height: auto;
       padding: 5px;
-      border: #4D7FB6 solid 1px; }
+      border: #4d7fb6 solid 1px; }
   .node-type-question .pane-idea-comments-panel-pane-1 .views-row .comment-wrapper .wrapper-bottom {
     border: solid 1px #cce8ff;
     padding-top: 15px;
@@ -479,6 +479,27 @@ body.front .second-left-right {
       margin-right: 10px;
       /* LTR */ }
 
+.node-type-blog .pane-node-title {
+  color: #20aae4; }
+.node-type-blog .panel-col-last img {
+  float: left;
+  /* LTR */
+  padding: 5px;
+  /* LTR */
+  border: 1px solid #4d7fb6;
+  margin-right: 5px;
+  /* LTR */ }
+.node-type-blog .pane-node-metatags .fa-tags,
+.node-type-blog .pane-node-metatags .fa-user,
+.node-type-blog .pane-node-metatags .fa-square-o,
+.node-type-blog .pane-node-metatags .fa-clock-o {
+  padding-left: 10px;
+  /* LTR */ }
+.node-type-blog .pane-node-metatags .vud-widget-upanddown {
+  float: left;
+  /* LTR */ }
+.node-type-blog .pane-node-metatags .tags li {
+  display: inline; }
 .node-type-blog .pane-idea-comments-panel-pane-1 h2.pane-title {
   padding-top: 30px;
   padding-bottom: 10px;
@@ -495,7 +516,7 @@ body.front .second-left-right {
       max-width: 100%;
       height: auto;
       padding: 5px;
-      border: #4D7FB6 solid 1px; }
+      border: #4d7fb6 solid 1px; }
   .node-type-blog .pane-idea-comments-panel-pane-1 .views-row .comment-wrapper .wrapper-bottom {
     border: solid 1px #cce8ff;
     padding-top: 15px;
