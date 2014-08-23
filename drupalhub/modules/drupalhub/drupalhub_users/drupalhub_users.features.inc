@@ -86,9 +86,9 @@ function drupalhub_users_default_message_type() {
     "arguments" : null,
     "message_text" : { "en" : [
         {
-          "value" : "The user \\u003Ca href=\\u0027@user-link\\u0027\\u003E@username\\u003C\\/a\\u003E joined DrupalHub",
+          "value" : "\\u003Cp\\u003EJoined DrupalHub\\u003C\\/p\\u003E\\r\\n",
           "format" : "filtered_html",
-          "safe_value" : "\\u003Cp\\u003EThe user \\u003Ca href=\\u0022@user-link\\u0022\\u003E@username\\u003C\\/a\\u003E joined DrupalHub\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EJoined DrupalHub\\u003C\\/p\\u003E\\n"
         }
       ]
     },

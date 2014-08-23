@@ -1,7 +1,10 @@
 <?php
 /**
  * @file
+ * Code for the drupalhub_users feature.
  */
+
+include_once 'drupalhub_users.features.inc';
 
 /**
  * Implement hook_theme().
@@ -35,4 +38,12 @@ function drupalhub_users_ctools_plugin_directory($module, $plugin) {
   if ($module == 'ctools' && !empty($plugin)) {
     return "plugins/$plugin";
   }
+}
+
+/**
+ * Implements hook_account_created().
+ */
+function drupalhub_users_user_insert(&$edit, $account, $category) {
+  $message = message_create('new_user', array('uid' => $account->uid));
+  $message->save();
 }
