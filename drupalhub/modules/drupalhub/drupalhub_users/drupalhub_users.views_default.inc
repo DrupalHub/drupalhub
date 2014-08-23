@@ -42,6 +42,7 @@ function drupalhub_users_views_default_views() {
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
+  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail_retina';
   /* Field: Message: Render message (Get text) */
   $handler->display->display_options['fields']['message_render']['id'] = 'message_render';
   $handler->display->display_options['fields']['message_render']['table'] = 'message';
@@ -50,6 +51,11 @@ function drupalhub_users_views_default_views() {
   $handler->display->display_options['fields']['message_render']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['message_render']['partials'] = 0;
   $handler->display->display_options['fields']['message_render']['partials_delta'] = '0';
+  /* Sort criterion: Message: Timestamp */
+  $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['table'] = 'message';
+  $handler->display->display_options['sorts']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['sorts']['timestamp']['order'] = 'DESC';
   /* Contextual filter: Message: User uid */
   $handler->display->display_options['arguments']['user']['id'] = 'user';
   $handler->display->display_options['arguments']['user']['table'] = 'message';
