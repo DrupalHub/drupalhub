@@ -2,6 +2,7 @@ name = drupalhub_users
 core = 7.x
 package = Features
 dependencies[] = ctools
+dependencies[] = entity_token
 dependencies[] = drupalhub_notify
 dependencies[] = entity_view_count
 dependencies[] = page_manager
