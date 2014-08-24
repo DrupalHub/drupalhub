@@ -42,9 +42,9 @@ function drupalhub_users_default_message_type() {
     "arguments" : null,
     "message_text" : { "en" : [
         {
-          "value" : "\\u003Cp\\u003ECommented to the node @{message:field-node:title}\\u003C\\/p\\u003E\\r\\n",
-          "format" : "filtered_html",
-          "safe_value" : "\\u003Cp\\u003ECommented to the node @{message:field-node:title}\\u003C\\/p\\u003E\\n"
+          "value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "format" : "full_html",
+          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     },

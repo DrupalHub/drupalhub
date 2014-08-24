@@ -31,7 +31,7 @@
   $edit = strip_tags($fields['edit_node']->content, 'span');
 ?>
 
-<div class="row question-wrapper">
+<div class="row question-wrapper clearfix">
   <div class="col-md-12 top-wrapper clearfix">
     <div class="col-md-1 icons"><span><?php print $fields['field_count']->content; ?></span><i class="fa fa-eye"></i></div>
     <div class="col-md-1 icons"><span><?php print $fields['comment_count']->content; ?></span><i class="fa fa-comment-o"></i></div>

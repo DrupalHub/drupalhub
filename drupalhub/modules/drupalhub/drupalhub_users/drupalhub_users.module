@@ -57,3 +57,13 @@ function drupalhub_users_node_insert($node) {
   $wrapper->field_node->set($node);
   $wrapper->save();
 }
+
+/**
+ * Implements hook_comment_insert().
+ */
+function drupalhub_users_comment_insert($comment) {
+  $message = message_create('commented_to_node', array('uid' => $comment->uid));
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $wrapper->field_comment->set($comment);
+  $wrapper->save();
+}

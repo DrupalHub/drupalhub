@@ -2,7 +2,7 @@
   // Clean the link from span se we could if there any text.
   $edit = strip_tags($fields['edit_node']->content, 'span');
 ?>
-<div class="row blogs-wrapper">
+<div class="row blogs-wrapper clearfix">
   <div class="top-wrapper">
     <div class="col-md-12">
       <h1><?php print $fields['title']->content; ?></h1>
