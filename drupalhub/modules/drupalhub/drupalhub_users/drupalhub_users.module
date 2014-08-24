@@ -67,3 +67,46 @@ function drupalhub_users_comment_insert($comment) {
   $wrapper->field_comment->set($comment);
   $wrapper->save();
 }
+
+/**
+ * Implements hook_votingapi_insert().
+ */
+function drupalhub_users_votingapi_insert($votes) {
+  $vote = $votes[0];
+  $wrapper = entity_metadata_wrapper($vote['entity_type'], $vote['entity_id']);
+  $identifier = $wrapper->type() . ':' . $wrapper->getIdentifier();
+  $uri = entity_uri($wrapper->type(), $wrapper->value());
+
+  // Check if there any message for the entity the user just voted for.
+  $query = new EntityFieldQuery();
+  $count = $query
+    ->entityCondition('entity_type', 'message')
+    ->propertyCondition('uid', $vote['uid'])
+    ->fieldCondition('field_entity_identifier', 'value', $identifier)
+    ->count()
+    ->execute();
+
+  if ($count) {
+    // The user already voted/down voted for the entity. We don't need to create
+    // another message for that.
+    return;
+  }
+
+  // Get default variables.
+  $type = $wrapper->type() == 'comment' ? t('comment') : t('node');
+  $label = $wrapper->label();
+  $action = $vote['value'] === 1 ? t('Up voted') : t('Down voted');
+  $uri = $uri['path'];
+
+  // Create the message.
+  $message = message_create('user_down_up_voted', array('uid' => $vote['uid']));
+  $message->arguments = array(
+    '@uri' => $uri,
+    '@type' => $type,
+    '@label' => $label,
+    '@action' => $action,
+  );
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $wrapper->field_entity_identifier->set($identifier);
+  $wrapper->save();
+}

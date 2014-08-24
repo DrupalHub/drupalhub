@@ -108,9 +108,9 @@ function drupalhub_users_default_message_type() {
     "arguments" : null,
     "message_text" : { "en" : [
         {
-          "value" : "\\u003Cp\\u003E@action\\u0026nbsp;for the @type\\u0026nbsp;@label\\u003C\\/p\\u003E\\r\\n",
-          "format" : "filtered_html",
-          "safe_value" : "\\u003Cp\\u003E@action\\u00a0for the @type\\u00a0@label\\u003C\\/p\\u003E\\n"
+          "value" : "\\u003Cp\\u003E@action\\u0026nbsp;for the @type\\u0026nbsp;\\u003Ca href=\\u0027@uri\\u0027\\u003E@label\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "format" : "full_html",
+          "safe_value" : "\\u003Cp\\u003E@action\\u00a0for the @type\\u00a0\\u003Ca href=\\u0022@uri\\u0022\\u003E@label\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     },
