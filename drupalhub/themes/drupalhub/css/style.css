@@ -578,18 +578,60 @@ body.front .second-left-right {
     display: inline; }
 
 .page-user .activity-stream-instance {
-  margin-bottom: 20px; }
+  position: relative;
+  width: 75%;
+  margin: 20px auto; }
+  .page-user .activity-stream-instance:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden; }
   .page-user .activity-stream-instance .activity-header {
-    border: 1px solid #cce8ff;
+    border: 1px solid;
     padding: 5px; }
     .page-user .activity-stream-instance .activity-header .picture-name img {
       float: left;
       margin-right: 5px; }
   .page-user .activity-stream-instance .activity-body {
-    border: 1px solid #cce8ff;
+    border: 1px solid;
     border-top: none;
     padding: 10px; }
   .page-user .activity-stream-instance .activity-footer {
-    border: 1px solid #cce8ff;
+    border: 1px solid;
     border-top: none;
     padding: 10px; }
+  .page-user .activity-stream-instance:before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    left: -6px;
+    top: 20px;
+    width: 10px;
+    height: 10px;
+    border: 1px solid;
+    border-width: 1px 0 0 1px;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg); }
+  .page-user .activity-stream-instance.created_node .activity-header,
+  .page-user .activity-stream-instance.created_node .activity-body,
+  .page-user .activity-stream-instance.created_node .activity-footer, .page-user .activity-stream-instance.created_node:before {
+    border-color: #79cbe4; }
+  .page-user .activity-stream-instance.user_down_up_voted .activity-header,
+  .page-user .activity-stream-instance.user_down_up_voted .activity-body,
+  .page-user .activity-stream-instance.user_down_up_voted .activity-footer, .page-user .activity-stream-instance.user_down_up_voted:before {
+    border-color: #eb8073; }
+  .page-user .activity-stream-instance.new_user .activity-header,
+  .page-user .activity-stream-instance.new_user .activity-body,
+  .page-user .activity-stream-instance.new_user .activity-footer, .page-user .activity-stream-instance.new_user:before {
+    border-color: #f6bf71; }
+  .page-user .activity-stream-instance.commented_to_node .activity-header,
+  .page-user .activity-stream-instance.commented_to_node .activity-body,
+  .page-user .activity-stream-instance.commented_to_node .activity-footer, .page-user .activity-stream-instance.commented_to_node:before {
+    border-color: #77c777; }

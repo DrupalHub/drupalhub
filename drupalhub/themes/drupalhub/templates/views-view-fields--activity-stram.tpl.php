@@ -1,4 +1,4 @@
-<div class="row activity-stream-instance">
+<div class="row activity-stream-instance <?php print $fields['type']->raw; ?>">
   <div class="activity-header">
     <div class="picture-name"><?php print $fields['picture']->content; ?> <?php print $fields['name']->content; ?></div>
     <?php print $fields['timestamp']->content; ?>
