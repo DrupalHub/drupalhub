@@ -1,0 +1,32 @@
+.page-user {
+
+  .activity-stream-instance {
+    margin-bottom: 20px;
+
+    .activity-header {
+      border: 1px solid $blue-border;
+      padding: 5px;
+
+      .picture-name {
+
+        img {
+          float: left;
+          margin-right: 5px;
+        }
+      }
+    }
+
+    .activity-body {
+      border: 1px solid $blue-border;
+      border-top: none;
+      padding: 10px;
+    }
+
+    .activity-footer {
+      border: 1px solid $blue-border;
+      border-top: none;
+      padding: 10px;
+    }
+  }
+
+}

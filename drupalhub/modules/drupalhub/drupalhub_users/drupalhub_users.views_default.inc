@@ -42,7 +42,7 @@ function drupalhub_users_views_default_views() {
   $handler->display->display_options['fields']['picture']['label'] = '';
   $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail_retina';
+  $handler->display->display_options['fields']['picture']['image_style'] = 'top_users';
   /* Field: Message: Render message (Get text) */
   $handler->display->display_options['fields']['message_render']['id'] = 'message_render';
   $handler->display->display_options['fields']['message_render']['table'] = 'message';
@@ -51,6 +51,21 @@ function drupalhub_users_views_default_views() {
   $handler->display->display_options['fields']['message_render']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['message_render']['partials'] = 0;
   $handler->display->display_options['fields']['message_render']['partials_delta'] = '0';
+  /* Field: Message: Timestamp */
+  $handler->display->display_options['fields']['timestamp']['id'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['table'] = 'message';
+  $handler->display->display_options['fields']['timestamp']['field'] = 'timestamp';
+  $handler->display->display_options['fields']['timestamp']['label'] = '';
+  $handler->display->display_options['fields']['timestamp']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['timestamp']['date_format'] = 'long';
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'user';
+  $handler->display->display_options['fields']['name']['label'] = '';
+  $handler->display->display_options['fields']['name']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['name']['link_to_user'] = FALSE;
   /* Sort criterion: Message: Timestamp */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'message';

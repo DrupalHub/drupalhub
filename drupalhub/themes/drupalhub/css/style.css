@@ -576,3 +576,20 @@ body.front .second-left-right {
     margin-left: 10px; }
   .page-blogs .blogs-wrapper .bottom-wrapper .tags .field-content {
     display: inline; }
+
+.page-user .activity-stream-instance {
+  margin-bottom: 20px; }
+  .page-user .activity-stream-instance .activity-header {
+    border: 1px solid #cce8ff;
+    padding: 5px; }
+    .page-user .activity-stream-instance .activity-header .picture-name img {
+      float: left;
+      margin-right: 5px; }
+  .page-user .activity-stream-instance .activity-body {
+    border: 1px solid #cce8ff;
+    border-top: none;
+    padding: 10px; }
+  .page-user .activity-stream-instance .activity-footer {
+    border: 1px solid #cce8ff;
+    border-top: none;
+    padding: 10px; }

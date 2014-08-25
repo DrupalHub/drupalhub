@@ -48,7 +48,7 @@ function drupalhub_users_default_page_manager_handlers() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
-    $pane->panel = 'right';
+    $pane->panel = 'bottom';
     $pane->type = 'views_panes';
     $pane->subtype = 'activity_stram-panel_pane_1';
     $pane->shown = TRUE;
@@ -68,7 +68,7 @@ function drupalhub_users_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = 'bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
     $display->content['new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45'] = $pane;
-    $display->panels['right'][0] = 'new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
+    $display->panels['bottom'][0] = 'new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
     $pane = new stdClass();
     $pane->pid = 'new-ecef5c95-7c51-4b72-b9a6-a391e4ac291e';
     $pane->panel = 'top';
@@ -169,7 +169,10 @@ function drupalhub_users_default_page_manager_pages() {
   $page->admin_title = 'Questions';
   $page->admin_description = '';
   $page->path = 'questions';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
