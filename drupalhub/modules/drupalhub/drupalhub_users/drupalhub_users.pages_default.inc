@@ -30,7 +30,7 @@ function drupalhub_users_default_page_manager_handlers() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'twocol_stacked';
+  $display->layout = 'drupalhub_user';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -39,6 +39,8 @@ function drupalhub_users_default_page_manager_handlers() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -47,8 +49,69 @@ function drupalhub_users_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-dcdbd913-769e-4fa7-aaa3-9a3d8ab3a391';
+    $pane->panel = 'first';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_about';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:user_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'dcdbd913-769e-4fa7-aaa3-9a3d8ab3a391';
+    $display->content['new-dcdbd913-769e-4fa7-aaa3-9a3d8ab3a391'] = $pane;
+    $display->panels['first'][0] = 'new-dcdbd913-769e-4fa7-aaa3-9a3d8ab3a391';
+    $pane = new stdClass();
+    $pane->pid = 'new-3a6d0912-a83b-4d26-b50e-218a434f4cd5';
+    $pane->panel = 'first';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_reputation';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'hidden',
+      'formatter' => 'number_integer',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(
+        'thousand_separator' => ' ',
+        'prefix_suffix' => 1,
+      ),
+      'context' => 'argument_entity_id:user_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '3a6d0912-a83b-4d26-b50e-218a434f4cd5';
+    $display->content['new-3a6d0912-a83b-4d26-b50e-218a434f4cd5'] = $pane;
+    $display->panels['first'][1] = 'new-3a6d0912-a83b-4d26-b50e-218a434f4cd5';
+    $pane = new stdClass();
     $pane->pid = 'new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
-    $pane->panel = 'bottom';
+    $pane->panel = 'second';
     $pane->type = 'views_panes';
     $pane->subtype = 'activity_stram-panel_pane_1';
     $pane->shown = TRUE;
@@ -68,7 +131,7 @@ function drupalhub_users_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = 'bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
     $display->content['new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45'] = $pane;
-    $display->panels['bottom'][0] = 'new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
+    $display->panels['second'][0] = 'new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
     $pane = new stdClass();
     $pane->pid = 'new-ecef5c95-7c51-4b72-b9a6-a391e4ac291e';
     $pane->panel = 'top';
@@ -117,38 +180,6 @@ function drupalhub_users_default_page_manager_handlers() {
     $pane->uuid = 'a285af62-f14d-481e-acad-de82337c6574';
     $display->content['new-a285af62-f14d-481e-acad-de82337c6574'] = $pane;
     $display->panels['top'][1] = 'new-a285af62-f14d-481e-acad-de82337c6574';
-    $pane = new stdClass();
-    $pane->pid = 'new-3a6d0912-a83b-4d26-b50e-218a434f4cd5';
-    $pane->panel = 'top';
-    $pane->type = 'entity_field';
-    $pane->subtype = 'user:field_reputation';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'label' => 'title',
-      'formatter' => 'number_integer',
-      'delta_limit' => 0,
-      'delta_offset' => '0',
-      'delta_reversed' => FALSE,
-      'formatter_settings' => array(
-        'thousand_separator' => ' ',
-        'prefix_suffix' => 1,
-      ),
-      'context' => 'argument_entity_id:user_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 2;
-    $pane->locks = array();
-    $pane->uuid = '3a6d0912-a83b-4d26-b50e-218a434f4cd5';
-    $display->content['new-3a6d0912-a83b-4d26-b50e-218a434f4cd5'] = $pane;
-    $display->panels['top'][2] = 'new-3a6d0912-a83b-4d26-b50e-218a434f4cd5';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-ecef5c95-7c51-4b72-b9a6-a391e4ac291e';
   $handler->conf['display'] = $display;
