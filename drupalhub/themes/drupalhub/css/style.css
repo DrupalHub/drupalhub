@@ -580,109 +580,111 @@ body.front .second-left-right {
   .page-blogs .blogs-wrapper .bottom-wrapper .tags .field-content {
     display: inline; }
 
-.page-user .activity-stream-instance {
-  position: relative;
-  width: 75%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 40px; }
-  .page-user .activity-stream-instance:after {
-    content: ".";
-    display: block;
-    height: 0;
-    clear: both;
-    visibility: hidden; }
-  .page-user .activity-stream-instance .icons {
-    position: absolute;
-    left: -70px;
-    top: 3px;
-    font-size: 35px;
-    color: white;
-    display: block;
-    width: 50px;
-    height: 50px;
-    line-height: 40px;
-    border-radius: 102px;
-    text-align: center;
-    overflow: hidden;
-    padding-top: 5px; }
-  .page-user .activity-stream-instance .activity-header {
-    border: 1px solid;
-    padding: 15px 10px; }
-    .page-user .activity-stream-instance .activity-header:after {
+.page-user .view-id-activity_stram {
+  border-left: solid 1px #000000; }
+  .page-user .view-id-activity_stram .activity-stream-instance {
+    position: relative;
+    margin-left: 45px;
+    margin-right: auto;
+    margin-bottom: 40px; }
+    .page-user .view-id-activity_stram .activity-stream-instance:after {
       content: ".";
       display: block;
       height: 0;
       clear: both;
       visibility: hidden; }
-    .page-user .activity-stream-instance .activity-header .picture img {
-      float: left;
-      margin-right: 10px; }
-    .page-user .activity-stream-instance .activity-header .info > .field-content {
-      padding-bottom: 10px; }
-  .page-user .activity-stream-instance .activity-body {
-    border: 1px solid;
-    border-top: none;
-    padding: 20px 10px; }
-  .page-user .activity-stream-instance .activity-footer {
-    border: 1px solid;
-    border-top: none;
-    padding: 20px;
-    background: #f7f7f7; }
-  .page-user .activity-stream-instance:before {
-    content: "";
-    display: block;
-    position: absolute;
-    z-index: -1;
-    left: -6px;
-    top: 24px;
-    width: 10px;
-    height: 10px;
-    border: 1px solid;
-    border-width: 1px 0 0 1px;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    -webkit-transform: rotate(-45deg);
-    -ms-transform: rotate(-45deg);
-    -o-transform: rotate(-45deg);
-    transform: rotate(-45deg); }
-    @media (max-width: 768px) {
-      .page-user .activity-stream-instance:before {
-        display: none !important; } }
-  .page-user .activity-stream-instance.new_user .activity-header,
-  .page-user .activity-stream-instance.new_user .activity-body,
-  .page-user .activity-stream-instance.new_user .activity-footer, .page-user .activity-stream-instance.new_user:before {
-    border-color: #79cbe4; }
-  .page-user .activity-stream-instance.new_user .icons {
-    background-color: #24649a; }
-    .page-user .activity-stream-instance.new_user .icons .fa-drupal {
+    .page-user .view-id-activity_stram .activity-stream-instance .icons {
+      box-shadow: 0 0 0 4px #ffffff;
+      position: absolute;
+      left: -70px;
+      top: 3px;
+      font-size: 35px;
+      color: white;
       display: block;
-      padding-top: 2px; }
-  .page-user .activity-stream-instance.user_down_up_voted .activity-header,
-  .page-user .activity-stream-instance.user_down_up_voted .activity-body,
-  .page-user .activity-stream-instance.user_down_up_voted .activity-footer, .page-user .activity-stream-instance.user_down_up_voted:before {
-    border-color: #eb8073; }
-  .page-user .activity-stream-instance.user_down_up_voted .icons {
-    background-color: #c85648; }
-    .page-user .activity-stream-instance.user_down_up_voted .icons .fa-thumbs-up {
+      width: 50px;
+      height: 50px;
+      line-height: 40px;
+      border-radius: 102px;
+      text-align: center;
+      overflow: hidden;
+      padding-top: 5px; }
+    .page-user .view-id-activity_stram .activity-stream-instance .activity-header {
+      border: 1px solid;
+      padding: 15px 10px; }
+      .page-user .view-id-activity_stram .activity-stream-instance .activity-header:after {
+        content: ".";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden; }
+      .page-user .view-id-activity_stram .activity-stream-instance .activity-header .picture img {
+        float: left;
+        margin-right: 10px; }
+      .page-user .view-id-activity_stram .activity-stream-instance .activity-header .info > .field-content {
+        padding-bottom: 10px; }
+    .page-user .view-id-activity_stram .activity-stream-instance .activity-body {
+      border: 1px solid;
+      border-top: none;
+      padding: 20px 10px; }
+    .page-user .view-id-activity_stram .activity-stream-instance .activity-footer {
+      border: 1px solid;
+      border-top: none;
+      padding: 20px;
+      background: #f7f7f7; }
+    .page-user .view-id-activity_stram .activity-stream-instance:before {
+      content: "";
       display: block;
-      padding-top: 2px;
-      padding-left: 2px; }
-  .page-user .activity-stream-instance.created_node .activity-header,
-  .page-user .activity-stream-instance.created_node .activity-body,
-  .page-user .activity-stream-instance.created_node .activity-footer, .page-user .activity-stream-instance.created_node:before {
-    border-color: #f6bf71; }
-  .page-user .activity-stream-instance.created_node .icons {
-    background: #ff9900; }
-    .page-user .activity-stream-instance.created_node .icons .fa-pencil {
-      display: block;
-      padding-top: 2px; }
-  .page-user .activity-stream-instance.commented_to_node .activity-header,
-  .page-user .activity-stream-instance.commented_to_node .activity-body,
-  .page-user .activity-stream-instance.commented_to_node .activity-footer, .page-user .activity-stream-instance.commented_to_node:before {
-    border-color: #77c777; }
-  .page-user .activity-stream-instance.commented_to_node .icons {
-    background: #3a953a; }
-    .page-user .activity-stream-instance.commented_to_node .icons .fa-comment {
-      display: block; }
+      position: absolute;
+      z-index: 6;
+      left: -8px;
+      top: 24px;
+      width: 15px;
+      height: 15px;
+      border: 1px solid;
+      border-width: 1px 0 0 1px;
+      -webkit-box-sizing: content-box;
+      -moz-box-sizing: content-box;
+      box-sizing: content-box;
+      -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+      -o-transform: rotate(-45deg);
+      transform: rotate(-45deg); }
+      @media (max-width: 768px) {
+        .page-user .view-id-activity_stram .activity-stream-instance:before {
+          display: none !important; } }
+    .page-user .view-id-activity_stram .activity-stream-instance.new_user .activity-header,
+    .page-user .view-id-activity_stram .activity-stream-instance.new_user .activity-body,
+    .page-user .view-id-activity_stram .activity-stream-instance.new_user .activity-footer, .page-user .view-id-activity_stram .activity-stream-instance.new_user:before {
+      border-color: #79cbe4; }
+    .page-user .view-id-activity_stram .activity-stream-instance.new_user .icons {
+      background-color: #24649a; }
+      .page-user .view-id-activity_stram .activity-stream-instance.new_user .icons .fa-drupal {
+        display: block;
+        padding-top: 2px; }
+    .page-user .view-id-activity_stram .activity-stream-instance.user_down_up_voted .activity-header,
+    .page-user .view-id-activity_stram .activity-stream-instance.user_down_up_voted .activity-body,
+    .page-user .view-id-activity_stram .activity-stream-instance.user_down_up_voted .activity-footer, .page-user .view-id-activity_stram .activity-stream-instance.user_down_up_voted:before {
+      border-color: #eb8073; }
+    .page-user .view-id-activity_stram .activity-stream-instance.user_down_up_voted .icons {
+      background-color: #c85648; }
+      .page-user .view-id-activity_stram .activity-stream-instance.user_down_up_voted .icons .fa-thumbs-up {
+        display: block;
+        padding-top: 2px;
+        padding-left: 2px; }
+    .page-user .view-id-activity_stram .activity-stream-instance.created_node .activity-header,
+    .page-user .view-id-activity_stram .activity-stream-instance.created_node .activity-body,
+    .page-user .view-id-activity_stram .activity-stream-instance.created_node .activity-footer, .page-user .view-id-activity_stram .activity-stream-instance.created_node:before {
+      border-color: #f6bf71; }
+    .page-user .view-id-activity_stram .activity-stream-instance.created_node .icons {
+      background: #ff9900; }
+      .page-user .view-id-activity_stram .activity-stream-instance.created_node .icons .fa-pencil {
+        display: block;
+        padding-top: 2px; }
+    .page-user .view-id-activity_stram .activity-stream-instance.commented_to_node .activity-header,
+    .page-user .view-id-activity_stram .activity-stream-instance.commented_to_node .activity-body,
+    .page-user .view-id-activity_stram .activity-stream-instance.commented_to_node .activity-footer, .page-user .view-id-activity_stram .activity-stream-instance.commented_to_node:before {
+      border-color: #77c777; }
+    .page-user .view-id-activity_stram .activity-stream-instance.commented_to_node .icons {
+      background: #3a953a; }
+      .page-user .view-id-activity_stram .activity-stream-instance.commented_to_node .icons .fa-comment {
+        display: block; }
