@@ -13,6 +13,9 @@
 .fa-heart {
   color: #008000; }
 
+.disabled {
+  display: none; }
+
 .top-navbar {
   padding: 0px;
   background: #e6e6e6; }
@@ -587,6 +590,20 @@ body.front .second-left-right {
     height: 0;
     clear: both;
     visibility: hidden; }
+  .page-user .activity-stream-instance .icons {
+    position: absolute;
+    left: -70px;
+    top: 3px;
+    font-size: 35px;
+    color: white;
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 40px;
+    border-radius: 102px;
+    text-align: center;
+    overflow: hidden;
+    padding-top: 5px; }
   .page-user .activity-stream-instance .activity-header {
     border: 1px solid;
     padding: 5px; }
@@ -607,7 +624,7 @@ body.front .second-left-right {
     position: absolute;
     z-index: -1;
     left: -6px;
-    top: 20px;
+    top: 24px;
     width: 10px;
     height: 10px;
     border: 1px solid;
@@ -619,19 +636,35 @@ body.front .second-left-right {
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg); }
-  .page-user .activity-stream-instance.created_node .activity-header,
-  .page-user .activity-stream-instance.created_node .activity-body,
-  .page-user .activity-stream-instance.created_node .activity-footer, .page-user .activity-stream-instance.created_node:before {
+  .page-user .activity-stream-instance.new_user .activity-header,
+  .page-user .activity-stream-instance.new_user .activity-body,
+  .page-user .activity-stream-instance.new_user .activity-footer, .page-user .activity-stream-instance.new_user:before {
     border-color: #79cbe4; }
+  .page-user .activity-stream-instance.new_user .icons {
+    background-color: #24649a; }
+    .page-user .activity-stream-instance.new_user .icons .fa-drupal {
+      display: block; }
   .page-user .activity-stream-instance.user_down_up_voted .activity-header,
   .page-user .activity-stream-instance.user_down_up_voted .activity-body,
   .page-user .activity-stream-instance.user_down_up_voted .activity-footer, .page-user .activity-stream-instance.user_down_up_voted:before {
     border-color: #eb8073; }
-  .page-user .activity-stream-instance.new_user .activity-header,
-  .page-user .activity-stream-instance.new_user .activity-body,
-  .page-user .activity-stream-instance.new_user .activity-footer, .page-user .activity-stream-instance.new_user:before {
+  .page-user .activity-stream-instance.user_down_up_voted .icons {
+    background-color: #c85648; }
+    .page-user .activity-stream-instance.user_down_up_voted .icons .fa-thumbs-up {
+      display: block; }
+  .page-user .activity-stream-instance.created_node .activity-header,
+  .page-user .activity-stream-instance.created_node .activity-body,
+  .page-user .activity-stream-instance.created_node .activity-footer, .page-user .activity-stream-instance.created_node:before {
     border-color: #f6bf71; }
+  .page-user .activity-stream-instance.created_node .icons {
+    background: #ff9900; }
+    .page-user .activity-stream-instance.created_node .icons .fa-pencil {
+      display: block; }
   .page-user .activity-stream-instance.commented_to_node .activity-header,
   .page-user .activity-stream-instance.commented_to_node .activity-body,
   .page-user .activity-stream-instance.commented_to_node .activity-footer, .page-user .activity-stream-instance.commented_to_node:before {
     border-color: #77c777; }
+  .page-user .activity-stream-instance.commented_to_node .icons {
+    background: #3a953a; }
+    .page-user .activity-stream-instance.commented_to_node .icons .fa-comment {
+      display: block; }

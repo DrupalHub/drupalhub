@@ -7,6 +7,22 @@
     @include clearfix;
 
 
+    .icons {
+      position: absolute;
+      left: -70px;
+      top: 3px;
+      font-size: 35px;
+      color: white;
+      display: block;
+      width: 50px;
+      height: 50px;
+      line-height: 40px;
+      border-radius: 102px;
+      text-align: center;
+      overflow: hidden;
+      padding-top: 5px;
+    }
+
     .activity-header {
       border: 1px solid;
       padding: 5px;
@@ -38,7 +54,7 @@
       position: absolute;
       z-index: -1;
       left: -6px;
-      top: 20px;
+      top: 24px;
       width: 10px;
       height: 10px;
       border: 1px solid;
@@ -53,13 +69,21 @@
     }
 
 
-    &.created_node {
+    &.new_user {
 
       .activity-header,
       .activity-body,
       .activity-footer,
       &:before {
         border-color: #79cbe4;
+      }
+
+      .icons {
+        background-color: #24649a;
+
+        .fa-drupal {
+          display: block;
+        }
       }
     }
 
@@ -71,15 +95,32 @@
       &:before {
         border-color: #eb8073;
       }
+
+      .icons {
+        background-color: #c85648;
+
+        .fa-thumbs-up {
+          display: block;
+        }
+      }
+
     }
 
-    &.new_user {
+    &.created_node {
 
       .activity-header,
       .activity-body,
       .activity-footer,
       &:before {
         border-color: #f6bf71;
+      }
+
+      .icons {
+        background: #ff9900;
+
+        .fa-pencil {
+          display: block;
+        }
       }
     }
 
@@ -90,6 +131,14 @@
       .activity-footer,
       &:before {
         border-color: #77c777;
+      }
+
+      .icons {
+         background: #3a953a;
+
+        .fa-comment {
+          display: block;
+        }
       }
     }
   }
