@@ -1,14 +1,14 @@
 <div class="row activity-stream-instance <?php print $fields['type']->raw; ?>">
-  <div class="icons">
+  <div class="icons hidden-xs">
     <i class="fa fa-thumbs-up disabled"></i>
     <i class="fa fa-drupal disabled"></i>
     <i class="fa fa-comment disabled"></i>
     <i class="fa fa-pencil disabled"></i>
   </div>
   <div class="activity-header">
-      <div class="picture"><?php print $fields['picture']->content; ?></div>
+      <div class="picture col-xs-12"><?php print $fields['picture']->content; ?></div>
 
-      <div class="info">
+      <div class="info col-xs-12">
         <?php print $fields['name']->content; ?><Br /><br />
         <?php print $fields['timestamp']->content; ?>
     </div>

@@ -647,6 +647,9 @@ body.front .second-left-right {
     -ms-transform: rotate(-45deg);
     -o-transform: rotate(-45deg);
     transform: rotate(-45deg); }
+    @media (max-width: 768px) {
+      .page-user .activity-stream-instance:before {
+        display: none !important; } }
   .page-user .activity-stream-instance.new_user .activity-header,
   .page-user .activity-stream-instance.new_user .activity-body,
   .page-user .activity-stream-instance.new_user .activity-footer, .page-user .activity-stream-instance.new_user:before {

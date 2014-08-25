@@ -77,6 +77,10 @@
       -ms-transform: rotate(-45deg);
       -o-transform: rotate(-45deg);
       transform: rotate(-45deg);
+
+      @media (max-width: 768px) {
+        display: none !important;
+      }
     }
 
 
