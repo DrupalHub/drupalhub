@@ -6,8 +6,12 @@
     <i class="fa fa-pencil disabled"></i>
   </div>
   <div class="activity-header">
-    <div class="picture-name"><?php print $fields['picture']->content; ?> <?php print $fields['name']->content; ?></div>
-    <?php print $fields['timestamp']->content; ?>
+      <div class="picture"><?php print $fields['picture']->content; ?></div>
+
+      <div class="info">
+        <?php print $fields['name']->content; ?><Br /><br />
+        <?php print $fields['timestamp']->content; ?>
+    </div>
   </div>
 
   <div class="activity-body">

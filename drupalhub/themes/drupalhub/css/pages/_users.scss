@@ -3,7 +3,9 @@
   .activity-stream-instance {
     position: relative;
     width: 75%;
-    margin: 20px auto;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
     @include clearfix;
 
 
@@ -25,13 +27,21 @@
 
     .activity-header {
       border: 1px solid;
-      padding: 5px;
+      padding: 15px 10px;
+      @include clearfix;
 
-      .picture-name {
+      .picture {
 
         img {
           float: left;
-          margin-right: 5px;
+          margin-right: 10px;
+        }
+      }
+
+      .info {
+
+        & > .field-content {
+          padding-bottom: 10px;
         }
       }
     }
@@ -39,13 +49,14 @@
     .activity-body {
       border: 1px solid;
       border-top: none;
-      padding: 10px;
+      padding: 20px 10px;
     }
 
     .activity-footer {
       border: 1px solid ;
       border-top: none;
-      padding: 10px;
+      padding: 20px;
+      background: #f7f7f7;
     }
 
     &:before {
@@ -83,6 +94,7 @@
 
         .fa-drupal {
           display: block;
+          padding-top: 2px;
         }
       }
     }
@@ -101,9 +113,10 @@
 
         .fa-thumbs-up {
           display: block;
+          padding-top: 2px;
+          padding-left: 2px;
         }
       }
-
     }
 
     &.created_node {
@@ -120,6 +133,7 @@
 
         .fa-pencil {
           display: block;
+          padding-top: 2px;
         }
       }
     }

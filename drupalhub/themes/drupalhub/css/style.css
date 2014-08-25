@@ -583,7 +583,9 @@ body.front .second-left-right {
 .page-user .activity-stream-instance {
   position: relative;
   width: 75%;
-  margin: 20px auto; }
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 40px; }
   .page-user .activity-stream-instance:after {
     content: ".";
     display: block;
@@ -606,18 +608,27 @@ body.front .second-left-right {
     padding-top: 5px; }
   .page-user .activity-stream-instance .activity-header {
     border: 1px solid;
-    padding: 5px; }
-    .page-user .activity-stream-instance .activity-header .picture-name img {
+    padding: 15px 10px; }
+    .page-user .activity-stream-instance .activity-header:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .page-user .activity-stream-instance .activity-header .picture img {
       float: left;
-      margin-right: 5px; }
+      margin-right: 10px; }
+    .page-user .activity-stream-instance .activity-header .info > .field-content {
+      padding-bottom: 10px; }
   .page-user .activity-stream-instance .activity-body {
     border: 1px solid;
     border-top: none;
-    padding: 10px; }
+    padding: 20px 10px; }
   .page-user .activity-stream-instance .activity-footer {
     border: 1px solid;
     border-top: none;
-    padding: 10px; }
+    padding: 20px;
+    background: #f7f7f7; }
   .page-user .activity-stream-instance:before {
     content: "";
     display: block;
@@ -643,7 +654,8 @@ body.front .second-left-right {
   .page-user .activity-stream-instance.new_user .icons {
     background-color: #24649a; }
     .page-user .activity-stream-instance.new_user .icons .fa-drupal {
-      display: block; }
+      display: block;
+      padding-top: 2px; }
   .page-user .activity-stream-instance.user_down_up_voted .activity-header,
   .page-user .activity-stream-instance.user_down_up_voted .activity-body,
   .page-user .activity-stream-instance.user_down_up_voted .activity-footer, .page-user .activity-stream-instance.user_down_up_voted:before {
@@ -651,7 +663,9 @@ body.front .second-left-right {
   .page-user .activity-stream-instance.user_down_up_voted .icons {
     background-color: #c85648; }
     .page-user .activity-stream-instance.user_down_up_voted .icons .fa-thumbs-up {
-      display: block; }
+      display: block;
+      padding-top: 2px;
+      padding-left: 2px; }
   .page-user .activity-stream-instance.created_node .activity-header,
   .page-user .activity-stream-instance.created_node .activity-body,
   .page-user .activity-stream-instance.created_node .activity-footer, .page-user .activity-stream-instance.created_node:before {
@@ -659,7 +673,8 @@ body.front .second-left-right {
   .page-user .activity-stream-instance.created_node .icons {
     background: #ff9900; }
     .page-user .activity-stream-instance.created_node .icons .fa-pencil {
-      display: block; }
+      display: block;
+      padding-top: 2px; }
   .page-user .activity-stream-instance.commented_to_node .activity-header,
   .page-user .activity-stream-instance.commented_to_node .activity-body,
   .page-user .activity-stream-instance.commented_to_node .activity-footer, .page-user .activity-stream-instance.commented_to_node:before {
