@@ -110,3 +110,13 @@ function drupalhub_users_votingapi_insert($votes) {
   $wrapper->field_entity_identifier->set($identifier);
   $wrapper->save();
 }
+
+/**
+ * Implementing hook_preprocess_drupalhub_user().
+ */
+function drupalhub_users_preprocess_drupalhub_user(&$variables) {
+  drupal_add_js(drupal_get_path('module', 'drupalhub_users') . '/js/user.js');
+  $user = reset($variables['display']->context)->data;
+  $variables['image'] = theme('image_style', array('path' => $user->picture->uri, 'style_name' => 'thumbnail_retina'));
+  $variables['name'] = $user->name;
+}

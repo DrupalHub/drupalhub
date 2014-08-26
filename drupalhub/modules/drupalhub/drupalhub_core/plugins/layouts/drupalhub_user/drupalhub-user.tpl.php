@@ -1,3 +1,6 @@
+<div class='sticky-container'>
+  <div class="container"><?php print $image; ?> <span class="username"><?php print $name; ?></span></div>
+</div>
 <div class="<?php print $classes ?>" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <div class="row">
     <div class="col-md-12">
