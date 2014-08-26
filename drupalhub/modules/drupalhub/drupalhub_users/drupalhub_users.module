@@ -115,6 +115,10 @@ function drupalhub_users_votingapi_insert($votes) {
  * Implementing hook_preprocess_drupalhub_user().
  */
 function drupalhub_users_preprocess_drupalhub_user(&$variables) {
+  $menu = menu_get_item();
+  if (path_is_admin($menu['path'])) {
+    return;
+  }
   drupal_add_js(drupal_get_path('module', 'drupalhub_users') . '/js/user.js');
   $user = reset($variables['display']->context)->data;
   $variables['image'] = theme('image_style', array('path' => $user->picture->uri, 'style_name' => 'thumbnail_retina'));
