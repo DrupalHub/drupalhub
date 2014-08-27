@@ -587,7 +587,7 @@ body.front .second-left-right {
   background: #fafafa;
   z-index: 100;
   width: 100%;
-  visibility: none;
+  display: none;
   border-bottom: #cce8ff solid 1px;
   box-shadow: 0px 4px 3px #C0C0C0; }
   .page-user .sticky-container .container img {
@@ -597,6 +597,26 @@ body.front .second-left-right {
     border: #4d7fb6 solid 1px; }
   .page-user .sticky-container .container .username {
     font-weight: bold; }
+.page-user .top .pane-user-name {
+  font-size: 30px;
+  padding-top: 5px;
+  padding-bottom: 10px; }
+.page-user .top .pane-user-picture {
+  float: left;
+  /* LTR */
+  margin-right: 15px;
+  /* LTR */
+  padding-bottom: 15px; }
+  .page-user .top .pane-user-picture .pane-content {
+    padding: 5px;
+    border: #4d7fb6 solid 1px; }
+.page-user .top .pane-user-field-first-name {
+  float: left;
+  /* LTR */
+  padding-right: 5px;
+  /* LTR */ }
+.page-user .top .pane-user-field-reputation {
+  text-align: center; }
 .page-user .view-id-activity_stram {
   border-left: solid 1px #000000; }
   .page-user .view-id-activity_stram .activity-stream-instance {

@@ -7,7 +7,7 @@
     background: #fafafa;
     z-index: 100;
     width: 100%;
-    visibility: none;
+    display: none;
     border-bottom: $blue-border solid 1px;
     box-shadow: 0px 4px 3px #C0C0C0;
 
@@ -23,6 +23,35 @@
       .username {
         font-weight: bold;
       }
+    }
+  }
+
+  .top {
+
+    .pane-user-name {
+      font-size: 30px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
+
+    .pane-user-picture {
+      float: left; /* LTR */
+      margin-right: 15px; /* LTR */
+      padding-bottom: 15px;
+
+      .pane-content {
+        padding: 5px;
+        border: $profile-picture-wrapper solid 1px;
+      }
+    }
+
+    .pane-user-field-first-name {
+      float: left; /* LTR */
+      padding-right: 5px; /* LTR */
+    }
+
+    .pane-user-field-reputation {
+      text-align: center;
     }
   }
 

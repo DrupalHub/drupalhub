@@ -66,7 +66,7 @@ function drupalhub_users_default_page_manager_handlers() {
         'prefix_suffix' => 1,
       ),
       'context' => 'argument_entity_id:user_1',
-      'override_title' => 1,
+      'override_title' => 0,
       'override_title_text' => '',
     );
     $pane->cache = array();
@@ -186,6 +186,64 @@ function drupalhub_users_default_page_manager_handlers() {
     $pane->uuid = 'a285af62-f14d-481e-acad-de82337c6574';
     $display->content['new-a285af62-f14d-481e-acad-de82337c6574'] = $pane;
     $display->panels['top'][1] = 'new-a285af62-f14d-481e-acad-de82337c6574';
+    $pane = new stdClass();
+    $pane->pid = 'new-b79eefa2-41f4-4716-8276-5574b40c1ddb';
+    $pane->panel = 'top';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_first_name';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:user_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = 'b79eefa2-41f4-4716-8276-5574b40c1ddb';
+    $display->content['new-b79eefa2-41f4-4716-8276-5574b40c1ddb'] = $pane;
+    $display->panels['top'][2] = 'new-b79eefa2-41f4-4716-8276-5574b40c1ddb';
+    $pane = new stdClass();
+    $pane->pid = 'new-6a90aaaa-d37a-4e16-91c3-a12a02a334f9';
+    $pane->panel = 'top';
+    $pane->type = 'entity_field';
+    $pane->subtype = 'user:field_last_name';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'label' => 'title',
+      'formatter' => 'text_default',
+      'delta_limit' => 0,
+      'delta_offset' => '0',
+      'delta_reversed' => FALSE,
+      'formatter_settings' => array(),
+      'context' => 'argument_entity_id:user_1',
+      'override_title' => 1,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 3;
+    $pane->locks = array();
+    $pane->uuid = '6a90aaaa-d37a-4e16-91c3-a12a02a334f9';
+    $display->content['new-6a90aaaa-d37a-4e16-91c3-a12a02a334f9'] = $pane;
+    $display->panels['top'][3] = 'new-6a90aaaa-d37a-4e16-91c3-a12a02a334f9';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
