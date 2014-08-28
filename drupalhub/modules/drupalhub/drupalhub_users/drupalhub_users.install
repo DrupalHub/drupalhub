@@ -1,0 +1,23 @@
+<?php
+
+/**
+ * @file
+ * Install file for the Drupal users module.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function drupalhub_users_install() {
+  $uri = file_unmanaged_copy(DRUPAL_ROOT . '/' . drupal_get_path('module', 'drupalhub_users') . '/includes/images/users/default-image.png', 'public://pictures');
+  // Create the file manage entry.
+  $file = new stdClass;
+  $file->uid = 1;
+  $file->filename = 'default-picture.ong';
+  $file->uri = $uri;
+  $file->status = 1;
+  $file->filemime = 'image/png';
+  file_save($file);
+
+  variable_set('default_user_picture_fid', $file->fid);
+}
