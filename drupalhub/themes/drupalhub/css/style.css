@@ -141,7 +141,7 @@ body.front .view-id-top_users {
       height: 0;
       clear: both;
       visibility: hidden; }
-    body.front .view-id-top_users .views-row .views-field-picture {
+    body.front .view-id-top_users .views-row .views-field-user-picture {
       float: left;
       /* LTR */
       padding-right: 25px;

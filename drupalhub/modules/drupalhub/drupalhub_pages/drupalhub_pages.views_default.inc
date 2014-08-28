@@ -498,15 +498,13 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['fields']['field_entity_view_count']['exclude'] = TRUE;
   $handler->display->display_options['fields']['field_entity_view_count']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['field_entity_view_count']['type'] = 'user_owned_entities_viewed';
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['hide_empty'] = TRUE;
-  $handler->display->display_options['fields']['picture']['empty_zero'] = TRUE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'top_users';
+  /* Field: User: Drupalhub users profile picture */
+  $handler->display->display_options['fields']['user_picture']['id'] = 'user_picture';
+  $handler->display->display_options['fields']['user_picture']['table'] = 'users';
+  $handler->display->display_options['fields']['user_picture']['field'] = 'user_picture';
+  $handler->display->display_options['fields']['user_picture']['label'] = '';
+  $handler->display->display_options['fields']['user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['user_picture']['image_style'] = 'top_users';
   /* Field: User: Reputation */
   $handler->display->display_options['fields']['field_reputation']['id'] = 'field_reputation';
   $handler->display->display_options['fields']['field_reputation']['table'] = 'field_data_field_reputation';

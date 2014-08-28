@@ -9,7 +9,7 @@
  * Implements hook_install().
  */
 function drupalhub_users_install() {
-  $uri = file_unmanaged_copy(DRUPAL_ROOT . '/' . drupal_get_path('module', 'drupalhub_users') . '/includes/images/users/default-image.png', 'public://pictures');
+  $uri = file_unmanaged_copy(DRUPAL_ROOT . '/' . drupal_get_path('module', 'drupalhub_migrate') . '/includes/images/default-image.png', 'public://pictures');
   // Create the file manage entry.
   $file = new stdClass;
   $file->uid = 1;

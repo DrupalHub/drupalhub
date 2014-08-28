@@ -9,14 +9,8 @@ $plugin = array(
 
 function drupalhub_users_user_picture_content_type_render($subtype, $conf, $args, $context) {
 
-  if (!$context->data->picture) {
-    return;
-  }
-
-  $uri = $context->data->picture->uri;
-
   $block = new stdClass();
-  $block->content = theme('image_style', array('path' => $uri, 'style_name' => $conf['image_styles']));
+  $block->content = drupalhub_users_user_picture($context->data, 'thumbnail_retina');
 
   return $block;
 }

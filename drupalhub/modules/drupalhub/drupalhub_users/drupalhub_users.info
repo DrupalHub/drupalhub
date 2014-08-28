@@ -32,3 +32,4 @@ features[variable][] = field_bundle_settings_message__new_user
 features[variable][] = field_bundle_settings_message__user_down_up_voted
 features[views_view][] = activity_stram
 features[views_view][] = question
+files[] = views/handlers/drupalhub_users_profile_picture.inc

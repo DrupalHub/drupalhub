@@ -112,6 +112,22 @@ function drupalhub_users_votingapi_insert($votes) {
 }
 
 /**
+ * Get the user picture.
+ *
+ * @param $user
+ *   The user object.
+ * @param $style_name
+ *   The style name.
+ *
+ * @return string
+ *   HTML of the user picture.
+ */
+function drupalhub_users_user_picture($user, $style_name) {
+  $uri = $user->picture ? $user->picture->uri : file_load(variable_get('default_user_picture_fid'))->uri;
+  return theme('image_style', array('path' => $uri, 'style_name' => $style_name));
+}
+
+/**
  * Implementing hook_preprocess_drupalhub_user().
  */
 function drupalhub_users_preprocess_drupalhub_user(&$variables) {
@@ -123,6 +139,6 @@ function drupalhub_users_preprocess_drupalhub_user(&$variables) {
 
   drupal_add_js(drupal_get_path('module', 'drupalhub_users') . '/js/user.js');
   $user = reset($variables['display']->context)->data;
-  $variables['image'] = theme('image_style', array('path' => $user->picture->uri, 'style_name' => 'thumbnail_retina'));
+  $variables['image'] = drupalhub_users_user_picture($user, 'thumbnail_retina');
   $variables['name'] = $user->name;
 }
