@@ -11,6 +11,9 @@ class User extends Migration {
     array('pass', 'Password'),
     array('mail', 'Email'),
     array('picture', 'Picture'),
+    array('about', 'About'),
+    array('first_name', 'First name'),
+    array('last_name', 'Last name'),
   );
 
   public function __construct() {
@@ -21,6 +24,9 @@ class User extends Migration {
     $this->addFieldMapping('pass', 'pass');
     $this->addFieldMapping('mail', 'mail');
     $this->addFieldMapping('picture', 'picture');
+    $this->addFieldMapping('field_about', 'about');
+    $this->addFieldMapping('field_first_name', 'first_name');
+    $this->addFieldMapping('field_last_name', 'last_name');
     $this->addFieldMapping('status')
       ->defaultValue(TRUE);
 
