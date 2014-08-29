@@ -180,6 +180,10 @@ function drupalhub_core_modal_form($title, $form_id, $ajax) {
 
     $output = ctools_modal_form_wrapper($form_id, $form_state);
 
+    if (!empty($form_state['ajax_commands'])) {
+      $output = $form_state['ajax_commands'];
+    }
+
     print ajax_render($output);
     drupal_exit();
   }

@@ -13,12 +13,23 @@ function drupalhub_users_about_content_type_render($subtype, $conf, $args, $cont
     $value = $wrapper->field_about->value->value();
   }
   else {
-    // todo: add access limitation.
-    $value = t("Whoops! it seems that you don't have any description about your self. Why don't you <span class='add-info'>add some info</span>?");
+    $link = array(
+      'text' => t('add some info'),
+      'href' => 'drupalhub_users/update_about',
+      'class' => 'update-about',
+      'modal_settings' => array(
+        'modalSize' => array(
+          'type' => 'scale',
+        ),
+        'modalOptions' => array('opacity' => .6),
+        'animation' => 'fadeIn',
+      ),
+    );
 
-    // Get the form widgets.
-    $form = drupal_get_form('drupalhub_users_update_about', $wrapper->value());
-    $value .= "<div class='field-about-wrapper disabled'>" . render($form) . "</div>";
+    $link = drupalhub_core_modal_window($link);
+
+    // todo: add access limitation.
+    $value = t("Whoops! it seems that you don't have any description about your self. Why don't you !link?", array('!link' => $link));
   }
 
   $block = new stdClass();

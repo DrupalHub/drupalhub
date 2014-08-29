@@ -7,6 +7,57 @@
 include_once 'drupalhub_users.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function drupalhub_users_menu() {
+  $items = array();
+
+  $items['drupalhub_users/update_about/%ctools_js'] = array(
+    'title' => 'Update about',
+    'page callback' => 'drupalhub_users_update_about',
+    'page arguments' => array(2),
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback; Modal page for posting a question.
+ */
+function drupalhub_users_update_about($js = TRUE) {
+  drupalhub_core_modal_form(t('Add some info about your self'), 'drupalhub_users_update_about_form', $js);
+}
+
+/**
+ * Form callback; Update the user about form.
+ */
+function drupalhub_users_update_about_form($form, $form_state, $user) {
+  ctools_include('user.pages', 'user', '');
+  $user_form = drupal_get_form('user_profile_form', $user);
+  $form['about'] = $user_form['field_about'];
+
+  $form['actions'] = array(
+    '#type' => 'actions',
+    'submit' => array(
+      '#type' => 'submit',
+      '#value' => t('Submit'),
+    ),
+  );
+
+  return $form;
+}
+
+function drupalhub_users_update_about_form_submit(&$form, &$form_state) {
+  dpm($form_state);
+  // Tell the browser to close the modal.
+  $form_state['ajax_commands'][] = ctools_modal_command_dismiss();
+
+  // Tell the browser to replace the old link with the new one.
+  $form_state['ajax_commands'][] = ajax_command_replace('.pane-about', $form_state['values']['field_about'][LANGUAGE_NONE][0]['value']);
+}
+
+/**
  * Implement hook_theme().
  */
 function drupalhub_users_theme() {
@@ -141,22 +192,4 @@ function drupalhub_users_preprocess_drupalhub_user(&$variables) {
   $user = reset($variables['display']->context)->data;
   $variables['image'] = drupalhub_users_user_picture($user, 'thumbnail_retina');
   $variables['name'] = $user->name;
-}
-
-/**
- * Form callback; Update the user about form.
- */
-function drupalhub_users_update_about($form, $form_state, $user) {
-  ctools_include('user.pages', 'user', '');
-  $user_form = drupal_get_form('user_profile_form', $user);
-  $form['about'] = $user_form['field_about'];
-  $form['actions'] = array(
-    '#type' => 'actions',
-    'submit' => array(
-      '#type' => 'submit',
-      '#value' => t('Update'),
-    ),
-  );
-
-  return $form;
 }
