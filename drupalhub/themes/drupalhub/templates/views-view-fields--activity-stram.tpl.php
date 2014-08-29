@@ -6,11 +6,11 @@
     <i class="fa fa-pencil disabled"></i>
   </div>
   <div class="activity-header">
-      <div class="picture col-xs-12"><?php print $fields['picture']->content; ?></div>
+    <div class="picture col-xs-12"><?php print $fields['user_picture']->content; ?></div>
 
-      <div class="info col-xs-12">
-        <?php print $fields['name']->content; ?><Br /><br />
-        <?php print $fields['timestamp']->content; ?>
+    <div class="info col-xs-12">
+      <?php print $fields['name']->content; ?><Br /><br />
+      <?php print $fields['timestamp']->content; ?>
     </div>
   </div>
 

@@ -218,15 +218,14 @@ function drupalhub_pages_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'comment';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail_retina';
+  /* Field: User: Drupalhub users profile picture */
+  $handler->display->display_options['fields']['user_picture']['id'] = 'user_picture';
+  $handler->display->display_options['fields']['user_picture']['table'] = 'users';
+  $handler->display->display_options['fields']['user_picture']['field'] = 'user_picture';
+  $handler->display->display_options['fields']['user_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['user_picture']['label'] = '';
+  $handler->display->display_options['fields']['user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['user_picture']['image_style'] = 'thumbnail_retina';
   /* Field: Field: Vote */
   $handler->display->display_options['fields']['field_vote']['id'] = 'field_vote';
   $handler->display->display_options['fields']['field_vote']['table'] = 'field_data_field_vote';

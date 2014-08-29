@@ -29,7 +29,7 @@
 
 <div class="comment-wrapper">
   <div class="wrapper-top clearfix">
-    <div class="col-md-2 col-xs-12 picture"><?php print $fields['picture']->content; ?></div>
+    <div class="col-md-2 col-xs-12 picture"><?php print $fields['user_picture']->content; ?></div>
     <div class="col-md-10 col-xs-12 text"><?php print $fields['comment_body']->content; ?></div>
   </div>
   <div class="wrapper-bottom clearfix">

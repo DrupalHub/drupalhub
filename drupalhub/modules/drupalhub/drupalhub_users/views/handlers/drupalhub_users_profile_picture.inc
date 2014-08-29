@@ -4,9 +4,8 @@
  * Drupalhub user profile picture.
  */
 class drupalhub_users_profile_picture extends views_handler_field_entity {
-
   function render($values) {
-    $user = user_load($values->uid);
+    $user = user_load($this->get_value($values, 'uid'));
     return drupalhub_users_user_picture($user, $this->options['image_style']);
   }
 

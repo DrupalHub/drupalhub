@@ -34,15 +34,6 @@ function drupalhub_users_views_default_views() {
   $handler->display->display_options['relationships']['user']['id'] = 'user';
   $handler->display->display_options['relationships']['user']['table'] = 'message';
   $handler->display->display_options['relationships']['user']['field'] = 'user';
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'user';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['link_photo_to_profile'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'thumbnail';
   /* Field: Message: Render message (Get text) */
   $handler->display->display_options['fields']['message_render']['id'] = 'message_render';
   $handler->display->display_options['fields']['message_render']['table'] = 'message';
@@ -72,6 +63,14 @@ function drupalhub_users_views_default_views() {
   $handler->display->display_options['fields']['type']['field'] = 'type';
   $handler->display->display_options['fields']['type']['label'] = '';
   $handler->display->display_options['fields']['type']['element_label_colon'] = FALSE;
+  /* Field: User: Drupalhub users profile picture */
+  $handler->display->display_options['fields']['user_picture']['id'] = 'user_picture';
+  $handler->display->display_options['fields']['user_picture']['table'] = 'users';
+  $handler->display->display_options['fields']['user_picture']['field'] = 'user_picture';
+  $handler->display->display_options['fields']['user_picture']['relationship'] = 'user';
+  $handler->display->display_options['fields']['user_picture']['label'] = '';
+  $handler->display->display_options['fields']['user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['user_picture']['image_style'] = 'thumbnail';
   /* Sort criterion: Message: Timestamp */
   $handler->display->display_options['sorts']['timestamp']['id'] = 'timestamp';
   $handler->display->display_options['sorts']['timestamp']['table'] = 'message';
