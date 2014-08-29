@@ -157,6 +157,8 @@ function drupalhub_core_modal_page_render($title, $content, $js) {
  *  The form ID.
  * @param $ajax
  *  Determine if the JS is enabled. Allowed valued: js, nojs.
+ * @param $additional
+ *  Additional information to the form state.
  *
  * @return Array
  *  The form render-able array or print the ajax render.
@@ -168,7 +170,7 @@ function drupalhub_core_modal_page_render($title, $content, $js) {
  *  return drupalhub_core_modal_form(t('Happy!'), 'happy_modal', TRUE);
  * @endcode
  */
-function drupalhub_core_modal_form($title, $form_id, $ajax) {
+function drupalhub_core_modal_form($title, $form_id, $ajax, $additional) {
   if ($ajax) {
     ctools_include('modal');
     ctools_include('ajax');
@@ -176,6 +178,7 @@ function drupalhub_core_modal_form($title, $form_id, $ajax) {
     $form_state = array(
       'ajax' => TRUE,
       'title' => $title,
+      'additional' => $additional,
     );
 
     $output = ctools_modal_form_wrapper($form_id, $form_state);

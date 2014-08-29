@@ -15,7 +15,7 @@ function drupalhub_users_about_content_type_render($subtype, $conf, $args, $cont
   else {
     $link = array(
       'text' => t('add some info'),
-      'href' => 'drupalhub_users/update_about',
+      'href' => 'drupalhub_users/update_about/' . $wrapper->getIdentifier(),
       'class' => 'update-about',
       'modal_settings' => array(
         'modalSize' => array(
