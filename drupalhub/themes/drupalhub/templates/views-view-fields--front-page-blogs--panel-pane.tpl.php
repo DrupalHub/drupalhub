@@ -26,7 +26,7 @@
 ?>
 <div class="clearfix">
   <div class="field-image">
-    <?php print $fields['picture']->content; ?>
+    <?php print $fields['user_picture']->content; ?>
   </div>
   <div class="content">
     <h2 class="title"><?php print $fields['title']->content; ?></h2>

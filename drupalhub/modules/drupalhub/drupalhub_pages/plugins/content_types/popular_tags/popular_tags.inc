@@ -30,6 +30,7 @@ function drupalhub_pages_popular_tags_content_type_render($subtype, $conf, $args
 
   // Ordering the terms by the number of tagged nodes.
   usort($tagged_items, 'drupalhub_pages_order_terms');
+  $tagged_items = array_slice($tagged_items, 0, 5);
 
   // Build an array of items for the theme list function.
   $items = array();

@@ -185,14 +185,6 @@ function drupalhub_blog_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: User: Picture */
-  $handler->display->display_options['fields']['picture']['id'] = 'picture';
-  $handler->display->display_options['fields']['picture']['table'] = 'users';
-  $handler->display->display_options['fields']['picture']['field'] = 'picture';
-  $handler->display->display_options['fields']['picture']['relationship'] = 'uid';
-  $handler->display->display_options['fields']['picture']['label'] = '';
-  $handler->display->display_options['fields']['picture']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['picture']['image_style'] = 'medium';
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -236,6 +228,14 @@ function drupalhub_blog_views_default_views() {
   $handler->display->display_options['fields']['created']['label'] = '';
   $handler->display->display_options['fields']['created']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['created']['date_format'] = 'long';
+  /* Field: User: Drupalhub users profile picture */
+  $handler->display->display_options['fields']['user_picture']['id'] = 'user_picture';
+  $handler->display->display_options['fields']['user_picture']['table'] = 'users';
+  $handler->display->display_options['fields']['user_picture']['field'] = 'user_picture';
+  $handler->display->display_options['fields']['user_picture']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['user_picture']['label'] = '';
+  $handler->display->display_options['fields']['user_picture']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['user_picture']['image_style'] = 'medium';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
