@@ -625,6 +625,8 @@ body.front .second-left-right {
     width: 1300px;
     padding: 50px;
     border: solid 1px; }
+  .page-user .first-bottom .filter-wrapper.panel.panel-default.form-wrapper {
+    display: none; }
 .page-user .second-bottom {
   padding-left: 50px; }
   .page-user .second-bottom .view-id-activity_stram {

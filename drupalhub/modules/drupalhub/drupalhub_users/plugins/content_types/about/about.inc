@@ -17,10 +17,8 @@ function drupalhub_users_about_content_type_render($subtype, $conf, $args, $cont
     $value = t("Whoops! it seems that you don't have any description about your self. Why don't you <span class='add-info'>add some info</span>?");
 
     // Get the form widgets.
-    $form = drupal_get_form('user_profile_form', $wrapper->value());
-    hide($form['field_about'][LANGUAGE_NONE][0]['format']);
-    $form['field_about'][LANGUAGE_NONE][]['#title'] = 'a';
-    $value .= "<div class='field-about-wrapper disabled'>" . render($form['field_about']) . "</div>";
+    $form = drupal_get_form('drupalhub_users_update_about', $wrapper->value());
+    $value .= "<div class='field-about-wrapper disabled'>" . render($form) . "</div>";
   }
 
   $block = new stdClass();

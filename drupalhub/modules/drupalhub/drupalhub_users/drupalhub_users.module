@@ -142,3 +142,21 @@ function drupalhub_users_preprocess_drupalhub_user(&$variables) {
   $variables['image'] = drupalhub_users_user_picture($user, 'thumbnail_retina');
   $variables['name'] = $user->name;
 }
+
+/**
+ * Form callback; Update the user about form.
+ */
+function drupalhub_users_update_about($form, $form_state, $user) {
+  ctools_include('user.pages', 'user', '');
+  $user_form = drupal_get_form('user_profile_form', $user);
+  $form['about'] = $user_form['field_about'];
+  $form['actions'] = array(
+    '#type' => 'actions',
+    'submit' => array(
+      '#type' => 'submit',
+      '#value' => t('Update'),
+    ),
+  );
+
+  return $form;
+}
