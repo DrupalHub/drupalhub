@@ -68,6 +68,7 @@ dependencies[] = restful
 dependencies[] = video_embed_field
 dependencies[] = views_bootstrap
 dependencies[] = views_bulk_operations
+dependencies[] = views_infinite_scroll
 dependencies[] = views_ui
 dependencies[] = votingapi
 dependencies[] = vud

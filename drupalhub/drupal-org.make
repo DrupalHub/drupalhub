@@ -164,6 +164,9 @@ projects[views_bootstrap][version] = "3.1"
 projects[views_bulk_operations][subdir] = contrib
 projects[views_bulk_operations][version] = "3.2"
 
+projects[views_infinite_scroll][subdir] = "contrib"
+projects[views_infinite_scroll][version] = 1.1
+
 ; Themes
 projects[bootstrap] = bootstrap
 projects[bootstrap][version] = 3.0
@@ -182,3 +185,7 @@ libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/arch
 libraries[ckeditor][type] = "libraries"
 libraries[ckeditor][download][type] = "file"
 libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3.3/ckeditor_4.3.3_full.zip"
+
+libraries[autopager][type] = "libraries"
+libraries[autopager][download][type] = "file"
+libraries[autopager][download][url] = "https://github.com/sagotsky/jquery-autopager/archive/v1.2.zip"
