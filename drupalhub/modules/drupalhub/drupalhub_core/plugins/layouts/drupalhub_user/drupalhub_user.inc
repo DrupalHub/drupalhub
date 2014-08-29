@@ -11,7 +11,8 @@ $plugin = array(
   'theme' => 'drupalhub_user',
   'admin css' => '../panels-bootstrap-layouts-admin.css',
   'regions' => array(
-    'top' => t('Top'),
+    'top-first' => t('Top first'),
+    'top-second' => t('Top second'),
     'first' => t('First'),
     'second' => t('Second'),
   ),

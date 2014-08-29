@@ -3,8 +3,11 @@
 </div>
 <div class="<?php print $classes ?>" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <div class="row">
-    <div class="top col-md-12">
-      <?php print $content['top']; ?>
+    <div class="top-first col-md-3 col-xs-12">
+      <?php print $content['top-first']; ?>
+    </div>
+    <div class="top-second col-md-9 col-xs-12">
+      <?php print $content['top-second']; ?>
     </div>
   </div>
 

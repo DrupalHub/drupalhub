@@ -26,13 +26,7 @@
     }
   }
 
-  .top {
-
-    .pane-user-name {
-      font-size: 30px;
-      padding-top: 5px;
-      padding-bottom: 10px;
-    }
+  .top-first {
 
     .pane-user-picture {
       float: left; /* LTR */
@@ -44,19 +38,41 @@
         border: $profile-picture-wrapper solid 1px;
       }
     }
+  }
+
+  .top-second {
+
+    .pane-user-name {
+      font-size: 40px;
+      padding-top: 5px;
+      padding-bottom: 10px;
+    }
 
     .pane-user-field-first-name {
       float: left; /* LTR */
       padding-right: 5px; /* LTR */
+      font-size: 25px;
     }
 
-    .pane-user-field-reputation {
-      text-align: center;
+    .field-name-field-last-name {
+      font-size: 25px;
     }
   }
 
   .first-bottom {
-    position: static;
+
+    .panel-pane {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .pane-user-field-reputation {
+      text-align: center;
+
+      .pane-content {
+        font-size: 20px;
+      }
+    }
 
     .field-about-wrapper {
       position: absolute;
@@ -67,10 +83,6 @@
       width: 1300px;
       padding: 50px;
       border: solid 1px;
-    }
-
-    .filter-wrapper.panel.panel-default.form-wrapper {
-      display: none;
     }
   }
 

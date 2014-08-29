@@ -41,6 +41,8 @@ function drupalhub_users_default_page_manager_handlers() {
       'bottom' => NULL,
       'first' => NULL,
       'second' => NULL,
+      'top-first' => NULL,
+      'top-second' => NULL,
     ),
   );
   $display->cache = array();
@@ -193,8 +195,8 @@ function drupalhub_users_default_page_manager_handlers() {
     $display->content['new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45'] = $pane;
     $display->panels['second'][0] = 'new-bb2ad759-bdc0-41f0-9cb5-852b3d606b45';
     $pane = new stdClass();
-    $pane->pid = 'new-c5f7ffb5-26af-49b3-9e91-24a97ed8fcf6';
-    $pane->panel = 'top';
+    $pane->pid = 'new-b229ac26-2dc7-4d27-9915-645ca7089916';
+    $pane->panel = 'top-first';
     $pane->type = 'user_picture';
     $pane->subtype = 'user_picture';
     $pane->shown = TRUE;
@@ -205,9 +207,9 @@ function drupalhub_users_default_page_manager_handlers() {
       'context' => 'argument_entity_id:user_1',
       'override_title' => 0,
       'override_title_text' => '',
-      'image_styles' => 'thumbnail_retina',
-      'form_build_id' => 'form-3Wn1_rFCKvajwAgI9xkR7bpLiF_e4B-idZm27fCaZxA',
-      'form_token' => 'QnAZBVT4epNy3GYtBW0McoqMC19abR3cwRt6slF4R1A',
+      'image_styles' => 'medium_retina',
+      'form_build_id' => 'form-oyZ_NfwJU_n4vmOD-VNLNhSFtzreMmuPqu2CaVrW_D8',
+      'form_token' => 'fTiKI6akQ9QE7r4lqB_ffX6V7AkD17OOb6kMQqMvxk8',
       'form_id' => 'drupalhub_users_user_picture_content_type_edit_form',
       'op' => 'Finish',
     );
@@ -219,12 +221,12 @@ function drupalhub_users_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'c5f7ffb5-26af-49b3-9e91-24a97ed8fcf6';
-    $display->content['new-c5f7ffb5-26af-49b3-9e91-24a97ed8fcf6'] = $pane;
-    $display->panels['top'][0] = 'new-c5f7ffb5-26af-49b3-9e91-24a97ed8fcf6';
+    $pane->uuid = 'b229ac26-2dc7-4d27-9915-645ca7089916';
+    $display->content['new-b229ac26-2dc7-4d27-9915-645ca7089916'] = $pane;
+    $display->panels['top-first'][0] = 'new-b229ac26-2dc7-4d27-9915-645ca7089916';
     $pane = new stdClass();
-    $pane->pid = 'new-a285af62-f14d-481e-acad-de82337c6574';
-    $pane->panel = 'top';
+    $pane->pid = 'new-53064821-b9ca-48dd-a53d-d100ae26b426';
+    $pane->panel = 'top-second';
     $pane->type = 'token';
     $pane->subtype = 'user:name';
     $pane->shown = TRUE;
@@ -241,14 +243,14 @@ function drupalhub_users_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 1;
+    $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = 'a285af62-f14d-481e-acad-de82337c6574';
-    $display->content['new-a285af62-f14d-481e-acad-de82337c6574'] = $pane;
-    $display->panels['top'][1] = 'new-a285af62-f14d-481e-acad-de82337c6574';
+    $pane->uuid = '53064821-b9ca-48dd-a53d-d100ae26b426';
+    $display->content['new-53064821-b9ca-48dd-a53d-d100ae26b426'] = $pane;
+    $display->panels['top-second'][0] = 'new-53064821-b9ca-48dd-a53d-d100ae26b426';
     $pane = new stdClass();
-    $pane->pid = 'new-b79eefa2-41f4-4716-8276-5574b40c1ddb';
-    $pane->panel = 'top';
+    $pane->pid = 'new-20f5506a-d42f-48b0-b459-3c2d03b05eb2';
+    $pane->panel = 'top-second';
     $pane->type = 'entity_field';
     $pane->subtype = 'user:field_first_name';
     $pane->shown = TRUE;
@@ -270,14 +272,14 @@ function drupalhub_users_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = 'b79eefa2-41f4-4716-8276-5574b40c1ddb';
-    $display->content['new-b79eefa2-41f4-4716-8276-5574b40c1ddb'] = $pane;
-    $display->panels['top'][2] = 'new-b79eefa2-41f4-4716-8276-5574b40c1ddb';
+    $pane->uuid = '20f5506a-d42f-48b0-b459-3c2d03b05eb2';
+    $display->content['new-20f5506a-d42f-48b0-b459-3c2d03b05eb2'] = $pane;
+    $display->panels['top-second'][1] = 'new-20f5506a-d42f-48b0-b459-3c2d03b05eb2';
     $pane = new stdClass();
-    $pane->pid = 'new-6a90aaaa-d37a-4e16-91c3-a12a02a334f9';
-    $pane->panel = 'top';
+    $pane->pid = 'new-89eb0524-03a4-4cb8-8148-0225221e6469';
+    $pane->panel = 'top-second';
     $pane->type = 'entity_field';
     $pane->subtype = 'user:field_last_name';
     $pane->shown = TRUE;
@@ -299,11 +301,11 @@ function drupalhub_users_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 3;
+    $pane->position = 2;
     $pane->locks = array();
-    $pane->uuid = '6a90aaaa-d37a-4e16-91c3-a12a02a334f9';
-    $display->content['new-6a90aaaa-d37a-4e16-91c3-a12a02a334f9'] = $pane;
-    $display->panels['top'][3] = 'new-6a90aaaa-d37a-4e16-91c3-a12a02a334f9';
+    $pane->uuid = '89eb0524-03a4-4cb8-8148-0225221e6469';
+    $display->content['new-89eb0524-03a4-4cb8-8148-0225221e6469'] = $pane;
+    $display->panels['top-second'][2] = 'new-89eb0524-03a4-4cb8-8148-0225221e6469';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

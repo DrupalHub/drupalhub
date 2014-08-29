@@ -594,39 +594,43 @@ body.front .second-left-right {
     border: #4d7fb6 solid 1px; }
   .page-user .sticky-container .container .username {
     font-weight: bold; }
-.page-user .top .pane-user-name {
-  font-size: 30px;
-  padding-top: 5px;
-  padding-bottom: 10px; }
-.page-user .top .pane-user-picture {
+.page-user .top-first .pane-user-picture {
   float: left;
   /* LTR */
   margin-right: 15px;
   /* LTR */
   padding-bottom: 15px; }
-  .page-user .top .pane-user-picture .pane-content {
+  .page-user .top-first .pane-user-picture .pane-content {
     padding: 5px;
     border: #4d7fb6 solid 1px; }
-.page-user .top .pane-user-field-first-name {
+.page-user .top-second .pane-user-name {
+  font-size: 40px;
+  padding-top: 5px;
+  padding-bottom: 10px; }
+.page-user .top-second .pane-user-field-first-name {
   float: left;
   /* LTR */
   padding-right: 5px;
-  /* LTR */ }
-.page-user .top .pane-user-field-reputation {
+  /* LTR */
+  font-size: 25px; }
+.page-user .top-second .field-name-field-last-name {
+  font-size: 25px; }
+.page-user .first-bottom .panel-pane {
+  margin-top: 10px;
+  margin-bottom: 10px; }
+.page-user .first-bottom .pane-user-field-reputation {
   text-align: center; }
-.page-user .first-bottom {
-  position: static; }
-  .page-user .first-bottom .field-about-wrapper {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: 30;
-    background: white;
-    width: 1300px;
-    padding: 50px;
-    border: solid 1px; }
-  .page-user .first-bottom .filter-wrapper.panel.panel-default.form-wrapper {
-    display: none; }
+  .page-user .first-bottom .pane-user-field-reputation .pane-content {
+    font-size: 20px; }
+.page-user .first-bottom .field-about-wrapper {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 30;
+  background: white;
+  width: 1300px;
+  padding: 50px;
+  border: solid 1px; }
 .page-user .second-bottom {
   padding-left: 50px; }
   .page-user .second-bottom .view-id-activity_stram {
@@ -737,3 +741,5 @@ body.front .second-left-right {
         background: #3a953a; }
         .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.commented_to_node .icons .fa-comment {
           display: block; }
+    .page-user .second-bottom .view-id-activity_stram .pager {
+      display: none; }
