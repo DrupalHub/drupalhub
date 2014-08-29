@@ -129,8 +129,9 @@ projects[picture][version] = 1.2
 projects[retina_images][subdir] = "contrib"
 projects[retina_images][version] = "1.0-beta4"
 
-projects[restws][subdir] = "contrib"
-projects[restws][version] = "2.0-alpha3"
+projects[restful][subdir] = "contrib"
+projects[restful][version] = "1.x-dev"
+projects[restful][download][url] = "git://github.com/Gizra/restful.git"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0

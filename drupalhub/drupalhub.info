@@ -64,6 +64,7 @@ dependencies[] = panels_mini
 dependencies[] = panels_bootstrap_layouts
 dependencies[] = picture
 dependencies[] = retina_images
+dependencies[] = restful
 dependencies[] = video_embed_field
 dependencies[] = views_bootstrap
 dependencies[] = views_bulk_operations
