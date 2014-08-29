@@ -55,6 +55,21 @@
     }
   }
 
+  .first-bottom {
+    position: static;
+
+    .field-about-wrapper {
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 30;
+      background: white;
+      width: 1300px;
+      padding: 50px;
+      border: solid 1px;
+    }
+  }
+
   .second-bottom {
     padding-left: 50px;
 

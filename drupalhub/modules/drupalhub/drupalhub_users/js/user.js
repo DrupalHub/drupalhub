@@ -24,4 +24,13 @@
     }
   };
 
+  Drupal.behaviors.DrupalHubUsersAbout = {
+    attach: function() {
+      $(".add-info").click(function(event) {
+        event.preventDefault();
+        $(".field-about-wrapper").removeClass("disabled");
+      });
+    }
+  };
+
 })(jQuery);

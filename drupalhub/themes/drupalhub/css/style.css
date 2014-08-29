@@ -614,6 +614,17 @@ body.front .second-left-right {
   /* LTR */ }
 .page-user .top .pane-user-field-reputation {
   text-align: center; }
+.page-user .first-bottom {
+  position: static; }
+  .page-user .first-bottom .field-about-wrapper {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: 30;
+    background: white;
+    width: 1300px;
+    padding: 50px;
+    border: solid 1px; }
 .page-user .second-bottom {
   padding-left: 50px; }
   .page-user .second-bottom .view-id-activity_stram {
