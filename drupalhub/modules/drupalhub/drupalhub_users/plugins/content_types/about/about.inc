@@ -8,11 +8,13 @@ $plugin = array(
 );
 
 function drupalhub_users_about_content_type_render($subtype, $conf, $args, $context) {
+  global $user;
+
   $wrapper = entity_metadata_wrapper('user', $context->data);
   if ($wrapper->field_about->value()) {
     $value = $wrapper->field_about->value->value();
   }
-  else {
+  elseif ($wrapper->getIdentifier() == $user->uid) {
     $link = array(
       'text' => t('add some info'),
       'href' => 'drupalhub_users/update_about/' . $wrapper->getIdentifier(),
@@ -28,8 +30,10 @@ function drupalhub_users_about_content_type_render($subtype, $conf, $args, $cont
 
     $link = drupalhub_core_modal_window($link);
 
-    // todo: add access limitation.
     $value = t("Whoops! it seems that you don't have any description about your self. Why don't you !link?", array('!link' => $link));
+  }
+  else {
+    $value = '';
   }
 
   $block = new stdClass();
