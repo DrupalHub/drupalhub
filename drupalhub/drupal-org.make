@@ -178,6 +178,10 @@ libraries[jquery_caret_position][download][type] = "git"
 libraries[jquery_caret_position][type] = "libraries"
 libraries[jquery_caret_position][download][url] = "https://github.com/wolasss/jquery-caret-position-getter.git"
 
+libraries[font_awesome][download][type] = "file"
+libraries[font_awesome][type] = "libraries"
+libraries[font_awesome][download][url] = "http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.2.0.zip"
+
 libraries[colorbox][type] = "libraries"
 libraries[colorbox][download][type] = "file"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"

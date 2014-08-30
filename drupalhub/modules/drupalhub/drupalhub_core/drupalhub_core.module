@@ -33,7 +33,7 @@ function drupalhub_core_menu() {
  * Implements hook_init().
  */
 function drupalhub_core_init() {
-  drupal_add_css(drupal_get_path('theme', 'drupalhub') . '/FontAwesome/css/font-awesome.min.css');
+  drupal_add_css(libraries_get_path('font_awesome') . '/css/font-awesome.min.css');
 
   $item = menu_get_item();
   if (drupal_is_front_page() || path_is_admin($item['path'])) {
