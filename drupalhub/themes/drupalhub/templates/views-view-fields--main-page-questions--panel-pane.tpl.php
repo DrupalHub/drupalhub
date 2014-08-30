@@ -31,14 +31,17 @@ $vote = strip_tags($fields['field_vote']->content);
   </div>
   <div class="content">
     <div class="title"><?php print $fields['title']->content; ?></div>
-    <div class="published"><?php print $fields['created']->content; ?></div>
+    <div class="metadata">
+      <span class="time"><i class="fa fa-clock-o"></i> <?php print $fields['created']->content; ?> </span>
+      <span class="name"><i class="fa fa-user"></i> <?php print $fields['name']->content; ?></span>
+    </div>
     <div class="body-stats">
       <div class='stats'>
-        <i class="fa fa-comment"></i> <?php print $fields['comment_count']->content; ?> <i class="fa fa-heart"></i> <?php print $vote; ?>
+        <i class="fa fa-comment-o"></i> <?php print $fields['comment_count']->content; ?>
+        <i class="fa fa-heart"></i> <?php print $vote; ?>
       </div>
       <div class='body'>
-        <div class="user"><?php print $fields['name']->content; ?></div>
-        <div class="content"><?php print $fields['body']->content; ?></div>
+        <?php print $fields['body']->content; ?>
       </div>
     </div>
   </div>

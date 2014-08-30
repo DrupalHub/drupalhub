@@ -156,7 +156,8 @@ body.front .pane-popular-tags {
     font-size: 15px;
     color: #a3a1a1;
     margin-right: 10px;
-    /* LTR */ }
+    /* LTR */
+    margin-top: 10px; }
   body.front .pane-popular-tags ul.tagged_items {
     -webkit-padding-start: 0px; }
     body.front .pane-popular-tags ul.tagged_items li {

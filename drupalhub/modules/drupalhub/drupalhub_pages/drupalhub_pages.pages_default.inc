@@ -544,7 +544,7 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->panel = 'second-last';
     $pane->type = 'service_provider';
     $pane->subtype = 'service_provider';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
@@ -614,7 +614,7 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->panel = 'second_left';
     $pane->type = 'views_panes';
     $pane->subtype = 'recommendation-panel_pane_1';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
@@ -633,7 +633,7 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->panel = 'second_right';
     $pane->type = 'drupal_of_the_month';
     $pane->subtype = 'drupal_of_the_month';
-    $pane->shown = TRUE;
+    $pane->shown = FALSE;
     $pane->access = array();
     $pane->configuration = array(
       'return' => 'Finish',

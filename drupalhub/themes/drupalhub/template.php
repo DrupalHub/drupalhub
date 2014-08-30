@@ -21,7 +21,7 @@ function drupalhub_preprocess_page(&$variables) {
 
   // Adding slide show.
   $variables['slide_show'] = '';
-  if (drupal_is_front_page()) {
+  if (variable_get('front_page_slideshow', FALSE) && drupal_is_front_page()) {
     $variables['slide_show'] = views_embed_view('gallery');
   }
 }
