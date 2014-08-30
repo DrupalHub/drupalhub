@@ -12,9 +12,7 @@
   <div class="bottom-wrapper">
     <div class="row">
       <div class="col-lg-10 col-md-9 col-sm-8">
-        <span class="time"><i class="fa fa-clock-o"></i> <?php print $fields['created']->content; ?></span>
-        <span class="name"><i class="fa fa-user"> </i> <?php print $fields['name']->content; ?></span>
-        <span class="tags"><i class="fa fa-tags"></i> <?php print $fields['field_tags']->content; ?></span>
+        <?php print $fields['time_name_tags']->content; ?>
       </div>
       <div class="col-lg-2 col-md-3 col-sm-4">
         <?php if(!empty($edit)): ?>

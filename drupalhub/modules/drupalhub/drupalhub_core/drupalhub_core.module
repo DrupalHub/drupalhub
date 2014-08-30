@@ -276,3 +276,28 @@ function drupalhub_core_autocomplete($string = '') {
   drupal_json_output($data);
 }
 
+/**
+ * Implements hook_theme().
+ */
+function drupalhub_core_theme() {
+  return array(
+    'time_name_tags' => array(
+      'template' => 'time-name-tags',
+      'path' => drupal_get_path('module', 'drupalhub_core') . '/templates',
+      'variables' => array(
+        'time' => NULL,
+        'name' => NULL,
+        'tags' => NULL,
+      ),
+    ),
+  );
+}
+
+/**
+ * Implements hook_views_api().
+ */
+function drupalhub_core_views_api() {
+  return array(
+    'api' => '3',
+  );
+}

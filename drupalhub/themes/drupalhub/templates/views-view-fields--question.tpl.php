@@ -40,9 +40,7 @@
   </div>
   <div class="col-md-12 bottom-wrapper clearfix">
     <div class="col-md-10">
-      <span class="time"><i class="fa fa-clock-o"></i> <?php print $fields['created']->content; ?></span>
-      <span class="name"><i class="fa fa-user"></i> <?php print $fields['name']->content; ?></span>
-      <span class="tags"><i class="fa fa-tags"></i> <?php print $fields['field_tags']->content; ?></span>
+      <?php print $fields['time_name_tags']->content; ?>
     </div>
 
     <div class="col-md-2">

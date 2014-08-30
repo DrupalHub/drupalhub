@@ -213,7 +213,7 @@ body.front .view-main-page-questions .views-row {
   body.front .view-main-page-questions .views-row .image {
     float: left;
     /* LTR */
-    padding-right: 40px;
+    padding-right: 20px;
     /* LTR */ }
   body.front .view-main-page-questions .views-row .title a {
     color: #20aae4;
