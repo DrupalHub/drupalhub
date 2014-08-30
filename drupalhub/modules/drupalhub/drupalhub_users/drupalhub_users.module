@@ -119,6 +119,10 @@ function drupalhub_users_user_insert(&$edit, $account, $category) {
  * Implements hook_node_insert().
  */
 function drupalhub_users_node_insert($node) {
+  if (!in_array($node->type, array('question', 'blog'))) {
+    return;
+  }
+
   $message = message_create('created_node', array('uid' => $node->uid));
   $wrapper = entity_metadata_wrapper('message', $message);
   $wrapper->field_node->set($node);
