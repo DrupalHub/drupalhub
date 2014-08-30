@@ -109,6 +109,7 @@ function drupalhub_variables_set() {
     'caret_position' => 'profiles/drupalhub/libraries/jquery_caret_position',
     'page_manager_node_view_disabled' => FALSE,
     'page_manager_user_view_disabled' => FALSE,
+    'page_manager_term_view_disabled' => FALSE,
     'site_frontpage' => 'front',
     'entity_view_count_track_user' => array(),
   );
