@@ -71,6 +71,9 @@ function drupalhub_css_alter(&$css) {
   }
 }
 
+/**
+ * Remove the required marker from the label.
+ */
 function drupalhub_form_required_marker($variables) {
   $variables['element'] += array(
     '#show-required' => TRUE,
@@ -87,4 +90,11 @@ function drupalhub_form_required_marker($variables) {
     'title' => $t('This field is required.'),
   );
   return '<span' . drupal_attributes($attributes) . '>*</span>';
+}
+
+/**
+ * Implements hook_preprocess_node().
+ */
+function drupalhub_preprocess_node($variables) {
+  dpm(menu_get_item());
 }
