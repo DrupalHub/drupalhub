@@ -21,10 +21,6 @@
       @include meta-tags;
     }
   }
-
-  .pane-idea-comments-panel-pane-1 {
-    @include comment_view;
-  }
 }
 
 // All questions page.

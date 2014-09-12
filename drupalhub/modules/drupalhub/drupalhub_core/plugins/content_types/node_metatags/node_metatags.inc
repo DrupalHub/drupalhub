@@ -13,7 +13,7 @@ function drupalhub_core_node_metatags_content_type_render($subtype, $conf, $args
 
   $terms = array();
 
-  if ($wrapper->field_tags) {
+  if ($wrapper->__isset('field_tags')) {
     foreach ($wrapper->field_tags as $tag) {
       $uri = entity_uri('taxonomy_term', $tag->value());
       $terms[] = l($tag->label(), $uri['path']);

@@ -78,8 +78,10 @@
     <div class="container">
       <div class="row">
         <div class="nav-collapsee collapsee col-md-12">
-          <ul class="nav navbar-nav">
-            <li class="search"><a><input type="text" placeholder="<?php print t('Search'); ?>" class="search _w240"></a></li>
+          <ul class="inner-links col-md-6">
+            <li><i class="fa fa-calendar"></i><a class="calendar" href="<?php print $inner['calendar']['url']; ?>"><?php print $inner['calendar']['text']; ?></a></li>
+          </ul>
+          <ul class="nav navbar-nav col-md-6">
             <li class="social">
               <a class="youtube" href="<?php print $social['youtube']; ?>"><i class="fa fa-youtube-play"></i></a>
               <a class="twitter" href="<?php print $social['twitter']; ?>"><i class="fa fa-twitter"></i></a>

@@ -75,6 +75,7 @@ dependencies[] = vud
 
 ; DrupalHub
 dependencies[] = drupalhub_core
+dependencies[] = drupalhub_events
 dependencies[] = drupalhub_blog
 dependencies[] = drupalhub_group
 dependencies[] = drupalhub_migrate

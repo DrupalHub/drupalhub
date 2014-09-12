@@ -22,13 +22,6 @@
     }
   }
 
-  .bottom {
-
-    .pane-idea-comments-panel-pane-1 {
-      @include comment_view;
-    }
-  }
-
   @media (max-width: 768px) {
     .top-second {
       padding-top: 50px;

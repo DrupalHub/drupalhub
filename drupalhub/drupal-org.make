@@ -9,6 +9,7 @@ projects[breakpoints][version] = 1.1
 
 projects[calendar][subdir] = "contrib"
 projects[calendar][version] = 3.4
+projects[calendar][patch][] = "https://www.drupal.org/files/issues/calendar-illegal_offset-1471400-78.patch"
 
 projects[colorbox][subdir] = "contrib"
 projects[colorbox][version] = 2.7
@@ -29,7 +30,7 @@ projects[diff][subdir] = "contrib"
 projects[diff][version] = 3.2
 
 projects[email][subdir] = "contrib"
-project[email][version] = 1.3
+projects[email][version] = 1.3
 
 projects[entity][subdir] = "contrib"
 projects[entity][version] = 1.5
@@ -171,7 +172,6 @@ projects[views_infinite_scroll][version] = 1.1
 projects[bootstrap] = bootstrap
 projects[bootstrap][version] = 3.0
 projects[bootstrap][type] = "theme"
-
 
 ; Libraries
 libraries[jquery_caret_position][download][type] = "git"

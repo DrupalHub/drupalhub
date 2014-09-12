@@ -1,0 +1,159 @@
+.page-calendar {
+
+  .top {
+    padding-bottom: 20px;
+
+    .pane-quick-links {
+      padding-bottom: 20px;
+      position: absolute;
+      top: 60px;
+      z-index: 1;
+
+      @include clearfix;
+
+      &:after {
+        height: auto;
+      }
+
+      .new-event {
+        padding-left: 10px; /* LTR */
+        padding-top: 15px;
+
+        a {
+          @include orange-button;
+        }
+      }
+    }
+
+    .date-nav {
+
+      .pager {
+
+        .date-prev,
+        .date-next {
+          background: none;
+        }
+
+        .date-prev {
+          left: 0; /* LTR */
+          right: auto; /* LTR */
+        }
+      }
+    }
+
+    .calendar-calendar td.single-day {
+
+      div.monthview,
+      div.weekview,
+      div.dayview {
+        background: none;
+
+        .views-field-title {
+
+          a {
+            text-decoration: underline;
+            color: #d88405;
+          }
+        }
+      }
+    }
+
+    .month-view .full td.multi-day {
+
+      div.monthview,
+      div.weekview,
+      div.dayview {
+        background: #fafafa;
+        border: #2287b1 solid 1px;
+
+        a {
+          text-decoration: underline;
+          color: #d88405;
+        }
+      }
+
+      .continues,
+      .cutoff {
+        visibility: hidden;
+      }
+    }
+
+    .month-view {
+
+      thead {
+
+        th {
+          color: white;
+          background: #48ABDE;
+          border: #2287b1 solid 1px;
+          padding: 5px;
+        }
+      }
+
+      tbody {
+
+        td {
+          border: #2287b1 solid 1px;
+          height: 30px;
+
+          &.single-day {
+            padding-bottom: 40px;
+          }
+
+          &.single-day.empty,
+          &.date-box.empty {
+            background: #D3F1FF;
+            color: #1E68A2;
+          }
+
+          .today,
+          &.date-box.today,
+          &.single-day.today {
+            background: #fafafa;
+            border: none;
+
+            .day {
+              color: black;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .bottom {
+    text-align: right; /* LTR */
+
+    .upcoming-events {
+
+      .title {
+        background: $blue-bright;
+        color: white;
+        padding: 5px;
+        font-size: 30px;
+        border: $blue-border-2 1px solid;
+        text-align: left;
+      }
+
+      .events {
+        background: #fafafa;
+        border: $blue-border-2 1px solid;
+        border-top: none;
+
+        ul {
+          padding-top: 10px;
+          padding-bottom: 10px;
+          width: 90%;
+
+          li {
+            list-style-type: none;
+            padding: 5px 0;
+            margin-bottom: 5px;
+            border-bottom: solid 1px #3588c0;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+}

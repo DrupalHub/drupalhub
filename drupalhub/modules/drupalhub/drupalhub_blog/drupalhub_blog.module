@@ -6,21 +6,3 @@
  */
 
 include_once 'drupalhub_blog.features.inc';
-
-/**
- * Implements hook_form_FROM_ID_alter().
- */
-function drupalhub_blog_form_comment_node_blog_form_alter(&$form, &$form_state, $form_id) {
-  $form['#after_build'][] = 'drupalhub_blog_form_comment_after_build';
-}
-
-/**
- * After build callback function; Remove elements from the comment form.
- */
-function drupalhub_blog_form_comment_after_build($form, $form_state) {
-  hide($form['author']);
-  hide($form['subject']);
-  hide($form['comment_body'][LANGUAGE_NONE][0]['format']);
-
-  return $form;
-}

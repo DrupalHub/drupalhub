@@ -2,6 +2,7 @@
 $blue-bright: #21a8e0;
 $darker-blue: #20A8E0;
 $orange-button-background: #f7b700;
+$blue-button-background: #0091f7;
 $orange-button-circle: #fdf1cc;
 $orange-button-plus: #f7b800;
 $blue-title: #20aae4;
@@ -13,6 +14,7 @@ $grey4: #e5e5e5;
 $gery5: #e7e7e7;
 $profile-picture-wrapper: #4D7FB6;
 $blue-border: #cce8ff;
+$blue-border-2: #198fc0;
 
 // Mixin part.
 @mixin clearfix {
@@ -185,18 +187,6 @@ $blue-border: #cce8ff;
   background: $grey1;
 
   .nav.navbar-nav {
-    width: 100%;
-
-    .search {
-
-      input {
-        border: 1px solid #BDBFBF;
-        border-radius: 5px;
-        padding: 2px 5px;
-        color: #BDBFBF;
-        background: url('../images/search.png') no-repeat 135px center #fff;
-      }
-    }
 
     .social {
       float: right;
@@ -226,7 +216,31 @@ $blue-border: #cce8ff;
           &.fa-github-alt {
             color: #333333;
           }
+
+          &.fa-github-alt {
+            color: #333333;
+          }
         }
+      }
+    }
+  }
+}
+
+.inner-links {
+  padding-top: 15px;
+
+  li {
+    display: inline;
+    list-style: none;
+    font-size: 15px;
+    padding-top: 5px;
+
+    i {
+      font-size: 20px;
+      margin-right: 5px;
+
+      &.fa-calendar {
+        color: #e64134;
       }
     }
   }
@@ -279,6 +293,10 @@ $blue-border: #cce8ff;
   padding-top: 20px;
 }
 
+.pane-idea-comments-panel-pane-1 {
+  @include comment_view;
+}
+
 // This is the part when we import css style per page.
 @import "pages/homepage.scss";
 @import "pages/login.scss";
@@ -286,3 +304,4 @@ $blue-border: #cce8ff;
 @import "pages/blog";
 @import "pages/users";
 @import "pages/terms";
+@import "pages/calendar";

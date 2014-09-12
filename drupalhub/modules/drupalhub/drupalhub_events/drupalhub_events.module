@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Code for the DrupalHub events feature.
+ */
+
+include_once 'drupalhub_events.features.inc';
+
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function drupalhub_events_ctools_plugin_directory($owner, $plugin_type) {
+  if ($owner == 'ctools') {
+    return 'plugins/' . $plugin_type;
+  }
+}

@@ -48,6 +48,9 @@ function drupalhub_core_init() {
   elseif ($item['path'] == 'blogs') {
     drupal_set_title(t('Blogs'));
   }
+  elseif ($item['path'] == 'calendar') {
+    drupal_set_title(t('Calendar'));
+  }
   elseif ($item['path'] == 'node/%') {
     $object = menu_get_object();
     if ($object->type == 'question') {
@@ -55,6 +58,9 @@ function drupalhub_core_init() {
     }
     elseif ($object->type == 'blog') {
       $breadcrumbs[] = l(t('Blogs'), 'blogs');
+    }
+    elseif ($object->type == 'events') {
+      $breadcrumbs[] = l(t('Calendar'), 'calendar');
     }
   }
 
@@ -301,3 +307,30 @@ function drupalhub_core_views_api() {
     'api' => '3',
   );
 }
+
+/**
+ * Implements hook_form_alter().
+ *
+ * Handle the comments form for nodes by removing elements.
+ */
+function drupalhub_core_form_alter(&$form, $form_state, $form_id) {
+  if (!in_array($form_id, array('comment_node_events_form', 'comment_node_question_form', 'comment_node_blog_form'))) {
+    return;
+  }
+
+  $form['#after_build'][] = 'drupalhub_core_comments_form';
+
+  $form['comment_body'][LANGUAGE_NONE][0]['#title'] = t('Add comment:');
+}
+
+/**
+ * After build callback; Hide elements from the comment form.
+ */
+function drupalhub_core_comments_form($form, $form_state) {
+  hide($form['author']);
+  hide($form['subject']);
+  hide($form['comment_body'][LANGUAGE_NONE][0]['format']);
+
+  return $form;
+}
+

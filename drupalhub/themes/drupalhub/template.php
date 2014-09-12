@@ -17,6 +17,13 @@ function drupalhub_preprocess_page(&$variables) {
     'github' => url('http://github.com/drupalhub/drupalhub'),
   );
 
+  $variables['inner'] = array(
+    'calendar' => array(
+      'url' => url('calendar'),
+      'text' => t('Calendar'),
+    ),
+  );
+
   $variables['loggin_button'] = l(t('Login'), 'user/login', array('attributes' => array('class' => array('login'))));
 
   // Adding slide show.
@@ -90,11 +97,4 @@ function drupalhub_form_required_marker($variables) {
     'title' => $t('This field is required.'),
   );
   return '<span' . drupal_attributes($attributes) . '>*</span>';
-}
-
-/**
- * Implements hook_preprocess_node().
- */
-function drupalhub_preprocess_node($variables) {
-  dpm(menu_get_item());
 }
