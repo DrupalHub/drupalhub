@@ -830,27 +830,23 @@ body.front .second-left-right {
       border: none; }
       .page-calendar .top .month-view tbody td .today .day, .page-calendar .top .month-view tbody td.date-box.today .day, .page-calendar .top .month-view tbody td.single-day.today .day {
         color: black; }
-.page-calendar .bottom {
-  text-align: right;
-  /* LTR */ }
-  .page-calendar .bottom .upcoming-events .title {
-    background: #21a8e0;
-    color: white;
-    padding: 5px;
-    font-size: 30px;
-    border: #198fc0 1px solid;
-    text-align: left; }
-  .page-calendar .bottom .upcoming-events .events {
-    background: #fafafa;
-    border: #198fc0 1px solid;
-    border-top: none; }
-    .page-calendar .bottom .upcoming-events .events ul {
-      padding-top: 10px;
-      padding-bottom: 10px;
-      width: 90%; }
-      .page-calendar .bottom .upcoming-events .events ul li {
-        list-style-type: none;
-        padding: 5px 0;
-        margin-bottom: 5px;
-        border-bottom: solid 1px #3588c0;
-        text-align: left; }
+.page-calendar .bottom .upcoming-events .title {
+  background: #21a8e0;
+  color: white;
+  padding: 5px;
+  font-size: 30px;
+  border: #198fc0 1px solid; }
+.page-calendar .bottom .upcoming-events .events {
+  background: #fafafa;
+  border: #198fc0 1px solid;
+  border-top: none; }
+  .page-calendar .bottom .upcoming-events .events ul {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 90%; }
+    .page-calendar .bottom .upcoming-events .events ul li {
+      list-style-type: none;
+      padding: 5px 0;
+      margin-bottom: 5px;
+      border-bottom: solid 1px #3588c0;
+      text-align: left; }

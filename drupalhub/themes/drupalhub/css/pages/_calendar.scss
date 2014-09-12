@@ -122,7 +122,6 @@
   }
 
   .bottom {
-    text-align: right; /* LTR */
 
     .upcoming-events {
 
@@ -132,7 +131,6 @@
         padding: 5px;
         font-size: 30px;
         border: $blue-border-2 1px solid;
-        text-align: left;
       }
 
       .events {

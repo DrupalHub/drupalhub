@@ -112,6 +112,7 @@ function drupalhub_variables_set() {
     'page_manager_term_view_disabled' => FALSE,
     'site_frontpage' => 'front',
     'entity_view_count_track_user' => array(),
+    'user_picture_path' => '',
   );
 
   foreach ($variables as $name => $value) {
