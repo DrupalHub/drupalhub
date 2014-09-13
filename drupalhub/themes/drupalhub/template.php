@@ -22,6 +22,10 @@ function drupalhub_preprocess_page(&$variables) {
       'url' => url('calendar'),
       'text' => t('Calendar'),
     ),
+    'video' => array(
+      'url' => url('video'),
+      'text' => t('Video library'),
+    ),
   );
 
   $variables['loggin_button'] = l(t('Login'), 'user/login', array('attributes' => array('class' => array('login'))));

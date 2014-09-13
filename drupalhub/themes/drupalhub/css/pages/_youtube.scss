@@ -20,6 +20,11 @@
 
     .information {
       float: right; /* LTR */
+      font-size: 15px;
+
+      & > div {
+        padding-bottom: 10px;
+      }
 
       .length {
         float: left; /* LTR */

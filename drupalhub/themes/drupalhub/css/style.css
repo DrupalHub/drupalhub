@@ -883,7 +883,10 @@ body.front .second-left-right {
   /* LTR */ }
 .page-video .video-wrapper .information {
   float: right;
-  /* LTR */ }
+  /* LTR */
+  font-size: 15px; }
+  .page-video .video-wrapper .information > div {
+    padding-bottom: 10px; }
   .page-video .video-wrapper .information .length {
     float: left;
     /* LTR */
