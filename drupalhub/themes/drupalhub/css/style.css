@@ -891,3 +891,29 @@ body.front .second-left-right {
     float: left;
     /* LTR */
     padding-right: 10px; }
+
+.node-type-youtube .info {
+  display: inline;
+  padding-left: 0px;
+  /* LTR */ }
+  .node-type-youtube .info li {
+    display: inline;
+    padding-left: 5px; }
+    .node-type-youtube .info li .fa {
+      font-size: 20px; }
+    .node-type-youtube .info li .fa-youtube-play {
+      color: #dd2826; }
+.node-type-youtube .others h2 {
+  margin-top: 0;
+  text-decoration: underline; }
+.node-type-youtube .others .video-wrapper .video {
+  float: left;
+  /* LTR */
+  padding-right: 15px;
+  /* LTR */ }
+.node-type-youtube .others .video-wrapper .information {
+  font-size: 15px; }
+  .node-type-youtube .others .video-wrapper .information .length {
+    float: left;
+    /* LTR */
+    padding-right: 5px; }

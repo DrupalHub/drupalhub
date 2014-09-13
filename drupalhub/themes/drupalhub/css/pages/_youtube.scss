@@ -33,3 +33,49 @@
     }
   }
 }
+
+.node-type-youtube {
+
+  .info {
+    display: inline;
+    padding-left: 0px; /* LTR */
+
+    li {
+      display: inline;
+      padding-left: 5px;
+
+      .fa {
+        font-size: 20px;
+      }
+
+      .fa-youtube-play {
+        color: #dd2826;
+      }
+    }
+  }
+
+  .others {
+
+    h2 {
+      margin-top: 0;
+      text-decoration: underline;
+    }
+
+    .video-wrapper {
+
+      .video {
+        float: left; /* LTR */
+        padding-right: 15px; /* LTR */
+      }
+
+      .information {
+        font-size: 15px;
+
+        .length {
+          float: left; /* LTR */
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+}

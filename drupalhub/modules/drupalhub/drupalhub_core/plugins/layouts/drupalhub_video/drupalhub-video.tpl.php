@@ -1,9 +1,9 @@
 <div class="<?php print $classes ?>" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <div class="row">
-    <div class="video col-md-9 col-xs-12">
+    <div class="video col-md-8 col-xs-12">
       <?php print $content['video']; ?>
     </div>
-    <div class="others col-md-3 col-xs-12">
+    <div class="others col-md-4 col-xs-12">
       <?php print $content['others']; ?>
     </div>
   </div>
