@@ -53,14 +53,16 @@ function drupalhub_core_init() {
   }
   elseif ($item['path'] == 'node/%') {
     $object = menu_get_object();
-    if ($object->type == 'question') {
-      $breadcrumbs[] = l(t('Question'), 'questions');
-    }
-    elseif ($object->type == 'blog') {
-      $breadcrumbs[] = l(t('Blogs'), 'blogs');
-    }
-    elseif ($object->type == 'events') {
-      $breadcrumbs[] = l(t('Calendar'), 'calendar');
+
+    $bundles = array(
+      'question' => l(t('Question'), 'questions'),
+      'blog' => l(t('Blogs'), 'blogs'),
+      'events' => l(t('Calendar'), 'calendar'),
+      'youtube' => l(t('Video library'), 'video'),
+    );
+
+    if (isset($bundles[$object->type])) {
+      $breadcrumbs[] = $bundles[$object->type];
     }
   }
 
@@ -314,7 +316,14 @@ function drupalhub_core_views_api() {
  * Handle the comments form for nodes by removing elements.
  */
 function drupalhub_core_form_alter(&$form, $form_state, $form_id) {
-  if (!in_array($form_id, array('comment_node_events_form', 'comment_node_question_form', 'comment_node_blog_form'))) {
+  $forms = array(
+    'comment_node_events_form',
+    'comment_node_question_form',
+    'comment_node_blog_form',
+    'comment_node_youtube_form',
+  );
+
+  if (!in_array($form_id, $forms)) {
     return;
   }
 

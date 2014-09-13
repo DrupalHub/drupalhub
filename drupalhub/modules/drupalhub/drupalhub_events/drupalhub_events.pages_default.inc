@@ -16,7 +16,10 @@ function drupalhub_events_default_page_manager_pages() {
   $page->admin_title = 'Calendar';
   $page->admin_description = '';
   $page->path = 'calendar';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(

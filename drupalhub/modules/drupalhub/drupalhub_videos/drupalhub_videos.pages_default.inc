@@ -45,7 +45,7 @@ function drupalhub_videos_default_page_manager_handlers() {
     ),
   );
   $display = new panels_display();
-  $display->layout = 'bootstrap_twocol_stacked';
+  $display->layout = 'drupalhub_video';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -54,6 +54,10 @@ function drupalhub_videos_default_page_manager_handlers() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+      'video' => NULL,
+      'others' => NULL,
     ),
   );
   $display->cache = array();
@@ -62,8 +66,84 @@ function drupalhub_videos_default_page_manager_handlers() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-6a940ebd-82a1-4efc-a8d7-8899525435c8';
+    $pane->pid = 'new-634d0c9a-f271-4e58-ae57-6380f559e079';
     $pane->panel = 'bottom';
+    $pane->type = 'video_metadata';
+    $pane->subtype = 'video_metadata';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-qqTBWYlmJgynPaqQJloB2OyzXjBIqJainMfIIuwkBvM',
+      'form_token' => 'r-adXnms0CcutF404n0y32tYYOW4DaY-yagcdaZrGvY',
+      'form_id' => 'drupalhub_videos_video_metadata_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '634d0c9a-f271-4e58-ae57-6380f559e079';
+    $display->content['new-634d0c9a-f271-4e58-ae57-6380f559e079'] = $pane;
+    $display->panels['bottom'][0] = 'new-634d0c9a-f271-4e58-ae57-6380f559e079';
+    $pane = new stdClass();
+    $pane->pid = 'new-0be6b39f-4666-4956-943b-4aa918f0cf20';
+    $pane->panel = 'bottom';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'idea_comments-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '0be6b39f-4666-4956-943b-4aa918f0cf20';
+    $display->content['new-0be6b39f-4666-4956-943b-4aa918f0cf20'] = $pane;
+    $display->panels['bottom'][1] = 'new-0be6b39f-4666-4956-943b-4aa918f0cf20';
+    $pane = new stdClass();
+    $pane->pid = 'new-8c995151-61cb-4832-9d31-bf01e68f69f3';
+    $pane->panel = 'bottom';
+    $pane->type = 'node_comment_form';
+    $pane->subtype = 'node_comment_form';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'anon_links' => 0,
+      'context' => 'argument_entity_id:node_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 2;
+    $pane->locks = array();
+    $pane->uuid = '8c995151-61cb-4832-9d31-bf01e68f69f3';
+    $display->content['new-8c995151-61cb-4832-9d31-bf01e68f69f3'] = $pane;
+    $display->panels['bottom'][2] = 'new-8c995151-61cb-4832-9d31-bf01e68f69f3';
+    $pane = new stdClass();
+    $pane->pid = 'new-6a940ebd-82a1-4efc-a8d7-8899525435c8';
+    $pane->panel = 'others';
     $pane->type = 'views_panes';
     $pane->subtype = 'videos-panel_pane_1';
     $pane->shown = TRUE;
@@ -79,61 +159,10 @@ function drupalhub_videos_default_page_manager_handlers() {
     $pane->locks = array();
     $pane->uuid = '6a940ebd-82a1-4efc-a8d7-8899525435c8';
     $display->content['new-6a940ebd-82a1-4efc-a8d7-8899525435c8'] = $pane;
-    $display->panels['bottom'][0] = 'new-6a940ebd-82a1-4efc-a8d7-8899525435c8';
-    $pane = new stdClass();
-    $pane->pid = 'new-0a692f81-9917-4c0f-bab0-3eac0ccbde8f';
-    $pane->panel = 'top';
-    $pane->type = 'node_title';
-    $pane->subtype = 'node_title';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'link' => 0,
-      'markup' => 'h1',
-      'id' => '',
-      'class' => '',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 1,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 0;
-    $pane->locks = array();
-    $pane->uuid = '0a692f81-9917-4c0f-bab0-3eac0ccbde8f';
-    $display->content['new-0a692f81-9917-4c0f-bab0-3eac0ccbde8f'] = $pane;
-    $display->panels['top'][0] = 'new-0a692f81-9917-4c0f-bab0-3eac0ccbde8f';
-    $pane = new stdClass();
-    $pane->pid = 'new-411bc6b1-c990-4c63-9e30-81bc48574968';
-    $pane->panel = 'top';
-    $pane->type = 'video_navigation';
-    $pane->subtype = 'video_navigation';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'navigation_type' => 'back',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = '411bc6b1-c990-4c63-9e30-81bc48574968';
-    $display->content['new-411bc6b1-c990-4c63-9e30-81bc48574968'] = $pane;
-    $display->panels['top'][1] = 'new-411bc6b1-c990-4c63-9e30-81bc48574968';
+    $display->panels['others'][0] = 'new-6a940ebd-82a1-4efc-a8d7-8899525435c8';
     $pane = new stdClass();
     $pane->pid = 'new-c8396366-4739-4a70-9d10-45feb1da2510';
-    $pane->panel = 'top';
+    $pane->panel = 'video';
     $pane->type = 'entity_field';
     $pane->subtype = 'node:field_address';
     $pane->shown = TRUE;
@@ -157,35 +186,11 @@ function drupalhub_videos_default_page_manager_handlers() {
     );
     $pane->css = array();
     $pane->extras = array();
-    $pane->position = 2;
+    $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'c8396366-4739-4a70-9d10-45feb1da2510';
     $display->content['new-c8396366-4739-4a70-9d10-45feb1da2510'] = $pane;
-    $display->panels['top'][2] = 'new-c8396366-4739-4a70-9d10-45feb1da2510';
-    $pane = new stdClass();
-    $pane->pid = 'new-bfcc508f-6a60-4254-8f2f-579f51fff8ac';
-    $pane->panel = 'top';
-    $pane->type = 'video_navigation';
-    $pane->subtype = 'video_navigation';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array(
-      'navigation_type' => 'next',
-      'context' => 'argument_entity_id:node_1',
-      'override_title' => 0,
-      'override_title_text' => '',
-    );
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 3;
-    $pane->locks = array();
-    $pane->uuid = 'bfcc508f-6a60-4254-8f2f-579f51fff8ac';
-    $display->content['new-bfcc508f-6a60-4254-8f2f-579f51fff8ac'] = $pane;
-    $display->panels['top'][3] = 'new-bfcc508f-6a60-4254-8f2f-579f51fff8ac';
+    $display->panels['video'][0] = 'new-c8396366-4739-4a70-9d10-45feb1da2510';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-6a940ebd-82a1-4efc-a8d7-8899525435c8';
   $handler->conf['display'] = $display;
@@ -236,7 +241,7 @@ function drupalhub_videos_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'bootstrap_twocol_stacked';
+  $display->layout = 'drupalhub_9_3';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -245,6 +250,8 @@ function drupalhub_videos_default_page_manager_pages() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -254,7 +261,7 @@ function drupalhub_videos_default_page_manager_pages() {
   $display->panels = array();
     $pane = new stdClass();
     $pane->pid = 'new-b43b9c84-cd11-4fba-ba58-85ea02db62bc';
-    $pane->panel = 'bottom';
+    $pane->panel = 'first';
     $pane->type = 'views_panes';
     $pane->subtype = 'videos-panel_pane_1';
     $pane->shown = TRUE;
@@ -270,7 +277,26 @@ function drupalhub_videos_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'b43b9c84-cd11-4fba-ba58-85ea02db62bc';
     $display->content['new-b43b9c84-cd11-4fba-ba58-85ea02db62bc'] = $pane;
-    $display->panels['bottom'][0] = 'new-b43b9c84-cd11-4fba-ba58-85ea02db62bc';
+    $display->panels['first'][0] = 'new-b43b9c84-cd11-4fba-ba58-85ea02db62bc';
+    $pane = new stdClass();
+    $pane->pid = 'new-f17b972d-241c-4e40-9396-53eae241e655';
+    $pane->panel = 'second';
+    $pane->type = 'manage_links';
+    $pane->subtype = 'manage_links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'f17b972d-241c-4e40-9396-53eae241e655';
+    $display->content['new-f17b972d-241c-4e40-9396-53eae241e655'] = $pane;
+    $display->panels['second'][0] = 'new-f17b972d-241c-4e40-9396-53eae241e655';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -4,7 +4,6 @@ $plugin = array(
   'title' => t('New question'),
   'description' => t('News question plugin.'),
   'category' => t('DrupalHub questions'),
-
 );
 
 function drupalhub_questions_new_question_content_type_render($subtype, $conf, $args, $context) {
