@@ -1,0 +1,13 @@
+.page-video {
+
+  .pane-manage-links {
+    text-align: right;
+
+    .new-video {
+
+      a {
+        @include orange-button;
+      }
+    }
+  }
+}
