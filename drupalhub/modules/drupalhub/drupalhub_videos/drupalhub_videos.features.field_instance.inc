@@ -99,6 +99,49 @@ function drupalhub_videos_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-youtube-field_show_in_videos'
+  $field_instances['node-youtube-field_show_in_videos'] = array(
+    'bundle' => 'youtube',
+    'default_value' => array(
+      0 => array(
+        'value' => 0,
+      ),
+    ),
+    'deleted' => 0,
+    'description' => 'Determine if the video will be shown in general videos page',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'list',
+        'settings' => array(),
+        'type' => 'list_default',
+        'weight' => 4,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_show_in_videos',
+    'label' => 'Show in videos',
+    'required' => 0,
+    'settings' => array(
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'display_label' => 0,
+      ),
+      'type' => 'options_onoff',
+      'weight' => 44,
+    ),
+  );
+
   // Exported field_instance: 'node-youtube-field_youtube_rating'
   $field_instances['node-youtube-field_youtube_rating'] = array(
     'bundle' => 'youtube',
@@ -141,6 +184,8 @@ function drupalhub_videos_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('Address');
   t('Body');
+  t('Determine if the video will be shown in general videos page');
+  t('Show in videos');
   t('Youtube rating');
 
   return $field_instances;
