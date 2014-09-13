@@ -29,8 +29,26 @@ function drupalhub_videos_views_default_views() {
   $handler->display->display_options['exposed_form']['type'] = 'basic';
   $handler->display->display_options['pager']['type'] = 'full';
   $handler->display->display_options['style_plugin'] = 'grid';
-  $handler->display->display_options['style_options']['columns'] = '3';
+  $handler->display->display_options['style_options']['columns'] = '2';
   $handler->display->display_options['row_plugin'] = 'fields';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Field: Content: Address */
+  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
+  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
+  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
+  $handler->display->display_options['fields']['field_address']['label'] = '';
+  $handler->display->display_options['fields']['field_address']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_address']['alter']['path'] = 'node/[nid]';
+  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'video_url';
+  $handler->display->display_options['fields']['field_address']['type'] = 'video_embed_field_thumbnail';
+  $handler->display->display_options['fields']['field_address']['settings'] = array(
+    'image_style' => 'medium',
+    'image_link' => 'content',
+  );
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
@@ -45,20 +63,12 @@ function drupalhub_videos_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['alter']['word_boundary'] = FALSE;
   $handler->display->display_options['fields']['title']['alter']['ellipsis'] = FALSE;
-  /* Field: Content: Address */
-  $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
-  $handler->display->display_options['fields']['field_address']['field'] = 'field_address';
-  $handler->display->display_options['fields']['field_address']['label'] = '';
-  $handler->display->display_options['fields']['field_address']['alter']['make_link'] = TRUE;
-  $handler->display->display_options['fields']['field_address']['alter']['path'] = 'node/[nid]';
-  $handler->display->display_options['fields']['field_address']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_address']['click_sort_column'] = 'video_url';
-  $handler->display->display_options['fields']['field_address']['type'] = 'video_embed_field_thumbnail';
-  $handler->display->display_options['fields']['field_address']['settings'] = array(
-    'image_style' => 'large',
-    'image_link' => '',
-  );
+  /* Field: User: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'users';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'uid';
+  $handler->display->display_options['fields']['name']['label'] = 'User';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -78,6 +88,13 @@ function drupalhub_videos_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'youtube' => 'youtube',
   );
+  /* Filter criterion: Content: Show in videos (field_show_in_videos) */
+  $handler->display->display_options['filters']['field_show_in_videos_value']['id'] = 'field_show_in_videos_value';
+  $handler->display->display_options['filters']['field_show_in_videos_value']['table'] = 'field_data_field_show_in_videos';
+  $handler->display->display_options['filters']['field_show_in_videos_value']['field'] = 'field_show_in_videos_value';
+  $handler->display->display_options['filters']['field_show_in_videos_value']['value'] = array(
+    1 => '1',
+  );
 
   /* Display: Content pane */
   $handler = $view->new_display('panel_pane', 'Content pane', 'panel_pane_1');
@@ -96,6 +113,8 @@ function drupalhub_videos_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
+    t('author'),
+    t('User'),
     t('Content pane'),
     t('View panes'),
   );
