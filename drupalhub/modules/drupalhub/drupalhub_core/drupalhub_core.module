@@ -53,14 +53,16 @@ function drupalhub_core_init() {
   }
   elseif ($item['path'] == 'node/%') {
     $object = menu_get_object();
-    if ($object->type == 'question') {
-      $breadcrumbs[] = l(t('Question'), 'questions');
-    }
-    elseif ($object->type == 'blog') {
-      $breadcrumbs[] = l(t('Blogs'), 'blogs');
-    }
-    elseif ($object->type == 'events') {
-      $breadcrumbs[] = l(t('Calendar'), 'calendar');
+
+    $bundles = array(
+      'question' => l(t('Question'), 'questions'),
+      'blog' => l(t('Blogs'), 'blogs'),
+      'events' => l(t('Calendar'), 'calendar'),
+      'youtube' => l(t('Video library'), 'video'),
+    );
+
+    if (isset($bundles[$object->type])) {
+      $breadcrumbs[] = $bundles[$object->type];
     }
   }
 
