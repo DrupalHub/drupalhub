@@ -50,4 +50,5 @@ features[variable][] = node_submitted_youtube
 features[variable][] = pathauto_node_youtube_pattern
 features[vef_video_styles][] = right_sidebar
 features[views_view][] = videos
-features_exclude[field_instance][node-youtube-og_group_ref] = node-youtube-og_group_ref
+
+files[] = includes/views/handlers/drupalhub_videos_youtube_metadata.inc

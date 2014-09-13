@@ -14,3 +14,48 @@ function drupalhub_videos_ctools_plugin_directory($module, $plugin) {
     return "plugins/$plugin";
   }
 }
+
+/**
+ * Implements hook_views_data().
+ */
+function drupalhub_videos_views_data() {
+  $data['node']['youtube_data'] = array(
+    'title' => t('Youtube metadata'),
+    'help' => t('Provide information from the JSON output for a youtube video.'),
+    'field' => array(
+      'handler' => 'drupalhub_videos_youtube_metadata',
+    ),
+  );
+
+  return $data;
+}
+
+/**
+ * Get metadata for a youtube video by a given ID.
+ *
+ * @param $id
+ *   The youtube video ID.
+ *
+ * @return Array
+ *   Array with metadata about the video.
+ */
+function drupalhub_videos_get_metadata($id) {
+  $cache_id = 'youtube_metadata_' . $id;
+
+  if ($cache = cache_get($cache_id)) {
+    return $cache->data;
+  }
+
+  $information = drupal_http_request('http://gdata.youtube.com/feeds/api/videos/' . $id . '?v=2&alt=jsonc');
+
+  // No information. Return early.
+  if ($information->code != 200) {
+    return;
+  }
+
+  $request = drupal_json_decode($information->data);
+
+  cache_set($cache_id, $request['data'], 'cache');
+
+  return $request['data'];
+}
