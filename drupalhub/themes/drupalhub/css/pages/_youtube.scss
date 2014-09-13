@@ -71,19 +71,27 @@
       height: 350px;
       overflow: scroll;
 
-      .video-wrapper {
+      ul {
+        padding-left: 0px;
 
-        .video {
-          float: left; /* LTR */
-          padding-right: 15px; /* LTR */
-        }
+        li {
+          list-style-type: none;
 
-        .information {
-          font-size: 15px;
+          .video-wrapper {
 
-          .length {
-            float: left; /* LTR */
-            padding-right: 5px;
+            .video {
+              float: left; /* LTR */
+              padding-right: 15px; /* LTR */
+            }
+
+            .information {
+              font-size: 15px;
+
+              .length {
+                float: left; /* LTR */
+                padding-right: 5px;
+              }
+            }
           }
         }
       }

@@ -909,14 +909,18 @@ body.front .second-left-right {
 .node-type-youtube .others .view-id-videos {
   height: 350px;
   overflow: scroll; }
-  .node-type-youtube .others .view-id-videos .video-wrapper .video {
-    float: left;
-    /* LTR */
-    padding-right: 15px;
-    /* LTR */ }
-  .node-type-youtube .others .view-id-videos .video-wrapper .information {
-    font-size: 15px; }
-    .node-type-youtube .others .view-id-videos .video-wrapper .information .length {
-      float: left;
-      /* LTR */
-      padding-right: 5px; }
+  .node-type-youtube .others .view-id-videos ul {
+    padding-left: 0px; }
+    .node-type-youtube .others .view-id-videos ul li {
+      list-style-type: none; }
+      .node-type-youtube .others .view-id-videos ul li .video-wrapper .video {
+        float: left;
+        /* LTR */
+        padding-right: 15px;
+        /* LTR */ }
+      .node-type-youtube .others .view-id-videos ul li .video-wrapper .information {
+        font-size: 15px; }
+        .node-type-youtube .others .view-id-videos ul li .video-wrapper .information .length {
+          float: left;
+          /* LTR */
+          padding-right: 5px; }

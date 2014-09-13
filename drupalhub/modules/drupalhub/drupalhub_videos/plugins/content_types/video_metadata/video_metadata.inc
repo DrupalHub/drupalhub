@@ -58,4 +58,3 @@ function drupalhub_videos_video_metadata_content_type_theme(&$theme, $plugin) {
     'template' => 'video-information',
   );
 }
-
