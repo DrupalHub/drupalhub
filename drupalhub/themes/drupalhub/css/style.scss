@@ -58,6 +58,16 @@ $blue-border-2: #198fc0;
   }
 }
 
+@mixin blue-button($button:1) {
+  @include rounded(5px, 5px);
+  background: $blue-button-background;
+  width: 170px;
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 10px 10px 5px;
+}
+
 @mixin title {
   color: $blue-title;
   padding-bottom: 20px;

@@ -44,6 +44,7 @@ features[field_instance][] = node-youtube-field_vote
 features[node][] = playlist
 features[node][] = youtube
 features[page_manager_handlers][] = node_view_panel_context_2
+features[page_manager_pages][] = playlists
 features[page_manager_pages][] = video
 features[variable][] = comment_anonymous_playlist
 features[variable][] = comment_anonymous_youtube

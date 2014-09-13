@@ -4,10 +4,19 @@
     text-align: right;
 
     .new-video {
+      float: right; /* LTR */
 
       a {
         @include orange-button;
       }
+    }
+  }
+
+  .manage-playlist {
+    float: left; /* LTR */
+
+    a {
+      @include blue-button;
     }
   }
 

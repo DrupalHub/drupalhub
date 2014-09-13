@@ -51,6 +51,13 @@ function drupalhub_core_init() {
   elseif ($item['path'] == 'calendar') {
     drupal_set_title(t('Calendar'));
   }
+  elseif ($item['path'] == 'video/playlists') {
+    $breadcrumbs[] = l(t('Video library'), 'video');
+    drupal_set_title(t('Manage play lists'));
+  }
+  elseif ($item['path'] == 'video') {
+    drupal_set_title(t('Video library'));
+  }
   elseif ($item['path'] == 'node/%') {
     $object = menu_get_object();
 
