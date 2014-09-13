@@ -35,6 +35,13 @@ function drupalhub_videos_views_default_views() {
   $handler->display->display_options['relationships']['uid']['id'] = 'uid';
   $handler->display->display_options['relationships']['uid']['table'] = 'node';
   $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Field: Content: Nid */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['label'] = '';
+  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Address */
   $handler->display->display_options['fields']['field_address']['id'] = 'field_address';
   $handler->display->display_options['fields']['field_address']['table'] = 'field_data_field_address';
@@ -49,13 +56,6 @@ function drupalhub_videos_views_default_views() {
     'image_style' => 'medium',
     'image_link' => 'content',
   );
-  /* Field: Content: Nid */
-  $handler->display->display_options['fields']['nid']['id'] = 'nid';
-  $handler->display->display_options['fields']['nid']['table'] = 'node';
-  $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  $handler->display->display_options['fields']['nid']['label'] = '';
-  $handler->display->display_options['fields']['nid']['exclude'] = TRUE;
-  $handler->display->display_options['fields']['nid']['element_label_colon'] = FALSE;
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -69,6 +69,19 @@ function drupalhub_videos_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'uid';
   $handler->display->display_options['fields']['name']['label'] = 'User';
+  /* Field: Content: Youtube metadata */
+  $handler->display->display_options['fields']['youtube_data']['id'] = 'youtube_data';
+  $handler->display->display_options['fields']['youtube_data']['table'] = 'node';
+  $handler->display->display_options['fields']['youtube_data']['field'] = 'youtube_data';
+  $handler->display->display_options['fields']['youtube_data']['label'] = 'Duration';
+  /* Field: Field: Vote */
+  $handler->display->display_options['fields']['field_vote']['id'] = 'field_vote';
+  $handler->display->display_options['fields']['field_vote']['table'] = 'field_data_field_vote';
+  $handler->display->display_options['fields']['field_vote']['field'] = 'field_vote';
+  $handler->display->display_options['fields']['field_vote']['label'] = '';
+  $handler->display->display_options['fields']['field_vote']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_vote']['type'] = 'vud';
+  $handler->display->display_options['fields']['field_vote']['delta_offset'] = '0';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -115,6 +128,7 @@ function drupalhub_videos_views_default_views() {
     t('last »'),
     t('author'),
     t('User'),
+    t('Duration'),
     t('Content pane'),
     t('View panes'),
   );

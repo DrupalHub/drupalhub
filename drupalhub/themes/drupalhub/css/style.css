@@ -876,3 +876,15 @@ body.front .second-left-right {
       color: #f7b800;
       margin: 5px 5px 0px 5px;
       padding: 3px 5px 3px 5px; }
+.page-video .video-wrapper .video {
+  float: left;
+  /* LTR */
+  padding-right: 15px;
+  /* LTR */ }
+.page-video .video-wrapper .information {
+  float: right;
+  /* LTR */ }
+  .page-video .video-wrapper .information .length {
+    float: left;
+    /* LTR */
+    padding-right: 10px; }

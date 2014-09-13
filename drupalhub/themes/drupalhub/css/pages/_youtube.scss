@@ -10,4 +10,21 @@
       }
     }
   }
+
+  .video-wrapper {
+
+    .video {
+      float: left; /* LTR */
+      padding-right: 15px; /* LTR */
+    }
+
+    .information {
+      float: right; /* LTR */
+
+      .length {
+        float: left; /* LTR */
+        padding-right: 10px;
+      }
+    }
+  }
 }

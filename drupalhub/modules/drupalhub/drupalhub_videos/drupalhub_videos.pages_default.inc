@@ -236,7 +236,7 @@ function drupalhub_videos_default_page_manager_pages() {
     'relationships' => array(),
   );
   $display = new panels_display();
-  $display->layout = 'bootstrap_twocol_stacked';
+  $display->layout = 'drupalhub_9_3';
   $display->layout_settings = array();
   $display->panel_settings = array(
     'style_settings' => array(
@@ -245,6 +245,8 @@ function drupalhub_videos_default_page_manager_pages() {
       'left' => NULL,
       'right' => NULL,
       'bottom' => NULL,
+      'first' => NULL,
+      'second' => NULL,
     ),
   );
   $display->cache = array();
@@ -253,8 +255,27 @@ function drupalhub_videos_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-b43b9c84-cd11-4fba-ba58-85ea02db62bc';
+    $pane->panel = 'first';
+    $pane->type = 'views_panes';
+    $pane->subtype = 'videos-panel_pane_1';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'b43b9c84-cd11-4fba-ba58-85ea02db62bc';
+    $display->content['new-b43b9c84-cd11-4fba-ba58-85ea02db62bc'] = $pane;
+    $display->panels['first'][0] = 'new-b43b9c84-cd11-4fba-ba58-85ea02db62bc';
+    $pane = new stdClass();
     $pane->pid = 'new-f17b972d-241c-4e40-9396-53eae241e655';
-    $pane->panel = 'bottom';
+    $pane->panel = 'second';
     $pane->type = 'manage_links';
     $pane->subtype = 'manage_links';
     $pane->shown = TRUE;
@@ -270,26 +291,7 @@ function drupalhub_videos_default_page_manager_pages() {
     $pane->locks = array();
     $pane->uuid = 'f17b972d-241c-4e40-9396-53eae241e655';
     $display->content['new-f17b972d-241c-4e40-9396-53eae241e655'] = $pane;
-    $display->panels['bottom'][0] = 'new-f17b972d-241c-4e40-9396-53eae241e655';
-    $pane = new stdClass();
-    $pane->pid = 'new-b43b9c84-cd11-4fba-ba58-85ea02db62bc';
-    $pane->panel = 'bottom';
-    $pane->type = 'views_panes';
-    $pane->subtype = 'videos-panel_pane_1';
-    $pane->shown = TRUE;
-    $pane->access = array();
-    $pane->configuration = array();
-    $pane->cache = array();
-    $pane->style = array(
-      'settings' => NULL,
-    );
-    $pane->css = array();
-    $pane->extras = array();
-    $pane->position = 1;
-    $pane->locks = array();
-    $pane->uuid = 'b43b9c84-cd11-4fba-ba58-85ea02db62bc';
-    $display->content['new-b43b9c84-cd11-4fba-ba58-85ea02db62bc'] = $pane;
-    $display->panels['bottom'][1] = 'new-b43b9c84-cd11-4fba-ba58-85ea02db62bc';
+    $display->panels['second'][0] = 'new-f17b972d-241c-4e40-9396-53eae241e655';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

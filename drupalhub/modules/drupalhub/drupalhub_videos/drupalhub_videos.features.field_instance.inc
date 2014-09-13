@@ -142,8 +142,8 @@ function drupalhub_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-youtube-field_youtube_rating'
-  $field_instances['node-youtube-field_youtube_rating'] = array(
+  // Exported field_instance: 'node-youtube-field_vote'
+  $field_instances['node-youtube-field_vote'] = array(
     'bundle' => 'youtube',
     'default_value' => NULL,
     'deleted' => 0,
@@ -154,7 +154,7 @@ function drupalhub_videos_field_default_field_instances() {
         'module' => NULL,
         'settings' => array(),
         'type' => 'updown',
-        'weight' => 3,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -164,19 +164,18 @@ function drupalhub_videos_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_youtube_rating',
-    'label' => 'Youtube rating',
+    'field_name' => 'field_vote',
+    'label' => 'Vote',
     'required' => 0,
     'settings' => array(
-      'appearance' => 'both',
       'user_register_form' => FALSE,
     ),
     'widget' => array(
       'active' => 0,
       'module' => 'vud',
       'settings' => array(),
-      'type' => 'thumbs',
-      'weight' => 43,
+      'type' => 'drupalhub_vud',
+      'weight' => 46,
     ),
   );
 
@@ -186,7 +185,7 @@ function drupalhub_videos_field_default_field_instances() {
   t('Body');
   t('Determine if the video will be shown in general videos page');
   t('Show in videos');
-  t('Youtube rating');
+  t('Vote');
 
   return $field_instances;
 }
