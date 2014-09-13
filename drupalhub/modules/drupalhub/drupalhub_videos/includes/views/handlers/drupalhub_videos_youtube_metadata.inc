@@ -33,7 +33,7 @@ class drupalhub_videos_youtube_metadata extends views_handler_field_entity {
    * @return String
    *   The duration of the video in a string format.
    */
-  private function durationToText($information) {
+  public static function durationToText($information) {
     $duration = $information['duration'];
 
     switch ($duration) {
