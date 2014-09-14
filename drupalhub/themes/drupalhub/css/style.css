@@ -942,6 +942,27 @@ body.front .second-left-right {
           /* LTR */
           padding-right: 5px; }
 
+.page-video-playlists .items {
+  padding-left: 0px; }
+  .page-video-playlists .items li {
+    padding-bottom: 30px;
+    list-style-type: none; }
+    .page-video-playlists .items li:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .page-video-playlists .items li img {
+      float: left;
+      padding-right: 5px;
+      padding-top: 5px; }
+    .page-video-playlists .items li .information {
+      float: left; }
+    .page-video-playlists .items li .add {
+      text-align: right;
+      padding-right: 10px;
+      font-size: 20px; }
 .page-video-playlists .autocomplete-results {
   border: #cce8ff solid 1px;
   position: absolute;
@@ -956,3 +977,9 @@ body.front .second-left-right {
     .page-video-playlists .autocomplete-results .wrapper img {
       float: left;
       padding-right: 5px; }
+    .page-video-playlists .autocomplete-results .wrapper .information {
+      float: left; }
+    .page-video-playlists .autocomplete-results .wrapper .add {
+      text-align: right;
+      padding-right: 10px;
+      font-size: 20px; }

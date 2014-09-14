@@ -20,6 +20,7 @@
         var description = $("#description").val();
 
         var status = true;
+
         if (name == "") {
           $(".form-group.name").append("<div class='error'>" + Drupal.t('Please fill in the name.') + "</div>");
           status = false;
@@ -27,6 +28,11 @@
 
         if ($(".items li").length == 0) {
           $(".form-group.videos").append("<div class='error'>" + Drupal.t('Please insert videos.') + "</div>");
+          status = false;
+        }
+
+        if (description == "") {
+          $(".form-group.description").append("<div class='error'>" + Drupal.t('Please insert description.') + "</div>");
           status = false;
         }
 
@@ -47,15 +53,34 @@
         }
 
         var results = [];
+        // todo: Get the base address.
         $.getJSON("http://localhost/drupalhub/www?q=api/v1/youtube&title=" + value, function(result) {
 
           jQuery.each(result.data, function(index, value) {
-            results.push('<div class="wrapper clearfix"><img size=80 width=80 src="' + value.image + '" /><p>' + value.label + '<br />' + value.length + '</p></div>');
+            results.push(
+              '<div class="wrapper clearfix">' +
+              '<img size=80 width=80 src="' + value.image + '" />' +
+                '<p class="information">' +
+                  value.label + '<br />' +
+                  value.length +
+                '</p>' +
+                '<p class="add">' +
+                  '<i class="fa fa-plus"></i>' +
+                '</p>' +
+              '</div>'
+            );
           });
 
           $(".autocomplete-results").html(results.join(""));
         });
 
+      });
+
+      // Adding the elements to the list.
+      $(".fa-plus").live('click', function() {
+        var element = $(this).parents('.wrapper');
+
+        $(".items").append("<li>" + element.html() + "</li>");
       });
     }
   };
