@@ -941,3 +941,18 @@ body.front .second-left-right {
           float: left;
           /* LTR */
           padding-right: 5px; }
+
+.page-video-playlists .autocomplete-results {
+  border: #cce8ff solid 1px;
+  position: absolute;
+  background: #fafafa;
+  width: 96%;
+  border-top: none;
+  overflow: scroll;
+  height: 160px; }
+  .page-video-playlists .autocomplete-results .wrapper {
+    padding-left: 15px;
+    padding-top: 10px; }
+    .page-video-playlists .autocomplete-results .wrapper img {
+      float: left;
+      padding-right: 5px; }

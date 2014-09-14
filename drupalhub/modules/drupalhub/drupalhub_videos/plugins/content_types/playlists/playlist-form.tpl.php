@@ -1,4 +1,4 @@
-<form role="form" class="playlist-form">
+<form role="form" class="playlist-form disabled">
 
   <div class="form-group name">
     <label for="Name"><?php print t('Name: '); ?></label>
@@ -10,6 +10,8 @@
     <ul class="items">
     </ul>
     <input type="text" class="form-control" id="playlist-search" placeholder="<?php print t('Type name of a video'); ?>">
+
+    <div class="autocomplete-results disabled"></div>
   </div>
 
   <div class="form-group description">

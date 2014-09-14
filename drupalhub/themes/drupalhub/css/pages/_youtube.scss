@@ -107,3 +107,26 @@
     }
   }
 }
+
+.page-video-playlists {
+
+  .autocomplete-results {
+    border: $blue-border solid 1px;
+    position: absolute;
+    background: #fafafa;
+    width: 96%;
+    border-top: none;
+    overflow: scroll;
+    height: 160px;
+
+    .wrapper {
+      padding-left: 15px;
+      padding-top: 10px;
+
+      img {
+        float: left;
+        padding-right: 5px;
+      }
+    }
+  }
+}

@@ -34,6 +34,29 @@
           $(".buttons").append('<i class="fa fa-spinner fa-spin"></i>');
         }
       });
+
+      // Searching for videos.
+      $("#playlist-search").keyup(function() {
+        var value = $(this).val();
+
+        $(".autocomplete-results").removeClass("disabled").html('<i class="fa fa-spinner fa-spin"></i>');
+
+        if (value == "") {
+          $(".autocomplete-results").addClass("disabled").html('');
+          return;
+        }
+
+        var results = [];
+        $.getJSON("http://localhost/drupalhub/www?q=api/v1/youtube&title=" + value, function(result) {
+
+          jQuery.each(result.data, function(index, value) {
+            results.push('<div class="wrapper clearfix"><img size=80 width=80 src="' + value.image + '" /><p>' + value.label + '<br />' + value.length + '</p></div>');
+          });
+
+          $(".autocomplete-results").html(results.join(""));
+        });
+
+      });
     }
   };
 
