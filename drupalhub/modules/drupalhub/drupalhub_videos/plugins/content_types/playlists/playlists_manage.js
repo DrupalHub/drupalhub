@@ -3,6 +3,7 @@
 
   Drupal.behaviors.DrupalHubPlaylistForm = {
     attach: function (context) {
+      var ar = $(".autocomplete-results");
 
       // Show the form.
       $(".show-playlist-form").click(function(event) {
@@ -45,10 +46,10 @@
       $("#playlist-search").keyup(function() {
         var value = $(this).val();
 
-        $(".autocomplete-results").removeClass("disabled").html('<i class="fa fa-spinner fa-spin"></i>');
+        ar.removeClass("disabled").html('<i class="fa fa-spinner fa-spin"></i>');
 
         if (value == "") {
-          $(".autocomplete-results").addClass("disabled").html('');
+          ar.addClass("disabled").html('');
           return;
         }
 
@@ -57,21 +58,33 @@
         $.getJSON("http://localhost/drupalhub/www?q=api/v1/youtube&title=" + value, function(result) {
 
           jQuery.each(result.data, function(index, value) {
+            if ($(".items li[id=" + value.id + "]").length != 0) {
+              return 1;
+            }
+
             results.push(
-              '<div class="wrapper clearfix">' +
-              '<img size=80 width=80 src="' + value.image + '" />' +
-                '<p class="information">' +
-                  value.label + '<br />' +
-                  value.length +
-                '</p>' +
-                '<p class="add">' +
-                  '<i class="fa fa-plus"></i>' +
-                '</p>' +
+              '<div class="wrapper clearfix" id="' + value.id + '">' +
+                '<img size=80 width=80 src="' + value.image + '" />' +
+                  '<p class="information">' +
+                    value.label + '<br />' +
+                    value.length +
+                  '</p>' +
+                  '<p class="add">' +
+                    '<i class="fa fa-plus"></i>' +
+                  '</p>' +
               '</div>'
             );
           });
 
-          $(".autocomplete-results").html(results.join(""));
+          var content = results.join("");
+
+          if (content == "") {
+            ar.addClass("disabled").html('');
+          }
+          else {
+            ar.html(results.join(""));
+          }
+
         });
 
       });
@@ -80,8 +93,23 @@
       $(".fa-plus").live('click', function() {
         var element = $(this).parents('.wrapper');
 
-        $(".items").append("<li>" + element.html() + "</li>");
+        // Remove the element from the box.
+        element.remove();
+
+        // Check if there no more elements in the box.
+        if (ar.find('.wrapper').length == 0) {
+          ar.addClass("disabled").html('');
+        }
+
+        // Add the element.
+        $(".items").append("<li id='" + element.attr('id') + "'>" + element.html() + "</li>");
       });
+
+      // Checking where the mouse was focused. If out side the autocomplete
+      // results hide it.
+      $(':not(.autocomplete-results)').click(function() {
+      });
+
     }
   };
 
