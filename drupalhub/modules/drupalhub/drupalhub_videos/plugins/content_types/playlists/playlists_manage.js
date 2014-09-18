@@ -39,11 +39,36 @@
 
         if (status) {
           $(".buttons").append('<i class="fa fa-spinner fa-spin"></i>');
+
+          // Get rest of the values.
+          var ids = [];
+          $(".items li").each(function(i) {
+            ids[i] = $(this).attr("id");
+          });
+
+          // Get the access level.
+          var access = $(".access_level").val();
+
+          $.post("http://localhost/drupalhub/www?q=api/v1/youtube",{
+            "ids[]": ids,
+            "access": access,
+            "name": name,
+            "description": description
+          }).done(function (data) {
+            console.log(data);
+          });
         }
       });
 
       // Searching for videos.
-      $("#playlist-search").keyup(function() {
+      $("#playlist-search").keyup(function(event) {
+
+        if (event.keyCode == 27) {
+          // The user pressed on ESC. Close the select list.
+          ar.addClass("disabled").html('');
+          return;
+        }
+
         var value = $(this).val();
 
         ar.removeClass("disabled").html('<i class="fa fa-spinner fa-spin"></i>');
@@ -104,12 +129,6 @@
         // Add the element.
         $(".items").append("<li id='" + element.attr('id') + "'>" + element.html() + "</li>");
       });
-
-      // Checking where the mouse was focused. If out side the autocomplete
-      // results hide it.
-      $(':not(.autocomplete-results)').click(function() {
-      });
-
     }
   };
 
