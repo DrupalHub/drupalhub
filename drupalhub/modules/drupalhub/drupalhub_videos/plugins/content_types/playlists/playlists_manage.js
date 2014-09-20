@@ -1,18 +1,25 @@
 // todo: Use angular.
 (function ($) {
+  var ar = $(".autocomplete-results");
 
-  Drupal.behaviors.DrupalHubPlaylistForm = {
+  /**
+   * Displaying the form for CRUDing a plyalist.
+   */
+  Drupal.behaviors.DrupalHubShowPlaylist = {
     attach: function (context, settings) {
-      var ar = $(".autocomplete-results");
-
-      // Show the form.
       $(".show-playlist-form").live('click', function(event) {
         event.preventDefault();
         $(".playlist-form").removeClass("disabled");
         $(".passed").addClass('disabled');
       });
+    }
+  };
 
-      // Start dealing with the form.
+  /**
+   * Handling the submission of the form.
+   */
+  Drupal.behaviors.DrupalHubSubmissionHandeling = {
+    attach: function (context, settings) {
       $(".playlist-form").live('submit', function(event) {
         event.preventDefault();
 
@@ -89,10 +96,10 @@
                     '<td class="name">' + data.label + '</td>' +
                     '<td class="videos">' + data.videos.length + '</td>' +
                     '<td>' +
-                      '<a href="#" class="delete" id="' + data.id + '">' + Drupal.t('Delete') + '</a> ' +
-                      '<a href="#" class="edit" id="' + data.id + '">' + Drupal.t('Edit') + '</a>' +
+                    '<a href="#" class="delete" id="' + data.id + '">' + Drupal.t('Delete') + '</a> ' +
+                    '<a href="#" class="edit" id="' + data.id + '">' + Drupal.t('Edit') + '</a>' +
                     '</td>' +
-                  '</tr>';
+                    '</tr>';
 
                 if ($('.playlist tbody tr').length == 1) {
                   $('.playlist tbody tr').remove();
@@ -116,8 +123,14 @@
           });
         }
       });
+    }
+  };
 
-      // Searching for videos.
+  /**
+   * handling auto complete of the form.
+   */
+  Drupal.behaviors.DrupalHubSearchHandeling = {
+    attach: function (context, settings) {
       $("#playlist-search").keyup(function(event) {
 
         if (event.keyCode == 27) {
@@ -148,13 +161,13 @@
               results.push(
                 '<div class="wrapper clearfix" id="' + value.id + '">' +
                   '<img size=80 width=80 src="' + value.image + '" />' +
-                    '<p class="information">' +
-                      value.label + '<br />' +
-                      value.length +
-                    '</p>' +
-                    '<p class="add">' +
-                      '<i class="fa fa-plus"></i>' +
-                    '</p>' +
+                  '<p class="information">' +
+                    value.label + '<br />' +
+                    value.length +
+                  '</p>' +
+                  '<p class="add">' +
+                    '<i class="fa fa-plus"></i>' +
+                  '</p>' +
                 '</div>'
               );
             });
@@ -167,10 +180,16 @@
             else {
               ar.html(results.join(""));
             }
-        });
+          });
       });
+    }
+  };
 
-      // Adding the elements to the list.
+  /**
+   * Adding the elements to the list.
+   */
+  Drupal.behaviors.DrupalHubAddingToPlaylist = {
+    attach: function () {
       $(".fa-plus").live('click', function() {
         var element = $(this).parents('.wrapper');
 
@@ -189,65 +208,28 @@
         // Add the element.
         $(".items").append("<li id='" + element.attr('id') + "'>" + element.html() + "</li>");
       });
+    }
+  };
 
-      // Remove a video from the list.
+  /**
+   * Remove a video from the list.
+   */
+  Drupal.behaviors.DrupalHubRemoveFromPlaylist = {
+    attach: function () {
       $(".fa-minus").live('click', function() {
         var element = $(this).parents('li');
 
         // Remove the element from the box.
         element.remove();
       });
+    }
+  };
 
-      // Edit a list.
-      $(".edit").live('click', function(event) {
-        event.preventDefault();
-        var element = $(this);
-
-        // Adding the spinner.
-        element.parent().append(' <i class="fa fa-spinner fa-spin"></i>');
-        var id = element.attr("id");
-
-        // Get the list value.
-        var info = '';
-        $.get(settings.basePath + "api/v1/playlist", {"id": id})
-          .done(function(result) {
-            info = result.data[0];
-            $("#name").val(info.label);
-            $("#description").val(info.body.value);
-            $("#access_level").val(info.access);
-            $(".playlist-form").attr("update", id);
-
-            jQuery.each(info.videos, function(index, value) {
-              if ($(".items li[id=" + value.id + "]").length != 0) {
-                return 1;
-              }
-
-              var html =
-                '<div class="wrapper clearfix" id="' + value.id + '">' +
-                  '<img size=80 width=80 src="' + value.image + '" />' +
-                  '<p class="information">' +
-                    value.label + '<br />' +
-                    value.length +
-                  '</p>' +
-                  '<p class="add">' +
-                  '<i class="fa fa-minus"></i>' +
-                  '</p>' +
-                '</div>';
-
-              $(".items").append("<li id='" + value.id + "'>" + html + "</li>");
-
-            });
-          });
-
-        // Remove the spinner and display the form.
-        element.parent().find('i').remove();
-        $(".playlist-form").removeClass("disabled");
-        $(".passed").addClass('disabled');
-
-        // Submit the form.
-      });
-
-      // Edit a list.
+  /**
+   * Delete a list.
+   */
+  Drupal.behaviors.DrupalHubDeletePlaylist = {
+    attach: function () {
       $(".delete").live('click', function(event) {
         event.preventDefault();
 
@@ -275,6 +257,59 @@
             }
           }
         });
+      });
+    }
+  };
+
+  /**
+   * Edit a list.
+   */
+  Drupal.behaviors.DrupalHubEditPlaylist = {
+    attach: function () {
+      $(".edit").live('click', function(event) {
+        event.preventDefault();
+        var element = $(this);
+
+        // Adding the spinner.
+        element.parent().append(' <i class="fa fa-spinner fa-spin"></i>');
+        var id = element.attr("id");
+
+        // Get the list value.
+        var info = '';
+        $.get(settings.basePath + "api/v1/playlist", {"id": id})
+          .done(function(result) {
+            info = result.data[0];
+            $("#name").val(info.label);
+            $("#description").val(info.body.value);
+            $("#access_level").val(info.access);
+            $(".playlist-form").attr("update", id);
+
+            jQuery.each(info.videos, function(index, value) {
+              if ($(".items li[id=" + value.id + "]").length != 0) {
+                return 1;
+              }
+
+              var html =
+                '<div class="wrapper clearfix" id="' + value.id + '">' +
+                  '<img size=80 width=80 src="' + value.image + '" />' +
+                  '<p class="information">' +
+                  value.label + '<br />' +
+                  value.length +
+                  '</p>' +
+                  '<p class="add">' +
+                  '<i class="fa fa-minus"></i>' +
+                  '</p>' +
+                  '</div>';
+
+              $(".items").append("<li id='" + value.id + "'>" + html + "</li>");
+
+            });
+          });
+
+        // Remove the spinner and display the form.
+        element.parent().find('i').remove();
+        $(".playlist-form").removeClass("disabled");
+        $(".passed").addClass('disabled');
       });
     }
   };
