@@ -71,7 +71,7 @@ class DrupalHubPlayList extends \RestfulEntityBase {
   public function createEntity() {
     $results = parent::createEntity();
     $item = reset($results);
-    drupal_json_output($item['id']);
+    drupal_json_output($item);
   }
 
   /**
@@ -101,14 +101,14 @@ class DrupalHubPlayList extends \RestfulEntityBase {
    * Update the entity.
    */
   public function entityUpdate() {
-    $result = $this->getRequest();
-    $id = $result['id'];
-    unset($result['id']);
-    $this->setRequest($result);
+    $request = $this->getRequest();
+    $id = $request['id'];
+    unset($request['id']);
+    $this->setRequest($request);
 
     $this->updateEntity($id);
 
-    drupal_json_output($id);
+    drupal_json_output(array('id' => $id) + $request);
   }
 
 }

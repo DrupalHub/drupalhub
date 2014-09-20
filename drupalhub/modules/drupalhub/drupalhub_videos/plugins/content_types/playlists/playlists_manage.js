@@ -74,11 +74,10 @@
             contentType: "application/json",
             data: data,
             error: function(e) {
-              console.log(e);
               $(".buttons .fa-spinner").remove();
               $(".buttons").append('<i class="fa fa-thumbs-down"></i>');
             },
-            success: function(id) {
+            success: function(data) {
               $(".buttons .fa-spinner").remove();
               $(".passed").removeClass('disabled');
               $(".playlist-form").addClass("disabled");
@@ -87,11 +86,12 @@
                 // Add the playlist in the bottom.
                 var append =
                   '<tr>' +
-                    '<td class="name">' + name + '</td>' +
-                    '<td class="videos">' + ids.length + '</td>' +
+                    '<td class="name">' + data.label + '</td>' +
+                    '<td class="videos">' + data.videos.length + '</td>' +
                     '<td>' +
-                      '<a href="#" class="delete" id="' + id + '">' + Drupal.t('Delete') + '</a></td>' +
-                      '<a href="#" class="edit" id="' + id + '">' + Drupal.t('Edit') + '</a></td>' +
+                      '<a href="#" class="delete" id="' + data.id + '">' + Drupal.t('Delete') + '</a> ' +
+                      '<a href="#" class="edit" id="' + data.id + '">' + Drupal.t('Edit') + '</a>' +
+                    '</td>' +
                   '</tr>';
 
                 if ($('.playlist tbody tr').length == 1) {
@@ -100,8 +100,7 @@
               }
               else {
                 var row = $("[id='" + id + "']").parents('tr');
-                row.find('.name').html(name);
-                console.log(data.videos.length);
+                row.find('.name').html(data.label);
                 row.find('.videos').html(data.videos.length);
               }
 
@@ -124,6 +123,7 @@
         if (event.keyCode == 27) {
           // The user pressed on ESC. Close the select list.
           ar.addClass("disabled").html('');
+          $("#playlist-search").val('');
           return;
         }
 
@@ -137,7 +137,6 @@
         }
 
         var results = [];
-        // todo: switch to $.get.
         $.get(settings.basePath + "api/v1/youtube", {"title": value})
           .done(function(result) {
 
@@ -181,14 +180,26 @@
         // Check if there no more elements in the box.
         if (ar.find('.wrapper').length == 0) {
           ar.addClass("disabled").html('');
+          $("#playlist-search").val('');
         }
+
+        // Switch the plus symbol with minus.
+        element.find(".fa-plus").addClass("fa-minus").removeClass("fa-plus");
 
         // Add the element.
         $(".items").append("<li id='" + element.attr('id') + "'>" + element.html() + "</li>");
       });
 
+      // Remove a video from the list.
+      $(".fa-minus").live('click', function() {
+        var element = $(this).parents('li');
+
+        // Remove the element from the box.
+        element.remove();
+      });
+
       // Edit a list.
-      $(".edit").click(function(event) {
+      $(".edit").live('click', function(event) {
         event.preventDefault();
         var element = $(this);
 
