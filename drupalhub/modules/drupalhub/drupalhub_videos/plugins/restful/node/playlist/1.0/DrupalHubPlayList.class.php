@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains RestfulEntityBaseUser.
+ * Contains DrupalHubPlayList.
  */
 
 class DrupalHubPlayList extends \RestfulEntityBase {
@@ -45,7 +45,7 @@ class DrupalHubPlayList extends \RestfulEntityBase {
   /**
    * Overrides \RestfulEntityBase::getQueryForList().
    *
-   * Skip the anonymous user in listing.
+   * Return a specific playlist.
    */
   public function getQueryForList() {
     $query = parent::getQueryForList();

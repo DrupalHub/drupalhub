@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains RestfulEntityBaseUser.
+ * Contains DrupalHubVideos.
  */
 
 class DrupalHubVideos extends \RestfulEntityBase {
@@ -35,7 +35,7 @@ class DrupalHubVideos extends \RestfulEntityBase {
   /**
    * Overrides \RestfulEntityBase::getQueryForList().
    *
-   * Skip the anonymous user in listing.
+   * Return a list of playlist matching to a given title.
    */
   public function getQueryForList() {
     $query = parent::getQueryForList();
@@ -43,12 +43,6 @@ class DrupalHubVideos extends \RestfulEntityBase {
       $query
         ->propertyCondition('title', $_GET['title'], 'CONTAINS')
         ->fieldCondition('field_show_in_videos', 'value', 1);
-    }
-
-    if (!empty($_GET['ids'])) {
-      $query
-        ->propertyCondition('nid', $_GET['ids'], 'IN')
-        ->range(0, 1);
     }
 
     return $query;
