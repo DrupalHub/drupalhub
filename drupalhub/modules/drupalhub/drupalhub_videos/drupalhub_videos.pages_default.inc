@@ -142,13 +142,17 @@ function drupalhub_videos_default_page_manager_handlers() {
     $display->content['new-8c995151-61cb-4832-9d31-bf01e68f69f3'] = $pane;
     $display->panels['bottom'][2] = 'new-8c995151-61cb-4832-9d31-bf01e68f69f3';
     $pane = new stdClass();
-    $pane->pid = 'new-6a940ebd-82a1-4efc-a8d7-8899525435c8';
+    $pane->pid = 'new-5f759a6a-7512-454c-a67f-98ed8d63dd91';
     $pane->panel = 'others';
     $pane->type = 'views_panes';
-    $pane->subtype = 'videos-panel_pane_1';
+    $pane->subtype = 'videos-panel_pane_2';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'context' => array(
+        0 => 'argument_entity_id:node_1',
+      ),
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -157,9 +161,9 @@ function drupalhub_videos_default_page_manager_handlers() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '6a940ebd-82a1-4efc-a8d7-8899525435c8';
-    $display->content['new-6a940ebd-82a1-4efc-a8d7-8899525435c8'] = $pane;
-    $display->panels['others'][0] = 'new-6a940ebd-82a1-4efc-a8d7-8899525435c8';
+    $pane->uuid = '5f759a6a-7512-454c-a67f-98ed8d63dd91';
+    $display->content['new-5f759a6a-7512-454c-a67f-98ed8d63dd91'] = $pane;
+    $display->panels['others'][0] = 'new-5f759a6a-7512-454c-a67f-98ed8d63dd91';
     $pane = new stdClass();
     $pane->pid = 'new-c8396366-4739-4a70-9d10-45feb1da2510';
     $pane->panel = 'video';
@@ -192,7 +196,7 @@ function drupalhub_videos_default_page_manager_handlers() {
     $display->content['new-c8396366-4739-4a70-9d10-45feb1da2510'] = $pane;
     $display->panels['video'][0] = 'new-c8396366-4739-4a70-9d10-45feb1da2510';
   $display->hide_title = PANELS_TITLE_FIXED;
-  $display->title_pane = 'new-6a940ebd-82a1-4efc-a8d7-8899525435c8';
+  $display->title_pane = '0';
   $handler->conf['display'] = $display;
   $export['node_view_panel_context_2'] = $handler;
 
@@ -203,6 +207,61 @@ function drupalhub_videos_default_page_manager_handlers() {
  * Implements hook_default_page_manager_pages().
  */
 function drupalhub_videos_default_page_manager_pages() {
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'playlists';
+  $page->task = 'page';
+  $page->admin_title = 'Playlists';
+  $page->admin_description = '';
+  $page->path = 'video/playlists';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array();
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_playlists_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'playlists';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'drupalhub_9_3';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'first' => NULL,
+      'second' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'b4291601-1bc5-4ffb-bac1-e7e73446fb55';
+  $display->content = array();
+  $display->panels = array();
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = '0';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['playlists'] = $page;
+
   $page = new stdClass();
   $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
   $page->api_version = 1;

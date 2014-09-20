@@ -10,7 +10,10 @@ include_once 'drupalhub_videos.features.inc';
  * Implements hook_ctools_plugin_directory().
  */
 function drupalhub_videos_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'ctools' && !empty($plugin)) {
+  if ($module == 'ctools') {
+    return "plugins/$plugin";
+  }
+  if ($module == 'restful') {
     return "plugins/$plugin";
   }
 }

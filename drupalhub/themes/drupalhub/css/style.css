@@ -853,29 +853,46 @@ body.front .second-left-right {
 
 .page-video .pane-manage-links {
   text-align: right; }
-  .page-video .pane-manage-links .new-video a {
+  .page-video .pane-manage-links .new-video {
+    float: right;
+    /* LTR */ }
+    .page-video .pane-manage-links .new-video a {
+      -webkit-border-radius: 5px 5px;
+      -moz-border-radius: 1;
+      -khtml-border-radius: 1;
+      border-radius: 1;
+      background: #f7b700;
+      width: 170px;
+      height: 40px;
+      font-weight: bold;
+      color: white;
+      padding: 10px 10px 10px 5px; }
+      .page-video .pane-manage-links .new-video a:before {
+        font-family: FontAwesome;
+        font-weight: none;
+        content: "\f067";
+        background: #fdf1cc;
+        -webkit-border-radius: 15px 15px;
+        -moz-border-radius: 1;
+        -khtml-border-radius: 1;
+        border-radius: 1;
+        color: #f7b800;
+        margin: 5px 5px 0px 5px;
+        padding: 3px 5px 3px 5px; }
+.page-video .manage-playlist {
+  float: left;
+  /* LTR */ }
+  .page-video .manage-playlist a {
     -webkit-border-radius: 5px 5px;
     -moz-border-radius: 1;
     -khtml-border-radius: 1;
     border-radius: 1;
-    background: #f7b700;
+    background: #0091f7;
     width: 170px;
     height: 40px;
     font-weight: bold;
     color: white;
     padding: 10px 10px 10px 5px; }
-    .page-video .pane-manage-links .new-video a:before {
-      font-family: FontAwesome;
-      font-weight: none;
-      content: "\f067";
-      background: #fdf1cc;
-      -webkit-border-radius: 15px 15px;
-      -moz-border-radius: 1;
-      -khtml-border-radius: 1;
-      border-radius: 1;
-      color: #f7b800;
-      margin: 5px 5px 0px 5px;
-      padding: 3px 5px 3px 5px; }
 .page-video .view-videos .row {
   padding-bottom: 10px; }
   .page-video .view-videos .row .video-wrapper .video {
@@ -924,3 +941,81 @@ body.front .second-left-right {
           float: left;
           /* LTR */
           padding-right: 5px; }
+
+.page-video-playlists .new-video {
+  float: right;
+  /* LTR */ }
+  .page-video-playlists .new-video a {
+    -webkit-border-radius: 5px 5px;
+    -moz-border-radius: 1;
+    -khtml-border-radius: 1;
+    border-radius: 1;
+    background: #f7b700;
+    width: 170px;
+    height: 40px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 10px 10px 5px; }
+    .page-video-playlists .new-video a:before {
+      font-family: FontAwesome;
+      font-weight: none;
+      content: "\f067";
+      background: #fdf1cc;
+      -webkit-border-radius: 15px 15px;
+      -moz-border-radius: 1;
+      -khtml-border-radius: 1;
+      border-radius: 1;
+      color: #f7b800;
+      margin: 5px 5px 0px 5px;
+      padding: 3px 5px 3px 5px; }
+.page-video-playlists .items {
+  padding-left: 0px;
+  padding-top: 30px; }
+  .page-video-playlists .items li {
+    padding-bottom: 30px;
+    list-style-type: none; }
+    .page-video-playlists .items li:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; }
+    .page-video-playlists .items li img {
+      float: left;
+      padding-right: 5px;
+      padding-top: 5px; }
+    .page-video-playlists .items li .information {
+      float: left; }
+    .page-video-playlists .items li .add {
+      text-align: right;
+      padding-right: 10px;
+      font-size: 20px; }
+.page-video-playlists .autocomplete-results {
+  border: #cce8ff solid 1px;
+  background: #fafafa;
+  border-top: none;
+  overflow: scroll;
+  height: 160px; }
+  .page-video-playlists .autocomplete-results .wrapper {
+    padding-left: 15px;
+    padding-top: 10px; }
+    .page-video-playlists .autocomplete-results .wrapper img {
+      float: left;
+      padding-right: 5px; }
+    .page-video-playlists .autocomplete-results .wrapper .information {
+      float: left; }
+    .page-video-playlists .autocomplete-results .wrapper .add {
+      text-align: right;
+      padding-right: 10px;
+      font-size: 20px; }
+.page-video-playlists .buttons .fa-thumbs-up,
+.page-video-playlists .buttons .fa-thumbs-down,
+.page-video-playlists .passed .fa-thumbs-up,
+.page-video-playlists .passed .fa-thumbs-down {
+  font-size: 25px; }
+.page-video-playlists .buttons .fa-thumbs-up,
+.page-video-playlists .passed .fa-thumbs-up {
+  color: #3FAC3F; }
+.page-video-playlists .buttons .fa-thumbs-down,
+.page-video-playlists .passed .fa-thumbs-down {
+  color: #ac0d0d; }

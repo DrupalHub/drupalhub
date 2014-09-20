@@ -4,10 +4,19 @@
     text-align: right;
 
     .new-video {
+      float: right; /* LTR */
 
       a {
         @include orange-button;
       }
+    }
+  }
+
+  .manage-playlist {
+    float: left; /* LTR */
+
+    a {
+      @include blue-button;
     }
   }
 
@@ -95,6 +104,89 @@
           }
         }
       }
+    }
+  }
+}
+
+.page-video-playlists {
+
+  .new-video {
+    float: right; /* LTR */
+
+    a {
+      @include orange-button;
+    }
+  }
+
+  .items {
+    padding-left: 0px;
+    padding-top: 30px;
+
+    li {
+      padding-bottom: 30px;
+      list-style-type: none;
+      @include clearfix;
+
+      img {
+        float: left;
+        padding-right: 5px;
+        padding-top: 5px;
+      }
+
+      .information {
+        float: left;
+      }
+
+      .add {
+        text-align: right;
+        padding-right: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .autocomplete-results {
+    border: $blue-border solid 1px;
+    background: #fafafa;
+    border-top: none;
+    overflow: scroll;
+    height: 160px;
+
+    .wrapper {
+      padding-left: 15px;
+      padding-top: 10px;
+
+      img {
+        float: left;
+        padding-right: 5px;
+      }
+
+      .information {
+        float: left;
+      }
+
+      .add {
+        text-align: right;
+        padding-right: 10px;
+        font-size: 20px;
+      }
+    }
+  }
+
+  .buttons,
+  .passed {
+
+    .fa-thumbs-up,
+    .fa-thumbs-down {
+      font-size: 25px;
+    }
+
+    .fa-thumbs-up {
+      color: #3FAC3F;
+    }
+
+    .fa-thumbs-down {
+      color: #ac0d0d;
     }
   }
 }

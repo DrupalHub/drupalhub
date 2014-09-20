@@ -31,6 +31,14 @@ function drupalhub_videos_views_api($module = NULL, $api = NULL) {
  */
 function drupalhub_videos_node_info() {
   $items = array(
+    'playlist' => array(
+      'name' => t('Playlist'),
+      'base' => 'node_content',
+      'description' => '',
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'youtube' => array(
       'name' => t('Youtube'),
       'base' => 'node_content',
