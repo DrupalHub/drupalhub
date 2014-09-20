@@ -120,38 +120,38 @@
 
         var results = [];
         // todo: switch to $.get.
-        $.getJSON(settings.basePath + "?q=api/v1/youtube&title=" + value, function(result) {
+        $.get(settings.basePath + "api/v1/youtube", {"title": value})
+          .done(function(result) {
 
-          jQuery.each(result.data, function(index, value) {
-            if ($(".items li[id=" + value.id + "]").length != 0) {
-              return 1;
+            jQuery.each(result.data, function(index, value) {
+              if ($(".items li[id=" + value.id + "]").length != 0) {
+                return 1;
+              }
+
+              results.push(
+                '<div class="wrapper clearfix" id="' + value.id + '">' +
+                  '<img size=80 width=80 src="' + value.image + '" />' +
+                    '<p class="information">' +
+                      value.label + '<br />' +
+                      value.length +
+                    '</p>' +
+                    '<p class="add">' +
+                      '<i class="fa fa-plus"></i>' +
+                    '</p>' +
+                '</div>'
+              );
+            });
+
+            var content = results.join("");
+
+            if (content == "") {
+              ar.addClass("disabled").html('');
+            }
+            else {
+              ar.html(results.join(""));
             }
 
-            results.push(
-              '<div class="wrapper clearfix" id="' + value.id + '">' +
-                '<img size=80 width=80 src="' + value.image + '" />' +
-                  '<p class="information">' +
-                    value.label + '<br />' +
-                    value.length +
-                  '</p>' +
-                  '<p class="add">' +
-                    '<i class="fa fa-plus"></i>' +
-                  '</p>' +
-              '</div>'
-            );
-          });
-
-          var content = results.join("");
-
-          if (content == "") {
-            ar.addClass("disabled").html('');
-          }
-          else {
-            ar.html(results.join(""));
-          }
-
         });
-
       });
 
       // Adding the elements to the list.
@@ -170,16 +170,29 @@
         $(".items").append("<li id='" + element.attr('id') + "'>" + element.html() + "</li>");
       });
 
-      // Delete a list.
+      // Edit a list.
       $(".edit").click(function(event) {
         event.preventDefault();
+        var element = $(this);
+
+        // Adding the spinner.
+        element.parent().append(' <i class="fa fa-spinner fa-spin"></i>');
+
+        // Get the list value.
+
+        // Remove the spinner and display the form.
+        element.parent().find('i').remove();
+        $(".playlist-form").removeClass("disabled");
+        $(".passed").addClass('disabled');
+
+        // Submit the form.
       });
 
       // Edit a list.
       $(".delete").live('click', function(event) {
         event.preventDefault();
 
-        var element = $(this)
+        var element = $(this);
 
         // Adding the spinner.
         element.parent().append(' <i class="fa fa-spinner fa-spin"></i>');
