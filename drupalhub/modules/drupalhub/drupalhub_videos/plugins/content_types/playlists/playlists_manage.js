@@ -1,6 +1,5 @@
 // todo: Use angular.
 (function ($) {
-  var ar = $(".autocomplete-results");
 
   /**
    * Displaying the form for CRUDing a plyalist.
@@ -20,6 +19,7 @@
    */
   Drupal.behaviors.DrupalHubSubmissionHandeling = {
     attach: function (context, settings) {
+      var ar = $(".autocomplete-results");
       $(".playlist-form").live('submit', function(event) {
         event.preventDefault();
 
@@ -111,14 +111,12 @@
                 row.find('.videos').html(data.videos.length);
               }
 
-
               $('.playlist tbody:last').append(append);
 
               // Reset the form.
               ar.addClass("disabled").html('');
               $('.playlist-form')[0].reset();
               $('.items li').remove();
-
             }
           });
         }
@@ -129,8 +127,9 @@
   /**
    * handling auto complete of the form.
    */
-  Drupal.behaviors.DrupalHubSearchHandeling = {
+  Drupal.behaviors.DrupalHubSearchHandelingsdsddsdsd = {
     attach: function (context, settings) {
+      var ar = $(".autocomplete-results");
       $("#playlist-search").keyup(function(event) {
 
         if (event.keyCode == 27) {
@@ -191,6 +190,7 @@
   Drupal.behaviors.DrupalHubAddingToPlaylist = {
     attach: function () {
       $(".fa-plus").live('click', function() {
+        var ar = $(".autocomplete-results");
         var element = $(this).parents('.wrapper');
 
         // Remove the element from the box.
@@ -229,7 +229,7 @@
    * Delete a list.
    */
   Drupal.behaviors.DrupalHubDeletePlaylist = {
-    attach: function () {
+    attach: function (context, settings) {
       $(".delete").live('click', function(event) {
         event.preventDefault();
 
@@ -265,7 +265,7 @@
    * Edit a list.
    */
   Drupal.behaviors.DrupalHubEditPlaylist = {
-    attach: function () {
+    attach: function (context, settings) {
       $(".edit").live('click', function(event) {
         event.preventDefault();
         var element = $(this);
