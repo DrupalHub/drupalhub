@@ -13,7 +13,7 @@
       });
 
       // Start dealing with the form.
-      $(".playlist-form").submit(function(event) {
+      $(".playlist-form").live('submit', function(event) {
         event.preventDefault();
 
         $(".playlist-form .error").remove();
@@ -50,20 +50,29 @@
           // Get the access level.
           var access = $(".access_level").val();
 
+          var data = {
+            "videos[]": ids,
+            "access": access,
+            "label": name,
+            "body": description
+          };
+
+          var id = $(this).attr("update");
+          var type = 'POST';
+          if (id != null) {
+            data['id'] = id;
+            type = 'PATCH';
+          }
+
           $.ajax({
-            type: 'POST',
+            type: type,
             beforeSend: function (request) {
               request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
             },
             url: settings.basePath + "api/v1/playlist",
             dataType: "json",
             contentType: "application/json",
-            data: {
-              "videos[]": ids,
-              "access": access,
-              "label": name,
-              "body": description
-            },
+            data: data,
             error: function(e) {
               console.log(e);
               $(".buttons .fa-spinner").remove();
@@ -74,19 +83,28 @@
               $(".passed").removeClass('disabled');
               $(".playlist-form").addClass("disabled");
 
-              // Add the playlist in the bottom.
-              var append =
-                '<tr>' +
-                  '<td>' + name + '</td>' +
-                  '<td>' + ids.length + '</td>' +
-                  '<td>' +
-                    '<a href="#" class="delete" id="' + id + '">' + Drupal.t('Delete') + '</a></td>' +
-                    '<a href="#" class="edit" id="' + id + '">' + Drupal.t('Edit') + '</a></td>' +
-                '</tr>';
+              if (type == 'POST') {
+                // Add the playlist in the bottom.
+                var append =
+                  '<tr>' +
+                    '<td class="name">' + name + '</td>' +
+                    '<td class="videos">' + ids.length + '</td>' +
+                    '<td>' +
+                      '<a href="#" class="delete" id="' + id + '">' + Drupal.t('Delete') + '</a></td>' +
+                      '<a href="#" class="edit" id="' + id + '">' + Drupal.t('Edit') + '</a></td>' +
+                  '</tr>';
 
-              if ($('.playlist tbody tr').length == 1) {
-                $('.playlist tbody tr').remove();
+                if ($('.playlist tbody tr').length == 1) {
+                  $('.playlist tbody tr').remove();
+                }
               }
+              else {
+                var row = $("[id='" + id + "']").parents('tr');
+                row.find('.name').html(name);
+                console.log(data.videos.length);
+                row.find('.videos').html(data.videos.length);
+              }
+
 
               $('.playlist tbody:last').append(append);
 
@@ -176,16 +194,17 @@
 
         // Adding the spinner.
         element.parent().append(' <i class="fa fa-spinner fa-spin"></i>');
+        var id = element.attr("id");
 
         // Get the list value.
         var info = '';
-        $.get(settings.basePath + "api/v1/playlist", {"id": element.attr("id")})
+        $.get(settings.basePath + "api/v1/playlist", {"id": id})
           .done(function(result) {
             info = result.data[0];
             $("#name").val(info.label);
             $("#description").val(info.body.value);
             $("#access_level").val(info.access);
-            $(".playlist-form").attr("update", info.id);
+            $(".playlist-form").attr("update", id);
 
             jQuery.each(info.videos, function(index, value) {
               if ($(".items li[id=" + value.id + "]").length != 0) {

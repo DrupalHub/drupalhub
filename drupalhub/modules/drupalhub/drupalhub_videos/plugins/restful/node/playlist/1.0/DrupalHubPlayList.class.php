@@ -13,6 +13,7 @@ class DrupalHubPlayList extends \RestfulEntityBase {
       // POST
       \RestfulInterface::POST => 'createEntity',
       \RestfulInterface::DELETE => 'entityDelete',
+      \RestfulInterface::PATCH => 'entityUpdate',
     ),
   );
 
@@ -38,6 +39,23 @@ class DrupalHubPlayList extends \RestfulEntityBase {
     );
 
     return $public_fields;
+  }
+
+
+  /**
+   * Overrides \RestfulEntityBase::getQueryForList().
+   *
+   * Skip the anonymous user in listing.
+   */
+  public function getQueryForList() {
+    $query = parent::getQueryForList();
+
+    if (!empty($_GET['id'])) {
+      $query
+        ->propertyCondition('nid', $_GET['id']);
+    }
+
+    return $query;
   }
 
   /**
@@ -77,6 +95,20 @@ class DrupalHubPlayList extends \RestfulEntityBase {
     }
 
     return $results;
+  }
+
+  /**
+   * Update the entity.
+   */
+  public function entityUpdate() {
+    $result = $this->getRequest();
+    $id = $result['id'];
+    unset($result['id']);
+    $this->setRequest($result);
+
+    $this->updateEntity($id);
+
+    drupal_json_output($id);
   }
 
 }

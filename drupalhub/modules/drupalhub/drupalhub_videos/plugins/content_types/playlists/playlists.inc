@@ -31,8 +31,8 @@ function drupalhub_videos_playlists_content_type_render($subtype, $conf, $args, 
       $wrapper = entity_metadata_wrapper('node', $node);
 
       $rows[] = array(
-        $wrapper->label(),
-        $wrapper->field_videos->count(),
+        array('data' => $wrapper->label(), 'class' => array('name')),
+        array('data' => $wrapper->field_videos->count(), 'class' => array('videos')),
         l(t('Delete'), '#', array('attributes' => array('class' => array('delete'), 'id' => $wrapper->getIdentifier()))) . ' ' .
         l(t('Edit'), '#', array('attributes' => array('class' => array('edit'), 'id' => $wrapper->getIdentifier())))
       );
