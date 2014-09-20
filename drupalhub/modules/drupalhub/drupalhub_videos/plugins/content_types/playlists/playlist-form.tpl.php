@@ -20,7 +20,7 @@
 
   <div class="form-group access-level">
     <label for="exampleInputFile"><?php print t('Access level: '); ?></label>
-    <select name="access_level" class="form-control access_level">
+    <select id="access_level" name="access_level" class="form-control access_level">
       <option value="1"><?php print t('Public + search'); ?></option>
       <option value="2"><?php print t('Public'); ?></option>
       <option value="3"><?php print t('Private'); ?></option>
@@ -28,7 +28,7 @@
   </div>
 
   <div class="buttons">
-    <button type="submit" class="btn btn-default"><?php print t('Create list'); ?></button>
+    <button type="submit" class="btn btn-default"><?php print t('Save'); ?></button>
   </div>
 </form>
 

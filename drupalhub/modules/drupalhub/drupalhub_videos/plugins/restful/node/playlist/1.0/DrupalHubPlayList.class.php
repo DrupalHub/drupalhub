@@ -24,6 +24,9 @@ class DrupalHubPlayList extends \RestfulEntityBase {
 
     $public_fields['videos'] = array(
       'property' => 'field_videos',
+      'process_callbacks' => array(
+        array($this, 'videosProcess'),
+      ),
     );
 
     $public_fields['access'] = array(
@@ -59,6 +62,20 @@ class DrupalHubPlayList extends \RestfulEntityBase {
   public function entityDelete() {
     $result = $this->getRequest();
     $this->deleteEntity($result['id']);
+  }
+
+  /**
+   * Bring back only the ids of the videos.
+   */
+  public function videosProcess($values) {
+
+    $ids = array();
+
+    foreach ($values as $value) {
+      $ids[] = $value->nid;
+    }
+
+    return $ids;
   }
 
 }

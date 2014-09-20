@@ -38,13 +38,20 @@ class DrupalHubVideos extends \RestfulEntityBase {
    * Skip the anonymous user in listing.
    */
   public function getQueryForList() {
-    if (empty($_GET['title'])) {
-      return parent::getQueryForList();
+    $query = parent::getQueryForList();
+    if (!empty($_GET['title'])) {
+      $query
+        ->propertyCondition('title', $_GET['title'], 'CONTAINS')
+        ->fieldCondition('field_show_in_videos', 'value', 1);
     }
 
-    return parent::getQueryForList()
-      ->propertyCondition('title', $_GET['title'], 'CONTAINS')
-      ->fieldCondition('field_show_in_videos', 'value', 1);
+    if (!empty($_GET['ids'])) {
+      $query
+        ->propertyCondition('nid', $_GET['ids'], 'IN')
+        ->range(0, 1);
+    }
+
+    return $query;
   }
 
   /**
