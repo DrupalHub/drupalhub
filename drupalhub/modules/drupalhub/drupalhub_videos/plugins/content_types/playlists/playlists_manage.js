@@ -187,32 +187,26 @@
             $("#access_level").val(info.access);
             $(".playlist-form").attr("update", info.id);
 
-            console.log(info);
+            jQuery.each(info.videos, function(index, value) {
+              if ($(".items li[id=" + value.id + "]").length != 0) {
+                return 1;
+              }
 
-            $.get(settings.basePath + "api/v1/youtube", {"ids[]": info.videos})
-              .then(function(result) {
-                console.log(info.videos);
-                jQuery.each(result.data, function(index, value) {
-                  if ($(".items li[id=" + value.id + "]").length != 0) {
-                    return 1;
-                  }
+              var html =
+                '<div class="wrapper clearfix" id="' + value.id + '">' +
+                  '<img size=80 width=80 src="' + value.image + '" />' +
+                  '<p class="information">' +
+                    value.label + '<br />' +
+                    value.length +
+                  '</p>' +
+                  '<p class="add">' +
+                  '<i class="fa fa-minus"></i>' +
+                  '</p>' +
+                '</div>';
 
-                  var html =
-                    '<div class="wrapper clearfix" id="' + value.id + '">' +
-                      '<img size=80 width=80 src="' + value.image + '" />' +
-                      '<p class="information">' +
-                        value.label + '<br />' +
-                        value.length +
-                      '</p>' +
-                      '<p class="add">' +
-                      '<i class="fa fa-minus"></i>' +
-                      '</p>' +
-                    '</div>';
+              $(".items").append("<li id='" + value.id + "'>" + html + "</li>");
 
-                  $(".items").append("<li id='" + value.id + "'>" + html + "</li>");
-
-                });
-              });
+            });
           });
 
         // Remove the spinner and display the form.

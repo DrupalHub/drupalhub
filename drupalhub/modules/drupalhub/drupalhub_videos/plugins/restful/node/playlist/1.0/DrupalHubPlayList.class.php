@@ -68,14 +68,15 @@ class DrupalHubPlayList extends \RestfulEntityBase {
    * Bring back only the ids of the videos.
    */
   public function videosProcess($values) {
+    $handler = restful_get_restful_handler('youtube');
 
-    $ids = array();
-
+    $results = array();
     foreach ($values as $value) {
-      $ids[] = $value->nid;
+      $rendered = $handler->get($value->nid);
+      $results[] = reset($rendered);
     }
 
-    return $ids;
+    return $results;
   }
 
 }
