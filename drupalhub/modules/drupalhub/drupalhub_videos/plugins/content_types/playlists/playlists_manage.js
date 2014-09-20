@@ -45,81 +45,83 @@
           status = false;
         }
 
-        if (status) {
-          $(".buttons").append('<i class="fa fa-spinner fa-spin"></i>');
+        if (!status) {
+          return;
+        }
 
-          // Get rest of the values.
-          var ids = [];
-          $(".items li").each(function(i) {
-            ids[i] = $(this).attr("id");
-          });
+        $(".buttons").append('<i class="fa fa-spinner fa-spin"></i>');
 
-          // Get the access level.
-          var access = $(".access_level").val();
+        // Get rest of the values.
+        var ids = [];
+        $(".items li").each(function(i) {
+          ids[i] = $(this).attr("id");
+        });
 
-          var data = {
-            "videos[]": ids,
-            "access": access,
-            "label": name,
-            "body": description
-          };
+        // Get the access level.
+        var access = $(".access_level").val();
 
-          var id = $(this).attr("update");
-          var type = 'POST';
-          if (id != null) {
-            data['id'] = id;
-            type = 'PATCH';
-          }
+        var data = {
+          "videos[]": ids,
+          "access": access,
+          "label": name,
+          "body": description
+        };
 
-          $.ajax({
-            type: type,
-            beforeSend: function (request) {
-              request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
-            },
-            url: settings.basePath + "api/v1/playlist",
-            dataType: "json",
-            contentType: "application/json",
-            data: data,
-            error: function(e) {
-              $(".buttons .fa-spinner").remove();
-              $(".buttons").append('<i class="fa fa-thumbs-down"></i>');
-            },
-            success: function(data) {
-              $(".buttons .fa-spinner").remove();
-              $(".passed").removeClass('disabled');
-              $(".playlist-form").addClass("disabled");
+        var id = $(this).attr("update");
+        var type = 'POST';
+        if (id != null) {
+          data['id'] = id;
+          type = 'PATCH';
+        }
 
-              if (type == 'POST') {
-                // Add the playlist in the bottom.
-                var append =
-                  '<tr>' +
-                    '<td class="name">' + data.label + '</td>' +
-                    '<td class="videos">' + data.videos.length + '</td>' +
-                    '<td>' +
+        $.ajax({
+          type: type,
+          beforeSend: function (request) {
+            request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
+          },
+          url: settings.basePath + "api/v1/playlist",
+          dataType: "json",
+          contentType: "application/json",
+          data: data,
+          error: function() {
+            $(".buttons .fa-spinner").remove();
+            $(".buttons").append('<i class="fa fa-thumbs-down"></i>');
+          },
+          success: function(data) {
+            $(".buttons .fa-spinner").remove();
+            $(".passed").removeClass('disabled');
+            $(".playlist-form").addClass("disabled");
+
+            if (type == 'POST') {
+              // Add the playlist in the bottom.
+              var append =
+                '<tr>' +
+                  '<td class="name">' + data.label + '</td>' +
+                  '<td class="videos">' + data.videos.length + '</td>' +
+                  '<td>' +
                     '<a href="#" class="delete" id="' + data.id + '">' + Drupal.t('Delete') + '</a> ' +
                     '<a href="#" class="edit" id="' + data.id + '">' + Drupal.t('Edit') + '</a>' +
-                    '</td>' +
-                    '</tr>';
+                  '</td>' +
+                '</tr>';
 
-                if ($('.playlist tbody tr').length == 1) {
-                  $('.playlist tbody tr').remove();
-                }
+              if ($('.playlist tbody tr').length == 1) {
+                $('.playlist tbody tr').remove();
               }
-              else {
-                var row = $("[id='" + id + "']").parents('tr');
-                row.find('.name').html(data.label);
-                row.find('.videos').html(data.videos.length);
-              }
-
-              $('.playlist tbody:last').append(append);
-
-              // Reset the form.
-              ar.addClass("disabled").html('');
-              $('.playlist-form')[0].reset();
-              $('.items li').remove();
             }
-          });
-        }
+            else {
+              var row = $("[id='" + id + "']").parents('tr');
+              row.find('.name').html(data.label);
+              row.find('.videos').html(data.videos.length);
+            }
+
+            $('.playlist tbody:last').append(append);
+
+            // Reset the form.
+            ar.addClass("disabled").html('');
+            $('.playlist-form')[0].reset();
+            $('.items li').remove();
+          }
+        });
       });
     }
   };
@@ -149,37 +151,36 @@
         }
 
         var results = [];
-        $.get(settings.basePath + "api/v1/youtube", {"title": value})
-          .done(function(result) {
+        $.get(settings.basePath + "api/v1/youtube", {"title": value}).done(function(result) {
 
-            jQuery.each(result.data, function(index, value) {
-              if ($(".items li[id=" + value.id + "]").length != 0) {
-                return 1;
-              }
-
-              results.push(
-                '<div class="wrapper clearfix" id="' + value.id + '">' +
-                  '<img size=80 width=80 src="' + value.image + '" />' +
-                  '<p class="information">' +
-                    value.label + '<br />' +
-                    value.length +
-                  '</p>' +
-                  '<p class="add">' +
-                    '<i class="fa fa-plus"></i>' +
-                  '</p>' +
-                '</div>'
-              );
-            });
-
-            var content = results.join("");
-
-            if (content == "") {
-              ar.addClass("disabled").html('');
+          jQuery.each(result.data, function(index, value) {
+            if ($(".items li[id=" + value.id + "]").length != 0) {
+              return 1;
             }
-            else {
-              ar.html(results.join(""));
-            }
+
+            results.push(
+              '<div class="wrapper clearfix" id="' + value.id + '">' +
+                '<img size=80 width=80 src="' + value.image + '" />' +
+                '<p class="information">' +
+                  value.label + '<br />' +
+                  value.length +
+                '</p>' +
+                '<p class="add">' +
+                  '<i class="fa fa-plus"></i>' +
+                '</p>' +
+              '</div>'
+            );
           });
+
+          var content = results.join("");
+
+          if (content == "") {
+            ar.addClass("disabled").html('');
+          }
+          else {
+            ar.html(results.join(""));
+          }
+        });
       });
     }
   };
@@ -276,35 +277,34 @@
 
         // Get the list value.
         var info = '';
-        $.get(settings.basePath + "api/v1/playlist", {"id": id})
-          .done(function(result) {
-            info = result.data[0];
-            $("#name").val(info.label);
-            $("#description").val(info.body.value);
-            $("#access_level").val(info.access);
-            $(".playlist-form").attr("update", id);
+        $.get(settings.basePath + "api/v1/playlist", {"id": id}).done(function(result) {
+          info = result.data[0];
+          $("#name").val(info.label);
+          $("#description").val(info.body.value);
+          $("#access_level").val(info.access);
+          $(".playlist-form").attr("update", id);
 
-            jQuery.each(info.videos, function(index, value) {
-              if ($(".items li[id=" + value.id + "]").length != 0) {
-                return 1;
-              }
+          jQuery.each(info.videos, function(index, value) {
+            if ($(".items li[id=" + value.id + "]").length != 0) {
+              return 1;
+            }
 
-              var html =
-                '<div class="wrapper clearfix" id="' + value.id + '">' +
-                  '<img size=80 width=80 src="' + value.image + '" />' +
-                  '<p class="information">' +
+            var html =
+              '<div class="wrapper clearfix" id="' + value.id + '">' +
+                '<img size=80 width=80 src="' + value.image + '" />' +
+                '<p class="information">' +
                   value.label + '<br />' +
                   value.length +
-                  '</p>' +
-                  '<p class="add">' +
+                '</p>' +
+                '<p class="add">' +
                   '<i class="fa fa-minus"></i>' +
-                  '</p>' +
-                  '</div>';
+                '</p>' +
+              '</div>';
 
-              $(".items").append("<li id='" + value.id + "'>" + html + "</li>");
+            $(".items").append("<li id='" + value.id + "'>" + html + "</li>");
 
-            });
           });
+        });
 
         // Remove the spinner and display the form.
         element.parent().find('i').remove();
