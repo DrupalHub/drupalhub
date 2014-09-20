@@ -2,7 +2,7 @@
 (function ($) {
 
   Drupal.behaviors.DrupalHubPlaylistForm = {
-    attach: function (context) {
+    attach: function (context, settings) {
       var ar = $(".autocomplete-results");
 
       // Show the form.
@@ -49,13 +49,31 @@
           // Get the access level.
           var access = $(".access_level").val();
 
-          $.post("http://localhost/drupalhub/www?q=api/v1/youtube",{
-            "ids[]": ids,
+          var data = {
+            "videos[]": ids,
             "access": access,
-            "name": name,
-            "description": description
-          }).done(function (data) {
-            console.log(data);
+            "label": name,
+            "body": description
+          };
+
+          $.ajax({
+            type: 'POST',
+            beforeSend: function (request) {
+              request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
+            },
+            url: settings.basePath + "api/v1/playlist",
+            dataType: "json",
+            contentType: "application/json",
+            data: data,
+            error: function(e) {
+              console.log(e);
+              $(".buttons .fa-spinner").remove();
+              $(".buttons").append('<i class="fa fa-thumbs-down"></i>');
+            },
+            success: function(e) {
+              $(".buttons .fa-spinner").remove();
+              $(".buttons").append('<i class="fa fa-thumbs-up"></i>' + Drupal.t('The playlist has created successfully'));
+            }
           });
         }
       });
@@ -79,8 +97,8 @@
         }
 
         var results = [];
-        // todo: Get the base address.
-        $.getJSON("http://localhost/drupalhub/www?q=api/v1/youtube&title=" + value, function(result) {
+        // todo: switch to $.get.
+        $.getJSON(settings.basePath + "?q=api/v1/youtube&title=" + value, function(result) {
 
           jQuery.each(result.data, function(index, value) {
             if ($(".items li[id=" + value.id + "]").length != 0) {
@@ -133,3 +151,20 @@
   };
 
 })(jQuery);
+
+function buildQuery(obj) {
+  var Result= '';
+  if(typeof(obj)== 'object') {
+    jQuery.each(obj, function(key, value) {
+      Result+= (Result) ? '&' : '';
+      if(typeof(value)== 'object' && value.length) {
+        for(var i=0; i<value.length; i++) {
+          Result+= [key+'[]', encodeURIComponent(value[i])].join('=');
+        }
+      } else {
+        Result+= [key, encodeURIComponent(value)].join('=');
+      }
+    });
+  }
+  return Result;
+}

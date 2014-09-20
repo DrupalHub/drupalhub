@@ -943,7 +943,8 @@ body.front .second-left-right {
           padding-right: 5px; }
 
 .page-video-playlists .items {
-  padding-left: 0px; }
+  padding-left: 0px;
+  padding-top: 30px; }
   .page-video-playlists .items li {
     padding-bottom: 30px;
     list-style-type: none; }
@@ -965,9 +966,7 @@ body.front .second-left-right {
       font-size: 20px; }
 .page-video-playlists .autocomplete-results {
   border: #cce8ff solid 1px;
-  position: absolute;
   background: #fafafa;
-  width: 96%;
   border-top: none;
   overflow: scroll;
   height: 160px; }
@@ -983,3 +982,10 @@ body.front .second-left-right {
       text-align: right;
       padding-right: 10px;
       font-size: 20px; }
+.page-video-playlists .buttons .fa-thumbs-up,
+.page-video-playlists .buttons .fa-thumbs-down {
+  font-size: 25px; }
+.page-video-playlists .buttons .fa-thumbs-up {
+  color: #3FAC3F; }
+.page-video-playlists .buttons .fa-thumbs-down {
+  color: #ac0d0d; }

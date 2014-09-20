@@ -7,11 +7,10 @@
 
   <div class="form-group videos">
     <label for="exampleInputPassword1"><?php print t('Videos: '); ?></label>
+    <input type="text" class="form-control" id="playlist-search" placeholder="<?php print t('Type name of a video'); ?>">
+    <div class="autocomplete-results disabled"></div>
     <ul class="items">
     </ul>
-    <input type="text" class="form-control" id="playlist-search" placeholder="<?php print t('Type name of a video'); ?>">
-
-    <div class="autocomplete-results disabled"></div>
   </div>
 
   <div class="form-group description">

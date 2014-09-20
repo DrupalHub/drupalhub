@@ -9,6 +9,11 @@ $plugin = array(
 
 function drupalhub_videos_playlists_content_type_render($subtype, $conf, $args, $context) {
   $block = new stdClass();
+  $settings['plyalist'] = array(
+    'basePath' => url('', array('absolute' => TRUE)),
+    'csrfToken' => drupal_get_token(\RestfulInterface::TOKEN_VALUE),
+  );
+  drupal_add_js($settings, 'setting');
   drupal_add_js(drupal_get_path('module', 'drupalhub_videos') . '/plugins/content_types/playlists/playlists_manage.js');
 
   $query = new EntityFieldQuery();
