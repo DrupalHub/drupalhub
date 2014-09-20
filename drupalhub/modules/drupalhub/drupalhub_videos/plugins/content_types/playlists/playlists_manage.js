@@ -6,9 +6,10 @@
       var ar = $(".autocomplete-results");
 
       // Show the form.
-      $(".show-playlist-form").click(function(event) {
+      $(".show-playlist-form").live('click', function(event) {
         event.preventDefault();
         $(".playlist-form").removeClass("disabled");
+        $(".passed").addClass('disabled');
       });
 
       // Start dealing with the form.
@@ -49,13 +50,6 @@
           // Get the access level.
           var access = $(".access_level").val();
 
-          var data = {
-            "videos[]": ids,
-            "access": access,
-            "label": name,
-            "body": description
-          };
-
           $.ajax({
             type: 'POST',
             beforeSend: function (request) {
@@ -64,15 +58,43 @@
             url: settings.basePath + "api/v1/playlist",
             dataType: "json",
             contentType: "application/json",
-            data: data,
+            data: {
+              "videos[]": ids,
+              "access": access,
+              "label": name,
+              "body": description
+            },
             error: function(e) {
               console.log(e);
               $(".buttons .fa-spinner").remove();
               $(".buttons").append('<i class="fa fa-thumbs-down"></i>');
             },
-            success: function(e) {
+            success: function(id) {
               $(".buttons .fa-spinner").remove();
-              $(".buttons").append('<i class="fa fa-thumbs-up"></i>' + Drupal.t('The playlist has created successfully'));
+              $(".passed").removeClass('disabled');
+              $(".playlist-form").addClass("disabled");
+
+              // Add the playlist in the bottom.
+              var append =
+                '<tr>' +
+                  '<td>' + name + '</td>' +
+                  '<td>' + ids.length + '</td>' +
+                  '<td>' +
+                    '<a href="#" class="delete" id="' + id + '">' + Drupal.t('Delete') + '</a></td>' +
+                    '<a href="#" class="edit" id="' + id + '">' + Drupal.t('Edit') + '</a></td>' +
+                '</tr>';
+
+              if ($('.playlist tbody tr').length == 1) {
+                $('.playlist tbody tr').remove();
+              }
+
+              $('.playlist tbody:last').append(append);
+
+              // Reset the form.
+              ar.addClass("disabled").html('');
+              $('.playlist-form')[0].reset();
+              $('.items li').remove();
+
             }
           });
         }
@@ -147,24 +169,42 @@
         // Add the element.
         $(".items").append("<li id='" + element.attr('id') + "'>" + element.html() + "</li>");
       });
+
+      // Delete a list.
+      $(".edit").click(function(event) {
+        event.preventDefault();
+      });
+
+      // Edit a list.
+      $(".delete").live('click', function(event) {
+        event.preventDefault();
+
+        var element = $(this)
+
+        // Adding the spinner.
+        element.parent().append(' <i class="fa fa-spinner fa-spin"></i>');
+
+        // Create the request.
+        $.ajax({
+          beforeSend: function (request) {
+            request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
+          },
+          url: settings.basePath + "api/v1/playlist",
+          type: 'DELETE',
+          data: {
+            "id": $(this).attr("id")
+          },
+          success: function(result) {
+            // Remove the line.
+            element.parents('tr').remove();
+
+            if ($('.playlist tbody tr').length == 0) {
+              $('.playlist tbody').html('<tr><td class="odd" colspan="3">' + Drupal.t('You did not created any playlist. <a href="#" class="show-playlist-form">Create a new playlist</a>') + '</td></tr>');
+            }
+          }
+        });
+      });
     }
   };
 
 })(jQuery);
-
-function buildQuery(obj) {
-  var Result= '';
-  if(typeof(obj)== 'object') {
-    jQuery.each(obj, function(key, value) {
-      Result+= (Result) ? '&' : '';
-      if(typeof(value)== 'object' && value.length) {
-        for(var i=0; i<value.length; i++) {
-          Result+= [key+'[]', encodeURIComponent(value[i])].join('=');
-        }
-      } else {
-        Result+= [key, encodeURIComponent(value)].join('=');
-      }
-    });
-  }
-  return Result;
-}

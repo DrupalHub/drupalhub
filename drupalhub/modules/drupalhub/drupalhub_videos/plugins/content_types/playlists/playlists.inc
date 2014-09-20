@@ -19,7 +19,7 @@ function drupalhub_videos_playlists_content_type_render($subtype, $conf, $args, 
   $query = new EntityFieldQuery();
   $results = $query
     ->entityCondition('entity_type', 'node')
-    ->propertyCondition('type', 'playlists')
+    ->propertyCondition('type', 'playlist')
     ->propertyCondition('uid', $context->data->uid)
     ->execute();
 
@@ -30,7 +30,12 @@ function drupalhub_videos_playlists_content_type_render($subtype, $conf, $args, 
     foreach ($nodes as $node) {
       $wrapper = entity_metadata_wrapper('node', $node);
 
-      $rows[] = array($wrapper->label());
+      $rows[] = array(
+        $wrapper->label(),
+        $wrapper->field_videos->count(),
+        l(t('Delete'), '#', array('attributes' => array('class' => array('delete'), 'id' => $wrapper->getIdentifier()))) . ' ' .
+        l(t('Edit'), '#', array('attributes' => array('class' => array('edit'), 'id' => $wrapper->getIdentifier())))
+      );
     }
   }
   else {
@@ -44,9 +49,11 @@ function drupalhub_videos_playlists_content_type_render($subtype, $conf, $args, 
   $params = array(
     'header' => array(t('Title'), t('Number of videos'), t('Options')),
     'rows' => $rows,
+    'attributes' => array('class' => array('playlist'))
   );
 
-  $block->content = theme('table', $params) . theme('playlist_form');
+  $block->content = '<div class="new-video hidden-xs"><a href="#" class="show-playlist-form">New playlist</a></div>';
+  $block->content .= theme('table', $params) . theme('playlist_form');
 
   return $block;
 }

@@ -6,6 +6,15 @@
  */
 
 class DrupalHubPlayList extends \RestfulEntityBase {
+  protected $controllers = array(
+    '' => array(
+      // GET returns a list of entities.
+      \RestfulInterface::GET => 'getList',
+      // POST
+      \RestfulInterface::POST => 'createEntity',
+      \RestfulInterface::DELETE => 'entityDelete',
+    ),
+  );
 
   /**
    * Overrides \RestfulEntityBase::publicFieldsInfo().
@@ -26,6 +35,30 @@ class DrupalHubPlayList extends \RestfulEntityBase {
     );
 
     return $public_fields;
+  }
+
+  /**
+   * Set the the current user as the owner of the new playlist.
+   */
+  public function entityPreSave(\EntityMetadataWrapper $wrapper) {
+    $wrapper->author->set($this->getAccount());
+  }
+
+  /**
+   * Return the ID of the new playlist.
+   */
+  public function createEntity() {
+    $results = parent::createEntity();
+    $item = reset($results);
+    drupal_json_output($item['id']);
+  }
+
+  /**
+   * Delete the entity.
+   */
+  public function entityDelete() {
+    $result = $this->getRequest();
+    $this->deleteEntity($result['id']);
   }
 
 }

@@ -110,6 +110,14 @@
 
 .page-video-playlists {
 
+  .new-video {
+    float: right; /* LTR */
+
+    a {
+      @include orange-button;
+    }
+  }
+
   .items {
     padding-left: 0px;
     padding-top: 30px;
@@ -165,7 +173,8 @@
     }
   }
 
-  .buttons {
+  .buttons,
+  .passed {
 
     .fa-thumbs-up,
     .fa-thumbs-down {

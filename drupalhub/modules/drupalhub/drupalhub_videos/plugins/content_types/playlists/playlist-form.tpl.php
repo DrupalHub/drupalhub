@@ -31,3 +31,5 @@
     <button type="submit" class="btn btn-default"><?php print t('Create list'); ?></button>
   </div>
 </form>
+
+<div class="passed disabled"><i class="fa fa-thumbs-up"></i> <?php print t('The playlist has created successfully'); ?></div>
