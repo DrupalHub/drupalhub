@@ -20,6 +20,29 @@
     }
   }
 
+  .playlist {
+    list-style-type: none;
+    padding-left: 0px;
+
+    .video-wrapper {
+
+      .image {
+        float: left; /* LTR */
+        padding-right: 15px; /* LTR */
+      }
+
+      .information {
+        font-size: 15px;
+
+        .length {
+          float: left; /* LTR */
+          padding-right: 5px;
+        }
+      }
+    }
+  }
+
+
   .view-videos {
 
     .row {

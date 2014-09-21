@@ -893,6 +893,20 @@ body.front .second-left-right {
     font-weight: bold;
     color: white;
     padding: 10px 10px 10px 5px; }
+.page-video .playlist {
+  list-style-type: none;
+  padding-left: 0px; }
+  .page-video .playlist .video-wrapper .image {
+    float: left;
+    /* LTR */
+    padding-right: 15px;
+    /* LTR */ }
+  .page-video .playlist .video-wrapper .information {
+    font-size: 15px; }
+    .page-video .playlist .video-wrapper .information .length {
+      float: left;
+      /* LTR */
+      padding-right: 5px; }
 .page-video .view-videos .row {
   padding-bottom: 10px; }
   .page-video .view-videos .row .video-wrapper .video {
