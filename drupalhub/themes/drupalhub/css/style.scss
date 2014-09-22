@@ -167,6 +167,39 @@ $blue-border-2: #198fc0;
   }
 }
 
+@mixin playlist {
+
+  h2 {
+    margin-top: 0;
+    text-decoration: underline;
+  }
+
+  ul {
+    padding-left: 0px;
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  .video-wrapper {
+
+    .video {
+      float: left; /* LTR */
+      padding-right: 15px; /* LTR */
+    }
+
+    .information {
+      font-size: 15px;
+
+      .length {
+        float: left; /* LTR */
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
 // Global CSS.
 .clearfix:after {
   content: "." !important;

@@ -147,7 +147,18 @@ function drupalhub_videos_default_page_manager_handlers() {
     $pane->type = 'views_panes';
     $pane->subtype = 'videos-panel_pane_2';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => '',
+            'php' => 'return empty($_GET[\'playlist\']);',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'context' => array(
         0 => 'argument_entity_id:node_1',
@@ -164,6 +175,35 @@ function drupalhub_videos_default_page_manager_handlers() {
     $pane->uuid = '5f759a6a-7512-454c-a67f-98ed8d63dd91';
     $display->content['new-5f759a6a-7512-454c-a67f-98ed8d63dd91'] = $pane;
     $display->panels['others'][0] = 'new-5f759a6a-7512-454c-a67f-98ed8d63dd91';
+    $pane = new stdClass();
+    $pane->pid = 'new-775352bf-7751-4865-985c-308df9726724';
+    $pane->panel = 'others';
+    $pane->type = 'playlist_videos';
+    $pane->subtype = 'playlist_videos';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'context_playlist_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-6lslxj4LfaiLnfgplabM4PRA4tJLZ-OwqKBu8wO_GzA',
+      'form_token' => 'UE1ZEubL6-qMBGst2SM0S3Wu3x4hcd9Ht6NSmhgEbwM',
+      'form_id' => 'drupalhub_videos_playlist_videos_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '775352bf-7751-4865-985c-308df9726724';
+    $display->content['new-775352bf-7751-4865-985c-308df9726724'] = $pane;
+    $display->panels['others'][1] = 'new-775352bf-7751-4865-985c-308df9726724';
     $pane = new stdClass();
     $pane->pid = 'new-c8396366-4739-4a70-9d10-45feb1da2510';
     $pane->panel = 'video';
@@ -238,7 +278,16 @@ function drupalhub_videos_default_page_manager_pages() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(),
+    'contexts' => array(
+      0 => array(
+        'identifier' => 'User',
+        'keyword' => 'user',
+        'name' => 'user',
+        'type' => 'current',
+        'uid' => '',
+        'id' => 1,
+      ),
+    ),
     'relationships' => array(),
   );
   $display = new panels_display();
@@ -256,6 +305,35 @@ function drupalhub_videos_default_page_manager_pages() {
   $display->uuid = 'b4291601-1bc5-4ffb-bac1-e7e73446fb55';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-a429291f-5871-4baa-b1e0-b3cc65311ef4';
+    $pane->panel = 'first';
+    $pane->type = 'playlists';
+    $pane->subtype = 'playlists';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'context_user_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-6p5_gaxkCxaae9uIjIl6IbMQAXeNpsSbMCel0eV-0-I',
+      'form_token' => '4aXkIz-NSF5k_A4GyfKolpSRrMni9_P1Pq1zv2HTlMg',
+      'form_id' => 'drupalhub_videos_playlists_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'a429291f-5871-4baa-b1e0-b3cc65311ef4';
+    $display->content['new-a429291f-5871-4baa-b1e0-b3cc65311ef4'] = $pane;
+    $display->panels['first'][0] = 'new-a429291f-5871-4baa-b1e0-b3cc65311ef4';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
@@ -349,13 +427,35 @@ function drupalhub_videos_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = 'f17b972d-241c-4e40-9396-53eae241e655';
     $display->content['new-f17b972d-241c-4e40-9396-53eae241e655'] = $pane;
     $display->panels['second'][0] = 'new-f17b972d-241c-4e40-9396-53eae241e655';
+    $pane = new stdClass();
+    $pane->pid = 'new-3ce73571-0a0a-4550-a0f0-b4662650a713';
+    $pane->panel = 'second';
+    $pane->type = 'playlist_views';
+    $pane->subtype = 'playlist_views';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '3ce73571-0a0a-4550-a0f0-b4662650a713';
+    $display->content['new-3ce73571-0a0a-4550-a0f0-b4662650a713'] = $pane;
+    $display->panels['second'][1] = 'new-3ce73571-0a0a-4550-a0f0-b4662650a713';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;
