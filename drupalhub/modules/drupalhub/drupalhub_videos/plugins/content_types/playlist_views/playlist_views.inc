@@ -46,7 +46,10 @@ function drupalhub_videos_playlist_views_content_type_render($subtype, $conf, $a
     ));
   }
 
-  $block->content = theme('playlist_views', array('list' => theme('item_list', array('items' => $playlists, 'attributes' => array('class' => 'playlist')))));
+  $block->content = theme('playlist_views', array(
+    'list' => theme('item_list', array('items' => $playlists, 'attributes' => array('class' => 'playlist'))),
+    'label' => t('Playlists'),
+  ));
   return $block;
 }
 

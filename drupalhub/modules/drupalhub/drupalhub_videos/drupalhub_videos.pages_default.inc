@@ -26,15 +26,7 @@ function drupalhub_videos_default_page_manager_handlers() {
     'body_classes_to_add' => '',
     'css_id' => '',
     'css' => '',
-    'contexts' => array(
-      0 => array(
-        'identifier' => 'Playlist',
-        'keyword' => 'playlist',
-        'name' => 'playlist',
-        'nid' => '',
-        'id' => 1,
-      ),
-    ),
+    'contexts' => array(),
     'relationships' => array(),
     'access' => array(
       'plugins' => array(
@@ -155,7 +147,18 @@ function drupalhub_videos_default_page_manager_handlers() {
     $pane->type = 'views_panes';
     $pane->subtype = 'videos-panel_pane_2';
     $pane->shown = TRUE;
-    $pane->access = array();
+    $pane->access = array(
+      'plugins' => array(
+        0 => array(
+          'name' => 'php',
+          'settings' => array(
+            'description' => '',
+            'php' => 'return empty($_GET[\'playlist\']);',
+          ),
+          'not' => FALSE,
+        ),
+      ),
+    );
     $pane->configuration = array(
       'context' => array(
         0 => 'argument_entity_id:node_1',
@@ -172,6 +175,35 @@ function drupalhub_videos_default_page_manager_handlers() {
     $pane->uuid = '5f759a6a-7512-454c-a67f-98ed8d63dd91';
     $display->content['new-5f759a6a-7512-454c-a67f-98ed8d63dd91'] = $pane;
     $display->panels['others'][0] = 'new-5f759a6a-7512-454c-a67f-98ed8d63dd91';
+    $pane = new stdClass();
+    $pane->pid = 'new-775352bf-7751-4865-985c-308df9726724';
+    $pane->panel = 'others';
+    $pane->type = 'playlist_videos';
+    $pane->subtype = 'playlist_videos';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'context_playlist_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-6lslxj4LfaiLnfgplabM4PRA4tJLZ-OwqKBu8wO_GzA',
+      'form_token' => 'UE1ZEubL6-qMBGst2SM0S3Wu3x4hcd9Ht6NSmhgEbwM',
+      'form_id' => 'drupalhub_videos_playlist_videos_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '775352bf-7751-4865-985c-308df9726724';
+    $display->content['new-775352bf-7751-4865-985c-308df9726724'] = $pane;
+    $display->panels['others'][1] = 'new-775352bf-7751-4865-985c-308df9726724';
     $pane = new stdClass();
     $pane->pid = 'new-c8396366-4739-4a70-9d10-45feb1da2510';
     $pane->panel = 'video';

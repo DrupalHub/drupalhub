@@ -20,26 +20,8 @@
     }
   }
 
-  .playlist {
-    list-style-type: none;
-    padding-left: 0px;
-
-    .video-wrapper {
-
-      .image {
-        float: left; /* LTR */
-        padding-right: 15px; /* LTR */
-      }
-
-      .information {
-        font-size: 15px;
-
-        .length {
-          float: left; /* LTR */
-          padding-right: 5px;
-        }
-      }
-    }
+  .pane-playlist-views {
+    @include playlist;
   }
 
 
@@ -47,27 +29,8 @@
 
     .row {
       padding-bottom: 10px;
+      @include playlist;
 
-      .video-wrapper {
-
-        .video {
-          float: left; /* LTR */
-          padding-right: 15px; /* LTR */
-        }
-
-        .information {
-          font-size: 15px;
-
-          & > div {
-            padding-bottom: 10px;
-          }
-
-          .length {
-            float: left; /* LTR */
-            padding-right: 10px;
-          }
-        }
-      }
     }
   }
 }
@@ -94,39 +57,12 @@
 
   .others {
 
-    h2 {
-      margin-top: 0;
-      text-decoration: underline;
-    }
-
-    .view-id-videos {
+    .view-id-videos,
+    .pane-playlist-videos {
       height: 350px;
       overflow: scroll;
 
-      ul {
-        padding-left: 0px;
-
-        li {
-          list-style-type: none;
-
-          .video-wrapper {
-
-            .video {
-              float: left; /* LTR */
-              padding-right: 15px; /* LTR */
-            }
-
-            .information {
-              font-size: 15px;
-
-              .length {
-                float: left; /* LTR */
-                padding-right: 5px;
-              }
-            }
-          }
-        }
-      }
+      @include playlist;
     }
   }
 }
