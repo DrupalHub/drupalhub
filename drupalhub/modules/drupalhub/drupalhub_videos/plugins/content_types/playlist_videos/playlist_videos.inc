@@ -7,6 +7,7 @@ $plugin = array(
 
 function drupalhub_videos_playlist_videos_content_type_render($subtype, $conf, $args, $context) {
   $block = new stdClass();
+
   if (empty($_GET['playlist'])) {
     return $block;
   }
@@ -21,15 +22,15 @@ function drupalhub_videos_playlist_videos_content_type_render($subtype, $conf, $
     $id = _video_embed_field_get_youtube_id($address['video_url']);
     $information = drupalhub_videos_get_metadata($id);
 
-    $playlists []= theme('playlist_item', array(
+    $playlists[] = theme('playlist_item', array(
       'label' => l($wrapper->label(), 'node/' . $video->getIdentifier(), array('query' => array('playlist' => $wrapper->getIdentifier()))),
       'length' => drupalhub_videos_youtube_metadata::durationToText($information),
       'image' => theme('image_style', array('style_name' => 'thumbnail', 'path' => $address['thumbnail_path'])),
     ));
   }
 
-  $block->content = theme('playlist_videos', array(
-    'title' => $wrapper->label(),
+  $block->content = theme('playlist_views', array(
+    'label' => $wrapper->label(),
     'list' => theme('item_list', array('items' => $playlists)),
   ));
 

@@ -304,12 +304,12 @@
             $(".items").append("<li id='" + value.id + "'>" + html + "</li>");
 
           });
+        }).then(function() {
+          // Remove the spinner and display the form.
+          element.parent().find('i').remove();
+          $(".playlist-form").removeClass("disabled");
+          $(".passed").addClass('disabled');
         });
-
-        // Remove the spinner and display the form.
-        element.parent().find('i').remove();
-        $(".playlist-form").removeClass("disabled");
-        $(".passed").addClass('disabled');
       });
     }
   };
