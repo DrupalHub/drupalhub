@@ -12,10 +12,13 @@ function drupalhub_videos_manage_links_content_type_render($subtype, $conf, $arg
 
   $block->content = '';
 
+  $path = '/plugins/content_types/manage_links/';
+  drupal_add_js(drupal_get_path('module', 'drupalhub_videos') . $path . '/add_video.js');
+
   // todo: check permissions.
   $block->content .=
     '<div class="new-video hidden-xs">' .
-      '<a href="#" data-toggle="modal" data-target="#myModal">' .
+      '<a href="#" data-toggle="modal" data-target="#AddVideo">' .
         t('Add video') .
       '</a>'.
     '</div>';

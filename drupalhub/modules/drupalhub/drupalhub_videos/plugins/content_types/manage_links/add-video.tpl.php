@@ -1,4 +1,4 @@
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="AddVideo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -8,7 +8,17 @@
       <div class="modal-body">
         <div class="form-group name">
           <label for="Name"><?php print t('Youtube address: '); ?></label>
-          <input type="text" class="form-control" id="name" placeholder="<?php print t('Youtube link address'); ?>">
+          <input type="text" class="form-control" id="url" size="30" placeholder="<?php print t('Youtube link address'); ?>">
+        </div>
+      </div>
+      <div class="result clearfix disabled">
+        <div class="image">
+          <img />
+        </div>
+
+        <div class="information">
+          <div class="title"></div>
+          <div class="description"></div>
         </div>
       </div>
       <div class="modal-footer">

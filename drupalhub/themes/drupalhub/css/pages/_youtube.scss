@@ -10,6 +10,51 @@
         @include orange-button;
       }
     }
+
+    #AddVideo {
+
+      .modal-title {
+        text-align: left;
+      }
+
+      .form-group.name {
+        text-align: left;
+
+        input {
+          width: 95%;
+          display: inline-block;
+          text-align: left;
+        }
+      }
+
+      .result {
+
+        .image {
+          float: left;
+          padding-left: 20px;
+
+          img {
+            width: 200px;
+            height: 150px;
+          }
+        }
+
+        .information {
+          float: left;
+          width: 75%;
+          padding-left: 10px;
+
+          div {
+            text-align: left;
+            padding-left: 10px;
+
+            &.title {
+              font-weight: bold;
+            }
+          }
+        }
+      }
+    }
   }
 
   .manage-playlist {

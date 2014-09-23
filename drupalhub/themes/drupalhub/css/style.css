@@ -879,6 +879,29 @@ body.front .second-left-right {
         color: #f7b800;
         margin: 5px 5px 0px 5px;
         padding: 3px 5px 3px 5px; }
+  .page-video .pane-manage-links #AddVideo .modal-title {
+    text-align: left; }
+  .page-video .pane-manage-links #AddVideo .form-group.name {
+    text-align: left; }
+    .page-video .pane-manage-links #AddVideo .form-group.name input {
+      width: 95%;
+      display: inline-block;
+      text-align: left; }
+  .page-video .pane-manage-links #AddVideo .result .image {
+    float: left;
+    padding-left: 20px; }
+    .page-video .pane-manage-links #AddVideo .result .image img {
+      width: 200px;
+      height: 150px; }
+  .page-video .pane-manage-links #AddVideo .result .information {
+    float: left;
+    width: 75%;
+    padding-left: 10px; }
+    .page-video .pane-manage-links #AddVideo .result .information div {
+      text-align: left;
+      padding-left: 10px; }
+      .page-video .pane-manage-links #AddVideo .result .information div.title {
+        font-weight: bold; }
 .page-video .manage-playlist {
   float: left;
   /* LTR */ }
