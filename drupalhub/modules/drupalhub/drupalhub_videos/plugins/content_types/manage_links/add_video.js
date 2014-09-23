@@ -30,9 +30,21 @@
             });
 
             $(".modal-dialog").animate({right: "140px"}, 1000);
+            $(".modal-footer").removeClass("disabled");
 
           });
         }
+      });
+    }
+  };
+
+  /**
+   * Sending the youtube video.
+   */
+  Drupal.behaviors.DrupalHubVideoCreate = {
+    attach: function(context, settings) {
+      $(".modal-footer button").click(function() {
+        $(this).parent().append('<i id="fa" class="fa fa-spin fa-spinner"></i>');
       });
     }
   };

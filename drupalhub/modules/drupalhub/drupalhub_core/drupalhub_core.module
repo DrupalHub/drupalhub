@@ -74,6 +74,12 @@ function drupalhub_core_init() {
   }
 
   drupal_set_breadcrumb($breadcrumbs);
+
+  $settings['plyalist'] = array(
+    'basePath' => url('', array('absolute' => TRUE)),
+    'csrfToken' => drupal_get_token(\RestfulInterface::TOKEN_VALUE),
+  );
+  drupal_add_js($settings, 'setting');
 }
 
 /**

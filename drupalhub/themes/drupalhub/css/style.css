@@ -902,6 +902,8 @@ body.front .second-left-right {
       padding-left: 10px; }
       .page-video .pane-manage-links #AddVideo .result .information div.title {
         font-weight: bold; }
+  .page-video .pane-manage-links #AddVideo .modal-footer button {
+    margin-right: 20px; }
 .page-video .manage-playlist {
   float: left;
   /* LTR */ }

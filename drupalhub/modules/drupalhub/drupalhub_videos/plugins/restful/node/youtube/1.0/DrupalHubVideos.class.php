@@ -27,6 +27,17 @@ class DrupalHubVideos extends \RestfulEntityBase {
       ),
     );
 
+    $public_fields['description'] = array(
+      'property' => 'body',
+    );
+
+    $public_fields['address'] = array(
+      'property' => 'field_address',
+      'process_callbacks' => array(
+        array($this, 'addressProcess'),
+      ),
+    );
+
     unset($public_fields['self']);
 
     return $public_fields;
@@ -61,5 +72,13 @@ class DrupalHubVideos extends \RestfulEntityBase {
    */
   public function imageProcess($value) {
     return file_create_url($value['thumbnail_path']);
+  }
+
+  /**
+   * Return the address of the youtube video and all the metadata from the
+   * field.
+   */
+  public function addressProcess($value) {
+    return $value['video_url'];
   }
 }

@@ -21,7 +21,7 @@
           <div class="description"></div>
         </div>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer disabled">
         <button type="button" class="btn btn-primary"><?php print t('Save'); ?></button>
       </div>
     </div>
