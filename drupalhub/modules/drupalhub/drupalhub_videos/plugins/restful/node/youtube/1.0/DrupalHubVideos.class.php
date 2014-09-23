@@ -78,5 +78,6 @@ class DrupalHubVideos extends \RestfulEntityBase {
    */
   public function entityPreSave(\EntityMetadataWrapper $wrapper) {
     $wrapper->author->set($this->getAccount());
+    $wrapper->field_show_in_videos->set(TRUE);
   }
 }

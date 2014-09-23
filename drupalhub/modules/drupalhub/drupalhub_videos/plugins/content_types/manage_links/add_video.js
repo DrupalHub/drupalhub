@@ -2,6 +2,24 @@
 (function ($) {
 
   /**
+   * Reset the modal form after closing it.
+   */
+  Drupal.behaviors.DrupalHubVideoModalOpened = {
+    attach: function (context, settings) {
+      $(".new-video a").click(function() {
+        $("#url").val("");
+        $("#AddVideo .result").addClass("disabled");
+        $(".modal-footer .btn").removeClass('disabled');
+        $(".modal-footer .passed").addClass('disabled');
+        $(".modal-footer").addClass("disabled");
+        $(".modal-dialog").css("right", "140px");
+        $("#AddVideo .modal-content").css('width', '578px');
+        $(".errors").html('');
+      });
+    }
+  };
+
+  /**
    * Displaying the form for CRUDing a plyalist.
    */
   Drupal.behaviors.DrupalHubVideoModal = {
@@ -12,6 +30,10 @@
         var regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
         var match = value.match(regExp);
         if (match && match[2].length == 11) {
+          // Reset any errors.
+          $(".errors").html('');
+
+          // Start the magic: get the video info.
           var id = match[2];
           $(this).parent().append('<i id="fa" class="fa fa-spin fa-spinner"></i>');
 
@@ -63,10 +85,15 @@
           error: function(result) {
             $("#fa").remove();
             $(this).parent().append('<i class="fa fa-thumbs-down"></i>');
+            var json = jQuery.parseJSON(result.responseText).errors;
+
+            if (json.address != null) {
+              $(".errors").html(json.address.join("<br />"));
+            }
           },
           success: function(data) {
             $("#fa").remove();
-            $(".modal-footer .btn").remove();
+            $(".modal-footer .btn").addClass('disabled');
             $(".modal-footer .passed").removeClass('disabled');
           }
         });

@@ -9,6 +9,7 @@
         <div class="form-group name">
           <label for="Name"><?php print t('Youtube address: '); ?></label>
           <input type="text" class="form-control" id="url" size="30" placeholder="<?php print t('Youtube link address'); ?>">
+          <div class="errors"></div>
         </div>
       </div>
       <div class="result clearfix disabled">

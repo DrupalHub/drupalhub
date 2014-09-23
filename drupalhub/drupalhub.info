@@ -36,6 +36,7 @@ dependencies[] = date_views
 dependencies[] = devel
 dependencies[] = entityreference
 dependencies[] = entity_view_count
+dependencies[] = entity_validator
 dependencies[] = email
 dependencies[] = features
 dependencies[] = flag
