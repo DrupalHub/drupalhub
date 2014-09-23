@@ -16,6 +16,9 @@ function drupalhub_videos_ctools_plugin_directory($module, $plugin) {
   if ($module == 'restful') {
     return "plugins/$plugin";
   }
+  if ($module == 'entity_validator') {
+    return 'plugins/' . $plugin;
+  }
 }
 
 /**

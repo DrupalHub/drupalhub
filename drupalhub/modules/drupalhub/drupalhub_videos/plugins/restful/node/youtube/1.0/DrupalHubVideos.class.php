@@ -27,6 +27,16 @@ class DrupalHubVideos extends \RestfulEntityBase {
       ),
     );
 
+    $public_fields['description'] = array(
+      'property' => 'body',
+      'sub_property' => 'value',
+    );
+
+    $public_fields['address'] = array(
+      'property' => 'field_address',
+      'sub_property' => 'video_url',
+    );
+
     unset($public_fields['self']);
 
     return $public_fields;
@@ -61,5 +71,13 @@ class DrupalHubVideos extends \RestfulEntityBase {
    */
   public function imageProcess($value) {
     return file_create_url($value['thumbnail_path']);
+  }
+
+  /**
+   * Set the the current user as the owner of the new playlist.
+   */
+  public function entityPreSave(\EntityMetadataWrapper $wrapper) {
+    $wrapper->author->set($this->getAccount());
+    $wrapper->field_show_in_videos->set(TRUE);
   }
 }

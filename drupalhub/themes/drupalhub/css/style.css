@@ -124,6 +124,18 @@
       margin-right: 10px;
       /* LTR */ }
 
+.buttons .fa-thumbs-up,
+.buttons .fa-thumbs-down,
+.passed .fa-thumbs-up,
+.passed .fa-thumbs-down {
+  font-size: 25px; }
+.buttons .fa-thumbs-up,
+.passed .fa-thumbs-up {
+  color: #3FAC3F; }
+.buttons .fa-thumbs-down,
+.passed .fa-thumbs-down {
+  color: #ac0d0d; }
+
 body.front .view-gallery {
   background: #e6e6e6;
   margin-bottom: 50px;
@@ -879,6 +891,31 @@ body.front .second-left-right {
         color: #f7b800;
         margin: 5px 5px 0px 5px;
         padding: 3px 5px 3px 5px; }
+  .page-video .pane-manage-links #AddVideo .modal-title {
+    text-align: left; }
+  .page-video .pane-manage-links #AddVideo .form-group.name {
+    text-align: left; }
+    .page-video .pane-manage-links #AddVideo .form-group.name input {
+      width: 95%;
+      display: inline-block;
+      text-align: left; }
+  .page-video .pane-manage-links #AddVideo .result .image {
+    float: left;
+    padding-left: 20px; }
+    .page-video .pane-manage-links #AddVideo .result .image img {
+      width: 200px;
+      height: 150px; }
+  .page-video .pane-manage-links #AddVideo .result .information {
+    float: left;
+    width: 75%;
+    padding-left: 10px; }
+    .page-video .pane-manage-links #AddVideo .result .information div {
+      text-align: left;
+      padding-left: 10px; }
+      .page-video .pane-manage-links #AddVideo .result .information div.title {
+        font-weight: bold; }
+  .page-video .pane-manage-links #AddVideo .modal-footer button {
+    margin-right: 20px; }
 .page-video .manage-playlist {
   float: left;
   /* LTR */ }
@@ -1038,14 +1075,3 @@ body.front .second-left-right {
       text-align: right;
       padding-right: 10px;
       font-size: 20px; }
-.page-video-playlists .buttons .fa-thumbs-up,
-.page-video-playlists .buttons .fa-thumbs-down,
-.page-video-playlists .passed .fa-thumbs-up,
-.page-video-playlists .passed .fa-thumbs-down {
-  font-size: 25px; }
-.page-video-playlists .buttons .fa-thumbs-up,
-.page-video-playlists .passed .fa-thumbs-up {
-  color: #3FAC3F; }
-.page-video-playlists .buttons .fa-thumbs-down,
-.page-video-playlists .passed .fa-thumbs-down {
-  color: #ac0d0d; }
