@@ -32,6 +32,11 @@
             $(".modal-dialog").animate({right: "140px"}, 1000);
             $(".modal-footer").removeClass("disabled");
 
+            Drupal.video = {
+              label: data.title,
+              description: data.description,
+              address: {video_url: value}
+            };
           });
         }
       });
@@ -45,6 +50,26 @@
     attach: function(context, settings) {
       $(".modal-footer button").click(function() {
         $(this).parent().append('<i id="fa" class="fa fa-spin fa-spinner"></i>');
+
+        $.ajax({
+          type: 'POST',
+          beforeSend: function (request) {
+            request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
+          },
+          url: settings.basePath + "api/v1/youtube",
+          dataType: "json",
+          contentType: "application/json",
+          data: Drupal.video,
+          error: function(result) {
+            $("#fa").remove();
+            $(this).parent().append('<i class="fa fa-thumbs-down"></i>');
+          },
+          success: function(data) {
+            $("#fa").remove();
+            $(".modal-footer .btn").remove();
+            $(".modal-footer .passed").removeClass('disabled');
+          }
+        });
       });
     }
   };

@@ -29,13 +29,12 @@ class DrupalHubVideos extends \RestfulEntityBase {
 
     $public_fields['description'] = array(
       'property' => 'body',
+      'sub_property' => 'value',
     );
 
     $public_fields['address'] = array(
       'property' => 'field_address',
-      'process_callbacks' => array(
-        array($this, 'addressProcess'),
-      ),
+      'sub_property' => 'video_url',
     );
 
     unset($public_fields['self']);
@@ -75,10 +74,9 @@ class DrupalHubVideos extends \RestfulEntityBase {
   }
 
   /**
-   * Return the address of the youtube video and all the metadata from the
-   * field.
+   * Set the the current user as the owner of the new playlist.
    */
-  public function addressProcess($value) {
-    return $value['video_url'];
+  public function entityPreSave(\EntityMetadataWrapper $wrapper) {
+    $wrapper->author->set($this->getAccount());
   }
 }

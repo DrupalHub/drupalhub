@@ -23,6 +23,7 @@
       </div>
       <div class="modal-footer disabled">
         <button type="button" class="btn btn-primary"><?php print t('Save'); ?></button>
+        <div class="passed disabled"><i class="fa fa-thumbs-up"></i> <?php print t('The playlist has created successfully'); ?></div>
       </div>
     </div>
   </div>

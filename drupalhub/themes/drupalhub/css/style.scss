@@ -340,6 +340,23 @@ $blue-border-2: #198fc0;
   @include comment_view;
 }
 
+.buttons,
+.passed {
+
+  .fa-thumbs-up,
+  .fa-thumbs-down {
+    font-size: 25px;
+  }
+
+  .fa-thumbs-up {
+    color: #3FAC3F;
+  }
+
+  .fa-thumbs-down {
+    color: #ac0d0d;
+  }
+}
+
 // This is the part when we import css style per page.
 @import "pages/homepage.scss";
 @import "pages/login.scss";

@@ -124,6 +124,18 @@
       margin-right: 10px;
       /* LTR */ }
 
+.buttons .fa-thumbs-up,
+.buttons .fa-thumbs-down,
+.passed .fa-thumbs-up,
+.passed .fa-thumbs-down {
+  font-size: 25px; }
+.buttons .fa-thumbs-up,
+.passed .fa-thumbs-up {
+  color: #3FAC3F; }
+.buttons .fa-thumbs-down,
+.passed .fa-thumbs-down {
+  color: #ac0d0d; }
+
 body.front .view-gallery {
   background: #e6e6e6;
   margin-bottom: 50px;
@@ -1063,14 +1075,3 @@ body.front .second-left-right {
       text-align: right;
       padding-right: 10px;
       font-size: 20px; }
-.page-video-playlists .buttons .fa-thumbs-up,
-.page-video-playlists .buttons .fa-thumbs-down,
-.page-video-playlists .passed .fa-thumbs-up,
-.page-video-playlists .passed .fa-thumbs-down {
-  font-size: 25px; }
-.page-video-playlists .buttons .fa-thumbs-up,
-.page-video-playlists .passed .fa-thumbs-up {
-  color: #3FAC3F; }
-.page-video-playlists .buttons .fa-thumbs-down,
-.page-video-playlists .passed .fa-thumbs-down {
-  color: #ac0d0d; }
