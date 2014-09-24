@@ -42,7 +42,7 @@ projects[entityreference_prepopulate][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = 1.3
 
 projects[entity_validator][download][type] = "git"
-projects[entity_validator][download][url] = "git@github.com:Gizra/entity_validator.git"
+projects[entity_validator][download][url] = "https://github.com/Gizra/entity_validator.git"
 projects[entity_validator][download][branch] = 7.x-1.x
 projects[entity_validator][subdir] = "contrib"
 projects[entity_validator][type] = "module"
@@ -137,7 +137,6 @@ projects[retina_images][subdir] = "contrib"
 projects[retina_images][version] = "1.0-beta4"
 
 projects[restful][subdir] = "contrib"
-projects[restful][version] = "1.x-dev"
 projects[restful][download][url] = "git://github.com/Gizra/restful.git"
 
 projects[strongarm][subdir] = "contrib"
