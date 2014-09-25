@@ -14,10 +14,6 @@
     $("#fa-spinner").remove();
   };
 
-  jQuery.setFormStatus = function() {
-
-  };
-
   /**
    * Adding errors to a given field.
    */

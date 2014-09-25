@@ -49,4 +49,3 @@ function drupalhub_users_about_content_type_edit_form_submit(&$form, &$form_stat
     $form_state['conf'][$key] = $form_state['values'][$key];
   }
 }
-
