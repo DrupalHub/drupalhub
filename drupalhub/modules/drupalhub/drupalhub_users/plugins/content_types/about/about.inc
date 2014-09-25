@@ -15,22 +15,14 @@ function drupalhub_users_about_content_type_render($subtype, $conf, $args, $cont
     $value = $wrapper->field_about->value->value();
   }
   elseif ($wrapper->getIdentifier() == $user->uid) {
-    $link = array(
-      'text' => t('add some info'),
-      'href' => 'drupalhub_users/update_about/' . $wrapper->getIdentifier(),
-      'class' => 'update-about',
-      'modal_settings' => array(
-        'modalSize' => array(
-          'type' => 'scale',
-        ),
-        'modalOptions' => array('opacity' => .6),
-        'animation' => 'fadeIn',
-      ),
+
+    $settings['hub_user'] = array(
+      'id' => $context->data->uid,
     );
-
-    $link = drupalhub_core_modal_window($link);
-
-    $value = t("Whoops! it seems that you don't have any description about your self. Why don't you !link?", array('!link' => $link));
+    drupal_add_js($settings, 'setting');
+    drupal_add_js(drupal_get_path('module', 'drupalhub_users') . '/plugins/content_types/about/about.js');
+    $value = t("Whoops! it seems that you don't have any description about your self. Why don't you <a href='#' data-toggle='modal' data-target='#UpdateAbout'>add some info</a>?");
+    $value .= theme('drupalhub_users_about_form');
   }
   else {
     $value = '';
@@ -57,4 +49,3 @@ function drupalhub_users_about_content_type_edit_form_submit(&$form, &$form_stat
     $form_state['conf'][$key] = $form_state['values'][$key];
   }
 }
-
