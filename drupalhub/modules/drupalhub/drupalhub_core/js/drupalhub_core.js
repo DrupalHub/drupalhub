@@ -49,6 +49,17 @@
   };
 
   /**
+   * Remove the spinner and show success message.
+   *
+   * @constructor
+   */
+  jQuery.DrupalHubFormSuccess = function() {
+    jQuery.RemoveSpinner();
+    $(".modal-footer .btn").addClass("disabled");
+    $(".modal-footer .passed").removeClass('disabled');
+  };
+
+  /**
    * Easy interaction with the restful services until i'll replace it to
    * angular.
    *

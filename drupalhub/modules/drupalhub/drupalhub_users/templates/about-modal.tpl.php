@@ -13,6 +13,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary"><?php print t('Save'); ?></button>
+        <div class="passed disabled"><i class="fa fa-thumbs-up"></i> <span><?php print t('The about field has updated successfully. After closing the dispaly will change'); ?></span></div>
       </div>
     </div>
   </div>

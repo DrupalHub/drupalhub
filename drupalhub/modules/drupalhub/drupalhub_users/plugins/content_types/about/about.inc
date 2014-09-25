@@ -15,6 +15,11 @@ function drupalhub_users_about_content_type_render($subtype, $conf, $args, $cont
     $value = $wrapper->field_about->value->value();
   }
   elseif ($wrapper->getIdentifier() == $user->uid) {
+
+    $settings['hub_user'] = array(
+      'id' => $context->data->uid,
+    );
+    drupal_add_js($settings, 'setting');
     drupal_add_js(drupal_get_path('module', 'drupalhub_users') . '/plugins/content_types/about/about.js');
     $value = t("Whoops! it seems that you don't have any description about your self. Why don't you <a href='#' data-toggle='modal' data-target='#UpdateAbout'>add some info</a>?");
     $value .= theme('drupalhub_users_about_form');
