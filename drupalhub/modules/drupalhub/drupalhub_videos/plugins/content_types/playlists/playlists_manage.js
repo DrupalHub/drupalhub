@@ -77,7 +77,7 @@
         $.ajax({
           type: type,
           beforeSend: function (request) {
-            request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
+            request.setRequestHeader("X-CSRF-Token", settings.hub.csrfToken);
           },
           url: settings.basePath + "api/v1/playlist",
           dataType: "json",
@@ -242,7 +242,7 @@
         // Create the request.
         $.ajax({
           beforeSend: function (request) {
-            request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
+            request.setRequestHeader("X-CSRF-Token", settings.hub.csrfToken);
           },
           url: settings.basePath + "api/v1/playlist",
           type: 'DELETE',

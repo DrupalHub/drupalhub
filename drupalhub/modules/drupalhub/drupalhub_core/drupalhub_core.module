@@ -35,6 +35,12 @@ function drupalhub_core_menu() {
 function drupalhub_core_init() {
   drupal_add_css(libraries_get_path('font_awesome') . '/css/font-awesome.min.css');
 
+  $settings['hub'] = array(
+    'basePath' => url('', array('absolute' => TRUE)),
+    'csrfToken' => drupal_get_token(\RestfulInterface::TOKEN_VALUE),
+  );
+  drupal_add_js($settings, 'setting');
+
   $item = menu_get_item();
   if (drupal_is_front_page() || path_is_admin($item['path'])) {
     return;
@@ -74,12 +80,6 @@ function drupalhub_core_init() {
   }
 
   drupal_set_breadcrumb($breadcrumbs);
-
-  $settings['plyalist'] = array(
-    'basePath' => url('', array('absolute' => TRUE)),
-    'csrfToken' => drupal_get_token(\RestfulInterface::TOKEN_VALUE),
-  );
-  drupal_add_js($settings, 'setting');
 }
 
 /**

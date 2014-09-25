@@ -76,7 +76,7 @@
         $.ajax({
           type: 'POST',
           beforeSend: function (request) {
-            request.setRequestHeader("X-CSRF-Token", settings.plyalist.csrfToken);
+            request.setRequestHeader("X-CSRF-Token", settings.hub.csrfToken);
           },
           url: settings.basePath + "api/v1/youtube",
           dataType: "json",

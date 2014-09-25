@@ -136,6 +136,9 @@
 .passed .fa-thumbs-down {
   color: #ac0d0d; }
 
+.ui-autocomplete {
+  z-index: 999999; }
+
 body.front .view-gallery {
   background: #e6e6e6;
   margin-bottom: 50px;
@@ -420,6 +423,8 @@ body.front .second-left-right {
         left: -15px;
         /* LTR */
         top: 90px; }
+body.front #AddQuestion .modal-dialog {
+  width: 50%; }
 
 .page-user.not-logged-in .tabs--primary {
   padding-top: 20px;

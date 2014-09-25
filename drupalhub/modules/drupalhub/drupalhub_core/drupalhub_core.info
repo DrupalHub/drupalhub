@@ -12,3 +12,4 @@ features[variable][] = pathauto_node_pattern
 features[variable][] = pathauto_taxonomy_term_pattern
 
 files[] = views/handlers/drupalhub_core_time_name_tags.inc
+scripts[] = js/underscore.js

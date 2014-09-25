@@ -357,6 +357,10 @@ $blue-border-2: #198fc0;
   }
 }
 
+.ui-autocomplete {
+  z-index: 999999;
+}
+
 // This is the part when we import css style per page.
 @import "pages/homepage.scss";
 @import "pages/login.scss";
