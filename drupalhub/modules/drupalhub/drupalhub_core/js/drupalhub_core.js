@@ -14,6 +14,40 @@
     $("#fa-spinner").remove();
   };
 
+  jQuery.setFormStatus = function() {
+
+  };
+
+  /**
+   * Adding errors to a given field.
+   */
+  jQuery.fn.SetError = function(error) {
+    if ($(this).parent().find(".errors").length == 0) {
+      $(this).after("<div class='error'></div>");
+    }
+
+    $(this).siblings('.error').html(error);
+    $(this).addClass('error');
+    $(this).parents('.form-group').addClass('has-error');
+
+    $.FormStatus = false;
+  };
+
+  /**
+   * Init the form by removing any class and any errors.
+   *
+   * @param parent
+   *   The name of the selector.
+   *
+   * @constructor
+   */
+  jQuery.DrupalHubFormInit = function(parent) {
+    $.FormStatus = true;
+    $("#" + parent).find(".form-group").removeClass('has-error');
+    $("#" + parent).find("textarea, input").removeClass('error');
+    $("#" + parent).find("div.error").remove();
+  };
+
   /**
    * Easy interaction with the restful services until i'll replace it to
    * angular.

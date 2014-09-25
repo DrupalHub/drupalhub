@@ -42,6 +42,9 @@ function drupalhub_users_ctools_plugin_directory($module, $plugin) {
   if ($module == 'ctools' && !empty($plugin)) {
     return "plugins/$plugin";
   }
+  if ($module == 'restful') {
+    return "plugins/$plugin";
+  }
 }
 
 /**

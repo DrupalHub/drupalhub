@@ -6,9 +6,9 @@
         <h4 class="modal-title" id="myModalLabel"><?php print t('Information about your self'); ?></h4>
       </div>
       <div class="modal-body">
-        <div class="form-group body">
+        <div class="form-group about">
           <label for="Name"><?php print t('About your self: '); ?></label>
-          <textarea id="body" class="form-control" placeholder="<?php print t('Write something about your self'); ?>"></textarea>
+          <textarea id="about" class="form-control" placeholder="<?php print t('Write something about your self'); ?>"></textarea>
         </div>
       </div>
       <div class="modal-footer">
