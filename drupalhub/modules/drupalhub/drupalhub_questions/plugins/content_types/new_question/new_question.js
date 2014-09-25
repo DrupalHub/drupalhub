@@ -29,32 +29,21 @@
           return;
         }
 
-        $('#AddQuestion .modal-footer .btn').after('<i class="fa fa-spinner fa-spin" id="fa"></i>');
+        $('#AddQuestion .modal-footer .btn').AddSpinner();
 
-        $.ajax({
-          type: 'POST',
-          beforeSend: function (request) {
-            request.setRequestHeader("X-CSRF-Token", settings.hub.csrfToken);
-          },
-          url: settings.baseURL + "api/v1/question",
-          dataType: "json",
-          contentType: "application/json",
-          data: {
-            label: title,
-            body: body,
-            tags: $("#tags").val()
-          },
-          error: function(result) {
-            console.log(result);
-            $("#fa").remove();
-          },
-          success: function(result) {
-            console.log(result);
-            $("#fa").remove();
-            $(".modal-footer .btn").addClass("disabled");
-            $(".modal-footer .passed").removeClass('disabled');
-            $(".modal-footer .passed span a").attr("href", result.self);
-          }
+        $.DrupalHubAjax('POST', "api/v1/question", {
+          label: title,
+          body: body,
+          tags: $("#tags").val()
+        })
+        .error(function() {
+          jQuery.RemoveSpinner();
+        })
+        .success(function(result) {
+          jQuery.RemoveSpinner();
+          $(".modal-footer .btn").addClass("disabled");
+          $(".modal-footer .passed").removeClass('disabled');
+          $(".modal-footer .passed span a").attr("href", result.self);
         });
       });
     }
@@ -87,7 +76,7 @@
         $(".tags .fa-refresh").addClass('fa-spin');
 
         // Suggest tags according to the last tag.
-        $.get(settings.basePath + "api/v1/tags", {
+        $.DrupalHubAjax("GET", "api/v1/tags", {
           filter: {
             label: {
               value: last,
