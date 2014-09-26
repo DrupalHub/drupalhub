@@ -8,7 +8,8 @@ class Youtube extends DrupalHubMigrate {
     array('id', 'ID'),
     array('title', 'Title'),
     array('youtube', 'Address'),
-    array(OG_AUDIENCE_FIELD,'Group')
+    array('field_show_in_videos', 'Display in library'),
+    array(OG_AUDIENCE_FIELD, 'Group')
   );
 
   public $dependencies = array('Group');
@@ -18,6 +19,7 @@ class Youtube extends DrupalHubMigrate {
 
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('field_address', 'youtube');
+    $this->addFieldMapping('field_show_in_videos', 'field_show_in_videos');
     $this->addFieldMapping(OG_AUDIENCE_FIELD, OG_AUDIENCE_FIELD)
       ->sourceMigration('Group');
   }
@@ -27,6 +29,8 @@ class Youtube extends DrupalHubMigrate {
    */
   public function prepare($entity, $row) {
     $wrapper = entity_metadata_wrapper('node', $entity);
-    $wrapper->author->set($wrapper->{OG_AUDIENCE_FIELD}->get(0)->getIdentifier());
+    if ($wrapper->{OG_AUDIENCE_FIELD}->get(0)->value()) {
+      $wrapper->author->set($wrapper->{OG_AUDIENCE_FIELD}->get(0)->getIdentifier());
+    }
   }
 }
