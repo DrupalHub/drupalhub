@@ -14,6 +14,7 @@ function drupalhub_migrate_migrate_api() {
     'Blog',
     'Group',
     'Project',
+    'Playlist',
     'Youtube',
     'Comment',
     'Category',
