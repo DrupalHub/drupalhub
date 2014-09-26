@@ -8,7 +8,7 @@
 
       $("#AddQuestion .modal-footer .btn").click(function() {
         // Remove any errors.
-        $(".error").remove();
+        $.DrupalHubFormInit("AddQuestion");
 
         // Processing the form.
         var title = $("#title").val();
@@ -16,16 +16,14 @@
         var status = true;
 
         if (title == "") {
-          $(".form-group.title").append("<div class='error'>" + Drupal.t('The title field is required.') + "</div>");
-          status = false;
+          $("#title").SetError(Drupal.t('The title field is required.'));
         }
 
         if (body == "") {
-          $(".form-group.body").append("<div class='error'>" + Drupal.t('The body field is required') + "</div>");
-          status = false;
+          $("#body").SetError(Drupal.t('The body field is required.'));
         }
 
-        if (!status) {
+        if ($.FormStatus) {
           return;
         }
 

@@ -18,7 +18,7 @@
    * Adding errors to a given field.
    */
   jQuery.fn.SetError = function(error) {
-    if ($(this).parent().find(".errors").length == 0) {
+    if ($(this).parent().find(".error").length == 0) {
       $(this).after("<div class='error'></div>");
     }
 
@@ -39,9 +39,19 @@
    */
   jQuery.DrupalHubFormInit = function(parent) {
     $.FormStatus = true;
-    $("#" + parent).find(".form-group").removeClass('has-error');
-    $("#" + parent).find("textarea, input").removeClass('error');
-    $("#" + parent).find("div.error").remove();
+    $("#" + parent).DrupalHubResetElement();
+  };
+
+  /**
+   * Resetting a specific form element.
+   *
+   * @constructor
+   */
+  jQuery.fn.DrupalHubResetElement = function() {
+    $(this).find(".form-group").removeClass('has-error');
+    $(this).removeClass('has-error');
+    $(this).find("textarea, input").removeClass('error');
+    $(this).find("div.error").remove();
   };
 
   /**

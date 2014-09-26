@@ -9,13 +9,11 @@
         <div class="form-group title">
           <label for="Name"><?php print t('Title: '); ?></label>
           <input type="text" class="form-control" id="title" placeholder="<?php print t('Ask question'); ?>">
-          <div class="errors"></div>
         </div>
 
         <div class="form-group body">
           <label for="Name"><?php print t('Question: '); ?></label>
           <textarea id="body" class="form-control" placeholder="<?php print t('Ask your question'); ?>"></textarea>
-          <div class="errors"></div>
         </div>
 
         <div class="form-group tags">

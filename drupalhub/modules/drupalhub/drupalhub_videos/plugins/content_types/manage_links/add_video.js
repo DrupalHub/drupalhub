@@ -7,6 +7,7 @@
   Drupal.behaviors.DrupalHubVideoModalOpened = {
     attach: function (context, settings) {
       $(".new-video a").click(function() {
+        $.DrupalHubFormInit("AddVideo");
         $("#url").val("");
         $("#AddVideo .result").addClass("disabled");
         $(".modal-footer .btn").removeClass('disabled');
@@ -71,32 +72,22 @@
   Drupal.behaviors.DrupalHubVideoCreate = {
     attach: function(context, settings) {
       $(".modal-footer button").click(function() {
-        $(this).parent().append('<i id="fa" class="fa fa-spin fa-spinner"></i>');
+        $(this).AddSpinner();
 
-        $.ajax({
-          type: 'POST',
-          beforeSend: function (request) {
-            request.setRequestHeader("X-CSRF-Token", settings.hub.csrfToken);
-          },
-          url: settings.basePath + "api/v1/youtube",
-          dataType: "json",
-          contentType: "application/json",
-          data: Drupal.video,
-          error: function(result) {
-            $("#fa").remove();
+        $.DrupalHubAjax('POST', "api/v1/youtube", Drupal.video)
+          .error(function(result) {
+            $.RemoveSpinner();
+
             $(this).parent().append('<i class="fa fa-thumbs-down"></i>');
             var json = jQuery.parseJSON(result.responseText).errors;
 
             if (json.address != null) {
-              $(".errors").html(json.address.join("<br />"));
+              $("#url").SetError(json.address.join("<br />"));
             }
-          },
-          success: function(data) {
-            $("#fa").remove();
-            $(".modal-footer .btn").addClass('disabled');
-            $(".modal-footer .passed").removeClass('disabled');
-          }
-        });
+          })
+          .success(function() {
+            $.DrupalHubFormSuccess();
+          });
       });
     }
   };

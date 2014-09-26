@@ -904,6 +904,8 @@ body.front #AddQuestion .modal-dialog {
       width: 95%;
       display: inline-block;
       text-align: left; }
+    .page-video .pane-manage-links #AddVideo .form-group.name .error {
+      width: 95%; }
   .page-video .pane-manage-links #AddVideo .result .image {
     float: left;
     padding-left: 20px; }

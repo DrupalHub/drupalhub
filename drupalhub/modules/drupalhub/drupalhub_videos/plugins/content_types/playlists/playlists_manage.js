@@ -23,33 +23,28 @@
       $(".playlist-form").live('submit', function(event) {
         event.preventDefault();
 
-        $(".playlist-form .error").remove();
+        $.DrupalHubFormInit("ManagePlaylist");
 
         var name = $("#name").val();
         var description = $("#description").val();
 
-        var status = true;
-
         if (name == "") {
-          $(".form-group.name").append("<div class='error'>" + Drupal.t('Please fill in the name.') + "</div>");
-          status = false;
+          $("#name").SetError(Drupal.t('Please fill in the name.'));
         }
 
         if ($(".items li").length == 0) {
-          $(".form-group.videos").append("<div class='error'>" + Drupal.t('Please insert videos.') + "</div>");
-          status = false;
+          $("#playlist-search").SetError(Drupal.t('Please insert videos.'));
         }
 
         if (description == "") {
-          $(".form-group.description").append("<div class='error'>" + Drupal.t('Please insert description.') + "</div>");
-          status = false;
+          $("#description").SetError(Drupal.t('Please insert description.'));
         }
 
-        if (!status) {
+        if (!$.FormStatus) {
           return;
         }
 
-        $(".buttons").append('<i class="fa fa-spinner fa-spin"></i>');
+        $(".buttons button").AddSpinner();
 
         // Get rest of the values.
         var ids = [];
@@ -74,21 +69,13 @@
           type = 'PATCH';
         }
 
-        $.ajax({
-          type: type,
-          beforeSend: function (request) {
-            request.setRequestHeader("X-CSRF-Token", settings.hub.csrfToken);
-          },
-          url: settings.basePath + "api/v1/playlist",
-          dataType: "json",
-          contentType: "application/json",
-          data: data,
-          error: function() {
-            $(".buttons .fa-spinner").remove();
+        $.DrupalHubAjax(type, "api/v1/playlist", data)
+          .error(function() {
+            $.RemoveSpinner();
             $(".buttons").append('<i class="fa fa-thumbs-down"></i>');
-          },
-          success: function(data) {
-            $(".buttons .fa-spinner").remove();
+          })
+          .success(function(data) {
+            $.RemoveSpinner();
             $(".passed").removeClass('disabled');
             $(".playlist-form").addClass("disabled");
 
@@ -120,8 +107,7 @@
             ar.addClass("disabled").html('');
             $('.playlist-form')[0].reset();
             $('.items li').remove();
-          }
-        });
+          });
       });
     }
   };
@@ -129,7 +115,7 @@
   /**
    * handling auto complete of the form.
    */
-  Drupal.behaviors.DrupalHubSearchHandelingsdsddsdsd = {
+  Drupal.behaviors.DrupalHubSearchHandeling = {
     attach: function (context, settings) {
       var ar = $(".autocomplete-results");
       $("#playlist-search").keyup(function(event) {
@@ -143,15 +129,17 @@
 
         var value = $(this).val();
 
-        ar.removeClass("disabled").html('<i class="fa fa-spinner fa-spin"></i>');
+        ar.removeClass("disabled").AddSpinner();
 
         if (value == "") {
           ar.addClass("disabled").html('');
+          $.RemoveSpinner();
           return;
         }
 
         var results = [];
-        $.get(settings.basePath + "api/v1/youtube", {"title": value}).done(function(result) {
+        $.DrupalHubAjax('GET', "api/v1/youtube", {"title": value}).success(function(result) {
+          $.RemoveSpinner();
 
           jQuery.each(result.data, function(index, value) {
             if ($(".items li[id=" + value.id + "]").length != 0) {
@@ -193,6 +181,8 @@
       $(".fa-plus").live('click', function() {
         var ar = $(".autocomplete-results");
         var element = $(this).parents('.wrapper');
+
+        ar.parent().DrupalHubResetElement();
 
         // Remove the element from the box.
         element.remove();
@@ -237,25 +227,17 @@
         var element = $(this);
 
         // Adding the spinner.
-        element.parent().append(' <i class="fa fa-spinner fa-spin"></i>');
+        element.AddSpinner();
 
         // Create the request.
-        $.ajax({
-          beforeSend: function (request) {
-            request.setRequestHeader("X-CSRF-Token", settings.hub.csrfToken);
-          },
-          url: settings.basePath + "api/v1/playlist",
-          type: 'DELETE',
-          data: {
-            "id": $(this).attr("id")
-          },
-          success: function(result) {
-            // Remove the line.
-            element.parents('tr').remove();
+        $.DrupalHubAjax('DELETE', "api/v1/playlist", {
+          "id": $(this).attr("id")
+        }).success(function(result) {
+          // Remove the line.
+          element.parents('tr').remove();
 
-            if ($('.playlist tbody tr').length == 0) {
-              $('.playlist tbody').html('<tr><td class="odd" colspan="3">' + Drupal.t('You did not created any playlist. <a href="#" class="show-playlist-form">Create a new playlist</a>') + '</td></tr>');
-            }
+          if ($('.playlist tbody tr').length == 0) {
+            $('.playlist tbody').html('<tr><td class="odd" colspan="3">' + Drupal.t('You did not created any playlist. <a href="#" class="show-playlist-form">Create a new playlist</a>') + '</td></tr>');
           }
         });
       });
@@ -272,12 +254,12 @@
         var element = $(this);
 
         // Adding the spinner.
-        element.parent().append(' <i class="fa fa-spinner fa-spin"></i>');
+        element.AddSpinner();
         var id = element.attr("id");
 
         // Get the list value.
         var info = '';
-        $.get(settings.basePath + "api/v1/playlist", {"id": id}).done(function(result) {
+        $.DrupalHubAjax('GET', "api/v1/playlist", {"id": id}).done(function(result) {
           info = result.data[0];
           $("#name").val(info.label);
           $("#description").val(info.body.value);
@@ -306,7 +288,7 @@
           });
         }).then(function() {
           // Remove the spinner and display the form.
-          element.parent().find('i').remove();
+          $.RemoveSpinner();
           $(".playlist-form").removeClass("disabled");
           $(".passed").addClass('disabled');
         });

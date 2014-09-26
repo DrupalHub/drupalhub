@@ -1,4 +1,4 @@
-<form role="form" class="playlist-form disabled">
+<form role="form" id="ManagePlaylist" class="playlist-form disabled">
 
   <div class="form-group name">
     <label for="Name"><?php print t('Name: '); ?></label>
