@@ -23,7 +23,7 @@ function drupalhub_videos_playlist_videos_content_type_render($subtype, $conf, $
     $information = drupalhub_videos_get_metadata($id);
 
     $playlists[] = theme('playlist_item', array(
-      'label' => l($wrapper->label(), 'node/' . $video->getIdentifier(), array('query' => array('playlist' => $wrapper->getIdentifier()))),
+      'label' => l($video->label(), 'node/' . $video->getIdentifier(), array('query' => array('playlist' => $wrapper->getIdentifier()))),
       'length' => drupalhub_videos_youtube_metadata::durationToText($information),
       'image' => theme('image_style', array('style_name' => 'thumbnail', 'path' => $address['thumbnail_path'])),
     ));
