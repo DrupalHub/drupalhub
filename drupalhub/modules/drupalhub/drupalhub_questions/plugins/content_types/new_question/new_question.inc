@@ -17,7 +17,6 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
   $block->content = "";
 
   drupal_add_library('system', 'ui.autocomplete');
-//  drupal_add_js(drupal_get_path('module', 'drupalhub_core') . '/js/underscore.js');
   $path = '/plugins/content_types/new_question';
   drupal_add_js(drupal_get_path('module', 'drupalhub_questions') . $path . '/new_question.js');
 

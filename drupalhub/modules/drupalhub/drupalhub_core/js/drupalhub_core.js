@@ -91,4 +91,33 @@
     });
   };
 
+  /**
+   * Checking if the element is empty. When empty adding the error passing in
+   * the variable.
+   *
+   * @param error
+   *   The appended error message.
+   *
+   * @constructor
+   */
+  jQuery.fn.CheckEmpty = function(error) {
+    if ($(this).val() == "") {
+      $(this).SetError(error);
+    }
+  };
+
+  /**
+   * Converting a given string to timestamp.
+   *
+   * @param string
+   *   The current date string.
+   *
+   * @constructor
+   * @return Date
+   */
+  jQuery.ProcessDate = function(string) {
+    var parts = string.split("/");
+    return new Date(parts[1] + '/' + parts[0] + '/' + parts[2]);
+  };
+
 })(jQuery);

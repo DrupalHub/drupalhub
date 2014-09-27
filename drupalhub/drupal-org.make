@@ -198,3 +198,7 @@ libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEd
 libraries[autopager][type] = "libraries"
 libraries[autopager][download][type] = "file"
 libraries[autopager][download][url] = "https://github.com/sagotsky/jquery-autopager/archive/v1.2.zip"
+
+libraries[datepicker][type] = "libraries"
+libraries[datepicker][download][type] = "file"
+libraries[datepicker][download][url] = "https://github.com/eternicode/bootstrap-datepicker/zipball/1.3.0"

@@ -221,7 +221,7 @@ $blue-border-2: #198fc0;
 }
 
 .disabled {
-  display: none;
+  display: none !important;
 }
 
 // top Navigation part.

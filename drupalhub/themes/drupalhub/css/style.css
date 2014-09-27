@@ -14,7 +14,7 @@
   color: #008000; }
 
 .disabled {
-  display: none; }
+  display: none !important; }
 
 .top-navbar {
   padding: 0px;
@@ -757,13 +757,16 @@ body.front #AddQuestion .modal-dialog {
   .page-taxonomy-term .bottom-wrapper .tags .field-content {
     display: inline; }
 
+.page-calendar .datepicker {
+  z-index: 100000; }
 .page-calendar .top {
   padding-bottom: 20px; }
+  .page-calendar .top .date-nav-wrapper {
+    z-index: -1; }
   .page-calendar .top .pane-quick-links {
     padding-bottom: 20px;
     position: absolute;
-    top: 60px;
-    z-index: 1; }
+    top: 60px; }
     .page-calendar .top .pane-quick-links:after {
       content: ".";
       display: block;

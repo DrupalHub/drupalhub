@@ -11,7 +11,7 @@ include_once 'drupalhub_events.features.inc';
  * Implements hook_ctools_plugin_directory().
  */
 function drupalhub_events_ctools_plugin_directory($owner, $plugin_type) {
-  if ($owner == 'ctools') {
+  if (in_array($owner, array('ctools', 'restful'))) {
     return 'plugins/' . $plugin_type;
   }
 }

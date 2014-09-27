@@ -1,13 +1,20 @@
 .page-calendar {
 
+  .datepicker {
+    z-index: 100000;
+  }
+
   .top {
     padding-bottom: 20px;
+
+    .date-nav-wrapper {
+      z-index: -1;
+    }
 
     .pane-quick-links {
       padding-bottom: 20px;
       position: absolute;
       top: 60px;
-      z-index: 1;
 
       @include clearfix;
 
