@@ -20,7 +20,7 @@ function drupalhub_events_quick_links_content_type_render($subtype, $conf, $args
   $block->content .=
     '<div class="new-event hidden-xs">' .
       '<a href="#" data-toggle="modal" data-target="#NewEvent">' .
-        t('Ask event') .
+        t('Create event') .
       '</a>' .
     '</div>';
   $block->content .= theme('new_event');
