@@ -1,5 +1,12 @@
 .page-calendar {
 
+  td.today,
+  .ends-today {
+    border: #2287b1 solid 1px !important;
+    border-bottom: none !important;
+    border-top: none !important;
+  }
+
   .datepicker {
     z-index: 100000;
   }
@@ -116,7 +123,7 @@
           .today,
           &.date-box.today,
           &.single-day.today {
-            background: #fafafa;
+            background: #D7F7FF;
             border: none;
 
             .day {

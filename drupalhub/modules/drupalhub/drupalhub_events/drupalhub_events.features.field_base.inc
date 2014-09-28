@@ -37,7 +37,7 @@ function drupalhub_events_field_default_field_bases() {
       'tz_handling' => 'site',
     ),
     'translatable' => 0,
-    'type' => 'datestamp',
+    'type' => 'datetime',
   );
 
   return $field_bases;
