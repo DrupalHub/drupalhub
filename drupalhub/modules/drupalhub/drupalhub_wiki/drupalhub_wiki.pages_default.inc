@@ -60,6 +60,25 @@ function drupalhub_wiki_default_page_manager_pages() {
   $display->uuid = '08be3e0b-8ac3-4c73-9982-9e3cd64c2358';
   $display->content = array();
   $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-9481e1dd-029d-465e-8bae-7c3097eccc89';
+    $pane->panel = 'second';
+    $pane->type = 'search_box';
+    $pane->subtype = 'search_box';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array();
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '9481e1dd-029d-465e-8bae-7c3097eccc89';
+    $display->content['new-9481e1dd-029d-465e-8bae-7c3097eccc89'] = $pane;
+    $display->panels['second'][0] = 'new-9481e1dd-029d-465e-8bae-7c3097eccc89';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

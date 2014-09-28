@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Code for the DrupalHub WIKI module.
+ */
+
+include_once 'drupalhub_wiki.features.inc';
+
+/**
+ * Implements hook_ctools_plugin_directory().
+ */
+function drupalhub_wiki_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools') {
+    return "plugins/$plugin";
+  }
+}
