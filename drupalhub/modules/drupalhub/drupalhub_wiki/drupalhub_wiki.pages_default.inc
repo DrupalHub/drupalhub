@@ -61,13 +61,22 @@ function drupalhub_wiki_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
-    $pane->pid = 'new-9481e1dd-029d-465e-8bae-7c3097eccc89';
+    $pane->pid = 'new-9e27e616-f4b7-4ef8-b051-7f173e30abf1';
     $pane->panel = 'second';
     $pane->type = 'search_box';
     $pane->subtype = 'search_box';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-jAbuzVp4453W4EyQiGT2C71z34TcnFzg0GpEcwPKmBo',
+      'form_token' => '-A9G4zpYYH2LQ5ELFybMH7kAMThVvTZB9JOLI20Ee48',
+      'form_id' => 'drupalhub_wiki_search_box_content_type_edit_form',
+      'op' => 'Finish',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,
@@ -76,9 +85,9 @@ function drupalhub_wiki_default_page_manager_pages() {
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
-    $pane->uuid = '9481e1dd-029d-465e-8bae-7c3097eccc89';
-    $display->content['new-9481e1dd-029d-465e-8bae-7c3097eccc89'] = $pane;
-    $display->panels['second'][0] = 'new-9481e1dd-029d-465e-8bae-7c3097eccc89';
+    $pane->uuid = '9e27e616-f4b7-4ef8-b051-7f173e30abf1';
+    $display->content['new-9e27e616-f4b7-4ef8-b051-7f173e30abf1'] = $pane;
+    $display->panels['second'][0] = 'new-9e27e616-f4b7-4ef8-b051-7f173e30abf1';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

@@ -15,3 +15,25 @@ function drupalhub_wiki_ctools_plugin_directory($module, $plugin) {
     return "plugins/$plugin";
   }
 }
+
+/**
+ * The form of the search box.
+ */
+function drupalhub_wiki_search_form($form, $form_state) {
+  $form['text'] = array(
+    '#type' => 'textfield',
+    '#title' => '',
+    '#attributes' => array(
+      'placeholder' => array('a'),
+    ),
+  );
+
+  $form['actions'] = array(
+    '#type' => 'actions',
+    'submit' => array(
+      '#type' => 'submit',
+      '#value' => t('Search!'),
+    ),
+  );
+  return $form;
+}
