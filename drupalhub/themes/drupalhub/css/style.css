@@ -1109,14 +1109,24 @@ body.front #AddQuestion .modal-dialog {
       padding-right: 10px;
       font-size: 20px; }
 
+.page-documentation div.first .tabs {
+  padding-bottom: 10px; }
+  .page-documentation div.first .tabs ul {
+    padding: 0px;
+    border: none; }
+    .page-documentation div.first .tabs ul li {
+      display: inline;
+      list-style-type: none; }
+    .page-documentation div.first .tabs ul .active {
+      border-bottom: 2px solid #ffcc00; }
 .page-documentation .second .pane-search-box #edit-text {
   float: left;
   /* LTR */
-  width: 60%; }
+  width: 75%; }
 .page-documentation .second .pane-search-box #edit-submit {
   float: right;
   /* LTR */ }
-.page-documentation .pane-wikipedia-terms ul {
+.page-documentation .second .pane-wikipedia-terms ul {
   padding: 0; }
-  .page-documentation .pane-wikipedia-terms ul li {
+  .page-documentation .second .pane-wikipedia-terms ul li {
     list-style-type: none; }

@@ -1,26 +1,49 @@
 .page-documentation {
 
+  div.first {
+
+    .tabs {
+      padding-bottom: 10px;
+
+
+      ul {
+        padding: 0px;
+        border: none;
+
+        li {
+          display: inline;
+          list-style-type: none;
+        }
+
+        .active {
+          border-bottom: 2px solid #ffcc00;
+        }
+      }
+    }
+  }
+
   .second {
+
     .pane-search-box {
 
       #edit-text {
         float: left; /* LTR */
-        width: 60%;
+        width: 75%;
       }
 
       #edit-submit {
         float: right; /* LTR */
       }
     }
-  }
 
-  .pane-wikipedia-terms {
+    .pane-wikipedia-terms {
 
-    ul {
-      padding: 0;
+      ul {
+        padding: 0;
 
-      li {
-        list-style-type: none;
+        li {
+          list-style-type: none;
+        }
       }
     }
   }
