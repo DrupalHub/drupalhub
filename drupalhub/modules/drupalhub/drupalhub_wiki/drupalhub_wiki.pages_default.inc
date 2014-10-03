@@ -81,13 +81,47 @@ function drupalhub_wiki_default_page_manager_pages() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
     $pane->extras = array();
     $pane->position = 0;
     $pane->locks = array();
     $pane->uuid = '9e27e616-f4b7-4ef8-b051-7f173e30abf1';
     $display->content['new-9e27e616-f4b7-4ef8-b051-7f173e30abf1'] = $pane;
     $display->panels['second'][0] = 'new-9e27e616-f4b7-4ef8-b051-7f173e30abf1';
+    $pane = new stdClass();
+    $pane->pid = 'new-472fa41e-8cca-4814-a73c-abba383a3aec';
+    $pane->panel = 'second';
+    $pane->type = 'wikipedia_terms';
+    $pane->subtype = 'wikipedia_terms';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-zligi4plCYqODEey49caKnQEUOxDmM4mkd-MFE5j04g',
+      'form_token' => '7AW2aE6Em8M85TT6hZMbiJ-VxZfUcbkJiEa9hpxRBU8',
+      'form_id' => 'drupalhub_wiki_wikipedia_terms_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '472fa41e-8cca-4814-a73c-abba383a3aec';
+    $display->content['new-472fa41e-8cca-4814-a73c-abba383a3aec'] = $pane;
+    $display->panels['second'][1] = 'new-472fa41e-8cca-4814-a73c-abba383a3aec';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

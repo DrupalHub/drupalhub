@@ -1,14 +1,27 @@
 .page-documentation {
 
   .second {
+    .pane-search-box {
 
-    #edit-text {
-      float: left; /* LTR */
-      width: 60%;
+      #edit-text {
+        float: left; /* LTR */
+        width: 60%;
+      }
+
+      #edit-submit {
+        float: right; /* LTR */
+      }
     }
+  }
 
-    #edit-submit {
-      float: right; /* LTR */
+  .pane-wikipedia-terms {
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style-type: none;
+      }
     }
   }
 }

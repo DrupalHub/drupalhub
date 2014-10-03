@@ -98,8 +98,8 @@
   </div>
 </div>
 <header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
-  <div class="container">
-    <div class="row">
+  <div class="row">
+    <div class="container">
       <div class="navbar-header col-md-9">
         <?php if ($logo): ?>
         <a class="logo navbar-btn pull-left" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
@@ -138,7 +138,17 @@
           </nav>
         </div>
       <?php endif; ?>
+      </div>
+  </div>
+  <div class="row">
+    <div class="container">
+      <div class="col-md-12 tabs">
+        <?php if (!empty($tabs)): ?>
+          <?php print render($tabs); ?>
+        <?php endif; ?>
+      </div>
     </div>
+  </div>
 </header>
 <?php print $slide_show; ?>
 <div class="main-container container">
@@ -165,9 +175,6 @@
       <?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
       <a id="main-content"></a>
       <?php print $messages; ?>
-      <?php if (!empty($tabs)): ?>
-        <?php print render($tabs); ?>
-      <?php endif; ?>
       <?php if (!empty($page['help'])): ?>
         <?php print render($page['help']); ?>
       <?php endif; ?>

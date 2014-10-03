@@ -64,6 +64,9 @@ function drupalhub_core_init() {
   elseif ($item['path'] == 'video') {
     drupal_set_title(t('Video library'));
   }
+  elseif ($item['path'] == 'documentation') {
+    drupal_set_title(t('Documentation'));
+  }
   elseif ($item['path'] == 'node/%') {
     $object = menu_get_object();
 

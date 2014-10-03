@@ -24,7 +24,7 @@ function drupalhub_wiki_search_form($form, $form_state) {
     '#type' => 'textfield',
     '#title' => '',
     '#attributes' => array(
-      'placeholder' => array('a'),
+      'placeholder' => array(t('Enter text')),
     ),
   );
 

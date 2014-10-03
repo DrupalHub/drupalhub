@@ -60,7 +60,7 @@
   background: #21a8e6;
   padding: 20px 0; }
   #navbar .container {
-    max-width: 1170px;
+    width: 95%;
     margin: 0px auto; }
     #navbar .container .navbar-header {
       margin: 0px; }
@@ -138,6 +138,24 @@
 
 .ui-autocomplete {
   z-index: 999999; }
+
+.tabs ul {
+  border: none; }
+  .tabs ul .active a, .tabs ul .active a:hover {
+    background: none !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #ffcc00; }
+  .tabs ul a {
+    padding: 10px; }
+    .tabs ul a:hover {
+      background: none !important;
+      border: none;
+      padding: 10px; }
+
+.container {
+  width: 95%; }
 
 body.front .view-gallery {
   background: #e6e6e6;
@@ -1090,3 +1108,15 @@ body.front #AddQuestion .modal-dialog {
       text-align: right;
       padding-right: 10px;
       font-size: 20px; }
+
+.page-documentation .second .pane-search-box #edit-text {
+  float: left;
+  /* LTR */
+  width: 60%; }
+.page-documentation .second .pane-search-box #edit-submit {
+  float: right;
+  /* LTR */ }
+.page-documentation .pane-wikipedia-terms ul {
+  padding: 0; }
+  .page-documentation .pane-wikipedia-terms ul li {
+    list-style-type: none; }
