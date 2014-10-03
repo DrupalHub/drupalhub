@@ -21,6 +21,7 @@ function drupalhub_migrate_migrate_api() {
     'Question',
     'GroupBanner',
     'Recommendation',
+    'WikiCategory',
   );
 
   $api = array(
