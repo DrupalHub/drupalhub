@@ -200,6 +200,24 @@ $blue-border-2: #198fc0;
   }
 }
 
+@mixin tabs {
+  padding-bottom: 10px;
+
+  ul {
+    padding: 0px;
+    border: none;
+
+    li {
+      display: inline;
+      list-style-type: none;
+    }
+
+    .active {
+      border-bottom: 2px solid #ffcc00;
+    }
+  }
+}
+
 // Global CSS.
 .clearfix:after {
   content: "." !important;

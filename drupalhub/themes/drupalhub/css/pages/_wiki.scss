@@ -3,22 +3,7 @@
   div.first {
 
     .tabs {
-      padding-bottom: 10px;
-
-
-      ul {
-        padding: 0px;
-        border: none;
-
-        li {
-          display: inline;
-          list-style-type: none;
-        }
-
-        .active {
-          border-bottom: 2px solid #ffcc00;
-        }
-      }
+      @include tabs;
     }
   }
 
@@ -28,7 +13,7 @@
 
       #edit-text {
         float: left; /* LTR */
-        width: 75%;
+        width: 60%;
       }
 
       #edit-submit {
@@ -46,5 +31,11 @@
         }
       }
     }
+  }
+}
+
+.page-documentation-add {
+  .tabs {
+    @include tabs;
   }
 }

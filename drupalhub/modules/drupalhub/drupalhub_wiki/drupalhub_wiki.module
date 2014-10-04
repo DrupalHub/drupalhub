@@ -8,6 +8,15 @@
 include_once 'drupalhub_wiki.features.inc';
 
 /**
+ * Implements hook_menu().
+ */
+function drupalhub_wiki_menu_alter(&$items) {
+  $items['documentation/add'] = array(
+    'page callback' => 'drupalhub_wiki_add_node',
+  ) + $items['node/add/wiki'];
+}
+
+/**
  * Implements hook_ctools_plugin_directory().
  */
 function drupalhub_wiki_ctools_plugin_directory($module, $plugin) {
@@ -36,4 +45,40 @@ function drupalhub_wiki_search_form($form, $form_state) {
     ),
   );
   return $form;
+}
+
+/**
+ * DrupalHub Wikipedia links.
+ */
+function drupalhub_wiki_links() {
+  $items = array(
+    l(t('Front page'), 'documentation'),
+    l(t('FAQ'), 'documentation/FAQ'),
+    l(t('Top rated'), 'documentation/top-rated'),
+    l(t('Most viewed'), 'documentation/most-viewed'),
+  );
+
+  if (user_access('create wiki content')) {
+    $items[] = l(t('Create documentation'), 'documentation/add');
+  }
+
+  return "<div class='tabs'>" . theme('item_list', array('items' => $items)) . '</div>';
+}
+
+/**
+ * Create wiki node callback.
+ */
+function drupalhub_wiki_add_node() {
+  $content = '';
+
+  $content .= drupalhub_wiki_links();
+
+  global $user;
+  $type = 'wiki';
+  $node = (object) array('uid' => $user->uid, 'name' => (isset($user->name) ? $user->name : ''), 'type' => $type, 'language' => LANGUAGE_NONE);
+  $form = drupal_get_form($type . '_node_form', $node);
+
+  $content .= render($form);
+
+  return $content;
 }

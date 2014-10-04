@@ -9,17 +9,7 @@ $plugin = array(
 function drupalhub_wiki_links_content_type_render($subtype, $conf, $args, $context) {
   $block = new stdClass();
   $block->title = '';
-  $items = array(
-    l(t('Front page'), 'documentation'),
-    l(t('FAQ'), 'documentation/FAQ'),
-    l(t('Top rated'), 'documentation/top-rated'),
-    l(t('Most viewed'), 'documentation/most-viewed'),
-  );
-
-  if (user_access('create wiki content')) {
-    $items[] = l(t('Create documentation'), 'documentation/add');
-  }
-  $block->content = theme('item_list', array('items' => $items));
+  $block->content = drupalhub_wiki_links();
   return $block;
 }
 

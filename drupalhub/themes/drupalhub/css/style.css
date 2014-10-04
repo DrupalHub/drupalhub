@@ -1122,7 +1122,7 @@ body.front #AddQuestion .modal-dialog {
 .page-documentation .second .pane-search-box #edit-text {
   float: left;
   /* LTR */
-  width: 75%; }
+  width: 60%; }
 .page-documentation .second .pane-search-box #edit-submit {
   float: right;
   /* LTR */ }
@@ -1130,3 +1130,14 @@ body.front #AddQuestion .modal-dialog {
   padding: 0; }
   .page-documentation .second .pane-wikipedia-terms ul li {
     list-style-type: none; }
+
+.page-documentation-add .tabs {
+  padding-bottom: 10px; }
+  .page-documentation-add .tabs ul {
+    padding: 0px;
+    border: none; }
+    .page-documentation-add .tabs ul li {
+      display: inline;
+      list-style-type: none; }
+    .page-documentation-add .tabs ul .active {
+      border-bottom: 2px solid #ffcc00; }
