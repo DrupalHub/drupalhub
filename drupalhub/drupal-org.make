@@ -12,12 +12,13 @@ projects[calendar][version] = 3.4
 projects[calendar][patch][] = "https://www.drupal.org/files/issues/calendar-illegal_offset-1471400-78.patch"
 
 projects[colorbox][subdir] = "contrib"
-projects[colorbox][version] = 2.7
+projects[colorbox][version] = 2.8
 
 projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = 1.15
 
 projects[ctools][subdir] = "contrib"
+projects[ctools][path][] = "https://www.drupal.org/files/issues/ctools-combined_patch_from_n2195211-15_and_n2195471-29--n2195471-47.patch"
 projects[ctools][version] = 1.4
 
 projects[date][subdir] = "contrib"
@@ -131,7 +132,7 @@ projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = 1.2
 
 projects[picture][subdir] = "contrib"
-projects[picture][version] = 1.2
+projects[picture][version] = 2.7
 
 projects[retina_images][subdir] = "contrib"
 projects[retina_images][version] = "1.0-beta4"
@@ -148,10 +149,10 @@ projects[token][version] = 1.5
 projects[twitter][version] = "5.8"
 projects[twitter][subdir] = contrib
 
-projects[video_embed_field][version] = "2.0-beta7"
+projects[video_embed_field][version] = "2.0-beta8"
 projects[video_embed_field][subdir] = contrib
 
-projects[votingapi][version] = "2.11"
+projects[votingapi][version] = "2.12"
 projects[votingapi][subdir] = contrib
 
 projects[vote_up_down][download][type] = "git"
@@ -162,7 +163,7 @@ projects[vote_up_down][subdir] = "contrib"
 projects[vote_up_down][type] = "module"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = 3.7
+projects[views][version] = 3.8
 
 projects[views_bootstrap][subdir] = contrib
 projects[views_bootstrap][version] = "3.1"

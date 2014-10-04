@@ -446,6 +446,72 @@ function drupalhub_wiki_default_page_manager_pages() {
   $display->content = array();
   $display->panels = array();
     $pane = new stdClass();
+    $pane->pid = 'new-239916dd-8423-4840-a424-957d667b296f';
+    $pane->panel = 'category_1';
+    $pane->type = 'wiki_from_category';
+    $pane->subtype = 'wiki_from_category';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '239916dd-8423-4840-a424-957d667b296f';
+    $display->content['new-239916dd-8423-4840-a424-957d667b296f'] = $pane;
+    $display->panels['category_1'][0] = 'new-239916dd-8423-4840-a424-957d667b296f';
+    $pane = new stdClass();
+    $pane->pid = 'new-25e71f9b-2c29-4259-b360-25ec1465309e';
+    $pane->panel = 'category_2';
+    $pane->type = 'wiki_from_category';
+    $pane->subtype = 'wiki_from_category';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = '25e71f9b-2c29-4259-b360-25ec1465309e';
+    $display->content['new-25e71f9b-2c29-4259-b360-25ec1465309e'] = $pane;
+    $display->panels['category_2'][0] = 'new-25e71f9b-2c29-4259-b360-25ec1465309e';
+    $pane = new stdClass();
+    $pane->pid = 'new-bfb4879d-6fd3-45d7-87b0-26d7b64aa93a';
+    $pane->panel = 'category_3';
+    $pane->type = 'wiki_from_category';
+    $pane->subtype = 'wiki_from_category';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'bfb4879d-6fd3-45d7-87b0-26d7b64aa93a';
+    $display->content['new-bfb4879d-6fd3-45d7-87b0-26d7b64aa93a'] = $pane;
+    $display->panels['category_3'][0] = 'new-bfb4879d-6fd3-45d7-87b0-26d7b64aa93a';
+    $pane = new stdClass();
     $pane->pid = 'new-af2b47bf-980c-4ecc-bd7b-2a7308ae5367';
     $pane->panel = 'main_top';
     $pane->type = 'links';
@@ -501,7 +567,9 @@ function drupalhub_wiki_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array();
     $pane->cache = array();
-    $pane->style = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
     $pane->css = array();
     $pane->extras = array();
     $pane->position = 2;
