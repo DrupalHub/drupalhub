@@ -1,9 +1,9 @@
 <div class="<?php print $classes ?>" <?php if (!empty($css_id)) { print "id=\"$css_id\""; } ?>>
   <div class="row">
-    <div class="col-md-7 top-first">
+    <div class="col-md-8 top-first">
       <?php print $content['top_first']; ?>
     </div>
-    <div class="col-md-5 top-second">
+    <div class="col-md-4 top-second">
       <?php print $content['top_second']; ?>
     </div>
   </div>

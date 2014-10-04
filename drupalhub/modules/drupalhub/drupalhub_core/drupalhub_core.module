@@ -215,6 +215,7 @@ function drupalhub_core_form_alter(&$form, $form_state, $form_id) {
     'comment_node_question_form',
     'comment_node_blog_form',
     'comment_node_youtube_form',
+    'comment_node_wiki_form',
   );
 
   if (!in_array($form_id, $forms)) {

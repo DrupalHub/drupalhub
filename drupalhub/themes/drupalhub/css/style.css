@@ -1123,7 +1123,7 @@ body.front #AddQuestion .modal-dialog {
   float: left;
   /* LTR */
   width: 60%; }
-.page-documentation .second .pane-search-box #edit-submit {
+.page-documentation .second .pane-search-box button {
   float: right;
   /* LTR */ }
 .page-documentation .second .pane-wikipedia-terms ul {
@@ -1131,13 +1131,32 @@ body.front #AddQuestion .modal-dialog {
   .page-documentation .second .pane-wikipedia-terms ul li {
     list-style-type: none; }
 
-.page-documentation-add .tabs {
+.page-documentation-add .drupalhub-wiki .tabs,
+.node-type-wiki .drupalhub-wiki .tabs {
   padding-bottom: 10px; }
-  .page-documentation-add .tabs ul {
+  .page-documentation-add .drupalhub-wiki .tabs ul,
+  .node-type-wiki .drupalhub-wiki .tabs ul {
     padding: 0px;
     border: none; }
-    .page-documentation-add .tabs ul li {
+    .page-documentation-add .drupalhub-wiki .tabs ul li,
+    .node-type-wiki .drupalhub-wiki .tabs ul li {
       display: inline;
       list-style-type: none; }
-    .page-documentation-add .tabs ul .active {
+    .page-documentation-add .drupalhub-wiki .tabs ul .active,
+    .node-type-wiki .drupalhub-wiki .tabs ul .active {
       border-bottom: 2px solid #ffcc00; }
+.page-documentation-add .drupalhub-wiki .second .pane-search-box #edit-text,
+.node-type-wiki .drupalhub-wiki .second .pane-search-box #edit-text {
+  float: left;
+  /* LTR */
+  width: 60%; }
+.page-documentation-add .drupalhub-wiki .second .pane-search-box button,
+.node-type-wiki .drupalhub-wiki .second .pane-search-box button {
+  float: right;
+  /* LTR */ }
+.page-documentation-add .drupalhub-wiki .second .pane-wikipedia-terms ul,
+.node-type-wiki .drupalhub-wiki .second .pane-wikipedia-terms ul {
+  padding: 0; }
+  .page-documentation-add .drupalhub-wiki .second .pane-wikipedia-terms ul li,
+  .node-type-wiki .drupalhub-wiki .second .pane-wikipedia-terms ul li {
+    list-style-type: none; }

@@ -1,3 +1,31 @@
+// Local mixins
+@mixin right-sidebar {
+
+  .pane-search-box {
+
+    #edit-text {
+      float: left; /* LTR */
+      width: 60%;
+    }
+
+    button {
+      float: right; /* LTR */
+    }
+  }
+
+  .pane-wikipedia-terms {
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+}
+
+// CSS.
 .page-documentation {
 
   div.first {
@@ -8,34 +36,21 @@
   }
 
   .second {
-
-    .pane-search-box {
-
-      #edit-text {
-        float: left; /* LTR */
-        width: 60%;
-      }
-
-      #edit-submit {
-        float: right; /* LTR */
-      }
-    }
-
-    .pane-wikipedia-terms {
-
-      ul {
-        padding: 0;
-
-        li {
-          list-style-type: none;
-        }
-      }
-    }
+    @include right-sidebar;
   }
 }
 
-.page-documentation-add {
-  .tabs {
-    @include tabs;
+.page-documentation-add,
+.node-type-wiki {
+
+  .drupalhub-wiki {
+
+    .tabs {
+      @include tabs;
+    }
+
+    .second {
+      @include right-sidebar;
+    }
   }
 }

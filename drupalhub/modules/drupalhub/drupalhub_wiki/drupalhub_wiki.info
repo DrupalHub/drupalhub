@@ -18,6 +18,7 @@ features[field_base][] = field_category
 features[field_instance][] = node-wiki-body
 features[field_instance][] = node-wiki-field_category
 features[node][] = wiki
+features[page_manager_handlers][] = node_view_panel_context_6
 features[page_manager_pages][] = drupalhub_wiki
 features[taxonomy][] = wiki_category
 features[variable][] = comment_anonymous_wiki

@@ -77,7 +77,7 @@ function drupalhub_wiki_add_node() {
   $type = 'wiki';
   $node = (object) array('uid' => $user->uid, 'name' => (isset($user->name) ? $user->name : ''), 'type' => $type, 'language' => LANGUAGE_NONE);
   $form = drupal_get_form($type . '_node_form', $node);
-
+  hide($form['body'][LANGUAGE_NONE][0]['format']);
   $content .= render($form);
 
   return $content;
