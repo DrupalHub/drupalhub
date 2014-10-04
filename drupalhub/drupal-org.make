@@ -18,8 +18,7 @@ projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = 1.15
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][path][] = "https://www.drupal.org/files/issues/ctools-combined_patch_from_n2195211-15_and_n2195471-29--n2195471-47.patch"
-projects[ctools][version] = 1.4
+projects[ctools][patch][] = "https://www.drupal.org/files/issues/ctools-combined_patch_from_n2195211-15_and_n2195471-29--n2195471-47.patch"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = 2.8
@@ -132,7 +131,7 @@ projects[pathauto][subdir] = "contrib"
 projects[pathauto][version] = 1.2
 
 projects[picture][subdir] = "contrib"
-projects[picture][version] = 2.7
+projects[picture][version] = 1.2
 
 projects[retina_images][subdir] = "contrib"
 projects[retina_images][version] = "1.0-beta4"
