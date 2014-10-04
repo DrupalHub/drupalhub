@@ -62,7 +62,7 @@ function drupalhub_wiki_links() {
     $items[] = l(t('Create documentation'), 'documentation/add');
   }
 
-  return "<div class='tabs'>" . theme('item_list', array('items' => $items)) . '</div>';
+  return "<div class='wikipedia-tabs'>" . theme('item_list', array('items' => $items)) . '</div>';
 }
 
 /**

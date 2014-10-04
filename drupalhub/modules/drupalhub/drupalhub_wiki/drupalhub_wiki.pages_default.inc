@@ -35,6 +35,14 @@ function drupalhub_wiki_default_page_manager_handlers() {
         'context' => 'argument_entity_id:node_1',
         'id' => 1,
       ),
+      1 => array(
+        'identifier' => 'Taxonomy term from Node (on Node: Category [field_category])',
+        'keyword' => 'taxonomy_term',
+        'name' => 'entity_from_field:field_category-node-taxonomy_term',
+        'delta' => 0,
+        'context' => 'argument_entity_id:node_1',
+        'id' => 1,
+      ),
     ),
     'access' => array(
       'plugins' => array(
@@ -208,7 +216,10 @@ function drupalhub_wiki_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array();
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
     $pane->extras = array();
     $pane->position = 4;
     $pane->locks = array();
@@ -342,7 +353,7 @@ function drupalhub_wiki_default_page_manager_handlers() {
     $display->content['new-ffc35975-02f7-404a-8155-f94e3ff158b5'] = $pane;
     $display->panels['second'][0] = 'new-ffc35975-02f7-404a-8155-f94e3ff158b5';
     $pane = new stdClass();
-    $pane->pid = 'new-2541bc32-b7bd-4ccb-8f97-d415d30e9e4d';
+    $pane->pid = 'new-cd9e92af-f6b0-4800-81be-d81f834fc813';
     $pane->panel = 'second';
     $pane->type = 'wikipedia_terms';
     $pane->subtype = 'wikipedia_terms';
@@ -351,9 +362,10 @@ function drupalhub_wiki_default_page_manager_handlers() {
     $pane->configuration = array(
       'return' => 'Finish',
       'cancel' => 'Cancel',
+      'context' => 'relationship_entity_from_field:field_category-node-taxonomy_term_1',
       'override_title' => 0,
       'override_title_text' => '',
-      'form_build_id' => 'form-QtUFkvGbHdQlMkVqgmUf6WZoZvyEcPZHBQetuEnTGY4',
+      'form_build_id' => 'form-OdbghHBdZeQ98-aSgL2lERW1FseiDhPnH1PV395M3ho',
       'form_token' => '7AW2aE6Em8M85TT6hZMbiJ-VxZfUcbkJiEa9hpxRBU8',
       'form_id' => 'drupalhub_wiki_wikipedia_terms_content_type_edit_form',
       'op' => 'Finish',
@@ -362,16 +374,13 @@ function drupalhub_wiki_default_page_manager_handlers() {
     $pane->style = array(
       'settings' => NULL,
     );
-    $pane->css = array(
-      'css_id' => '',
-      'css_class' => '',
-    );
+    $pane->css = array();
     $pane->extras = array();
     $pane->position = 1;
     $pane->locks = array();
-    $pane->uuid = '2541bc32-b7bd-4ccb-8f97-d415d30e9e4d';
-    $display->content['new-2541bc32-b7bd-4ccb-8f97-d415d30e9e4d'] = $pane;
-    $display->panels['second'][1] = 'new-2541bc32-b7bd-4ccb-8f97-d415d30e9e4d';
+    $pane->uuid = 'cd9e92af-f6b0-4800-81be-d81f834fc813';
+    $display->content['new-cd9e92af-f6b0-4800-81be-d81f834fc813'] = $pane;
+    $display->panels['second'][1] = 'new-cd9e92af-f6b0-4800-81be-d81f834fc813';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = '0';
   $handler->conf['display'] = $display;

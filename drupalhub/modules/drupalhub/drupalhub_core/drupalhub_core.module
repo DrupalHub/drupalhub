@@ -75,6 +75,7 @@ function drupalhub_core_init() {
       'blog' => l(t('Blogs'), 'blogs'),
       'events' => l(t('Calendar'), 'calendar'),
       'youtube' => l(t('Video library'), 'video'),
+      'wiki' =>l(t('Documentation'), 'documentation'),
     );
 
     if (isset($bundles[$object->type])) {

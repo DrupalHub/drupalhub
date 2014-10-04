@@ -146,7 +146,7 @@
     border-top: none;
     border-left: none;
     border-right: none;
-    border-bottom: 2px solid #ffcc00; }
+    border-bottom: 1px solid #ffcc00; }
   .tabs ul a {
     padding: 10px; }
     .tabs ul a:hover {
@@ -1109,16 +1109,16 @@ body.front #AddQuestion .modal-dialog {
       padding-right: 10px;
       font-size: 20px; }
 
-.page-documentation div.first .tabs {
+.page-documentation div.first .wikipedia-tabs {
   padding-bottom: 10px; }
-  .page-documentation div.first .tabs ul {
+  .page-documentation div.first .wikipedia-tabs ul {
     padding: 0px;
     border: none; }
-    .page-documentation div.first .tabs ul li {
+    .page-documentation div.first .wikipedia-tabs ul li {
       display: inline;
       list-style-type: none; }
-    .page-documentation div.first .tabs ul .active {
-      border-bottom: 2px solid #ffcc00; }
+    .page-documentation div.first .wikipedia-tabs ul .active {
+      border-bottom: 1px solid #ffcc00; }
 .page-documentation .second .pane-search-box #edit-text {
   float: left;
   /* LTR */
@@ -1131,32 +1131,49 @@ body.front #AddQuestion .modal-dialog {
   .page-documentation .second .pane-wikipedia-terms ul li {
     list-style-type: none; }
 
-.page-documentation-add .drupalhub-wiki .tabs,
-.node-type-wiki .drupalhub-wiki .tabs {
+.page-documentation-add .wikipedia-tabs,
+.node-type-wiki .wikipedia-tabs {
   padding-bottom: 10px; }
-  .page-documentation-add .drupalhub-wiki .tabs ul,
-  .node-type-wiki .drupalhub-wiki .tabs ul {
+  .page-documentation-add .wikipedia-tabs ul,
+  .node-type-wiki .wikipedia-tabs ul {
     padding: 0px;
     border: none; }
-    .page-documentation-add .drupalhub-wiki .tabs ul li,
-    .node-type-wiki .drupalhub-wiki .tabs ul li {
+    .page-documentation-add .wikipedia-tabs ul li,
+    .node-type-wiki .wikipedia-tabs ul li {
       display: inline;
       list-style-type: none; }
-    .page-documentation-add .drupalhub-wiki .tabs ul .active,
-    .node-type-wiki .drupalhub-wiki .tabs ul .active {
-      border-bottom: 2px solid #ffcc00; }
-.page-documentation-add .drupalhub-wiki .second .pane-search-box #edit-text,
-.node-type-wiki .drupalhub-wiki .second .pane-search-box #edit-text {
+    .page-documentation-add .wikipedia-tabs ul .active,
+    .node-type-wiki .wikipedia-tabs ul .active {
+      border-bottom: 1px solid #ffcc00; }
+.page-documentation-add .first .pane-user-picture,
+.node-type-wiki .first .pane-user-picture {
   float: left;
-  /* LTR */
-  width: 60%; }
-.page-documentation-add .drupalhub-wiki .second .pane-search-box button,
-.node-type-wiki .drupalhub-wiki .second .pane-search-box button {
-  float: right;
-  /* LTR */ }
-.page-documentation-add .drupalhub-wiki .second .pane-wikipedia-terms ul,
-.node-type-wiki .drupalhub-wiki .second .pane-wikipedia-terms ul {
-  padding: 0; }
-  .page-documentation-add .drupalhub-wiki .second .pane-wikipedia-terms ul li,
-  .node-type-wiki .drupalhub-wiki .second .pane-wikipedia-terms ul li {
-    list-style-type: none; }
+  padding-right: 10px; }
+.page-documentation-add .first .pane-node-body:after,
+.node-type-wiki .first .pane-node-body:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+.page-documentation-add .first .pane-node-metatags .fa-user,
+.node-type-wiki .first .pane-node-metatags .fa-user {
+  padding-left: 5px; }
+.page-documentation-add .second,
+.node-type-wiki .second {
+  border-left: solid 1px #ffcc00; }
+  .page-documentation-add .second .pane-search-box #edit-text,
+  .node-type-wiki .second .pane-search-box #edit-text {
+    float: left;
+    /* LTR */
+    width: 60%; }
+  .page-documentation-add .second .pane-search-box button,
+  .node-type-wiki .second .pane-search-box button {
+    float: right;
+    /* LTR */ }
+  .page-documentation-add .second .pane-wikipedia-terms ul,
+  .node-type-wiki .second .pane-wikipedia-terms ul {
+    padding: 0; }
+    .page-documentation-add .second .pane-wikipedia-terms ul li,
+    .node-type-wiki .second .pane-wikipedia-terms ul li {
+      list-style-type: none; }

@@ -5,6 +5,7 @@ $orange-button-background: #f7b700;
 $blue-button-background: #0091f7;
 $orange-button-circle: #fdf1cc;
 $orange-button-plus: #f7b800;
+$orange-light-border: #ffcc00;
 $blue-title: #20aae4;
 $blue-strip: #21A8E6;
 $grey1: #e6e6e6;
@@ -213,7 +214,7 @@ $blue-border-2: #198fc0;
     }
 
     .active {
-      border-bottom: 2px solid #ffcc00;
+      border-bottom: 1px solid $orange-light-border;
     }
   }
 }
@@ -392,7 +393,7 @@ $blue-border-2: #198fc0;
         border-top: none;
         border-left: none;
         border-right: none;
-        border-bottom: 2px solid #ffcc00;
+        border-bottom: 1px solid $orange-light-border;
       }
     }
 

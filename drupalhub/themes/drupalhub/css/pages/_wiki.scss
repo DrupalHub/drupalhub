@@ -30,7 +30,7 @@
 
   div.first {
 
-    .tabs {
+    .wikipedia-tabs {
       @include tabs;
     }
   }
@@ -43,14 +43,31 @@
 .page-documentation-add,
 .node-type-wiki {
 
-  .drupalhub-wiki {
+  .wikipedia-tabs {
+    @include tabs;
+  }
 
-    .tabs {
-      @include tabs;
+  .first {
+
+    .pane-user-picture {
+      float: left;
+      padding-right: 10px;
     }
 
-    .second {
-      @include right-sidebar;
+    .pane-node-body {
+      @include clearfix;
     }
+
+    .pane-node-metatags {
+
+      .fa-user {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .second {
+    @include right-sidebar;
+    border-left: solid 1px $orange-light-border;
   }
 }

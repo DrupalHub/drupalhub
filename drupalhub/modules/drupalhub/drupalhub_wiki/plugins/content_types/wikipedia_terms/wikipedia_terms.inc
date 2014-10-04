@@ -4,9 +4,12 @@ $plugin = array(
   'title' => t('Wikipedia terns'),
   'description' => t('Display all the terms.'),
   'category' => t('DrupalHub wiki'),
+  'required context' => new ctools_context_optional(t('Taxonomy term'), 'taxonomy_term'),
 );
 
 function drupalhub_wiki_wikipedia_terms_content_type_render($subtype, $conf, $args, $context) {
+
+  $tid = !empty($context->data->tid) ? $context->data->tid : 0;
   $block = new stdClass();
   $block->title = '';
 
@@ -15,7 +18,7 @@ function drupalhub_wiki_wikipedia_terms_content_type_render($subtype, $conf, $ar
 
   $items = array();
   foreach ($terms as $term) {
-    $items[] = l($term->name, 'documentation/term/' . $term->tid);
+    $items[] = $tid == $term->tid ? $term->name : l($term->name, 'documentation/term/' . $term->tid);
   }
 
   $block->content = theme('item_list', array('items' => $items));
