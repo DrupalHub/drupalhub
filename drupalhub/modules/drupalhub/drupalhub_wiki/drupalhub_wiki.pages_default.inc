@@ -759,6 +759,37 @@ function drupalhub_wiki_default_page_manager_pages() {
     $display->content['new-af278c2d-ca49-4f9c-bf0b-4ce305634f82'] = $pane;
     $display->panels['main_top'][0] = 'new-af278c2d-ca49-4f9c-bf0b-4ce305634f82';
     $pane = new stdClass();
+    $pane->pid = 'new-8bc3f0e5-2d99-44d0-8005-2ab2747df945';
+    $pane->panel = 'main_top';
+    $pane->type = 'wiki_from_category';
+    $pane->subtype = 'wiki_from_category';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'position' => '0',
+      'location' => 'wiki_category',
+      'form_build_id' => 'form-XpJ7sapqtn_G0UqEbnuWelTLiB0pw5rgLZJEW4EN_hs',
+      'form_token' => 'NFJEVj0QFOowf_VfcONN4XM9HElUDwjmcY8K-qFKR1w',
+      'form_id' => 'drupalhub_wiki_wiki_from_category_content_type_edit_form',
+      'op' => 'Finish',
+      'context' => 'argument_term_1',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '8bc3f0e5-2d99-44d0-8005-2ab2747df945';
+    $display->content['new-8bc3f0e5-2d99-44d0-8005-2ab2747df945'] = $pane;
+    $display->panels['main_top'][1] = 'new-8bc3f0e5-2d99-44d0-8005-2ab2747df945';
+    $pane = new stdClass();
     $pane->pid = 'new-eb6ec69c-ec1b-4cc0-832e-8a3176174be8';
     $pane->panel = 'second';
     $pane->type = 'search_box';
