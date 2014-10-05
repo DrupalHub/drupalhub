@@ -23,10 +23,15 @@ function drupalhub_wiki_ctools_plugin_directory($module, $plugin) {
   if ($module == 'ctools') {
     return "plugins/$plugin";
   }
+  if ($module == 'restful') {
+    return "plugins/$plugin";
+  }
 }
 
 /**
  * The form of the search box.
+ *
+ * todo: bring back the search button when solr integration will be complete.
  */
 function drupalhub_wiki_search_form($form, $form_state) {
   $form['text'] = array(
@@ -37,13 +42,8 @@ function drupalhub_wiki_search_form($form, $form_state) {
     ),
   );
 
-  $form['actions'] = array(
-    '#type' => 'actions',
-    'submit' => array(
-      '#type' => 'submit',
-      '#value' => t('Search!'),
-    ),
-  );
+  drupal_add_library('system', 'ui.autocomplete');
+  $form['#attached']['js'][] = drupal_get_path('module', 'drupalhub_wiki') . '/js/drupalhub_wiki.js';
   return $form;
 }
 
@@ -53,9 +53,9 @@ function drupalhub_wiki_search_form($form, $form_state) {
 function drupalhub_wiki_links() {
   $items = array(
     l(t('Front page'), 'documentation'),
-    l(t('FAQ'), 'documentation/FAQ'),
-    l(t('Top rated'), 'documentation/top-rated'),
-    l(t('Most viewed'), 'documentation/most-viewed'),
+//    l(t('FAQ'), 'documentation/FAQ'),
+//    l(t('Top rated'), 'documentation/top-rated'),
+//    l(t('Most viewed'), 'documentation/most-viewed'),
   );
 
   if (user_access('create wiki content')) {

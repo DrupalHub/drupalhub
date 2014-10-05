@@ -1109,6 +1109,9 @@ body.front #AddQuestion .modal-dialog {
       padding-right: 10px;
       font-size: 20px; }
 
+.view-last-wiki-nodes .views-row {
+  padding-bottom: 10px; }
+
 .page-documentation div.first .wikipedia-tabs {
   padding-bottom: 10px; }
   .page-documentation div.first .wikipedia-tabs ul {
@@ -1159,21 +1162,18 @@ body.front #AddQuestion .modal-dialog {
 .page-documentation-add .first .pane-node-metatags .fa-user,
 .node-type-wiki .first .pane-node-metatags .fa-user {
   padding-left: 5px; }
-.page-documentation-add .second,
-.node-type-wiki .second {
-  border-left: solid 1px #ffcc00; }
-  .page-documentation-add .second .pane-search-box #edit-text,
-  .node-type-wiki .second .pane-search-box #edit-text {
-    float: left;
-    /* LTR */
-    width: 60%; }
-  .page-documentation-add .second .pane-search-box button,
-  .node-type-wiki .second .pane-search-box button {
-    float: right;
-    /* LTR */ }
-  .page-documentation-add .second .pane-wikipedia-terms ul,
-  .node-type-wiki .second .pane-wikipedia-terms ul {
-    padding: 0; }
-    .page-documentation-add .second .pane-wikipedia-terms ul li,
-    .node-type-wiki .second .pane-wikipedia-terms ul li {
-      list-style-type: none; }
+.page-documentation-add .second .pane-search-box #edit-text,
+.node-type-wiki .second .pane-search-box #edit-text {
+  float: left;
+  /* LTR */
+  width: 60%; }
+.page-documentation-add .second .pane-search-box button,
+.node-type-wiki .second .pane-search-box button {
+  float: right;
+  /* LTR */ }
+.page-documentation-add .second .pane-wikipedia-terms ul,
+.node-type-wiki .second .pane-wikipedia-terms ul {
+  padding: 0; }
+  .page-documentation-add .second .pane-wikipedia-terms ul li,
+  .node-type-wiki .second .pane-wikipedia-terms ul li {
+    list-style-type: none; }

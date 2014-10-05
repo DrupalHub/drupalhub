@@ -26,6 +26,14 @@
 }
 
 // CSS.
+
+.view-last-wiki-nodes {
+
+  .views-row {
+    padding-bottom: 10px;
+  }
+}
+
 .page-documentation {
 
   div.first {
@@ -68,6 +76,5 @@
 
   .second {
     @include right-sidebar;
-    border-left: solid 1px $orange-light-border;
   }
 }
