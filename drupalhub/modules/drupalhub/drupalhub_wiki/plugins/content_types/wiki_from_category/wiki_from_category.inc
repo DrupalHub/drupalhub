@@ -7,6 +7,54 @@ $plugin = array(
 );
 
 function drupalhub_wiki_wiki_from_category_content_type_render($subtype, $conf, $args, $context) {
+  $block = new stdClass();
+
+  if ($conf['location'] == 'wiki_home') {
+    if (!$data = _drupalhub_wiki_nodes_front_page($conf)) {
+      return $block;
+    }
+  }
+  else {
+
+  }
+
+  $block->title = "";
+  $block->content = "<h2>" . $data['term']->name . "</h2>";
+  $block->content .= views_embed_view('last_wiki_nodes', 'default', $data['nodes']);
+  return $block;
+}
+
+/**
+ * Form settings.
+ */
+function drupalhub_wiki_wiki_from_category_content_type_edit_form($form, &$form_state) {
+  $form['position'] = array(
+    '#type' => 'select',
+    '#title' => t('Position'),
+    '#description' => t('Select the position: first, second or third'),
+    '#options' => array(
+      0 => t('First'),
+      1 => t('Second'),
+      2 => t('Third'),
+    ),
+    '#default_value' => $form_state['conf']['position'],
+  );
+
+  $form['location'] = array(
+    '#type' => 'select',
+    '#title' => t('Location'),
+    '#options' => array(
+      'wiki_home' => t('Documentation home page'),
+      'wiki_category' => t('Documentation term page'),
+    ),
+  );
+  return $form;
+}
+
+/**
+ * Get the nodes for the documentation home page.
+ */
+function _drupalhub_wiki_nodes_front_page($conf) {
   static $nodes, $tids;
 
   if (!$tids) {
@@ -42,36 +90,14 @@ function drupalhub_wiki_wiki_from_category_content_type_render($subtype, $conf, 
   $tids = array_unique($tids);
 
   $position = $conf['position'];
-  $block = new stdClass();
 
   if (empty($tids[$position])) {
-    return $block;
+    return;
   }
 
   $term = taxonomy_term_load($tids[$position]);
 
-  $block->title = "";
-  $block->content = "<h2>" . $term->name . "</h2>";
-  $block->content .= views_embed_view('last_wiki_nodes', 'default', implode(",", $nodes[$term->tid]));
-  return $block;
-}
-
-/**
- * Form settings.
- */
-function drupalhub_wiki_wiki_from_category_content_type_edit_form($form, &$form_state) {
-  $form['position'] = array(
-    '#type' => 'select',
-    '#title' => t('Position'),
-    '#description' => t('Select the position: first, second or third'),
-    '#options' => array(
-      0 => t('First'),
-      1 => t('Second'),
-      2 => t('Third'),
-    ),
-    '#default_value' => $form_state['conf']['position'],
-  );
-  return $form;
+  return array('term' => $term, 'nodes' => implode(",", array_slice($nodes[$term->tid], 0, 3)));
 }
 
 /**

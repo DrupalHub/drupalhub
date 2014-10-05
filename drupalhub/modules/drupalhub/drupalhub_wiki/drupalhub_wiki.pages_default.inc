@@ -458,10 +458,11 @@ function drupalhub_wiki_default_page_manager_pages() {
       'override_title' => 0,
       'override_title_text' => '',
       'position' => '0',
-      'form_build_id' => 'form-RralD7K5I2tUricHMJkh0smmAVZQOfY1JuiOyibTdtg',
+      'form_build_id' => 'form-KBwi5GCh05p9otIK5DKlgrZmWHgbNH3fC4-5yd-SDmI',
       'form_token' => 'NFJEVj0QFOowf_VfcONN4XM9HElUDwjmcY8K-qFKR1w',
       'form_id' => 'drupalhub_wiki_wiki_from_category_content_type_edit_form',
       'op' => 'Finish',
+      'location' => 'wiki_home',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -487,10 +488,11 @@ function drupalhub_wiki_default_page_manager_pages() {
       'override_title' => 0,
       'override_title_text' => '',
       'position' => '1',
-      'form_build_id' => 'form-160ymvypxbDbm4PizfuOIuEQKxoWSEn4fC5qMWdD8K4',
+      'form_build_id' => 'form-bS7DUt_sX8lr7rDF4h8YGkzP2nlk91EUg6KCfBfVafM',
       'form_token' => 'NFJEVj0QFOowf_VfcONN4XM9HElUDwjmcY8K-qFKR1w',
       'form_id' => 'drupalhub_wiki_wiki_from_category_content_type_edit_form',
       'op' => 'Finish',
+      'location' => 'wiki_home',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -516,10 +518,11 @@ function drupalhub_wiki_default_page_manager_pages() {
       'override_title' => 0,
       'override_title_text' => '',
       'position' => '2',
-      'form_build_id' => 'form-pjCLXTbPl0K8Xdrk3v1H4S0klJo7e1VhCDulhXeu5Gk',
+      'form_build_id' => 'form-Wsa_y00YjthjnmUaRouE20tadjhisUNIeJNegyX1nug',
       'form_token' => 'NFJEVj0QFOowf_VfcONN4XM9HElUDwjmcY8K-qFKR1w',
       'form_id' => 'drupalhub_wiki_wiki_from_category_content_type_edit_form',
       'op' => 'Finish',
+      'location' => 'wiki_home',
     );
     $pane->cache = array();
     $pane->style = array(
@@ -665,6 +668,161 @@ function drupalhub_wiki_default_page_manager_pages() {
   $handler->conf['display'] = $display;
   $page->default_handlers[$handler->name] = $handler;
   $pages['drupalhub_wiki'] = $page;
+
+  $page = new stdClass();
+  $page->disabled = FALSE; /* Edit this to true to make a default page disabled initially */
+  $page->api_version = 1;
+  $page->name = 'wiki_by_terms';
+  $page->task = 'page';
+  $page->admin_title = 'Wiki by terms';
+  $page->admin_description = '';
+  $page->path = 'documentation/term/%taxonomy_term';
+  $page->access = array();
+  $page->menu = array();
+  $page->arguments = array(
+    'taxonomy_term' => array(
+      'id' => 1,
+      'identifier' => 'Taxonomy term: ID',
+      'name' => 'term',
+      'settings' => array(
+        'input_form' => 'tid',
+        'vids' => array(
+          1 => 0,
+          2 => 0,
+        ),
+        'breadcrumb' => 1,
+        'transform' => 0,
+      ),
+    ),
+  );
+  $page->conf = array(
+    'admin_paths' => FALSE,
+  );
+  $page->default_handlers = array();
+  $handler = new stdClass();
+  $handler->disabled = FALSE; /* Edit this to true to make a default handler disabled initially */
+  $handler->api_version = 1;
+  $handler->name = 'page_wiki_by_terms_panel_context';
+  $handler->task = 'page';
+  $handler->subtask = 'wiki_by_terms';
+  $handler->handler = 'panel_context';
+  $handler->weight = 0;
+  $handler->conf = array(
+    'title' => 'Panel',
+    'no_blocks' => 1,
+    'pipeline' => 'standard',
+    'body_classes_to_remove' => '',
+    'body_classes_to_add' => '',
+    'css_id' => '',
+    'css' => '',
+    'contexts' => array(),
+    'relationships' => array(),
+  );
+  $display = new panels_display();
+  $display->layout = 'drupalhub_wiki';
+  $display->layout_settings = array();
+  $display->panel_settings = array(
+    'style_settings' => array(
+      'default' => NULL,
+      'main_top' => NULL,
+      'category_1' => NULL,
+      'category_2' => NULL,
+      'category_3' => NULL,
+      'second' => NULL,
+    ),
+  );
+  $display->cache = array();
+  $display->title = '';
+  $display->uuid = 'a467a040-c7f8-4eb3-b11a-070868b6cd64';
+  $display->content = array();
+  $display->panels = array();
+    $pane = new stdClass();
+    $pane->pid = 'new-af278c2d-ca49-4f9c-bf0b-4ce305634f82';
+    $pane->panel = 'main_top';
+    $pane->type = 'links';
+    $pane->subtype = 'links';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'af278c2d-ca49-4f9c-bf0b-4ce305634f82';
+    $display->content['new-af278c2d-ca49-4f9c-bf0b-4ce305634f82'] = $pane;
+    $display->panels['main_top'][0] = 'new-af278c2d-ca49-4f9c-bf0b-4ce305634f82';
+    $pane = new stdClass();
+    $pane->pid = 'new-eb6ec69c-ec1b-4cc0-832e-8a3176174be8';
+    $pane->panel = 'second';
+    $pane->type = 'search_box';
+    $pane->subtype = 'search_box';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-_YQJAW-WToEH06nClkHJCVJ92NQN67ASnrb9OhZbMVk',
+      'form_token' => 'JR8QlYTNWB5Dq7bCx4WvsTOtjOpPnpg_856AQJ4QVGs',
+      'form_id' => 'drupalhub_wiki_search_box_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array(
+      'css_id' => '',
+      'css_class' => 'clearfix',
+    );
+    $pane->extras = array();
+    $pane->position = 0;
+    $pane->locks = array();
+    $pane->uuid = 'eb6ec69c-ec1b-4cc0-832e-8a3176174be8';
+    $display->content['new-eb6ec69c-ec1b-4cc0-832e-8a3176174be8'] = $pane;
+    $display->panels['second'][0] = 'new-eb6ec69c-ec1b-4cc0-832e-8a3176174be8';
+    $pane = new stdClass();
+    $pane->pid = 'new-084e17d4-7165-41b2-887b-38bb138c10f2';
+    $pane->panel = 'second';
+    $pane->type = 'wikipedia_terms';
+    $pane->subtype = 'wikipedia_terms';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'context' => 'argument_term_1',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'form_build_id' => 'form-75HeuLEVNT-tp0nWoYW1Aao2cbH81cgGW45A5nF9tUc',
+      'form_token' => 'zBUAEu8aWzQ2B_MsJBzd78A-udY4iLrPLfeT3uwPXWw',
+      'form_id' => 'drupalhub_wiki_wikipedia_terms_content_type_edit_form',
+      'op' => 'Finish',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 1;
+    $pane->locks = array();
+    $pane->uuid = '084e17d4-7165-41b2-887b-38bb138c10f2';
+    $display->content['new-084e17d4-7165-41b2-887b-38bb138c10f2'] = $pane;
+    $display->panels['second'][1] = 'new-084e17d4-7165-41b2-887b-38bb138c10f2';
+  $display->hide_title = PANELS_TITLE_FIXED;
+  $display->title_pane = 'new-af278c2d-ca49-4f9c-bf0b-4ce305634f82';
+  $handler->conf['display'] = $display;
+  $page->default_handlers[$handler->name] = $handler;
+  $pages['wiki_by_terms'] = $page;
 
   return $pages;
 
