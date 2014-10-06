@@ -16,3 +16,4 @@ files[] = views/handlers/drupalhub_core_time_name_tags.inc
 scripts[] = js/underscore.js
 scripts[] = js/drupalhub_core.js
 scripts[] = js/moments.js
+scripts[] = js/handlebars.js

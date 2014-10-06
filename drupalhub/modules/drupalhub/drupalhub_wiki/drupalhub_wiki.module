@@ -34,16 +34,20 @@ function drupalhub_wiki_ctools_plugin_directory($module, $plugin) {
  * todo: bring back the search button when solr integration will be complete.
  */
 function drupalhub_wiki_search_form($form, $form_state) {
+  $form['#attached']['js'] = array(
+    libraries_get_path('typeahead') . '/typeahead.bundle.js',
+    drupal_get_path('module', 'drupalhub_wiki') . '/js/drupalhub_wiki.js',
+  );
   $form['text'] = array(
     '#type' => 'textfield',
     '#title' => '',
     '#attributes' => array(
       'placeholder' => array(t('Enter text')),
+      'class' => array('typeahead',),
+      'data-provide' => array('typeahead'),
     ),
   );
 
-  drupal_add_library('system', 'ui.autocomplete');
-  $form['#attached']['js'][] = drupal_get_path('module', 'drupalhub_wiki') . '/js/drupalhub_wiki.js';
   return $form;
 }
 

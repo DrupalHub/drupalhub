@@ -202,3 +202,7 @@ libraries[autopager][download][url] = "https://github.com/sagotsky/jquery-autopa
 libraries[datepicker][type] = "libraries"
 libraries[datepicker][download][type] = "file"
 libraries[datepicker][download][url] = "https://github.com/eternicode/bootstrap-datepicker/zipball/1.3.0"
+
+libraries[typeahead][type] = "libraries"
+libraries[typeahead][download][type] = "file"
+libraries[typeahead][download][url] = "http://twitter.github.com/typeahead.js/releases/latest/typeahead.js.zip"
