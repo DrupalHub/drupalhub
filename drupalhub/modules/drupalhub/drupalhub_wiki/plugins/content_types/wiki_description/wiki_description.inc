@@ -28,4 +28,3 @@ function drupalhub_wiki_wiki_description_box_content_type_edit_form_submit(&$for
     $form_state['conf'][$key] = $form_state['values'][$key];
   }
 }
-

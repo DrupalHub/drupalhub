@@ -149,4 +149,3 @@ function drupalhub_wiki_wiki_from_category_content_type_edit_form_submit(&$form,
     $form_state['conf'][$key] = $form_state['values'][$key];
   }
 }
-

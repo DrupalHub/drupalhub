@@ -28,4 +28,3 @@ function drupalhub_wiki_search_box_content_type_edit_form_submit(&$form, &$form_
     $form_state['conf'][$key] = $form_state['values'][$key];
   }
 }
-

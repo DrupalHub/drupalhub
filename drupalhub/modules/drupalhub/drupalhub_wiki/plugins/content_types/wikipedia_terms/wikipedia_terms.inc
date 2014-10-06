@@ -41,4 +41,3 @@ function drupalhub_wiki_wikipedia_terms_content_type_edit_form_submit(&$form, &$
     $form_state['conf'][$key] = $form_state['values'][$key];
   }
 }
-
