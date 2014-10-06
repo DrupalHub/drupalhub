@@ -80,8 +80,8 @@
         <div class="nav-collapsee collapsee col-md-12">
           <ul class="inner-links col-md-6">
             <li><i class="fa fa-calendar"></i><a class="calendar" href="<?php print $inner['calendar']['url']; ?>"><?php print $inner['calendar']['text']; ?></a></li>
-            <li><i class="flaticon-frontal"></i></i><a class="calendar" href="<?php print $inner['video']['url']; ?>"><?php print $inner['video']['text']; ?></a></li>
-            <li><i class="flaticon-frontal"></i></i><a class="documentation" href="<?php print $inner['documentation']['url']; ?>"><?php print $inner['documentation']['text']; ?></a></li>
+            <li><i class="fa fa-youtube-square"></i></i><a class="calendar" href="<?php print $inner['video']['url']; ?>"><?php print $inner['video']['text']; ?></a></li>
+            <li><i class="fa fa-book"></i></i><a class="documentation" href="<?php print $inner['documentation']['url']; ?>"><?php print $inner['documentation']['text']; ?></a></li>
           </ul>
           <ul class="nav navbar-nav col-md-6">
             <li class="social">
