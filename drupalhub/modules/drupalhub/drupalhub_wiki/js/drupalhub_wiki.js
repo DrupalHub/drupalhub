@@ -9,7 +9,7 @@
         limit: 10,
         remote: {
           // todo: handle the filter option.
-          url: Drupal.settings.baseURL + 'api/v1/wiki',
+          url: Drupal.settings.baseURL + 'api/v1/wiki?filter[label][value]=%QUERY&filter[label][operator]=CONTAINS',
           filter: function(results) {
             var result = [];
 
@@ -29,11 +29,6 @@
         displayKey: 'name',
         source: countries.ttAdapter(),
         templates: {
-          empty: [
-            '<div class="empty-message">',
-            Drupal.t('unable to find any Best Picture winners that match the current query'),
-            '</div>'
-          ].join('\n'),
           suggestion: Handlebars.compile('<a href="{{self}}">{{label}}</a> <Br />' + Drupal.t('Category: ') + '{{category}}')
         }
       });

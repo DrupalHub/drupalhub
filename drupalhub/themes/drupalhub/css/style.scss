@@ -213,8 +213,12 @@ $blue-border-2: #198fc0;
       list-style-type: none;
     }
 
-    .active {
-      border-bottom: 1px solid $orange-light-border;
+    a {
+      padding: 10px;
+
+      &.active {
+        border-bottom: 1px solid $orange-light-border;
+      }
     }
   }
 }
@@ -435,6 +439,8 @@ span.twitter-typeahead {
 
   .tt-suggestion {
     padding-left: 10px;
+    padding-bottom: 5px;
+    width: 250px;
 
     & > p {
       display: block;

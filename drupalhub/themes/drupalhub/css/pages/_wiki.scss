@@ -1,11 +1,11 @@
 // Local mixins
 @mixin right-sidebar {
+  border-left: $orange-button-background solid 1px;
 
   .pane-search-box {
 
     #edit-text {
       float: left; /* LTR */
-      width: 60%;
     }
 
     button {
@@ -31,6 +31,16 @@
 
   .views-row {
     padding-bottom: 10px;
+    border-bottom: solid 1px $orange-button-background;
+
+    .views-field-title {
+      font-size: 16px;
+      padding-top: 15px;
+    }
+  }
+
+  .views-row-last {
+    border-bottom: none;
   }
 }
 
