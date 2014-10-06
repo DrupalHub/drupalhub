@@ -64,6 +64,9 @@ function drupalhub_core_init() {
   elseif ($item['path'] == 'video') {
     drupal_set_title(t('Video library'));
   }
+  elseif ($item['path'] == 'documentation') {
+    drupal_set_title(t('Documentation'));
+  }
   elseif ($item['path'] == 'node/%') {
     $object = menu_get_object();
 
@@ -72,11 +75,16 @@ function drupalhub_core_init() {
       'blog' => l(t('Blogs'), 'blogs'),
       'events' => l(t('Calendar'), 'calendar'),
       'youtube' => l(t('Video library'), 'video'),
+      'wiki' => l(t('Documentation'), 'documentation'),
     );
 
     if (isset($bundles[$object->type])) {
       $breadcrumbs[] = $bundles[$object->type];
     }
+  }
+  elseif ($item['path'] == 'documentation/term/%') {
+    $breadcrumbs[] = l(t('Documentation'), 'documentation');
+    drupal_set_title($item['map'][2]->data->name);
   }
 
   drupal_set_breadcrumb($breadcrumbs);
@@ -212,6 +220,7 @@ function drupalhub_core_form_alter(&$form, $form_state, $form_id) {
     'comment_node_question_form',
     'comment_node_blog_form',
     'comment_node_youtube_form',
+    'comment_node_wiki_form',
   );
 
   if (!in_array($form_id, $forms)) {

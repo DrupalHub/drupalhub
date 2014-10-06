@@ -1,0 +1,90 @@
+// Local mixins
+@mixin right-sidebar {
+  border-left: $orange-button-background solid 1px;
+
+  .pane-search-box {
+
+    #edit-text {
+      float: left; /* LTR */
+    }
+
+    button {
+      float: right; /* LTR */
+    }
+  }
+
+  .pane-wikipedia-terms {
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style-type: none;
+      }
+    }
+  }
+}
+
+// CSS.
+
+.view-last-wiki-nodes {
+
+  .views-row {
+    padding-bottom: 10px;
+    border-bottom: solid 1px $orange-button-background;
+
+    .views-field-title {
+      font-size: 16px;
+      padding-top: 15px;
+    }
+  }
+
+  .views-row-last {
+    border-bottom: none;
+  }
+}
+
+.page-documentation {
+
+  div.first {
+
+    .wikipedia-tabs {
+      @include tabs;
+    }
+  }
+
+  .second {
+    @include right-sidebar;
+  }
+}
+
+.page-documentation-add,
+.node-type-wiki {
+
+  .wikipedia-tabs {
+    @include tabs;
+  }
+
+  .first {
+
+    .pane-user-picture {
+      float: left;
+      padding-right: 10px;
+    }
+
+    .pane-node-body {
+      @include clearfix;
+    }
+
+    .pane-node-metatags {
+
+      .fa-user {
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .second {
+    @include right-sidebar;
+  }
+}

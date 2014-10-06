@@ -45,6 +45,8 @@
     list-style: none;
     font-size: 15px;
     padding-top: 5px; }
+    .inner-links li a {
+      margin: 10px; }
     .inner-links li i {
       font-size: 20px;
       margin-right: 5px; }
@@ -60,7 +62,7 @@
   background: #21a8e6;
   padding: 20px 0; }
   #navbar .container {
-    max-width: 1170px;
+    width: 95%;
     margin: 0px auto; }
     #navbar .container .navbar-header {
       margin: 0px; }
@@ -138,6 +140,67 @@
 
 .ui-autocomplete {
   z-index: 999999; }
+
+.tabs ul {
+  border: none; }
+  .tabs ul .active a, .tabs ul .active a:hover {
+    background: none !important;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #ffcc00; }
+  .tabs ul a {
+    padding: 10px; }
+    .tabs ul a:hover {
+      background: none !important;
+      border: none;
+      padding: 10px; }
+
+span.twitter-typeahead .tt-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  font-size: 14px;
+  text-align: left;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+  background-clip: padding-box; }
+span.twitter-typeahead .tt-suggestion {
+  padding-left: 10px;
+  padding-bottom: 5px;
+  width: 250px; }
+  span.twitter-typeahead .tt-suggestion > p {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: 1.42857143;
+    color: #333333;
+    white-space: nowrap; }
+span.twitter-typeahead span.twitter-typeahead {
+  width: 100%; }
+span.twitter-typeahead .input-group span.twitter-typeahead {
+  display: block !important; }
+span.twitter-typeahead .input-group .tt-dropdown-menu {
+  top: 32px !important; }
+span.twitter-typeahead .input-group.input-group-lg .tt-dropdown-menu {
+  top: 44px !important; }
+span.twitter-typeahead .input-group.input-group-sm .tt-dropdown-menu {
+  top: 28px !important; }
+
+.container {
+  width: 95%; }
 
 body.front .view-gallery {
   background: #e6e6e6;
@@ -1090,3 +1153,86 @@ body.front #AddQuestion .modal-dialog {
       text-align: right;
       padding-right: 10px;
       font-size: 20px; }
+
+.view-last-wiki-nodes .views-row {
+  padding-bottom: 10px;
+  border-bottom: solid 1px #f7b700; }
+  .view-last-wiki-nodes .views-row .views-field-title {
+    font-size: 16px;
+    padding-top: 15px; }
+.view-last-wiki-nodes .views-row-last {
+  border-bottom: none; }
+
+.page-documentation div.first .wikipedia-tabs {
+  padding-bottom: 10px; }
+  .page-documentation div.first .wikipedia-tabs ul {
+    padding: 0px;
+    border: none; }
+    .page-documentation div.first .wikipedia-tabs ul li {
+      display: inline;
+      list-style-type: none; }
+    .page-documentation div.first .wikipedia-tabs ul a {
+      padding: 10px; }
+      .page-documentation div.first .wikipedia-tabs ul a.active {
+        border-bottom: 1px solid #ffcc00; }
+.page-documentation .second {
+  border-left: #f7b700 solid 1px; }
+  .page-documentation .second .pane-search-box #edit-text {
+    float: left;
+    /* LTR */ }
+  .page-documentation .second .pane-search-box button {
+    float: right;
+    /* LTR */ }
+  .page-documentation .second .pane-wikipedia-terms ul {
+    padding: 0; }
+    .page-documentation .second .pane-wikipedia-terms ul li {
+      list-style-type: none; }
+
+.page-documentation-add .wikipedia-tabs,
+.node-type-wiki .wikipedia-tabs {
+  padding-bottom: 10px; }
+  .page-documentation-add .wikipedia-tabs ul,
+  .node-type-wiki .wikipedia-tabs ul {
+    padding: 0px;
+    border: none; }
+    .page-documentation-add .wikipedia-tabs ul li,
+    .node-type-wiki .wikipedia-tabs ul li {
+      display: inline;
+      list-style-type: none; }
+    .page-documentation-add .wikipedia-tabs ul a,
+    .node-type-wiki .wikipedia-tabs ul a {
+      padding: 10px; }
+      .page-documentation-add .wikipedia-tabs ul a.active,
+      .node-type-wiki .wikipedia-tabs ul a.active {
+        border-bottom: 1px solid #ffcc00; }
+.page-documentation-add .first .pane-user-picture,
+.node-type-wiki .first .pane-user-picture {
+  float: left;
+  padding-right: 10px; }
+.page-documentation-add .first .pane-node-body:after,
+.node-type-wiki .first .pane-node-body:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden; }
+.page-documentation-add .first .pane-node-metatags .fa-user,
+.node-type-wiki .first .pane-node-metatags .fa-user {
+  padding-left: 5px; }
+.page-documentation-add .second,
+.node-type-wiki .second {
+  border-left: #f7b700 solid 1px; }
+  .page-documentation-add .second .pane-search-box #edit-text,
+  .node-type-wiki .second .pane-search-box #edit-text {
+    float: left;
+    /* LTR */ }
+  .page-documentation-add .second .pane-search-box button,
+  .node-type-wiki .second .pane-search-box button {
+    float: right;
+    /* LTR */ }
+  .page-documentation-add .second .pane-wikipedia-terms ul,
+  .node-type-wiki .second .pane-wikipedia-terms ul {
+    padding: 0; }
+    .page-documentation-add .second .pane-wikipedia-terms ul li,
+    .node-type-wiki .second .pane-wikipedia-terms ul li {
+      list-style-type: none; }

@@ -22,6 +22,7 @@ files[] = includes/handlers/node/Youtube.php
 
 ; Terms.
 files[] = includes/handlers/terms/Category.php
+files[] = includes/handlers/terms/WikiCategory.php
 
 ; User.
 files[] = includes/handlers/user/User.php

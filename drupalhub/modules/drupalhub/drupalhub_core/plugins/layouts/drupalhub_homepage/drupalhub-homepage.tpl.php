@@ -6,10 +6,10 @@
   </div>
 
   <div class="row">
-    <div class="col-md-8 col-xs-12">
+    <div class="col-md-9 col-xs-12">
       <?php print $content['first_left']; ?>
     </div>
-    <div class="col-md-4 col-xs-12">
+    <div class="col-md-3 col-xs-12">
       <?php print $content['fist_right']; ?>
     </div>
   </div>

@@ -12,13 +12,13 @@ projects[calendar][version] = 3.4
 projects[calendar][patch][] = "https://www.drupal.org/files/issues/calendar-illegal_offset-1471400-78.patch"
 
 projects[colorbox][subdir] = "contrib"
-projects[colorbox][version] = 2.7
+projects[colorbox][version] = 2.8
 
 projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = 1.15
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = 1.4
+projects[ctools][patch][] = "https://www.drupal.org/files/issues/ctools-combined_patch_from_n2195211-15_and_n2195471-29--n2195471-47.patch"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = 2.8
@@ -148,10 +148,10 @@ projects[token][version] = 1.5
 projects[twitter][version] = "5.8"
 projects[twitter][subdir] = contrib
 
-projects[video_embed_field][version] = "2.0-beta7"
+projects[video_embed_field][version] = "2.0-beta8"
 projects[video_embed_field][subdir] = contrib
 
-projects[votingapi][version] = "2.11"
+projects[votingapi][version] = "2.12"
 projects[votingapi][subdir] = contrib
 
 projects[vote_up_down][download][type] = "git"
@@ -162,7 +162,7 @@ projects[vote_up_down][subdir] = "contrib"
 projects[vote_up_down][type] = "module"
 
 projects[views][subdir] = "contrib"
-projects[views][version] = 3.7
+projects[views][version] = 3.8
 
 projects[views_bootstrap][subdir] = contrib
 projects[views_bootstrap][version] = "3.1"
@@ -202,3 +202,7 @@ libraries[autopager][download][url] = "https://github.com/sagotsky/jquery-autopa
 libraries[datepicker][type] = "libraries"
 libraries[datepicker][download][type] = "file"
 libraries[datepicker][download][url] = "https://github.com/eternicode/bootstrap-datepicker/zipball/1.3.0"
+
+libraries[typeahead][type] = "libraries"
+libraries[typeahead][download][type] = "file"
+libraries[typeahead][download][url] = "http://twitter.github.com/typeahead.js/releases/latest/typeahead.js.zip"

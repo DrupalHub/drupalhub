@@ -5,6 +5,7 @@ $orange-button-background: #f7b700;
 $blue-button-background: #0091f7;
 $orange-button-circle: #fdf1cc;
 $orange-button-plus: #f7b800;
+$orange-light-border: #ffcc00;
 $blue-title: #20aae4;
 $blue-strip: #21A8E6;
 $grey1: #e6e6e6;
@@ -200,6 +201,28 @@ $blue-border-2: #198fc0;
   }
 }
 
+@mixin tabs {
+  padding-bottom: 10px;
+
+  ul {
+    padding: 0px;
+    border: none;
+
+    li {
+      display: inline;
+      list-style-type: none;
+    }
+
+    a {
+      padding: 10px;
+
+      &.active {
+        border-bottom: 1px solid $orange-light-border;
+      }
+    }
+  }
+}
+
 // Global CSS.
 .clearfix:after {
   content: "." !important;
@@ -278,6 +301,10 @@ $blue-border-2: #198fc0;
     font-size: 15px;
     padding-top: 5px;
 
+    a {
+      margin: 10px;
+    }
+
     i {
       font-size: 20px;
       margin-right: 5px;
@@ -299,7 +326,8 @@ $blue-border-2: #198fc0;
   padding: 20px 0;
 
   .container {
-    max-width: 1170px;
+    width: 95%;
+
     margin: 0px auto;
 
     .navbar-header {
@@ -361,6 +389,102 @@ $blue-border-2: #198fc0;
   z-index: 999999;
 }
 
+.tabs {
+
+  ul {
+    border: none;
+
+    .active {
+
+      a, a:hover {
+        background: none !important;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid $orange-light-border;
+      }
+    }
+
+    a {
+      padding: 10px;
+
+      &:hover {
+        background: none !important;
+        border: none;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+span.twitter-typeahead {
+
+  .tt-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 160px;
+    padding: 5px 0;
+    margin: 2px 0 0;
+    list-style: none;
+    font-size: 14px;
+    text-align: left;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 4px;
+    -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
+    background-clip: padding-box;
+  }
+
+  .tt-suggestion {
+    padding-left: 10px;
+    padding-bottom: 5px;
+    width: 250px;
+
+    & > p {
+      display: block;
+      padding: 3px 20px;
+      clear: both;
+      font-weight: normal;
+      line-height: 1.42857143;
+      color: #333333;
+      white-space: nowrap;
+    }
+  }
+
+  span.twitter-typeahead {
+    width: 100%;
+  }
+
+  .input-group {
+
+    span.twitter-typeahead {
+      display: block !important;
+    }
+
+    .tt-dropdown-menu {
+      top: 32px !important;
+    }
+
+    &.input-group-lg .tt-dropdown-menu {
+      top: 44px !important;
+    }
+
+    &.input-group-sm .tt-dropdown-menu {
+      top: 28px !important;
+    }
+  }
+}
+
+.container {
+  width: 95%;
+}
+
 // This is the part when we import css style per page.
 @import "pages/homepage.scss";
 @import "pages/login.scss";
@@ -370,3 +494,4 @@ $blue-border-2: #198fc0;
 @import "pages/terms";
 @import "pages/calendar";
 @import "pages/youtube";
+@import "pages/wiki";
