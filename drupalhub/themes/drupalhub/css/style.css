@@ -19,27 +19,31 @@
 .top-navbar {
   padding: 0px;
   background: #e6e6e6; }
-  .top-navbar .nav.navbar-nav .social {
+  .top-navbar .nav .social {
     float: right; }
-    .top-navbar .nav.navbar-nav .social a {
+    .top-navbar .nav .social a {
       float: right; }
-      .top-navbar .nav.navbar-nav .social a i {
+      .top-navbar .nav .social a i {
         font-size: 30px; }
-        .top-navbar .nav.navbar-nav .social a i.fa-facebook-square {
+        .top-navbar .nav .social a i.fa-facebook-square {
           color: #4f62ae; }
-        .top-navbar .nav.navbar-nav .social a i.fa-google-plus {
+        .top-navbar .nav .social a i.fa-google-plus {
           color: #ee4e10; }
-        .top-navbar .nav.navbar-nav .social a i.fa-twitter {
+        .top-navbar .nav .social a i.fa-twitter {
           color: #2aa0d3; }
-        .top-navbar .nav.navbar-nav .social a i.fa-youtube-play {
+        .top-navbar .nav .social a i.fa-youtube-play {
           color: #e73d31; }
-        .top-navbar .nav.navbar-nav .social a i.fa-github-alt {
+        .top-navbar .nav .social a i.fa-github-alt {
           color: #333333; }
-        .top-navbar .nav.navbar-nav .social a i.fa-github-alt {
+        .top-navbar .nav .social a i.fa-github-alt {
           color: #333333; }
 
+.drop-down-wrapper {
+  padding-top: 10px; }
+
 .inner-links {
-  padding-top: 15px; }
+  padding-top: 15px;
+  padding-left: 0; }
   .inner-links li {
     display: inline;
     list-style: none;
@@ -66,8 +70,14 @@
     margin: 0px auto; }
     #navbar .container .navbar-header {
       margin: 0px; }
+    #navbar .container .inner-links .fa {
+      display: none; }
+    #navbar .container .inner-links li {
+      display: block; }
+      #navbar .container .inner-links li a {
+        margin: 0; }
     #navbar .container .navbar-collapse.in {
-      height: 80px !important; }
+      overflow-y: none; }
     #navbar .container a {
       color: white; }
     #navbar .container .navbar-brand {
