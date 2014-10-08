@@ -251,41 +251,43 @@ $blue-border-2: #198fc0;
 .top-navbar {
   padding: 0px;
   background: $grey1;
+}
 
-  .nav {
+.social {
+  float: right;
+  padding-top: 10px;
 
-    .social {
+  li {
+    display: inline;
+
+    a {
       float: right;
 
-      a {
-        float: right;
+      i {
+        font-size: 30px;
 
-        i {
-          font-size: 30px;
+        &.fa-facebook-square {
+          color: #4f62ae;
+        }
 
-          &.fa-facebook-square {
-            color: #4f62ae;
-          }
+        &.fa-google-plus {
+          color: #ee4e10;
+        }
 
-          &.fa-google-plus {
-            color: #ee4e10;
-          }
+        &.fa-twitter {
+          color: #2aa0d3;
+        }
 
-          &.fa-twitter {
-            color: #2aa0d3;
-          }
+        &.fa-youtube-play {
+          color: #e73d31;
+        }
 
-          &.fa-youtube-play {
-            color: #e73d31;
-          }
+        &.fa-github-alt {
+          color: #333333;
+        }
 
-          &.fa-github-alt {
-            color: #333333;
-          }
-
-          &.fa-github-alt {
-            color: #333333;
-          }
+        &.fa-github-alt {
+          color: #333333;
         }
       }
     }

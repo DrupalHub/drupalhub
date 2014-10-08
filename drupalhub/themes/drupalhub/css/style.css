@@ -19,23 +19,27 @@
 .top-navbar {
   padding: 0px;
   background: #e6e6e6; }
-  .top-navbar .nav .social {
-    float: right; }
-    .top-navbar .nav .social a {
+
+.social {
+  float: right;
+  padding-top: 10px; }
+  .social li {
+    display: inline; }
+    .social li a {
       float: right; }
-      .top-navbar .nav .social a i {
+      .social li a i {
         font-size: 30px; }
-        .top-navbar .nav .social a i.fa-facebook-square {
+        .social li a i.fa-facebook-square {
           color: #4f62ae; }
-        .top-navbar .nav .social a i.fa-google-plus {
+        .social li a i.fa-google-plus {
           color: #ee4e10; }
-        .top-navbar .nav .social a i.fa-twitter {
+        .social li a i.fa-twitter {
           color: #2aa0d3; }
-        .top-navbar .nav .social a i.fa-youtube-play {
+        .social li a i.fa-youtube-play {
           color: #e73d31; }
-        .top-navbar .nav .social a i.fa-github-alt {
+        .social li a i.fa-github-alt {
           color: #333333; }
-        .top-navbar .nav .social a i.fa-github-alt {
+        .social li a i.fa-github-alt {
           color: #333333; }
 
 .drop-down-wrapper {
