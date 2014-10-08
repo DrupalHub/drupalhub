@@ -24,7 +24,7 @@ function drupalhub_preprocess_page(&$variables) {
 
   $variables['social'] = theme('item_list', array(
     'items' => $items,
-    'attributes' => array('class' => 'social'),
+    'attributes' => array('class' => 'social nav navbar-nav'),
   ));
 
   $inners = array(
@@ -60,7 +60,7 @@ function drupalhub_preprocess_page(&$variables) {
 
   if (user_is_logged_in()) {
     global $user;
-    $variables['dropdown_label'] = $user->name . ' ';
+    $variables['dropdown_label'] = drupalhub_users_user_picture($user, 'small') . ' ' . $user->name . ' ';
     $variables['dropdown_items'] = theme('item_list', array(
       'items' => array(
         l(t('Profile page'), 'user'),

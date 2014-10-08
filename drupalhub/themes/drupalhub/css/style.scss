@@ -254,42 +254,42 @@ $blue-border-2: #198fc0;
 }
 
 .social {
-  float: right;
-  padding-top: 10px;
+  float: initial;
+  padding: 0px;
 
   li {
     display: inline;
 
+    i {
+      font-size: 30px;
+
+      &.fa-facebook-square {
+        color: #4f62ae;
+      }
+
+      &.fa-google-plus {
+        color: #ee4e10;
+      }
+
+      &.fa-twitter {
+        color: #2aa0d3;
+      }
+
+      &.fa-youtube-play {
+        color: #e73d31;
+      }
+
+      &.fa-github-alt {
+        color: #333333;
+      }
+
+      &.fa-github-alt {
+        color: #333333;
+      }
+    }
+
     a {
       float: right;
-
-      i {
-        font-size: 30px;
-
-        &.fa-facebook-square {
-          color: #4f62ae;
-        }
-
-        &.fa-google-plus {
-          color: #ee4e10;
-        }
-
-        &.fa-twitter {
-          color: #2aa0d3;
-        }
-
-        &.fa-youtube-play {
-          color: #e73d31;
-        }
-
-        &.fa-github-alt {
-          color: #333333;
-        }
-
-        &.fa-github-alt {
-          color: #333333;
-        }
-      }
     }
   }
 }
@@ -339,6 +339,20 @@ $blue-border-2: #198fc0;
 
     .navbar-header {
       margin: 0px;
+    }
+
+    .social {
+      float: left;
+      width: 100%;
+
+      li {
+        float: left;
+      }
+
+      .fa-twitter,
+      .fa-facebook-square {
+        color: white;
+      }
     }
 
     .inner-links {
@@ -508,6 +522,7 @@ span.twitter-typeahead {
 }
 
 // This is the part when we import css style per page.
+@import "media-query.scss";
 @import "pages/homepage.scss";
 @import "pages/login.scss";
 @import "pages/question";
