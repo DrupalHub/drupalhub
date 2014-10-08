@@ -24,6 +24,39 @@ function drupalhub_users_views_api($module = NULL, $api = NULL) {
 }
 
 /**
+ * Implements hook_image_default_styles().
+ */
+function drupalhub_users_image_default_styles() {
+  $styles = array();
+
+  // Exported image style: small.
+  $styles['small'] = array(
+    'name' => 'small',
+    'label' => 'Small',
+    'effects' => array(
+      1 => array(
+        'label' => 'Resize',
+        'help' => 'Resizing will make images an exact set of dimensions. This may cause images to be stretched or shrunk disproportionately.',
+        'effect callback' => 'retina_images_image_resize_effect',
+        'dimensions callback' => 'image_resize_dimensions',
+        'form callback' => 'retina_images_image_resize_form',
+        'summary theme' => 'retina_images_image_resize_summary',
+        'module' => 'image',
+        'name' => 'image_resize',
+        'data' => array(
+          'width' => 32,
+          'height' => 32,
+          'retinafy' => 1,
+        ),
+        'weight' => 1,
+      ),
+    ),
+  );
+
+  return $styles;
+}
+
+/**
  * Implements hook_default_message_type().
  */
 function drupalhub_users_default_message_type() {
