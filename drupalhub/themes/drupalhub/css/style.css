@@ -792,7 +792,7 @@ body.front #AddQuestion .modal-dialog {
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.new_user .icons {
         background-color: #24649a; }
         .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.new_user .icons .fa-drupal {
-          display: block;
+          display: block !important;
           padding-top: 2px; }
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.user_down_up_voted .activity-header,
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.user_down_up_voted .activity-body,
@@ -801,7 +801,7 @@ body.front #AddQuestion .modal-dialog {
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.user_down_up_voted .icons {
         background-color: #c85648; }
         .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.user_down_up_voted .icons .fa-thumbs-up {
-          display: block;
+          display: block !important;
           padding-top: 2px;
           padding-left: 2px; }
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.created_node .activity-header,
@@ -811,7 +811,7 @@ body.front #AddQuestion .modal-dialog {
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.created_node .icons {
         background: #ff9900; }
         .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.created_node .icons .fa-pencil {
-          display: block;
+          display: block !important;
           padding-top: 2px; }
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.commented_to_node .activity-header,
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.commented_to_node .activity-body,
@@ -820,7 +820,7 @@ body.front #AddQuestion .modal-dialog {
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.commented_to_node .icons {
         background: #3a953a; }
         .page-user .second-bottom .view-id-activity_stram .activity-stream-instance.commented_to_node .icons .fa-comment {
-          display: block; }
+          display: block !important; }
     .page-user .second-bottom .view-id-activity_stram .pager {
       display: none; }
 

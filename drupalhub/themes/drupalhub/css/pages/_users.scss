@@ -188,7 +188,7 @@
             background-color: #24649a;
 
             .fa-drupal {
-              display: block;
+              display: block !important;
               padding-top: 2px;
             }
           }
@@ -207,7 +207,7 @@
             background-color: #c85648;
 
             .fa-thumbs-up {
-              display: block;
+              display: block !important;
               padding-top: 2px;
               padding-left: 2px;
             }
@@ -227,7 +227,7 @@
             background: #ff9900;
 
             .fa-pencil {
-              display: block;
+              display: block !important;
               padding-top: 2px;
             }
           }
@@ -246,7 +246,7 @@
             background: #3a953a;
 
             .fa-comment {
-              display: block;
+              display: block !important;
             }
           }
         }
@@ -254,7 +254,6 @@
 
       .pager {
         display: none;
-
       }
     }
   }
