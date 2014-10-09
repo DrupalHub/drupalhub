@@ -44,6 +44,8 @@
 
 .drop-down-wrapper {
   padding-top: 10px; }
+  .drop-down-wrapper .dropdown img {
+    border: solid 1px #4d7fb6; }
 
 .inner-links {
   padding-top: 15px;

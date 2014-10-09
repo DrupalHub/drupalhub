@@ -296,6 +296,13 @@ $blue-border-2: #198fc0;
 
 .drop-down-wrapper {
   padding-top: 10px;
+
+  .dropdown {
+
+    img {
+      border: solid 1px $profile-picture-wrapper;
+    }
+  }
 }
 
 .inner-links {
