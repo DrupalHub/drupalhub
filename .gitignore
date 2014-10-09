@@ -1,8 +1,10 @@
 www
 .idea
 install.sh
+.DS_store
 drupalhub/modules/contrib/*
 drupalhub/themes/contrib
 drupalhub/libraries
 drupalhub/themes/bootstrap
-.DS_store
+drupalhub/behat/vendor
+drupalhub/behat/bin
