@@ -47,8 +47,7 @@ function drupalhub_videos_playlists_content_type_render($subtype, $conf, $args, 
     'attributes' => array('class' => array('playlist'))
   );
 
-  $block->content = '<div class="new-video hidden-xs"><a href="#" class="show-playlist-form">New playlist</a></div>';
-  $block->content .= theme('table', $params) . theme('playlist_form');
+  $block->content = theme('table', $params) . theme('playlist_form');
 
   return $block;
 }

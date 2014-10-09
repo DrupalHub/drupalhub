@@ -3,8 +3,12 @@
   .pane-manage-links {
     text-align: right;
 
+    .manage-playlist {
+      margin-right: 10px;
+    }
+
     .new-video {
-      float: right; /* LTR */
+      float: left; /* LTR */
 
       a {
         @include orange-button;

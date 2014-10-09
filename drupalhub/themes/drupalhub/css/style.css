@@ -965,8 +965,10 @@ body.front #AddQuestion .modal-dialog {
 
 .page-video .pane-manage-links {
   text-align: right; }
+  .page-video .pane-manage-links .manage-playlist {
+    margin-right: 10px; }
   .page-video .pane-manage-links .new-video {
-    float: right;
+    float: left;
     /* LTR */ }
     .page-video .pane-manage-links .new-video a {
       -webkit-border-radius: 5px 5px;
