@@ -844,11 +844,6 @@ body.front #AddQuestion .modal-dialog {
   .page-taxonomy-term .bottom-wrapper .tags .field-content {
     display: inline; }
 
-.page-calendar td.today,
-.page-calendar .ends-today {
-  border: #2287b1 solid 1px !important;
-  border-bottom: none !important;
-  border-top: none !important; }
 .page-calendar .datepicker {
   z-index: 100000; }
 .page-calendar .top {

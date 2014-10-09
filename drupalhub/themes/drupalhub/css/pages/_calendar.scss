@@ -1,12 +1,5 @@
 .page-calendar {
 
-  td.today,
-  .ends-today {
-    border: #2287b1 solid 1px !important;
-    border-bottom: none !important;
-    border-top: none !important;
-  }
-
   .datepicker {
     z-index: 100000;
   }
@@ -93,6 +86,13 @@
     }
 
     .month-view {
+
+      td.today,
+      .ends-today {
+        border: #2287b1 solid 1px !important;
+        border-bottom: none !important;
+        border-top: none !important;
+      }
 
       thead {
 
