@@ -1,0 +1,204 @@
+@mixin clearfix {
+
+  &:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+  }
+}
+
+@mixin rounded($top, $left) {
+  -webkit-border-radius: $top $left;
+  -moz-border-radius: $top / $left;
+  -khtml-border-radius: $top / $left;
+  border-radius: $top / $left;
+}
+
+@mixin orange-button($button:1) {
+  @include rounded(5px, 5px);
+  background: $orange-button-background;
+  width: 170px;
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 10px 10px 5px;
+
+  @if $button == 1 {
+    &:before {
+      font-family: FontAwesome;
+      font-weight: none;
+      content: "\f067";
+      background: $orange-button-circle;
+      @include rounded(15px, 15px);
+      color: $orange-button-plus;
+      margin: 5px 5px 0px 5px;
+      padding: 3px 5px 3px 5px;
+    }
+  }
+}
+
+@mixin blue-button($button:1) {
+  @include rounded(5px, 5px);
+  background: $blue-button-background;
+  width: 170px;
+  height: 40px;
+  font-weight: bold;
+  color: white;
+  padding: 10px 10px 10px 5px;
+}
+
+@mixin title {
+  color: $blue-title;
+  padding-bottom: 20px;
+}
+
+@mixin meta-tags {
+  .fa-tags,
+  .fa-user,
+  .fa-square-o,
+  .fa-clock-o {
+    padding-left: 10px; /* LTR */
+  }
+
+  .vud-widget-upanddown {
+    float: left; /* LTR */
+  }
+
+  .tags {
+
+    li {
+      display: inline;
+    }
+  }
+}
+
+@mixin comment_view {
+  h2.pane-title {
+    padding-top: 30px;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #ddd;
+  }
+
+  .views-row {
+    padding-top: 15px;
+
+    .comment-wrapper {
+
+      .wrapper-top {
+        border: solid 1px #cce8ff;
+        border-bottom: none;
+        padding-top: 15px;
+
+        .picture {
+
+          img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            padding: 5px;
+            border: $profile-picture-wrapper solid 1px;
+          }
+        }
+      }
+
+      .wrapper-bottom {
+        border: solid 1px #cce8ff;
+        padding-top: 15px;
+        background-color: #f7f7f7;
+
+        .vud-widget-upanddown {
+          float: left; /* LTR */
+        }
+
+        .fa-user,
+        .fa-clock-o,
+        .fa-pencil,
+        .fa-trash-o {
+          margin-left: 10px; /* LTR */
+        }
+
+        .fa-pencil,
+        .fa-trash-o {
+          margin-right: 10px; /* LTR */
+        }
+      }
+    }
+  }
+}
+
+@mixin bottom-wrapper {
+  .fa-user,
+  .fa-tags {
+    margin-left: 10px;
+  }
+
+  .fa-pencil,
+  .fa-trash-o {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .tags {
+
+    .field-content {
+      display: inline;
+    }
+  }
+}
+
+@mixin playlist {
+
+  h2 {
+    margin-top: 0;
+    text-decoration: underline;
+  }
+
+  ul {
+    padding-left: 0px;
+
+    li {
+      list-style-type: none;
+    }
+  }
+
+  .video-wrapper {
+
+    .video {
+      float: left; /* LTR */
+      padding-right: 15px; /* LTR */
+    }
+
+    .information {
+      font-size: 15px;
+
+      .length {
+        float: left; /* LTR */
+        padding-right: 5px;
+      }
+    }
+  }
+}
+
+@mixin tabs {
+  padding-bottom: 10px;
+
+  ul {
+    padding: 0px;
+    border: none;
+
+    li {
+      display: inline;
+      list-style-type: none;
+    }
+
+    a {
+      padding: 10px;
+
+      &.active {
+        border-bottom: 1px solid $orange-light-border;
+      }
+    }
+  }
+}

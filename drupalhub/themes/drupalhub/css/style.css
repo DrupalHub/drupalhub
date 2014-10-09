@@ -1,3 +1,6 @@
+.container {
+  width: 95%; }
+
 .clearfix:after {
   content: "." !important;
   display: "hidden" !important; }
@@ -6,7 +9,7 @@
   padding-top: 50px; }
 
 .star {
-  background-image: url("../images/large_star.png");
+  background-image: url("../../images/large_star.png");
   height: 23px;
   width: 24px; }
 
@@ -222,9 +225,6 @@ span.twitter-typeahead .input-group.input-group-lg .tt-dropdown-menu {
   top: 44px !important; }
 span.twitter-typeahead .input-group.input-group-sm .tt-dropdown-menu {
   top: 28px !important; }
-
-.container {
-  width: 95%; }
 
 body.front .view-gallery {
   background: #e6e6e6;
