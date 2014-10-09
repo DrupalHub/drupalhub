@@ -29,17 +29,17 @@ function drupalhub_preprocess_page(&$variables) {
 
   $inners = array(
     'calendar' => array(
-      'url' => url('calendar'),
+      'url' => 'calendar',
       'text' => t('Calendar'),
       'fa' => 'fa-calendar',
     ),
     'video' => array(
-      'url' => url('video'),
+      'url' => 'video',
       'text' => t('Video library'),
       'fa' => 'fa-youtube-square',
     ),
     'documentation' => array(
-      'url' => url('documentation'),
+      'url' => 'documentation',
       'text' => t('Documentation'),
       'fa' => 'fa-book',
     ),
@@ -60,7 +60,7 @@ function drupalhub_preprocess_page(&$variables) {
 
   if (user_is_logged_in()) {
     global $user;
-    $variables['dropdown_label'] = drupalhub_users_user_picture($user, 'small') . ' ' . $user->name . ' ';
+    $variables['dropdown_label'] = drupalhub_users_user_picture(user_load($user->uid), 'small') . ' ' . $user->name . ' ';
     $variables['dropdown_items'] = theme('item_list', array(
       'items' => array(
         l(t('Profile page'), 'user'),
