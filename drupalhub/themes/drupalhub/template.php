@@ -9,28 +9,46 @@
  * Implements hook_page_preprocess().
  */
 function drupalhub_preprocess_page(&$variables) {
-  $variables['social'] = array(
-    'youtube' => url('https://www.youtube.com/channel/UCJe3SCokovJBxxe-etjWhtA'),
-    'twitter' => url('https://twitter.com/DrupalIsrael'),
-    'google' => url('https://plus.google.com/communities/116473259616645148688'),
-    'facebook' => url('https://www.facebook.com/groups/drupalil'),
-    'github' => url('http://github.com/drupalhub/drupalhub'),
+  $socials = array(
+    'fa-youtube-play' => 'https://www.youtube.com/channel/UCJe3SCokovJBxxe-etjWhtA',
+    'fa-twitter' => 'https://twitter.com/DrupalIsrael',
+    'fa-google-plus' => 'https://plus.google.com/communities/116473259616645148688',
+    'fa-facebook-square' => 'https://www.facebook.com/groups/drupalil',
+    'fa-github-alt' => 'http://github.com/drupalhub/drupalhub',
   );
 
-  $variables['inner'] = array(
+  $items = array();
+  foreach ($socials as $fa => $link) {
+    $items[] = "<a href='{$link}'><i class='fa {$fa}'></i></a>";
+  }
+
+  $variables['social'] = theme('item_list', array(
+    'items' => $items,
+    'attributes' => array('class' => 'social nav navbar-nav'),
+  ));
+
+  $inners = array(
     'calendar' => array(
-      'url' => url('calendar'),
+      'url' => 'calendar',
       'text' => t('Calendar'),
+      'fa' => 'fa-calendar',
     ),
     'video' => array(
-      'url' => url('video'),
+      'url' => 'video',
       'text' => t('Video library'),
+      'fa' => 'fa-youtube-square',
     ),
     'documentation' => array(
-      'url' => url('documentation'),
+      'url' => 'documentation',
       'text' => t('Documentation'),
+      'fa' => 'fa-book',
     ),
   );
+
+  $items = array();
+  foreach ($inners as $inner) {
+    $items[] = "<i class='fa {$inner['fa']}'></i> " . l($inner['text'], $inner['url']);
+  }
 
   $variables['loggin_button'] = l(t('Login'), 'user/login', array('attributes' => array('class' => array('login'))));
 
@@ -39,6 +57,28 @@ function drupalhub_preprocess_page(&$variables) {
   if (variable_get('front_page_slideshow', FALSE) && drupal_is_front_page()) {
     $variables['slide_show'] = views_embed_view('gallery');
   }
+
+  if (user_is_logged_in()) {
+    global $user;
+    $variables['dropdown_label'] = drupalhub_users_user_picture(user_load($user->uid), 'small') . ' ' . $user->name . ' ';
+    $variables['dropdown_items'] = theme('item_list', array(
+      'items' => array(
+        l(t('Profile page'), 'user'),
+        l(t('Manage playlist'), 'video/playlists'),
+        l(t('Logout'), 'user/logout'),
+      ),
+      'attributes' => array(
+        'class' => 'dropdown-menu',
+        'role' => 'menu',
+        'aria-labelledby' => 'UserLinks',
+      )
+    ));
+  }
+
+  $variables['links'] = theme('item_list', array(
+    'items' => $items,
+    'attributes' => array('class' => 'inner-links'),
+  ));
 }
 
 /**

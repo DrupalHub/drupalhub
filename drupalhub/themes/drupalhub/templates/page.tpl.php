@@ -77,21 +77,26 @@
   <div class="navbar-inner">
     <div class="container">
       <div class="row">
-        <div class="nav-collapsee collapsee col-md-12">
-          <ul class="inner-links col-md-6">
-            <li><i class="fa fa-calendar"></i><a class="calendar" href="<?php print $inner['calendar']['url']; ?>"><?php print $inner['calendar']['text']; ?></a></li>
-            <li><i class="fa fa-youtube-square"></i></i><a class="calendar" href="<?php print $inner['video']['url']; ?>"><?php print $inner['video']['text']; ?></a></li>
-            <li><i class="fa fa-book"></i></i><a class="documentation" href="<?php print $inner['documentation']['url']; ?>"><?php print $inner['documentation']['text']; ?></a></li>
-          </ul>
-          <ul class="nav navbar-nav col-md-6">
-            <li class="social">
-              <a class="youtube" href="<?php print $social['youtube']; ?>"><i class="fa fa-youtube-play"></i></a>
-              <a class="twitter" href="<?php print $social['twitter']; ?>"><i class="fa fa-twitter"></i></a>
-              <a class="google" href="<?php print $social['google']; ?>"><i class="fa fa-google-plus"></i></a>
-              <a class="facebook" href="<?php print $social['facebook']; ?>"><i class="fa fa-facebook-square"></i></a>
-              <a class="github" href="<?php print $social['github']; ?>"><i class="fa fa-github-alt"></i></a>
-            </li>
-          </ul>
+        <div class="col-md-12">
+          <div class="col-md-7">
+            <?php print $links; ?>
+          </div>
+          <div class="col-md-3">
+            <?php print $social; ?>
+          </div>
+          <div class="col-md-2 drop-down-wrapper">
+
+          <?php if (user_is_anonymous()): ?>
+            <?php print $loggin_button; ?>
+          <?php else: ?>
+            <div class="dropdown">
+              <a class="btn btn-default dropdown-toggle" type="button" id="UserLinks" data-toggle="dropdown">
+                <?php print $dropdown_label; ?><span class="caret"></span>
+              </a>
+              <?php print $dropdown_items; ?>
+            </div>
+            <?php endif; ?>
+          </div>
         </div>
       </div>
     </div>
@@ -121,21 +126,23 @@
       </div>
 
       <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation']) || user_is_anonymous()): ?>
-        <div class="navbar-collapse collapse col-md-3">
-          <nav role="navigation">
-            <?php if (!empty($primary_nav)): ?>
-              <?php print render($primary_nav); ?>
-            <?php endif; ?>
-            <?php if (!empty($secondary_nav)): ?>
-              <?php print render($secondary_nav); ?>
-            <?php endif; ?>
-            <?php if (!empty($page['navigation'])): ?>
-              <?php print render($page['navigation']); ?>
-            <?php endif; ?>
-            <?php if (user_is_anonymous()): ?>
-              <?php print $loggin_button; ?>
-            <?php endif; ?>
-          </nav>
+        <div class="visible-xs">
+          <div class="navbar-collapse collapse col-md-3">
+            <nav role="navigation" class="first">
+              <?php print $links; ?>
+            </nav>
+            <nav role="navigation">
+              <?php print $social; ?>
+            </nav>
+            <nav role="navigation" class="last">
+              <?php if (!empty($secondary_nav)): ?>
+                <?php print render($secondary_nav); ?>
+              <?php endif; ?>
+              <?php if (user_is_anonymous()): ?>
+                <?php print $loggin_button; ?>
+              <?php endif; ?>
+            </nav>
+          </div>
         </div>
       <?php endif; ?>
       </div>

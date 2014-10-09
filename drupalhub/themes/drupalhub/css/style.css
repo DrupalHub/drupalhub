@@ -19,27 +19,37 @@
 .top-navbar {
   padding: 0px;
   background: #e6e6e6; }
-  .top-navbar .nav.navbar-nav .social {
-    float: right; }
-    .top-navbar .nav.navbar-nav .social a {
+
+.social {
+  float: initial;
+  padding: 0px; }
+  .social li {
+    display: inline; }
+    .social li i {
+      font-size: 30px; }
+      .social li i.fa-facebook-square {
+        color: #4f62ae; }
+      .social li i.fa-google-plus {
+        color: #ee4e10; }
+      .social li i.fa-twitter {
+        color: #2aa0d3; }
+      .social li i.fa-youtube-play {
+        color: #e73d31; }
+      .social li i.fa-github-alt {
+        color: #333333; }
+      .social li i.fa-github-alt {
+        color: #333333; }
+    .social li a {
       float: right; }
-      .top-navbar .nav.navbar-nav .social a i {
-        font-size: 30px; }
-        .top-navbar .nav.navbar-nav .social a i.fa-facebook-square {
-          color: #4f62ae; }
-        .top-navbar .nav.navbar-nav .social a i.fa-google-plus {
-          color: #ee4e10; }
-        .top-navbar .nav.navbar-nav .social a i.fa-twitter {
-          color: #2aa0d3; }
-        .top-navbar .nav.navbar-nav .social a i.fa-youtube-play {
-          color: #e73d31; }
-        .top-navbar .nav.navbar-nav .social a i.fa-github-alt {
-          color: #333333; }
-        .top-navbar .nav.navbar-nav .social a i.fa-github-alt {
-          color: #333333; }
+
+.drop-down-wrapper {
+  padding-top: 10px; }
+  .drop-down-wrapper .dropdown img {
+    border: solid 1px #4d7fb6; }
 
 .inner-links {
-  padding-top: 15px; }
+  padding-top: 15px;
+  padding-left: 0; }
   .inner-links li {
     display: inline;
     list-style: none;
@@ -66,8 +76,22 @@
     margin: 0px auto; }
     #navbar .container .navbar-header {
       margin: 0px; }
+    #navbar .container .social {
+      float: left;
+      width: 100%; }
+      #navbar .container .social li {
+        float: left; }
+      #navbar .container .social .fa-twitter,
+      #navbar .container .social .fa-facebook-square {
+        color: white; }
+    #navbar .container .inner-links .fa {
+      display: none; }
+    #navbar .container .inner-links li {
+      display: block; }
+      #navbar .container .inner-links li a {
+        margin: 0; }
     #navbar .container .navbar-collapse.in {
-      height: 80px !important; }
+      overflow-y: none; }
     #navbar .container a {
       color: white; }
     #navbar .container .navbar-brand {
