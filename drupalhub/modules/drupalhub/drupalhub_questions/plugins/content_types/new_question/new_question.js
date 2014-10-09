@@ -13,7 +13,6 @@
         // Processing the form.
         var title = $("#title").val();
         var body = $("#body").val();
-        var status = true;
 
         if (title == "") {
           $("#title").SetError(Drupal.t('The title field is required.'));
@@ -23,7 +22,7 @@
           $("#body").SetError(Drupal.t('The body field is required.'));
         }
 
-        if ($.FormStatus) {
+        if (!$.FormStatus) {
           return;
         }
 
