@@ -1,0 +1,13 @@
+default:
+  paths:
+    features: 'features'
+  extensions:
+    Behat\MinkExtension\Extension:
+      show_cmd: 'open -a Firefox.app %s'
+      goutte: ~
+      selenium2: ~
+    Drupal\DrupalExtension\Extension:
+      blackbox: ~
+
+imports:
+  - behat.local.yml
