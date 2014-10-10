@@ -1,0 +1,11 @@
+language: php
+
+php:
+  - 5.4
+
+mysql:
+  database: drupal
+  username: root
+
+script:
+ - echo "a"
