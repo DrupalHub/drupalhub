@@ -23,8 +23,15 @@ before_script:
   - phpenv rehash
   - bash scripts/setup
   - bash scripts/build.sh
-  - cd /home/travis/build
-  - ls -al
+  - cd /home/travis/build/DrupalHub/DrupalHub/www
+  - mkdir -p sites/default/files
+  - sudo chmod 777 sites/default -R
+  - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal drupalhub_migrate_content.dummy_content=TRUE
+  - drush mi --all --user=1
+
+  # Behat setup.
+  - cd profiles/DrupalHub/behat
+  - cp behat.local.yml.travis behat.local.yml
 
 script:
   - echo 'a';
