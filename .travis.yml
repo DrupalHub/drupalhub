@@ -35,5 +35,5 @@ before_script:
   - bin/behat --init
 
 script:
-  - http://127.0.0.1
+  - wget http://127.0.0.1
   - bin/behat --tags=~wip
