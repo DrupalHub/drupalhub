@@ -23,9 +23,7 @@ before_script:
   - phpenv rehash
   - bash scripts/setup
   - bash scripts/build.sh
-  - cd /home/travis/build/DrupalHub
-  - ls -al
-  - cd /home/travis/build/DrupalHub/DrupalHub/www
+  - cd /home/travis/build/DrupalHub/drupalhub/www
   - mkdir -p sites/default/files
   - sudo chmod 777 sites/default -R
   - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal drupalhub_migrate_content.dummy_content=TRUE
