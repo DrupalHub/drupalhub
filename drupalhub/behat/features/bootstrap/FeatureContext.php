@@ -20,6 +20,7 @@ class FeatureContext extends DrupalContext {
    * @param array $parameters context parameters (set them up through behat.yml)
    */
   public function __construct(array $parameters) {
+    print_r($this->getMinkParameters());
   }
 
   /**
