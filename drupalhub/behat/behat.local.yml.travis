@@ -1,13 +1,7 @@
 default:
-  paths:
-    features: 'features'
   extensions:
     Behat\MinkExtension\Extension:
-      goutte: ~
-      selenium2: ~
       base_url: http://127.0.0.1
     Drupal\DrupalExtension\Extension:
-      blackbox: ~
-      api_driver: 'drush'
       drush:
         alias: self
