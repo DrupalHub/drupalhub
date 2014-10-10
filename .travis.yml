@@ -35,4 +35,4 @@ before_script:
   - bin/behat --init
 
 script:
-  - bin/behat --tags=-wip
+  - bin/behat --tags=~wip
