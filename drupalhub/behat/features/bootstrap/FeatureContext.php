@@ -21,4 +21,12 @@ class FeatureContext extends DrupalContext {
    */
   public function __construct(array $parameters) {
   }
+
+  /**
+   * @Given /^I should print page$/
+   */
+  public function iShouldPrintPage() {
+    $page = $this->getSession();
+    print_r($page->getPage());
+  }
 }
