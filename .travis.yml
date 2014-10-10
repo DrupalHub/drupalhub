@@ -31,9 +31,8 @@ before_script:
 
   # Behat setup.
   - cd profiles/drupalhub/behat
-  - cp behat.local.yml.travis behat.local.yml
+  - cp behat.local.yml.travis behat.local
   - bin/behat --init
 
 script:
-  - curl http://127.0.0.1
   - bin/behat --tags=~wip
