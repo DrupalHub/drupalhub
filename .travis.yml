@@ -41,11 +41,11 @@ before_script:
   - cp behat.local.yml.travis behat.local.yml
   - bin/behat --init
 
-  - "sh -e /etc/init.d/xvfb start"
-  - "export DISPLAY=:99.0"
-  - "wget http://selenium.googlecode.com/files/selenium-server-standalone-2.25.0.jar"
-  - "java -jar selenium-server-standalone-2.25.0.jar > /dev/null 2>&1 &"
-  - "sleep 30"
+  - sh -e /etc/init.d/xvfb start
+  - export DISPLAY=:99.0
+  - wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar
+  - java -jar selenium-server-standalone-2.25.0.jar > /dev/null 2>&1 &
+  - sleep 30
 
 script:
   # Run behat.
