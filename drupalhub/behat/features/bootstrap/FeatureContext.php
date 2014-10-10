@@ -26,6 +26,7 @@ class FeatureContext extends DrupalContext {
    * @Given /^I should print page$/
    */
   public function iShouldPrintPage() {
-    print_r($this->locatePath("front"));
+    $page = $this->getSession();
+    print_r($page->getPage()->getContent());
   }
 }
