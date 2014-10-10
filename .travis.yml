@@ -30,7 +30,7 @@ before_script:
   - drush mi --all --user=1
 
   # Behat setup.
-  - cd profiles/DrupalHub/behat
+  - cd profiles/drupalhub/behat
   - cp behat.local.yml.travis behat.local.yml
 
 script:
