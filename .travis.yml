@@ -27,3 +27,4 @@ before_script:
   - ls -al
 
 script:
+  - echo 'a';
