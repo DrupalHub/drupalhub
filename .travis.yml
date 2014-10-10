@@ -34,4 +34,6 @@ before_script:
   - cp behat.local.yml.travis behat.local.yml
 
 script:
+  - pwd
+  - ls -al
   - bin/bheat --tags=-wip
