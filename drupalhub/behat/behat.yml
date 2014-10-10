@@ -1,4 +1,9 @@
 default:
+  context:
+    parameters:
+      users:
+        admin:
+          'admin'
   paths:
     features: 'features'
   extensions:
