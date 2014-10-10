@@ -20,13 +20,19 @@ before_script:
   - echo "$(curl -fsSL https://gist.github.com/roderik/16d751c979fdeb5a14e3/raw/74f4fec92c064c4f683fef28a6098caf0f038de7/gistfile1.txt)" | sudo tee /etc/apache2/conf.d/phpconfig > /dev/null
   - echo "$(curl -fsSL https://gist.github.com/roderik/2eb301570ed4a1f4c33d/raw/8066fda124b6c86f69ad32a010b8c22bbaf868e8/gistfile1.txt)" | sed -e "s,PATH,`pwd`/www,g" | sudo tee /etc/apache2/sites-available/default > /dev/null
   - sudo service apache2 restart
+
+  # Create the database.
   - "mysql -e 'create database drupal;'"
   - phpenv rehash
+
+  # Build the distrobution.
   - bash scripts/setup
   - bash scripts/build.sh
   - cd /home/travis/build/DrupalHub/drupalhub/www
   - mkdir -p sites/default/files
   - sudo chmod 777 sites/default -R
+
+  # Install and migrate.
   - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal drupalhub_migrate_content.dummy_content=TRUE
   - drush mi --all --user=1
 
@@ -35,19 +41,15 @@ before_script:
   - cp behat.local.yml.travis behat.local.yml
   - bin/behat --init
 
+   - "export DISPLAY=:99.0"
+   - "sh -e /etc/init.d/xvfb start"
+   - sleep 3 # give xvfb some time to start
+   - rackup  # start a Web server
+   - sleep 3 # give Web server some time to bind to sockets, etc
+   - wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar
+   - java -jar selenium-server-standalone-2.40.0.jar -p 4444 &
+   - sleep 5
+
 script:
-
-  # Create display.
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-
-  # give xvfb some time to starts
-  - sleep 3
-
-  # Run selenium.
-  - wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar
-  - java -jar selenium-server-standalone-2.40.0.jar -p 4444 &
-  - sleep 5
-
   # Run behat.
   - bin/behat --tags=~wip
