@@ -31,7 +31,7 @@ before_script:
 
   # Behat setup.
   - cd profiles/drupalhub/behat
-  - cp behat.local.yml.travis behat.loca.yml
+  - cp behat.local.yml.travis behat.local.yml
   - bin/behat --init
 
 script:
