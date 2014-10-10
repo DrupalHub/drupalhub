@@ -23,6 +23,8 @@ before_script:
   - phpenv rehash
   - bash scripts/setup
   - bash scripts/build.sh
+  - cd /home/travis/build/DrupalHub
+  - ls -al
   - cd /home/travis/build/DrupalHub/DrupalHub/www
   - mkdir -p sites/default/files
   - sudo chmod 777 sites/default -R
