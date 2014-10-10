@@ -5,7 +5,7 @@ default:
     Behat\MinkExtension\Extension:
       goutte: ~
       selenium2: ~
-      base_url: http://127.0.0.1
+      base_url: http://127.0.0.1/
     Drupal\DrupalExtension\Extension:
       blackbox: ~
       api_driver: 'drush'
