@@ -7,5 +7,25 @@ mysql:
   database: drupal
   username: root
 
+before_script:
+  - export PATH="$HOME/.composer/vendor/bin:$PATH"
+  - composer global require drush/drush:6.*@dev
+  # Install apache
+  - sudo apt-get update
+  - sudo apt-get install apache2
+  - sudo a2enmod actions
+  - sudo a2enmod rewrite
+  - echo "export PATH=/home/vagrant/.phpenv/bin:$PATH" | sudo tee -a /etc/apache2/envvars > /dev/null
+  - echo "$(curl -fsSL https://gist.github.com/roderik/16d751c979fdeb5a14e3/raw/74f4fec92c064c4f683fef28a6098caf0f038de7/gistfile1.txt)" | sudo tee /etc/apache2/conf.d/phpconfig > /dev/null
+  - echo "$(curl -fsSL https://gist.github.com/roderik/2eb301570ed4a1f4c33d/raw/8066fda124b6c86f69ad32a010b8c22bbaf868e8/gistfile1.txt)" | sed -e "s,PATH,`pwd`/www,g" | sudo tee /etc/apache2/sites-available/default > /dev/null
+  - sudo service apache2 restart
+  - sudo a2ensite lincoln
+  - sudo service apache2 reload
+  - "mysql -e 'create database drupal;'"
+  - phpenv rehash
+  - bash scripts/setup
+  - bash scripts/build.sh
+  - cd /home/travis/build
+  - ls -al
+
 script:
- - echo "a"

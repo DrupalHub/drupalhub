@@ -18,7 +18,7 @@ chmod 777 www/sites/default
 rm -rf www/
 mkdir www
 
-bash scripts/build
+bash scripts/build.sh
 
 cd www
 

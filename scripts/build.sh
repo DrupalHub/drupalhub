@@ -90,7 +90,9 @@ CUR_DIR=$(pwd)
   fi
 )
 
-# Copy unmakable contrib files
+# Download behat.
 (
-  cp -R temporary/* drupalhub/modules/contrib/
+  cd drupalhub/behat
+  curl -s https://getcomposer.org/installer | php
+  php composer.phar install
 )
