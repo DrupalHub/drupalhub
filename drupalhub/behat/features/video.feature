@@ -23,3 +23,13 @@ Feature: Testing video section.
       And I should see "Aretha Franklin - Respect"
      When I press "Save"
      Then I should see "There is already a video with this youtube address: Aretha Franklin - Respect [1967] (Original Version)."
+
+  @javascript
+    Scenario: Testing the playlist form validation.
+      Given I am logging in as "ClarkKent"
+        And I visit "video/playlists"
+        And I click "Create a new playlist"
+       When I press "Save"
+       Then I should see "Please fill in the name."
+        And I should see "Please insert videos."
+        And I should see "Please insert description."
