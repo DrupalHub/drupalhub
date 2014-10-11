@@ -26,7 +26,7 @@ function drupalhub_permission_node_access($node, $op, $account) {
     $type = $node;
   }
 
-  $types = array('event', 'youtube');
+  $types = array('event', 'youtube', 'playlist');
 
   if (!in_array($type,  $types)) {
     return;

@@ -77,4 +77,18 @@ class FeatureContext extends DrupalContext {
   public function iSleepFor($time) {
     sleep($time);
   }
+
+  /**
+   * @Given /^I add video to plyalist$/
+   */
+  public function iAddVideoToPlyalist() {
+    $page = $this->getSession();
+    $element = $page->getPage()->find('xpath', '//i[@class="fa fa-plus"]');
+
+    if (!$element) {
+      throw new \Exception("There are no elements to add to the plyalist");
+    }
+
+    $element->click();
+  }
 }
