@@ -11,7 +11,7 @@ Feature: Testing the event section.
      Then I should see "This is a required field."
       And I should see "You need to set a date for the event."
     
-  @javascript @now
+  @javascript
   Scenario: Testing event creation.
     Given I am logging in as "ClarkKent"
       And I visit "calendar"
