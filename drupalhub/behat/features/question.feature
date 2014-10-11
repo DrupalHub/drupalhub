@@ -20,7 +20,7 @@ Feature: Testing the question
       And I fill in "body" with "Body"
       And I press "Save"
       And I wait for AJAX to finish
-      And I should see "The question has created successfully. Visit the question"
+      And I should see "The question has created successfully"
      Then I click "Visit the question"
       And I should see "Testing"
       And I should see "Body"
