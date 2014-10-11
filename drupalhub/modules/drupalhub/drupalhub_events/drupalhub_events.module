@@ -15,3 +15,34 @@ function drupalhub_events_ctools_plugin_directory($owner, $plugin_type) {
     return 'plugins/' . $plugin_type;
   }
 }
+
+/**
+ * Implements hook_node_access().
+ *
+ * Users can create events or edit their own events. When creating resful check
+ * just edit but edit own content. We need to implements our own node access
+ * logic.
+ */
+function drupalhub_events_node_access($node, $op, $account) {
+  if (!in_array($op, array('create', 'update'))) {
+    return;
+  }
+
+  if (is_object($node)) {
+    $new = !empty($node->is_new) ? $node->is_new : FALSE;
+    $type = $node->type;
+  }
+  else {
+    $new = TRUE;
+    $type = $node;
+  }
+
+  if ($type != 'events') {
+    return;
+  }
+
+  $access = $new ? 'create events content' : 'edit own events content';
+
+  return user_access($access, $account) ? NODE_ACCESS_ALLOW : NODE_ACCESS_DENY;
+
+}

@@ -33,10 +33,11 @@ function drupalhub_core_menu() {
  * Implements hook_init().
  */
 function drupalhub_core_init() {
+  global $base_url;
   drupal_add_css(libraries_get_path('font_awesome') . '/css/font-awesome.min.css');
 
   $settings['hub'] = array(
-    'basePath' => url('', array('absolute' => TRUE)),
+    'basePath' => $base_url,
     'csrfToken' => drupal_get_token(\RestfulInterface::TOKEN_VALUE),
   );
   drupal_add_js($settings, 'setting');

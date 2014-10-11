@@ -1,0 +1,12 @@
+name = DrupalHub Permission
+description = Export permissions
+core = 7.x
+package = DrupalHub
+dependencies[] = features
+dependencies[] = node
+features[features_api][] = api:2
+features[user_permission][] = create events content
+features[user_permission][] = delete any events content
+features[user_permission][] = delete own events content
+features[user_permission][] = edit any events content
+features[user_permission][] = edit own events content

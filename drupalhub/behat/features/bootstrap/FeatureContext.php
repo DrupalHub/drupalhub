@@ -63,4 +63,18 @@ class FeatureContext extends DrupalContext {
       throw new \Exception(sprintf("Failed to log in as user '%s' with role '%s'", $this->user->name, $this->user->role));
     }
   }
+
+  /**
+   * @Given /^I fill in "([^"]*)" with the date format "([^"]*)"$/
+   */
+  public function iFillInWithTheDateFormat($field, $format) {
+    $this->fillField($field, date($format, time()));
+  }
+
+  /**
+   * @Given /^I sleep for "([^"]*)"$/
+   */
+  public function iSleepFor($time) {
+    sleep($time);
+  }
 }

@@ -88,6 +88,9 @@
         }
 
         $.DrupalHubAjax('POST', 'api/v1/event', data)
+          .error(function (result) {
+            console.log(result);
+          })
           .success(function(result) {
             $.DrupalHubFormSuccess();
 

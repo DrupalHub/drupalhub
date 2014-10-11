@@ -78,10 +78,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-          <div class="col-md-7">
+          <div class="col-lg-7 col-md-6">
             <?php print $links; ?>
           </div>
-          <div class="col-md-3">
+          <div class="col-lg-3 col-md-4">
             <?php print $social; ?>
           </div>
           <div class="col-md-2 drop-down-wrapper">
