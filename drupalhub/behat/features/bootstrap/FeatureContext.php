@@ -91,4 +91,12 @@ class FeatureContext extends DrupalContext {
 
     $element->click();
   }
+
+  /**
+   * @Given /^I should see "([^"]*)" under "([^"]*)"$/
+   */
+  public function iShouldSeeUnder($content, $selector) {
+    $page = $this->getSession();
+    $element = $page->getPage()->find('xpath', "//*[contains(@class, '{$selector}') and contains(., '{$content}')]");
+  }
 }

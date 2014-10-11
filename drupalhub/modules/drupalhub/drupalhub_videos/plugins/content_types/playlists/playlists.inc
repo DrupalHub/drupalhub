@@ -33,14 +33,14 @@ function drupalhub_videos_playlists_content_type_render($subtype, $conf, $args, 
       );
     }
   }
-  else {
-    $rows[] = array(
-      array(
-        'data' => t('You did not created any playlist. <a href="#" class="show-playlist-form">Create a new playlist</a>'),
-        'colspan' => 3,
-      ),
-    );
-  }
+
+  $rows[] = array(
+    array(
+      'data' => t('You did not created any playlist. <a href="#" class="show-playlist-form">Create a new playlist</a>'),
+      'colspan' => 3,
+    ),
+  );
+
   $params = array(
     'header' => array(t('Title'), t('Number of videos'), t('Options')),
     'rows' => $rows,

@@ -1,4 +1,4 @@
-Feature: Testing the question
+Feature: Testing the question.
 
   @javascript
   Scenario: Testing the form validation of the question creation.

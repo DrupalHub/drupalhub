@@ -34,7 +34,7 @@ Feature: Testing video section.
         And I should see "Please insert videos."
         And I should see "Please insert description."
 
-  @javascript @now
+  @javascript
     Scenario: Verify creation of playlist.
     Given I am logging in as "ClarkKent"
       And I visit "video/playlists"
@@ -47,3 +47,28 @@ Feature: Testing video section.
      When I press "Save"
       And I wait for AJAX to finish
      Then I should see "The playlist has created successfully"
+
+  @javascript
+  Scenario: Editing a playlist.
+    Given I am logging in as "ClarkKent"
+      And I visit "video/playlists"
+      And I click "Edit"
+      And I wait for AJAX to finish
+      And I fill in "playlist-search" with "Programming With Anthony"
+      And I wait for AJAX to finish
+      And I add video to plyalist
+     When I press "Save"
+     Then I should see "The playlist has created successfully"
+      And I should see "2" under "videos"
+      And I reload the page
+      And I should see "2" under "videos"
+
+  @javascript
+  Scenario: Deleting a playlist.
+    Given I am logging in as "ClarkKent"
+      And I visit "video/playlists"
+     When I click "Delete"
+      And I wait for AJAX to finish
+     Then I should not see "Dummy playlist"
+      And I reload the page
+      And I should not see "Dummy playlist"
