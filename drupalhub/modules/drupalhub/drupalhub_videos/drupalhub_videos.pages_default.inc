@@ -255,7 +255,10 @@ function drupalhub_videos_default_page_manager_pages() {
   $page->admin_title = 'Playlists';
   $page->admin_description = '';
   $page->path = 'video/playlists';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -422,7 +425,17 @@ function drupalhub_videos_default_page_manager_pages() {
     $pane->subtype = 'manage_links';
     $pane->shown = TRUE;
     $pane->access = array();
-    $pane->configuration = array();
+    $pane->configuration = array(
+      'return' => 'Finish',
+      'cancel' => 'Cancel',
+      'override_title' => 0,
+      'override_title_text' => '',
+      'page' => 'gallery',
+      'form_build_id' => 'form-U__MEC2CrVKGUG6qwl-r_sJG3kbjsL_H7jvi8yb-kjc',
+      'form_token' => 'E4JClT93rFxbwy85kWWdDoi2qeiWNm-zaWWbWe9TncY',
+      'form_id' => 'drupalhub_videos_manage_links_content_type_edit_form',
+      'op' => 'Finish',
+    );
     $pane->cache = array();
     $pane->style = array(
       'settings' => NULL,

@@ -201,7 +201,7 @@ libraries[autopager][download][url] = "https://github.com/sagotsky/jquery-autopa
 
 libraries[datepicker][type] = "libraries"
 libraries[datepicker][download][type] = "file"
-libraries[datepicker][download][url] = "https://github.com/eternicode/bootstrap-datepicker/zipball/1.3.0"
+libraries[datepicker][download][url] = "http://tarruda.github.io/bootstrap-datetimepicker/assets/dist/bootstrap-datetimepicker-0.0.11.zip"
 
 libraries[typeahead][type] = "libraries"
 libraries[typeahead][download][type] = "file"

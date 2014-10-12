@@ -65,3 +65,18 @@ function drupalhub_videos_get_metadata($id) {
 
   return $request['data'];
 }
+
+/**
+ * Implements hook_permission().
+ */
+/**
+ *  Implements hook_permission().
+ */
+function drupalhub_videos_permission() {
+  return array(
+    'suggested videos approved' => array(
+      'title' => t('Suggested videos approved'),
+      'description' => t('Will approve youtube videos when sending them.')
+    ),
+  );
+}
