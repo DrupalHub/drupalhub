@@ -5,6 +5,17 @@
    */
   Drupal.behaviors.NewEventModalOpen = {
     attach: function() {
+
+      $('#datetimepicker1').datetimepicker({
+        icons: {
+          time: "fa fa-clock-o",
+          date: "fa fa-calendar",
+          up: "fa fa-arrow-up",
+          down: "fa fa-arrow-down"
+        }
+      });
+
+
       $('#NewEvent').on('shown.bs.modal', function () {
         var settings = {
           format: "dd/mm/yyyy",
@@ -14,9 +25,9 @@
           autoclose: true,
           todayHighlight: true
         };
-
-        $("#date").datepicker(settings);
-        $("#end_date").datepicker(settings);
+        //
+        //$("#date").datepicker(settings);
+        //$("#end_date").datepicker(settings);
       });
     }
   };
