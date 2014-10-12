@@ -72,7 +72,7 @@
         $.DrupalHubAjax(type, "api/v1/playlist", data)
           .error(function() {
             $.RemoveSpinner();
-            $(".buttons").append('<i class="fa fa-thumbs-down"></i>');
+            $(".buttons").append("<i class='fa fa-thumbs-down'></i>" + Drupal.t('An error has occurred while creating the playlist. Please content the site admin.'));
           })
           .success(function(data) {
             $.RemoveSpinner();
@@ -101,7 +101,7 @@
               row.find('.videos').html(data.videos.length);
             }
 
-            $('.playlist tbody:last').append(append);
+            $(".playlist tbody tr:last").before(append);
 
             // Reset the form.
             ar.addClass("disabled").html('');

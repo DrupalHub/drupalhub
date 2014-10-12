@@ -84,7 +84,7 @@
       beforeSend: function (request) {
         request.setRequestHeader("X-CSRF-Token", Drupal.settings.hub.csrfToken);
       },
-      url: Drupal.settings.baseURL + path,
+      url: Drupal.settings.hub.basePath + '/' + path,
       dataType: "json",
       contentType: "application/json",
       data: data

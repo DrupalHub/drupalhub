@@ -1,4 +1,21 @@
 default:
+  context:
+    parameters:
+      users:
+        admin:
+          'admin'
+        ClarkKent:
+          'LouisLane'
+        BruceWayne:
+          'IAmBatman'
+        TonyStark:
+          'ILovePepperPot'
+        PeterParker:
+          'MarryJaneWatson'
+        ScottSummers:
+          'JeanGrey'
+        NickFury:
+          'SamuelLJackson'
   paths:
     features: 'features'
   extensions:

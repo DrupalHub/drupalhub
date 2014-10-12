@@ -167,9 +167,12 @@ function drupalhub_videos_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'inline_entity_form',
+      'module' => 'entityreference',
       'settings' => array(
         'fields' => array(),
+        'match_operator' => 'CONTAINS',
+        'path' => '',
+        'size' => 60,
         'type_settings' => array(
           'allow_existing' => 1,
           'delete_references' => 0,
@@ -179,7 +182,7 @@ function drupalhub_videos_field_default_field_instances() {
           'override_labels' => 0,
         ),
       ),
-      'type' => 'inline_entity_form',
+      'type' => 'entityreference_autocomplete',
       'weight' => 33,
     ),
   );
