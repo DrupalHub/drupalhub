@@ -17,8 +17,15 @@
         </div>
 
         <div class="form-group date">
-          <label for="Name"><?php print t('Date'); ?></label>
-          <input type="text" class="form-control" id="date" placeholder="<?php print t('Set start date'); ?>">
+
+        </div>
+
+        <div class="form-group">
+            <label for="Name"><?php print t('Date'); ?></label>
+          <div class='input-group date' id='datetimepicker1'>
+            <input type='text' id="date" placeholder="<?php print t('Set start date'); ?>" class="form-control" />
+            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+          </div>
         </div>
 
         <div class="checkbox">
@@ -37,13 +44,5 @@
         <div class="passed disabled"><i class="fa fa-thumbs-up"></i> <span><?php print t('The event has created successfully. <a href="@url">See your event</a>'); ?></span></div>
       </div>
     </div>
-  </div>
-</div>
-
-<div class="form-group">
-  <div class='input-group date' id='datetimepicker1'>
-    <input type='text' class="form-control" />
-                    <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span>
-                    </span>
   </div>
 </div>

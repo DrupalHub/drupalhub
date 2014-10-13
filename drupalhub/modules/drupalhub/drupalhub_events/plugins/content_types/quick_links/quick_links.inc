@@ -11,8 +11,8 @@ function drupalhub_events_quick_links_content_type_render($subtype, $conf, $args
   $datepicker = libraries_get_path('datepicker');
   $path = '/plugins/content_types/quick_links';
   drupal_add_js(drupal_get_path('module', 'drupalhub_events') . $path . '/new_events.js');
-  drupal_add_js($datepicker . '/src/js/bootstrap-datetimepicker.js');
-//  drupal_add_css($datepicker . '/src/css/bootstrap-datetimepicker.min.css');
+  drupal_add_js($datepicker . '/build/js/bootstrap-datetimepicker.min.js');
+  drupal_add_css($datepicker . '/build/css/bootstrap-datetimepicker.min.css');
 
   $block = new stdClass();
   $block->content = '';

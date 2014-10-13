@@ -7,6 +7,7 @@
     attach: function() {
 
       $('#datetimepicker1').datetimepicker({
+        pick12HourFormat: false,
         icons: {
           time: "fa fa-clock-o",
           date: "fa fa-calendar",
