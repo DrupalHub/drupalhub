@@ -23,7 +23,7 @@
         <div class="form-group">
           <label for="Name"><?php print t('Date'); ?></label>
           <div class='input-group date' id='StartDate'>
-            <input type='text' data-date-format="DD-MM-YYYY HH:mm:ss" id="date" placeholder="<?php print t('Set start date'); ?>" class="form-control" />
+            <input type='text' data-date-format="DD/MM/YYYY HH:mm" id="date" placeholder="<?php print t('Set start date'); ?>" class="form-control" />
             <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
           </div>
         </div>
@@ -38,7 +38,7 @@
           <div class="form-group">
             <label for="Name"><?php print t('End date'); ?></label>
             <div class='input-group date' id='EndDate'>
-              <input type='text' id="end_date" placeholder="<?php print t('Set end date'); ?>" class="form-control" />
+              <input type='text' id="end_date" data-date-format="DD/MM/YYYY HH:mm" placeholder="<?php print t('Set end date'); ?>" class="form-control" />
               <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
             </div>
           </div>

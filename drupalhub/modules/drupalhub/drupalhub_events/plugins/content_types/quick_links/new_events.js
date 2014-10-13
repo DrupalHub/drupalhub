@@ -82,15 +82,18 @@
 
         $(this).AddSpinner();
 
+        var format = "DD/MM/YYYY HH:mm";
+        var StartDate = moment(start_date.val(), format).format("YYYY-MM-DD HH:mm:s");
+
         var data = {
           label: title.val(),
           body: description.val(),
-          start: {value: start_date.val()},
-          end: {value: start_date.val()}
+          start: {value: StartDate},
+          end: {value: StartDate}
         };
 
         if (end_date_on) {
-          data.end.value = end_date.val();
+          data.end.value = moment(end_date.val(), format).format("YYYY-MM-DD HH:mm:s");
         }
 
         $.DrupalHubAjax('POST', 'api/v1/event', data)
