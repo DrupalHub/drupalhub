@@ -16,10 +16,6 @@
           <textarea id="body" class="form-control" placeholder="<?php print t('Short description about the event'); ?>"></textarea>
         </div>
 
-        <div class="form-group date">
-
-        </div>
-
         <div class="form-group">
           <label for="Name"><?php print t('Date'); ?></label>
           <div class='input-group date' id='StartDate'>
