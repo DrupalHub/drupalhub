@@ -6,7 +6,7 @@
   Drupal.behaviors.NewEventModalOpen = {
     attach: function() {
 
-      $('#StartDate').datetimepicker({
+      var settings = {
         pick12HourFormat: false,
         useSeconds: false,
         icons: {
@@ -15,18 +15,10 @@
           up: "fa fa-arrow-up",
           down: "fa fa-arrow-down"
         }
-      });
+      };
 
-      $('#EndDate').datetimepicker({
-        pick12HourFormat: false,
-        useSeconds: false,
-        icons: {
-          time: "fa fa-clock-o",
-          date: "fa fa-calendar",
-          up: "fa fa-arrow-up",
-          down: "fa fa-arrow-down"
-        }
-      });
+      $('#StartDate').datetimepicker(settings);
+      $('#EndDate').datetimepicker(settings);
     }
   };
 

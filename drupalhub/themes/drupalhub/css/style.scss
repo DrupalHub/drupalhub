@@ -21,16 +21,9 @@ $blue-border-2: #198fc0;
   width: 95%;
 }
 
-.bootstrap-datetimepicker-widget {
-  ul {
-//    padding: 0;
-  }
-}
-
 .dropdown-menu {
   z-index: 1000000000;
 }
-
 
 // This is the part when we import css style per page.
 @import "includes/mixins";

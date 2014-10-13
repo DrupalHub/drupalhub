@@ -927,11 +927,6 @@ body.front #AddQuestion .modal-dialog {
   .page-calendar .top .month-view .full td.multi-day .continues,
   .page-calendar .top .month-view .full td.multi-day .cutoff {
     visibility: hidden; }
-  .page-calendar .top .month-view td.today,
-  .page-calendar .top .month-view .ends-today {
-    border: #2287b1 solid 1px !important;
-    border-bottom: none !important;
-    border-top: none !important; }
   .page-calendar .top .month-view thead th {
     color: white;
     background: #48ABDE;
