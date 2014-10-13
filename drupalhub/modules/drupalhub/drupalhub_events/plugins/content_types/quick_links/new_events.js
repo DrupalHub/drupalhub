@@ -27,20 +27,6 @@
           down: "fa fa-arrow-down"
         }
       });
-
-      $('#NewEvent').on('shown.bs.modal', function () {
-        var settings = {
-          format: "dd/mm/yyyy",
-          todayBtn: "linked",
-          lang: "he",
-          orientation: "auto right",
-          autoclose: true,
-          todayHighlight: true
-        };
-        //
-        //$("#date").datepicker(settings);
-        //$("#end_date").datepicker(settings);
-      });
     }
   };
 
@@ -95,22 +81,22 @@
         }
 
         $(this).AddSpinner();
-        var format = "YYYY-MM-DD HH:mm:s";
-
-        var FormattedDate = $.ProcessDate(start_date.val());
 
         var data = {
           label: title.val(),
           body: description.val(),
-          start: {value: moment(FormattedDate).format(format)},
-          end: {value: moment(FormattedDate).format(format)}
+          start: {value: start_date.val()},
+          end: {value: start_date.val()}
         };
 
         if (end_date_on) {
-          data.end.value = moment($.ProcessDate(end_date.val())).format(format);
+          data.end.value = end_date.val();
         }
 
         $.DrupalHubAjax('POST', 'api/v1/event', data)
+          .error(function (result) {
+            console.log(result);
+          })
           .success(function(result) {
             $.DrupalHubFormSuccess();
 
