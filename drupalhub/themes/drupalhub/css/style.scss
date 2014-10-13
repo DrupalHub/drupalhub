@@ -21,10 +21,6 @@ $blue-border-2: #198fc0;
   width: 95%;
 }
 
-.dropdown-menu {
-  z-index: 1000000000;
-}
-
 // This is the part when we import css style per page.
 @import "includes/mixins";
 @import "includes/globals";
