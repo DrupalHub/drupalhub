@@ -5,19 +5,20 @@
    */
   Drupal.behaviors.NewEventModalOpen = {
     attach: function() {
-      $('#NewEvent').on('shown.bs.modal', function () {
-        var settings = {
-          format: "dd/mm/yyyy",
-          todayBtn: "linked",
-          lang: "he",
-          orientation: "auto right",
-          autoclose: true,
-          todayHighlight: true
-        };
 
-        $("#date").datepicker(settings);
-        $("#end_date").datepicker(settings);
-      });
+      var settings = {
+        pick12HourFormat: false,
+        useSeconds: false,
+        icons: {
+          time: "fa fa-clock-o",
+          date: "fa fa-calendar",
+          up: "fa fa-arrow-up",
+          down: "fa fa-arrow-down"
+        }
+      };
+
+      $('#StartDate').datetimepicker(settings);
+      $('#EndDate').datetimepicker(settings);
     }
   };
 
@@ -72,19 +73,19 @@
         }
 
         $(this).AddSpinner();
-        var format = "YYYY-MM-DD HH:mm:s";
 
-        var FormattedDate = $.ProcessDate(start_date.val());
+        var format = "DD/MM/YYYY HH:mm";
+        var StartDate = moment(start_date.val(), format).format("YYYY-MM-DD HH:mm:s");
 
         var data = {
           label: title.val(),
           body: description.val(),
-          start: {value: moment(FormattedDate).format(format)},
-          end: {value: moment(FormattedDate).format(format)}
+          start: {value: StartDate},
+          end: {value: StartDate}
         };
 
         if (end_date_on) {
-          data.end.value = moment($.ProcessDate(end_date.val())).format(format);
+          data.end.value = moment(end_date.val(), format).format("YYYY-MM-DD HH:mm:s");
         }
 
         $.DrupalHubAjax('POST', 'api/v1/event', data)

@@ -200,8 +200,8 @@ libraries[autopager][download][type] = "file"
 libraries[autopager][download][url] = "https://github.com/sagotsky/jquery-autopager/archive/v1.2.zip"
 
 libraries[datepicker][type] = "libraries"
-libraries[datepicker][download][type] = "file"
-libraries[datepicker][download][url] = "https://github.com/eternicode/bootstrap-datepicker/zipball/1.3.0"
+libraries[datepicker][download][type] = "git"
+libraries[datepicker][download][url] = "https://github.com/Eonasdan/bootstrap-datetimepicker.git"
 
 libraries[typeahead][type] = "libraries"
 libraries[typeahead][download][type] = "file"
