@@ -10,7 +10,7 @@ Feature: Testing the event section.
      When I press "Save"
      Then I should see "Title field is a required field."
       And I should see "The description is a required field."
-      And I should see "You need to set a date for the event."
+      And I should see "You must supply a start date."
 
   @javascript
   Scenario: Testing event creation.

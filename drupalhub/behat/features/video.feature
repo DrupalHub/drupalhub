@@ -10,7 +10,7 @@ Feature: Testing video section.
       And I should see "Aretha Franklin - Respect [1967] (Original Version)"
       And I should see "Aretha Franklin - Respect"
      When I press "Save"
-     Then I should see "The playlist has created successfully"
+     Then I should see "The video added successfully. Click here"
 
   @javascript
   Scenario: Verify user can't add the same youtube again.
