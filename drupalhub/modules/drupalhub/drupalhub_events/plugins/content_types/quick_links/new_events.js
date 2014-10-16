@@ -61,12 +61,12 @@
         // API method.
         var errors = [];
 
-        errors.push(title.CollectErrors(Drupal.t("Title field if q required field.")));
-        errors.push(description.CollectErrors(Drupal.t("The description is a required field.")));
-        errors.push(start_date.CollectErrors(Drupal.t("You must supply a start date")));
+        title.CollectErrors(Drupal.t("Title field is a required field."), errors);
+        description.CollectErrors(Drupal.t("The description is a required field."), errors);
+        start_date.CollectErrors(Drupal.t("You must supply a start date."), errors);
 
         if (end_date_on) {
-          errors.push(end_date.CollectErrors(Drupal.t("You need to fill the end date.")));
+          end_date.CollectErrors(Drupal.t("You need to fill the end date."), errors);
         }
 
         $.ProcessErrors('list', errors);

@@ -118,16 +118,18 @@
    *
    * @param error
    *   The error name.
+   * @param object
+   *   The object that the errors will be concatenate.
    *
    * @returns {{error: *, id: *}}
    *   - error: The error text.
    *   - id: The element ID's.
    * @constructor
    */
-  jQuery.fn.CollectErrors = function(error) {
+  jQuery.fn.CollectErrors = function(error, object) {
     if ($(this).val() == "") {
       $.FormStatus = false;
-      return {error: error, id: $(this)};
+      object.push({error: error, id: $(this)});
     }
   };
 
@@ -145,6 +147,10 @@
    * @constructor
    */
   jQuery.ProcessErrors = function(state, errors) {
+    if (errors == "") {
+      return;
+    }
+
     if (state == 'list') {
       var list = [];
       $.each(errors, function(index, value) {
