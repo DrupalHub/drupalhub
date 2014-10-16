@@ -7,8 +7,8 @@ Feature: Testing the question.
       And I wait for AJAX to finish
      When I should see "Create question"
       And I press "Save"
-     Then I should see "The title field is required."
-      And I should see "The body field is required."
+     Then I should see "Title field is a required field."
+      And I should see "The body is a required field."
 
   @javascript
   Scenario: Testing the creation of the form.

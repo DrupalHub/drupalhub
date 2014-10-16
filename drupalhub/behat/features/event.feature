@@ -8,9 +8,10 @@ Feature: Testing the event section.
       And I wait for AJAX to finish
       And I check the box "Add end date"
      When I press "Save"
-     Then I should see "This is a required field."
+     Then I should see "Title field is a required field."
+      And I should see "The description is a required field."
       And I should see "You need to set a date for the event."
-    
+
   @javascript
   Scenario: Testing event creation.
     Given I am logging in as "ClarkKent"
