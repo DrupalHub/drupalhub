@@ -35,7 +35,6 @@ function drupalhub_wiki_ctools_plugin_directory($module, $plugin) {
  */
 function drupalhub_wiki_search_form($form, $form_state) {
   $form['#attached']['js'] = array(
-    libraries_get_path('typeahead') . '/typeahead.bundle.js',
     drupal_get_path('module', 'drupalhub_wiki') . '/js/drupalhub_wiki.js',
   );
   $form['text'] = array(

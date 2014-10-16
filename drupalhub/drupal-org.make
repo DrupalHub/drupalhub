@@ -151,6 +151,12 @@ projects[twitter][subdir] = contrib
 projects[video_embed_field][version] = "2.0-beta8"
 projects[video_embed_field][subdir] = contrib
 
+projects[search_api][version] = "1.13"
+projects[search_api][subdir] = contrib
+
+projects[search_api_solr][version] = "1.6"
+projects[search_api_solr][subdir] = contrib
+
 projects[votingapi][version] = "2.12"
 projects[votingapi][subdir] = contrib
 

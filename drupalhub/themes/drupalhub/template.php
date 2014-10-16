@@ -79,6 +79,9 @@ function drupalhub_preprocess_page(&$variables) {
     'items' => $items,
     'attributes' => array('class' => 'inner-links'),
   ));
+
+  drupal_add_js(libraries_get_path('typeahead') . '/typeahead.bundle.js');
+  drupal_add_js(drupal_get_path('theme', 'drupalhub') . '/js/search.js');
 }
 
 /**

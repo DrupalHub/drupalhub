@@ -27,6 +27,35 @@
   background: $grey1;
 }
 
+.search {
+  padding-top: 10px;
+
+  pre {
+    width: 100%;
+  }
+
+  .twitter-typeahead {
+    width: 97%;
+  }
+
+  .tt-dropdown-menu {
+    width: 102%;
+  }
+
+  input.typeahead.tt-query {
+    width: 300px !important;
+  }
+
+  ul {
+    padding: 5px 0px 0px;
+
+    li {
+      display: inline;
+      list-style-type: none;
+    }
+  }
+}
+
 .social {
   float: initial;
   padding: 0px;
@@ -70,6 +99,11 @@
 
 .drop-down-wrapper {
   padding-top: 10px;
+
+  .login {
+    display: block;
+    padding-top: 10px;
+  }
 
   .dropdown {
 

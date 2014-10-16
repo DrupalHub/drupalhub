@@ -23,6 +23,22 @@
   padding: 0px;
   background: #e6e6e6; }
 
+.search {
+  padding-top: 10px; }
+  .search pre {
+    width: 100%; }
+  .search .twitter-typeahead {
+    width: 97%; }
+  .search .tt-dropdown-menu {
+    width: 102%; }
+  .search input.typeahead.tt-query {
+    width: 300px !important; }
+  .search ul {
+    padding: 5px 0px 0px; }
+    .search ul li {
+      display: inline;
+      list-style-type: none; }
+
 .social {
   float: initial;
   padding: 0px; }
@@ -47,6 +63,9 @@
 
 .drop-down-wrapper {
   padding-top: 10px; }
+  .drop-down-wrapper .login {
+    display: block;
+    padding-top: 10px; }
   .drop-down-wrapper .dropdown img {
     border: solid 1px #4d7fb6; }
 

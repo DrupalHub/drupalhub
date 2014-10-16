@@ -19,7 +19,7 @@ Feature: Testing the event section.
       And I wait for AJAX to finish
       And I fill in "title" with "Dummy event"
       And I fill in "body" with "Dummy event content"
-      And I fill in "date" with the date format "d/m/Y"
+      And I fill in "date" with the date format "d/m/Y H:s"
      When I press "Save"
       And I wait for AJAX to finish
      Then I should see "The event has created successfully. See your event"

@@ -1,0 +1,80 @@
+<?php
+/**
+ * @file
+ * Code for the DrupalHub search feature.
+ */
+
+include_once 'drupalhub_search.features.inc';
+
+/**
+ * Implements hook_menu().
+ */
+function drupalhub_search_menu() {
+  $items = array();
+
+  $items['api/v1/search'] = array(
+    'page callback' => 'drupalhub_search_results',
+    'access callback' => TRUE,
+  );
+
+  return $items;
+}
+
+/**
+ * Page callback. Return the search results.
+ */
+function drupalhub_search_results() {
+  $results = array();
+
+  $search = new DrupalHubSearch($_GET['index']);
+
+  foreach ($search->getFields() as $field) {
+    $search->OrCondition($field, $_GET['value']);
+  }
+
+  // Display only videos from the video page. keep this until the group section
+  // will complete.
+  if ($search->getEntityType() == 'node') {
+    $search->condition('field_show_in_videos', TRUE);
+  }
+
+  $entities = $search->execute();
+
+  if (!$entities) {
+    return;
+  }
+
+  foreach ($entities as $entity) {
+    $wrapper = entity_metadata_wrapper($search->getEntityType(), $entity);
+    $body = '';
+
+    if ($wrapper->type() == 'comment' && $wrapper->__isset('comment_body') && $wrapper->comment_body->value()) {
+      $body = views_trim_text(array('max_length' => 50, 'ellipsis' => TRUE), filter_xss($wrapper->comment_body->value->value()));
+    }
+    else if ($wrapper->type() != 'comment' && $wrapper->__isset('body') && $wrapper->body->value()) {
+      $body = views_trim_text(array('max_length' => 50, 'ellipsis' => TRUE), filter_xss($wrapper->body->value->value()));
+    }
+
+    $uri = entity_uri($search->getEntityType(), $wrapper->value());
+
+    if ($wrapper->type() == 'user') {
+      $image = image_style_url('extra_small', _drupalhub_users_user_uri($wrapper->value()));
+    }
+    else {
+      $image = '';
+
+      if ($wrapper->__isset('author')) {
+        $image = image_style_url('extra_small', _drupalhub_users_user_uri($wrapper->author->value()));
+      }
+    }
+
+    $results[] = array(
+      'image_url' => $image,
+      'self' => $uri['path'],
+      'label' => $wrapper->label(),
+      'body' => $body,
+    );
+  }
+
+  drupal_json_output($results);
+}
