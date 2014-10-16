@@ -6,6 +6,12 @@
         <h4 class="modal-title" id="myModalLabel"><?php print t('Add youtube video'); ?></h4>
       </div>
       <div class="modal-body">
+        <div class="errors">
+        </div>
+
+        <div class="success">
+          <?php print t('The video added successfully. <a href="@url">Click here</a> to view it'); ?>
+        </div>
         <div class="form-group name">
           <label for="Name"><?php print t('Youtube address: '); ?></label>
           <input type="text" class="form-control" id="url" size="30" placeholder="<?php print t('Youtube link address'); ?>">
@@ -23,7 +29,6 @@
       </div>
       <div class="modal-footer disabled">
         <button type="button" class="btn btn-primary"><?php print t('Save'); ?></button>
-        <div class="passed disabled"><i class="fa fa-thumbs-up"></i> <?php print t('The playlist has created successfully'); ?></div>
       </div>
     </div>
   </div>

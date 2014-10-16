@@ -15,7 +15,8 @@
         $(".modal-footer").addClass("disabled");
         $(".modal-dialog").css("right", "140px");
         $("#AddVideo .modal-content").css('width', '578px');
-        $(".errors").html('');
+        $(".errors").slideUp();
+        $(".success").slideUp();
       });
     }
   };
@@ -70,7 +71,7 @@
    * Sending the youtube video.
    */
   Drupal.behaviors.DrupalHubVideoCreate = {
-    attach: function(context, settings) {
+    attach: function() {
       $(".modal-footer button").click(function() {
         $(this).AddSpinner();
 
@@ -78,15 +79,17 @@
           .error(function(result) {
             $.RemoveSpinner();
 
-            $(this).parent().append('<i class="fa fa-thumbs-down"></i>');
             var json = jQuery.parseJSON(result.responseText).errors;
 
-            if (json.address != null) {
-              $("#url").SetError(json.address.join("<br />"));
+            if (json.address.length == 1) {
+              var errors = [];
+              errors.push({error: json.address.join("<br />"), id: $("#url")});
+              $.ProcessErrors('list', errors);
             }
           })
-          .success(function() {
+          .success(function(result) {
             $.DrupalHubFormSuccess();
+            $(".success a").attr('href', result.data[0].self);
           });
       });
     }

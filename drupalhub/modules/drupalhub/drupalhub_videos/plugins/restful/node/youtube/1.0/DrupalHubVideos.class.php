@@ -37,8 +37,6 @@ class DrupalHubVideos extends \RestfulEntityBase {
       'sub_property' => 'video_url',
     );
 
-    unset($public_fields['self']);
-
     return $public_fields;
   }
 
