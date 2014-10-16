@@ -247,7 +247,7 @@ span.twitter-typeahead .input-group.input-group-sm .tt-dropdown-menu {
 
 .modal-body .errors {
   position: absolute;
-  left: 9%;
+  left: 10%;
   top: 0px;
   width: 80%;
   text-align: center;
@@ -266,7 +266,7 @@ span.twitter-typeahead .input-group.input-group-sm .tt-dropdown-menu {
       list-style: none; }
 .modal-body .success {
   position: absolute;
-  left: 9%;
+  left: 10%;
   top: 0px;
   width: 80%;
   text-align: center;

@@ -11,8 +11,8 @@
         $.DrupalHubFormInit("AddQuestion");
 
         // Processing the form.
-        var title = $("#title").val();
-        var body = $("#body").val();
+        var title = $("#title");
+        var body = $("#body");
 
         var errors = [];
 
@@ -28,18 +28,12 @@
         $('#AddQuestion .modal-footer .btn').AddSpinner();
 
         $.DrupalHubAjax('POST', "api/v1/question", {
-          label: title,
-          body: body,
+          label: title.val(),
+          body: body.val(),
           tags: $("#tags").val()
-        })
-        .error(function() {
-          jQuery.RemoveSpinner();
-        })
-        .success(function(result) {
-          jQuery.RemoveSpinner();
-          $(".modal-footer .btn").addClass("disabled");
-          $(".modal-footer .passed").removeClass('disabled');
-          $(".modal-footer .passed span a").attr("href", result.self);
+        }).success(function(result) {
+          $(".success a").attr('href', result.self);
+          $.DrupalHubFormSuccess();
         });
       });
     }
