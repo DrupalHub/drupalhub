@@ -43,6 +43,13 @@
   };
 
   /**
+   * Show errors in the modal error div.
+   */
+  jQuery.DrupalHubShowErrors = function(errors) {
+    console.log(errors);
+  };
+
+  /**
    * Resetting a specific form element.
    *
    * @constructor
@@ -107,6 +114,58 @@
   };
 
   /**
+   * Collecting errors for form elements.
+   *
+   * @param error
+   *   The error name.
+   *
+   * @returns {{error: *, id: *}}
+   *   - error: The error text.
+   *   - id: The element ID's.
+   * @constructor
+   */
+  jQuery.fn.CollectErrors = function(error) {
+    if ($(this).val() == "") {
+      $.FormStatus = false;
+      return {error: error, id: $(this)};
+    }
+  };
+
+  /**
+   * Process the errors and show the error div. You can do this with list,
+   * simple UL with the errors, or in case of unknown DB error pass the watchdog
+   * log ID and display that to the user.
+   *
+   * @param state
+   *   - list: Display the errors in list.
+   *   - log: Will display the log ID with some explanation.
+   * @param errors
+   *   Object with the errors or the DB log.
+   *
+   * @constructor
+   */
+  jQuery.ProcessErrors = function(state, errors) {
+    if (state == 'list') {
+      var list = [];
+      $.each(errors, function(index, value) {
+        if (value != "undefined") {
+          value.id.SetError();
+          list.push("<li>" + value.error + "</li>");
+        }
+      });
+
+      var data = {
+        title: Drupal.t("Wow! We can't submit the form due to some error:"),
+        list: list.join("")
+      };
+
+      var template = Handlebars.compile("{{title}}<br /> <ul>{{{list}}}</ul>");
+
+      $(".errors").html(template(data)).slideDown("fast");
+    }
+  };
+
+  /**
    * Converting a given string to timestamp.
    *
    * @param string
@@ -118,6 +177,14 @@
   jQuery.ProcessDate = function(string) {
     var parts = string.split("/");
     return new Date(parts[1] + '/' + parts[0] + '/' + parts[2]);
+  };
+
+  Drupal.behaviors.CloseModal = {
+    attach: function() {
+      $(":not(.errors)").focus(function() {
+        $(".errors").slideUp();
+      });
+    }
   };
 
 })(jQuery);

@@ -59,14 +59,17 @@
 
         // Verifying the elements are not empty. If so attach the message via
         // API method.
-        title.CheckEmpty(Drupal.t("This is a required field."));
-        description.CheckEmpty(Drupal.t("This is a required field."));
-        start_date.CheckEmpty(Drupal.t("You need to set a date for the event."));
+        var errors = [];
 
+        errors.push(title.CollectErrors(Drupal.t("Title field if q required field.")));
+        errors.push(description.CollectErrors(Drupal.t("The description is a required field.")));
+        errors.push(start_date.CollectErrors(Drupal.t("You must supply a start date")));
 
         if (end_date_on) {
-          end_date.CheckEmpty(Drupal.t("You need to fill the end date."));
+          errors.push(end_date.CollectErrors(Drupal.t("You need to fill the end date.")));
         }
+
+        $.ProcessErrors('list', errors);
 
         if (!$.FormStatus) {
           return;

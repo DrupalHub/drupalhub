@@ -6,6 +6,9 @@
         <h4 class="modal-title" id="myModalLabel"><?php print t('Create event'); ?></h4>
       </div>
       <div class="modal-body">
+        <div class="errors">
+        </div>
+
         <div class="form-group title">
           <label for="Name"><?php print t('Title'); ?></label>
           <input type="text" class="form-control" id="title" placeholder="<?php print t('Event title'); ?>">
