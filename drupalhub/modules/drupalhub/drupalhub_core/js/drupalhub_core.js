@@ -43,13 +43,6 @@
   };
 
   /**
-   * Show errors in the modal error div.
-   */
-  jQuery.DrupalHubShowErrors = function(errors) {
-    console.log(errors);
-  };
-
-  /**
    * Resetting a specific form element.
    *
    * @constructor
@@ -70,6 +63,7 @@
     jQuery.RemoveSpinner();
     $(".modal-footer .btn").addClass("disabled");
     $(".modal-footer .passed").removeClass('disabled');
+    $(".success").slideDown();
   };
 
   /**

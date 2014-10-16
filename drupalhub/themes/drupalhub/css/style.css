@@ -264,6 +264,21 @@ span.twitter-typeahead .input-group.input-group-sm .tt-dropdown-menu {
     padding: 0px; }
     .modal-body .errors ul li {
       list-style: none; }
+.modal-body .success {
+  position: absolute;
+  left: 9%;
+  top: 0px;
+  width: 80%;
+  text-align: center;
+  border: solid 1px #69B948;
+  border-top: none;
+  background-color: #DEF2E1;
+  color: #000000;
+  padding-top: 10px;
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+  border-radius: 0px 0px 10px 10px;
+  display: none; }
 
 body.front .view-gallery {
   background: #e6e6e6;

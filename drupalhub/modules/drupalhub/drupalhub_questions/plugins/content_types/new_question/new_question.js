@@ -4,7 +4,7 @@
    * Validating the question creation for before submitting.
    */
   Drupal.behaviors.ValidateQuestionForm = {
-    attach: function (context, settings) {
+    attach: function() {
 
       $("#AddQuestion .modal-footer .btn").click(function() {
         // Remove any errors.
@@ -14,13 +14,12 @@
         var title = $("#title").val();
         var body = $("#body").val();
 
-        if (title == "") {
-          $("#title").SetError(Drupal.t('The title field is required.'));
-        }
+        var errors = [];
 
-        if (body == "") {
-          $("#body").SetError(Drupal.t('The body field is required.'));
-        }
+        title.CollectErrors(Drupal.t("Title field is a required field."), errors);
+        body.CollectErrors(Drupal.t('The body is a required field.'), errors);
+
+        $.ProcessErrors('list', errors);
 
         if (!$.FormStatus) {
           return;

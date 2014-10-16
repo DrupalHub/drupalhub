@@ -95,7 +95,7 @@
           .success(function(result) {
             $.DrupalHubFormSuccess();
 
-            $(".passed span a").attr('href', result.data[0].self);
+            $(".success a").attr('href', result.data[0].self);
           });
       });
     }

@@ -9,6 +9,10 @@
         <div class="errors">
         </div>
 
+        <div class="success">
+          <?php print t('The event has created successfully. <a href="@url">See your event</a>'); ?>
+        </div>
+
         <div class="form-group title">
           <label for="Name"><?php print t('Title'); ?></label>
           <input type="text" class="form-control" id="title" placeholder="<?php print t('Event title'); ?>">
@@ -45,7 +49,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary"><?php print t('Save'); ?></button>
-        <div class="passed disabled"><i class="fa fa-thumbs-up"></i> <span><?php print t('The event has created successfully. <a href="@url">See your event</a>'); ?></span></div>
       </div>
     </div>
   </div>
