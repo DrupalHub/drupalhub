@@ -331,3 +331,49 @@ span.twitter-typeahead {
     }
   }
 }
+
+// Modal error part.
+.modal-body {
+
+  .errors {
+    position: absolute;
+    left: 10%;
+    top: 0px;
+    width: 80%;
+    text-align: center;
+    border: solid 1px #b94a48;
+    border-top: none;
+    background-color: #f2dede;
+    color: #b94a48;
+    padding-top: 10px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    border-radius: 0px 0px 10px 10px;
+    display: none;
+
+    ul {
+      padding: 0px;
+
+      li {
+        list-style: none;
+      }
+    }
+  }
+
+  .success {
+    position: absolute;
+    left: 10%;
+    top: 0px;
+    width: 80%;
+    text-align: center;
+    border: solid 1px #69B948;
+    border-top: none;
+    background-color: #DEF2E1;
+    color: #000000;
+    padding-top: 10px;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    border-radius: 0px 0px 10px 10px;
+    display: none;
+  }
+}

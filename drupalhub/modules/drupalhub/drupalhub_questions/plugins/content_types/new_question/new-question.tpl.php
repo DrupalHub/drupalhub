@@ -6,6 +6,13 @@
         <h4 class="modal-title" id="myModalLabel"><?php print t('Create question'); ?></h4>
       </div>
       <div class="modal-body">
+        <div class="errors">
+        </div>
+
+        <div class="success">
+          <?php print t('The question has created successfully. <a href="@url">Visit the question</a> or wait a second'); ?>
+        </div>
+
         <div class="form-group title">
           <label for="Name"><?php print t('Title: '); ?></label>
           <input type="text" class="form-control" id="title" placeholder="<?php print t('Ask question'); ?>">
@@ -27,7 +34,6 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary"><?php print t('Save'); ?></button>
-        <div class="passed disabled"><i class="fa fa-thumbs-up"></i> <span><?php print t('The question has created successfully. <a href="@url">Visit the question</a>'); ?></span></div>
       </div>
     </div>
   </div>

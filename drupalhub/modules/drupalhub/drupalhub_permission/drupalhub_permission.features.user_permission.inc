@@ -14,6 +14,7 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['create events content'] = array(
     'name' => 'create events content',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -23,6 +24,17 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['create playlist content'] = array(
     'name' => 'create playlist content',
     'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'create question content'.
+  $permissions['create question content'] = array(
+    'name' => 'create question content',
+    'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -32,6 +44,7 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['create youtube content'] = array(
     'name' => 'create youtube content',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -40,13 +53,24 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'delete any events content'.
   $permissions['delete any events content'] = array(
     'name' => 'delete any events content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'delete any playlist content'.
   $permissions['delete any playlist content'] = array(
     'name' => 'delete any playlist content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete any question content'.
+  $permissions['delete any question content'] = array(
+    'name' => 'delete any question content',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -66,6 +90,7 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['delete own events content'] = array(
     'name' => 'delete own events content',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -75,6 +100,17 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['delete own playlist content'] = array(
     'name' => 'delete own playlist content',
     'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'delete own question content'.
+  $permissions['delete own question content'] = array(
+    'name' => 'delete own question content',
+    'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -84,6 +120,7 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['delete own youtube content'] = array(
     'name' => 'delete own youtube content',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -92,13 +129,24 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'edit any events content'.
   $permissions['edit any events content'] = array(
     'name' => 'edit any events content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
   // Exported permission: 'edit any playlist content'.
   $permissions['edit any playlist content'] = array(
     'name' => 'edit any playlist content',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit any question content'.
+  $permissions['edit any question content'] = array(
+    'name' => 'edit any question content',
     'roles' => array(
       'administrator' => 'administrator',
     ),
@@ -118,6 +166,7 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['edit own events content'] = array(
     'name' => 'edit own events content',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
@@ -127,7 +176,17 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['edit own playlist content'] = array(
     'name' => 'edit own playlist content',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'node',
+  );
+
+  // Exported permission: 'edit own question content'.
+  $permissions['edit own question content'] = array(
+    'name' => 'edit own question content',
+    'roles' => array(
+      'administrator' => 'administrator',
     ),
     'module' => 'node',
   );
@@ -136,6 +195,7 @@ function drupalhub_permission_user_default_permissions() {
   $permissions['edit own youtube content'] = array(
     'name' => 'edit own youtube content',
     'roles' => array(
+      'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',

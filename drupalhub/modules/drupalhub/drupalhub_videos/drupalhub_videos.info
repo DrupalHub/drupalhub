@@ -9,7 +9,6 @@ dependencies[] = drupalhub_group
 dependencies[] = drupalhub_questions
 dependencies[] = entityreference
 dependencies[] = features
-dependencies[] = inline_entity_form
 dependencies[] = list
 dependencies[] = node
 dependencies[] = options

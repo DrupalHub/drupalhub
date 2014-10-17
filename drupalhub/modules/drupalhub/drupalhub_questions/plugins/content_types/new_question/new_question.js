@@ -4,23 +4,22 @@
    * Validating the question creation for before submitting.
    */
   Drupal.behaviors.ValidateQuestionForm = {
-    attach: function (context, settings) {
+    attach: function() {
 
       $("#AddQuestion .modal-footer .btn").click(function() {
         // Remove any errors.
         $.DrupalHubFormInit("AddQuestion");
 
         // Processing the form.
-        var title = $("#title").val();
-        var body = $("#body").val();
+        var title = $("#title");
+        var body = $("#body");
 
-        if (title == "") {
-          $("#title").SetError(Drupal.t('The title field is required.'));
-        }
+        var errors = [];
 
-        if (body == "") {
-          $("#body").SetError(Drupal.t('The body field is required.'));
-        }
+        title.CollectErrors(Drupal.t("Title field is a required field."), errors);
+        body.CollectErrors(Drupal.t('The body is a required field.'), errors);
+
+        $.ProcessErrors('list', errors);
 
         if (!$.FormStatus) {
           return;
@@ -29,18 +28,13 @@
         $('#AddQuestion .modal-footer .btn').AddSpinner();
 
         $.DrupalHubAjax('POST', "api/v1/question", {
-          label: title,
-          body: body,
+          label: title.val(),
+          body: body.val(),
           tags: $("#tags").val()
-        })
-        .error(function() {
-          jQuery.RemoveSpinner();
-        })
-        .success(function(result) {
-          jQuery.RemoveSpinner();
-          $(".modal-footer .btn").addClass("disabled");
-          $(".modal-footer .passed").removeClass('disabled');
-          $(".modal-footer .passed span a").attr("href", result.self);
+        }).success(function(result) {
+          $.DrupalHubFormSuccess();
+          $(".success a").attr('href', result.self);
+          $.DrupalHubRedirect(result.self, 1);
         });
       });
     }

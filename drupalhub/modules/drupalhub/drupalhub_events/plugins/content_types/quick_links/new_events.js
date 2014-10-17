@@ -59,14 +59,17 @@
 
         // Verifying the elements are not empty. If so attach the message via
         // API method.
-        title.CheckEmpty(Drupal.t("This is a required field."));
-        description.CheckEmpty(Drupal.t("This is a required field."));
-        start_date.CheckEmpty(Drupal.t("You need to set a date for the event."));
+        var errors = [];
 
+        title.CollectErrors(Drupal.t("Title field is a required field."), errors);
+        description.CollectErrors(Drupal.t("The description is a required field."), errors);
+        start_date.CollectErrors(Drupal.t("You must supply a start date."), errors);
 
         if (end_date_on) {
-          end_date.CheckEmpty(Drupal.t("You need to fill the end date."));
+          end_date.CollectErrors(Drupal.t("You need to fill the end date."), errors);
         }
+
+        $.ProcessErrors('list', errors);
 
         if (!$.FormStatus) {
           return;
@@ -91,8 +94,8 @@
         $.DrupalHubAjax('POST', 'api/v1/event', data)
           .success(function(result) {
             $.DrupalHubFormSuccess();
-
-            $(".passed span a").attr('href', result.data[0].self);
+            $(".success a").attr('href', result.data[0].self);
+            $.DrupalHubRedirect(result.data[0].self, 1);
           });
       });
     }
