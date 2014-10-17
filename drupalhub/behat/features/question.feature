@@ -20,7 +20,6 @@ Feature: Testing the question.
       And I fill in "body" with "Body"
       And I press "Save"
       And I wait for AJAX to finish
-      And I should see "The question has created successfully"
      Then I sleep for "1.5"
       And I should see "Testing"
       And I should see "Body"
