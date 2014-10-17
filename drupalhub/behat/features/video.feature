@@ -10,7 +10,10 @@ Feature: Testing video section.
       And I should see "Aretha Franklin - Respect [1967] (Original Version)"
       And I should see "Aretha Franklin - Respect"
      When I press "Save"
-     Then I should see "The video added successfully. Click here"
+     Then I should see "The video added successfully."
+      And I sleep for "1.5"
+      And I should see "Aretha Franklin - Respect [1967] (Original Version)"
+      And I should see "Aretha Franklin - Respect"
 
   @javascript
   Scenario: Verify user can't add the same youtube again.

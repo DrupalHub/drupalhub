@@ -32,8 +32,9 @@
           body: body.val(),
           tags: $("#tags").val()
         }).success(function(result) {
-          $(".success a").attr('href', result.self);
           $.DrupalHubFormSuccess();
+          $(".success a").attr('href', result.self);
+          $.DrupalHubRedirect(result.self, 1);
         });
       });
     }

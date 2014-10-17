@@ -10,7 +10,7 @@
         </div>
 
         <div class="success">
-          <?php print t('The video added successfully. <a href="@url">Click here</a> to view it'); ?>
+          <?php print t('The video added successfully. <a href="@url">Click here</a> to view it or wait a second'); ?>
         </div>
         <div class="form-group name">
           <label for="Name"><?php print t('Youtube address: '); ?></label>
