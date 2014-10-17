@@ -11,6 +11,7 @@ Feature: Testing the event section.
      Then I should see "Title field is a required field."
       And I should see "The description is a required field."
       And I should see "You must supply a start date."
+    
 
   @javascript
   Scenario: Testing event creation.
