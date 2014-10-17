@@ -179,7 +179,25 @@
     return new Date(parts[1] + '/' + parts[0] + '/' + parts[2]);
   };
 
-  Drupal.behaviors.CloseModal = {
+  /**
+   * Redirect the user to location after a given amount of seconds.
+   *
+   * @param url
+   *   The url address.
+   * @param seconds
+   *   The amount of seconds to wait.
+   * @constructor
+   */
+  jQuery.DrupalHubRedirect = function(url, seconds) {
+    window.setTimeout(function() {
+      window.location.href = url;
+    }, seconds * 1000);
+  };
+
+  /**
+   * Closing the erros modal when focusing out or the error div.
+   */
+  Drupal.behaviors.CloseErrosModal = {
     attach: function() {
       $(":not(.errors)").focus(function() {
         $(".errors").slideUp();

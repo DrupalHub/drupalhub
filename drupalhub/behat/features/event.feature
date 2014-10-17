@@ -11,7 +11,6 @@ Feature: Testing the event section.
      Then I should see "Title field is a required field."
       And I should see "The description is a required field."
       And I should see "You must supply a start date."
-    
 
   @javascript
   Scenario: Testing event creation.
@@ -25,6 +24,6 @@ Feature: Testing the event section.
      When I press "Save"
       And I wait for AJAX to finish
      Then I should see "The event has created successfully. See your event"
-      And I click "See your event"
+      And I sleep for "1.5"
       And I should see "Dummy event"
       And I should see "Dummy event content"

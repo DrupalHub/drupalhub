@@ -10,7 +10,7 @@
         </div>
 
         <div class="success">
-          <?php print t('The event has created successfully. <a href="@url">See your event</a>'); ?>
+          <?php print t('The event has created successfully. <a href="@url">See your event</a> or wait a second'); ?>
         </div>
 
         <div class="form-group title">

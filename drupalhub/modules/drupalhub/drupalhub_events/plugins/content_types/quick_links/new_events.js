@@ -94,8 +94,8 @@
         $.DrupalHubAjax('POST', 'api/v1/event', data)
           .success(function(result) {
             $.DrupalHubFormSuccess();
-
             $(".success a").attr('href', result.data[0].self);
+            $.DrupalHubRedirect(result.data[0].self, 1);
           });
       });
     }
