@@ -19,6 +19,7 @@
 
       $('#StartDate').datetimepicker(settings);
       $('#EndDate').datetimepicker(settings);
+      $("#body").DrupalHubApplyCKedtor();
     }
   };
 

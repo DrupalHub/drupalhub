@@ -195,6 +195,21 @@
   };
 
   /**
+   * Apply the ckedior upon text area.
+   * @constructor
+   */
+  jQuery.fn.DrupalHubApplyCKedtor = function() {
+    CKEDITOR.replace($(this).attr('id'), {
+      toolbar: [
+        ['Bold', 'Italic', 'Underline', 'Source', '-', 'Cut', 'Undo', 'Redo'],
+        ['-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'],
+        ['Link', 'Unlink', 'Anchor',  'Image', 'Table', 'HorizontalRule', 'Smiley'],
+        ['Styles', 'Format', 'Font', 'FontSize', 'TextColor']
+      ]
+    });
+  };
+
+  /**
    * Closing the erros modal when focusing out or the error div.
    */
   Drupal.behaviors.CloseErrosModal = {
