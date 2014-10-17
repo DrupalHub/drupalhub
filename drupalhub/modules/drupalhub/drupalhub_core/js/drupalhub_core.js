@@ -128,6 +128,17 @@
   };
 
   /**
+   * Add the error manually.
+   *
+   * @param error
+   * @constructor
+   */
+  jQuery.AddError = function(error, object) {
+    $.FormStatus = false;
+    object.push({error: error, id: ''});
+  };
+
+  /**
    * Process the errors and show the error div. You can do this with list,
    * simple UL with the errors, or in case of unknown DB error pass the watchdog
    * log ID and display that to the user.
@@ -149,7 +160,9 @@
       var list = [];
       $.each(errors, function(index, value) {
         if (value != "undefined") {
-          value.id.SetError();
+          if (value.id != "") {
+            value.id.SetError();
+          }
           list.push("<li>" + value.error + "</li>");
         }
       });
