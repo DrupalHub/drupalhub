@@ -12,7 +12,7 @@ Feature: Testing the event section.
       And I should see "The description is a required field."
       And I should see "You must supply a start date."
 
-    
+
   @javascript
   Scenario: Testing event creation.
     Given I am logging in as "ClarkKent"
@@ -25,5 +25,4 @@ Feature: Testing the event section.
      When I press "Save"
       And I wait for AJAX to finish
      Then I sleep for "1.5"
-#      And I should see "Dummy event"
       And I should see "Dummy event content"
