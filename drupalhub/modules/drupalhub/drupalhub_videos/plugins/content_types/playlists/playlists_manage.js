@@ -8,6 +8,7 @@
     attach: function (context, settings) {
       $(".show-playlist-form").live('click', function(event) {
         event.preventDefault();
+        $("#description").DrupalHubApplyCKedtor();
         $(".playlist-form").removeClass("disabled");
         $(".passed").addClass('disabled');
       });
@@ -25,18 +26,15 @@
 
         $.DrupalHubFormInit("ManagePlaylist");
 
-        var name = $("#name").val();
-        var description = $("#description").val();
+        var name = $("#name");
 
-        if (name == "") {
-          $("#name").SetError(Drupal.t('Please fill in the name.'));
-        }
+        $("#name").CheckEmpty(Drupal.t('Please fill in the name.'));
 
         if ($(".items li").length == 0) {
           $("#playlist-search").SetError(Drupal.t('Please insert videos.'));
         }
 
-        if (description == "") {
+        if ($(".description iframe").contents().find("body").text() == "") {
           $("#description").SetError(Drupal.t('Please insert description.'));
         }
 
@@ -58,8 +56,8 @@
         var data = {
           "videos[]": ids,
           "access": access,
-          "label": name,
-          "body": description
+          "label": name.val(),
+          "body": CKEDITOR.instances.description.getData()
         };
 
         var id = $(this).attr("update");
@@ -248,7 +246,7 @@
    * Edit a list.
    */
   Drupal.behaviors.DrupalHubEditPlaylist = {
-    attach: function (context, settings) {
+    attach: function () {
       $(".edit").live('click', function(event) {
         event.preventDefault();
         var element = $(this);
@@ -262,7 +260,7 @@
         $.DrupalHubAjax('GET', "api/v1/playlist", {"id": id}).done(function(result) {
           info = result.data[0];
           $("#name").val(info.label);
-          $("#description").val(info.body.value);
+          $("#description").val(info.body.value).DrupalHubApplyCKedtor();
           $("#access_level").val(info.access);
           $(".playlist-form").attr("update", id);
 

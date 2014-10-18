@@ -9,6 +9,7 @@ $plugin = array(
 
 function drupalhub_videos_playlists_content_type_render($subtype, $conf, $args, $context) {
   $block = new stdClass();
+  drupalhub_core_ckeditor_add_assets('playlist');
   drupal_add_js(drupal_get_path('module', 'drupalhub_videos') . '/plugins/content_types/playlists/playlists_manage.js');
 
   $query = new EntityFieldQuery();
