@@ -1,0 +1,17 @@
+@import "includes/rtl-overrides.css";
+
+// Global overrides.
+.logo.navbar-btn.pull-left {
+  float: right !important;
+}
+
+.tabs--primary.nav.nav-tabs {
+  float: left;
+}
+
+// Front page.
+body.front .view-main-page-questions .views-row .image,
+body.front .view-id-top_users .views-row .views-field-user-picture {
+  float: right;
+  padding-left: 20px;
+}

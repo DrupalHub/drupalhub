@@ -1,0 +1,11 @@
+@import url(includes/rtl-overrides.css);
+.logo.navbar-btn.pull-left {
+  float: right !important; }
+
+.tabs--primary.nav.nav-tabs {
+  float: left; }
+
+body.front .view-main-page-questions .views-row .image,
+body.front .view-id-top_users .views-row .views-field-user-picture {
+  float: right;
+  padding-left: 20px; }
