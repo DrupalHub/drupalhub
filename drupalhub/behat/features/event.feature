@@ -12,6 +12,7 @@ Feature: Testing the event section.
       And I should see "The description is a required field."
       And I should see "You must supply a start date."
 
+    
   @javascript
   Scenario: Testing event creation.
     Given I am logging in as "ClarkKent"
