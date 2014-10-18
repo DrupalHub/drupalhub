@@ -1,6 +1,17 @@
 (function($) {
 
   /**
+   * Apply CKEDITOR on the body.
+   */
+  Drupal.behaviors.ApplyCKEDITOR = {
+    attach: function() {
+      $(".pane-new-question a").click(function() {
+        $("#body").DrupalHubApplyCKedtor();
+      });
+    }
+  };
+
+  /**
    * Validating the question creation for before submitting.
    */
   Drupal.behaviors.ValidateQuestionForm = {
@@ -17,7 +28,10 @@
         var errors = [];
 
         title.CollectErrors(Drupal.t("Title field is a required field."), errors);
-        body.CollectErrors(Drupal.t('The body is a required field.'), errors);
+
+        if ($(".modal-body iframe").contents().find("body").text() == "") {
+          $.AddError(Drupal.t('The body is a required field.'), errors);
+        }
 
         $.ProcessErrors('list', errors);
 
@@ -29,7 +43,7 @@
 
         $.DrupalHubAjax('POST', "api/v1/question", {
           label: title.val(),
-          body: body.val(),
+          body: CKEDITOR.instances.body.getData(),
           tags: $("#tags").val()
         }).success(function(result) {
           $.DrupalHubFormSuccess();
@@ -45,10 +59,10 @@
    * FAPI for the autocomplete with tags so we need to implement the same UX.
    */
   Drupal.behaviors.DrupalHubQuetionTags = {
-    attach: function(context, settings) {
+    attach: function() {
 
       function split(val) {
-        return val.split( /,\s*/ );
+        return val.split(/,\s*/);
       }
       function extractLast(term) {
         return split(term).pop();
