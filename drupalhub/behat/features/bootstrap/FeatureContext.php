@@ -98,5 +98,17 @@ class FeatureContext extends DrupalContext {
   public function iShouldSeeUnder($content, $selector) {
     $page = $this->getSession();
     $element = $page->getPage()->find('xpath', "//*[contains(@class, '{$selector}') and contains(., '{$content}')]");
+
+    if (empty($element)) {
+      throw new PendingException("The requested element was not found in the page.");
+    }
+  }
+
+  /**
+   * @Given /^I fill in the ckeditor "([^"]*)" with "([^"]*)"$/
+   */
+  public function iFillInTheCkeditorWith($instance, $body) {
+    $selenium = $this->getSession()->getDriver();
+    $selenium->evaluateScript("CKEDITOR.instances['{$instance}'].setData('{$body}');");
   }
 }

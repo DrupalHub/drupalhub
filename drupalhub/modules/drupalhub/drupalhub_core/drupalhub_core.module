@@ -244,3 +244,16 @@ function drupalhub_core_comments_form($form, $form_state) {
   return $form;
 }
 
+/**
+ * Adding the wysywig JS to the page.
+ *
+ * @param $type
+ *   The bundle of the node.
+ */
+function drupalhub_core_ckeditor_add_assets($type) {
+  global $user;
+  module_load_include('inc', 'node', 'node.pages');
+  $node = (object) array('uid' => $user->uid, 'name' => (isset($user->name) ? $user->name : ''), 'type' => $type, 'language' => LANGUAGE_NONE);
+  $form = drupal_get_form($type . '_node_form', $node);
+  drupal_render($form);
+}

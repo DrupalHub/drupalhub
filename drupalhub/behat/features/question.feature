@@ -12,15 +12,14 @@ Feature: Testing the question.
 
   @javascript
   Scenario: Testing the creation of the form.
-    Given I am logging in as "admin"
+    Given I am logging in as "ClarkKent"
       And I click "Ask question"
       And I wait for AJAX to finish
       And I should see "Create question"
      When I fill in "title" with "Testing"
-      And I fill in "body" with "Body"
+      And I fill in the ckeditor "body" with "Body"
       And I press "Save"
       And I wait for AJAX to finish
      Then I sleep for "1.5"
       And I should see "Testing"
       And I should see "Body"
-

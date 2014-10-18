@@ -19,6 +19,7 @@
 
       $('#StartDate').datetimepicker(settings);
       $('#EndDate').datetimepicker(settings);
+      $("#body").DrupalHubApplyCKedtor();
     }
   };
 
@@ -62,7 +63,11 @@
         var errors = [];
 
         title.CollectErrors(Drupal.t("Title field is a required field."), errors);
-        description.CollectErrors(Drupal.t("The description is a required field."), errors);
+
+        if ($(".modal-body iframe").contents().find("body").text() == "") {
+          $.AddError(Drupal.t("The description is a required field."), errors);
+        }
+
         start_date.CollectErrors(Drupal.t("You must supply a start date."), errors);
 
         if (end_date_on) {
@@ -82,7 +87,7 @@
 
         var data = {
           label: title.val(),
-          body: description.val(),
+          body: CKEDITOR.instances.body.getData(),
           start: {value: StartDate},
           end: {value: StartDate}
         };
