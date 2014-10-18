@@ -19,7 +19,7 @@ Feature: Testing the event section.
       And I click "Create event"
       And I wait for AJAX to finish
       And I fill in "title" with "Dummy event"
-      And I fill in "body" with "Dummy event content"
+      And I fill in the ckeditor "body" with "Dummy event content"
       And I fill in "date" with the date format "d/m/Y H:s"
      When I press "Save"
       And I wait for AJAX to finish
