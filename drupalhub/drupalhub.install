@@ -24,6 +24,11 @@ function drupalhub_install() {
       'filter_html' => array(
         'weight' => 1,
         'status' => 1,
+        'settings' => array(
+          'allowed_html' => '<a> <em> <strong> <cite> <blockquote> <code> <ul> <ol> <li> <dl> <dt> <dd> <b> <u> <i> <img> <p> <table> <tr> <td> <tbody> <thead> <hr> <h1> <h2> <h4> <h4> <span>',
+          'filter_html_help' => 1,
+          'filter_html_nofollow' => 0,
+        ),
       ),
       // Line break filter.
       'filter_autop' => array(

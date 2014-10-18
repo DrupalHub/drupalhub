@@ -46,7 +46,7 @@ Feature: Testing video section.
       And I fill in "playlist-search" with "Programming With Anthony"
       And I wait for AJAX to finish
       And I add video to plyalist
-      And I fill in "description" with "Dummy one"
+      And I fill in the ckeditor "description" with "Dummy one"
      When I press "Save"
       And I wait for AJAX to finish
      Then I should see "The playlist has created successfully"

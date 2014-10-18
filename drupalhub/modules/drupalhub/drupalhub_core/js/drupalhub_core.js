@@ -128,6 +128,17 @@
   };
 
   /**
+   * Add the error manually.
+   *
+   * @param error
+   * @constructor
+   */
+  jQuery.AddError = function(error, object) {
+    $.FormStatus = false;
+    object.push({error: error, id: ''});
+  };
+
+  /**
    * Process the errors and show the error div. You can do this with list,
    * simple UL with the errors, or in case of unknown DB error pass the watchdog
    * log ID and display that to the user.
@@ -149,7 +160,9 @@
       var list = [];
       $.each(errors, function(index, value) {
         if (value != "undefined") {
-          value.id.SetError();
+          if (value.id != "") {
+            value.id.SetError();
+          }
           list.push("<li>" + value.error + "</li>");
         }
       });
@@ -192,6 +205,21 @@
     window.setTimeout(function() {
       window.location.href = url;
     }, seconds * 1000);
+  };
+
+  /**
+   * Apply the ckedior upon text area.
+   * @constructor
+   */
+  jQuery.fn.DrupalHubApplyCKedtor = function() {
+    CKEDITOR.replace($(this).attr('id'), {
+      toolbar: [
+        ['Bold', 'Italic', 'Underline', 'Source', '-', 'Cut', 'Undo', 'Redo'],
+        ['-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'],
+        ['Link', 'Unlink', 'Anchor',  'Image', 'Table', 'HorizontalRule', 'Smiley'],
+        ['Styles', 'Format', 'Font', 'FontSize']
+      ]
+    });
   };
 
   /**

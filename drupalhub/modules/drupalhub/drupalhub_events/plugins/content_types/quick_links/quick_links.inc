@@ -10,6 +10,8 @@ $plugin = array(
 function drupalhub_events_quick_links_content_type_render($subtype, $conf, $args, $context) {
   $datepicker = libraries_get_path('datepicker');
   $path = '/plugins/content_types/quick_links';
+  drupalhub_core_ckeditor_add_assets('events');
+
   drupal_add_js(drupal_get_path('module', 'drupalhub_events') . $path . '/new_events.js');
   drupal_add_js($datepicker . '/build/js/bootstrap-datetimepicker.min.js');
   drupal_add_css($datepicker . '/build/css/bootstrap-datetimepicker.min.css');
