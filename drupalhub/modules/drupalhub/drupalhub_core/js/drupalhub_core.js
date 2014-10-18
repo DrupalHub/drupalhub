@@ -217,7 +217,7 @@
         ['Bold', 'Italic', 'Underline', 'Source', '-', 'Cut', 'Undo', 'Redo'],
         ['-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-', 'BidiLtr', 'BidiRtl'],
         ['Link', 'Unlink', 'Anchor',  'Image', 'Table', 'HorizontalRule', 'Smiley'],
-        ['Styles', 'Format', 'Font', 'FontSize', 'TextColor']
+        ['Styles', 'Format', 'Font', 'FontSize']
       ]
     });
   };
