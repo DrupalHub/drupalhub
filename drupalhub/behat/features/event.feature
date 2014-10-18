@@ -24,5 +24,5 @@ Feature: Testing the event section.
      When I press "Save"
       And I wait for AJAX to finish
      Then I sleep for "1.5"
-      And I should see "Dummy event"
+#      And I should see "Dummy event"
       And I should see "Dummy event content"
