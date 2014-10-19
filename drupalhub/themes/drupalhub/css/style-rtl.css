@@ -9,3 +9,17 @@ body.front .view-main-page-questions .views-row .image,
 body.front .view-id-top_users .views-row .views-field-user-picture {
   float: right;
   padding-left: 20px; }
+
+.pane-new-question .pane-title,
+.pane-popular-tags .pane-title {
+  float: right !important; }
+.pane-new-question .pane-content,
+.pane-popular-tags .pane-content {
+  float: left; }
+
+.pane-more a {
+  float: left; }
+
+.view-front-page-blogs .views-row-1 .field-image {
+  float: right !important;
+  padding-left: 20px !important; }
