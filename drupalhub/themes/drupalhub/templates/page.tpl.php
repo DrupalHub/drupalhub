@@ -94,20 +94,21 @@
   <div class="navbar-inner">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
-          <div class="col-lg-4 col-md-4">
-            <?php print $links; ?>
+        <div class="col-lg-4 col-md-4">
+          <?php print $links; ?>
+        </div>
+
+        <div class="col-lg-3 col-md-2">
+          <div class="form-item search">
+            <input type="text" class="typeahead form-control" id="search" placeholder="<?php print t('Search for content, tags, comments or users'); ?>">
           </div>
-          <div class="col-lg-3 col-md-2">
-            <div class="form-item search">
-              <input type="text" class="typeahead form-control" id="search" placeholder="<?php print t('Search for content, tags, comments or users'); ?>">
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-4">
-            <?php print $social; ?>
-          </div>
-          <div class="col-md-2 drop-down-wrapper">
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <?php print $social; ?>
+        </div>
+
+        <div class="col-md-2 drop-down-wrapper">
           <?php if (user_is_anonymous()): ?>
             <?php print $loggin_button; ?>
           <?php else: ?>
@@ -117,8 +118,7 @@
               </a>
               <?php print $dropdown_items; ?>
             </div>
-            <?php endif; ?>
-          </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
