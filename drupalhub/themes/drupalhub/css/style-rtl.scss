@@ -49,7 +49,6 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
   }
 }
 
-
 // Question page.
 .node-type-question,
 .node-type-blog,
@@ -76,6 +75,43 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
   .second {
     border-left: none;
     border-right: #f7b700 solid 1px;
+  }
+}
+
+.page-video,
+.node-type-youtube {
+
+  .info li {
+    float: right;
+    padding-left: 5px;
+    padding-right: 0px;
+  }
+
+  .pane-manage-links {
+
+    .manage-playlist {
+      float: right;
+      margin-left: 10px;
+    }
+
+    .new-video {
+      float: right;
+    }
+  }
+
+  .video-wrapper {
+
+    .video,
+    .length {
+      float: right !important;
+      padding-left: 15px;
+      padding-right: 0px !important;
+    }
+  }
+
+  .item-list ul,
+  .playlist {
+    padding-right: 0px;
   }
 }
 

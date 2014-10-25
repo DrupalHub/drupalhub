@@ -49,3 +49,28 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
 .page-documentation .second {
   border-left: none;
   border-right: #f7b700 solid 1px; }
+
+.page-video .info li,
+.node-type-youtube .info li {
+  float: right;
+  padding-left: 5px;
+  padding-right: 0px; }
+.page-video .pane-manage-links .manage-playlist,
+.node-type-youtube .pane-manage-links .manage-playlist {
+  float: right;
+  margin-left: 10px; }
+.page-video .pane-manage-links .new-video,
+.node-type-youtube .pane-manage-links .new-video {
+  float: right; }
+.page-video .video-wrapper .video,
+.page-video .video-wrapper .length,
+.node-type-youtube .video-wrapper .video,
+.node-type-youtube .video-wrapper .length {
+  float: right !important;
+  padding-left: 15px;
+  padding-right: 0px !important; }
+.page-video .item-list ul,
+.page-video .playlist,
+.node-type-youtube .item-list ul,
+.node-type-youtube .playlist {
+  padding-right: 0px; }
