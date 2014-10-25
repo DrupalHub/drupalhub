@@ -33,7 +33,7 @@ before_script:
   - sudo chmod 777 sites/default -R
 
   # Install and migrate.
-  - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal drupalhub_migrate_content.dummy_content=TRUE
+  - drush si -y drupalhub --locale=en --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal drupalhub_migrate_content.dummy_content=TRUE drupalhub_migrate_content.he_default_language=FALSE
   - drush mi --all --user=1
 
   # Behat setup.

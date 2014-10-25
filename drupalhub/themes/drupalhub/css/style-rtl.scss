@@ -1,0 +1,161 @@
+@import "includes/rtl-overrides.css";
+
+// Global overrides.
+.logo.navbar-btn.pull-left {
+  float: right !important;
+}
+
+.tabs--primary.nav.nav-tabs {
+  float: left;
+}
+
+// Front page.
+body.front .view-main-page-questions .views-row .image,
+body.front .view-id-top_users .views-row .views-field-user-picture,
+.node-type-question .panel-col-top .pane-user-picture,
+.page-documentation-add .first .pane-user-picture, .node-type-wiki .first .pane-user-picture {
+  float: right;
+  padding-left: 20px;
+}
+
+
+.pane-new-question,
+.pane-popular-tags {
+
+  .pane-title {
+    float: right !important;
+  }
+
+  .pane-content {
+    float: left;
+  }
+}
+
+.pane-more {
+
+  a {
+    float: left;
+  }
+}
+
+.view-front-page-blogs {
+
+  .views-row-1 {
+
+    .field-image {
+      float: right !important;
+      padding-left: 20px !important;;
+    }
+  }
+}
+
+// Question page.
+.node-type-question,
+.node-type-blog,
+.node-type-wiki {
+
+  .fa-tags,
+  .fa-user,
+  .fa-square-o,
+  .fa-clock-o {
+    padding-right: 10px !important;
+    padding-left: 0px !important;
+  }
+}
+
+.vud-widget.vud-widget-upanddown {
+  float: right !important;
+}
+
+// Wiki page.
+.page-documentation-add,
+.node-type-wiki,
+.page-documentation {
+
+  .second {
+    border-left: none;
+    border-right: #f7b700 solid 1px;
+  }
+}
+
+// Video page.
+.page-video,
+.node-type-youtube {
+
+  .info li {
+    float: right;
+    padding-left: 5px;
+    padding-right: 0px;
+  }
+
+  .pane-manage-links {
+
+    .manage-playlist {
+      float: right;
+      margin-left: 10px;
+    }
+
+    .new-video {
+      float: right;
+    }
+  }
+
+  .video-wrapper {
+
+    .video,
+    .length {
+      float: right !important;
+      padding-left: 15px;
+      padding-right: 0px !important;
+    }
+  }
+
+  .item-list ul,
+  .playlist {
+    padding-right: 0px;
+  }
+}
+
+// Profile page.
+.page-user {
+
+  .second-bottom {
+
+    .view-id-activity_stram  {
+      border-left: none;
+      border-right: solid 1px #000000;
+      margin-right: 45px;
+      margin-left: auto;
+
+      .activity-stream-instance {
+        margin-right: 45px;
+        margin-left: auto;
+
+        &:before {
+          transform: rotate(135deg);
+          right: -8px;
+          left: auto;
+        }
+
+        .icons {
+          left: auto;
+          right: -70px;
+        }
+
+        .activity-header {
+
+          .info,
+          .picture {
+            float: none !important;
+          }
+
+          .picture img {
+            float: right;
+            margin-right: 0px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}

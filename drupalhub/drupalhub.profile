@@ -45,6 +45,13 @@ function drupalhub_settings($form, &$form_state) {
     '#description' => t('If checked, dummy content will be added to your drupalhub site.'),
   );
 
+  $form['he_default_language'] = array(
+    '#type' => 'checkbox',
+    '#title' => t('Hebrew default language'),
+    '#description' => t('Define Hebrew as default language. uncheck for testing environment.'),
+    '#default_value' => TRUE,
+  );
+
   $form['submit'] = array(
     '#type' => 'submit',
     '#value' => t('Next'),
@@ -59,6 +66,7 @@ function drupalhub_settings($form, &$form_state) {
  */
 function drupalhub_settings_submit($form, $form_state) {
   variable_set('dh_dummy_content', $form_state['values']['dummy_content']);
+  variable_set('he_default_language', $form_state['values']['he_default_language']);
 }
 
 /**
@@ -156,6 +164,7 @@ function drupalhub_install_finished(&$install_state) {
 
   // Remove the variable we used during the installation.
   variable_del('dh_dummy_content');
+  variable_del('he_default_language');
 
   // Run cron to populate update status tables (if available) so that users
   // will be warned if they've installed an out of date Drupal version.
