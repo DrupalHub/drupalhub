@@ -40,5 +40,3 @@
 
   <?php endif ?>
 </div>
-
-asdasd

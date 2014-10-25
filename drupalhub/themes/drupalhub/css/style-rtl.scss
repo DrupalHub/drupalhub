@@ -11,7 +11,9 @@
 
 // Front page.
 body.front .view-main-page-questions .views-row .image,
-body.front .view-id-top_users .views-row .views-field-user-picture {
+body.front .view-id-top_users .views-row .views-field-user-picture,
+.node-type-question .panel-col-top .pane-user-picture,
+.page-documentation-add .first .pane-user-picture, .node-type-wiki .first .pane-user-picture {
   float: right;
   padding-left: 20px;
 }
@@ -44,6 +46,36 @@ body.front .view-id-top_users .views-row .views-field-user-picture {
       float: right !important;
       padding-left: 20px !important;;
     }
+  }
+}
+
+
+// Question page.
+.node-type-question,
+.node-type-blog,
+.node-type-wiki {
+
+  .fa-tags,
+  .fa-user,
+  .fa-square-o,
+  .fa-clock-o {
+    padding-right: 10px !important;
+    padding-left: 0px !important;
+  }
+}
+
+.vud-widget.vud-widget-upanddown {
+  float: right !important;
+}
+
+// Wiki page.
+.page-documentation-add,
+.node-type-wiki,
+.page-documentation {
+
+  .second {
+    border-left: none;
+    border-right: #f7b700 solid 1px;
   }
 }
 

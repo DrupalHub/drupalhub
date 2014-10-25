@@ -6,7 +6,9 @@
   float: left; }
 
 body.front .view-main-page-questions .views-row .image,
-body.front .view-id-top_users .views-row .views-field-user-picture {
+body.front .view-id-top_users .views-row .views-field-user-picture,
+.node-type-question .panel-col-top .pane-user-picture,
+.page-documentation-add .first .pane-user-picture, .node-type-wiki .first .pane-user-picture {
   float: right;
   padding-left: 20px; }
 
@@ -23,3 +25,27 @@ body.front .view-id-top_users .views-row .views-field-user-picture {
 .view-front-page-blogs .views-row-1 .field-image {
   float: right !important;
   padding-left: 20px !important; }
+
+.node-type-question .fa-tags,
+.node-type-question .fa-user,
+.node-type-question .fa-square-o,
+.node-type-question .fa-clock-o,
+.node-type-blog .fa-tags,
+.node-type-blog .fa-user,
+.node-type-blog .fa-square-o,
+.node-type-blog .fa-clock-o,
+.node-type-wiki .fa-tags,
+.node-type-wiki .fa-user,
+.node-type-wiki .fa-square-o,
+.node-type-wiki .fa-clock-o {
+  padding-right: 10px !important;
+  padding-left: 0px !important; }
+
+.vud-widget.vud-widget-upanddown {
+  float: right !important; }
+
+.page-documentation-add .second,
+.node-type-wiki .second,
+.page-documentation .second {
+  border-left: none;
+  border-right: #f7b700 solid 1px; }
