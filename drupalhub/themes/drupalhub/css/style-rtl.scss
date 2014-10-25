@@ -78,6 +78,7 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
   }
 }
 
+// Video page.
 .page-video,
 .node-type-youtube {
 
@@ -115,3 +116,46 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
   }
 }
 
+// Profile page.
+.page-user {
+
+  .second-bottom {
+
+    .view-id-activity_stram  {
+      border-left: none;
+      border-right: solid 1px #000000;
+      margin-right: 45px;
+      margin-left: auto;
+
+      .activity-stream-instance {
+        margin-right: 45px;
+        margin-left: auto;
+
+        &:before {
+          transform: rotate(135deg);
+          right: -8px;
+          left: auto;
+        }
+
+        .icons {
+          left: auto;
+          right: -70px;
+        }
+
+        .activity-header {
+
+          .info,
+          .picture {
+            float: none !important;
+          }
+
+          .picture img {
+            float: right;
+            margin-right: 0px;
+            margin-left: 10px;
+          }
+        }
+      }
+    }
+  }
+}
