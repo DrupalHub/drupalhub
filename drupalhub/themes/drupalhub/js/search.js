@@ -7,7 +7,7 @@
         queryTokenizer: Bloodhound.tokenizers.whitespace,
         limit: 10,
         remote: {
-          url: Drupal.settings.baseURL + 'api/v1/search?value=%QUERY&index=' + index,
+          url: Drupal.settings.hub.basePath + '/api/v1/search?value=%QUERY&index=' + index,
           filter: function (results) {
             var result = [];
 
