@@ -98,7 +98,7 @@ function drupalhub_install() {
   theme_enable($enable);
 
   // Installing Hebrew
-  locale_add_language('he', 'Hebrew', 'עברית', LANGUAGE_RTL, '', '', TRUE, TRUE);
+  locale_add_language('he', 'Hebrew', 'עברית', LANGUAGE_RTL, '', '', TRUE, variable_get('he_default_language'));
   $negotation = array(
     LOCALE_LANGUAGE_NEGOTIATION_URL => 2,
   );
