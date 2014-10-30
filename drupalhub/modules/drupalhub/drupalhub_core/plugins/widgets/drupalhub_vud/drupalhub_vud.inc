@@ -15,4 +15,15 @@ $plugin = array(
 );
 
 class DrupalHubVUD extends voteUpDownBase {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function preprocess(&$variables) {
+    parent::preprocess($variables);
+
+    if ($variables['show_up_as_link']) {
+      $variables['show_down_as_link'] = FALSE;
+    }
+  }
 }
