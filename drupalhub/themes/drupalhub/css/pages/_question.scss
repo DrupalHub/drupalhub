@@ -9,6 +9,12 @@
       color: $blue-title;
     }
 
+    input.form-control {
+      width: 50%;
+      float: left;
+      margin-right: 10px;
+    }
+
     .pane-user-picture {
       float: left; /* LTR */
       padding-right: 20px; /* LTR */
