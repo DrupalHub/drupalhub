@@ -41,6 +41,21 @@
           });
       });
     }
-  }
+  };
+
+  Drupal.behaviors.InlineBodyEditing = {
+    attach: function() {
+      if (Drupal.settings.drupalhub_question.access == false) {
+        return;
+      }
+
+      $(".pane-node-body .field-item").on("dblclick", function() {
+        var html = $(this).html();
+        $(this).html('<textarea id="question_body">' + html + '</textarea>' +
+        '<div class="submit"><button type="button" id="update_title" class="btn btn-primary">' + Drupal.t('Update') + '</button></div>');
+        $("#question_body").DrupalHubApplyCKedtor();
+      });
+    }
+  };
 
 })(jQuery);

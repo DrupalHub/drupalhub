@@ -632,6 +632,14 @@ body.front #AddQuestion .modal-dialog {
 .node-type-question .panel-col-top .pane-node-title,
 .node-type-question .panel-col-top .pane-title-inline-edit {
   color: #20aae4; }
+.node-type-question .panel-col-top .pane-node-body #cke_question_body {
+  float: right;
+  /* ltr */
+  width: 85%; }
+.node-type-question .panel-col-top .pane-node-body .submit {
+  clear: right;
+  float: right;
+  padding-top: 10px; }
 .node-type-question .panel-col-top input.form-control {
   width: 50%;
   float: left;

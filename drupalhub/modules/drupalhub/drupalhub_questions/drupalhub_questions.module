@@ -69,6 +69,7 @@ function drupalhub_questions_preprocess_html(&$variables) {
     return;
   }
 
+  drupalhub_core_ckeditor_add_assets('question');
   ctools_add_js('inline_edit', 'drupalhub_questions');
   drupal_add_js(libraries_get_path('dialog') . '/dist/js/bootstrap-dialog.min.js');
   drupal_add_js(array('drupalhub_question' => array(

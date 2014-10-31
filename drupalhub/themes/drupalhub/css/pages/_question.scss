@@ -9,6 +9,20 @@
       color: $blue-title;
     }
 
+    .pane-node-body {
+
+      #cke_question_body {
+        float: right; /* ltr */
+        width: 85%;
+      }
+
+      .submit {
+        clear: right;
+        float: right;
+        padding-top: 10px;
+      }
+    }
+
     input.form-control {
       width: 50%;
       float: left;
