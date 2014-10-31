@@ -53,3 +53,23 @@ function drupalhub_questions_field_formatter_view($entity_type, $entity, $field,
 
   return $element;
 }
+
+/**
+ *  Implements hook_preprocess_HOOK().
+ */
+function drupalhub_questions_preprocess_html(&$variables) {
+  $menu = menu_get_item();
+  if ($menu['path'] != "node/%") {
+    return;
+  }
+
+  $node = $menu['map'][1];
+
+  if ($node->type != 'question') {
+    return;
+  }
+
+  drupal_add_js(libraries_get_path('angular') . '/angular.min.js');
+  ctools_add_js('inline_edit', 'drupalhub_questions');
+  $variables['attributes_array'] = array('data-ng-app' => array('QuestionApp'), 'data-ng-controller' => array('TitleController'));
+}

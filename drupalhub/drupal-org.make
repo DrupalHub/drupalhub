@@ -212,3 +212,7 @@ libraries[datepicker][download][url] = "https://github.com/Eonasdan/bootstrap-da
 libraries[typeahead][type] = "libraries"
 libraries[typeahead][download][type] = "file"
 libraries[typeahead][download][url] = "http://twitter.github.com/typeahead.js/releases/latest/typeahead.js.zip"
+
+libraries[angular][type] = "libraries"
+libraries[angular][download][type] = "file"
+libraries[angular][download][url] = "http://code.angularjs.org/1.2.26/angular-1.2.26.zip"

@@ -4,7 +4,8 @@
   .panel-col-top {
     @include clearfix;
 
-    .pane-node-title {
+    .pane-node-title,
+    .pane-title-inline-edit {
       color: $blue-title;
     }
 

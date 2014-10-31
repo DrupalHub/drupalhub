@@ -629,7 +629,8 @@ body.front #AddQuestion .modal-dialog {
   height: 0;
   clear: both;
   visibility: hidden; }
-.node-type-question .panel-col-top .pane-node-title {
+.node-type-question .panel-col-top .pane-node-title,
+.node-type-question .panel-col-top .pane-title-inline-edit {
   color: #20aae4; }
 .node-type-question .panel-col-top .pane-user-picture {
   float: left;
