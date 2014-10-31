@@ -1,7 +1,11 @@
-var app = angular.module('QuestionApp', []);
+(function($) {
 
-app.controller('TitleController', ['$scope', function($scope) {
-  $scope.InlineEdit = function() {
-    $scope.content = 'a';
+  Drupal.behaviors.InlineEditTitle = {
+    attach: function() {
+      $(".pane-node-title h1").dblclick(function() {
+        alert('a');
+      });
+    }
   };
-}]);
+
+})(jQuery);
