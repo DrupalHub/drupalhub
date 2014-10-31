@@ -70,6 +70,10 @@ function drupalhub_questions_preprocess_html(&$variables) {
   }
 
   ctools_add_js('inline_edit', 'drupalhub_questions');
-  drupal_add_js(array('nid' => $node->nid), array('type' => 'setting'));
+  drupal_add_js(libraries_get_path('dialog') . '/dist/js/bootstrap-dialog.min.js');
+  drupal_add_js(array('drupalhub_question' => array(
+    'nid' => $node->nid,
+    'access' => node_access('update', $node),
+  )), array('type' => 'setting'));
   $variables['attributes_array'] = array('data-ng-app' => array('QuestionApp'), 'data-ng-controller' => array('TitleController'));
 }

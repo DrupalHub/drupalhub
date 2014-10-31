@@ -2,6 +2,10 @@
 
   Drupal.behaviors.InlineEditTitle = {
     attach: function() {
+      if (Drupal.settings.drupalhub_question.access == false) {
+        return;
+      }
+
       $(".pane-node-title h1").on('dblclick', function() {
         var title = $(this).text();
         $(this).parent().html(
@@ -14,10 +18,19 @@
   Drupal.behaviors.SendInlineEdititng = {
     attach: function() {
       $(".pane-node-title").on('click', "#update_title", function() {
+        var title = $("#title").val();
+
+        if (title == "") {
+          BootstrapDialog.alert({
+            title: Drupal.t('Empty title'),
+            message: Drupal.t('The title is empty. Populate it and click again')
+          });
+          return;
+        }
 
         var data = {
-          id: Drupal.settings.nid,
-          "label": $("#title").val()
+          id: Drupal.settings.drupalhub_question.nid,
+          "label": title
         };
         $.DrupalHubAjax('PATCH', "api/v1/question", data)
           .success(function(result) {
