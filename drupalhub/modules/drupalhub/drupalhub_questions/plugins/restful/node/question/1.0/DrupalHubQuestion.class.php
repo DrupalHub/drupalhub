@@ -10,6 +10,7 @@ class DrupalHubQuestion extends \RestfulEntityBase {
     '' => array(
       \RestfulInterface::GET => 'getList',
       \RestfulInterface::POST => 'createEntity',
+      \RestfulInterface::PATCH => 'entityUpdate',
     ),
   );
 
@@ -98,5 +99,19 @@ class DrupalHubQuestion extends \RestfulEntityBase {
     }
 
     return $term;
+  }
+
+  /**
+   * Calling the entity update without passing the path with the ID.
+   */
+  public function entityUpdate() {
+    $request = $this->getRequest();
+    $id = $request['id'];
+    unset($request['id']);
+    $this->setRequest($request);
+
+    $this->updateEntity($id);
+
+    drupal_json_output(array('id' => $id, 'url' => url('node/' . $id, array('absolute' => TRUE))) + $request);
   }
 }

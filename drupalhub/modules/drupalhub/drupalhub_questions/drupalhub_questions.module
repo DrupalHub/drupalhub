@@ -69,7 +69,7 @@ function drupalhub_questions_preprocess_html(&$variables) {
     return;
   }
 
-  drupal_add_js(libraries_get_path('angular') . '/angular.min.js');
   ctools_add_js('inline_edit', 'drupalhub_questions');
+  drupal_add_js(array('nid' => $node->nid), array('type' => 'setting'));
   $variables['attributes_array'] = array('data-ng-app' => array('QuestionApp'), 'data-ng-controller' => array('TitleController'));
 }

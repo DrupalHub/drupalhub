@@ -2,7 +2,7 @@
 
   Drupal.behaviors.InlineEditTitle = {
     attach: function() {
-      $(".pane-node-title h1").live('dblclick', function() {
+      $(".pane-node-title h1").on('dblclick', function() {
         var title = $(this).text();
         $(this).parent().html(
           '<input class="form-control" id="title" type="text" value="' + title + '" /> ' +
@@ -13,13 +13,19 @@
 
   Drupal.behaviors.SendInlineEdititng = {
     attach: function() {
-      $("#update_title").live('click', function() {
-        $(this).attr("class", "btn btn-success");
-        $(this).html('Saved!');
+      $(".pane-node-title").on('click', "#update_title", function() {
 
-        $.DrupalHubSleep(3);
-
-        $(".pane-node-title").html("<h1>" + $("#title").val() + "</h1>");
+        var data = {
+          id: Drupal.settings.nid,
+          "label": $("#title").val()
+        };
+        $.DrupalHubAjax('PATCH', "api/v1/question", data)
+          .success(function(result) {
+            $(this).attr("class", "btn btn-success");
+            $(this).html('Saved!');
+            $(".pane-node-title").html("<h1>" + $("#title").val() + "</h1>");
+            window.location.href = result.url;
+          });
       });
     }
   }

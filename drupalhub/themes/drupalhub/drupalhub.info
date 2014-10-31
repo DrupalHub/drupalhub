@@ -23,7 +23,11 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
+stylesheets[all][] = assets/css/bootstrap.min.css
+stylesheets[all][] = assets/css/bootstrap-theme.min.css
 stylesheets[all][] = css/style.css
+
+scripts[] = 'assets/js/bootstrap.js'
 
 ; Breadcrumbs
 ; --------------
