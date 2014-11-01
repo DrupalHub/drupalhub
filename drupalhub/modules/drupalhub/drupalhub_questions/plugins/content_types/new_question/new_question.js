@@ -60,7 +60,6 @@
    */
   Drupal.behaviors.DrupalHubQuetionTags = {
     attach: function() {
-
       function split(val) {
         return val.split(/,\s*/);
       }
@@ -68,7 +67,7 @@
         return split(term).pop();
       }
 
-      $("#tags").keyup(function() {
+      $("#tags").on('click', function() {
         // Get the value and check what the last the tag the user entered.
         var value = $(this).val();
         var tags = value.split(",");
@@ -82,7 +81,7 @@
 
         // Suggest tags according to the last tag.
         $.DrupalHubAjax("GET", "api/v1/tags", {
-          filter: {
+          autocomplete: {
             label: {
               value: last,
               operator: "CONTAINS"
