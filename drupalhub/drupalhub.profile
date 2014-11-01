@@ -112,7 +112,7 @@ function drupalhub_variables_set() {
     'user_picture_style' => 'thumbnail',
     'user_register' => USER_REGISTER_VISITORS_ADMINISTRATIVE_APPROVAL,
     'node_admin_theme' => 1,
-    'jquery_update_jquery_version' => 1.8,
+    'jquery_update_jquery_version' => 1.10,
     'jquery_update_jquery_admin_version' => 1.5,
     'caret_position' => 'profiles/drupalhub/libraries/jquery_caret_position',
     'page_manager_node_view_disabled' => FALSE,

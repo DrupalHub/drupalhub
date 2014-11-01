@@ -212,3 +212,7 @@ libraries[datepicker][download][url] = "https://github.com/Eonasdan/bootstrap-da
 libraries[typeahead][type] = "libraries"
 libraries[typeahead][download][type] = "file"
 libraries[typeahead][download][url] = "http://twitter.github.com/typeahead.js/releases/latest/typeahead.js.zip"
+
+libraries[dialog][type] = "libraries"
+libraries[dialog][download][type] = "file"
+libraries[dialog][download][url] = "https://github.com/nakupanda/bootstrap3-dialog/archive/v1.33.5.zip"

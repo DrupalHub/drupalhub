@@ -257,3 +257,16 @@ function drupalhub_core_ckeditor_add_assets($type) {
   $form = drupal_get_form($type . '_node_form', $node);
   drupal_render($form);
 }
+
+/**
+ * Implements hook_libraries_info().
+ */
+function drupalhub_core_libraries_info() {
+  $libraries['angular'] = array(
+    'name' => t('Angular JS'),
+    'files' => array(
+      'js' => array('angular.js'),
+    ),
+  );
+  return $libraries;
+}

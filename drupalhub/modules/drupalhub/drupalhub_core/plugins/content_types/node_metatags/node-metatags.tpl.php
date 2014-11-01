@@ -7,5 +7,5 @@
   <?php print $follow; ?>
 <?php endif; ?>
 <?php if($tags): ?>
-  <i class="fa fa-tags"></i> <?php print $tags; ?>
+  <i class="fa fa-tags"></i> <div class="tags-links"><?php print $tags; ?></div>
 <?php endif; ?>

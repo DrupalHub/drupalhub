@@ -202,8 +202,19 @@
    * @constructor
    */
   jQuery.DrupalHubRedirect = function(url, seconds) {
+    $.DrupalHubSleep(seconds);
+    window.location.href = url;
+  };
+
+  /**
+   * Sleep given amount of seconds.
+   *
+   * @param seconds
+   *   The amount of seconds to wait.
+   * @constructor
+   */
+  jQuery.DrupalHubSleep = function(seconds) {
     window.setTimeout(function() {
-      window.location.href = url;
     }, seconds * 1000);
   };
 

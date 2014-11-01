@@ -23,13 +23,18 @@ regions[page_bottom]    = 'Page bottom'
 ;; Stylesheets
 ;;;;;;;;;;;;;;;;;;;;;
 
+stylesheets[all][] = assets/css/bootstrap.min.css
+stylesheets[all][] = assets/css/bootstrap-theme.min.css
 stylesheets[all][] = css/style.css
+
+scripts[] = 'assets/js/bootstrap.js'
 
 ; Breadcrumbs
 ; --------------
 settings[bootstrap_breadcrumb] = 1
 settings[bootstrap_breadcrumb_home] = 1
 settings[bootstrap_breadcrumb_title] = 1
+settings[bootstrap_cdn] = ""
 
 
 ; For information on choosing the desired method, please read the Drupal
