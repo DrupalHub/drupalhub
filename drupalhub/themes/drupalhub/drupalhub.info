@@ -34,6 +34,7 @@ scripts[] = 'assets/js/bootstrap.js'
 settings[bootstrap_breadcrumb] = 1
 settings[bootstrap_breadcrumb_home] = 1
 settings[bootstrap_breadcrumb_title] = 1
+settings[bootstrap_cdn] = ""
 
 
 ; For information on choosing the desired method, please read the Drupal
