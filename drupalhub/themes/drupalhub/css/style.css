@@ -662,6 +662,8 @@ body.front #AddQuestion .modal-dialog {
   /* LTR */ }
 .node-type-question .panel-col-top .pane-node-metatags .tags li {
   display: inline; }
+.node-type-question .panel-col-top .pane-node-metatags .tags-links {
+  display: inline; }
 
 .page-questions .top-wrapper {
   border: #cce8ff solid 1px;
@@ -695,6 +697,8 @@ body.front #AddQuestion .modal-dialog {
   float: left;
   /* LTR */ }
 .node-type-blog .top-first .pane-node-metatags .tags li {
+  display: inline; }
+.node-type-blog .top-first .pane-node-metatags .tags-links {
   display: inline; }
 .node-type-blog .top-second img {
   float: left;
