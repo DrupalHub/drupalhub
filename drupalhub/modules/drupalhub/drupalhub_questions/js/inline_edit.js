@@ -96,7 +96,8 @@
   };
 
   /**
-   * Quick edit for the question's terms.
+   * Quick edit for the question's terms. This is pretty ugly but we need to
+   * adjust the code to the bootstrap dialog library.
    */
   Drupal.behaviors.TermsInlineEdit = {
     attach: function() {
@@ -189,6 +190,15 @@
               label: ' ' + Drupal.t('Send'),
               cssClass: 'btn-success',
               action: function(dialogItself) {
+                var data = {
+                  id: Drupal.settings.drupalhub_question.nid,
+                  tags: $("#tags").val()
+                };
+
+                $.DrupalHubAjax('PATCH', "api/v1/question", data)
+                  .success(function(result) {
+                    $(".tags-links").html(result.tags_output);
+                  });
                 dialogItself.close();
               }
             }

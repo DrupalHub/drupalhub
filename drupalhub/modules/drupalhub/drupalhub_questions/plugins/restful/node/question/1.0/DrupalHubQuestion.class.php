@@ -108,10 +108,38 @@ class DrupalHubQuestion extends \RestfulEntityBase {
     $request = $this->getRequest();
     $id = $request['id'];
     unset($request['id']);
+
+    $tags_output = array();
+
+    if (!empty($request['tags'])) {
+      // Load the vocabulary and get the terms ID.
+      $vocab = taxonomy_vocabulary_machine_name_load('tags');
+      $names = explode(",", $request['tags']);
+
+      $tids = array();
+      foreach ($names as $name) {
+        $name = trim($name);
+        if (empty($name)) {
+          continue;
+        }
+        $tid = $this->getTermID($name, $vocab->vid)->tid;
+        $tids[] = $tid;
+        $tags_output[] = l($name, 'taxonomy/term/' . $tid);
+      }
+
+      $request['tags'] = $tids;
+    }
+
     $this->setRequest($request);
 
     $this->updateEntity($id);
 
-    drupal_json_output(array('id' => $id, 'url' => url('node/' . $id, array('absolute' => TRUE))) + $request);
+    $result = array(
+      'id' => $id,
+      'url' => url('node/' . $id, array('absolute' => TRUE)),
+      'tags_output' => implode(', ', $tags_output),
+    ) + $request;
+
+    drupal_json_output($result);
   }
 }
