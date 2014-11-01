@@ -77,5 +77,4 @@ function drupalhub_questions_preprocess_html(&$variables) {
     'nid' => $node->nid,
     'access' => node_access('update', $node),
   )), array('type' => 'setting'));
-  $variables['attributes_array'] = array('data-ng-app' => array('QuestionApp'), 'data-ng-controller' => array('TitleController'));
 }
