@@ -4,6 +4,9 @@ api = 2
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = 3.0-rc4
 
+projects[atjs][subdir] = "contrib"
+projects[atjs][version] = 1.x-dev
+
 projects[breakpoints][subdir] = "contrib"
 projects[breakpoints][version] = 1.1
 
@@ -188,6 +191,14 @@ projects[bootstrap][type] = "theme"
 libraries[jquery_caret_position][download][type] = "git"
 libraries[jquery_caret_position][type] = "libraries"
 libraries[jquery_caret_position][download][url] = "https://github.com/wolasss/jquery-caret-position-getter.git"
+
+libraries[caret.js][download][type] = "git"
+libraries[caret.js][type] = "libraries"
+libraries[caret.js][download][url] = "https://github.com/ichord/Caret.js"
+
+libraries[at.js][download][type] = "git"
+libraries[at.js][type] = "libraries"
+libraries[at.js][download][url] = "https://github.com/ichord/At.js"
 
 libraries[font_awesome][download][type] = "file"
 libraries[font_awesome][type] = "libraries"

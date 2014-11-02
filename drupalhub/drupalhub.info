@@ -26,6 +26,7 @@ dependencies[] = file
 dependencies[] = rdf
 
 ; Contrib
+dependencies[] = atjs
 dependencies[] = admin_menu
 dependencies[] = breakpoints
 dependencies[] = views_bootstrap
