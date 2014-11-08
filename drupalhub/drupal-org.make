@@ -4,6 +4,9 @@ api = 2
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = 3.0-rc4
 
+projects[atjs][subdir] = "contrib"
+projects[atjs][version] = 1.x-dev
+
 projects[breakpoints][subdir] = "contrib"
 projects[breakpoints][version] = 1.1
 
@@ -179,6 +182,12 @@ projects[views_bulk_operations][version] = "3.2"
 projects[views_infinite_scroll][subdir] = "contrib"
 projects[views_infinite_scroll][version] = 1.1
 
+projects[wysiwyg][subdir] = "contrib"
+projects[wysiwyg][version] = "2.2"
+; Fix for CKEditor 4 so it can be detected.
+; @see https://drupal.org/node/1853550
+projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg-ckeditor4-1853550-4.patch"
+
 ; Themes
 projects[bootstrap] = bootstrap
 projects[bootstrap][version] = 3.0
@@ -189,6 +198,14 @@ libraries[jquery_caret_position][download][type] = "git"
 libraries[jquery_caret_position][type] = "libraries"
 libraries[jquery_caret_position][download][url] = "https://github.com/wolasss/jquery-caret-position-getter.git"
 
+libraries[caret.js][download][type] = "git"
+libraries[caret.js][type] = "libraries"
+libraries[caret.js][download][url] = "https://github.com/ichord/Caret.js"
+
+libraries[at.js][download][type] = "git"
+libraries[at.js][type] = "libraries"
+libraries[at.js][download][url] = "https://github.com/ichord/At.js"
+
 libraries[font_awesome][download][type] = "file"
 libraries[font_awesome][type] = "libraries"
 libraries[font_awesome][download][url] = "http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.2.0.zip"
@@ -198,8 +215,8 @@ libraries[colorbox][download][type] = "file"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
 
 libraries[ckeditor][type] = "libraries"
-libraries[ckeditor][download][type] = "file"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3.3/ckeditor_4.3.3_full.zip"
+libraries[ckeditor][download][type] = "get"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.1/ckeditor_4.4.1_standard.zip"
 
 libraries[autopager][type] = "libraries"
 libraries[autopager][download][type] = "file"

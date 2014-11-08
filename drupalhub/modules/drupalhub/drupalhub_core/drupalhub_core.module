@@ -216,6 +216,7 @@ function drupalhub_core_views_api() {
  * Handle the comments form for nodes by removing elements.
  */
 function drupalhub_core_form_alter(&$form, $form_state, $form_id) {
+  return;
   $forms = array(
     'comment_node_events_form',
     'comment_node_question_form',
