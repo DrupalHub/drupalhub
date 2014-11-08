@@ -4,7 +4,6 @@ package = DrupalHub
 version = 7.x-2.4
 project = drupalhub_core
 dependencies[] = atjs
-dependencies[] = ckeditor
 dependencies[] = ctools
 dependencies[] = features
 dependencies[] = filter
