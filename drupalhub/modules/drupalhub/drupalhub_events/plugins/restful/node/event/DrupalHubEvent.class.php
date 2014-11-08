@@ -37,4 +37,10 @@ class DrupalHubEvent extends \RestfulEntityBaseNode {
       'value2' => $request['end']['value'],
     ));
   }
+
+  public function createEntity() {
+    $result = parent::createEntity();
+    $result[0]['self'] = url('node/' . $result[0]['id'], array('absolute' => TRUE));
+    return $result;
+  }
 }

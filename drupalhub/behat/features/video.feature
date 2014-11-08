@@ -1,6 +1,6 @@
 Feature: Testing video section.
 
-  @javascript
+  @javascript @now
   Scenario: Testing adding of youtube video.
     Given I am logging in as "ClarkKent"
       And I visit "video"
@@ -11,7 +11,7 @@ Feature: Testing video section.
       And I should see "Aretha Franklin - Respect"
      When I press "Save"
      Then I should see "The video added successfully."
-      And I sleep for "1.5"
+      And I sleep for "3"
       And I should see "Aretha Franklin - Respect [1967] (Original Version)"
       And I should see "Aretha Franklin - Respect"
 

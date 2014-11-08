@@ -71,6 +71,12 @@ class DrupalHubVideos extends \RestfulEntityBase {
     return file_create_url($value['thumbnail_path']);
   }
 
+  public function createEntity() {
+    $result = parent::createEntity();
+    $result[0]['self'] = url('node/' . $result[0]['id'], array('absolute' => TRUE));
+    return $result;
+  }
+
   /**
    * Set the the current user as the owner of the new playlist.
    */

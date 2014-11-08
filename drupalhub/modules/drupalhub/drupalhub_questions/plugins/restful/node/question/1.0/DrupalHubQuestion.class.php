@@ -63,6 +63,7 @@ class DrupalHubQuestion extends \RestfulEntityBase {
     $this->setRequest($request);
     $results = parent::createEntity();
     $item = reset($results);
+    $item['self'] = url('node/' . $item['id'], array('absolute' => TRUE));
     drupal_json_output($item);
   }
 

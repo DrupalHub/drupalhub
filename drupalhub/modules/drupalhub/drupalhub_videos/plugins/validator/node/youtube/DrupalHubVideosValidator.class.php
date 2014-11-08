@@ -10,10 +10,10 @@ class DrupalHubVideosValidator extends EntityValidateBase {
   /**
    * Overrides EntityValidateBase::getFieldsInfo().
    */
-  public function getFieldsInfo() {
-    $fields = parent::getFieldsInfo();
+  public function publicFieldsInfo() {
+    $fields = parent::publicFieldsInfo();
 
-    $fields['field_address']['validators'][] = 'validateYouTubeAddress';
+    $fields['field_address']['validators'][] = array($this, 'validateYouTubeAddress');
 
     return $fields;
   }

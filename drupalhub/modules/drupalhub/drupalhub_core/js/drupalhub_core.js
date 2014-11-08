@@ -202,8 +202,9 @@
    * @constructor
    */
   jQuery.DrupalHubRedirect = function(url, seconds) {
-    $.DrupalHubSleep(seconds);
-    window.location.href = url;
+    window.setTimeout(function() {
+      window.location.href = url;
+    }, seconds * 1000);
   };
 
   /**

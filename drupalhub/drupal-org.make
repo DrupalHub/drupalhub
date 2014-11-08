@@ -41,11 +41,8 @@ projects[entityreference][version] = 1.1
 projects[entityreference_prepopulate][subdir] = "contrib"
 projects[entityreference_prepopulate][version] = 1.3
 
-projects[entity_validator][download][type] = "git"
-projects[entity_validator][download][url] = "https://github.com/Gizra/entity_validator.git"
-projects[entity_validator][download][branch] = 7.x-1.x
 projects[entity_validator][subdir] = "contrib"
-projects[entity_validator][type] = "module"
+projects[entity_validator][version] = 1.1
 
 projects[entity_view_count][download][type] = "git"
 projects[entity_view_count][download][url] = "https://github.com/DrupalHub/entity_view_count.git"

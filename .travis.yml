@@ -43,8 +43,8 @@ before_script:
 
   - sh -e /etc/init.d/xvfb start
   - export DISPLAY=:99.0
-  - wget http://selenium-release.storage.googleapis.com/2.43/selenium-server-standalone-2.43.1.jar
-  - java -jar selenium-server-standalone-2.43.1.jar > ~/selenium.log 2>&1 &
+  - wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
+  - java -jar selenium-server-standalone-2.44.0.jar > ~/selenium.log 2>&1 &
   - sleep 30
 
 script:
