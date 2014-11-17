@@ -41,7 +41,7 @@ function drupalhub_wiki_search_form($form, $form_state) {
     '#type' => 'textfield',
     '#title' => '',
     '#attributes' => array(
-      'placeholder' => array(t('Enter text')),
+      'placeholder' => array(t('Enter search text')),
       'class' => array('typeahead',),
       'data-provide' => array('typeahead'),
     ),

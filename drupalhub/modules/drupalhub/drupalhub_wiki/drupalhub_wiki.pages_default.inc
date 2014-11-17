@@ -401,7 +401,10 @@ function drupalhub_wiki_default_page_manager_pages() {
   $page->admin_title = 'DrupalHub wiki';
   $page->admin_description = '';
   $page->path = 'documentation';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array();
   $page->conf = array(
@@ -677,7 +680,10 @@ function drupalhub_wiki_default_page_manager_pages() {
   $page->admin_title = 'Wiki by terms';
   $page->admin_description = '';
   $page->path = 'documentation/term/%taxonomy_term';
-  $page->access = array();
+  $page->access = array(
+    'type' => 'none',
+    'settings' => NULL,
+  );
   $page->menu = array();
   $page->arguments = array(
     'taxonomy_term' => array(

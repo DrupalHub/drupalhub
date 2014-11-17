@@ -492,11 +492,11 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'return' => 'Finish',
-      'cancel' => 'Cancel',
-      'override_title' => 1,
+      'cancel' => 'ביטול',
+      'override_title' => 0,
       'override_title_text' => 'Help and support',
-      'form_build_id' => 'form-QLeYSyBRhNF3xIuXqXJSK8Xfvl-YGh04mCQsrEUIB8o',
-      'form_token' => '8_yse4_FfeeGyL5X8uPMYtr2sfl9Ygk-3nrHOrCDUVs',
+      'form_build_id' => 'form-IFkbeHQm59dzQg2IIoHB5ma7BZpPdMeuagfageCsnfw',
+      'form_token' => 'krPDKWI_DMRDpcbEziFEMkucs_qJqRQDdnZ9qwbr0Hk',
       'form_id' => 'drupalhub_questions_new_question_content_type_edit_form',
       'op' => 'Finish',
     );
@@ -523,11 +523,11 @@ function drupalhub_pages_default_page_manager_pages() {
     $pane->access = array();
     $pane->configuration = array(
       'return' => 'Finish',
-      'cancel' => 'Cancel',
-      'override_title' => 1,
+      'cancel' => 'ביטול',
+      'override_title' => 0,
       'override_title_text' => 'Popular tags: ',
-      'form_build_id' => 'form-vl9c7IKhYsqRoUoCLC4s5GEImPTcD6514KQQMWr6vWY',
-      'form_token' => 'ALSupKa_8bpKXADDd45pPPxgB8r63z-lrY575QrakxQ',
+      'form_build_id' => 'form-kOcTKUa_5U9QBJm7haIeuPFo0gkhXvGXyBvXtOtPRUE',
+      'form_token' => 'YwcRsS6dHNTaJKPqpHDxpMXQWg_DfM-bsaL05oYutSg',
       'form_id' => 'drupalhub_pages_popular_tags_content_type_edit_form',
       'op' => 'Finish',
     );

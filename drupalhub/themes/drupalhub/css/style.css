@@ -651,6 +651,8 @@ body.front #AddQuestion .modal-dialog {
   /* LTR */ }
   .node-type-question .panel-col-top .pane-user-picture img {
     border: #4d7fb6 solid 1px; }
+.node-type-question .panel-col-top .pane-node-metatags div {
+  display: inline-block; }
 .node-type-question .panel-col-top .pane-node-metatags .fa-tags,
 .node-type-question .panel-col-top .pane-node-metatags .fa-user,
 .node-type-question .panel-col-top .pane-node-metatags .fa-square-o,
@@ -687,6 +689,8 @@ body.front #AddQuestion .modal-dialog {
 
 .node-type-blog .top-first .pane-node-title {
   color: #20aae4; }
+.node-type-blog .top-first .pane-node-metatags div {
+  display: inline-block; }
 .node-type-blog .top-first .pane-node-metatags .fa-tags,
 .node-type-blog .top-first .pane-node-metatags .fa-user,
 .node-type-blog .top-first .pane-node-metatags .fa-square-o,

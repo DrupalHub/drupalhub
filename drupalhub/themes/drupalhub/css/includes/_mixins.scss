@@ -55,6 +55,9 @@
 }
 
 @mixin meta-tags {
+  div {
+    display: inline-block;
+  }
   .fa-tags,
   .fa-user,
   .fa-square-o,

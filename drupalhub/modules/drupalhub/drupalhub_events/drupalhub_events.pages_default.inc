@@ -184,7 +184,7 @@ function drupalhub_events_default_page_manager_handlers() {
     $pane->shown = TRUE;
     $pane->access = array();
     $pane->configuration = array(
-      'label' => 'inline',
+      'label' => 'hidden',
       'formatter' => 'date_default',
       'delta_limit' => 0,
       'delta_offset' => '0',

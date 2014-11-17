@@ -12,4 +12,11 @@ class DrupalHubWiki extends RestfulEntityBaseNode {
 
     return $public_fields;
   }
+
+  /**
+   * Overriding the self method.
+   */
+  public function getEntitySelf(\EntityMetadataWrapper $wrapper) {
+    return url('node/' . $wrapper->getIdentifier());
+  }
 }

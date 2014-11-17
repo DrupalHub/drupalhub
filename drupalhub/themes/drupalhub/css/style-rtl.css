@@ -5,6 +5,9 @@
 .tabs--primary.nav.nav-tabs {
   float: left; }
 
+.form-item.search input {
+  text-align: right; }
+
 body.front .view-main-page-questions .views-row .image,
 body.front .view-id-top_users .views-row .views-field-user-picture,
 .node-type-question .panel-col-top .pane-user-picture,
@@ -37,7 +40,11 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
 .node-type-wiki .fa-tags,
 .node-type-wiki .fa-user,
 .node-type-wiki .fa-square-o,
-.node-type-wiki .fa-clock-o {
+.node-type-wiki .fa-clock-o,
+.node-type-events .fa-tags,
+.node-type-events .fa-user,
+.node-type-events .fa-square-o,
+.node-type-events .fa-clock-o {
   padding-right: 10px !important;
   padding-left: 0px !important; }
 
@@ -49,6 +56,10 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
 .page-documentation .second {
   border-left: none;
   border-right: #f7b700 solid 1px; }
+.page-documentation-add #drupalhub-wiki-search-form input,
+.node-type-wiki #drupalhub-wiki-search-form input,
+.page-documentation #drupalhub-wiki-search-form input {
+  text-align: right; }
 
 .page-video .info li,
 .node-type-youtube .info li {
@@ -97,3 +108,10 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
       float: right;
       margin-right: 0px;
       margin-left: 10px; }
+
+.page-calendar #NewEvent #end_date_on {
+  margin-right: -20px; }
+.page-calendar .bottom .upcoming-events .events ul li {
+  text-align: right; }
+.page-calendar tbody .inner {
+  float: right; }

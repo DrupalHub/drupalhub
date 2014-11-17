@@ -1,0 +1,1715 @@
+# $Id$
+#
+# Hebrew translation of Drupal (general)
+# Copyright YEAR NAME <EMAIL@ADDRESS>
+# Generated from files:
+#  drupalhub_blog/drupalhub_blog.features.field_instance.inc: n/a
+#  drupalhub_events/drupalhub_events.features.field_instance.inc: n/a
+#  drupalhub_group/drupalhub_group.features.field_instance.inc: n/a
+#  drupalhub_questions/drupalhub_questions.features.field_instance.inc: n/a
+#  drupalhub_videos/drupalhub_videos.features.field_instance.inc: n/a
+#  drupalhub_wiki/drupalhub_wiki.features.field_instance.inc: n/a
+#  drupalhub_questions/plugins/restful/taxonomy_term/tags/1.0/tags__1_0.inc: n/a
+#  drupalhub_blog/drupalhub_blog.features.inc: n/a
+#  drupalhub_core/plugins/content_types/more/more.inc: n/a
+#  drupalhub_users/plugins/content_types/recent/recent.inc: n/a
+#  drupalhub_events/drupalhub_events.features.inc: n/a
+#  drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php: n/a
+#  drupalhub_group/drupalhub_group.features.inc: n/a
+#  drupalhub_pages/drupalhub_pages.views_default.inc: n/a
+#  drupalhub_questions/drupalhub_questions.features.inc: n/a
+#  drupalhub_videos/drupalhub_videos.features.inc: n/a
+#  drupalhub_videos/plugins/content_types/playlists/playlists.inc: n/a
+#  drupalhub_wiki/drupalhub_wiki.features.inc: n/a
+#  drupalhub_blog/drupalhub_blog.views_default.inc: n/a
+#  drupalhub_events/drupalhub_events.views_default.inc: n/a
+#  drupalhub_group/drupalhub_group.views_default.inc: n/a
+#  drupalhub_questions/drupalhub_questions.views_default.inc: n/a
+#  drupalhub_users/drupalhub_users.views_default.inc: n/a
+#  drupalhub_videos/drupalhub_videos.views_default.inc: n/a
+#  drupalhub_wiki/drupalhub_wiki.views_default.inc: n/a
+#  drupalhub_blog/drupalhub_blog.info: n/a
+#  drupalhub_core/drupalhub_core.info: n/a
+#  drupalhub_core/plugins/layouts/drupalhub_9_3/drupalhub_9_3.inc: n/a
+#  drupalhub_core/plugins/layouts/drupalhub_blog/drupalhub_blog.inc: n/a
+#  drupalhub_core/plugins/layouts/drupalhub_calendar/drupalhub_calendar.inc: n/a
+#  drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc: n/a
+#  drupalhub_core/plugins/layouts/drupalhub_user/drupalhub_user.inc: n/a
+#  drupalhub_core/plugins/layouts/drupalhub_video/drupalhub_video.inc: n/a
+#  drupalhub_core/plugins/layouts/drupalhub_wiki/drupalhub_wiki.inc: n/a
+#  drupalhub_core/plugins/styles/drupalhub_region.inc: n/a
+#  drupalhub_events/drupalhub_events.info: n/a
+#  drupalhub_group/drupalhub_group.info: n/a
+#  drupalhub_migrate/drupalhub_migrate.info: n/a
+#  drupalhub_notify/drupalhub_notify.info: n/a
+#  drupalhub_pages/drupalhub_pages.info: n/a
+#  drupalhub_permission/drupalhub_permission.info: n/a
+#  drupalhub_questions/drupalhub_questions.info: n/a
+#  drupalhub_reputation/drupalhub_reputation.module: n/a
+#  drupalhub_reputation/drupalhub_reputation.info: n/a
+#  drupalhub_responsive/drupalhub_responsive.info: n/a
+#  drupalhub_search/drupalhub_search.info: n/a
+#  drupalhub_videos/drupalhub_videos.info: n/a
+#  drupalhub_core/drupalhub_core.views.inc: n/a
+#  drupalhub_core/drupalhub_core.module: n/a
+#  drupalhub_questions/plugins/restful/node/question/1.0/question__1_0.inc: n/a
+#  drupalhub_core/js/drupalhub_core.js: n/a
+#  drupalhub_core/plugins/content_types/node_metatags/node_metatags.inc: n/a
+#  drupalhub_notify/drupalhub_notify.features.field_instance.inc: n/a
+#  drupalhub_users/drupalhub_users.features.field_instance.inc: n/a
+#  drupalhub_videos/plugins/content_types/video_metadata/video_metadata.inc: n/a
+#  drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc: n/a
+#  drupalhub_wiki/plugins/content_types/links/links.inc: n/a
+#  drupalhub_wiki/plugins/content_types/search_box/search_box.inc: n/a
+#  drupalhub_wiki/plugins/content_types/wiki_description/wiki_description.inc: n/a
+#  drupalhub_wiki/plugins/content_types/wikipedia_terms/wikipedia_terms.inc: n/a
+#  drupalhub_core/plugins/widgets/drupalhub_vud/drupalhub_vud.inc: n/a
+#  drupalhub_events/plugins/content_types/quick_links/quick_links.inc: n/a
+#  drupalhub_events/plugins/content_types/upcoming_events/upcoming_events.inc: n/a
+#  drupalhub_questions/js/inline_edit.js: n/a
+#  drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php: n/a
+#  drupalhub_users/templates/about-modal.tpl.php: n/a
+#  drupalhub_videos/plugins/content_types/manage_links/add-video.tpl.php: n/a
+#  drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php: n/a
+#  drupalhub_events/plugins/content_types/quick_links/new_events.js: n/a
+#  drupalhub_questions/plugins/content_types/new_question/new_question.js: n/a
+#  drupalhub_events/plugins/content_types/upcoming_events/upcoming-events.tpl.php: n/a
+#  drupalhub_events/plugins/restful/node/event/event__1_0.inc: n/a
+#  drupalhub_videos/plugins/content_types/manage_links/manage_links.inc: n/a
+#  drupalhub_migrate/includes/drupalhub_migrate.migrate.entity.inc: n/a
+#  drupalhub_migrate/includes/handlers/user/User.php: n/a
+#  drupalhub_users/plugins/content_types/about/about.inc: n/a
+#  drupalhub_users/plugins/content_types/user_picture/user_picture.inc: n/a
+#  drupalhub_notify/drupalhub_notify.module: n/a
+#  drupalhub_pages/drupalhub_pages.module: n/a
+#  drupalhub_pages/plugins/content_types/drupal_of_the_month/drupal_of_the_month.inc: n/a
+#  drupalhub_pages/plugins/content_types/get_involve/get_involve.inc: n/a
+#  drupalhub_pages/plugins/content_types/popular_tags/popular_tags.inc: n/a
+#  drupalhub_pages/plugins/content_types/service_provider/service_provider.inc: n/a
+#  drupalhub_pages/plugins/content_types/service_provider_search/service_provider_search.inc: n/a
+#  drupalhub_pages/plugins/content_types/drupal_of_the_month/drupal-of-the-month.tpl.php: n/a
+#  drupalhub_pages/plugins/content_types/service_provider_search/assets/search_provider.js: n/a
+#  drupalhub_questions/drupalhub_questions.module: n/a
+#  drupalhub_questions/plugins/content_types/new_question/new_question.inc: n/a
+#  drupalhub_users/plugins/restful/user/update/update__1_0.inc: n/a
+#  drupalhub_reputation/drupalhub_reputation.features.field_instance.inc: n/a
+#  drupalhub_social/drupalhub_social.info: n/a
+#  drupalhub_users/drupalhub_users.views.inc: n/a
+#  drupalhub_users/drupalhub_users.module: n/a
+#  drupalhub_users/drupalhub_users.info: n/a
+#  drupalhub_users/plugins/content_types/about/about.js: n/a
+#  drupalhub_users/views/handlers/drupalhub_users_profile_picture.inc: n/a
+#  drupalhub_videos/plugins/validator/node/youtube/node__youtube.inc: n/a
+#  drupalhub_videos/drupalhub_videos.module: n/a
+#  drupalhub_videos/plugins/content_types/playlist_videos/playlist_videos.inc: n/a
+#  drupalhub_videos/plugins/content_types/playlist_views/playlist_views.inc: n/a
+#  drupalhub_videos/plugins/restful/node/playlist/1.0/playlist__1_0.inc: n/a
+#  drupalhub_videos/plugins/restful/node/youtube/1.0/youtube__1_0.inc: n/a
+#  drupalhub_videos/plugins/content_types/playlists/playlists_manage.js: n/a
+#  drupalhub_wiki/plugins/restful/node/wiki/1.0/wiki__1_0.inc: n/a
+#  drupalhub_wiki/drupalhub_wiki.module: n/a
+#  drupalhub_wiki/drupalhub_wiki.info: n/a
+#  drupalhub_wiki/js/drupalhub_wiki.js: n/a
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"POT-Creation-Date: 2014-11-16 21:40+0000\n"
+"PO-Revision-Date: 2014-11-16 21:40+0000\n"
+"Last-Translator: NAME <EMAIL@ADDRESS>\n"
+"Language-Team: Hebrew <EMAIL@ADDRESS>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: drupalhub_blog/drupalhub_blog.features.field_instance.inc:223
+msgid "Blog rating"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.features.field_instance.inc:224 drupalhub_events/drupalhub_events.features.field_instance.inc:112 drupalhub_group/drupalhub_group.features.field_instance.inc:1515 drupalhub_questions/drupalhub_questions.features.field_instance.inc:206 drupalhub_videos/drupalhub_videos.features.field_instance.inc:363 drupalhub_wiki/drupalhub_wiki.features.field_instance.inc:96
+msgid "Body"
+msgstr "תוכן"
+
+#: drupalhub_blog/drupalhub_blog.features.field_instance.inc:225 drupalhub_group/drupalhub_group.features.field_instance.inc:1523
+msgid "Groups audience"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.features.field_instance.inc:226
+msgid "Images"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.features.field_instance.inc:227 drupalhub_questions/drupalhub_questions.features.field_instance.inc:208 drupalhub_questions/plugins/restful/taxonomy_term/tags/1.0/tags__1_0.inc:4
+msgid "Tags"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.features.inc:66 drupalhub_core/plugins/content_types/more/more.inc:34 drupalhub_users/plugins/content_types/recent/recent.inc:52
+msgid "Blog"
+msgstr "בלוג"
+
+#: drupalhub_blog/drupalhub_blog.features.inc:68
+msgid "Blog conten type"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.features.inc:70 drupalhub_events/drupalhub_events.features.inc:36 drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:17 drupalhub_group/drupalhub_group.features.inc:102;110;126 drupalhub_pages/drupalhub_pages.views_default.inc:467 drupalhub_questions/drupalhub_questions.features.inc:115 drupalhub_videos/drupalhub_videos.features.inc:39;47 drupalhub_videos/plugins/content_types/playlists/playlists.inc:46 drupalhub_wiki/drupalhub_wiki.features.inc:36
+msgid "Title"
+msgstr "כותרת"
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:106;252 drupalhub_events/drupalhub_events.views_default.inc:134 drupalhub_group/drupalhub_group.views_default.inc:490 drupalhub_pages/drupalhub_pages.views_default.inc:72;167;325;451;599;717 drupalhub_questions/drupalhub_questions.views_default.inc:129 drupalhub_users/drupalhub_users.views_default.inc:106;226 drupalhub_videos/drupalhub_videos.views_default.inc:179 drupalhub_wiki/drupalhub_wiki.views_default.inc:102
+msgid "Master"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:107;254 drupalhub_events/drupalhub_events.views_default.inc:135 drupalhub_group/drupalhub_group.views_default.inc:198;492 drupalhub_pages/drupalhub_pages.views_default.inc:73;168;327;452;600;718 drupalhub_questions/drupalhub_questions.views_default.inc:130 drupalhub_users/drupalhub_users.views_default.inc:107;227 drupalhub_videos/drupalhub_videos.views_default.inc:180 drupalhub_wiki/drupalhub_wiki.views_default.inc:104
+msgid "more"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:108;255 drupalhub_events/drupalhub_events.views_default.inc:136 drupalhub_group/drupalhub_group.views_default.inc:199;493 drupalhub_pages/drupalhub_pages.views_default.inc:74;169;328;453;601;719 drupalhub_questions/drupalhub_questions.views_default.inc:131 drupalhub_users/drupalhub_users.views_default.inc:108;228 drupalhub_videos/drupalhub_videos.views_default.inc:181 drupalhub_wiki/drupalhub_wiki.views_default.inc:105
+msgid "Apply"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:109;256 drupalhub_events/drupalhub_events.views_default.inc:137 drupalhub_group/drupalhub_group.views_default.inc:200;494 drupalhub_pages/drupalhub_pages.views_default.inc:75;170;329;454;602;720 drupalhub_questions/drupalhub_questions.views_default.inc:132 drupalhub_users/drupalhub_users.views_default.inc:109;229 drupalhub_videos/drupalhub_videos.views_default.inc:182 drupalhub_wiki/drupalhub_wiki.views_default.inc:106
+msgid "Reset"
+msgstr "איתחול"
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:110;257 drupalhub_events/drupalhub_events.views_default.inc:138 drupalhub_group/drupalhub_group.views_default.inc:201;495 drupalhub_pages/drupalhub_pages.views_default.inc:76;171;330;455;603;721 drupalhub_questions/drupalhub_questions.views_default.inc:133 drupalhub_users/drupalhub_users.views_default.inc:110;230 drupalhub_videos/drupalhub_videos.views_default.inc:183 drupalhub_wiki/drupalhub_wiki.views_default.inc:107
+msgid "Sort by"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:111;258 drupalhub_events/drupalhub_events.views_default.inc:139 drupalhub_group/drupalhub_group.views_default.inc:202;496 drupalhub_pages/drupalhub_pages.views_default.inc:77;172;331;456;604;722 drupalhub_questions/drupalhub_questions.views_default.inc:134 drupalhub_users/drupalhub_users.views_default.inc:111;231 drupalhub_videos/drupalhub_videos.views_default.inc:184 drupalhub_wiki/drupalhub_wiki.views_default.inc:108
+msgid "Asc"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:112;259 drupalhub_events/drupalhub_events.views_default.inc:140 drupalhub_group/drupalhub_group.views_default.inc:203;497 drupalhub_pages/drupalhub_pages.views_default.inc:78;173;332;457;605;723 drupalhub_questions/drupalhub_questions.views_default.inc:135 drupalhub_users/drupalhub_users.views_default.inc:112;232 drupalhub_videos/drupalhub_videos.views_default.inc:185 drupalhub_wiki/drupalhub_wiki.views_default.inc:109
+msgid "Desc"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:113 drupalhub_group/drupalhub_group.views_default.inc:204;498 drupalhub_pages/drupalhub_pages.views_default.inc:79;174;333;458;606 drupalhub_users/drupalhub_users.views_default.inc:113;233 drupalhub_videos/drupalhub_videos.views_default.inc:186 drupalhub_wiki/drupalhub_wiki.views_default.inc:114
+msgid "Items per page"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:114 drupalhub_group/drupalhub_group.views_default.inc:205;499 drupalhub_pages/drupalhub_pages.views_default.inc:80;175;334;459;607 drupalhub_users/drupalhub_users.views_default.inc:114;234 drupalhub_videos/drupalhub_videos.views_default.inc:187 drupalhub_wiki/drupalhub_wiki.views_default.inc:115
+msgid "- All -"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:115 drupalhub_group/drupalhub_group.views_default.inc:206;500 drupalhub_pages/drupalhub_pages.views_default.inc:81;176;335;460;608 drupalhub_users/drupalhub_users.views_default.inc:115;235 drupalhub_videos/drupalhub_videos.views_default.inc:188 drupalhub_wiki/drupalhub_wiki.views_default.inc:116
+msgid "Offset"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:116 drupalhub_group/drupalhub_group.views_default.inc:207;501 drupalhub_pages/drupalhub_pages.views_default.inc:82;177;336;461;609 drupalhub_users/drupalhub_users.views_default.inc:116;236 drupalhub_videos/drupalhub_videos.views_default.inc:189 drupalhub_wiki/drupalhub_wiki.views_default.inc:117
+msgid "« first"
+msgstr "« לעמוד הראשון"
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:117 drupalhub_group/drupalhub_group.views_default.inc:208;502 drupalhub_pages/drupalhub_pages.views_default.inc:83;178;337;462;610 drupalhub_users/drupalhub_users.views_default.inc:117;237 drupalhub_videos/drupalhub_videos.views_default.inc:190 drupalhub_wiki/drupalhub_wiki.views_default.inc:118
+msgid "‹ previous"
+msgstr "‹ לעמוד הקודם"
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:118 drupalhub_group/drupalhub_group.views_default.inc:209;503 drupalhub_pages/drupalhub_pages.views_default.inc:84;179;338;463;611 drupalhub_users/drupalhub_users.views_default.inc:118;238 drupalhub_videos/drupalhub_videos.views_default.inc:191 drupalhub_wiki/drupalhub_wiki.views_default.inc:119
+msgid "next ›"
+msgstr "לעמוד הבא ›"
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:119 drupalhub_group/drupalhub_group.views_default.inc:210;504 drupalhub_pages/drupalhub_pages.views_default.inc:85;180;339;464;612 drupalhub_users/drupalhub_users.views_default.inc:119;239 drupalhub_videos/drupalhub_videos.views_default.inc:192 drupalhub_wiki/drupalhub_wiki.views_default.inc:120
+msgid "last »"
+msgstr "לעמוד האחרון »"
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:120;260 drupalhub_pages/drupalhub_pages.views_default.inc:342;465;613 drupalhub_users/drupalhub_users.views_default.inc:240 drupalhub_videos/drupalhub_videos.views_default.inc:193
+msgid "author"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:121;263 drupalhub_pages/drupalhub_pages.views_default.inc:614 drupalhub_questions/drupalhub_questions.views_default.inc:138 drupalhub_users/drupalhub_users.views_default.inc:241
+msgid "."
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:122;264 drupalhub_pages/drupalhub_pages.views_default.inc:615 drupalhub_questions/drupalhub_questions.views_default.inc:139 drupalhub_users/drupalhub_users.views_default.inc:242
+msgid ","
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:123;265 drupalhub_group/drupalhub_group.views_default.inc:214 drupalhub_pages/drupalhub_pages.views_default.inc:86;181;344;469;727 drupalhub_questions/drupalhub_questions.views_default.inc:140 drupalhub_users/drupalhub_users.views_default.inc:122;244 drupalhub_wiki/drupalhub_wiki.views_default.inc:112
+msgid "Content pane"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:124;266 drupalhub_group/drupalhub_group.views_default.inc:215;508 drupalhub_pages/drupalhub_pages.views_default.inc:87;182;345;470;619;728 drupalhub_questions/drupalhub_questions.views_default.inc:141 drupalhub_users/drupalhub_users.views_default.inc:123;245 drupalhub_videos/drupalhub_videos.views_default.inc:197 drupalhub_wiki/drupalhub_wiki.views_default.inc:113
+msgid "View panes"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:253
+msgid "Blog posts"
+msgstr "בלוגים"
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:261
+msgid "Keep reading"
+msgstr "המשך לקרוא"
+
+#: drupalhub_blog/drupalhub_blog.views_default.inc:262
+msgid "Comments: "
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.info:0
+msgid "DrupalHub blog"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.info:0
+msgid "Blog for DrupalHub"
+msgstr ""
+
+#: drupalhub_blog/drupalhub_blog.info:0 drupalhub_core/drupalhub_core.info:0;0 drupalhub_core/plugins/layouts/drupalhub_9_3/drupalhub_9_3.inc:9 drupalhub_core/plugins/layouts/drupalhub_blog/drupalhub_blog.inc:9 drupalhub_core/plugins/layouts/drupalhub_calendar/drupalhub_calendar.inc:9 drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:9 drupalhub_core/plugins/layouts/drupalhub_user/drupalhub_user.inc:9 drupalhub_core/plugins/layouts/drupalhub_video/drupalhub_video.inc:9 drupalhub_core/plugins/layouts/drupalhub_wiki/drupalhub_wiki.inc:9 drupalhub_core/plugins/styles/drupalhub_region.inc:10 drupalhub_events/drupalhub_events.info:0 drupalhub_group/drupalhub_group.info:0 drupalhub_migrate/drupalhub_migrate.info:0 drupalhub_notify/drupalhub_notify.info:0 drupalhub_pages/drupalhub_pages.info:0 drupalhub_permission/drupalhub_permission.info:0 drupalhub_questions/drupalhub_questions.info:0 drupalhub_reputation/drupalhub_reputation.module:14 drupalhub_reputation/drupalhub_reputation.info:0 drupalhub_responsive/drupalhub_responsive.info:0 drupalhub_search/drupalhub_search.info:0 drupalhub_videos/drupalhub_videos.info:0
+msgid "DrupalHub"
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.views.inc:12
+msgid "Time name tags"
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.views.inc:13
+msgid "Provide a unified strip of the publishing date, the author name and the tags."
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.module:50
+msgid "Home"
+msgstr "דף הבית"
+
+#: drupalhub_core/drupalhub_core.module:53 drupalhub_core/plugins/content_types/more/more.inc:33 drupalhub_pages/drupalhub_pages.views_default.inc:618
+msgid "Questions"
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.module:56;76
+msgid "Blogs"
+msgstr "בלוגים"
+
+#: drupalhub_core/drupalhub_core.module:59;77 drupalhub_core/plugins/layouts/drupalhub_calendar/drupalhub_calendar.inc:14
+msgid "Calendar"
+msgstr "לוח שנה"
+
+#: drupalhub_core/drupalhub_core.module:62;66;78
+msgid "Video library"
+msgstr "ספריית וידאו"
+
+#: drupalhub_core/drupalhub_core.module:63
+msgid "Manage play lists"
+msgstr "נהל רשימות השמעה"
+
+#: drupalhub_core/drupalhub_core.module:69;79;87
+msgid "Documentation"
+msgstr "דוקומנטציה"
+
+#: drupalhub_core/drupalhub_core.module:75 drupalhub_questions/drupalhub_questions.features.inc:111 drupalhub_questions/plugins/restful/node/question/1.0/question__1_0.inc:4 drupalhub_users/plugins/content_types/recent/recent.inc:52
+msgid "Question"
+msgstr "שאלה"
+
+#: drupalhub_core/drupalhub_core.module:100
+msgid "Managing DrupalHub"
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.module:101
+msgid "Grant to the user the permission to manage DrupalHub settings."
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.module:233
+msgid "Add comment:"
+msgstr "הוסף תגובה:"
+
+#: drupalhub_core/drupalhub_core.module:266
+msgid "Angular JS"
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.module:16
+msgid "Manage settings"
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.module:17 drupalhub_reputation/drupalhub_reputation.module:26
+msgid "Manage reputation settings"
+msgstr ""
+
+#: drupalhub_core/drupalhub_core.module:24
+msgid "Node autocomplete"
+msgstr ""
+
+#: drupalhub_core/js/drupalhub_core.js:0
+msgid "Wow! We can't submit the form due to some error:"
+msgstr ""
+"וואו! אי אפשר לשלוח את הטופס בגלל כמה "
+"בעיות:"
+
+#: drupalhub_core/plugins/content_types/more/more.inc:4
+msgid "More plugin"
+msgstr ""
+
+#: drupalhub_core/plugins/content_types/more/more.inc:5
+msgid "Small more link for other pages"
+msgstr ""
+
+#: drupalhub_core/plugins/content_types/more/more.inc:6 drupalhub_core/plugins/content_types/node_metatags/node_metatags.inc:6
+msgid "DrupalHub core"
+msgstr ""
+
+#: drupalhub_core/plugins/content_types/more/more.inc:16
+msgid "More questions"
+msgstr "עוד שאלות"
+
+#: drupalhub_core/plugins/content_types/more/more.inc:19
+msgid "More blogs"
+msgstr "עוד בלוגים"
+
+#: drupalhub_core/plugins/content_types/more/more.inc:31
+msgid "Select page"
+msgstr ""
+
+#: drupalhub_core/plugins/content_types/node_metatags/node_metatags.inc:4
+msgid "Node meta tags"
+msgstr ""
+
+#: drupalhub_core/plugins/content_types/node_metatags/node_metatags.inc:5
+msgid "Display meta tags like created time and the owner with font awesome"
+msgstr ""
+
+#: drupalhub_core/plugins/content_types/node_metatags/node_metatags.inc:7 drupalhub_notify/drupalhub_notify.features.field_instance.inc:261 drupalhub_users/drupalhub_users.features.field_instance.inc:298 drupalhub_videos/plugins/content_types/video_metadata/video_metadata.inc:7
+msgid "Node"
+msgstr "פריט תוכן"
+
+#: drupalhub_core/plugins/layouts/drupalhub_9_3/drupalhub_9_3.inc:8
+msgid "DrupalHub 9-3"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_9_3/drupalhub_9_3.inc:14 drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:14 drupalhub_core/plugins/layouts/drupalhub_user/drupalhub_user.inc:16 drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:43
+msgid "First"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_9_3/drupalhub_9_3.inc:15 drupalhub_core/plugins/layouts/drupalhub_user/drupalhub_user.inc:17 drupalhub_core/plugins/layouts/drupalhub_wiki/drupalhub_wiki.inc:18 drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:44
+msgid "Second"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_blog/drupalhub_blog.inc:8
+msgid "DrupalHub blog layout"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_blog/drupalhub_blog.inc:14 drupalhub_core/plugins/layouts/drupalhub_user/drupalhub_user.inc:14
+msgid "Top first"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_blog/drupalhub_blog.inc:15 drupalhub_core/plugins/layouts/drupalhub_user/drupalhub_user.inc:15
+msgid "Top second"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_blog/drupalhub_blog.inc:16 drupalhub_core/plugins/layouts/drupalhub_video/drupalhub_video.inc:16
+msgid "Bottom"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_calendar/drupalhub_calendar.inc:8
+msgid "DrupalHub calendar"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_calendar/drupalhub_calendar.inc:15
+msgid "Bottom first"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_calendar/drupalhub_calendar.inc:16
+msgid "Bottom second"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_calendar/drupalhub_calendar.inc:17
+msgid "Bottom third"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:8
+msgid "DrupalHub home page layout"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:15
+msgid "First left side"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:16
+msgid "First right side"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:17
+msgid "Second top"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:18
+msgid "Second middle"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:19
+msgid "Second last"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:20
+msgid "Second left side"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_homepage/drupalhub_homepage.inc:21
+msgid "Second right side"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_user/drupalhub_user.inc:8
+msgid "DrupalHub user page layout"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_video/drupalhub_video.inc:8
+msgid "DrupalHub video page layout"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_video/drupalhub_video.inc:14
+msgid "Video"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_video/drupalhub_video.inc:15 drupalhub_videos/drupalhub_videos.views_default.inc:198
+msgid "Other videos"
+msgstr "סרטונים אחרים"
+
+#: drupalhub_core/plugins/layouts/drupalhub_wiki/drupalhub_wiki.inc:8 drupalhub_wiki/plugins/content_types/links/links.inc:6 drupalhub_wiki/plugins/content_types/search_box/search_box.inc:6 drupalhub_wiki/plugins/content_types/wiki_description/wiki_description.inc:6 drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:6 drupalhub_wiki/plugins/content_types/wikipedia_terms/wikipedia_terms.inc:6
+msgid "DrupalHub wiki"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_wiki/drupalhub_wiki.inc:14
+msgid "Main top"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_wiki/drupalhub_wiki.inc:15
+msgid "Category 1"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_wiki/drupalhub_wiki.inc:16
+msgid "Category 2"
+msgstr ""
+
+#: drupalhub_core/plugins/layouts/drupalhub_wiki/drupalhub_wiki.inc:17
+msgid "Category 3"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:11 drupalhub_reputation/drupalhub_reputation.module:15
+msgid "DrupalHub settings."
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:59
+msgid "-- None --"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:63
+msgid "Сolumn type"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:65;87
+msgid "Tiny devices"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:66;88
+msgid "Small & medium devices"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:67;89
+msgid "Large devices"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:76
+msgid "Сolumn size"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:85
+msgid "Offset type"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:98
+msgid "Offset size"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:117
+msgid "Column size + Offset cannot be more than 12!"
+msgstr ""
+
+#: drupalhub_core/plugins/styles/drupalhub_region.inc:138
+msgid "Column type + Offset cannot be more than 12!"
+msgstr ""
+
+#: drupalhub_core/plugins/widgets/drupalhub_vud/drupalhub_vud.inc:12
+msgid "DrupalHub vote up down"
+msgstr ""
+
+#: drupalhub_core/plugins/widgets/drupalhub_vud/drupalhub_vud.inc:13
+msgid "Drupalhub widget for up an down."
+msgstr ""
+
+#: drupalhub_events/drupalhub_events.features.field_instance.inc:113 drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:27
+msgid "Date"
+msgstr "תאריך"
+
+#: drupalhub_events/drupalhub_events.features.inc:32
+msgid "Events"
+msgstr ""
+
+#: drupalhub_events/drupalhub_events.views_default.inc:141 drupalhub_group/drupalhub_group.views_default.inc:213;506 drupalhub_pages/drupalhub_pages.views_default.inc:343;617 drupalhub_users/drupalhub_users.views_default.inc:121 drupalhub_videos/drupalhub_videos.views_default.inc:199 drupalhub_wiki/drupalhub_wiki.views_default.inc:111
+msgid "All"
+msgstr "הכל"
+
+#: drupalhub_events/drupalhub_events.views_default.inc:142
+msgid "Month"
+msgstr "חודש"
+
+#: drupalhub_events/drupalhub_events.views_default.inc:143
+msgid "Upcoming"
+msgstr ""
+
+#: drupalhub_events/drupalhub_events.info:0 drupalhub_events/plugins/content_types/quick_links/quick_links.inc:6 drupalhub_events/plugins/content_types/upcoming_events/upcoming_events.inc:5
+msgid "DrupalHub events"
+msgstr ""
+
+#: drupalhub_events/drupalhub_events.info:0
+msgid "Manage events for DrupalHub"
+msgstr ""
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:5 drupalhub_questions/js/inline_edit.js:0 drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:5 drupalhub_users/templates/about-modal.tpl.php:5 drupalhub_videos/plugins/content_types/manage_links/add-video.tpl.php:5
+msgid "Close"
+msgstr ""
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:6 drupalhub_events/plugins/content_types/quick_links/quick_links.inc:25
+msgid "Create event"
+msgstr "צור אירוע"
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:13
+msgid "The event has created successfully. <a href=\"@url\">See your event</a> or wait a second"
+msgstr ""
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:18
+msgid "Event title"
+msgstr "כותרת האירוע"
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:22 drupalhub_videos/drupalhub_videos.features.field_instance.inc:364
+msgid "Description"
+msgstr "תיאור"
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:23
+msgid "Short description about the event"
+msgstr "תיאור על האירוע"
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:29
+msgid "Set start date"
+msgstr "הגדר תאריך התחלה"
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:36
+msgid "Add end date"
+msgstr "הגדר תאריך סיום"
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:42
+msgid "End date"
+msgstr "תאריך סיום"
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:44
+msgid "Set end date"
+msgstr "הגדר תאריך סיום"
+
+#: drupalhub_events/plugins/content_types/quick_links/new-event.tpl.php:51 drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:36 drupalhub_users/templates/about-modal.tpl.php:15 drupalhub_videos/plugins/content_types/manage_links/add-video.tpl.php:31 drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:31
+msgid "Save"
+msgstr "שמירה"
+
+#: drupalhub_events/plugins/content_types/quick_links/quick_links.inc:4
+msgid "Events links"
+msgstr ""
+
+#: drupalhub_events/plugins/content_types/quick_links/quick_links.inc:5
+msgid "Links for the drupalhub calendar"
+msgstr ""
+
+#: drupalhub_events/plugins/content_types/quick_links/new_events.js:0 drupalhub_questions/plugins/content_types/new_question/new_question.js:0
+msgid "Title field is a required field."
+msgstr "הכותרת היא הכרחית"
+
+#: drupalhub_events/plugins/content_types/quick_links/new_events.js:0
+msgid "The description is a required field."
+msgstr "התיאור הכרחי"
+
+#: drupalhub_events/plugins/content_types/quick_links/new_events.js:0
+msgid "You must supply a start date."
+msgstr "תאריך התחלה חסר"
+
+#: drupalhub_events/plugins/content_types/quick_links/new_events.js:0
+msgid "You need to fill the end date."
+msgstr "אתה צריך להזין תאריך סיום"
+
+#: drupalhub_events/plugins/content_types/upcoming_events/upcoming-events.tpl.php:2 drupalhub_events/plugins/content_types/upcoming_events/upcoming_events.inc:4
+msgid "Upcoming events"
+msgstr "אירועים עתידיים"
+
+#: drupalhub_events/plugins/content_types/upcoming_events/upcoming_events.inc:18
+msgid "There are no upcoming events"
+msgstr "לא קיימים אירועים עתידיים"
+
+#: drupalhub_events/plugins/restful/node/event/event__1_0.inc:4
+msgid "Event"
+msgstr ""
+
+#: drupalhub_events/plugins/restful/node/event/event__1_0.inc:5
+msgid "Restuling event bundle."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1516
+msgid "Determine if this is an OG group."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1517 drupalhub_group/drupalhub_group.features.inc:90
+msgid "Group"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1518
+msgid "Group banner CropImage"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1519
+msgid "Group logo"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1520
+msgid "Group membership"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1521
+msgid "Group mission"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1522
+msgid "Group score"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1524
+msgid "Links to he project's homepage, or any related resources. Multiple values allowed."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1525
+msgid "Multiple values allowed."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1526
+msgid "News Image"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1527
+msgid "News rating"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1528
+msgid "Project Banner text"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1529
+msgid "Project banner CropImage"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1530
+msgid "Project gallery CropImage"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1531
+msgid "Project links"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1532
+msgid "Project rating"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1533
+msgid "Project videos"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1534
+msgid "Recommendation CropImage"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1535
+msgid "Recommendation Links"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1536
+msgid "Recommendation rating"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1537
+msgid "Recommendation video"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1538
+msgid "Talk about what you recommend! Add a youtube link to your recommendation. Multiple values allowed."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1539
+msgid "Up only."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1540
+msgid "Will appear at top of the project page, to the right of project image"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.field_instance.inc:1541
+msgid "Youtube links. Multiple videos allowed."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:94
+msgid "Group name"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:98
+msgid "Group banner"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:100
+msgid "A content type for the group's page. Image and text. Presented by views_bootstrap module."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:106
+msgid "News"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:108
+msgid "A group content type for group news."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:114
+msgid "Project"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:116
+msgid "A group content type to display projects."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:118
+msgid "Project name"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:122
+msgid "Recommendation"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.features.inc:124
+msgid "recommend a project or a service provider!"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:197
+msgid "Defaults"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:211
+msgid "There is no content in this group."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:212
+msgid "OG membership from node"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:216
+msgid "Blogs and News of Group"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:217
+msgid "Blogs & News"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:218
+msgid "Videos of Group"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:219 drupalhub_videos/drupalhub_videos.features.field_instance.inc:368
+msgid "Videos"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:220
+msgid "Latest questions"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:221
+msgid "Latest questions:"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:491
+msgid "Group banners"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:505
+msgid "Get the actual content from a content revision."
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:507 drupalhub_videos/plugins/content_types/manage_links/manage_links.inc:59
+msgid "Page"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:509
+msgid "Group projects carousel"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:510
+msgid "Selected projects"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.views_default.inc:511
+msgid "Project banner"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.info:0
+msgid "Drupalhub Group"
+msgstr ""
+
+#: drupalhub_group/drupalhub_group.info:0
+msgid "Adds the group page, content types: project, news, recommendation, and makes other ct's group content."
+msgstr ""
+
+#: drupalhub_migrate/drupalhub_migrate.info:0
+msgid "DrupalHub Migrate"
+msgstr ""
+
+#: drupalhub_migrate/drupalhub_migrate.info:0
+msgid "Import dummy content for the development of DrupalHub"
+msgstr ""
+
+#: drupalhub_migrate/includes/drupalhub_migrate.migrate.entity.inc:14
+msgid "Import @type - @bundle from CSV file."
+msgstr ""
+
+#: drupalhub_migrate/includes/handlers/user/User.php:21
+msgid "Import users from a CSV file."
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.features.field_instance.inc:260 drupalhub_users/drupalhub_users.features.field_instance.inc:293
+msgid "Comment"
+msgstr "תגובה"
+
+#: drupalhub_notify/drupalhub_notify.features.field_instance.inc:262 drupalhub_users/drupalhub_users.views_default.inc:120 drupalhub_users/plugins/content_types/about/about.inc:7 drupalhub_users/plugins/content_types/recent/recent.inc:7 drupalhub_users/plugins/content_types/user_picture/user_picture.inc:7 drupalhub_videos/drupalhub_videos.views_default.inc:194 drupalhub_videos/plugins/content_types/playlists/playlists.inc:6
+msgid "User"
+msgstr "משתמש"
+
+#: drupalhub_notify/drupalhub_notify.module:80
+msgid "An error has occurred when trying to send the message via email: @message"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:121
+msgid "Select which users to notify."
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:122
+msgid "If you'll select users name only they will be notified on a new movie. If you select roles all the users with that roles will be notify"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:124
+msgid "Users"
+msgstr "חברי האתר"
+
+#: drupalhub_notify/drupalhub_notify.module:125
+msgid "Roles"
+msgstr "תפקידים"
+
+#: drupalhub_notify/drupalhub_notify.module:136
+msgid "Select users"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:137
+msgid "Select which users will get notified when a new video is submitted."
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:173
+msgid "Add a user"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:185
+msgid "Select roles"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:186
+msgid "When a new video is submitted, all the users that own the selected roles will be notified. Remember to select roles that can edit the Youtube content type."
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:201
+msgid "Submit"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:16
+msgid "New video notifications"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.module:17
+msgid "Select which users will get notified when a new video is submitted"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.info:0
+msgid "DrupalHub notify"
+msgstr ""
+
+#: drupalhub_notify/drupalhub_notify.info:0
+msgid "Responsible for notifying users on actions concerned to them."
+msgstr ""
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:326
+msgid "Comments"
+msgstr "תגובות"
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:340
+msgid "No one posted any comment."
+msgstr "אף אחד עוד לא הגיב."
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:341
+msgid "Content"
+msgstr "תוכן"
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:466
+msgid "Group node from OG membership"
+msgstr ""
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:468
+msgid "[title]"
+msgstr ""
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:616 drupalhub_questions/drupalhub_questions.features.field_instance.inc:209 drupalhub_users/drupalhub_users.views_default.inc:243 drupalhub_videos/drupalhub_videos.features.field_instance.inc:369
+msgid "Vote"
+msgstr "הצבע"
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:724
+msgid "uid"
+msgstr ""
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:725
+msgid "[name] ([field_reputation])"
+msgstr ""
+
+#: drupalhub_pages/drupalhub_pages.views_default.inc:726
+msgid "<i class=\"fa fa-heart\"></i> [field_reputation] <i class=\"fa fa-eye\"></i> [field_entity_view_count]"
+msgstr ""
+
+#: drupalhub_pages/drupalhub_pages.module:156
+msgid "Search for service provider"
+msgstr ""
+
+#: drupalhub_pages/drupalhub_pages.info:0 drupalhub_pages/plugins/content_types/drupal_of_the_month/drupal_of_the_month.inc:6 drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:10 drupalhub_pages/plugins/content_types/popular_tags/popular_tags.inc:6 drupalhub_pages/plugins/content_types/service_provider/service_provider.inc:6 drupalhub_pages/plugins/content_types/service_provider_search/service_provider_search.inc:6
+msgid "DrupalHub pages"
+msgstr ""
+
+#: drupalhub_pages/drupalhub_pages.info:0
+msgid "Managing the pages of DrupalHub"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/drupal_of_the_month/drupal-of-the-month.tpl.php:3 drupalhub_pages/plugins/content_types/drupal_of_the_month/drupal_of_the_month.inc:4
+msgid "Drupal of the month"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/drupal_of_the_month/drupal-of-the-month.tpl.php:31
+msgid "From the portfolio of: "
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/drupal_of_the_month/drupal_of_the_month.inc:5
+msgid "Display the drupal of the month."
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:8
+msgid "Get involve"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:9
+msgid "Get involve with Drupal Israel community."
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:18
+msgid "Facebook"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:19
+msgid "Google plus"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:20
+msgid "Twitter"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:21
+msgid "Github"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:22
+msgid "Instagram"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/get_involve/get_involve.inc:23
+msgid "Yotube"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/popular_tags/popular_tags.inc:4
+msgid "Popular tags"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/popular_tags/popular_tags.inc:5
+msgid "Display a list of all the popular tags terms."
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/popular_tags/popular_tags.inc:11
+msgid "Popular tags: "
+msgstr "תגיות פופלריות:"
+
+#: drupalhub_pages/plugins/content_types/service_provider/service_provider.inc:4
+msgid "Service provider"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/service_provider/service_provider.inc:5 drupalhub_pages/plugins/content_types/service_provider_search/service_provider_search.inc:5
+msgid "Provide list of service providers"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/service_provider_search/service_provider_search.inc:4
+msgid "Service provider search"
+msgstr ""
+
+#: drupalhub_pages/plugins/content_types/service_provider_search/assets/search_provider.js:0
+msgid "Service provider was not found."
+msgstr ""
+
+#: drupalhub_permission/drupalhub_permission.info:0
+msgid "DrupalHub Permission"
+msgstr ""
+
+#: drupalhub_permission/drupalhub_permission.info:0
+msgid "Export permissions"
+msgstr ""
+
+#: drupalhub_questions/drupalhub_questions.features.field_instance.inc:207
+msgid "Count"
+msgstr "כמות"
+
+#: drupalhub_questions/drupalhub_questions.features.inc:113
+msgid "Questions users asking"
+msgstr ""
+
+#: drupalhub_questions/drupalhub_questions.views_default.inc:136
+msgid "Author"
+msgstr "מחבר"
+
+#: drupalhub_questions/drupalhub_questions.views_default.inc:137
+msgid "Published at"
+msgstr ""
+
+#: drupalhub_questions/drupalhub_questions.module:24 drupalhub_questions/drupalhub_questions.info:0 drupalhub_questions/plugins/content_types/new_question/new_question.inc:6
+msgid "DrupalHub questions"
+msgstr ""
+
+#: drupalhub_questions/drupalhub_questions.info:0
+msgid "Holds all that realte to question in the DrupalHub project."
+msgstr ""
+
+#: drupalhub_questions/js/inline_edit.js:0;0 drupalhub_users/plugins/restful/user/update/update__1_0.inc:4
+msgid "Update"
+msgstr "עדכן"
+
+#: drupalhub_questions/js/inline_edit.js:0
+msgid "Empty title"
+msgstr ""
+
+#: drupalhub_questions/js/inline_edit.js:0
+msgid "The title is empty. Populate it and click again"
+msgstr ""
+
+#: drupalhub_questions/js/inline_edit.js:0
+msgid "Empty body"
+msgstr ""
+
+#: drupalhub_questions/js/inline_edit.js:0
+msgid "The body is empty. Populate it and click again"
+msgstr ""
+
+#: drupalhub_questions/js/inline_edit.js:0 drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:29
+msgid "Add tags for the question"
+msgstr "הוסף תגיות עבור השאלה"
+
+#: drupalhub_questions/js/inline_edit.js:0
+msgid "Send"
+msgstr "שלח"
+
+#: drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:6
+msgid "Create question"
+msgstr "שאל שאלה"
+
+#: drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:13
+msgid "The question has created successfully. <a href=\"@url\">Visit the question</a> or wait a second"
+msgstr ""
+
+#: drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:17
+msgid "Title: "
+msgstr "כותרת:"
+
+#: drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:18 drupalhub_questions/plugins/content_types/new_question/new_question.inc:27
+msgid "Ask question"
+msgstr "שאל שאלה"
+
+#: drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:22
+msgid "Question: "
+msgstr "שאלה:"
+
+#: drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:23
+msgid "Ask your question"
+msgstr ""
+
+#: drupalhub_questions/plugins/content_types/new_question/new-question.tpl.php:27
+msgid "Tags: "
+msgstr "תגיות:"
+
+#: drupalhub_questions/plugins/content_types/new_question/new_question.inc:4
+msgid "New question"
+msgstr ""
+
+#: drupalhub_questions/plugins/content_types/new_question/new_question.inc:5
+msgid "News question plugin."
+msgstr ""
+
+#: drupalhub_questions/plugins/content_types/new_question/new_question.js:0
+msgid "The body is a required field."
+msgstr ""
+
+#: drupalhub_questions/plugins/restful/node/question/1.0/question__1_0.inc:5
+msgid "Restuling question bundle."
+msgstr ""
+
+#: drupalhub_questions/plugins/restful/taxonomy_term/tags/1.0/tags__1_0.inc:5
+msgid "Restuling tags terms"
+msgstr ""
+
+#: drupalhub_reputation/drupalhub_reputation.features.field_instance.inc:95
+msgid "Reputation"
+msgstr "דירוג"
+
+#: drupalhub_reputation/drupalhub_reputation.features.field_instance.inc:96
+msgid "Views"
+msgstr ""
+
+#: drupalhub_reputation/drupalhub_reputation.module:41
+msgid "Set the number of points user get when posting for a question"
+msgstr ""
+
+#: drupalhub_reputation/drupalhub_reputation.module:46
+msgid "Set the number of points user get when commenting for a question"
+msgstr ""
+
+#: drupalhub_reputation/drupalhub_reputation.module:51
+msgid "Set the number of points user get when voting for his question"
+msgstr ""
+
+#: drupalhub_reputation/drupalhub_reputation.module:56
+msgid "Set the number of points user get when voting for his question's comment"
+msgstr ""
+
+#: drupalhub_reputation/drupalhub_reputation.module:25
+msgid "Manage reputation"
+msgstr ""
+
+#: drupalhub_reputation/drupalhub_reputation.info:0
+msgid "DrupalHub reputation"
+msgstr ""
+
+#: drupalhub_reputation/drupalhub_reputation.info:0
+msgid "DrupalHub reputation module"
+msgstr ""
+
+#: drupalhub_responsive/drupalhub_responsive.info:0
+msgid "Drupalhub Responsive"
+msgstr ""
+
+#: drupalhub_responsive/drupalhub_responsive.info:0
+msgid "Adds image styles and responsive capabiltles"
+msgstr ""
+
+#: drupalhub_search/drupalhub_search.info:0
+msgid "DrupalHub search"
+msgstr ""
+
+#: drupalhub_social/drupalhub_social.info:0
+msgid "DrupalHub social"
+msgstr ""
+
+#: drupalhub_social/drupalhub_social.info:0
+msgid "Managing settings for social networks of DrupalHub"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.features.field_instance.inc:292 drupalhub_users/plugins/content_types/about/about.inc:4
+msgid "About"
+msgstr "אודות"
+
+#: drupalhub_users/drupalhub_users.features.field_instance.inc:294
+msgid "Entity identifier"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.features.field_instance.inc:295
+msgid "Entity view count"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.features.field_instance.inc:296
+msgid "First name"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.features.field_instance.inc:297
+msgid "Last name"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.views.inc:12
+msgid "Drupalhub users profile picture"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.views.inc:13
+msgid "Generate a profile picture according to DrupalHub logic."
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.module:107
+msgid "comment"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.module:107
+msgid "node"
+msgstr "פריט תוכן"
+
+#: drupalhub_users/drupalhub_users.module:109
+msgid "Up voted"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.module:109
+msgid "Down voted"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.info:0
+msgid "drupalhub_users"
+msgstr ""
+
+#: drupalhub_users/drupalhub_users.info:0
+msgid "Features"
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/about/about.inc:5
+msgid "Smart about plugins with inline editing."
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/about/about.inc:6 drupalhub_users/plugins/content_types/recent/recent.inc:6 drupalhub_users/plugins/content_types/user_picture/user_picture.inc:6
+msgid "DrupalHub users"
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/about/about.inc:24
+msgid "Whoops! it seems that you don't have any description about your self. Why don't you <a href='#' data-toggle='modal' data-target='#UpdateAbout'>add some info</a>?"
+msgstr ""
+"אופס! נראה שאין מידע כללי על עצמך. למה "
+"שלא <a href='#' data-toggle='modal' "
+"data-target='#UpdateAbout'>תוסיף מידע על עצמך</a>?\r\n"
+
+#: drupalhub_users/plugins/content_types/about/about.js:0
+msgid "This is required field"
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/recent/recent.inc:4
+msgid "Recent"
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/recent/recent.inc:5
+msgid "Retrieve recent information."
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/recent/recent.inc:32
+msgid "Recent @bundle: <a href=\"@href\">@label</a>"
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/recent/recent.inc:51
+msgid "Recent bundle"
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/recent/recent.inc:53
+msgid "Select the bundle of node you'ld like to retrieve the last entry of the user."
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/user_picture/user_picture.inc:4
+msgid "User picture"
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/user_picture/user_picture.inc:5
+msgid "Display the user picture."
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/user_picture/user_picture.inc:32
+msgid "Image style type"
+msgstr ""
+
+#: drupalhub_users/plugins/content_types/user_picture/user_picture.inc:34
+msgid "Select the image style to apply on the user picture."
+msgstr ""
+
+#: drupalhub_users/plugins/restful/user/update/update__1_0.inc:5
+msgid "Restuling user."
+msgstr ""
+
+#: drupalhub_users/templates/about-modal.tpl.php:6
+msgid "Information about your self"
+msgstr "מידע על עצמך"
+
+#: drupalhub_users/templates/about-modal.tpl.php:10
+msgid "About your self: "
+msgstr "מידע על עצמך:"
+
+#: drupalhub_users/templates/about-modal.tpl.php:11
+msgid "Write something about your self"
+msgstr "תכתוב משהו על עצמך"
+
+#: drupalhub_users/templates/about-modal.tpl.php:16
+msgid "The about field has updated successfully. After closing the dispaly will change"
+msgstr ""
+
+#: drupalhub_users/views/handlers/drupalhub_users_profile_picture.inc:21
+msgid "Default"
+msgstr "ברירת מחדל"
+
+#: drupalhub_users/views/handlers/drupalhub_users_profile_picture.inc:27
+msgid "Image style"
+msgstr ""
+
+#: drupalhub_users/views/handlers/drupalhub_users_profile_picture.inc:28
+msgid "Using <em>Default</em> will use the site-wide image style for user pictures set in the <a href=\"!account-settings\">Account settings</a>."
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.features.field_instance.inc:361
+msgid "Access level"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.features.field_instance.inc:362
+msgid "Address"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.features.field_instance.inc:365
+msgid "Determine if the video will be shown in general videos page"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.features.field_instance.inc:366
+msgid "Other users"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.features.field_instance.inc:367
+msgid "Show in videos"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.features.inc:35
+msgid "Playlist"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.features.inc:43 drupalhub_videos/plugins/validator/node/youtube/node__youtube.inc:4
+msgid "Youtube"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.views_default.inc:195
+msgid "Duration"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.views_default.inc:196
+msgid "All videos"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.module:29
+msgid "Youtube metadata"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.module:30
+msgid "Provide information from the JSON output for a youtube video."
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.module:78
+msgid "Suggested videos approved"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.module:79
+msgid "Will approve youtube videos when sending them."
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.info:0
+msgid "DrupalHub Videos"
+msgstr ""
+
+#: drupalhub_videos/drupalhub_videos.info:0
+msgid "Adding videos to the site."
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/manage_links/add-video.tpl.php:6
+msgid "Add youtube video"
+msgstr "הוסף סרטון וידאו"
+
+#: drupalhub_videos/plugins/content_types/manage_links/add-video.tpl.php:13
+msgid "The video added successfully. <a href=\"@url\">Click here</a> to view it or wait a second"
+msgstr ""
+"הסרטון התווסף בהצלחה <a href=\"@url\">לחץ "
+"כאן</a> tע״מ לצפות בסרטון או המתן כמה "
+"שניות"
+
+#: drupalhub_videos/plugins/content_types/manage_links/add-video.tpl.php:16
+msgid "Youtube address: "
+msgstr "כתובת סרטון Youtube:"
+
+#: drupalhub_videos/plugins/content_types/manage_links/add-video.tpl.php:17
+msgid "Youtube link address"
+msgstr "כתובת סרטון יוטיוב"
+
+#: drupalhub_videos/plugins/content_types/manage_links/manage_links.inc:4
+msgid "Manage links"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/manage_links/manage_links.inc:5
+msgid "Links for the drupalhub youtube module"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/manage_links/manage_links.inc:6 drupalhub_videos/plugins/content_types/playlist_videos/playlist_videos.inc:5 drupalhub_videos/plugins/content_types/playlist_views/playlist_views.inc:5 drupalhub_videos/plugins/content_types/playlists/playlists.inc:5 drupalhub_videos/plugins/content_types/video_metadata/video_metadata.inc:6
+msgid "DrupalHub youtube"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/manage_links/manage_links.inc:25
+msgid "Manage playlists"
+msgstr "נהל רשימות השמעה"
+
+#: drupalhub_videos/plugins/content_types/manage_links/manage_links.inc:35
+msgid "Add video"
+msgstr "הוסף וידאו"
+
+#: drupalhub_videos/plugins/content_types/manage_links/manage_links.inc:61
+msgid "Gallery front page"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/manage_links/manage_links.inc:62
+msgid "Playlist manager"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/playlist_videos/playlist_videos.inc:4
+msgid "Playlist videos"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/playlist_views/playlist_views.inc:4
+msgid "Playlist views"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/playlist_views/playlist_views.inc:51 drupalhub_videos/plugins/restful/node/playlist/1.0/playlist__1_0.inc:4 drupalhub_videos/plugins/restful/node/youtube/1.0/youtube__1_0.inc:4
+msgid "Playlists"
+msgstr "רשימות השמעה"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:4
+msgid "Name: "
+msgstr "שם:"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:5
+msgid "Enter name"
+msgstr "הזן שם"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:9
+msgid "Videos: "
+msgstr "פריטים:"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:10
+msgid "Type name of a video"
+msgstr "הקלד שם של וידאו"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:17
+msgid "Description: "
+msgstr "תיאור:"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:22
+msgid "Access level: "
+msgstr "הרשאות צפייה:"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:24
+msgid "Public + search"
+msgstr "ציבורי + חיפוש"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:25
+msgid "Public"
+msgstr "ציבורי"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:26
+msgid "Private"
+msgstr "פרטי"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlist-form.tpl.php:35
+msgid "The playlist has created successfully"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists.inc:4
+msgid "User playlists"
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists.inc:32 drupalhub_videos/plugins/content_types/playlists/playlists_manage.js:0
+msgid "Delete"
+msgstr "מחיקה"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists.inc:33 drupalhub_videos/plugins/content_types/playlists/playlists_manage.js:0
+msgid "Edit"
+msgstr "עריכה"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists.inc:40 drupalhub_videos/plugins/content_types/playlists/playlists_manage.js:0
+msgid "You did not created any playlist. <a href=\"#\" class=\"show-playlist-form\">Create a new playlist</a>"
+msgstr ""
+"עוד לא יצרת רשימת השמעה. <a href=\"#\" "
+"class=\"show-playlist-form\">צור רשימת השמעה חדשה</a>"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists.inc:46
+msgid "Number of videos"
+msgstr "מספר פריטים"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists.inc:46
+msgid "Options"
+msgstr "אפשרויות"
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists_manage.js:0
+msgid "Please fill in the name."
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists_manage.js:0
+msgid "Please insert videos."
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists_manage.js:0
+msgid "Please insert description."
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/playlists/playlists_manage.js:0
+msgid "An error has occurred while creating the playlist. Please content the site admin."
+msgstr ""
+
+#: drupalhub_videos/plugins/content_types/video_metadata/video_metadata.inc:4;5
+msgid "Video metadata"
+msgstr ""
+
+#: drupalhub_videos/plugins/restful/node/playlist/1.0/playlist__1_0.inc:5 drupalhub_videos/plugins/restful/node/youtube/1.0/youtube__1_0.inc:5
+msgid "Expose all the playlists"
+msgstr ""
+
+#: drupalhub_videos/plugins/validator/node/youtube/node__youtube.inc:5
+msgid "Validate youtube videos upon creation."
+msgstr ""
+
+#: drupalhub_wiki/drupalhub_wiki.features.field_instance.inc:97
+msgid "Category"
+msgstr "סיווג"
+
+#: drupalhub_wiki/drupalhub_wiki.features.inc:32 drupalhub_wiki/plugins/restful/node/wiki/1.0/wiki__1_0.inc:4
+msgid "Wiki"
+msgstr ""
+
+#: drupalhub_wiki/drupalhub_wiki.views_default.inc:103
+msgid "Recently added entries"
+msgstr "תכנים שהתווספו לאחרונה"
+
+#: drupalhub_wiki/drupalhub_wiki.views_default.inc:110
+msgid "Read more"
+msgstr ""
+
+#: drupalhub_wiki/drupalhub_wiki.module:44
+msgid "Enter search text"
+msgstr "הזן טקסט לחיפוש"
+
+#: drupalhub_wiki/drupalhub_wiki.module:58
+msgid "Front page"
+msgstr "דף ראשי"
+
+#: drupalhub_wiki/drupalhub_wiki.module:65
+msgid "Create documentation"
+msgstr "צור מסמך"
+
+#: drupalhub_wiki/drupalhub_wiki.info:0
+msgid "DrupalHub WIKI"
+msgstr ""
+
+#: drupalhub_wiki/drupalhub_wiki.info:0
+msgid "Documetation section for drupalhub"
+msgstr ""
+
+#: drupalhub_wiki/drupalhub_wiki.info:0
+msgid "Other"
+msgstr ""
+
+#: drupalhub_wiki/js/drupalhub_wiki.js:0
+msgid "Category: "
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/links/links.inc:4
+msgid "Links"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/links/links.inc:5
+msgid "Links for the wiki page."
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/search_box/search_box.inc:4
+msgid "Search box"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/search_box/search_box.inc:5
+msgid "Supply small search box."
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_description/wiki_description.inc:4
+msgid "Welcome text"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_description/wiki_description.inc:5
+msgid "Welcome text."
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_description/wiki_description.inc:12
+msgid "Welcome to DrupalHub wikipedia. This is where you can find info on how to work with Drupal in several levels. Good luck!"
+msgstr ""
+"ברוך הבא לדוקומנטציה של DrupalHub. אפשר "
+"למצוא מידע על איך לעבוד עם דרופל בכל "
+"מיני רמות. בהצלחה!"
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:4
+msgid "Wiki from category"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:5
+msgid "DDisplay a list of nodes from a given category."
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:7 drupalhub_wiki/plugins/content_types/wikipedia_terms/wikipedia_terms.inc:7
+msgid "Taxonomy term"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:40
+msgid "Position"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:41
+msgid "Select the position: first, second or third"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:45
+msgid "Third"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:52
+msgid "Location"
+msgstr "מיקום"
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:54
+msgid "Documentation home page"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wiki_from_category/wiki_from_category.inc:55
+msgid "Documentation term page"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wikipedia_terms/wikipedia_terms.inc:4
+msgid "Wikipedia terns"
+msgstr ""
+
+#: drupalhub_wiki/plugins/content_types/wikipedia_terms/wikipedia_terms.inc:5
+msgid "Display all the terms."
+msgstr ""
+
+#: drupalhub_wiki/plugins/restful/node/wiki/1.0/wiki__1_0.inc:5
+msgid "Restuling wiki nodes"
+msgstr ""
+
+msgid "Follow"
+msgstr "עקוב"
+
+msgid "Unfollow"
+msgstr "בטל מעקב"
+
+msgid "Next"
+msgstr "הבא"
+
+msgid "Prev"
+msgstr "הקודם"
+
+msgid "Search for content, tags, comments or users"
+msgstr "חפש עבור תוכן, תגיות, תגובות או משתמשים"
+
+msgid "Most active users"
+msgstr "המשתמשים הכי פעילים"
+
+msgid "Login"
+msgstr "התחבר"

@@ -9,6 +9,12 @@
   float: left;
 }
 
+.form-item.search {
+  input {
+    text-align: right;
+  }
+}
+
 // Front page.
 body.front .view-main-page-questions .views-row .image,
 body.front .view-id-top_users .views-row .views-field-user-picture,
@@ -17,7 +23,6 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
   float: right;
   padding-left: 20px;
 }
-
 
 .pane-new-question,
 .pane-popular-tags {
@@ -52,7 +57,8 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
 // Question page.
 .node-type-question,
 .node-type-blog,
-.node-type-wiki {
+.node-type-wiki,
+.node-type-events {
 
   .fa-tags,
   .fa-user,
@@ -75,6 +81,13 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
   .second {
     border-left: none;
     border-right: #f7b700 solid 1px;
+  }
+
+  #drupalhub-wiki-search-form {
+
+    input {
+      text-align: right;
+    }
   }
 }
 
@@ -156,6 +169,28 @@ body.front .view-id-top_users .views-row .views-field-user-picture,
           }
         }
       }
+    }
+  }
+}
+
+// Calendar page.
+.page-calendar {
+
+  #NewEvent {
+
+    #end_date_on {
+      margin-right: -20px;
+    }
+  }
+
+
+  .bottom .upcoming-events .events ul li {
+    text-align: right;
+  }
+
+  tbody {
+    .inner {
+      float: right;
     }
   }
 }

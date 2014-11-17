@@ -8,7 +8,7 @@ $plugin = array(
 
 function drupalhub_pages_popular_tags_content_type_render($subtype, $conf, $args, $context) {
   $block = new stdClass();
-  $block->title = '';
+  $block->title = t('Popular tags: ');
 
   // Get all the tagged terms.
   $tagged_tids = drupalhub_pages_tagged_terms();

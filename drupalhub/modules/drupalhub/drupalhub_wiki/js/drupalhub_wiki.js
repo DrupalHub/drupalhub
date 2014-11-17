@@ -9,7 +9,7 @@
         limit: 10,
         remote: {
           // todo: handle the filter option.
-          url: Drupal.settings.baseURL + 'api/v1/wiki?filter[label][value]=%QUERY&filter[label][operator]=CONTAINS',
+          url: Drupal.settings.baseURL + '/' + 'api/v1/wiki?autocomplete[label][value]=%QUERY',
           filter: function(results) {
             var result = [];
 
