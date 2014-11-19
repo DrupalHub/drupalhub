@@ -74,22 +74,6 @@
  */
 ?>
 
-<script id="search-results" type="text/x-handlebars-template">
-{{#if image_url}}
-  <div class="row" style="width: 500px;">
-{{else}}
-  <div class="row">
-{{/if}}
-    <div class="col-md-1">
-      <img src="{{image_url}}" />
-    </div>
-    <div class="col-md-11">
-      <div><a href="{{self}}">{{label}}</a></div>
-      <div>{{body}}</div>
-    </div>
-  </div>
-</script>
-
 <div class="top-navbar no_border hidden-xs">
   <div class="navbar-inner">
     <div class="container">
@@ -100,7 +84,9 @@
 
         <div class="col-lg-3 col-md-2">
           <div class="form-item search">
-            <input type="text" class="typeahead form-control" id="search" placeholder="<?php print t('Search for content, tags, comments or users'); ?>">
+            <form id="search">
+              <input type="text" class="form-control" id="search" placeholder="<?php print t('Search for content, tags, comments or users'); ?>">
+            </form>
           </div>
         </div>
 

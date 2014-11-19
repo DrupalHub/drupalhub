@@ -12,36 +12,90 @@ include_once 'drupalhub_search.features.inc';
 function drupalhub_search_menu() {
   $items = array();
 
-  $items['api/v1/search'] = array(
+  $items['search_results/%'] = array(
     'page callback' => 'drupalhub_search_results',
+    'title callback' => 'drupalhub_search_results_title_callback',
+    'title arguments' => array(1),
     'access callback' => TRUE,
+    'page arguments' => array(1),
   );
 
   return $items;
 }
 
 /**
+ * Implements hook_theme().
+ */
+function drupalhub_search_theme() {
+  return array(
+    'drupalhub_search_box' => array(
+      'template' => 'search-box',
+      'path' => drupal_get_path('module', 'drupalhub_search') . '/template',
+    ),
+  );
+}
+
+/**
+ * Title callback; Display the search keyword as part of the word.
+ */
+function drupalhub_search_results_title_callback($value) {
+  return t('Search result for @q', array('@q' => $value));
+}
+
+/**
  * Page callback. Return the search results.
  */
-function drupalhub_search_results() {
+function drupalhub_search_results($value) {
+  $indexes = array(
+    'node',
+    'taxonomy_term',
+    'user',
+    'comment',
+  );
+
   $results = array();
 
-  $search = new DrupalHubSearch($_GET['index']);
+  foreach ($indexes as $index) {
+    $results += drupalhub_search_get_results($index, $value);
+  }
+
+  $content = '';
+
+  foreach ($results as $result) {
+    $content .= theme('drupalhub_search_box', $result);
+  }
+
+  return $content;
+}
+
+/**
+ * Running search against a given query.
+ *
+ * @param $index
+ *   The index which the query will run against.
+ * @param $value
+ *   The value to search.
+ * @return array
+ *   Array of results.
+ */
+function drupalhub_search_get_results($index, $value) {
+  $search = new DrupalHubSearch($index);
+  $results = array();
 
   foreach ($search->getFields() as $field) {
-    $search->OrCondition($field, $_GET['value']);
+    $search->OrCondition($field, $value);
   }
 
   // Display only videos from the video page. keep this until the group section
   // will complete.
   if ($search->getEntityType() == 'node') {
-    $search->condition('field_show_in_videos', TRUE);
+//    $search->condition('field_show_in_videos', TRUE);
   }
 
   $entities = $search->execute();
 
   if (!$entities) {
-    return;
+    return array();
   }
 
   foreach ($entities as $entity) {
@@ -58,23 +112,29 @@ function drupalhub_search_results() {
     $uri = entity_uri($search->getEntityType(), $wrapper->value());
 
     if ($wrapper->type() == 'user') {
-      $image = image_style_url('extra_small', _drupalhub_users_user_uri($wrapper->value()));
+      $image = theme('image_style', array(
+        'style_name' => 'front_page_question',
+        'path' => _drupalhub_users_user_uri($wrapper->value()),
+      ));
     }
     else {
       $image = '';
 
       if ($wrapper->__isset('author')) {
-        $image = image_style_url('extra_small', _drupalhub_users_user_uri($wrapper->author->value()));
+        $image = theme('image_style', array(
+          'style_name' => 'front_page_question',
+          'path' => _drupalhub_users_user_uri($wrapper->author->value())
+        ));
       }
     }
 
     $results[] = array(
-      'image_url' => $image,
-      'self' => $uri['path'],
+      'image' => $image,
+      'self' => url($uri['path']),
       'label' => $wrapper->label(),
       'body' => $body,
     );
   }
 
-  drupal_json_output($results);
+  return $results;
 }
