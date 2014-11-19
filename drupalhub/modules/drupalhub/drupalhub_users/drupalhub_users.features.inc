@@ -71,13 +71,21 @@ function drupalhub_users_default_message_type() {
       "token options" : { "clear" : 0 },
       "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }
     },
-    "language" : "en",
+    "language" : "he",
     "arguments" : null,
-    "message_text" : { "en" : [
+    "message_text" : {
+      "en" : [
         {
-          "value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n",
           "format" : "full_html",
           "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+        }
+      ],
+      "he" : [
+        {
+          "value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003E\\u05d4\\u05d2\\u05d9\\u05d1\\u003C\\/a\\u003E \\u05dc-@{message:field-comment:node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "format" : "full_html",
+          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003E\\u05d4\\u05d2\\u05d9\\u05d1\\u003C\\/a\\u003E \\u05dc-@{message:field-comment:node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     },
@@ -93,13 +101,21 @@ function drupalhub_users_default_message_type() {
       "token options" : { "clear" : 0 },
       "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }
     },
-    "language" : "en",
+    "language" : "he",
     "arguments" : null,
-    "message_text" : { "en" : [
+    "message_text" : {
+      "en" : [
         {
-          "value" : "\\u003Cp\\u003ECreated the @{message:field-node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-node:url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "value" : "\\u003Cp\\u003ECreated the @{message:field-node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-node:url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n",
           "format" : "full_html",
           "safe_value" : "\\u003Cp\\u003ECreated the @{message:field-node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-node:url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+        }
+      ],
+      "he" : [
+        {
+          "value" : "\\u003Cp\\u003E\\u05d9\\u05e6\\u05e8 \\u05d0\\u05ea \\u05d4-@{message:field-node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-node:url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "format" : "full_html",
+          "safe_value" : "\\u003Cp\\u003E\\u05d9\\u05e6\\u05e8 \\u05d0\\u05ea \\u05d4-@{message:field-node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-node:url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     },
@@ -115,13 +131,21 @@ function drupalhub_users_default_message_type() {
       "token options" : { "clear" : 0 },
       "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }
     },
-    "language" : "en",
+    "language" : "he",
     "arguments" : null,
-    "message_text" : { "en" : [
+    "message_text" : {
+      "en" : [
         {
-          "value" : "\\u003Cp\\u003EJoined DrupalHub\\u003C\\/p\\u003E\\r\\n",
+          "value" : "\\u003Cp\\u003E\\n\\tJoined DrupalHub\\u003C\\/p\\u003E\\n",
           "format" : "filtered_html",
-          "safe_value" : "\\u003Cp\\u003EJoined DrupalHub\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E\\n\\tJoined DrupalHub\\u003C\\/p\\u003E\\n"
+        }
+      ],
+      "he" : [
+        {
+          "value" : "\\u003Cp\\u003E\\r\\n\\t\\u05d4\\u05e6\\u05d8\\u05e8\\u05e3 \\u05dc-DrupalHub\\u003C\\/p\\u003E\\r\\n",
+          "format" : "filtered_html",
+          "safe_value" : "\\u003Cp\\u003E\\n\\t\\u05d4\\u05e6\\u05d8\\u05e8\\u05e3 \\u05dc-DrupalHub\\u003C\\/p\\u003E\\n"
         }
       ]
     },
@@ -137,13 +161,21 @@ function drupalhub_users_default_message_type() {
       "token options" : { "clear" : 0 },
       "purge" : { "override" : 0, "enabled" : 0, "quota" : "", "days" : "" }
     },
-    "language" : "en",
+    "language" : "he",
     "arguments" : null,
-    "message_text" : { "en" : [
+    "message_text" : {
+      "en" : [
         {
-          "value" : "\\u003Cp\\u003E@action\\u0026nbsp;for the @type\\u0026nbsp;\\u003Ca href=\\u0027@uri\\u0027\\u003E@label\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "value" : "\\u003Cp\\u003E@action\\u0026nbsp;for the @type\\u0026nbsp;\\u003Ca href=\\u0022@uri\\u0022\\u003E@label\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n",
           "format" : "full_html",
           "safe_value" : "\\u003Cp\\u003E@action\\u00a0for the @type\\u00a0\\u003Ca href=\\u0022@uri\\u0022\\u003E@label\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+        }
+      ],
+      "he" : [
+        {
+          "value" : "\\u003Cp\\u003E@action\\u0026nbsp;\\u05dc-@type\\u0026nbsp;\\u003Ca href=\\u0022@uri\\u0022\\u003E@label\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
+          "format" : "full_html",
+          "safe_value" : "\\u003Cp\\u003E@action\\u00a0\\u05dc\\u003Ca href=\\u0022mailto:-@type\\u0022\\u003E-@type\\u003C\\/a\\u003E\\u00a0\\u003Ca href=\\u0022@uri\\u0022\\u003E@label\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     },
