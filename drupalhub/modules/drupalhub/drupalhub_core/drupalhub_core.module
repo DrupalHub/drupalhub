@@ -239,8 +239,7 @@ function drupalhub_core_form_alter(&$form, $form_state, $form_id) {
 function drupalhub_core_comments_form($form, $form_state) {
   hide($form['author']);
   hide($form['subject']);
-  hide($form['comment_body'][LANGUAGE_NONE][0]['format']);
-
+  $form['comment_body'][LANGUAGE_NONE][0]['format']['#attributes']['class'][] = 'hidden';
   return $form;
 }
 
