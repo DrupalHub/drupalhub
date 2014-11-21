@@ -176,6 +176,12 @@ projects[views_bulk_operations][version] = "3.2"
 projects[views_infinite_scroll][subdir] = "contrib"
 projects[views_infinite_scroll][version] = 1.1
 
+projects[wysiwyg][subdir] = "contrib"
+projects[wysiwyg][version] = "2.2"
+; Fix for CKEditor 4 so it can be detected.
+; @see https://drupal.org/node/1853550
+projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg-ckeditor4-1853550-4.patch"
+
 ; Themes
 projects[bootstrap] = bootstrap
 projects[bootstrap][version] = 3.0
@@ -195,8 +201,8 @@ libraries[colorbox][download][type] = "file"
 libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
 
 libraries[ckeditor][type] = "libraries"
-libraries[ckeditor][download][type] = "file"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.3.3/ckeditor_4.3.3_full.zip"
+libraries[ckeditor][download][type] = "get"
+libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.1/ckeditor_4.4.1_standard.zip"
 
 libraries[autopager][type] = "libraries"
 libraries[autopager][download][type] = "file"

@@ -29,7 +29,6 @@ dependencies[] = rdf
 dependencies[] = admin_menu
 dependencies[] = breakpoints
 dependencies[] = views_bootstrap
-dependencies[] = ckeditor
 dependencies[] = colorbox
 dependencies[] = date_popup
 dependencies[] = date_views
@@ -63,7 +62,6 @@ dependencies[] = page_manager
 dependencies[] = panels
 dependencies[] = panels_mini
 dependencies[] = panels_bootstrap_layouts
-;dependencies[] = picture
 dependencies[] = retina_images
 dependencies[] = restful
 dependencies[] = search_api
@@ -75,6 +73,7 @@ dependencies[] = views_infinite_scroll
 dependencies[] = views_ui
 dependencies[] = votingapi
 dependencies[] = vud
+dependencies[] = wysiwyg
 
 ; DrupalHub
 dependencies[] = drupalhub_core
