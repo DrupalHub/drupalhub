@@ -29,30 +29,16 @@
 
 .search {
   padding-top: 10px;
+  position: relative;
 
-  pre {
-    width: 100%;
-  }
-
-  .twitter-typeahead {
-    width: 97%;
-  }
-
-  .tt-dropdown-menu {
-    width: 102%;
-  }
-
-  input.typeahead.tt-query {
-    width: 300px !important;
-  }
-
-  ul {
-    padding: 5px 0px 0px;
-
-    li {
-      display: inline;
-      list-style-type: none;
-    }
+  .fa-input {
+    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: transparent;
+    padding: 0px;
+    position: absolute;;
+    top: 15px;
+    right: 10px;
+    font-size: 15px;
   }
 }
 

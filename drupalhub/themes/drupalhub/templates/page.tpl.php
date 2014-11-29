@@ -85,7 +85,8 @@
         <div class="col-lg-3 col-md-2">
           <div class="form-item search">
             <form id="search">
-              <input type="text" class="form-control" id="search" placeholder="<?php print t('Search for content, tags, comments or users'); ?>">
+              <input type="text" class="form-control" id="search" placeholder="<?php print t('Search for content, tags, comments or users'); ?>" value="<?php print $search; ?>">
+              <input type="submit" class="btn fa-input" value="&#xf002;">
             </form>
           </div>
         </div>
