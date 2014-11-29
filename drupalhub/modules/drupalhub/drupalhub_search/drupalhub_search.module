@@ -7,20 +7,12 @@
 include_once 'drupalhub_search.features.inc';
 
 /**
- * Implements hook_menu().
+ * Implements hook_ctools_plugin_directory().
  */
-function drupalhub_search_menu() {
-  $items = array();
-
-  $items['search_results/%'] = array(
-    'page callback' => 'drupalhub_search_results',
-    'title callback' => 'drupalhub_search_results_title_callback',
-    'title arguments' => array(1),
-    'access callback' => TRUE,
-    'page arguments' => array(1),
-  );
-
-  return $items;
+function drupalhub_search_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
 }
 
 /**
@@ -155,6 +147,10 @@ function drupalhub_search_get_results($index, $value) {
  *  Implements hook_search_api_index_items_alter().
  */
 function drupalhub_search_search_api_index_items_alter(array &$items, SearchApiIndex $index) {
+  if ($index->getEntityType() != 'node') {
+    return;
+  }
+
   foreach ($items as $delta => $item) {
     $wrapper = entity_metadata_wrapper('node', $item);
 

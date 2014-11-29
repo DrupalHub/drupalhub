@@ -50,6 +50,9 @@ projects[entity_view_count][download][branch] = 7.x-1.x
 projects[entity_view_count][subdir] = "contrib"
 projects[entity_view_count][type] = "module"
 
+projects[facetapi][subdir] = "contrib"
+projects[facetapi][version] = 1.5
+
 projects[features][subdir] = "contrib"
 projects[features][version] = 2.2
 
