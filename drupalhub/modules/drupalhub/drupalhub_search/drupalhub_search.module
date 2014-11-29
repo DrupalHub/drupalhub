@@ -47,22 +47,33 @@ function drupalhub_search_results_title_callback($value) {
  */
 function drupalhub_search_results($value) {
   $indexes = array(
-    'node',
-    'taxonomy_term',
-    'user',
-    'comment',
+    'node' => t('Content'),
+    'taxonomy_term' => t('Tags'),
+    'user' => t('Users'),
+    'comment' => t('Comments'),
   );
 
-  $results = array();
+  $search_results = array();
 
-  foreach ($indexes as $index) {
-    $results += drupalhub_search_get_results($index, $value);
+  foreach ($indexes as $index => $label) {
+
+    if (empty($results[$label])) {
+      $search_results[$label] = array();
+    }
+
+    $search_results[$label] += drupalhub_search_get_results($index, $value);
   }
 
   $content = '';
+  foreach ($search_results as $index => $results) {
+    if (!$results) {
+      continue;
+    }
 
-  foreach ($results as $result) {
-    $content .= theme('drupalhub_search_box', $result);
+    $content .= "<h2>" . $index . "</h2>";
+    foreach ($results as $result) {
+      $content .= theme('drupalhub_search_box', $result);
+    }
   }
 
   return $content;
@@ -137,4 +148,21 @@ function drupalhub_search_get_results($index, $value) {
   }
 
   return $results;
+}
+
+/**
+ *  Implements hook_search_api_index_items_alter().
+ */
+function drupalhub_search_search_api_index_items_alter(array &$items, SearchApiIndex $index) {
+  foreach ($items as $delta => $item) {
+    $wrapper = entity_metadata_wrapper('node', $item);
+
+    if ($wrapper->getBundle() != 'youtube') {
+      continue;
+    }
+
+    if (!$wrapper->field_show_in_videos->value()) {
+      unset($items[$delta]);
+    }
+  }
 }
