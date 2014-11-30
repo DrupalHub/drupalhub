@@ -37,35 +37,12 @@ function drupalhub_search_results_title_callback($value) {
 /**
  * Page callback. Return the search results.
  */
-function drupalhub_search_results($value) {
-  $indexes = array(
-    'node' => t('Content'),
-    'taxonomy_term' => t('Tags'),
-    'user' => t('Users'),
-    'comment' => t('Comments'),
-  );
-
-  $search_results = array();
-
-  foreach ($indexes as $index => $label) {
-
-    if (empty($results[$label])) {
-      $search_results[$label] = array();
-    }
-
-    $search_results[$label] += drupalhub_search_get_results($index, $value);
-  }
+function drupalhub_search_results($index, $value) {
+  $results = drupalhub_search_get_results($index, $value);
 
   $content = '';
-  foreach ($search_results as $index => $results) {
-    if (!$results) {
-      continue;
-    }
-
-    $content .= "<h2>" . $index . "</h2>";
-    foreach ($results as $result) {
-      $content .= theme('drupalhub_search_box', $result);
-    }
+  foreach ($results as $result) {
+    $content .= theme('drupalhub_search_box', $result);
   }
 
   if (!$content) {

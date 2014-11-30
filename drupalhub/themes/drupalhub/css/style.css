@@ -1335,3 +1335,9 @@ body.front #AddQuestion .modal-dialog {
     .page-documentation-add .second .pane-wikipedia-terms ul li,
     .node-type-wiki .second .pane-wikipedia-terms ul li {
       list-style-type: none; }
+
+.page-search-results .first .nav-tabs {
+  margin-bottom: 15px; }
+.page-search-results .second ul {
+  list-style-type: none;
+  padding-left: 0px; }

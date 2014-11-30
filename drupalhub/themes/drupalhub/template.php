@@ -85,8 +85,8 @@ function drupalhub_preprocess_page(&$variables) {
 
   $menu = menu_get_item();
   $variables['search'] = '';
-  if ($menu['path'] == 'search_results/%') {
-    $variables['search'] = $menu['original_map'][1];
+  if ($menu['path'] == 'search_results/%/%') {
+    $variables['search'] = $menu['original_map'][2];
   }
 }
 

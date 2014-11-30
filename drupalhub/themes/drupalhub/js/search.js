@@ -10,7 +10,7 @@
           return;
         }
 
-        window.location = Drupal.settings.hub.basePath + "/search_results/" + value;
+        window.location = Drupal.settings.hub.basePath + "/search_results/node/" + value;
       });
     }
   };

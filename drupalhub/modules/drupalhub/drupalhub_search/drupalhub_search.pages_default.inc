@@ -15,10 +15,18 @@ function drupalhub_search_default_page_manager_pages() {
   $page->task = 'page';
   $page->admin_title = 'Search results';
   $page->admin_description = '';
-  $page->path = 'search_results/%input';
+  $page->path = 'search_results/%type/%input';
   $page->access = array();
   $page->menu = array();
   $page->arguments = array(
+    'type' => array(
+      'id' => 2,
+      'identifier' => 'String 2',
+      'name' => 'string',
+      'settings' => array(
+        'use_tail' => 0,
+      ),
+    ),
     'input' => array(
       'id' => 1,
       'identifier' => 'String',
@@ -78,11 +86,14 @@ function drupalhub_search_default_page_manager_pages() {
       'cancel' => 'Cancel',
       'override_title' => 0,
       'override_title_text' => '',
-      'form_build_id' => 'form-aB9f60ZCh51Uqcc41pxnGjREP3KDCvyN4wVU7Xom2GY',
+      'form_build_id' => 'form-w_EAu6ydV2LP5lfjdjgyukMR7CfDggwYe8a0EPEVz4s',
       'form_token' => 'Dn3YBda5KUm8A-wAcSkFzKNfjTXDPsNGnnZ82UAkzcA',
       'form_id' => 'drupalhub_search_search_results_content_type_edit_form',
       'op' => 'Finish',
-      'context' => 'argument_string_1',
+      'context' => array(
+        0 => 'argument_string_2',
+        1 => 'argument_string_1',
+      ),
     );
     $pane->cache = array();
     $pane->style = array(
@@ -227,6 +238,28 @@ function drupalhub_search_default_page_manager_pages() {
     $pane->uuid = 'df5537a4-310d-4b1a-b358-527f90805c2f';
     $display->content['new-df5537a4-310d-4b1a-b358-527f90805c2f'] = $pane;
     $display->panels['second'][5] = 'new-df5537a4-310d-4b1a-b358-527f90805c2f';
+    $pane = new stdClass();
+    $pane->pid = 'new-349c58f4-09ef-4481-8408-3b8a164451bb';
+    $pane->panel = 'second';
+    $pane->type = 'block';
+    $pane->subtype = 'facetapi-Wh3KK6vGQs5BMyZaggYn7uCgtbyNgv6o';
+    $pane->shown = TRUE;
+    $pane->access = array();
+    $pane->configuration = array(
+      'override_title' => 0,
+      'override_title_text' => '',
+    );
+    $pane->cache = array();
+    $pane->style = array(
+      'settings' => NULL,
+    );
+    $pane->css = array();
+    $pane->extras = array();
+    $pane->position = 6;
+    $pane->locks = array();
+    $pane->uuid = '349c58f4-09ef-4481-8408-3b8a164451bb';
+    $display->content['new-349c58f4-09ef-4481-8408-3b8a164451bb'] = $pane;
+    $display->panels['second'][6] = 'new-349c58f4-09ef-4481-8408-3b8a164451bb';
   $display->hide_title = PANELS_TITLE_FIXED;
   $display->title_pane = 'new-e35c3fb9-6222-4a8f-bf36-f848382d9e58';
   $handler->conf['display'] = $display;
