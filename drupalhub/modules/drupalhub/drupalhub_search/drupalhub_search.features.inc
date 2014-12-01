@@ -109,6 +109,7 @@ function drupalhub_search_default_search_api_index() {
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "body:value" : { "type" : "text" },
+        "created" : { "type" : "date" },
         "field_show_in_videos" : { "type" : "boolean" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },

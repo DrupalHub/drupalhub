@@ -24,6 +24,12 @@ function drupalhub_search_search_results_content_type_render($subtype, $conf, $a
 
   $items = array();
 
+  $breadcrumbs = drupal_get_breadcrumb();
+  $breadcrumbs[] = t('Search');
+  $breadcrumbs[] = $indexes[$type->data];
+  $breadcrumbs[] = $string->data;
+  drupal_set_breadcrumb($breadcrumbs);
+
   foreach ($indexes as $index => $label) {
     $link = l($label, 'search_results/' . $index . '/' . $string->data, array('attributes' => array('role' => 'tab')));
 
