@@ -82,6 +82,12 @@ function drupalhub_preprocess_page(&$variables) {
 
   drupal_add_js(libraries_get_path('typeahead') . '/typeahead.bundle.js');
   drupal_add_js(drupal_get_path('theme', 'drupalhub') . '/js/search.js');
+
+  $menu = menu_get_item();
+  $variables['search'] = '';
+  if ($menu['path'] == 'search_results/%/%') {
+    $variables['search'] = $menu['original_map'][2];
+  }
 }
 
 /**

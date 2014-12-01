@@ -18,7 +18,7 @@ projects[ckeditor][subdir] = "contrib"
 projects[ckeditor][version] = 1.15
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][patch][] = "https://www.drupal.org/files/issues/ctools-combined_patch_from_n2195211-15_and_n2195471-29--n2195471-47.patch"
+;projects[ctools][patch][] = "https://www.drupal.org/files/issues/ctools-combined_patch_from_n2195211-15_and_n2195471-29--n2195471-47.patch"
 
 projects[date][subdir] = "contrib"
 projects[date][version] = 2.8
@@ -49,6 +49,9 @@ projects[entity_view_count][download][url] = "https://github.com/DrupalHub/entit
 projects[entity_view_count][download][branch] = 7.x-1.x
 projects[entity_view_count][subdir] = "contrib"
 projects[entity_view_count][type] = "module"
+
+projects[facetapi][subdir] = "contrib"
+projects[facetapi][version] = 1.5
 
 projects[features][subdir] = "contrib"
 projects[features][version] = 2.2

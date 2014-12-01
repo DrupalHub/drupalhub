@@ -24,20 +24,16 @@
   background: #e6e6e6; }
 
 .search {
-  padding-top: 10px; }
-  .search pre {
-    width: 100%; }
-  .search .twitter-typeahead {
-    width: 97%; }
-  .search .tt-dropdown-menu {
-    width: 102%; }
-  .search input.typeahead.tt-query {
-    width: 300px !important; }
-  .search ul {
-    padding: 5px 0px 0px; }
-    .search ul li {
-      display: inline;
-      list-style-type: none; }
+  padding-top: 10px;
+  position: relative; }
+  .search .fa-input {
+    font-family: FontAwesome, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: transparent;
+    padding: 0px;
+    position: absolute;
+    top: 15px;
+    right: 10px;
+    font-size: 15px; }
 
 .social {
   float: initial;
@@ -1339,3 +1335,9 @@ body.front #AddQuestion .modal-dialog {
     .page-documentation-add .second .pane-wikipedia-terms ul li,
     .node-type-wiki .second .pane-wikipedia-terms ul li {
       list-style-type: none; }
+
+.page-search-results .first .nav-tabs {
+  margin-bottom: 15px; }
+.page-search-results .second ul {
+  list-style-type: none;
+  padding-left: 0px; }

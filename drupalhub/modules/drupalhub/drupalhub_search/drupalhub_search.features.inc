@@ -5,6 +5,18 @@
  */
 
 /**
+ * Implements hook_ctools_plugin_api().
+ */
+function drupalhub_search_ctools_plugin_api($module = NULL, $api = NULL) {
+  if ($module == "facetapi" && $api == "facetapi_defaults") {
+    return array("version" => "1");
+  }
+  if ($module == "page_manager" && $api == "pages_default") {
+    return array("version" => "1");
+  }
+}
+
+/**
  * Implements hook_default_search_api_index().
  */
 function drupalhub_search_default_search_api_index() {
@@ -19,7 +31,9 @@ function drupalhub_search_default_search_api_index() {
       "index_directly" : 1,
       "cron_limit" : "50",
       "fields" : {
+        "author" : { "type" : "integer", "entity_type" : "user" },
         "comment_body:value" : { "type" : "text" },
+        "node" : { "type" : "integer", "entity_type" : "node" },
         "search_api_language" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
@@ -95,12 +109,14 @@ function drupalhub_search_default_search_api_index() {
       "fields" : {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "body:value" : { "type" : "text" },
+        "created" : { "type" : "date" },
         "field_show_in_videos" : { "type" : "boolean" },
         "field_tags" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "search_api_language" : { "type" : "string" },
         "status" : { "type" : "boolean" },
-        "title" : { "type" : "text" }
+        "title" : { "type" : "text" },
+        "type" : { "type" : "string" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {
@@ -185,7 +201,8 @@ function drupalhub_search_default_search_api_index() {
       "cron_limit" : "50",
       "fields" : {
         "name" : { "type" : "text" },
-        "search_api_language" : { "type" : "string" }
+        "search_api_language" : { "type" : "string" },
+        "vocabulary" : { "type" : "integer", "entity_type" : "taxonomy_vocabulary" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {

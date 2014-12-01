@@ -7,20 +7,12 @@
 include_once 'drupalhub_search.features.inc';
 
 /**
- * Implements hook_menu().
+ * Implements hook_ctools_plugin_directory().
  */
-function drupalhub_search_menu() {
-  $items = array();
-
-  $items['search_results/%'] = array(
-    'page callback' => 'drupalhub_search_results',
-    'title callback' => 'drupalhub_search_results_title_callback',
-    'title arguments' => array(1),
-    'access callback' => TRUE,
-    'page arguments' => array(1),
-  );
-
-  return $items;
+function drupalhub_search_ctools_plugin_directory($module, $plugin) {
+  if ($module == 'ctools' && !empty($plugin)) {
+    return "plugins/$plugin";
+  }
 }
 
 /**
@@ -45,24 +37,16 @@ function drupalhub_search_results_title_callback($value) {
 /**
  * Page callback. Return the search results.
  */
-function drupalhub_search_results($value) {
-  $indexes = array(
-    'node',
-    'taxonomy_term',
-    'user',
-    'comment',
-  );
-
-  $results = array();
-
-  foreach ($indexes as $index) {
-    $results += drupalhub_search_get_results($index, $value);
-  }
+function drupalhub_search_results($index, $value) {
+  $results = drupalhub_search_get_results($index, $value);
 
   $content = '';
-
   foreach ($results as $result) {
     $content .= theme('drupalhub_search_box', $result);
+  }
+
+  if (!$content) {
+    return t("There are no search results for <b>@q</b>. Try other keywords.", array('@q' => $value));
   }
 
   return $content;
@@ -84,12 +68,6 @@ function drupalhub_search_get_results($index, $value) {
 
   foreach ($search->getFields() as $field) {
     $search->OrCondition($field, $value);
-  }
-
-  // Display only videos from the video page. keep this until the group section
-  // will complete.
-  if ($search->getEntityType() == 'node') {
-//    $search->condition('field_show_in_videos', TRUE);
   }
 
   $entities = $search->execute();
@@ -117,6 +95,9 @@ function drupalhub_search_get_results($index, $value) {
         'path' => _drupalhub_users_user_uri($wrapper->value()),
       ));
     }
+    else if ($search->getEntityType() == 'taxonomy_term') {
+      $image = $wrapper->vocabulary->label();
+    }
     else {
       $image = '';
 
@@ -137,4 +118,25 @@ function drupalhub_search_get_results($index, $value) {
   }
 
   return $results;
+}
+
+/**
+ *  Implements hook_search_api_index_items_alter().
+ */
+function drupalhub_search_search_api_index_items_alter(array &$items, SearchApiIndex $index) {
+  if ($index->getEntityType() != 'node') {
+    return;
+  }
+
+  foreach ($items as $delta => $item) {
+    $wrapper = entity_metadata_wrapper('node', $item);
+
+    if ($wrapper->getBundle() != 'youtube') {
+      continue;
+    }
+
+    if (!$wrapper->field_show_in_videos->value()) {
+      unset($items[$delta]);
+    }
+  }
 }
