@@ -140,7 +140,7 @@
             <nav role="navigation" class="first">
               <?php print $links; ?>
             </nav>
-            <nav role="navigation">
+            <nav role="navigation" class="social">
               <?php print $social; ?>
             </nav>
             <nav role="navigation" class="last">

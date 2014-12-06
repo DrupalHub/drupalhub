@@ -12,6 +12,10 @@ function drupalhub_questions_new_question_content_type_render($subtype, $conf, $
   $block = new stdClass();
   $block->title = '';
 
+  if (!node_access('create', 'question')) {
+    return;
+  }
+
   $question_link_small = l('', 'node/add/question');
 
   $block->content = "";

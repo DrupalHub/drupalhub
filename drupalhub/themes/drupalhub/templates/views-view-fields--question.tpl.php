@@ -33,10 +33,10 @@
 
 <div class="row question-wrapper clearfix">
   <div class="col-md-12 top-wrapper clearfix">
-    <div class="col-md-1 icons"><span><?php print $fields['field_count']->content; ?></span><i class="fa fa-eye"></i></div>
-    <div class="col-md-1 icons"><span><?php print $fields['comment_count']->content; ?></span><i class="fa fa-comment-o"></i></div>
-    <div class="col-md-1 icons"><span><?php print $vote; ?></span><i class="fa fa-thumbs-o-up"></i></div>
-    <div class="col-md-9"><?php print $fields['title']->content; ?><?php print $fields['body']->content; ?></div>
+    <div class="col-md-1 col-xs-3 icons"><span><?php print $fields['field_count']->content; ?></span><i class="fa fa-eye"></i></div>
+    <div class="col-md-1 col-xs-3 icons"><span><?php print $fields['comment_count']->content; ?></span><i class="fa fa-comment-o"></i></div>
+    <div class="col-md-1 col-xs-3 icons"><span><?php print $vote; ?></span><i class="fa fa-thumbs-o-up"></i></div>
+    <div class="col-md-9 col-xs-12"><?php print $fields['title']->content; ?><?php print $fields['body']->content; ?></div>
   </div>
   <div class="col-md-12 bottom-wrapper clearfix">
     <div class="col-md-10">

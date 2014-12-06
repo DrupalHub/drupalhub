@@ -109,17 +109,17 @@
       #navbar .container .inner-links li a {
         margin: 0; }
     #navbar .container .navbar-collapse.in {
-      overflow-y: none; }
+      overflow-y: initial; }
     #navbar .container a {
       color: white; }
     #navbar .container .navbar-brand {
-      padding: 40px 35px; }
+      padding: 40px 15px; }
 
 .not-logged-in nav {
   padding-top: 40px;
   float: right;
   /* LTR */ }
-  .not-logged-in nav a {
+  .not-logged-in nav .login {
     -webkit-border-radius: 5px 5px;
     -moz-border-radius: 1;
     -khtml-border-radius: 1;
@@ -278,6 +278,15 @@ span.twitter-typeahead .input-group.input-group-sm .tt-dropdown-menu {
     border-radius: 0px 0px 10px 10px;
     display: none; }
 
+@media (max-width: 320px) {
+  nav.social {
+    width: 105%; }
+    nav.social:after {
+      content: ".";
+      display: block;
+      height: 0;
+      clear: both;
+      visibility: hidden; } }
 body.front .view-gallery {
   background: #e6e6e6;
   margin-bottom: 50px;
@@ -615,7 +624,8 @@ body.front #AddQuestion .modal-dialog {
     .page-user.not-logged-in .login-form-wrapper .social-login-buttons .buttons #edit-submit {
       background-color: #4aa5d2;
       border-color: #2979a1;
-      color: white; }
+      color: white;
+      background-image: none; }
 .page-user.not-logged-in .footer.container {
   border-top: none; }
 
@@ -732,7 +742,7 @@ body.front #AddQuestion .modal-dialog {
 
 .page-user .sticky-container {
   position: fixed;
-  top: 20px;
+  top: 0px;
   left: 0px;
   background: #fafafa;
   z-index: 100;
@@ -786,8 +796,14 @@ body.front #AddQuestion .modal-dialog {
   border: solid 1px; }
 .page-user .second-bottom {
   padding-left: 50px; }
+  @media (max-width: 768px) {
+    .page-user .second-bottom {
+      padding-left: 0px; } }
   .page-user .second-bottom .view-id-activity_stram {
     border-left: solid 1px #000000; }
+    @media (max-width: 768px) {
+      .page-user .second-bottom .view-id-activity_stram {
+        border: none; } }
     .page-user .second-bottom .view-id-activity_stram .activity-stream-instance {
       position: relative;
       margin-left: 45px;
@@ -799,6 +815,9 @@ body.front #AddQuestion .modal-dialog {
         height: 0;
         clear: both;
         visibility: hidden; }
+      @media (max-width: 768px) {
+        .page-user .second-bottom .view-id-activity_stram .activity-stream-instance {
+          margin-left: 0px; } }
       .page-user .second-bottom .view-id-activity_stram .activity-stream-instance .icons {
         box-shadow: 0 0 0 4px #ffffff;
         position: absolute;

@@ -213,7 +213,7 @@ function drupalhub_core_views_api() {
 /**
  * Implements hook_form_alter().
  *
- * Handle the comments form for nodes by removing elements.
+ * Handle the comment/node form for nodes by removing elements.
  */
 function drupalhub_core_form_alter(&$form, $form_state, $form_id) {
   $forms = array(
@@ -222,6 +222,7 @@ function drupalhub_core_form_alter(&$form, $form_state, $form_id) {
     'comment_node_blog_form',
     'comment_node_youtube_form',
     'comment_node_wiki_form',
+    'question_node_form',
   );
 
   if (!in_array($form_id, $forms)) {
@@ -240,6 +241,8 @@ function drupalhub_core_comments_form($form, $form_state) {
   hide($form['author']);
   hide($form['subject']);
   $form['comment_body'][LANGUAGE_NONE][0]['format']['#attributes']['class'][] = 'hidden';
+  // Removing format for questions form.
+  $form['body'][LANGUAGE_NONE][0]['format']['#attributes']['class'][] = 'hidden';
   return $form;
 }
 

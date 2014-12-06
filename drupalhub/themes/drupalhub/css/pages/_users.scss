@@ -2,7 +2,7 @@
 
   .sticky-container {
     position: fixed;
-    top: 20px;
+    top: 0px;
     left: 0px;
     background: #fafafa;
     z-index: 100;
@@ -89,8 +89,16 @@
   .second-bottom {
     padding-left: 50px;
 
+    @media (max-width: 768px) {
+      padding-left: 0px;
+    }
+
     .view-id-activity_stram {
       border-left: solid 1px #000000;
+
+      @media (max-width: 768px) {
+        border: none;
+      }
 
       .activity-stream-instance {
         position: relative;
@@ -98,6 +106,10 @@
         margin-right: auto;
         margin-bottom: 40px;
         @include clearfix;
+
+        @media (max-width: 768px) {
+          margin-left: 0px;
+        }
 
         .icons {
           box-shadow: 0 0 0 4px #ffffff;
@@ -173,7 +185,6 @@
             display: none !important;
           }
         }
-
 
         &.new_user {
 
