@@ -8,12 +8,24 @@
 .form-item.search input {
   text-align: right; }
 
+.search .fa-input {
+  left: 10px;
+  right: auto; }
+
+.top-navbar .inner-links {
+  text-align: right; }
+
 body.front .view-main-page-questions .views-row .image,
 body.front .view-id-top_users .views-row .views-field-user-picture,
 .node-type-question .panel-col-top .pane-user-picture,
 .page-documentation-add .first .pane-user-picture, .node-type-wiki .first .pane-user-picture {
   float: right;
   padding-left: 20px; }
+
+body.front .pane-new-question .link-new-question a {
+  padding: 10px 5px 10px 10px; }
+  body.front .pane-new-question .link-new-question a:before {
+    padding: 3px 3px 3px 5px; }
 
 .pane-new-question .pane-title,
 .pane-popular-tags .pane-title {

@@ -67,7 +67,8 @@
 
 .inner-links {
   padding-top: 15px;
-  padding-left: 0; }
+  padding-left: 0;
+  text-align: left; }
   .inner-links li {
     display: inline;
     list-style: none;
@@ -114,10 +115,14 @@
       color: white; }
     #navbar .container .navbar-brand {
       padding: 40px 15px; }
+  #navbar .navbar-toggle {
+    margin-top: 30px; }
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background: white; }
 
 .not-logged-in nav {
-  padding-top: 40px;
-  float: right;
+  float: left;
   /* LTR */ }
   .not-logged-in nav .login {
     -webkit-border-radius: 5px 5px;

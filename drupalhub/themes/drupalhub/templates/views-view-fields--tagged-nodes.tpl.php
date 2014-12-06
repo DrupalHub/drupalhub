@@ -10,6 +10,8 @@
 
   // Clean the link from span se we could if there any text.
   $edit = strip_tags($fields['edit_node']->content, 'span');
+  $delete = strip_tags($fields['delete_node']->content, 'span');
+
 ?>
 <?php if ($fields['type']->raw == 'blog'): ?>
 <div class="row blogs-wrapper clearfix">
@@ -52,7 +54,7 @@
       <?php if(!empty($edit)): ?>
         <i class="fa fa-pencil"></i><?php print $fields['edit_node']->content; ?>
       <?php endif; ?>
-      <?php if(!empty($fields['delete_node'])): ?>
+      <?php if(!empty($delete)): ?>
         <i class="fa fa-trash-o"></i> <?php print $fields['delete_node']->content; ?>
       <?php endif; ?>
     </div>

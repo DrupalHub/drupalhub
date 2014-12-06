@@ -102,6 +102,7 @@
 .inner-links {
   padding-top: 15px;
   padding-left: 0;
+  text-align: left;
 
   li {
     display: inline;
@@ -183,13 +184,20 @@
       padding: 40px 15px;
     }
   }
+
+  .navbar-toggle {
+    margin-top: 30px;
+  }
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background: white;
 }
 
 .not-logged-in {
 
   nav {
-    padding-top: 40px;
-    float: right; /* LTR */
+    float: left; /* LTR */
 
     .login {
       @include orange-button(0);
