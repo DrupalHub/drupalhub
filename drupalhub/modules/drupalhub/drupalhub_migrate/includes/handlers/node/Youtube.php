@@ -20,17 +20,5 @@ class Youtube extends DrupalHubMigrate {
     $this->addFieldMapping('title', 'title');
     $this->addFieldMapping('field_address', 'youtube');
     $this->addFieldMapping('field_show_in_videos', 'field_show_in_videos');
-    $this->addFieldMapping(OG_AUDIENCE_FIELD, OG_AUDIENCE_FIELD)
-      ->sourceMigration('Group');
-  }
-
-  /**
-   * Set the group admin as the publisher of the youtube.
-   */
-  public function prepare($entity, $row) {
-    $wrapper = entity_metadata_wrapper('node', $entity);
-    if ($wrapper->{OG_AUDIENCE_FIELD}->get(0)->value()) {
-      $wrapper->author->set($wrapper->{OG_AUDIENCE_FIELD}->get(0)->getIdentifier());
-    }
   }
 }

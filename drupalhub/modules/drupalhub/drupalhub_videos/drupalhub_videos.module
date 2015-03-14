@@ -7,36 +7,6 @@
 include_once 'drupalhub_videos.features.inc';
 
 /**
- * Implements hook_ctools_plugin_directory().
- */
-function drupalhub_videos_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'ctools') {
-    return "plugins/$plugin";
-  }
-  if ($module == 'restful') {
-    return "plugins/$plugin";
-  }
-  if ($module == 'entity_validator') {
-    return 'plugins/' . $plugin;
-  }
-}
-
-/**
- * Implements hook_views_data().
- */
-function drupalhub_videos_views_data() {
-  $data['node']['youtube_data'] = array(
-    'title' => t('Youtube metadata'),
-    'help' => t('Provide information from the JSON output for a youtube video.'),
-    'field' => array(
-      'handler' => 'drupalhub_videos_youtube_metadata',
-    ),
-  );
-
-  return $data;
-}
-
-/**
  * Get metadata for a youtube video by a given ID.
  *
  * @param $id
@@ -66,9 +36,6 @@ function drupalhub_videos_get_metadata($id) {
   return $request['data'];
 }
 
-/**
- * Implements hook_permission().
- */
 /**
  *  Implements hook_permission().
  */

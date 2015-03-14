@@ -7,47 +7,6 @@
 include_once 'drupalhub_users.features.inc';
 
 /**
- * Implement hook_theme().
- */
-function drupalhub_users_theme() {
-  return array(
-    'drupalhub_users_login_form' => array(
-      'render element' => 'form',
-      'template' => 'login-form',
-      'path' => drupal_get_path('module', 'drupalhub_users') . '/templates',
-    ),
-    'drupalhub_users_about_form' => array(
-      'template' => 'about-modal',
-      'path' => drupal_get_path('module', 'drupalhub_users') . '/templates',
-    ),
-  );
-}
-
-/**
- * Implements hook_form_FORM_ID_alter().
- */
-function drupalhub_users_form_user_login_alter(&$form, $form_state) {
-  $form['#theme'] = 'drupalhub_users_login_form';
-  $form['name']['#title'] = '';
-  $form['pass']['#title'] = '';
-
-  $form['name']['#show-required'] = FALSE;
-  $form['pass']['#show-required'] = FALSE;
-}
-
-/**
- * Implements hook_ctools_plugins_directory().
- */
-function drupalhub_users_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'ctools' && !empty($plugin)) {
-    return "plugins/$plugin";
-  }
-  if ($module == 'restful') {
-    return "plugins/$plugin";
-  }
-}
-
-/**
  * Implements hook_account_created().
  */
 function drupalhub_users_user_insert(&$edit, $account, $category) {
@@ -149,20 +108,4 @@ function drupalhub_users_user_picture($user, $style_name) {
  */
 function _drupalhub_users_user_uri($user) {
   return $user->picture ? $user->picture->uri : file_load(variable_get('default_user_picture_fid'))->uri;
-}
-
-/**
- * Implementing hook_preprocess_drupalhub_user().
- */
-function drupalhub_users_preprocess_drupalhub_user(&$variables) {
-  $menu = menu_get_item();
-
-  if (path_is_admin($menu['path'])) {
-    return;
-  }
-
-  drupal_add_js(drupal_get_path('module', 'drupalhub_users') . '/js/user.js');
-  $user = reset($variables['display']->context)->data;
-  $variables['image'] = drupalhub_users_user_picture($user, 'thumbnail_retina');
-  $variables['name'] = $user->name;
 }
