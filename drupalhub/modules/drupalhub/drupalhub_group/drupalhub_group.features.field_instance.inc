@@ -180,43 +180,6 @@ function drupalhub_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-drupalhub_group-field_group_score'
-  $field_instances['node-drupalhub_group-field_group_score'] = array(
-    'bundle' => 'drupalhub_group',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'vud',
-        'settings' => array(),
-        'type' => 'vud',
-        'weight' => 3,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_group_score',
-    'label' => 'Group score',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'vud',
-      'settings' => array(),
-      'type' => 'upanddown',
-      'weight' => 2,
-    ),
-  );
-
   // Exported field_instance: 'node-drupalhub_group-group_group'
   $field_instances['node-drupalhub_group-group_group'] = array(
     'bundle' => 'drupalhub_group',
@@ -546,43 +509,6 @@ function drupalhub_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-news-field_news_rating'
-  $field_instances['node-news-field_news_rating'] = array(
-    'bundle' => 'news',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'vud',
-        'settings' => array(),
-        'type' => 'vud',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_news_rating',
-    'label' => 'News rating',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'vud',
-      'settings' => array(),
-      'type' => 'upanddown',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-news-og_group_ref'
   $field_instances['node-news-og_group_ref'] = array(
     'bundle' => 'news',
@@ -905,44 +831,6 @@ function drupalhub_group_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-project-field_project_rating'
-  $field_instances['node-project-field_project_rating'] = array(
-    'bundle' => 'project',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => 'Up only.',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'vud',
-        'settings' => array(),
-        'type' => 'vud',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 3,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_project_rating',
-    'label' => 'Project rating',
-    'required' => 0,
-    'settings' => array(
-      'appearance' => 'up_only',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'vud',
-      'settings' => array(),
-      'type' => 'thumbs',
-      'weight' => 4,
-    ),
-  );
-
   // Exported field_instance: 'node-project-field_project_videos'
   $field_instances['node-project-field_project_videos'] = array(
     'bundle' => 'project',
@@ -1197,43 +1085,6 @@ function drupalhub_group_field_default_field_instances() {
       'settings' => array(),
       'type' => 'link_field',
       'weight' => 6,
-    ),
-  );
-
-  // Exported field_instance: 'node-recommendation-field_recommendation_rating'
-  $field_instances['node-recommendation-field_recommendation_rating'] = array(
-    'bundle' => 'recommendation',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'vud',
-        'settings' => array(),
-        'type' => 'vud',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_recommendation_rating',
-    'label' => 'Recommendation rating',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'vud',
-      'settings' => array(),
-      'type' => 'upanddown',
-      'weight' => 4,
     ),
   );
 

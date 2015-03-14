@@ -4,19 +4,6 @@ api = 2
 projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = 3.0-rc4
 
-projects[breakpoints][subdir] = "contrib"
-projects[breakpoints][version] = 1.1
-
-projects[calendar][subdir] = "contrib"
-projects[calendar][version] = 3.4
-projects[calendar][patch][] = "https://www.drupal.org/files/issues/calendar-illegal_offset-1471400-78.patch"
-
-projects[colorbox][subdir] = "contrib"
-projects[colorbox][version] = 2.8
-
-projects[ckeditor][subdir] = "contrib"
-projects[ckeditor][version] = 1.15
-
 projects[ctools][subdir] = "contrib"
 ;projects[ctools][patch][] = "https://www.drupal.org/files/issues/ctools-combined_patch_from_n2195211-15_and_n2195471-29--n2195471-47.patch"
 
@@ -62,16 +49,10 @@ projects[fboauth][subdir] = contrib
 projects[flag][subdir] = "contrib"
 projects[flag][version] = 2.2
 
-projects[galleryformatter][subdir] = "contrib"
-projects[galleryformatter][version] = 1.3
-
 projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x
 projects[github_connect][download][revision] = e091c59
 projects[github_connect][subdir] = contrib
-
-projects[imagefield_crop][subdir] = contrib
-projects[imagefield_crop][version] = "1.1"
 
 projects[gravatar][version] = "1.1"
 projects[gravatar][subdir] = contrib
@@ -79,20 +60,11 @@ projects[gravatar][subdir] = contrib
 projects[inline_devel][version] = "2.0"
 projects[inline_devel][subdir] = contrib
 
-projects[insert][version] = "1.3"
-projects[insert][subdir] = contrib
-
-projects[jquery_update][version] = "2.4"
-projects[jquery_update][subdir] = contrib
-
 projects[link][subdir] = "contrib"
 projects[link][version] = 1.2
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
-
-projects[link][subdir] = "contrib"
-projects[link][version] = 1.2
 
 projects[message][version] = "1.9"
 projects[message][subdir] = contrib
@@ -121,26 +93,14 @@ projects[oauth][subdir] = contrib
 projects[og][subdir] = contrib
 projects[og][version] = 2.7
 
-projects[panels][version] = "3.4"
-projects[panels][subdir] = contrib
-
-projects[panels_bootstrap_layouts][version] = "3.0"
-projects[panels_bootstrap_layouts][subdir] = contrib
-
-projects[pathauto][subdir] = "contrib"
-projects[pathauto][version] = 1.2
-
-projects[picture][subdir] = "contrib"
-projects[picture][version] = 1.2
-
-projects[retina_images][subdir] = "contrib"
-projects[retina_images][version] = "1.0-beta4"
-
 projects[restful][subdir] = "contrib"
 projects[restful][download][url] = "git://github.com/Gizra/restful.git"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0
+
+projects[views][subdir] = "contrib"
+projects[views][version] = 3.10
 
 projects[token][subdir] = "contrib"
 projects[token][version] = 1.5
@@ -156,69 +116,3 @@ projects[search_api][subdir] = contrib
 
 projects[search_api_solr][version] = "1.6"
 projects[search_api_solr][subdir] = contrib
-
-projects[votingapi][version] = "2.12"
-projects[votingapi][subdir] = contrib
-
-projects[vote_up_down][download][type] = "git"
-projects[vote_up_down][download][url] = "https://github.com/DrupalHub/voteupdown.git"
-projects[vote_up_down][download][branch] = 7.x-2.x
-projects[vote_up_down][download][tag] = 0.1
-projects[vote_up_down][subdir] = "contrib"
-projects[vote_up_down][type] = "module"
-
-projects[views][subdir] = "contrib"
-projects[views][version] = 3.8
-
-projects[views_bootstrap][subdir] = contrib
-projects[views_bootstrap][version] = "3.1"
-
-projects[views_bulk_operations][subdir] = contrib
-projects[views_bulk_operations][version] = "3.2"
-
-projects[views_infinite_scroll][subdir] = "contrib"
-projects[views_infinite_scroll][version] = 1.1
-
-projects[wysiwyg][subdir] = "contrib"
-projects[wysiwyg][version] = "2.2"
-; Fix for CKEditor 4 so it can be detected.
-; @see https://drupal.org/node/1853550
-projects[wysiwyg][patch][] = "https://drupal.org/files/wysiwyg-ckeditor4-1853550-4.patch"
-
-; Themes
-projects[bootstrap] = bootstrap
-projects[bootstrap][version] = 3.0
-projects[bootstrap][type] = "theme"
-
-; Libraries
-libraries[jquery_caret_position][download][type] = "git"
-libraries[jquery_caret_position][type] = "libraries"
-libraries[jquery_caret_position][download][url] = "https://github.com/wolasss/jquery-caret-position-getter.git"
-
-libraries[font_awesome][download][type] = "file"
-libraries[font_awesome][type] = "libraries"
-libraries[font_awesome][download][url] = "http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.2.0.zip"
-
-libraries[colorbox][type] = "libraries"
-libraries[colorbox][download][type] = "file"
-libraries[colorbox][download][url] = "https://github.com/jackmoore/colorbox/archive/1.x.zip"
-
-libraries[ckeditor][type] = "libraries"
-libraries[ckeditor][download][type] = "get"
-libraries[ckeditor][download][url] = "http://download.cksource.com/CKEditor/CKEditor/CKEditor%204.4.1/ckeditor_4.4.1_standard.zip"
-
-libraries[autopager][type] = "libraries"
-libraries[autopager][download][type] = "file"
-libraries[autopager][download][url] = "https://github.com/sagotsky/jquery-autopager/archive/v1.2.zip"
-
-libraries[datepicker][type] = "libraries"
-libraries[datepicker][download][type] = "git"
-libraries[datepicker][download][url] = "https://github.com/Eonasdan/bootstrap-datetimepicker.git"
-
-libraries[typeahead][type] = "libraries"
-libraries[typeahead][download][type] = "file"
-libraries[typeahead][download][url] = "http://twitter.github.com/typeahead.js/releases/latest/typeahead.js.zip"
-
-libraries[dialog][type] = "libraries"
-libraries[dialog][download][type] = "file"
-libraries[dialog][download][url] = "https://github.com/nakupanda/bootstrap3-dialog/archive/v1.33.5.zip"

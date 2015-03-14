@@ -4,6 +4,7 @@ core = 7.x
 package = DrupalHub
 
 dependencies[] = migrate_ui
+dependencies[] = drupalhub
 
 files[] = includes/drupalhub_migrate.migrate.entity.inc
 

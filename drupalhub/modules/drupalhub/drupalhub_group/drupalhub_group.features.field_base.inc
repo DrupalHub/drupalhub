@@ -70,33 +70,6 @@ function drupalhub_group_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_group_score'
-  $field_bases['field_group_score'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_group_score',
-    'foreign keys' => array(
-      'votingapi_vote' => array(
-        'columns' => array(
-          'voteid' => 'voteid',
-        ),
-        'table' => 'votingapi_vote',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'voteid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'vud',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'vud',
-  );
-
   // Exported field_base: 'field_news_image'
   $field_bases['field_news_image'] = array(
     'active' => 1,
@@ -125,33 +98,6 @@ function drupalhub_group_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'image',
-  );
-
-  // Exported field_base: 'field_news_rating'
-  $field_bases['field_news_rating'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_news_rating',
-    'foreign keys' => array(
-      'votingapi_vote' => array(
-        'columns' => array(
-          'voteid' => 'voteid',
-        ),
-        'table' => 'votingapi_vote',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'voteid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'vud',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'vud',
   );
 
   // Exported field_base: 'field_project_banner_cropimage'
@@ -271,33 +217,6 @@ function drupalhub_group_field_default_field_bases() {
     'type' => 'link_field',
   );
 
-  // Exported field_base: 'field_project_rating'
-  $field_bases['field_project_rating'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_project_rating',
-    'foreign keys' => array(
-      'votingapi_vote' => array(
-        'columns' => array(
-          'voteid' => 'voteid',
-        ),
-        'table' => 'votingapi_vote',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'voteid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'vud',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'vud',
-  );
-
   // Exported field_base: 'field_project_videos'
   $field_bases['field_project_videos'] = array(
     'active' => 1,
@@ -372,33 +291,6 @@ function drupalhub_group_field_default_field_bases() {
     ),
     'translatable' => 0,
     'type' => 'link_field',
-  );
-
-  // Exported field_base: 'field_recommendation_rating'
-  $field_bases['field_recommendation_rating'] = array(
-    'active' => 1,
-    'cardinality' => -1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_recommendation_rating',
-    'foreign keys' => array(
-      'votingapi_vote' => array(
-        'columns' => array(
-          'voteid' => 'voteid',
-        ),
-        'table' => 'votingapi_vote',
-      ),
-    ),
-    'indexes' => array(
-      'format' => array(
-        0 => 'voteid',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'vud',
-    'settings' => array(),
-    'translatable' => 0,
-    'type' => 'vud',
   );
 
   // Exported field_base: 'field_recommendation_video'

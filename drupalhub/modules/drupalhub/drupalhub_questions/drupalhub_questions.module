@@ -18,15 +18,6 @@ function drupalhub_questions_ctools_plugin_directory($module, $plugin) {
   }
 }
 
-function drupalhub_questions_field_formatter_info() {
-  return array(
-    'drupalhub_questions' => array( //Machine name of the formatter
-      'label' => t('DrupalHub questions'),
-      'field types' => array('vud'), //This will only be available to text fields
-    ),
-  );
-}
-
 /**
  * Implements hook_field_formatter_view().
  */

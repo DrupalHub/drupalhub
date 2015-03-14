@@ -30,68 +30,6 @@ function drupalhub_core_menu() {
 }
 
 /**
- * Implements hook_init().
- */
-function drupalhub_core_init() {
-  global $base_url;
-  drupal_add_css(libraries_get_path('font_awesome') . '/css/font-awesome.min.css');
-
-  $settings['hub'] = array(
-    'basePath' => $base_url,
-    'csrfToken' => drupal_get_token(\RestfulInterface::TOKEN_VALUE),
-  );
-  drupal_add_js($settings, 'setting');
-
-  $item = menu_get_item();
-  if (drupal_is_front_page() || path_is_admin($item['path'])) {
-    return;
-  }
-
-  $breadcrumbs = array(l(t('Home'), 'front'));
-
-  if ($item['path'] == 'questions') {
-    drupal_set_title(t('Questions'));
-  }
-  elseif ($item['path'] == 'blogs') {
-    drupal_set_title(t('Blogs'));
-  }
-  elseif ($item['path'] == 'calendar') {
-    drupal_set_title(t('Calendar'));
-  }
-  elseif ($item['path'] == 'video/playlists') {
-    $breadcrumbs[] = l(t('Video library'), 'video');
-    drupal_set_title(t('Manage play lists'));
-  }
-  elseif ($item['path'] == 'video') {
-    drupal_set_title(t('Video library'));
-  }
-  elseif ($item['path'] == 'documentation') {
-    drupal_set_title(t('Documentation'));
-  }
-  elseif ($item['path'] == 'node/%') {
-    $object = menu_get_object();
-
-    $bundles = array(
-      'question' => l(t('Question'), 'questions'),
-      'blog' => l(t('Blogs'), 'blogs'),
-      'events' => l(t('Calendar'), 'calendar'),
-      'youtube' => l(t('Video library'), 'video'),
-      'wiki' => l(t('Documentation'), 'documentation'),
-    );
-
-    if (isset($bundles[$object->type])) {
-      $breadcrumbs[] = $bundles[$object->type];
-    }
-  }
-  elseif ($item['path'] == 'documentation/term/%') {
-    $breadcrumbs[] = l(t('Documentation'), 'documentation');
-    drupal_set_title($item['map'][2]->data->name);
-  }
-
-  drupal_set_breadcrumb($breadcrumbs);
-}
-
-/**
  * Implements hook_permission().
  */
 function drupalhub_core_permissions() {
@@ -101,31 +39,6 @@ function drupalhub_core_permissions() {
       'description' => t('Grant to the user the permission to manage DrupalHub settings.')
     ),
   );
-}
-
-/**
- * Implements hook_ctools_plugin_directory()
- */
-function drupalhub_core_ctools_plugin_directory($module, $plugin) {
-  if (in_array($module, array("panels", 'ctools')) && !empty($plugin)) {
-    return "plugins/$plugin";
-  }
-
-  if ($module == 'vud' && $plugin == 'widgets') {
-    return 'plugins/widgets';
-  }
-}
-
-function drupalhub_core_prepare_node($type) {
-  global $user;
-  $node = (object) array(
-    'uid' => $user->uid,
-    'name' => (isset($user->name) ? $user->name : ''),
-    'type' => $type,
-    'language' => LANGUAGE_NONE
-  );
-
-  return $node;
 }
 
 /**
@@ -182,32 +95,6 @@ function drupalhub_core_autocomplete($string = '') {
   }
 
   drupal_json_output($data);
-}
-
-/**
- * Implements hook_theme().
- */
-function drupalhub_core_theme() {
-  return array(
-    'time_name_tags' => array(
-      'template' => 'time-name-tags',
-      'path' => drupal_get_path('module', 'drupalhub_core') . '/templates',
-      'variables' => array(
-        'time' => NULL,
-        'name' => NULL,
-        'tags' => NULL,
-      ),
-    ),
-  );
-}
-
-/**
- * Implements hook_views_api().
- */
-function drupalhub_core_views_api() {
-  return array(
-    'api' => '3',
-  );
 }
 
 /**

@@ -319,43 +319,6 @@ function drupalhub_videos_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-youtube-field_vote'
-  $field_instances['node-youtube-field_vote'] = array(
-    'bundle' => 'youtube',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => NULL,
-        'settings' => array(),
-        'type' => 'updown',
-        'weight' => 5,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_vote',
-    'label' => 'Vote',
-    'required' => 0,
-    'settings' => array(
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'vud',
-      'settings' => array(),
-      'type' => 'drupalhub_vud',
-      'weight' => 46,
-    ),
-  );
-
   // Translatables
   // Included for use with string extractors like potx.
   t('Access level');

@@ -54,44 +54,6 @@ function drupalhub_blog_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-blog-field_blog_rating'
-  $field_instances['node-blog-field_blog_rating'] = array(
-    'bundle' => 'blog',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'vud',
-        'settings' => array(),
-        'type' => 'vud',
-        'weight' => 1,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_blog_rating',
-    'label' => 'Blog rating',
-    'required' => 0,
-    'settings' => array(
-      'appearance' => 'both',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'vud',
-      'settings' => array(),
-      'type' => 'thumbs',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-blog-field_images'
   $field_instances['node-blog-field_images'] = array(
     'bundle' => 'blog',
