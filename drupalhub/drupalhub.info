@@ -69,7 +69,6 @@ dependencies[] = drupalhub_social
 dependencies[] = drupalhub_videos
 dependencies[] = drupalhub_reputation
 dependencies[] = drupalhub_permission
-dependencies[] = drupalhub_responsive
 dependencies[] = drupalhub_search
 dependencies[] = drupalhub_questions
 dependencies[] = drupalhub_group

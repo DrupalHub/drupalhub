@@ -90,19 +90,4 @@ function drupalhub_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
-  // Enable the admin theme.
-  $enable = array(
-    'bootstrap',
-    'drupalhub',
-  );
-  theme_enable($enable);
-
-  // Installing Hebrew
-  locale_add_language('he', 'Hebrew', 'עברית', LANGUAGE_RTL, '', '', TRUE, variable_get('he_default_language'));
-  $negotation = array(
-    LOCALE_LANGUAGE_NEGOTIATION_URL => 2,
-  );
-  language_negotiation_set('language', $negotation);
-
-  variable_set('menu_rebuild_needed', TRUE);
 }

@@ -5,7 +5,7 @@ projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = 3.0-rc4
 
 projects[ctools][subdir] = "contrib"
-;projects[ctools][patch][] = "https://www.drupal.org/files/issues/ctools-combined_patch_from_n2195211-15_and_n2195471-29--n2195471-47.patch"
+projects[ctools][version] = 1.6
 
 projects[date][subdir] = "contrib"
 projects[date][version] = 2.8
@@ -20,16 +20,20 @@ projects[email][subdir] = "contrib"
 projects[email][version] = 1.3
 
 projects[entity][subdir] = "contrib"
-projects[entity][version] = 1.5
+projects[entity][branch] = 7.x-1.x
+projects[entity][patch][] = https://www.drupal.org/files/issues/2086225-entity-access-check-18.patch
 
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = 1.1
 
 projects[entityreference_prepopulate][subdir] = "contrib"
-projects[entityreference_prepopulate][version] = 1.3
+projects[entityreference_prepopulate][version] = 1.5
 
 projects[entity_validator][subdir] = "contrib"
-projects[entity_validator][version] = 1.1
+projects[entity_validator][download][type] = git
+projects[entity_validator][download][url] = "https://github.com/Gizra/entity_validator.git"
+projects[entity_validator][download][branch] = "7.x-1.x"
+projects[entity_validator][download][revision] = "dc2615490d2bd7ea42fb6f16992ea8f6b5936d4d"
 
 projects[entity_view_count][download][type] = "git"
 projects[entity_view_count][download][url] = "https://github.com/DrupalHub/entity_view_count.git"
@@ -47,7 +51,7 @@ projects[fboauth][version] = "1.6"
 projects[fboauth][subdir] = contrib
 
 projects[flag][subdir] = "contrib"
-projects[flag][version] = 2.2
+projects[flag][version] = 3.6
 
 projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x
@@ -61,7 +65,7 @@ projects[inline_devel][version] = "2.0"
 projects[inline_devel][subdir] = contrib
 
 projects[link][subdir] = "contrib"
-projects[link][version] = 1.2
+projects[link][version] = 1.3
 
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
@@ -82,10 +86,10 @@ projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = 1.8
 
 projects[migrate][subdir] = "contrib"
-projects[migrate][version] = 2.5
+projects[migrate][version] = 2.7
 
 projects[migrate_extras][subdir] = "contrib"
-projects[migrate_extras][version] = 2.4
+projects[migrate_extras][version] = 2.5
 
 projects[oauth][version] = 3.2
 projects[oauth][subdir] = contrib
@@ -94,7 +98,9 @@ projects[og][subdir] = contrib
 projects[og][version] = 2.7
 
 projects[restful][subdir] = "contrib"
-projects[restful][download][url] = "git://github.com/Gizra/restful.git"
+projects[restful][download][type] = git
+projects[restful][download][url] = "https://github.com/RESTful-Drupal/restful.git"
+projects[restful][download][branch] = "7.x-1.x"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0
@@ -103,7 +109,7 @@ projects[views][subdir] = "contrib"
 projects[views][version] = 3.10
 
 projects[token][subdir] = "contrib"
-projects[token][version] = 1.5
+projects[token][version] = 1.6
 
 projects[twitter][version] = "5.8"
 projects[twitter][subdir] = contrib
@@ -111,7 +117,7 @@ projects[twitter][subdir] = contrib
 projects[video_embed_field][version] = "2.0-beta8"
 projects[video_embed_field][subdir] = contrib
 
-projects[search_api][version] = "1.13"
+projects[search_api][version] = "1.14"
 projects[search_api][subdir] = contrib
 
 projects[search_api_solr][version] = "1.6"

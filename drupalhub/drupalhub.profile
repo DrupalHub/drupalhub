@@ -100,7 +100,7 @@ function _drupalhub_migrate_content($class, $type, &$context) {
  */
 function drupalhub_variables_set() {
   $variables = array(
-    'theme_default' => 'drupalhub',
+    'theme_default' => 'seven',
     'admin_theme' => 'seven',
     'node_options_page',
     'node_options_page' => array('status'),
@@ -164,7 +164,6 @@ function drupalhub_install_finished(&$install_state) {
 
   // Remove the variable we used during the installation.
   variable_del('dh_dummy_content');
-  variable_del('he_default_language');
 
   // Run cron to populate update status tables (if available) so that users
   // will be warned if they've installed an out of date Drupal version.
