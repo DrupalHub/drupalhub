@@ -93,19 +93,5 @@ function drupalhub_users_votingapi_insert($votes) {
  *   HTML of the user picture.
  */
 function drupalhub_users_user_picture($user, $style_name) {
-  $uri = _drupalhub_users_user_uri($user);
-  return theme('image_style', array('path' => $uri, 'style_name' => $style_name));
-}
-
-/**
- * Get the user image uri.
- *
- * @param $user
- *   The user object.
- *
- * @return String
- *   The uri string.
- */
-function _drupalhub_users_user_uri($user) {
-  return $user->picture ? $user->picture->uri : file_load(variable_get('default_user_picture_fid'))->uri;
+  return $user->picture ? image_style_url($style_name, $user->picture->uri) : file_create_url(file_load(variable_get('default_user_picture_fid'))->uri);
 }

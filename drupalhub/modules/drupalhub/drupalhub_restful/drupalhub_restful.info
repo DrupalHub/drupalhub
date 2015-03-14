@@ -2,3 +2,5 @@ name = DrupalHub Restful
 description = Manage restful end point
 
 core = 7.x
+
+files[] = include/DrupalHubRestfulBase.inc

@@ -5,7 +5,7 @@
  * Contains DrupalHubPlayList.
  */
 
-class DrupalHubQuestion extends \RestfulEntityBase {
+class DrupalHubQuestion extends \DrupalHubRestfulBase {
   protected $controllers = array(
     '' => array(
       \RestfulInterface::GET => 'getList',

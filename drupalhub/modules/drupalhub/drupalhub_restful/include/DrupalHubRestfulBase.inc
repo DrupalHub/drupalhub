@@ -1,0 +1,75 @@
+<?php
+
+class DrupalHubRestfulBase extends \RestfulEntityBaseNode {
+
+  /**
+   * {@inheritdoc}
+   */
+  public function publicFieldsInfo() {
+    $public_fields = parent::publicFieldsInfo();
+
+    $public_fields['image'] = array(
+      'property' => 'author',
+      'process_callbacks' => array(
+        array($this, 'authorImage'),
+      ),
+    );
+
+    return $public_fields;
+
+  }
+
+  /**
+   * Get the path of the element. i.e: question => question.html#30.
+   *
+   * @param $nid
+   *   The nid of the node.
+   * @return string
+   *   The path of the entry.
+   */
+  protected function generatePath($nid) {
+    switch ($this->getBundle()) {
+      case 'blog':
+        return 'blog.html/#' . $nid;
+    }
+  }
+
+  /**
+   * Processing a date.
+   */
+  protected function processDate($value) {
+    return date('d/m/Y', $value);
+  }
+
+  /**
+   * Process a user.
+   */
+  protected function processAuthor($value) {
+    return $value->name;
+  }
+
+  /**
+   * Count how many times entry was viewed.
+   *
+   * todo: Do it. Use Entity view count.
+   */
+  protected function countViewed($nid) {
+    return 0;
+  }
+
+  /**
+   * Count the number of likes for the current node.
+   */
+  protected function countLiked($nid) {
+    $flag = flag_get_counts('node', $nid);
+    return $flag['like'] ? $flag['like'] : 0;
+  }
+
+  /**
+   * Return the user image.
+   */
+  protected function authorImage($user) {
+    return drupalhub_users_user_picture($user, 'thumbnail');
+  }
+
+}

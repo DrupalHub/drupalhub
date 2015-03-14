@@ -65,6 +65,7 @@ dependencies[] = drupalhub_group
 dependencies[] = drupalhub_migrate
 dependencies[] = drupalhub_notify
 dependencies[] = drupalhub_social
+dependencies[] = drupalhub_restful
 dependencies[] = drupalhub_videos
 dependencies[] = drupalhub_reputation
 dependencies[] = drupalhub_permission
