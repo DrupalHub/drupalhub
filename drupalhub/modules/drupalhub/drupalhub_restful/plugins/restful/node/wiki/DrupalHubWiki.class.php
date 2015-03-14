@@ -5,18 +5,28 @@ class DrupalHubWiki extends DrupalHubRestfulNode {
   public function publicFieldsInfo() {
     $public_fields = parent::publicFieldsInfo();
 
-    $public_fields['category'] = array(
+    $public_fields['tags'] = array(
       'property' => 'field_category',
-      'sub_property' => 'name',
+      'process_callbacks' => array(
+        array($this, 'processTags'),
+      ),
     );
 
     return $public_fields;
   }
 
   /**
-   * Overriding the self method.
+   * Return the tags in a specific format.
    */
-  public function getEntitySelf(\EntityMetadataWrapper $wrapper) {
-    return url('node/' . $wrapper->getIdentifier());
+  protected function processTags($terms) {
+    $tags = array();
+
+    foreach ($terms as $term) {
+      $tags[] = array(
+        'title' => $term->name,
+        'url' => 'tags.html#' . $term->tid,
+      );
+    }
+    return $tags;
   }
 }

@@ -15,6 +15,20 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
       ),
     );
 
+    $public_fields['author'] = array(
+      'property' => 'author',
+      'process_callbacks' => array(
+        array($this, 'processAuthor'),
+      ),
+    );
+
+    $public_fields['date'] = array(
+      'property' => 'created',
+      'process_callbacks' => array(
+        array($this, 'processDate'),
+      ),
+    );
+
     return $public_fields;
   }
 
@@ -54,6 +68,11 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
    */
   protected function authorImage($user) {
     return drupalhub_users_user_picture($user, 'thumbnail');
+  }
+
+  protected function processPoint($cid) {
+    // todo: do.
+    return 0;
   }
 
 }
