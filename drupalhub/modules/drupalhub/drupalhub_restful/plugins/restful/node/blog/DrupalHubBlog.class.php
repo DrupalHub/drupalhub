@@ -1,6 +1,6 @@
 <?php
 
-class DrupalHubBlog extends \DrupalHubRestfulBase {
+class DrupalHubBlog extends \DrupalHubRestfulNode {
 
   /**
    * {@inheritdoc}

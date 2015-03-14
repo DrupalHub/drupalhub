@@ -1,6 +1,6 @@
 <?php
 
-class DrupalHubEvent extends \DrupalHubRestfulBase {
+class DrupalHubEvent extends \DrupalHubRestfulNode {
 
   /**
    * Overrides RestfulExampleArticlesResource::publicFieldsInfo().

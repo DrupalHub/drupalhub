@@ -5,7 +5,7 @@
  * Contains DrupalHubVideos.
  */
 
-class DrupalHubVideos extends \DrupalHubRestfulBase {
+class DrupalHubVideos extends \DrupalHubRestfulNode {
 
   /**
    * Overrides \RestfulEntityBase::publicFieldsInfo().

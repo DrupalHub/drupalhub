@@ -1,6 +1,6 @@
 <?php
 
-class DrupalHubRestfulBase extends \RestfulEntityBaseNode {
+class DrupalHubEntityBase extends \RestfulEntityBase {
 
   /**
    * {@inheritdoc}
@@ -16,22 +16,6 @@ class DrupalHubRestfulBase extends \RestfulEntityBaseNode {
     );
 
     return $public_fields;
-
-  }
-
-  /**
-   * Get the path of the element. i.e: question => question.html#30.
-   *
-   * @param $nid
-   *   The nid of the node.
-   * @return string
-   *   The path of the entry.
-   */
-  protected function generatePath($nid) {
-    switch ($this->getBundle()) {
-      case 'blog':
-        return 'blog.html/#' . $nid;
-    }
   }
 
   /**

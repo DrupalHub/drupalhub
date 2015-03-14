@@ -5,7 +5,7 @@
  * Contains DrupalHubPlayList.
  */
 
-class DrupalHubPlayList extends \DrupalHubRestfulBase {
+class DrupalHubPlayList extends \DrupalHubRestfulNode {
   protected $controllers = array(
     '' => array(
       // GET returns a list of entities.

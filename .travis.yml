@@ -49,7 +49,7 @@ before_script:
 
 script:
   # Run behat.
-  - bin/behat --tags=~wip
+#  - bin/behat --tags=~wip
 
 #after_script:
 #  - cat ~/selenium.log

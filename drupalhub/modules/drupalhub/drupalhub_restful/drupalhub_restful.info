@@ -3,4 +3,5 @@ description = Manage restful end point
 
 core = 7.x
 
-files[] = include/DrupalHubRestfulBase.inc
+files[] = include/DrupalHubEntityBase.inc
+files[] = include/DrupalHubRestfulNode.inc

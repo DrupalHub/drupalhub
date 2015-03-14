@@ -1,6 +1,6 @@
 <?php
 
-class DrupalHubWiki extends DrupalHubRestfulBase {
+class DrupalHubWiki extends DrupalHubRestfulNode {
 
   public function publicFieldsInfo() {
     $public_fields = parent::publicFieldsInfo();
