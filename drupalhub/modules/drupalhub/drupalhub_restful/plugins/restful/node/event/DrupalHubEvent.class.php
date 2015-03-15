@@ -16,12 +16,35 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     $public_fields['start'] = array(
       'property' => 'field_date',
       'sub_property' => 'value',
+      'process_callbacks' => array(
+        array($this, 'processDate'),
+      ),
     );
 
     $public_fields['end'] = array(
       'property' => 'field_date',
       'sub_property' => 'value2',
+      'process_callbacks' => array(
+        array($this, 'processDate'),
+      ),
     );
+
+    $public_fields['google_address'] = array(
+      'property' => 'field_date',
+      'sub_property' => 'value2',
+      'process_callbacks' => array(
+        array($this, 'processDate'),
+      ),
+    );
+
+    $public_fields['human_address'] = array(
+      'property' => 'field_date',
+      'sub_property' => 'value2',
+      'process_callbacks' => array(
+        array($this, 'processDate'),
+      ),
+    );
+
 
     return $public_fields;
   }
@@ -38,9 +61,10 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     ));
   }
 
-  public function createEntity() {
-    $result = parent::createEntity();
-    $result[0]['self'] = url('node/' . $result[0]['id'], array('absolute' => TRUE));
-    return $result;
+  /**
+   * Processing a date.
+   */
+  protected function processDate($value) {
+    return date('d/m/Y H:i', $value);
   }
 }

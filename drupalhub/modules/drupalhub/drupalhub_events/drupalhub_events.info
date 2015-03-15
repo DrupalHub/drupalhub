@@ -17,6 +17,7 @@ features[field_instance][] = node-attendees-body
 features[field_instance][] = node-attendees-field_node_reference
 features[field_instance][] = node-attendees-field_status
 features[field_instance][] = node-attendees-field_user_reference
+features[field_instance][] = node-events-body
 features[field_instance][] = node-events-field_date
 features[field_instance][] = node-events-field_human_address
 features[field_instance][] = node-events-field_location
