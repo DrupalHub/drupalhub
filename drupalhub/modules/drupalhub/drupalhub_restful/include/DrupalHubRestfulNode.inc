@@ -41,6 +41,13 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
       ),
     );
 
+    $public_fields['rsvp'] = array(
+      'property' => 'nid',
+      'process_callbacks' => array(
+        array($this, 'processRSVP'),
+      ),
+    );
+
     return $public_fields;
   }
 
@@ -59,6 +66,9 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
 
       case 'wiki':
         return 'documentation.html/#' . $nid;
+
+      case 'events':
+        return 'event.html/#' . $nid;
     }
   }
 
