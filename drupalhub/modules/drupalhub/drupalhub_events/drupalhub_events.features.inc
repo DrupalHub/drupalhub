@@ -28,6 +28,14 @@ function drupalhub_events_views_api($module = NULL, $api = NULL) {
  */
 function drupalhub_events_node_info() {
   $items = array(
+    'attendees' => array(
+      'name' => t('Attendees'),
+      'base' => 'node_content',
+      'description' => t('Managing Attendees for events.'),
+      'has_title' => '1',
+      'title_label' => t('Title'),
+      'help' => '',
+    ),
     'events' => array(
       'name' => t('Events'),
       'base' => 'node_content',

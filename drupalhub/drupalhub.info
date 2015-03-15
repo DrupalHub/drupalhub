@@ -55,7 +55,8 @@ dependencies[] = restful
 dependencies[] = search_api
 dependencies[] = search_api_facetapi
 dependencies[] = search_api_solr
-dependencies[] = video_embed_field
+dependencies[] = geolocation_googlemaps
+dependencies[] = video_embed_field‏
 
 ; DrupalHub
 dependencies[] = drupalhub_core

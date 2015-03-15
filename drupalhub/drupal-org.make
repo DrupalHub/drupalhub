@@ -61,6 +61,9 @@ projects[github_connect][subdir] = contrib
 projects[gravatar][version] = "1.1"
 projects[gravatar][subdir] = contrib
 
+projects[geolocation][version] = "1.6"
+projects[geolocation][subdir] = contrib
+
 projects[inline_devel][version] = "2.0"
 projects[inline_devel][subdir] = contrib
 
