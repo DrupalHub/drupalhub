@@ -41,13 +41,6 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
       ),
     );
 
-    $public_fields['rsvp'] = array(
-      'property' => 'nid',
-      'process_callbacks' => array(
-        array($this, 'processRSVP'),
-      ),
-    );
-
     return $public_fields;
   }
 
@@ -69,6 +62,9 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
 
       case 'events':
         return 'event.html/#' . $nid;
+
+      case 'question':
+        return 'question.html/#' . $nid;
     }
   }
 
@@ -94,5 +90,20 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
    */
   protected function body($body) {
     return $body['safe_value'];
+  }
+
+  /**
+   * Return the tags in a specific format.
+   */
+  protected function processTags($terms) {
+    $tags = array();
+
+    foreach ($terms as $term) {
+      $tags[] = array(
+        'title' => $term->name,
+        'url' => 'tags.html#' . $term->tid,
+      );
+    }
+    return $tags;
   }
 }

@@ -15,18 +15,4 @@ class DrupalHubWiki extends DrupalHubRestfulNode {
     return $public_fields;
   }
 
-  /**
-   * Return the tags in a specific format.
-   */
-  protected function processTags($terms) {
-    $tags = array();
-
-    foreach ($terms as $term) {
-      $tags[] = array(
-        'title' => $term->name,
-        'url' => 'tags.html#' . $term->tid,
-      );
-    }
-    return $tags;
-  }
 }

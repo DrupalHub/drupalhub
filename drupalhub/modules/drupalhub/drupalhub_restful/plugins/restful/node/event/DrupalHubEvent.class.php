@@ -8,11 +8,6 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
   public function publicFieldsInfo() {
     $public_fields = parent::publicFieldsInfo();
 
-    $public_fields['body'] = array(
-      'property' => 'body',
-      'sub_property' => 'value',
-    );
-
     $public_fields['start'] = array(
       'property' => 'field_date',
       'sub_property' => 'value',
@@ -48,6 +43,13 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     $public_fields['longitude'] = array(
       'property' => 'field_location',
       'sub_property' => 'lng',
+    );
+
+    $public_fields['rsvp'] = array(
+      'property' => 'nid',
+      'process_callbacks' => array(
+        array($this, 'processRSVP'),
+      ),
     );
 
     return $public_fields;
