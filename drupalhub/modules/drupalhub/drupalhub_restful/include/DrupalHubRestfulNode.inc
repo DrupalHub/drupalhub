@@ -65,6 +65,9 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
 
       case 'question':
         return 'question.html/#' . $nid;
+
+      case 'youtube':
+        return 'video.html#' . $nid;
     }
   }
 

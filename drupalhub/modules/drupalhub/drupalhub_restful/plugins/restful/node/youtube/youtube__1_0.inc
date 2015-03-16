@@ -1,9 +1,9 @@
 <?php
 
 $plugin = array(
-  'label' => t('Playlists'),
-  'description' => t('Expose all the playlists'),
-  'resource' => 'youtube',
+  'label' => t('Video'),
+  'description' => t('Exposing videos'),
+  'resource' => 'video',
   'class' => 'DrupalHubVideos',
   'name' => 'youtube__1_0',
   'entity_type' => 'node',
