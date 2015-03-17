@@ -33,6 +33,26 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  public function viewEntity($id) {
+
+    if (!empty($_GET['add_view'])) {
+      $entity = entity_load($this->getEntityType(), $id);
+      $params = array(
+        'entity_type' => $this->getEntityType(),
+        'entity' => $entity,
+        'view_mode' => '',
+        'entity_owner' => !empty($entity->uid) ? $entity->uid : 0,
+      );
+
+      entity_view_count_create($params)->save();
+    }
+
+    parent::viewEntity($id);
+  }
+
+  /**
    * Processing a date.
    */
   protected function processDate($value) {
