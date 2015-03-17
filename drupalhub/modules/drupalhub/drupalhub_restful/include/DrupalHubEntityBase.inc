@@ -66,8 +66,8 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
   /**
    * Return the user image.
    */
-  protected function authorImage($user) {
-    return drupalhub_users_user_picture($user, 'thumbnail');
+  protected function authorImage($author) {
+    return drupalhub_users_user_picture($author, 'thumbnail');
   }
 
   protected function processPoint($cid) {

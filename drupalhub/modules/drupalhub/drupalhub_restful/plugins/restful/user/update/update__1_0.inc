@@ -3,7 +3,7 @@
 $plugin = array(
   'label' => t('Update'),
   'description' => t('Restuling user.'),
-  'resource' => 'update_about',
+  'resource' => 'users',
   'class' => 'DrupalHubUsers',
   'name' => 'update__1_0',
   'entity_type' => 'user',
