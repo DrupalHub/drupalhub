@@ -49,7 +49,7 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
       entity_view_count_create($params)->save();
     }
 
-    parent::viewEntity($id);
+    return parent::viewEntity($id);
   }
 
   /**
