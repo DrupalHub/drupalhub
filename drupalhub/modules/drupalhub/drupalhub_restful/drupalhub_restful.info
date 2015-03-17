@@ -5,3 +5,4 @@ core = 7.x
 
 files[] = include/DrupalHubEntityBase.inc
 files[] = include/DrupalHubRestfulNode.inc
+files[] = include/DrupalHubRestfulFlagMetadata.inc

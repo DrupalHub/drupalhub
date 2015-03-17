@@ -11,3 +11,49 @@ function drupalhub_restful_ctools_plugin_directory($module, $plugin) {
     return 'plugins/' . $plugin;
   }
 }
+
+/**
+ * Implements hook_entity_property_info().
+ */
+function drupalhub_restful_entity_property_info() {
+  return array(
+    'flagging' => array(
+      'properties' => array(
+        'entity_type' => array(
+          'label' => t("Entity type"),
+          'type' => 'text',
+          'description' => t("The entity type."),
+          'getter callback' => 'entity_property_verbatim_get',
+          'setter callback' => 'entity_property_verbatim_set',
+          'schema field' => 'entity_type',
+          'required' => TRUE,
+        ),
+        'entity_id' => array(
+          'label' => t("Entity ID"),
+          'type' => 'integer',
+          'description' => t("The entity ID."),
+          'getter callback' => 'entity_property_verbatim_get',
+          'setter callback' => 'entity_property_verbatim_set',
+          'schema field' => 'entity_id',
+          'required' => TRUE,
+        ),
+        'uid' => array(
+          'label' => t("User"),
+          'type' => 'user',
+          'description' => t("The user."),
+          'getter callback' => 'entity_property_verbatim_get',
+          'setter callback' => 'entity_property_verbatim_set',
+          'schema field' => 'uid',
+          'required' => TRUE,
+        ),
+        'name' => array(
+          'label' => t("User"),
+          'type' => 'text',
+          'description' => t("The flag name."),
+          'getter callback' => 'entity_property_verbatim_get',
+          'setter callback' => 'entity_property_verbatim_set',
+        ),
+      ),
+    ),
+  );
+}
