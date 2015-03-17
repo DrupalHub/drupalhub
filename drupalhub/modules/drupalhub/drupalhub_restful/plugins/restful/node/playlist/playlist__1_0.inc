@@ -1,8 +1,8 @@
 <?php
 
 $plugin = array(
-  'label' => t('Playlists'),
-  'description' => t('Expose all the playlists'),
+  'label' => t('Playlist'),
+  'description' => t('Expose all the play lists'),
   'resource' => 'playlist',
   'class' => 'DrupalHubPlayList',
   'name' => 'playlist__1_0',
