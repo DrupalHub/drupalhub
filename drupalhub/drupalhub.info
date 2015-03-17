@@ -10,7 +10,6 @@ dependencies[] = contextual
 dependencies[] = help
 dependencies[] = image
 dependencies[] = list
-dependencies[] = locale
 dependencies[] = menu
 dependencies[] = number
 dependencies[] = options

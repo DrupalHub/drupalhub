@@ -98,8 +98,20 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
 
     $feed = array();
     foreach ($messages as $message) {
+      $wrapper = entity_metadata_wrapper('message', $message);
+      $name = $wrapper->user->field_first_name->value() . ' ' . $wrapper->user->field_last_name->value();
+
+      if ($name != ' ') {
+        $display_name = $name . ' - @<a href="user.html/#' . $wrapper->user->getIdentifier() . '">' . $wrapper->user->label() . '</a>';
+      }
+      else {
+        $display_name = '@<a href="user.html/#' . $wrapper->user->getIdentifier() . '">' . $wrapper->user->label() . '</a>';
+      }
+
       $feed[] = array(
-        'user' => $message->uid,
+        'user' => $display_name,
+        'image' => $this->processImage($wrapper->user->getIdentifier()),
+        'text' => $message->getText(),
       );
     }
 
