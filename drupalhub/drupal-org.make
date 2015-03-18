@@ -117,8 +117,8 @@ projects[token][version] = 1.6
 projects[twitter][version] = "5.8"
 projects[twitter][subdir] = contrib
 
-projects[video_embed_field][version] = "2.0-beta8"
-projects[video_embed_field][subdir] = contrib
+projects[video_embed_field‏][version] = "2.0-beta8"
+projects[video_embed_field‏][subdir] = contrib
 
 projects[search_api][version] = "1.14"
 projects[search_api][subdir] = contrib

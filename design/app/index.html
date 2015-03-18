@@ -17,11 +17,11 @@ layout: default
       <div class="questions-wrapper clearfix" ng-cloak="question" ng-repeat="question in questions">
         <div class="question row">
           <div class="col-md-2 col-sm-2">
-            <img src="{ {question.image} }" class="images img-responsive question" />
+            <img ng-src="{ {question.image} }" class="images img-responsive question" />
           </div>
           <div class="col-md-10 col-sm-10 col-xs-8">
             <div class="content">
-              <a href="{ {item.url} }">{ {question.label} }</a>
+              <a href="{ {question.url} }">{ {question.label} }</a>
               <div class="meta-info">
                 <span class="first fa fa-clock-o"></span>{ {question.date} }
                 <span class="fa fa-user"></span>{ {question.user} }
