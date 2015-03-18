@@ -10,6 +10,17 @@
 function drupalhub_permission_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'access user profiles'.
+  $permissions['access user profiles'] = array(
+    'name' => 'access user profiles',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'anonymous user' => 'anonymous user',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'user',
+  );
+
   // Exported permission: 'create events content'.
   $permissions['create events content'] = array(
     'name' => 'create events content',
@@ -33,10 +44,7 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'create question content'.
   $permissions['create question content'] = array(
     'name' => 'create question content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -71,9 +79,7 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'delete any question content'.
   $permissions['delete any question content'] = array(
     'name' => 'delete any question content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -109,10 +115,7 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'delete own question content'.
   $permissions['delete own question content'] = array(
     'name' => 'delete own question content',
-    'roles' => array(
-      'administrator' => 'administrator',
-      'authenticated user' => 'authenticated user',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -147,9 +150,7 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'edit any question content'.
   $permissions['edit any question content'] = array(
     'name' => 'edit any question content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
@@ -185,9 +186,7 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'edit own question content'.
   $permissions['edit own question content'] = array(
     'name' => 'edit own question content',
-    'roles' => array(
-      'administrator' => 'administrator',
-    ),
+    'roles' => array(),
     'module' => 'node',
   );
 
