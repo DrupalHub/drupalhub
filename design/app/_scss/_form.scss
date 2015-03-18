@@ -1,0 +1,48 @@
+.form-singin-up {
+
+  .social-icon {
+    background-clip: border-box;
+    background-image: none;
+    background-origin: padding-box;
+    color: #fff;
+    cursor: auto;
+    display: inline-block;
+    font-size: 21px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+    transition-delay: 0s;
+    transition-duration: .5s;
+    transition-property: background;
+    transition-timing-function: ease;
+    vertical-align: baseline;
+    width: 35px;
+    margin-left: 6px;
+    border: solid 1px #576890;
+  }
+
+  .soc-facebook {
+    background-color: #0173b2;
+  }
+
+  .soc-google-plus {
+    background-color: #f00;
+  }
+
+  .soc-twitter {
+    background-color: #00acee;
+  }
+}
+
+.form-event {
+
+  .event-header {
+    border-bottom-color: $events-border;
+  }
+
+  .input-group {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+}

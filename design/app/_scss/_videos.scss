@@ -1,0 +1,44 @@
+.page-videos {
+
+  .videos-header,
+  .playlist-header {
+    border-bottom-color: $videos-header;
+  }
+
+  .videos {
+    margin-bottom: 10px;
+
+    .video-wrapper {
+      position: relative;
+      margin-bottom: 20px;
+      margin-top: 20px;
+
+      .meta-info {
+        position: absolute;
+        bottom: 0px;
+        color: white;
+        opacity: 0.8;
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 5px;
+      }
+    }
+  }
+
+  .playlist {
+    padding-bottom: 30px;
+
+    .playlist-wrapper {
+      margin-bottom: 20px;
+    }
+
+    .image {
+      border: solid 1px $video-border;
+    }
+  }
+
+  .playlist-header {
+    margin-top: 40px;
+  }
+}

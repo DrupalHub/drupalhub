@@ -1,0 +1,28 @@
+<ul>
+  {% for comment in site.data.comments %}
+  <li  class="comment">
+    <div class="row">
+      <div class="col-md-3 col-sm-3"><img class="images comments img-responsive" src="{{ comment.image }}" /></div>
+      <div class="col-md-9 col-sm-9">
+        <div class="meta-info">
+          <span class="first fa fa-clock-o"></span>{{ comment.date }}
+          <span class="fa fa-user"></span>{{ comment.user }}
+          <span class="fa fa-thumbs-o-up"></span>{{ comment.point }}
+        </div>
+
+        {{ comment.text }}
+      </div>
+    </div>
+  </li>
+  {% endfor %}
+</ul>
+
+<ul class="pagination clearfix">
+  <li class="disabled"><a href="#">«</a></li>
+  <li class="active"><a href="#">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><a href="#">4</a></li>
+  <li><a href="#">5</a></li>
+  <li><a href="#">»</a></li>
+</ul>

@@ -1,0 +1,103 @@
+@import "compass/css3/transition";
+@import "compass/css3/transform";
+@import 'bootstrap';
+@import 'variables';
+@import 'general';
+@import 'front';
+@import 'question';
+@import 'blog';
+@import 'form';
+@import 'videos';
+@import 'video';
+@import 'playlist';
+@import 'documentations';
+@import 'user';
+@import 'event';
+@import 'events';
+
+body {
+  padding-top: 80px;
+  padding-bottom: 30px;
+
+  .navbar-fixed-top {
+    border-color: $light-blue;
+    border-right: none;
+
+    .navbar-nav.inner-pages {
+
+      .videos a {
+        @include hover(red);
+      }
+
+      .documentation a {
+        @include hover(#0075B2);
+      }
+
+      .calendar a {
+        @include hover(#009102);
+      }
+    }
+
+    #search {
+      width: 250px;
+      color: #45A4CC;
+    }
+
+    img {
+      width: 45px;
+    }
+
+    .navbar-brand {
+      float: right;
+    }
+  }
+
+  .page-header {
+    margin-top: 15px;
+  }
+
+  .secondary-menu {
+    float: right;
+
+    .dropdown-menu {
+
+      li {
+
+        &.youtube {
+
+          a {
+            @include hover(red);
+          }
+        }
+
+        &.twitter {
+
+          a {
+            @include hover(#158CBA);
+          }
+        }
+
+        &.gplus {
+
+          a {
+            @include hover(#ee4e10);
+          }
+        }
+
+        &.facebook {
+
+          a {
+            @include hover(#4f62ae);
+          }
+        }
+
+        &.github {
+
+          a {
+            @include hover(#333);
+          }
+        }
+      }
+    }
+  }
+}

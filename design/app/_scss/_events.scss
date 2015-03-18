@@ -1,0 +1,23 @@
+.page-events {
+
+  .events-header {
+    border-bottom-color: $events-border;
+
+    h3 {
+      float: left;
+    }
+
+    .btn {
+      float: right;
+      margin-top: 20px;
+    }
+  }
+
+  .event {
+    padding-bottom: 10px;
+
+    .link {
+      font-size: 16px;
+    }
+  }
+}

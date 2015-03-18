@@ -1,0 +1,54 @@
+.page-event {
+
+  .event {
+
+    .event-content {
+
+      h2 {
+        margin-top: 0;
+        padding-top: 0;
+      }
+    }
+
+    .data {
+      background: #FAFAFA;
+      border: solid 1px $events-border;
+      margin-top: 10px;
+
+      li {
+
+        &.first {
+          padding-bottom: 5px;
+        }
+
+        .fa {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    .rsvp {
+
+      .tab-content {
+        max-height: 200px;
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .tab-pane {
+
+        ul {
+          padding-top: 5px;
+
+          li {
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  .google-maps {
+    height: 300px;
+  }
+}

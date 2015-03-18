@@ -1,0 +1,40 @@
+title: Drupal bimonthly meetup
+image: img/ClarkKent.jpg
+google_address: Yigal Alon St 98 Tel-Aviv
+human_address: Yigal Alon St 98 Tel-Aviv, 34th floor
+date: 1/1/1015 19:00 - 1/1/2015/ 22:00
+latitude: "32.070247"
+longitude: "34.794072"
+text: "
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type
+    specimen book. It has survived not only five centuries, but also the leap
+    into electronic typesetting, remaining essentially unchanged. It was
+    popularised in the 1960s with the release of Letraset sheets containing
+
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+    Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+    when an unknown printer took a galley of type and scrambled it to make a type
+    specimen book. It has survived not only five centuries, but also the leap
+    into electronic typesetting, remaining essentially unchanged. It was
+    popularised in the 1960s with the release of Letraset sheets containing
+"
+rsvp:
+  comming:
+    - name: Bruce Wayne
+      image: img/BruceWayne.jpg
+    - name: Clark Kent
+      image: img/ClarkKent.jpg
+    - name: Nick Fury
+      image: img/NickFury.jpg
+  maybe:
+    - name: Peter parker
+      image: img/PeterParker.jpg
+    - name: Scott summers
+      image: img/ScottSummers.jpg
+  not:
+    - image: img/TonyStark.jpg
+      name: Tony Stark
+    - image: img/wolverine.jpeg
+      name: Logen

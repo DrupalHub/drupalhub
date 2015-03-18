@@ -1,0 +1,27 @@
+- title: Programming with antony
+  image: http://img.youtube.com/vi/xmSWPrNMA-U/0.jpg
+  description: "A demo playlist"
+  time: "2:10:20"
+  videos: 20
+  url: playlist.html#nid-300-video-1
+
+- title: Programming with antony
+  image: http://img.youtube.com/vi/iAmAo2K_ao8/0.jpg
+  description: "A demo playlist"
+  time: "2:10:20"
+  videos: 10
+  url: playlist.html#nid-300-video-1
+
+- title: Programming with antony
+  image: http://img.youtube.com/vi/SKMdUcDV0CA/0.jpg
+  description: "A demo playlist"
+  time: "2:10:20"
+  videos: 25
+  url: playlist.html#nid-300-video-1
+
+- title: Programming with antony
+  image: http://img.youtube.com/vi/93S0azxwIZQ/0.jpg
+  description: "A demo playlist"
+  time: "2:10:20"
+  videos: 25
+  url: playlist.html#nid-300-video-1

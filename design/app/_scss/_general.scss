@@ -1,0 +1,105 @@
+@mixin input-placeholder($color) {
+
+  &::-moz-placeholder {
+    color: $color;
+  }
+
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin hover($color) {
+  @include transition(all 0.3s ease-in-out);
+
+  &:hover {
+    @include transition(all 0.4s ease-in-out);
+    color: $color;
+  }
+}
+
+
+.meta-info {
+
+  .fa {
+    margin-left: 5px;
+  }
+
+  .first {
+    margin-left: 0px;
+  }
+}
+
+.fa:before {
+  margin-right: 5px;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* IE6 */
+* html .clearfix {
+  height: 1%;
+}
+
+/* IE7 */
+*:first-child + html .clearfix {
+  min-height: 1%;
+}
+
+.images {
+
+  &.question {
+    border: solid 1px $image-blue;
+  }
+
+  &.blog {
+    border: solid 1px $image-orange;
+  }
+
+  &.comments {
+    border: solid 1px $comment-image-border;
+  }
+
+  &.profile {
+    border: solid 1px $profile-image-border;
+  }
+
+  &.event {
+    border: solid 1px $events-border;
+  }
+}
+
+a {
+  color: #000;
+
+  &:hover {
+    color: $link-blue;
+  }
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+span.label {
+
+  a {
+    color: white;
+    font-size: 11px !important;
+  }
+}
+
+form legend {
+  padding-bottom: 15px;
+}

@@ -1,0 +1,37 @@
+.page-playlist {
+
+  .playlist {
+
+    ul {
+
+      li {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .video {
+
+    .meta-info {
+      padding-top: 10px;
+    }
+  }
+
+  .other-videos {
+
+    .page-header {
+      border-bottom: solid 1px red;
+    }
+
+    ul {
+
+      li {
+        padding-bottom: 10px;
+      }
+    }
+  }
+
+  .next-prev-buttons {
+    font-size: 40px;
+  }
+}

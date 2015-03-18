@@ -1,0 +1,123 @@
+.questions-header {
+  border-bottom-color: $question-border;
+
+  h3 {
+    float: left;
+  }
+
+  .btn {
+    float: right;
+    margin-top: 20px;
+  }
+}
+
+.questions-wrapper {
+  padding-bottom: 10px;
+
+  .question {
+
+    img {
+      float: left;
+      margin-right: 10px;
+    }
+
+    .content {
+
+      a {
+        font-size: 17px;
+      }
+    }
+
+  }
+}
+
+.blogs-wrapper {
+  padding-bottom: 10px;
+
+  .blog {
+
+    img {
+      float: left;
+      margin-right: 10px;
+    }
+
+    .content {
+
+      a {
+        font-size: 17px;
+      }
+    }
+
+  }
+}
+
+.blog-header {
+  border-bottom-color: $blogs-border;
+
+  h3 {
+    float: left;
+  }
+
+  .btn {
+    float: right;
+    margin-top: 20px;
+  }
+}
+
+.events {
+
+  .events-header {
+    border-bottom-color: $events-border;
+  }
+
+  ul {
+
+    li {
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+  }
+
+}
+
+.videos {
+
+  .video-header {
+    border-bottom-color: $video-border;
+  }
+
+  ul {
+
+    li {
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+    }
+  }
+}
+
+.users {
+
+  .users-header {
+    border-bottom-color: $users-border;
+  }
+
+  ul {
+
+    li {
+      margin-bottom: 5px;
+      vertical-align: top;
+
+      img {
+        width: 72px;
+        margin-right: 5px;
+        float: left;
+        border: solid 1px $user-image;
+      }
+    }
+  }
+
+}
+
+.second {
+  padding-top: 22px;
+}

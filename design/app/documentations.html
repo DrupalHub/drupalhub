@@ -1,0 +1,56 @@
+---
+layout: default
+---
+
+<section class="container page-documentations">
+
+  <ul class="breadcrumb">
+    <li><a href="index.html">Home</a></li>
+    <li class="active">Documentation</li>
+  </ul>
+
+  <div class="page-header documentation-header clearfix">
+    <h3>Documentation</h3>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12 tags">
+      {% for tag in site.data.documentation_tags %}
+        <span class="label label-info"><a href="{{ tag.url }}">{{ tag.title }}</a></span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="documentation-list">
+    {% for documentation in site.data.documentations %}
+    <div class="row">
+      <div class="col-md-1 col-xs-3 col-sm-3">
+        <img class="images blog img-responsive" src="{{ documentation.image }}" />
+      </div>
+      <div class="col-md-11 col-xs-9 col-sm-9">
+        <a href="{{ documentation.url }}">{{ documentation.title }}</a>
+        {% for tag in documentation.tags %}
+        <span class="label label-info"><a href="{{ tag.url }}">{{ tag.title }}</a></span>
+        {% endfor %}
+        <div class="meta-info">
+          <span class="first fa fa-clock-o"></span>{{ documentation.date }}
+          <span class="fa fa-user"></span>{{ documentation.user }}
+          <span class="fa fa-eye"></span>{{ documentation.viewed }}
+        </div>
+        {{ documentation.intro }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <ul class="pagination">
+    <li class="disabled"><a href="#">«</a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">»</a></li>
+  </ul>
+
+</section>

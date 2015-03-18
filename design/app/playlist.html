@@ -1,0 +1,94 @@
+---
+layout: default
+---
+<section class="container page-playlist">
+
+  <ul class="breadcrumb">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li class="active">{{ site.data.video.title }}</li>
+  </ul>
+
+  <div class="row">
+    <div class="video col-md-9 col-sm-12 col-xs-12">
+      <div class="embed-responsive embed-responsive-16by9">
+        <iframe class="embed-responsive-item" src="{{ site.data.video.embed }}" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="playlist col-md-3 col-sm-9 col-xs-3 hidden-sm hidden-xs">
+      <ul>
+        {% for video in site.data.videos %}
+        <li class="clearfix">
+          <div class="col-md-4 col-xs-4 col-sm-4">
+            <a href="{{ video.url }}"><img class="img-responsive image" src="{{ video.image }}" /></a>
+          </div>
+          <div class="col-md-8 col-xs-8 col-sm-8">
+            <a href="{{ video.url }}">{{ video.title | truncatewords: 5 }}</a>
+          </div>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="visible-sm visible xs col-sm-12 col-xs-12 next-prev-buttons">
+      <a href="#" action="next" class="pull-left">Previous video</a>
+      <a href="#" action="next" class="pull-right">Next video</a>
+    </div>
+    <div class="video col-md-12 col-sm-12 col-xs-12">
+      <div class="meta-info">
+        <span class="fa fa-clock-o"></span> {{ site.data.video.duration }}
+        <span class="fa fa-calendar"></span> {{ site.data.video.date }}
+        <span class="fa fa-eye"></span> {{ site.data.video.like }}
+        <span class="fa fa-thumbs-o-up"></span> {{ site.data.video.viewed }}
+      </div>
+      <div>
+        {{ site.data.video.description }}
+      </div>
+    </div>
+    <div class="col-md-8 col-sm-12 col-xs-12 comments">
+      <div class="page-header"><h2>Comments</h2></div>
+
+      {% include comments.html %}
+
+      <section class="form">
+        <form class="form-horizontal">
+          <fieldset>
+            <legend class="clearfix">
+              What do you think on this video?
+              <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </legend>
+            <div class="form-group">
+              <div class="col-lg-12">
+                <textarea class="form-control" rows="3" id="textArea"></textarea>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+    <div class="col-md-4 col-xs-12 col-sm-12 other-videos">
+      <div class="page-header"><h2>Other videos</h2></div>
+
+      <div class="row">
+        <ul>
+          {% for video in site.data.videos %}
+          <li class="clearfix">
+            <div class="col-md-3">
+              <a href="{{ video.url }}"><img class="img-responsive image" src="{{ video.image }}" /></a>
+            </div>
+            <div class="col-md-9">
+              <a href="{{ video.url }}">{{ video.title | truncatewords: 5 }}</a>
+              <div class="meta-info">
+                <span class="fa fa-clock-o"></span> {{ video.duration }}
+                <span class="fa fa-calendar"></span> {{ video.date }}
+                <span class="fa fa-eye"></span> {{ video.like }}
+                <span class="fa fa-thumbs-o-up"></span> {{ video.viewed }}
+              </div>
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
