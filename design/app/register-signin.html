@@ -66,27 +66,31 @@ layout: default
         <div class="panel-body">
           <form role="form" name="loginForm" ng-submit="user.login()" novalidate>
             <div class="form-group">
-              <div class="input-group login-input">
-                <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                <input type="text" class="form-control" placeholder="Username" ng-model="user.name" required>
+
+              <div ng-show="showLoginInput">
+                <div class="input-group login-input" >
+                  <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                  <input type="text" class="form-control" placeholder="Username" ng-model="user.name" required>
+                </div>
+                <span ng-cloak class="text-danger" ng-show="nameError">{ {error.name} }<br /></span>
+                <br>
+                <div class="input-group login-input">
+                  <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                  <input type="password" class="form-control" placeholder="Password" ng-model="user.pass" required>
+                </div>
+                <span ng-cloak class="text-danger" ng-show="passError">{ {error.pass} }<br /></span>
+                <!--<br />-->
+                <!--<a href="#" class="social-icon soc-twitter"><i class="fa fa-twitter"></i></a>-->
+                <!--<a href="#" class="social-icon soc-google-plus"><i class="fa fa-google-plus"></i></a>-->
+                <!--<a href="#" class="social-icon soc-facebook"><i class="fa fa-facebook"></i></a>-->
+                <span ng-cloak class="text-danger" ng-show="showLoginResultsFail"><Br />{ {loginResults} }</span>
+                <hr>
+                <input type="submit" class="btn btn-primary pull-right" />
+                <a href="#" class="btn btn-warning">Password Recovery</a>
               </div>
-              <span ng-cloak class="text-danger" ng-show="nameError">{ {error.name} }<br /></span>
-              <br>
-              <div class="input-group login-input">
-                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                <input type="password" class="form-control" placeholder="Password" ng-model="user.pass" required>
+              <div ng-cloak class="login-passed text-center" ng-show="showLoginResultsSucess">
+                { {loginResults} }
               </div>
-              <span ng-cloak class="text-danger" ng-show="passError">{ {error.pass} }<br /></span>
-              <!--<br />-->
-              <!--<a href="#" class="social-icon soc-twitter"><i class="fa fa-twitter"></i></a>-->
-              <!--<a href="#" class="social-icon soc-google-plus"><i class="fa fa-google-plus"></i></a>-->
-              <!--<a href="#" class="social-icon soc-facebook"><i class="fa fa-facebook"></i></a>-->
-              <span ng-cloak class="text-danger" ng-show="showLoginResultsFail"><Br />{ {loginResults} }</span>
-              <span ng-cloak class="text-success" ng-show="showLoginResultsSucess"><Br />{ {loginResults} }</span>
-              <hr>
-              <input type="submit" class="btn btn-primary pull-right" />
-              <a href="#" class="btn btn-warning">Password Recovery</a>
-              <div class="clearfix"></div>
             </div>
           </form>
         </div>

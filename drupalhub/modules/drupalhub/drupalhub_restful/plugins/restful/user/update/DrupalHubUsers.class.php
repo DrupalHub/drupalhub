@@ -20,11 +20,6 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       ),
     );
 
-    $public_fields['company'] = array(
-      'property' => 'field_company',
-      'sub_property' => 'name',
-    );
-
     $public_fields['reputation'] = array(
       'property' => 'field_reputation',
     );

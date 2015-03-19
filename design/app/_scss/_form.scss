@@ -33,6 +33,13 @@
   .soc-twitter {
     background-color: #00acee;
   }
+
+  .login-passed {
+
+    .user-picture {
+      border: $login-image-passed solid 1px;
+    }
+  }
 }
 
 .form-event {

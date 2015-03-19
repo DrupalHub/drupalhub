@@ -7,6 +7,10 @@ DrupalHub.controller('loginCtrl', function($scope, $http, SERVER, localStorageSe
     pass: ''
   };
 
+  $scope.showLoginInput = true;
+  $scope.userImage = '';
+
+
   $scope.user.login = function() {
     $scope.nameError = false;
     $scope.passError = false;
@@ -43,9 +47,13 @@ DrupalHub.controller('loginCtrl', function($scope, $http, SERVER, localStorageSe
 
       response.success(function(data, status) {
         localStorageService.set('access_token', data.access_token);
-        console.log(data);
-        $scope.showLoginResultsSucess = true;
-        $scope.loginResults = 'Welcome ' + $scope.user.name + '!';
+        $http.get(SERVER + 'me', {
+          headers: {'access_token': data.access_token}
+        }).success(function(data, status) {
+          $scope.showLoginInput = false;
+          $scope.showLoginResultsSucess = true;
+          $scope.loginResults = 'Welcome ' + data.data.label + '!';
+        });
       });
     }
 
