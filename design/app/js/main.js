@@ -7,27 +7,24 @@ DrupalHub.config(function($interpolateProvider) {
 });
 
 // Controller that will wrap the entire application.
-DrupalHub.controller('headerCtrl', function($scope, $http, SERVER, localStorageService) {
+DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest) {
   $scope.userName = 'Login/Sign in';
   $scope.userLink = 'register-signin.html';
 
-  var access_token;
-  if (access_token = localStorageService.get('access_token')) {
+  if (DrupalHubRequest.accessToken) {
     var userObject;
 
-    if (userObject = localStorageService.get('userObject')) {
+    if (userObject = DrupalHubRequest.userObject) {
       $scope.userName = userObject.label;
       $scope.userLink = 'profile.html';
     }
     else {
 
-      $http.get(SERVER + 'me', {
-        headers: {'access_token': access_token}
-      }).
-      success(function(data, status) {
-        var user = data.data;
-        localStorageService.set('userObject', user);
-        $scope.userName = user.label;
+      DrupalHubRequest.localRequest('GET', 'me')
+        .success(function(data, status) {
+          var user = data.data;
+          DrupalHubRequest.set('userObject', user);
+          $scope.userName = user.label;
       });
     }
   }

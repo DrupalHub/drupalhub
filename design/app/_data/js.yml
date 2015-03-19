@@ -9,6 +9,7 @@
   - config.js
   - encoding.js
   - main.js
+  - DrupalHubService.js
   - login-signup.js
   - question.js
   - jquery.gmap.min.js
