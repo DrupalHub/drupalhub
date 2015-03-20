@@ -8,8 +8,6 @@ DrupalHub.controller('loginCtrl', function($scope, $http, SERVER, localStorageSe
   };
 
   $scope.showLoginInput = true;
-  $scope.userImage = '';
-
 
   $scope.user.login = function() {
     $scope.nameError = false;

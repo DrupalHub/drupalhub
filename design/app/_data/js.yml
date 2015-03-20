@@ -6,10 +6,13 @@
   - angular-local-storage/dist/angular-local-storage.min.js
 
 - drupalhub:
+  - jquery.gmap.min.js
   - config.js
   - encoding.js
   - main.js
   - DrupalHubService.js
+
+  # Controllers.
   - login-signup.js
   - question.js
-  - jquery.gmap.min.js
+  - events.js

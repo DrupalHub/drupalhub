@@ -41,6 +41,34 @@ layout: default
     </div>
     <div class="col-md-4 second">
 
+      <div class="events" ng-controller="eventsCtrl">
+        <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
+
+        <ul>
+          <li ng-repeat="event in events" ng-cloak="events">
+            <b><a href="{ {event.url} }">{ {event.label} }</a></b> - { {event.intro} }<br />
+            { {event.date} }, { {event.location} }.
+          </li>
+        </ul>
+      </div>
+
+      <div class="videos">
+        <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
+
+        <ul>
+          {% for item in site.data.videos limit:3 %}
+          <li>
+            <b><a href="{{ item.url }}">{{ item.title }}</a></b>- {{ item.description }}
+            <div class="meta-info">
+              <span class="first fa fa-user"></span>{{ item.user }}
+              <span class="fa fa-eye"></span>{{ item.viewed }}
+              <span class="fa fa-thumbs-o-up"></span>{{ item.like }}
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+      </div>
+
       <div class="users">
         <div class="page-header users-header"><h4 class="fa fa-users">Most active users</h4></div>
 
@@ -58,36 +86,6 @@ layout: default
                   </div>
                 </div>
               </div>
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="events">
-        <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
-
-        <ul>
-          {% for item in site.data.events %}
-          <li>
-            <b><a href="{{ item.url }}">{{ item.title }}</a></b> - {{ item.description }}<br />
-            {{ item.date }}, {{ item.location }}.
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <div class="videos">
-        <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
-
-        <ul>
-          {% for item in site.data.videos limit:3 %}
-          <li>
-            <b><a href="{{ item.url }}">{{ item.title }}</a></b>- {{ item.description }}
-            <div class="meta-info">
-              <span class="first fa fa-user"></span>{{ item.user }}
-              <span class="fa fa-eye"></span>{{ item.viewed }}
-              <span class="fa fa-thumbs-o-up"></span>{{ item.like }}
             </div>
           </li>
           {% endfor %}
