@@ -47,7 +47,7 @@ layout: default
         <ul>
           <li ng-repeat="event in events" ng-cloak="events">
             <b><a href="{ {event.url} }">{ {event.label} }</a></b> - { {event.intro} }<br />
-            { {event.date} }, { {event.location} }.
+            { {event.start} } - { {event.end} }, { {event.human_address} }.
           </li>
         </ul>
       </div>
