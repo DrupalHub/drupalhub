@@ -1,5 +1,9 @@
-DrupalHub.directive('DrupalHubComments', function() {
+DrupalHub.directive('drupalHubComments', function($location) {
   return {
-    template: 'Name: {{customer.name}} Address: {{customer.address}}'
+    restrict: 'AE',
+    templateUrl: 'pages/comments.html',
+    link: function($scope) {
+      console.log($location);
+    }
   };
 });
