@@ -15,6 +15,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'questionCtrl'
   });
 
+  $routeProvider.when('/question/:id', {
+    templateUrl: 'pages/question.html',
+    controller: 'questionCtrl'
+  });
+
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
     controller: 'pageNotFound'

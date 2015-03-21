@@ -1,29 +1,29 @@
-<section class="container page-question">
+<section class="container page-question" ng-controller="questionCtrl" ng-show="question">
   <ul class="breadcrumb">
     <li><a href="../index.html">Home</a></li>
     <li><a href="questions.html">Questions</a></li>
-    <li class="active">{{ site.data.question.title }}</li>
+    <li class="active">{{question.label}}</li>
   </ul>
 
   <section class="question">
     <div class="row">
-      <div class="col-md-3 col-sm-3 pull-left image">
-        <img class="images question img-responsive" src="{{ site.data.question.image }}" />
+      <div class="col-md-2 col-sm-2 pull-left image">
+        <img class="images question img-responsive" ng-src="{{question.image}}" />
       </div>
-      <div class="col-md-9 col-sm-9 question-content">
-        <h2>{{ site.data.question.title }}</h2>
+      <div class="col-md-10 col-sm-10 question-content">
+        <h2>{{question.label}}</h2>
         <div class="meta-info">
-          <span class="first fa fa-clock-o"></span>{{ site.data.question.date }}
-          <span class="fa fa-user"></span>{{ site.data.question.user }}
-          <span class="fa fa-eye"></span>{{ site.data.question.viewed }}
-          <span class="fa fa-thumbs-o-up"></span>{{ site.data.question.like }}
+          <span class="first fa fa-clock-o"></span>{{question.date}}
+          <span class="fa fa-user"></span>{{question.user}}
+          <span class="fa fa-eye"></span>{{question.viewed}}
+          <span class="fa fa-thumbs-o-up"></span>{{question.like}}
 
-          {% for tag in site.data.question.tags %}
-          <span class="label label-info"><a href="{{ tag.url }}">{{ tag.title }}</a></span>
-          {% endfor %}
+            <span ng-repeat="tag in question.tags">
+              <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>
+            </span>
         </div>
 
-        {{ site.data.question.text }}
+        {{question.text}}
       </div>
     </div>
   </section>
@@ -33,7 +33,7 @@
       <h2>Comments</h2>
     </div>
 
-    {% include comments.html %}
+    <div DrupalHubComments>שדגשדגשדג</div>
   </section>
 
   <section class="form">

@@ -55,22 +55,22 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
   protected function generatePath($nid) {
     switch ($this->getBundle()) {
       case 'blog':
-        return 'blog.html/#' . $nid;
+        return '#/blog/' . $nid;
 
       case 'wiki':
-        return 'documentation.html/#' . $nid;
+        return '#/documentation/' . $nid;
 
       case 'events':
-        return 'event.html/#' . $nid;
+        return '#/event/' . $nid;
 
       case 'question':
-        return 'question.html/#' . $nid;
+        return '#/question/' . $nid;
 
       case 'youtube':
-        return 'video.html/#' . $nid;
+        return '#/video/' . $nid;
 
       case 'playlist':
-        return 'playlist.html/#' . $nid . '/1';
+        return '#/playlist/' . $nid . '/1';
     }
   }
 
