@@ -5,4 +5,5 @@ DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest) {
   DrupalHubRequest.localRequest('get', 'blog').success(function(data, status) {
     $scope.blogs = data.data;
   });
+
 });
