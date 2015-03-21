@@ -20,6 +20,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageServic
    *   The local address.
    * @param data
    *   The request payload.
+   *
    * @returns {*}
    */
   DrupalHubSvc.localRequest = function(method, address, data) {
@@ -29,6 +30,18 @@ DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageServic
       data: data,
       headers: {'access_token': DrupalHubSvc.accessToken}
     });
+  };
+
+  /**
+   * Check user access.
+   *
+   * @param permission
+   *   The name of the permission we need to check.
+   *
+   * @returns {boolean}
+   */
+  DrupalHubSvc.userAccess = function(permission) {
+    return 1 == 1;
   };
 
   /**
@@ -48,6 +61,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageServic
    *
    * @param key
    *   The name of the key.
+   *
    * @returns {*}
    */
   DrupalHubSvc.get = function(key) {
