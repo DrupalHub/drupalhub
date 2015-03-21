@@ -1,130 +1,92 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html ng-app="DrupalHub">
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>DrupalHub 2.0</title>
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <!-- build:css({app,.tmp}) css/main.css -->
+  <link rel="stylesheet" href="css/main.css">
+  <!-- endbuild -->
 
-<section class="top container">
-  <ul class="breadcrumb">
-    <li class="active">Home</li>
-  </ul>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="bower_components/angular-route/angular-route.min.js"></script>
+  <script src="bower_components/angular-local-storage/dist/angular-local-storage.min.js"></script>
 
-  <div class="row">
-    <div class="col-md-8 first" ng-controller="questionCtrl">
-      <div class="page-header questions-header clearfix">
-        <h3><a href="questions.html">Questions</a></h3>
-        <a href="add-question.html" class="btn btn-primary btn-md">Ask a question</a>
+  <!-- Libraries -->
+  <script src="js/Libraries/jquery.gmap.min.js"></script>
+  <script src="js/Libraries/encoding.js"></script>
+
+  <!-- Config -->
+  <script src="js/config/config.js"></script>
+
+  <!-- Modules -->
+  <script src="js/Modules/main.js"></script>
+
+  <!-- Services -->
+  <script src="js/Services/DrupalHubService.js"></script>
+
+  <!-- Controllers -->
+  <script src="js/Controllers/login-signup.js"></script>
+  <script src="js/Controllers/question.js"></script>
+  <script src="js/Controllers/events.js"></script>
+
+</head>
+<body>
+
+  <div class="navbar navbar-default navbar-fixed-top" ng-controller="headerCtrl">
+    <div class="container">
+      <div class="navbar-header ">
+        <img src="img/logo.png" />
+        <a href="#/" class="navbar-brand">DrupalHub</a>
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
       </div>
+      <div class="navbar-collapse collapse" id="navbar-main">
+        <ul class="nav navbar-nav inner-pages">
+          <li class="calendar"><a href="events.html" class="fa fa-calendar-o">Events</a></li>
+          <li class="videos"><a href="videos.html" class="fa fa-youtube-play">Videos</a></li>
+          <li class="documentation"><a href="documentations.html" class="fa fa-book">Documentation</a></li>
+        </ul>
 
-      <div class="questions-wrapper clearfix" ng-cloak="question" ng-repeat="question in questions">
-        <div class="question row">
-          <div class="col-md-2 col-sm-2">
-            <img ng-src="{ {question.image} }" class="images img-responsive question" />
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" id="search" placeholder="Search">
           </div>
-          <div class="col-md-10 col-sm-10 col-xs-8">
-            <div class="content">
-              <a href="{ {question.url} }">{ {question.label} }</a>
-              <div class="meta-info">
-                <span class="first fa fa-clock-o"></span>{ {question.date} }
-                <span class="fa fa-user"></span>{ {question.user} }
-                <span class="fa fa-eye"></span>{ {question.viewed} }
-                <span class="fa fa-thumbs-o-up"></span>{ {question.like} }
-                <span ng-repeat="tag in question.tags">
-                  <span class="label label-info"><a href="{ {tag.url} }">{ {tag.title} }</a></span>
-                </span>
-              </div>
-              <div class="text">
-                { {question.intro} }
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 second">
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
 
-      <div class="events" ng-controller="eventsCtrl">
-        <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
-
-        <ul>
-          <li ng-repeat="event in events" ng-cloak="events">
-            <b><a href="{ {event.url} }">{ {event.label} }</a></b> - { {event.intro} }<br />
-            { {event.start} } - { {event.end} }, { {event.human_address} }.
+        <ul class="nav navbar-nav secondary-menu">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle fa fa-share-square-o" data-toggle="dropdown" role="button" aria-expanded="false">Social up! <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li class="first youtube"><a href="https://www.youtube.com/channel/UCJe3SCokovJBxxe-etjWhtA" class="fa fa-youtube-play">Youtube</a></li>
+              <li class="twitter"><a href="https://twitter.com/DrupalIsrael" class="fa fa-twitter">Twitter</a></li>
+              <li class="gplus"><a href="https://plus.google.com/communities/116473259616645148688" class="fa fa-google-plus">Google Plus</a></li>
+              <li class="facebook"><a href="https://www.facebook.com/groups/drupalil" class="fa fa-facebook-square">Facebook</a></li>
+              <li class="last github"><a href="http://github.com/drupalhub/drupalhub" class="fa fa-github-alt">Github</a></li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="fa fa-user" href="{ {userLink} }" ng-cloak="userName">{ {userName} }</a>
           </li>
         </ul>
       </div>
-
-      <div class="videos">
-        <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
-
-        <ul>
-          {% for item in site.data.videos limit:3 %}
-          <li>
-            <b><a href="{{ item.url }}">{{ item.title }}</a></b>- {{ item.description }}
-            <div class="meta-info">
-              <span class="first fa fa-user"></span>{{ item.user }}
-              <span class="fa fa-eye"></span>{{ item.viewed }}
-              <span class="fa fa-thumbs-o-up"></span>{{ item.like }}
-            </div>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-
-      <!--<div class="users">-->
-        <!--<div class="page-header users-header"><h4 class="fa fa-users">Most active users</h4></div>-->
-
-        <!--<ul>-->
-          <!--{% for item in site.data.active_users %}-->
-          <!--<li class="clearfix">-->
-            <!--<div class="row">-->
-              <!--<div class="col-md-3"><img class="img-responsive" src="{{ item.img }}" /></div>-->
-              <!--<div class="col-md-9">-->
-                <!--<div>-->
-                  <!--<b><a href="{{ item.url }}">{{ item.name }}</a></b>-->
-                  <!--<div class="meta-info">-->
-                    <!--<span class="fa fa-thumbs-o-up"></span>{{ item.reputation }}-->
-                    <!--<span class="fa fa-eye"></span>{{ item.viewed }}-->
-                  <!--</div>-->
-                <!--</div>-->
-              <!--</div>-->
-            <!--</div>-->
-          <!--</li>-->
-          <!--{% endfor %}-->
-        <!--</ul>-->
-      <!--</div>-->
-
     </div>
   </div>
-</section>
 
-<section class="bottom container">
-  <div class="row">
-    <div class="col-md-12">
-      <div class="page-header blog-header clearfix">
-        <h3><a href="blogs.html">Blogs</a></h3>
-        <a href="add-blog.html" class="btn btn-warning btn-md">Create a blog post</a>
-      </div>
+  <div ng-view></div>
 
-      {% for item in site.data.blogs %}
-      <div class="blogs-wrapper clearfix">
-        <div class="blog row">
-          <div class="col-md-2 col-sm-2"><img src="{{ item.image }}" class="images img-responsive blog" /></div>
-          <div class="col-md-10 col-sm-10">
-            <div class="content">
-              <a href="{{ item.url }}">{{ item.title }}</a>
-              <div class="meta-info">
-                <span class="first fa fa-clock-o"></span>{{ item.date }}
-                <span class="fa fa-user"></span>{{ item.user }}
-                <span class="fa fa-eye"></span>{{ item.viewed }}
-                <span class="fa fa-thumbs-o-up"></span>{{ item.like }}
-              </div>
-              <div class="text">
-                {{ item.intro }}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
+  <section class="container">
+    Built and designed by: Roy Segall
+    <a class="fa fa-facebook" href="http://www.facebook.com/roy.segall"></a>
+    <a class="fa fa-twitter" href="http://www.twitter.com/RoySegall"></a>
+  </section>
+
+</body>
+</html>

@@ -1,15 +1,9 @@
 var DrupalHub = angular.module('DrupalHub', ['DrupalHubConfig', 'ngRoute', 'LocalStorageModule']);
 
-// Since we using jekyll we can't use {{}} as interpreter.
-DrupalHub.config(function($interpolateProvider) {
-  $interpolateProvider.startSymbol('{ {');
-  $interpolateProvider.endSymbol('} }');
-});
-
 // Controller that will wrap the entire application.
 DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest) {
   $scope.userName = 'Login/Sign in';
-  $scope.userLink = 'register-signin.html';
+  $scope.userLink = '#register-signin';
 
   if (DrupalHubRequest.accessToken) {
     var userObject;
@@ -30,3 +24,15 @@ DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest) {
   }
 });
 
+DrupalHub.config(function($routeProvider) {
+  // Configure the route.
+  $routeProvider.when('/', {
+    templateUrl: 'pages/index.html',
+    controller: 'headerCtrl'
+  });
+
+  $routeProvider.when('/register-signin', {
+    templateUrl: 'pages/login-signup.html',
+    controller: 'loginCtrl'
+  });
+});
