@@ -32,6 +32,8 @@
   <script src="js/Controllers/login-signup.js"></script>
   <script src="js/Controllers/question.js"></script>
   <script src="js/Controllers/events.js"></script>
+  <script src="js/Controllers/video.js"></script>
+  <script src="js/Controllers/pageNotFound.js"></script>
 
 </head>
 <body>
@@ -49,9 +51,9 @@
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav inner-pages">
-          <li class="calendar"><a href="events.html" class="fa fa-calendar-o">Events</a></li>
-          <li class="videos"><a href="videos.html" class="fa fa-youtube-play">Videos</a></li>
-          <li class="documentation"><a href="documentations.html" class="fa fa-book">Documentation</a></li>
+          <li class="calendar"><a href="#events" class="fa fa-calendar-o">Events</a></li>
+          <li class="videos"><a href="#videos" class="fa fa-youtube-play">Videos</a></li>
+          <li class="documentation"><a href="#documentations" class="fa fa-book">Documentation</a></li>
         </ul>
 
         <form class="navbar-form navbar-left" role="search">
@@ -73,7 +75,7 @@
             </ul>
           </li>
           <li class="dropdown">
-            <a class="fa fa-user" href="{ {userLink} }" ng-cloak="userName">{ {userName} }</a>
+            <a class="fa fa-user" href="{{userLink}}" ng-cloak="userName">{{userName}}</a>
           </li>
         </ul>
       </div>

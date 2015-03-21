@@ -35,4 +35,9 @@ DrupalHub.config(function($routeProvider) {
     templateUrl: 'pages/login-signup.html',
     controller: 'loginCtrl'
   });
+
+  $routeProvider.otherwise({
+    templateUrl: 'pages/404.html',
+    controller: 'pageNotFound'
+  });
 });
