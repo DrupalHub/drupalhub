@@ -1,7 +1,7 @@
 <section class="container page-question" ng-controller="questionCtrl" ng-show="question">
   <ul class="breadcrumb">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="questions.html">Questions</a></li>
+    <li><a href="/#">Home</a></li>
+    <li><a href="/#questions">Questions</a></li>
     <li class="active">{{question.label}}</li>
   </ul>
 
@@ -14,7 +14,7 @@
         <h2>{{question.label}}</h2>
         <div class="meta-info">
           <span class="first fa fa-clock-o"></span>{{question.date}}
-          <span class="fa fa-user"></span>{{question.user}}
+          <span class="fa fa-user"></span>{{question.author}}
           <span class="fa fa-eye"></span>{{question.viewed}}
           <span class="fa fa-thumbs-o-up"></span>{{question.like}}
 
