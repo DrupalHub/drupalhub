@@ -6,7 +6,7 @@
   <div class="row">
     <div class="col-md-8 first" ng-controller="questionCtrl">
       <div class="page-header questions-header clearfix">
-        <h3><a href="questions.html">Questions</a></h3>
+        <h3><a href="#questions">Questions</a></h3>
         <a href="add-question.html" class="btn btn-primary btn-md">Ask a question</a>
       </div>
 
@@ -48,20 +48,18 @@
         </ul>
       </div>
 
-      <div class="videos">
+      <div class="videos" ng-controller="videoCtrl">
         <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
 
         <ul>
-          {% for item in site.data.videos limit:3 %}
-          <li>
-            <b><a href="{{ item.url }}">{{ item.title }}</a></b>- {{ item.description }}
+          <li ng-cloak="videos" ng-repeat="video in videos">
+            <b><a href="{{video.url}}">{{video.label}}</a></b>- {{video.text}}
             <div class="meta-info">
-              <span class="first fa fa-user"></span>{{ item.user }}
-              <span class="fa fa-eye"></span>{{ item.viewed }}
-              <span class="fa fa-thumbs-o-up"></span>{{ item.like }}
+              <span class="first fa fa-user"></span>{{video.author}}
+              <span class="fa fa-eye"></span>{{video.viewed}}
+              <span class="fa fa-thumbs-o-up"></span>{{video.like}}
             </div>
           </li>
-          {% endfor %}
         </ul>
       </div>
 
@@ -100,27 +98,25 @@
         <a href="add-blog.html" class="btn btn-warning btn-md">Create a blog post</a>
       </div>
 
-      {% for item in site.data.blogs %}
-      <div class="blogs-wrapper clearfix">
-        <div class="blog row">
-          <div class="col-md-2 col-sm-2"><img src="{{ item.image }}" class="images img-responsive blog" /></div>
+      <div class="blogs-wrapper clearfix" ng-controller="blogCtrl">
+        <div class="blog row" ng-cloak="blogs" ng-repeat="blog in blogs">
+          <div class="col-md-2 col-sm-2"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
           <div class="col-md-10 col-sm-10">
             <div class="content">
-              <a href="{{ item.url }}">{{ item.title }}</a>
+              <a href="{{blog.url}}">{{blog.label}}</a>
               <div class="meta-info">
-                <span class="first fa fa-clock-o"></span>{{ item.date }}
-                <span class="fa fa-user"></span>{{ item.user }}
-                <span class="fa fa-eye"></span>{{ item.viewed }}
-                <span class="fa fa-thumbs-o-up"></span>{{ item.like }}
+                <span class="first fa fa-clock-o"></span>{{blog.date}}
+                <span class="fa fa-user"></span>{{blog.author}}
+                <span class="fa fa-eye"></span>{{blog.viewed}}
+                <span class="fa fa-thumbs-o-up"></span>{{blog.like}}
               </div>
               <div class="text">
-                {{ item.intro }}
+                {{blog.intro}}
               </div>
             </div>
           </div>
         </div>
       </div>
-      {% endfor %}
     </div>
   </div>
 </section>
