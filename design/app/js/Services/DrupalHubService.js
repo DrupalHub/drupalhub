@@ -24,6 +24,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageServic
    * @returns {*}
    */
   DrupalHubSvc.localRequest = function(method, address, data) {
+    console.log(DrupalHubSvc.accessToken);
     return $http({
       method: method,
       url: SERVER + address,
@@ -53,6 +54,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageServic
    *   The value.
    */
   DrupalHubSvc.set = function(key, value) {
+    console.log(value);
     localStorageService.set(key, value);
   };
 

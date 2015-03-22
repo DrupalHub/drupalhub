@@ -14,3 +14,20 @@
     </div>
   </li>
 </ul>
+
+<form class="form-horizontal" name="commentForm" ng-submit="submit()" novalidate>
+  <fieldset>
+    <legend>
+      {{title}}
+      <button type="submit" class="btn {{btnType}} pull-right">Submit</button>
+    </legend>
+    <div class="form-group">
+      <div class="col-lg-12">
+        <textarea ng-required class="form-control" ng-model="newComment.text" required rows="3" id="textArea"></textarea>
+        <span ng-show="commentsError" class="text-danger">
+          {{commentsError}}
+        </span>
+      </div>
+    </div>
+  </fieldset>
+</form>
