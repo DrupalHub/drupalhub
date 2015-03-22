@@ -6,11 +6,6 @@ DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest) {
   if (DrupalHubRequest.accessToken) {
     var userObject;
 
-    if (userObject = DrupalHubRequest.userObject) {
-      $scope.userName = userObject.label;
-      $scope.userLink = 'profile.html';
-    }
-    else {
 
       DrupalHubRequest.localRequest('GET', 'me')
         .success(function(data, status) {
@@ -18,6 +13,5 @@ DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest) {
           DrupalHubRequest.set('userObject', user);
           $scope.userName = user.label;
         });
-    }
   }
 });

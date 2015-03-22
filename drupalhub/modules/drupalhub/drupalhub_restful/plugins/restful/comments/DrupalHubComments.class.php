@@ -15,10 +15,42 @@ class DrupalHubComments extends \DrupalHubEntityBase {
       ),
     );
 
-    $public_fields['text'] = $public_fields['label'];
-    unset($public_fields['label']);
+    $public_fields['nid'] = array(
+      'property' => 'node',
+    );
+
+    $public_fields['text'] = array(
+      'property' => 'comment_body',
+      'process_callbacks' => array(
+        array($this, 'body'),
+      ),
+    );
 
     return $public_fields;
+  }
+
+  /**
+   * Allow manipulating the entity before it is saved.
+   *
+   * @param \EntityMetadataWrapper $wrapper
+   *   The unsaved wrapped entity.
+   */
+  public function entityPreSave(\EntityMetadataWrapper $wrapper) {
+    parent::entityPreSave($wrapper);
+    // todo: fix.
+    $wrapper->comment_body->set(array('safe_value' => 'asdasd', 'value' => 'a', 'text_format' => 'full_html'));
+  }
+
+  /**
+   * The full body value.
+   *
+   * @param $body
+   *   The body field.
+   * @return mixed
+   *   The safe value.
+   */
+  protected function body($body) {
+    return $body['safe_value'];
   }
 
 }

@@ -53,6 +53,17 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
   }
 
   /**
+   * Allow manipulating the entity before it is saved.
+   *
+   * @param \EntityMetadataWrapper $wrapper
+   *   The unsaved wrapped entity.
+   */
+  public function entityPreSave(\EntityMetadataWrapper $wrapper) {
+    parent::entityPreSave($wrapper);
+    $wrapper->author->set($this->getAccount());
+  }
+
+  /**
    * Processing a date.
    */
   protected function processDate($value) {
