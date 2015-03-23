@@ -41,6 +41,14 @@ class DrupalHubComments extends \DrupalHubEntityBase {
     $wrapper->comment_body->set(array('safe_value' => 'asdasd', 'value' => 'a', 'text_format' => 'full_html'));
   }
 
+  public function __propertyValuesPreprocess($property_name, $value, $public_field_name) {
+    if ($public_field_name != 'text') {
+      return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
+    }
+
+    return array('value' => 'f');
+  }
+
   /**
    * The full body value.
    *
