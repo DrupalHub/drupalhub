@@ -1,1 +1,6 @@
-var DrupalHub = angular.module('DrupalHub', ['DrupalHubConfig', 'ngRoute', 'LocalStorageModule']);
+var DrupalHub = angular.module('DrupalHub', [
+  'DrupalHubConfig',
+  'ngRoute',
+  'LocalStorageModule',
+  'chieffancypants.loadingBar', 'ngAnimate'
+]);
