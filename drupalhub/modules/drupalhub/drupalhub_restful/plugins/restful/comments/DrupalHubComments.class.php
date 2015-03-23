@@ -29,24 +29,12 @@ class DrupalHubComments extends \DrupalHubEntityBase {
     return $public_fields;
   }
 
-  /**
-   * Allow manipulating the entity before it is saved.
-   *
-   * @param \EntityMetadataWrapper $wrapper
-   *   The unsaved wrapped entity.
-   */
-  public function entityPreSave(\EntityMetadataWrapper $wrapper) {
-    parent::entityPreSave($wrapper);
-    // todo: fix.
-    $wrapper->comment_body->set(array('safe_value' => 'asdasd', 'value' => 'a', 'text_format' => 'full_html'));
-  }
-
-  public function __propertyValuesPreprocess($property_name, $value, $public_field_name) {
+  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
     if ($public_field_name != 'text') {
       return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
     }
 
-    return array('value' => 'f');
+    return array('value' => $this->request['text']);
   }
 
   /**
@@ -58,7 +46,7 @@ class DrupalHubComments extends \DrupalHubEntityBase {
    *   The safe value.
    */
   protected function body($body) {
-    return $body['safe_value'];
+    return $body['value'];
   }
 
 }

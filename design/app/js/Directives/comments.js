@@ -20,7 +20,7 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
 
       // Submit a comment part.
       $scope.newComment = {
-        body: ['value'],
+        text: '',
         nid: nid
       };
 
@@ -31,11 +31,13 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
         }
 
         if ($scope.commentForm.$valid) {
-          $scope.newComment.body = [$scope.newComment.body];
-          console.log($scope.newComment);
           DrupalHubRequest.localRequest('post', 'comments', $scope.newComment).
             success(function(data, status) {
-              console.log(data, status);
+              $scope.comments.push(data.data[0]);
+              $scope.newComment = {
+                text: '',
+                nid: nid
+              };
             }).
             error(function(data, status) {
               console.log(data, status);
