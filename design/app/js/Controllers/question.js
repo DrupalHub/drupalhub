@@ -5,9 +5,9 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
 
   if ($location.path() == '/add-question') {
     $scope.question = {
-      title: '',
-      tags: {},
-      body: ''
+      label: '',
+      //tags: {},
+      text: ''
     };
 
     $scope.question.askQuestion = function() {
@@ -18,12 +18,14 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
         $scope.titleError = 'You need to populate the title.';
       }
 
-      if ($scope.question.body == null) {
+      if ($scope.question.text == null) {
         $scope.bodyError = 'You need to populate the text';
       }
 
       if ($scope.questionForm.$valid) {
-
+        DrupalHubRequest.localRequest('post', 'question', $scope.question).
+        success(function(data) {
+        });
       }
     }
   }

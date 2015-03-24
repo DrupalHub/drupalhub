@@ -29,14 +29,6 @@ class DrupalHubComments extends \DrupalHubEntityBase {
     return $public_fields;
   }
 
-  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
-    if ($public_field_name != 'text') {
-      return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
-    }
-
-    return array('value' => $this->request['text']);
-  }
-
   /**
    * The full body value.
    *
@@ -47,6 +39,14 @@ class DrupalHubComments extends \DrupalHubEntityBase {
    */
   protected function body($body) {
     return $body['value'];
+  }
+
+  protected function queryForListFilter(\EntityFieldQuery $query) {
+    parent::queryForListFilter($query);
+
+    if (!empty($this->request['nid'])) {
+      $query->propertyCondition('nid', $this->request['nid']);
+    }
   }
 
 }

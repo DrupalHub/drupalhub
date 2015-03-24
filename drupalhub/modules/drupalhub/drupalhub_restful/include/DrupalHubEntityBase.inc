@@ -37,7 +37,7 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
    */
   public function viewEntity($id) {
 
-    if (!empty($_GET['add_view'])) {
+    if (!empty($this->request['add_view'])) {
       $entity = entity_load($this->getEntityType(), $id);
       $params = array(
         'entity_type' => $this->getEntityType(),
@@ -50,6 +50,13 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
     }
 
     return parent::viewEntity($id);
+  }
+
+  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
+    if ($property_name == 'body') {
+      return array('value' => $this->request['text']);
+    }
+    return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
   }
 
   /**

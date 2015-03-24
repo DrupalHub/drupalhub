@@ -9,7 +9,7 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
       var nid = path[2];
       var type = path[1];
 
-      DrupalHubRequest.localRequest('get', 'comments').success(function(data, status) {
+      DrupalHubRequest.localRequest('get', 'comments?nid=' + nid).success(function(data, status) {
         $scope.comments = data.data;
       });
 

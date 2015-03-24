@@ -45,6 +45,20 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
   }
 
   /**
+   * Sort the query for list.
+   *
+   * @param \EntityFieldQuery $query
+   *   The query object.
+   *
+   * @throws \RestfulBadRequestException
+   *
+   * @see \RestfulEntityBase::getQueryForList
+   */
+  protected function queryForListSort(\EntityFieldQuery $query) {
+    $query->propertyOrderBy('created', 'DESC');
+  }
+
+  /**
    * Get the path of the element. i.e: question => question.html#30.
    *
    * @param $nid
