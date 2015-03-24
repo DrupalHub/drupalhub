@@ -9,7 +9,7 @@
           <span class="fa fa-thumbs-o-up"></span>{{comment.point}}
         </div>
 
-        {{comment.text}}
+        <p ng-bind-html="comment.text | fullHtml"></p>
       </div>
     </div>
   </li>
@@ -23,7 +23,7 @@
     </legend>
     <div class="form-group">
       <div class="col-lg-12">
-        <textarea ng-required class="form-control" ng-model="newComment.text" required rows="3" id="textArea"></textarea>
+        <textarea ckeditor="editorOptions" ng-model="newComment.text" ng-required class="form-control"  required rows="3" id="textArea"></textarea>
         <span ng-show="commentsError" class="text-danger">
           {{commentsError}}
         </span>
