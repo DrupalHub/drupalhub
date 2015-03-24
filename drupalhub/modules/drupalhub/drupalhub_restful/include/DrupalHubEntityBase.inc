@@ -53,7 +53,7 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
   }
 
   public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
-    if ($property_name == 'body') {
+    if (in_array($property_name, array('body', 'comment_body'))) {
       return array('value' => $this->request['text']);
     }
     return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
