@@ -25,9 +25,7 @@
                   <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>
                 </span>
               </div>
-              <div class="text">
-                {{question.intro}}
-              </div>
+              <div class="text" ng-bind-html="question.intro | fullHtml"></div>
             </div>
           </div>
         </div>

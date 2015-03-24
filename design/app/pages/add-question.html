@@ -1,18 +1,21 @@
-<section class="container form-question">
+<section class="container form-question" ng-controller="questionCtrl">
   <ul class="breadcrumb">
     <li><a href="../index.html">Home</a></li>
     <li class="active">Add question</li>
   </ul>
 
   <section class="form">
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="questionForm" ng-submit="question.askQuestion()" novalidate>
       <fieldset>
         <legend class="questions-header">Create a question</legend>
 
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Title</label>
           <div class="col-sm-11 col-md-10">
-            <input type="text" class="form-control" id="inputTitle" placeholder="Title">
+            <input type="text" ng-model="question.title" class="form-control" id="inputTitle" placeholder="Title">
+            <span ng-show="titleError" class="text-danger">
+              {{titleError}}
+            </span>
           </div>
         </div>
 
@@ -26,7 +29,10 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Question</label>
           <div class="col-sm-11 col-md-10">
-            <textarea class="form-control" rows="3" id="textArea"></textarea>
+            <textarea ckeditor="editorOptions" ng-model="question.body" ng-required class="form-control" rows="3" id="textArea"></textarea>
+            <span ng-show="bodyError" class="text-danger">
+              {{bodyError}}
+            </span>
           </div>
         </div>
 

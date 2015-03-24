@@ -4,5 +4,6 @@ var DrupalHub = angular.module('DrupalHub', [
   'LocalStorageModule',
   'chieffancypants.loadingBar',
   'ngAnimate',
-  'ngCkeditor'
+  'ngCkeditor',
+  'ngSanitize'
 ]);

@@ -23,7 +23,7 @@
             </span>
         </div>
 
-        {{question.text}}
+        <p ng-bind-html="question.text | fullHtml"></p>
       </div>
     </div>
   </section>
