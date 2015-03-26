@@ -1,7 +1,7 @@
 DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
   return {
     restrict: 'AE',
-    templateUrl: 'pages/comments.html',
+    templateUrl: 'js/Directives/comments/element.html',
     link: function($scope) {
 
       // Display comment part.

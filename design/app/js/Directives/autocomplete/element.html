@@ -1,0 +1,10 @@
+<div class="autocomplete">
+  <input type="text" class="form-control" id="{{id}}" placeholder="{{placeholder}}" ng-model="search" ng-change="request()">
+  <div ng-show="results">
+    <ul>
+      <li ng-repeat="tag in results">
+        {{tag}}
+      </li>
+    </ul>
+  </div>
+</div>
