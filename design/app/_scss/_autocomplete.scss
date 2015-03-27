@@ -1,0 +1,23 @@
+.autocomplete {
+  position: relative;
+  z-index: 10;
+
+  .results {
+    position: absolute;
+    overflow: hidden;
+    height: 60px;
+    background: #fafafa;
+    width: 100%;
+    border: #e7e7e7 solid 1px;
+    border-top: none;
+    padding: 10px 00px 00px 10px;
+    overflow-y: scroll;
+
+    .repeat {
+
+      &:hover, .active {
+        background-color: #E9E9E9;
+      }
+    }
+  }
+}

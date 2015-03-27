@@ -7,18 +7,52 @@ DrupalHub.directive('autoComplete', function($location, DrupalHubRequest) {
       id: '@',
       placeholder: '@'
     },
-    link: function($scope) {
-      $scope.tags = '';
+    link: function($scope, elem, window) {
+      // The search value.
+      $scope.search = '';
 
+      // Determine if we need to show the results element or hide it.
+      $scope.showResults = false;
+
+      // Holds the terms we need to exclude from the results.
+      $scope.exclude = [];
+
+      // The user types on the keyboard. Start the search.
       $scope.request = function() {
-        $scope.results = [];
 
-        DrupalHubRequest.localRequest('get', $scope.endpoint + '?autocomplete[string]=drupal').success(function(data) {
-          angular.forEach(data.data, function(tag) {
-            console.log(tag);
-            $scope.results.push(tag.label);
-          });
+        DrupalHubRequest.localRequest('get', $scope.endpoint + '?autocomplete[string]=' + $scope.search).success(function(data) {
+          $scope.results = data.data;
+
+          if (data.data != '') {
+            $scope.showResults = true;
+          }
         });
+      };
+
+      /**
+       * Check which key element was pressed.
+       */
+      $scope.keyHandle = function() {
+        elem.on('keydown', function(e) {
+          if (e.which == '38') {
+            console.log('up');
+          }
+          else {
+            console.log('down');
+          }
+        });
+      };
+
+      /**
+       * Append the result to the autocomplete element.
+       *
+       * @param text
+       *   The text value.
+       */
+      $scope.appendToElement = function(text) {
+        $scope.search = text;
+        $scope.exclude.push(text);
+        $scope.showResults = false;
       }
     }
   };
