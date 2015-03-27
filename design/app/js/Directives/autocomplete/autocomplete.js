@@ -1,4 +1,4 @@
-DrupalHub.directive('autoComplete', function($location, DrupalHubRequest) {
+DrupalHub.directive('autoComplete', function($location, DrupalHubRequest, $document) {
   return {
     restrict: 'AE',
     templateUrl: 'js/Directives/autocomplete/element.html',
@@ -14,16 +14,33 @@ DrupalHub.directive('autoComplete', function($location, DrupalHubRequest) {
       // Determine if we need to show the results element or hide it.
       $scope.showResults = false;
 
-      // Holds the terms we need to exclude from the results.
-      $scope.exclude = [];
 
       // The user types on the keyboard. Start the search.
       $scope.request = function() {
 
-        DrupalHubRequest.localRequest('get', $scope.endpoint + '?autocomplete[string]=' + $scope.search).success(function(data) {
-          $scope.results = data.data;
+        // Trim the results.
+        var split = $scope.search.split(',').map(function(n) {
+          return n.trim();
+        });
 
-          if (data.data != '') {
+        $scope.results = [];
+
+        // Ask for results.
+        DrupalHubRequest.localRequest('get', $scope.endpoint + '?autocomplete[string]=' + _.last(split).trim()).success(function(data) {
+
+          // Loop over the results and remove existing elements.
+          for (var prop in data.data) {
+            var value = data.data[prop];
+
+            if (split.indexOf(value) == -1) {
+              $scope.results.push(value);
+            }
+          }
+
+          // Unique the results. We don't need duplicates.
+          $scope.results = _.unique($scope.results);
+
+          if ($scope.results != '') {
             $scope.showResults = true;
           }
         });
@@ -34,12 +51,15 @@ DrupalHub.directive('autoComplete', function($location, DrupalHubRequest) {
        */
       $scope.keyHandle = function() {
         elem.on('keydown', function(e) {
-          if (e.which == '38') {
-            console.log('up');
+
+          if (typeof $scope.results === 'undefined') {
+            return;
           }
-          else {
-            console.log('down');
+
+          if (e.which == 38 || e.which == 40) {
+            e.preventDefault();
           }
+
         });
       };
 
@@ -50,8 +70,14 @@ DrupalHub.directive('autoComplete', function($location, DrupalHubRequest) {
        *   The text value.
        */
       $scope.appendToElement = function(text) {
-        $scope.search = text;
-        $scope.exclude.push(text);
+        if ($scope.search.split(',').length > 1) {
+          var split = $scope.search.split(',');
+          $scope.search = _.slice(split, 0, split.length - 1).join() + ', ' + text + ', ';
+        }
+        else {
+          $scope.search = text + ', ';
+        }
+
         $scope.showResults = false;
       }
     }

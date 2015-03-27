@@ -2,7 +2,7 @@
   <input type="text" ng-keydown="keyHandle()" class="form-control" id="{{id}}" placeholder="{{placeholder}}" ng-model="search" ng-change="request()">
   <div>
     <ul ng-show="showResults" class="results">
-      <li class="repeat" ng-click="appendToElement(result)" ng-repeat="result in results">
+      <li class="repeat" ng-click="appendToElement(result)" ng-repeat="result in results track by $index">
         {{result}}
       </li>
     </ul>
