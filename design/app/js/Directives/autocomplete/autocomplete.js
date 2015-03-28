@@ -1,19 +1,21 @@
-DrupalHub.directive('autoComplete', function($location, DrupalHubRequest, $document) {
+DrupalHub.directive('autoComplete', function($location, DrupalHubRequest, $rootScope) {
   return {
     restrict: 'AE',
     templateUrl: 'js/Directives/autocomplete/element.html',
     scope: {
       endpoint: '@',
       id: '@',
-      placeholder: '@'
+      placeholder: '@',
+      scope: '@',
+      key: '@'
     },
-    link: function($scope, elem, window) {
+    link: function($scope, elem) {
       // The search value.
       $scope.search = '';
+      $rootScope.autocomplete = $scope.search;
 
       // Determine if we need to show the results element or hide it.
       $scope.showResults = false;
-
 
       // The user types on the keyboard. Start the search.
       $scope.request = function() {
@@ -43,6 +45,7 @@ DrupalHub.directive('autoComplete', function($location, DrupalHubRequest, $docum
           if ($scope.results != '') {
             $scope.showResults = true;
           }
+
         });
       };
 
@@ -52,14 +55,13 @@ DrupalHub.directive('autoComplete', function($location, DrupalHubRequest, $docum
       $scope.keyHandle = function() {
         elem.on('keydown', function(e) {
 
-          if (typeof $scope.results === 'undefined') {
-            return;
-          }
+          var key = e.which;
 
-          if (e.which == 38 || e.which == 40) {
+          if (key == 38 || key == 40 || key == 13) {
             e.preventDefault();
           }
 
+          // todo: handle later.
         });
       };
 

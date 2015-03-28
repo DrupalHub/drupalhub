@@ -1,4 +1,4 @@
-DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $location, $routeParams, $sce) {
+DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $location, $routeParams, $rootScope) {
 
   var path = $location.path();
   var endpoint;
@@ -6,13 +6,14 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
   if ($location.path() == '/add-question') {
     $scope.question = {
       label: '',
-      //tags: {},
+      tags: '',
       text: ''
     };
 
     $scope.question.askQuestion = function() {
       $scope.titleError = false;
       $scope.bodyError = false;
+      $scope.question.tags = $scope.$$childHead.search;
 
       if ($scope.question.title == "") {
         $scope.titleError = 'You need to populate the title.';

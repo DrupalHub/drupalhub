@@ -15,7 +15,7 @@
 
     .repeat {
 
-      &:hover, .active {
+      &:hover, &.active {
         background-color: #E9E9E9;
       }
     }

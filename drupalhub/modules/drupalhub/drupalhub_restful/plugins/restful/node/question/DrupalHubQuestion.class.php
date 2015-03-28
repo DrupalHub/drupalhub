@@ -23,4 +23,8 @@ class DrupalHubQuestion extends \DrupalHubRestfulNode {
     return $public_fields;
   }
 
+  public function entityPreSave(\EntityMetadataWrapper $wrapper) {
+    parent::entityPreSave($wrapper);
+  }
+
 }
