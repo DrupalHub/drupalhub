@@ -85,4 +85,3 @@ DrupalHub.directive('autoComplete', function($location, DrupalHubRequest, $rootS
     }
   };
 });
-//

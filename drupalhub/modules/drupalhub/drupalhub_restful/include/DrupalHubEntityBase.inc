@@ -38,7 +38,7 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
   public function viewEntity($id) {
 
     if (!empty($this->request['add_view'])) {
-      $entity = entity_load($this->getEntityType(), $id);
+      $entity = entity_load_single($this->getEntityType(), $id);
       $params = array(
         'entity_type' => $this->getEntityType(),
         'entity' => $entity,
@@ -49,9 +49,13 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
       entity_view_count_create($params)->save();
     }
 
+
     return parent::viewEntity($id);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
     if (in_array($property_name, array('body', 'comment_body'))) {
       return array('value' => $this->request['text']);
@@ -86,11 +90,9 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
 
   /**
    * Count how many times entry was viewed.
-   *
-   * todo: Do it. Use Entity view count.
    */
   protected function countViewed($nid) {
-    return 0;
+    return entity_view_count_get_entity_count('node', $nid);
   }
 
   /**

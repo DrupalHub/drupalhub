@@ -42,6 +42,9 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
    */
   public function entityPreSave(\EntityMetadataWrapper $wrapper) {
     $wrapper->name->set($this->getBundle());
+    $request = $this->getRequest();
+    $uid = empty($request['uid']) ? $this->getAccount()->uid : $request['uid'];
+    $wrapper->uid->set($uid);
   }
 
   /**
@@ -49,12 +52,13 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
    */
   public function entityValidate(\EntityMetadataWrapper $wrapper) {
     $request = $this->getRequest();
+    $uid = empty($request['uid']) ? $this->getAccount()->uid : $request['uid'];
     $query = new EntityFieldQuery();
     $results = $query
       ->entityCondition('entity_type', 'flagging')
       ->propertyCondition('entity_type', $request['entity_type'])
       ->propertyCondition('entity_id', $request['entity_id'])
-      ->propertyCondition('uid', $request['uid'])
+      ->propertyCondition('uid', $uid)
       ->count()
       ->execute();
 

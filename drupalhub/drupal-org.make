@@ -51,7 +51,8 @@ projects[fboauth][version] = "1.6"
 projects[fboauth][subdir] = contrib
 
 projects[flag][subdir] = "contrib"
-projects[flag][version] = 3.6
+projects[flag][branch] = 7.x-3.x
+projects[flag][patch][] = https://www.drupal.org/files/issues/entity_metadata_wrapper_flagging_support.patch
 
 projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x

@@ -109,7 +109,7 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
    *   The safe value.
    */
   protected function body($body) {
-    return $body['safe_value'];
+    return $body['value'];
   }
 
   /**

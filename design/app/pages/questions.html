@@ -21,7 +21,7 @@
                 <span class="fa fa-user"></span>{{question.user}}
                 <span class="fa fa-eye"></span>{{question.viewed}}
                 <span class="fa fa-thumbs-o-up"></span>{{question.like}}
-                <span ng-repeat="tag in question.tags">
+                <span ng-show="question.tags" ng-repeat="tag in question.tags">
                   <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>
                 </span>
               </div>

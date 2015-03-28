@@ -36,7 +36,7 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
       endpoint = $location.path() != '/questions' ? 'question?range=5' : 'question';
     }
     else {
-      endpoint = 'question/' + $routeParams['id'];
+      endpoint = 'question/' + $routeParams['id'] + '?add_view=add';
     }
 
     DrupalHubRequest.localRequest('get', endpoint).

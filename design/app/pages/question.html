@@ -16,7 +16,7 @@
           <span class="first fa fa-clock-o"></span>{{question.date}}
           <span class="fa fa-user"></span>{{question.author}}
           <span class="fa fa-eye"></span>{{question.viewed}}
-          <span class="fa fa-thumbs-o-up"></span>{{question.like}}
+          <span flag type="like" likes="{{question.like}}" entity="node" id="{{question.id}}"></span>
 
             <span ng-repeat="tag in question.tags">
               <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>

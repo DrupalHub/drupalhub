@@ -5,5 +5,6 @@ var DrupalHub = angular.module('DrupalHub', [
   'chieffancypants.loadingBar',
   'ngAnimate',
   'ngCkeditor',
-  'ngSanitize'
+  'ngSanitize',
+  'flagDirective'
 ]);
