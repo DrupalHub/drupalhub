@@ -3,6 +3,5 @@ angular.module('DrupalHubConfig', [])
 
 // Implements for flag directive the address for endpoint.
 angular.module('flagConfig', []).constant('flagConfig', {
-  'server': 'http://localhost/drupalhub/www/api/',
-  'access_token': 'cuHTIdzoBxLd0as3eILqE88fgkwRHC9f_zK_QzS15OE'
+  'server': 'http://localhost/drupalhub/www/api/'
 });
