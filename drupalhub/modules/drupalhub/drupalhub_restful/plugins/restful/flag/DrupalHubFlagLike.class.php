@@ -38,13 +38,35 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
   }
 
   /**
+   * {@inheritdoc}
+   */
+  protected function queryForListFilter(\EntityFieldQuery $query) {
+
+    $request = $this->getRequest();
+
+    if (isset($request['check_flagged'])) {
+
+      // Check if the user already flagged the current entity.
+      if (empty($request['entity']) || empty($request['id'])) {
+        throw new RestfulBadRequestException('You did not provide entity type or ID.');
+      }
+
+      // We need to check if the user already flagged this an entity.
+      $query
+        ->propertyCondition('uid', $this->getUserId())
+        ->propertyCondition('entity_type', $request['entity'])
+        ->propertyCondition('entity_id', $request['id']);
+    }
+
+    parent::queryForListFilter($query);
+  }
+
+  /**
    * Set the bundle of the flag as the flag name.
    */
   public function entityPreSave(\EntityMetadataWrapper $wrapper) {
     $wrapper->name->set($this->getBundle());
-    $request = $this->getRequest();
-    $uid = empty($request['uid']) ? $this->getAccount()->uid : $request['uid'];
-    $wrapper->uid->set($uid);
+    $wrapper->uid->set($this->getUserId());
   }
 
   /**
@@ -52,13 +74,13 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
    */
   public function entityValidate(\EntityMetadataWrapper $wrapper) {
     $request = $this->getRequest();
-    $uid = empty($request['uid']) ? $this->getAccount()->uid : $request['uid'];
+
     $query = new EntityFieldQuery();
     $results = $query
       ->entityCondition('entity_type', 'flagging')
       ->propertyCondition('entity_type', $request['entity_type'])
       ->propertyCondition('entity_id', $request['entity_id'])
-      ->propertyCondition('uid', $uid)
+      ->propertyCondition('uid', $this->getUserId())
       ->count()
       ->execute();
 
@@ -69,6 +91,9 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
     parent::entityValidate($wrapper);
   }
 
+  /**
+   * {@inheritdoc}
+   */
   public function deleteEntity($entity_id) {
     db_delete('flagging')
       ->condition('flagging_id', $entity_id)
@@ -76,6 +101,17 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
 
     // Set the HTTP headers.
     $this->setHttpHeaders('Status', 204);
+  }
+
+  /**
+   * Get the user ID from the request or the authentication manager.
+   *
+   * @return integer
+   *   The user ID.
+   */
+  private function getUserId() {
+    $request = $this->getRequest();
+    return empty($request['uid']) ? $this->getAccount()->uid : $request['uid'];
   }
 
 }
