@@ -95,9 +95,9 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
    * {@inheritdoc}
    */
   public function deleteEntity($entity_id) {
-    db_delete('flagging')
-      ->condition('flagging_id', $entity_id)
-      ->execute();
+
+    $flag = flag_get_flag($this->getBundle());
+    $flag->flag('unflag', $entity_id, $this->getAccount());
 
     // Set the HTTP headers.
     $this->setHttpHeaders('Status', 204);
