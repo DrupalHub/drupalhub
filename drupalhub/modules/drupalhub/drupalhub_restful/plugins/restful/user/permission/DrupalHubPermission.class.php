@@ -2,9 +2,9 @@
 
 /**
  * @file
- * Contains DrupalHubMe.
+ * Contains DrupalHubPermission.
  */
-class DrupalHubMe extends \DrupalHubUsers {
+class DrupalHubPermission extends \DrupalHubUsers {
   /**
    * Overrides \RestfulEntityBase::controllers.
    */
@@ -21,11 +21,6 @@ class DrupalHubMe extends \DrupalHubUsers {
    */
   public function viewEntity($entity_id) {
     $account = $this->getAccount();
-
-    if ($permission = \RestfulManager::getRequestHttpHeader('permission')) {
-      return array('access' => user_access($permission, $account));
-    }
-
     return parent::viewEntity($account->uid);
   }
 }

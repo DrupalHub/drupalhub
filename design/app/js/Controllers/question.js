@@ -50,4 +50,8 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
         }
       });
   }
+
+  $scope.canAskQuestion = function() {
+    return DrupalHubRequest.userAccess('create question content');
+  };
 });
