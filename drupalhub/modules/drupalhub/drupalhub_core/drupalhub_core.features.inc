@@ -45,6 +45,34 @@ function drupalhub_core_flag_default_flags() {
     'access_author' => '',
     'show_contextual_link' => 0,
     'i18n' => 0,
+    'module' => 'drupalhub_core',
+    'locked' => array(
+      0 => 'name',
+    ),
+    'api_version' => 3,
+  );
+  // Exported flag: "Like comments".
+  $flags['like_comments'] = array(
+    'entity_type' => 'comment',
+    'title' => 'Like comments',
+    'global' => 0,
+    'types' => array(),
+    'flag_short' => 'Flag this item',
+    'flag_long' => '',
+    'flag_message' => '',
+    'unflag_short' => 'Unflag this item',
+    'unflag_long' => '',
+    'unflag_message' => '',
+    'unflag_denied_text' => '',
+    'link_type' => 'toggle',
+    'weight' => 0,
+    'show_in_links' => array(
+      'full' => 'full',
+    ),
+    'show_as_field' => 0,
+    'show_on_form' => 0,
+    'access_author' => '',
+    'show_contextual_link' => 0,
     'api_version' => 3,
     'module' => 'drupalhub_core',
     'locked' => array(

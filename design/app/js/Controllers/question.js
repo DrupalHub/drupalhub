@@ -26,6 +26,7 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
       if ($scope.questionForm.$valid) {
         DrupalHubRequest.localRequest('post', 'question', $scope.question).
         success(function(data) {
+            window.location = "#/question/" + data.data[0].id;
         });
       }
     }

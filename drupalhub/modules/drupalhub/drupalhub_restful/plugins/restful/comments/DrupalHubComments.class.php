@@ -11,7 +11,7 @@ class DrupalHubComments extends \DrupalHubEntityBase {
     $public_fields['point'] = array(
       'property' => 'cid',
       'process_callbacks' => array(
-        array($this, 'processPoint'),
+        array($this, 'countLiked'),
       ),
     );
 
