@@ -6,5 +6,6 @@ var DrupalHub = angular.module('DrupalHub', [
   'ngAnimate',
   'ngCkeditor',
   'ngSanitize',
-  'flagDirective'
+  'flagDirective',
+  'ui.bootstrap'
 ]);

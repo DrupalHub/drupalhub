@@ -41,21 +41,14 @@ DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageServic
    * @returns {boolean}
    */
   DrupalHubSvc.userAccess = function(permission) {
-
-    // todo: try to use asyncronise.
-    var xhr = new window.XMLHttpRequest();
-    xhr.open('GET', SERVER + 'me', false);
-    xhr.setRequestHeader('access_token', DrupalHubSvc.accessToken);
-    xhr.setRequestHeader('permission', permission);
-    xhr.send();
-
-    var results = JSON.parse(xhr.response);
-
-    if (results.status != 200) {
-      return false;
-    }
-
-    return JSON.parse(xhr.response).data.access;
+    return $http({
+      method: 'get',
+      url: SERVER + 'me',
+      headers: {
+        'access_token': DrupalHubSvc.accessToken,
+        permission: permission
+      }
+    });
   };
 
   /**
