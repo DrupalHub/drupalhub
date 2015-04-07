@@ -42,8 +42,6 @@ DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest) {
       $scope.bodyError = 'You need to populate the text';
     }
 
-    console.log($scope.questionForm);
-
     if ($scope.questionForm.$valid) {
       DrupalHubRequest.localRequest('post', 'question', $scope.question).
         success(function(data) {

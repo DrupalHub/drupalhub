@@ -1,29 +1,25 @@
-<section class="container page-blog">
+<section class="container page-blog" ng-controller="blogCtrl" ng-cloak="blogs">
   <ul class="breadcrumb">
-    <li><a href="../index.html">Home</a></li>
-    <li><a href="blogs.html">blogs</a></li>
-    <li class="active">{{ site.data.blog.title }}</li>
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/blogs">blogs</a></li>
+    <li class="active">{{blogs.label}}</li>
   </ul>
 
   <section class="blog">
     <div class="row">
-      <div class="col-md-3 col-sm-3 pull-left image">
-        <img class="images blog img-responsive" src="{{ site.data.blog.image }}" />
+      <div class="col-md-2 col-sm-2 pull-left image">
+        <img class="images blog img-responsive" ng-src="{{blogs.image}}" />
       </div>
-      <div class="col-md-9 col-sm-9 blog-content">
-        <h2>{{ site.data.blog.title }}</h2>
-        <div class="meta-info">
-          <span class="first fa fa-clock-o"></span>{{ site.data.blog.date }}
-          <span class="fa fa-user"></span>{{ site.data.blog.user }}
-          <span class="fa fa-eye"></span>{{ site.data.blog.viewed }}
-          <span class="fa fa-thumbs-o-up"></span>{{ site.data.blog.like }}
-
-          {% for tag in site.data.blog.tags %}
-          <span class="label label-info"><a href="{{ tag.url }}">{{ tag.title }}</a></span>
-          {% endfor %}
+      <div class="col-md-10 col-sm-10 blog-content">
+        <h2>{{blogs.label}}</h2>
+        <div class="meta-info" ng-show="blogs">
+          <span class="first fa fa-clock-o"></span>{{blogs.date}}
+          <span class="fa fa-user"></span>{{blogs.author}}
+          <span class="fa fa-eye"></span>{{blogs.viewed}}
+          <span flag type="like" likes="{{blogs.like}}" entity="node" id="{{blogs.id}}"></span>
         </div>
 
-        {{ site.data.blog.text }}
+        <span ng-bind-html="blogs.text | fullHtml"></span>
       </div>
     </div>
   </section>
@@ -33,23 +29,7 @@
       <h2>Comments</h2>
     </div>
 
-    {% include comments.html %}
-
+    <div drupal-hub-comments></div>
   </section>
 
-  <section class="form">
-    <form class="form-horizontal">
-      <fieldset>
-        <legend class="clearfox">
-          What do you think on this blog?
-          <button type="submit" class="btn btn-primary pull-right">Submit</button>
-        </legend>
-        <div class="form-group">
-          <div class="col-lg-12">
-            <textarea class="form-control" rows="3" id="textArea"></textarea>
-          </div>
-        </div>
-      </fieldset>
-    </form>
-  </section>
 </section>

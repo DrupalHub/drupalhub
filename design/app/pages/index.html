@@ -97,7 +97,7 @@
       </div>
 
       <div class="blogs-wrapper clearfix">
-        <div class="blog row" ng-cloak="blogs" ng-repeat="blog in blogs">
+        <div class="blog row" ng-show="blogs" ng-repeat="blog in blogs">
           <div class="col-md-2 col-sm-2"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
           <div class="col-md-10 col-sm-10">
             <div class="content">
@@ -108,9 +108,7 @@
                 <span class="fa fa-eye"></span>{{blog.viewed}}
                 <span class="fa fa-thumbs-o-up"></span>{{blog.like}}
               </div>
-              <div class="text">
-                {{blog.intro}}
-              </div>
+              <div class="text" ng-bind-html="blog.intro | fullHtml"></div>
             </div>
           </div>
         </div>

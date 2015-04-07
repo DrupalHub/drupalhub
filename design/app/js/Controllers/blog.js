@@ -1,4 +1,4 @@
-DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest, $location) {
+DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
 
   var path;
   if ($location.url() == '/') {
@@ -12,13 +12,17 @@ DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest, $location) {
   }
   else {
     path = 'blog';
+    if ($routeParams['id']) {
+      path += '/' + $routeParams['id'];
+    }
   }
+
 
   // Get the blogs.
   $scope.blogs = {};
 
   DrupalHubRequest.localRequest('get', path).success(function(data) {
-    $scope.blogs = data.data;
+    $scope.blogs = $routeParams['id'] ? data.data[0] : data.data;
   });
 
 });

@@ -22,6 +22,10 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
         $scope.title = 'Help this question';
         $scope.btnType = 'btn-primary';
       }
+      else {
+        $scope.title = 'What do you think on this blog?';
+        $scope.btnType = 'btn-warning';
+      }
 
       // Submit a comment part.
       $scope.newComment = {
