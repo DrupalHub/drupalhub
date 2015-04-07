@@ -90,13 +90,13 @@
 
 <section class="bottom container">
   <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-12" ng-controller="blogCtrl">
       <div class="page-header blog-header clearfix">
-        <h3><a href="blogs.html">Blogs</a></h3>
-        <a href="add-blog.html" class="btn btn-warning btn-md">Create a blog post</a>
+        <h3><a href="#/blogs">Blogs</a></h3>
+        <a ng-show="canPostNewBlogs" href="#/add-blog" class="btn btn-warning btn-md">Create a blog post</a>
       </div>
 
-      <div class="blogs-wrapper clearfix" ng-controller="blogCtrl">
+      <div class="blogs-wrapper clearfix">
         <div class="blog row" ng-cloak="blogs" ng-repeat="blog in blogs">
           <div class="col-md-2 col-sm-2"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
           <div class="col-md-10 col-sm-10">

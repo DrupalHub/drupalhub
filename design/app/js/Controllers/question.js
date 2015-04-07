@@ -1,4 +1,4 @@
-DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $location, $routeParams, $http) {
+DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
 
   var path = $location.path();
   var endpoint;

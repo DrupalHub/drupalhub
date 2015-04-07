@@ -4,6 +4,11 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
     templateUrl: 'js/Directives/comments/element.html',
     link: function($scope) {
 
+      $scope.canComment = false;
+      DrupalHubRequest.userAccess('post comments').success(function(response) {
+        $scope.canComment = response.data.data.access;
+      });
+
       // Display comment part.
       var path = $location.path().split('/');
       var nid = path[2];
@@ -38,9 +43,6 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
                 text: '',
                 nid: nid
               };
-            }).
-            error(function(data, status) {
-              console.log(data, status);
             });
         }
       };
