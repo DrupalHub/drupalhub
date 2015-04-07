@@ -22,7 +22,12 @@ DrupalHub.config(function($routeProvider) {
 
   $routeProvider.when('/add-question', {
     templateUrl: 'pages/add-question.html',
-    controller: 'questionCtrl'
+    controller: 'QuestionFormCtrl'
+  });
+
+  $routeProvider.when('/add-blog', {
+    templateUrl: 'pages/add-blog.html',
+    controller: 'blogCtrl'
   });
 
   $routeProvider.otherwise({

@@ -1,4 +1,4 @@
-<section class="container form-question" ng-controller="questionCtrl">
+<section class="container form-question" ng-controller="QuestionFormCtrl">
   <ul class="breadcrumb">
     <li><a href="../index.html">Home</a></li>
     <li class="active">Add question</li>
@@ -12,7 +12,7 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Title</label>
           <div class="col-sm-11 col-md-10">
-            <input type="text" ng-model="question.label" class="form-control" id="inputTitle" placeholder="Title">
+            <input type="text" ng-model="question.label" class="form-control" id="inputTitle" required placeholder="Title">
             <span ng-show="titleError" class="text-danger">
               {{titleError}}
             </span>
@@ -33,7 +33,7 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Question</label>
           <div class="col-sm-11 col-md-10">
-            <textarea ckeditor="editorOptions" ng-model="question.text" ng-required class="form-control" rows="3" id="textArea"></textarea>
+            <textarea ckeditor="editorOptions" ng-model="question.text" required class="form-control" rows="3" id="textArea"></textarea>
             <span ng-show="bodyError" class="text-danger">
               {{bodyError}}
             </span>

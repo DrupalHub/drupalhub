@@ -57,10 +57,3 @@ DrupalHub.controller('loginCtrl', function($scope, $http, SERVER, localStorageSe
 
   }
 });
-
-/**
- * Sign up controller.
- */
-DrupalHub.controller('registerCtrl', function($scope, $http) {
-
-});

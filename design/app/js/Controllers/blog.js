@@ -1,16 +1,23 @@
-DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest, $routeParams) {
+DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest, $location) {
 
-  // Check if the user can post new blogs.
-  $scope.canPostNewBlogs = false;
-  DrupalHubRequest.userAccess('create blog content').success(function(data) {
-    $scope.canPostNewBlogs = data.data.access;
-  });
+  var path;
+  if ($location.url() == '/') {
+    // Check if the user can post new blogs.
+    $scope.canPostNewBlogs = false;
+    DrupalHubRequest.userAccess('create blog content').success(function(data) {
+      $scope.canPostNewBlogs = data.data.access;
+    });
 
+    path = 'blog?range=5';
+  }
+  else {
+    path = 'blog';
+  }
 
   // Get the blogs.
   $scope.blogs = {};
 
-  DrupalHubRequest.localRequest('get', 'blog').success(function(data) {
+  DrupalHubRequest.localRequest('get', path).success(function(data) {
     $scope.blogs = data.data;
   });
 

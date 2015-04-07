@@ -1,32 +1,25 @@
-<section class="container form-blog">
+<section class="container form-blog" ng-controller="BlogFormCtrl">
   <ul class="breadcrumb">
     <li><a href="../index.html">Home</a></li>
     <li class="active">Add blog</li>
   </ul>
 
   <section class="form">
-    <form class="form-horizontal">
+    <form class="form-horizontal" name="blogForm" ng-submit="publishBlog()" novalidate>
       <fieldset>
         <legend class="blog-header">Create a blog</legend>
 
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Title</label>
           <div class="col-sm-11 col-md-10">
-            <input type="text" class="form-control" id="inputTitle" placeholder="Title">
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label for="inputTags" class="col-sm-1 col-md-2 control-label">Tags</label>
-          <div class="col-sm-11 col-md-10">
-            <input type="text" class="form-control" id="inputTags" placeholder="Tags">
+            <input type="text" class="form-control" id="inputTitle" placeholder="Title" ng-model="blog.label" required>
           </div>
         </div>
 
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Blog</label>
           <div class="col-sm-11 col-md-10">
-            <textarea class="form-control" rows="3" id="textArea"></textarea>
+            <textarea ckeditor="editorOptions" ng-model="blog.text" required class="form-control" rows="3" id="textArea"></textarea>
           </div>
         </div>
 

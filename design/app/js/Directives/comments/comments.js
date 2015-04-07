@@ -6,7 +6,7 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
 
       $scope.canComment = false;
       DrupalHubRequest.userAccess('post comments').success(function(response) {
-        $scope.canComment = response.data.data.access;
+        $scope.canComment = response.data.access;
       });
 
       // Display comment part.
