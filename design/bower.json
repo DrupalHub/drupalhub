@@ -16,7 +16,10 @@
     "ng-ckeditor": "0.2.1",
     "angular-sanitize": "1.4.0-build.3928+sha.b8dbdb0",
     "lodash": "3.6.0",
-    "drupal-restful-flag": "0.0.1",
-    "angular-bootstrap": "0.12.1"
+    "drupal-restful-flag": "0.0.2",
+    "angular-bootstrap": "0.12.1",
+    "loaders.css": "0.1.0",
+    "sass-bootstrap-glyphicons": "1.0.0",
+    "components-font-awesome": "4.3.0"
   }
 }

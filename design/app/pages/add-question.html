@@ -23,7 +23,7 @@
           <label for="inputTags" class="col-sm-1 col-md-2 control-label">Tags</label>
           <div class="col-sm-11 col-md-10">
             <input type="text"
-               id="inputTags" placeholder="Tags" ng-model="tags"
+               id="inputTags" placeholder="Tags" ng-model="question.tags"
                typeahead="result for result in getTags($viewValue)"
                typeahead-loading="loadingLocations" class="form-control">
             <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>

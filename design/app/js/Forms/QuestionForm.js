@@ -32,7 +32,6 @@ DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest) {
   $scope.question.askQuestion = function() {
     $scope.titleError = false;
     $scope.bodyError = false;
-    $scope.question.tags = $scope.$$childHead.search;
 
     if ($scope.question.label == "") {
       $scope.titleError = 'You need to populate the title.';
