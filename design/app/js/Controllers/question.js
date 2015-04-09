@@ -17,6 +17,7 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
     endpoint = 'question/' + $routeParams['id'] + '?add_view=add';
   }
 
+  $scope.waiting = true;
   DrupalHubRequest.localRequest('get', endpoint).
     success(function(data) {
       if (['/', '/questions'].indexOf(path) != -1) {
@@ -25,5 +26,6 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
       else {
         $scope.question = data.data[0];
       }
+      $scope.waiting = false;
     });
 });

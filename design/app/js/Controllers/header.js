@@ -6,12 +6,17 @@ DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest) {
   if (DrupalHubRequest.accessToken) {
     var userObject;
 
-    DrupalHubRequest.localRequest('GET', 'me')
-      .success(function(data, status) {
-        var user = data.data;
-        DrupalHubRequest.set('userObject', user);
-        $scope.userName = user.label;
-      });
+    if (userObject = DrupalHubRequest.get('userObject')) {
+      $scope.userName = userObject.label;
+    }
+    else {
+      DrupalHubRequest.localRequest('GET', 'me')
+        .success(function(data) {
+          var user = data.data;
+          DrupalHubRequest.set('userObject', user);
+          $scope.userName = user.label;
+        });
+    }
   }
 
   // Alter the access token before the flag directive http request kicks in.

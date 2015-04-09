@@ -10,30 +10,36 @@
         <a href="#/add-question" class="btn btn-primary btn-md" ng-show="showNewQuestion">Ask a question</a>
       </div>
 
-      <div class="questions-wrapper clearfix" ng-cloak="question" ng-repeat="question in questions">
-        <div class="question row">
-          <div class="col-md-2 col-sm-2">
-            <img ng-src="{{question.image}}" class="images img-responsive question" />
-          </div>
-          <div class="col-md-10 col-sm-10 col-xs-8">
-            <div class="content">
-              <a href="{{question.url}}">{{question.label}}</a>
-              <div class="meta-info">
-                <span class="first fa fa-clock-o"></span>{{question.date}}
-                <span class="fa fa-user"></span>{{question.user}}
-                <span class="fa fa-eye"></span>{{question.viewed}}
-                <span class="fa fa-thumbs-o-up"></span>{{question.like}}
-                <span ng-repeat="tag in question.tags">
-                  <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>
-                </span>
+      <div class="questions-wrapper clearfix">
+        <div ng-cloak="question" ng-repeat="question in questions">
+          <div class="question row">
+            <div class="col-md-2 col-sm-2">
+              <img ng-src="{{question.image}}" class="images img-responsive question" />
+            </div>
+            <div class="col-md-10 col-sm-10 col-xs-8">
+              <div class="content">
+                <a href="{{question.url}}">{{question.label}}</a>
+                <div class="meta-info">
+                  <span class="first fa fa-clock-o"></span>{{question.date}}
+                  <span class="fa fa-user"></span>{{question.user}}
+                  <span class="fa fa-eye"></span>{{question.viewed}}
+                  <span class="fa fa-thumbs-o-up"></span>{{question.like}}
+                  <span ng-repeat="tag in question.tags">
+                    <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>
+                  </span>
+                </div>
+                <div class="text" ng-bind-html="question.intro | fullHtml"></div>
               </div>
-              <div class="text" ng-bind-html="question.intro | fullHtml"></div>
             </div>
           </div>
         </div>
-      </div>
-      <div ng-hide="questions" class="text-center">
-        loading ...
+        <div class="text-center" ng-show="waiting">
+          <div class="loader">
+            <div class="loader-inner ball-clip-rotate">
+              <div></div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-md-4 second">
@@ -47,6 +53,13 @@
             {{event.start}} - {{event.end}}, {{event.human_address}}.
           </li>
         </ul>
+        <div class="text-center" ng-show="waiting">
+          <div class="loader">
+            <div class="loader-inner ball-clip-rotate">
+              <div></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="videos" ng-controller="videoCtrl">
@@ -62,6 +75,13 @@
             </div>
           </li>
         </ul>
+        <div class="text-center" ng-show="waiting">
+          <div class="loader">
+            <div class="loader-inner ball-clip-rotate">
+              <div></div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!--<div class="users">-->
@@ -112,6 +132,13 @@
                 <span class="fa fa-thumbs-o-up"></span>{{blog.like}}
               </div>
               <div class="text" ng-bind-html="blog.intro | fullHtml"></div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center" ng-show="waiting">
+          <div class="loader">
+            <div class="loader-inner ball-clip-rotate">
+              <div></div>
             </div>
           </div>
         </div>

@@ -104,6 +104,35 @@ form legend {
   padding-bottom: 15px;
 }
 
-.waiting {
-  padding-top: 10px;
+// Spinners.
+.blogs-wrapper {
+
+  .ball-clip-rotate > div {
+    border: solid 2px $blogs-border;
+    border-bottom-color: transparent;
+  }
+}
+
+.questions-wrapper {
+
+  .ball-clip-rotate > div {
+    border: solid 2px $question-border;
+    border-bottom-color: transparent;
+  }
+}
+
+.events {
+
+  .ball-clip-rotate > div {
+    border: solid 2px $events-border;
+    border-bottom-color: transparent;
+  }
+}
+
+.videos {
+
+  .ball-clip-rotate > div {
+    border: solid 2px $video-border;
+    border-bottom-color: transparent;
+  }
 }

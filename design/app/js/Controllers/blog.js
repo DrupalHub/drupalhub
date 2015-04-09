@@ -20,9 +20,11 @@ DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest, $location, $
 
   // Get the blogs.
   $scope.blogs = {};
+  $scope.waiting = true;
 
   DrupalHubRequest.localRequest('get', path).success(function(data) {
     $scope.blogs = $routeParams['id'] ? data.data[0] : data.data;
+    $scope.waiting = false;
   });
 
 });
