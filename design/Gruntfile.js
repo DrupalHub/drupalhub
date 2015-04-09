@@ -355,7 +355,31 @@ module.exports = function (grunt) {
         'compass:dist',
         'copy:dist'
       ]
-    }
+    },
+    ngconstant: {
+      options: {
+        name: 'DrupalHubConfig'
+      },
+      server: {
+        constants: {
+          Config: grunt.file.readJSON('config.json').development
+        },
+        values: {
+          debug: true
+        },
+        options: {
+          dest: '<%= yeoman.app %>/js/config/config.js'
+        }
+      },
+      build: {
+        constants: {
+          Config: grunt.file.readJSON('config.json').production
+        },
+        options: {
+          dest: '<%= yeoman.dist %>/scripts/config.js'
+        }
+      }
+    },
   });
 
   // Define Tasks
@@ -365,6 +389,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
+      'ngconstant:server',
       'bower_install',
       'clean:server',
       'concurrent:server',
@@ -404,7 +429,8 @@ module.exports = function (grunt) {
     'autoprefixer:dist',
     'cssmin',
     'usemin',
-    'htmlmin'
+    'htmlmin',
+    'ngconstant:build'
     ]);
 
   grunt.registerTask('deploy', [

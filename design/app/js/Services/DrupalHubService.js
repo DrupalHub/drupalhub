@@ -1,4 +1,4 @@
-DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageService) {
+DrupalHub.factory('DrupalHubRequest', function($http, Config, localStorageService) {
   var DrupalHubSvc = {};
 
   /**
@@ -26,7 +26,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageServic
   DrupalHubSvc.localRequest = function(method, address, data) {
     return $http({
       method: method,
-      url: SERVER + address,
+      url: Config.backend + address,
       data: data,
       headers: {'access_token': DrupalHubSvc.accessToken}
     });
@@ -43,7 +43,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, SERVER, localStorageServic
   DrupalHubSvc.userAccess = function(permission) {
     return $http({
       method: 'get',
-      url: SERVER + 'me',
+      url: Config.backend + 'me',
       headers: {
         'access_token': DrupalHubSvc.accessToken,
         permission: permission
