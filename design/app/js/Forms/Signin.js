@@ -1,7 +1,7 @@
 /**
  * Login controller.
  */
-DrupalHub.controller('loginCtrl', function($scope, $http, SERVER, localStorageService) {
+DrupalHub.controller('loginCtrl', function($scope, $http, SERVER, localStorageService, $rootScope) {
   $scope.user = {
     name: '',
     pass: ''
@@ -47,7 +47,8 @@ DrupalHub.controller('loginCtrl', function($scope, $http, SERVER, localStorageSe
         localStorageService.set('access_token', data.access_token);
         $http.get(SERVER + 'me', {
           headers: {'access_token': data.access_token}
-        }).success(function(data, status) {
+        }).success(function(data) {
+          $rootScope.$broadcast('userLoggedIn', data.data);
           $scope.showLoginInput = false;
           $scope.showLoginResultsSucess = true;
           $scope.loginResults = 'Welcome ' + data.data.label + '!';

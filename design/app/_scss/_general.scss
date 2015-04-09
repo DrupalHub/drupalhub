@@ -136,3 +136,30 @@ form legend {
     border-bottom-color: transparent;
   }
 }
+
+// User directive
+.user-directive {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: #999999;
+
+  a {
+    color: #999999;
+    text-decoration: none;
+
+    &:hover {
+      color: black;
+    }
+  }
+
+  &:hover {
+    color: black;
+  }
+}
+
+.social-up {
+
+  a {
+    cursor: pointer;
+  }
+}
