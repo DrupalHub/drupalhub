@@ -360,23 +360,24 @@ module.exports = function (grunt) {
       options: {
         name: 'DrupalHubConfig'
       },
-      server: {
-        constants: {
-          Config: grunt.file.readJSON('config.json').development
-        },
-        values: {
-          debug: true
-        },
+      serve: {
         options: {
-          dest: '<%= yeoman.app %>/js/config/config.js'
+          dest: '<%= yeoman.app %>/js/config/config.js',
+        },
+        constants: {
+          Config: {
+            'backend': 'http://localhost/drupalhub/www/api/'
+          }
         }
       },
       build: {
-        constants: {
-          Config: grunt.file.readJSON('config.json').production
-        },
         options: {
-          dest: '<%= yeoman.dist %>/scripts/config.js'
+          dest: '<%= yeoman.dist %>/js/config/config.js',
+        },
+        constants: {
+          Config: {
+            'backend': 'http://dev-drupalhub.gotpantheon.com/api/'
+          }
         }
       }
     }
@@ -389,7 +390,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
-      'ngconstant:server',
+      'ngconstant:serve',
       'bower_install',
       'clean:server',
       'concurrent:server',
@@ -404,19 +405,11 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
-  // No real tests yet. Add your own.
-  grunt.registerTask('test', [
-  //   'clean:server',
-  //   'concurrent:test',
-  //   'connect:test'
-  ]);
 
   grunt.registerTask('check', [
     'clean:server',
     'jekyll:check',
     'compass:server'
-    // 'jshint:all',
-    // 'csslint:check'
   ]);
 
   grunt.registerTask('build', [
