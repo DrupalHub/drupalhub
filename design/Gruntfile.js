@@ -379,7 +379,7 @@ module.exports = function (grunt) {
           dest: '<%= yeoman.dist %>/scripts/config.js'
         }
       }
-    },
+    }
   });
 
   // Define Tasks
