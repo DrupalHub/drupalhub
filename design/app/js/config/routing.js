@@ -10,6 +10,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'loginCtrl'
   });
 
+  $routeProvider.when('/recover-password', {
+    templateUrl: 'pages/recover-password.html',
+    controller: 'recoverCtrl'
+  });
+
   // Question.
   $routeProvider.when('/questions', {
     templateUrl: 'pages/questions.html',
