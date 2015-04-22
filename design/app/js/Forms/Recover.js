@@ -1,14 +1,13 @@
-DrupalHub.controller('recoverCtrl', function($scope) {
+DrupalHub.controller('recoverCtrl', function($scope, $http) {
   $scope.showRecoverForm = true;
-  $scope.recover = {
-    mail: ''
-  };
+  $scope.mail = '';
 
-  $scope.recover.recoverPassword = function() {
+  $scope.recoverPassword = function() {
     $scope.error = '';
 
-    if ($scope.recover.mail == "") {
+    if (!$scope.RecoverPasswordForm.email.$valid) {
       $scope.error = 'You need to populate the email field';
+      return;
     }
 
   };
