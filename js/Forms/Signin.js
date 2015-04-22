@@ -36,14 +36,14 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
         headers: {'Authorization': 'Basic ' + Base64.encode($scope.user.name + ':' + $scope.user.pass)}
       });
 
-      response.error(function(data, status) {
+      response.error(function(data) {
         if (data.title == 'Bad credentials') {
           $scope.showLoginResultsFail = true;
           $scope.loginResults = 'The credentials you passed are wrong.';
         }
       });
 
-      response.success(function(data, status) {
+      response.success(function(data) {
         localStorageService.set('access_token', data.access_token);
         $http.get(Config.backend + 'me', {
           headers: {'access_token': data.access_token}
