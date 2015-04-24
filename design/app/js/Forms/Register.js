@@ -10,6 +10,8 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest) {
     pass2: ''
   };
 
+  $scope.RegisterSuccess = false;
+
   $scope.register = function() {
     $scope.errors = {
       mail: '',
@@ -49,11 +51,20 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest) {
         label: $scope.user.label,
         password: $scope.pass
       })
-        .error(function(data) {
-          console.log(data);
-        })
-        .then();
+      .error(function(data) {
+        var errors = data.errors;
 
+        if (errors.mail != undefined) {
+          $scope.errors.mail = errors.mail.join();
+        }
+
+        if (errors.label != undefined) {
+          $scope.errors.label = errors.label.join();
+        }
+      })
+      .then(function() {
+        $scope.RegisterSuccess = 'Welcome ' + $scope.user.label + '!';
+      });
     }
   }
 

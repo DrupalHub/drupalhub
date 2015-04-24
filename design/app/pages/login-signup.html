@@ -13,14 +13,18 @@
         <div class="panel-body">
           <form role="form" name="registerForm" ng-controller="registerCtrl" ng-submit="register()" novalidate>
 
-            <div class="alert alert-dismissible alert-danger text-center" ng-show="errors.email || errors.label || errors.password || errors.password2">
+            <div class="alert alert-dismissible alert-danger text-center" ng-show="errors.mail || errors.label || errors.password || errors.password2">
               <div ng-cloak ng-show="errors.mail">Email: {{errors.mail}}<br /></div>
               <div ng-cloak ng-show="errors.label">User name: {{errors.label}}<br /></div>
               <div ng-cloak ng-show="errors.pass">Password: {{errors.pass}}<br /></div>
               <div ng-cloak ng-show="errors.pass2">Confirm password: {{errors.pass2}}<br /></div>
             </div>
 
-            <div class="form-group">
+            <div class="alert alert-dismissible alert-success text-center" ng-show="RegisterSuccess">
+              {{RegisterSuccess}}
+            </div>
+
+            <div class="form-group" ng-show="!RegisterSuccess">
               <div class="row">
                 <div class="input-area-wrapper col-md-6">
                   <div class="input-group">
