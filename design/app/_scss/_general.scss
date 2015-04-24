@@ -163,3 +163,10 @@ form legend {
     cursor: pointer;
   }
 }
+
+.ng-submitted {
+
+  .ng-invalid {
+    border: #ff6782 solid 1px;
+  }
+}

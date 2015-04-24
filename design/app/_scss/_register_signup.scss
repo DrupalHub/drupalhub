@@ -1,18 +1,23 @@
 .form-singin-up {
 
   .input-group {
-    padding-bottom: 20px;
 
     .input-group-addon {
       min-width: 45px;
     }
   }
 
-  .register {
+  .input-area-wrapper {
+    padding-bottom: 20px;
+  }
 
-    hr {
-      margin-top: 0px;
-    }
+
+  hr {
+    margin-top: 0px;
+  }
+
+  .text-danger {
+    margin-top: 5px;
   }
 
 }

@@ -13,6 +13,11 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       'sub_property' => 'value',
     );
 
+    $public_fields['password'] = array(
+      'property' => 'pass',
+      'callback' => array($this, 'hideField')
+    );
+
     $public_fields['image'] = array(
       'property' => 'uid',
       'process_callbacks' => array(
@@ -46,6 +51,15 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     );
 
     return $public_fields;
+  }
+
+  /**
+   * Hide the field value.
+   *
+   * @return null
+   */
+  protected function hideField() {
+    return NULL;
   }
 
   protected function processImage($uid) {
@@ -111,6 +125,22 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     }
 
     return $feed;
+  }
+
+  public function checkEntityAccess($op, $entity_type, $entity) {
+    if ($this->getMethod() == \RestfulBase::POST) {
+      return TRUE;
+    }
+
+    return parent::checkEntityAccess($op, $entity_type, $entity);
+  }
+
+  public function checkPropertyAccess($op, $public_field_name, EntityMetadataWrapper $property_wrapper, EntityMetadataWrapper $wrapper) {
+    if ($this->getMethod() == \RestfulBase::POST) {
+      return TRUE;
+    }
+
+    return parent::checkPropertyAccess($op, $public_field_name, $property_wrapper, $wrapper);
   }
 
 }

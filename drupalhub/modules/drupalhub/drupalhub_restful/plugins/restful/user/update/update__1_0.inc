@@ -9,6 +9,6 @@ $plugin = array(
   'entity_type' => 'user',
   'bundle' => 'user',
   'hook_menu' => TRUE,
-  'authentication_types' => TRUE,
+  'authentication_types' => false,
   'authentication_optional' => TRUE,
 );

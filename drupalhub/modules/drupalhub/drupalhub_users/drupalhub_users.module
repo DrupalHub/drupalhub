@@ -101,5 +101,6 @@ function drupalhub_users_user_picture($user, $style_name) {
   if ($image = _gravatar_get_account_user_picture($user)) {
     return $image;
   }
+
   return file_create_url(file_load(variable_get('default_user_picture_fid'))->uri);
 }
