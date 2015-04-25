@@ -83,7 +83,7 @@
                 <div ng-cloak ng-show="error.pass">password: {{error.pass}}<br /></div>
               </div>
 
-              <div class="alert alert-dismissible alert-success text-center" ng-show="loginResults">
+              <div class="alert alert-dismissible {{loginResultsClass}} text-center" ng-show="loginResultsClass">
                 {{loginResults}}
               </div>
 
@@ -97,7 +97,6 @@
                   <input type="password" class="form-control" placeholder="Password" ng-model="user.pass" required>
                 </div>
                 <hr />
-                <span ng-cloak class="text-danger" ng-show="showLoginResultsFail"><Br />{{loginResults}}</span>
                 <input type="submit" class="btn btn-primary pull-right" />
                 <a href="/#recover-password" class="btn btn-warning">Password Recovery</a>
               </div>

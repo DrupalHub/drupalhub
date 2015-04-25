@@ -1,7 +1,7 @@
 /**
  * Sign up controller.
  */
-DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest) {
+DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope) {
 
   $scope.user = {
     mail: '',
@@ -49,7 +49,7 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest) {
       DrupalHubRequest.localRequest('post', 'users', {
         mail: $scope.user.mail,
         label: $scope.user.label,
-        password: $scope.pass
+        password: $scope.user.pass
       })
       .error(function(data) {
         var errors = data.errors;
@@ -63,7 +63,21 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest) {
         }
       })
       .then(function() {
+        // Display the message.
         $scope.RegisterSuccess = 'Welcome ' + $scope.user.label + '!';
+
+        // Login the user and redirect him the front page.
+        $http.get(DrupalHubRequest.getConfig().backend + 'login-token',{
+          headers: {'Authorization': 'Basic ' + Base64.encode($scope.user.label + ':' + $scope.user.pass)}
+        }).success(function(data) {
+          DrupalHubRequest.getLocalStorage().set('access_token', data.access_token);
+
+          $http.get(DrupalHubRequest.getConfig().backend + 'me', {
+            headers: {'access_token': data.access_token}
+          }).success(function(data) {
+            $rootScope.$broadcast('userLoggedIn', data.data);
+          });
+        });
       });
     }
   }

@@ -143,4 +143,10 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     return parent::checkPropertyAccess($op, $public_field_name, $property_wrapper, $wrapper);
   }
 
+  public function entityPreSave(\EntityMetadataWrapper $wrapper) {
+    $wrapper->status->set(1);
+
+    parent::entityPreSave($wrapper);
+  }
+
 }

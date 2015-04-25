@@ -15,6 +15,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
     $scope.showLoginResultsFail = false;
     $scope.showLoginResultsSucess = false;
     $scope.loginResults = '';
+    $scope.loginResultsClass = false;
 
     $scope.error = {
       name: '',
@@ -32,13 +33,13 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
     }
 
     if ($scope.loginForm.$valid) {
-      var response = $http.get(Config.backend + 'login-token',{
+      var response = $http.get(Config.backend + 'login-token', {
         headers: {'Authorization': 'Basic ' + Base64.encode($scope.user.name + ':' + $scope.user.pass)}
       });
 
       response.error(function(data) {
         if (data.title == 'Bad credentials') {
-          $scope.showLoginResultsFail = true;
+          $scope.loginResultsClass = 'alert-danger';
           $scope.loginResults = 'The credentials you passed are wrong.';
         }
       });
@@ -49,6 +50,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
           headers: {'access_token': data.access_token}
         }).success(function(data) {
           $rootScope.$broadcast('userLoggedIn', data.data);
+          $scope.loginResultsClass = 'alert-success';
           $scope.showLoginInput = false;
           $scope.showLoginResultsSucess = true;
           $scope.loginResults = 'Welcome ' + data.data.label + '!';
