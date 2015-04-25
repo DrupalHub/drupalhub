@@ -75,5 +75,23 @@ DrupalHub.factory('DrupalHubRequest', function($http, Config, localStorageServic
     return localStorageService.get(key);
   };
 
+  /**
+   * Get the local storage service.
+   *
+   * @returns localStorageService
+   */
+  DrupalHubSvc.getLocalStorage = function() {
+    return localStorageService;
+  };
+
+  /**
+   * Get the config service.
+   *
+   * @returns {*}
+   */
+  DrupalHubSvc.getConfig = function() {
+    return Config;
+  };
+
   return DrupalHubSvc;
 });
