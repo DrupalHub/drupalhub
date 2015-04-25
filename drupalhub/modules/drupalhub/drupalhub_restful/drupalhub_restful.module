@@ -27,6 +27,8 @@ function drupalhub_restful_entity_property_info_alter(&$info) {
     'setter callback' => 'drupalhub_restful_set_user_pass',
     'schema field' => 'pass',
   );
+
+  $info['user']['properties']['name']['getter callback'] = 'drupalhub_restful_get_user_name';
 }
 
 /**
@@ -35,4 +37,8 @@ function drupalhub_restful_entity_property_info_alter(&$info) {
 function drupalhub_restful_set_user_pass($account, $name, $value) {
   require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
   $account->pass = user_hash_password($value);
+}
+
+function drupalhub_restful_get_user_name($account, $name, $value) {
+  return empty($account->name) ? variable_get('anonymous', t('Anonymous')) : $account->name;
 }
