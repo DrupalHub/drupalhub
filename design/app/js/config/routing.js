@@ -47,6 +47,12 @@ DrupalHub.config(function($routeProvider) {
     controller: 'blogCtrl'
   });
 
+  // Events page.
+  $routeProvider.when('/events', {
+    templateUrl: 'pages/events.html',
+    controller: 'eventsCtrl'
+  });
+
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
     controller: 'pageNotFound'
