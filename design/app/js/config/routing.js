@@ -47,10 +47,15 @@ DrupalHub.config(function($routeProvider) {
     controller: 'blogCtrl'
   });
 
-  // Events page.
+  // Events.
   $routeProvider.when('/events', {
     templateUrl: 'pages/events.html',
     controller: 'eventsCtrl'
+  });
+
+  $routeProvider.when('/add-event', {
+    templateUrl: 'pages/add-event.html',
+    controller: 'EventFormCtrl'
   });
 
   $routeProvider.otherwise({

@@ -20,6 +20,8 @@
     "angular-bootstrap": "0.12.1",
     "loaders.css": "0.1.0",
     "sass-bootstrap-glyphicons": "1.0.0",
-    "components-font-awesome": "4.3.0"
+    "components-font-awesome": "4.3.0",
+    "angular-bootstrap-datetimepicker": "latest",
+    "geocomplete": "1.6.5"
   }
 }
