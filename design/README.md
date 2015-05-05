@@ -3,7 +3,7 @@
 ## Install
 
 ```bash
-bundler install
+bundle install
 npm install
 bower install
 ```

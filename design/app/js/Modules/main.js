@@ -8,5 +8,6 @@ var DrupalHub = angular.module('DrupalHub', [
   'ngSanitize',
   'flagDirective',
   'ui.bootstrap',
-  'ui.bootstrap.datetimepicker'
+  'ui.bootstrap.datetimepicker',
+  'gm'
 ]);

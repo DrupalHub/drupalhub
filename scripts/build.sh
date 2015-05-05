@@ -91,8 +91,8 @@ CUR_DIR=$(pwd)
 )
 
 # Download behat.
-(
-  cd drupalhub/behat
-  curl -s https://getcomposer.org/installer | php
-  php composer.phar install
-)
+#(
+#  cd drupalhub/behat
+#  curl -s https://getcomposer.org/installer | php
+#  php composer.phar install
+#)

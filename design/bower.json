@@ -22,6 +22,7 @@
     "sass-bootstrap-glyphicons": "1.0.0",
     "components-font-awesome": "4.3.0",
     "angular-bootstrap-datetimepicker": "latest",
-    "geocomplete": "1.6.5"
+    "geocomplete": "1.6.5",
+    "angularjs-google-maps": "latest"
   }
 }

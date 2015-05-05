@@ -7,6 +7,8 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
     text: ''
   };
 
+  $scope.showEndDate = false;
+
   $scope.submit = function() {
 
     $scope.errors = [];
@@ -58,8 +60,7 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
   $scope.dateOptions = {
     formatYear: 'yy',
     startingDay: 1,
-    showWeeks:'false',
-    startingDay: 1
+    showWeeks:'false'
   };
 
   $scope.pickerPopup = {
