@@ -2,19 +2,20 @@ DrupalHub.directive('drupalhubGeoLocation', function() {
   return {
     restrict: 'AE',
     templateUrl: 'js/Directives/geolocation/element.html',
-    link: function(scope) {
-      scope.autocompleteOptions = {};
-      scope.autocompleteModel = '';
+    link: function($scope) {
 
-      scope.$on('gmPlacesAutocomplete::placeChanged', function(){
+      $scope.showMap = false;
 
-        // Get place
-        console.dir(autocompleteModel.getPlace());
+      $scope.lat = undefined;
+      $scope.lng = undefined;
 
-        // Get bounds
-        console.dir(autocompleteModel.getBounds());
-
+      $scope.$on('gmPlacesAutocomplete::placeChanged', function(){
+        var location = $scope.autocomplete.getPlace().geometry.location;
+        $scope.lat = location.lat();
+        $scope.lng = location.lng();
+        $scope.showMap = true;
       });
+
     }
   };
 });

@@ -9,5 +9,6 @@ var DrupalHub = angular.module('DrupalHub', [
   'flagDirective',
   'ui.bootstrap',
   'ui.bootstrap.datetimepicker',
-  'gm'
+  'gm',
+  'ngMap'
 ]);
