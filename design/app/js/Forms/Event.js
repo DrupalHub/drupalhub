@@ -17,7 +17,7 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
       $scope.errors.push('The label is required field.');
     }
 
-    if (!$scope.eventForm.location.$valid) {
+    if ($scope.event.location == "") {
       $scope.errors.push('The location is required field.');
     }
 
