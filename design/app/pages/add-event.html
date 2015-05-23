@@ -31,32 +31,23 @@
         </div>
 
         <div class="form-group">
-          <label for="inputDate" class="col-sm-1 col-md-2 control-label">Data</label>
-          <div class="col-sm-11 col-md-10 input-group">
-            <input type="text" name="date"
-                   class="form-control" id="inputDate"
-                   ng-model="event.date" placeholder="Date" required
-                   datepicker-popup="{{format}}" is-open="opened"
-                   min-date="minDate"
-                   datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
-                   ng-required="true" close-text="Close"
-                   ng-click="open($event)" datepicker-options="pickerPopup">
-            <span class="input-group-addon"><i class="fa fa-calendar first"></i></span>
-          </div>
-        </div>
-
-        <div class="form-group" ng-show="showEndDate">
-          <label for="inputEndDate" class="col-sm-1 col-md-2 control-label">End date</label>
-          <div class="col-sm-11 col-md-10 input-group">
-            <input type="text" name="date"
-                   class="form-control" id="inputEndDate"
-                   ng-model="event.date" placeholder="Date" required
-                   datepicker-popup="{{format}}" is-open="opened"
-                   min-date="minDate"
-                   datepicker-options="dateOptions" date-disabled="disabled(date, mode)"
-                   ng-required="true" close-text="Close"
-                   ng-click="open($event)" datepicker-options="pickerPopup">
-            <span class="input-group-addon"><i class="fa fa-calendar first"></i></span>
+          <label for="inputDate" class="col-sm-1 col-md-2 control-label">Date</label>
+          <div class="col-sm-11 col-md-10 start-time-input row">
+            <div class="col-md-6">
+              <input type="text" name="start_date"
+                     class="form-control" id="inputDate"
+                     ng-model="event.start_date.date" placeholder="Date"
+                     datepicker-popup="{{format}}" is-open="opened"
+                     min-date="minDate" datepicker-options="dateOptions"
+                     ng-required="true" close-text="Close"
+                     ng-click="open($event)" datepicker-options="pickerPopup">
+            </div>
+            <div class="col-md-6">
+              <timepicker
+                ng-model="event.start_date.time" hour-step="hstep"
+                minute-step="mstep" show-meridian="false"
+                arrowkeys="false"></timepicker>
+            </div>
           </div>
         </div>
 
