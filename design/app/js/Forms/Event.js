@@ -4,7 +4,8 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
 
   $scope.event = {
     label: '',
-    location: '',
+    latitude: '',
+    longitude: '',
     start_date: {
       date: '',
       time: ''
@@ -45,17 +46,28 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
     if ($scope.errors.length == 0) {
 
       // Processing the date into a new date.
-      $scope.event.start.date = moment($scope.event.start_date.date).format("D/M/YYYY");
+      if ($scope.event.start instanceof Object) {
+        $scope.event.start.date = moment($scope.event.start_date.date).format("D/M/YYYY");
 
-      if ($scope.event.start_date.time == "") {
-        $scope.event.start.time = moment().format("H:mm");
+        if ($scope.event.start_date.time == "") {
+          $scope.event.start.time = moment().format("H:mm");
+        }
+
+        $scope.event.start = $scope.event.start.date + ' ' + $scope.event.start.time;
       }
 
       var event = angular.copy($scope.event);
 
       delete(event.start_date);
+      delete(event.end_date);
 
-      console.log(event);
+      DrupalHubRequest.localRequest('post', 'event', event)
+        .success(function(data) {
+          console.log('succ', data);
+        })
+        .error(function(data) {
+          console.log('foo', data);
+        });
     }
   };
 

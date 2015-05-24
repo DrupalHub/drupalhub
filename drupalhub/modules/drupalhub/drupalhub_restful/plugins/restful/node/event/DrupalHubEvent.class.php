@@ -55,6 +55,26 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     return $public_fields;
   }
 
+  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
+    switch ($public_field_name) {
+      case 'start':
+        return array($this->foo($value));
+
+      case 'latitude':
+      case 'longitude':
+        return array($value);
+    }
+
+    return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
+  }
+
+  private function foo($value) {
+    list($date, $time) = explode(' ', $value);
+    list($day, $month, $year) = explode('/', $date);
+
+    return ($year . '-' . $month . '-' . $day . ' ' . $time);
+  }
+
   /**
    * Handle the date field properly.
    */
@@ -62,8 +82,13 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     parent::entityPreSave($wrapper);
     $request = $this->getRequest();
     $wrapper->field_date->set(array(
-      'value' => $request['start']['value'],
-      'value2' => $request['end']['value'],
+      'value' => $this->foo($request['start']),
+//      'value2' => $request['end'],
+    ));
+
+    $wrapper->field_location->set(array(
+      'lat' => $request['latitude'],
+      'lng' => $request['longitude']
     ));
   }
 
