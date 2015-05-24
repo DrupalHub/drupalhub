@@ -58,7 +58,7 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
   public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
     switch ($public_field_name) {
       case 'start':
-        return array($this->foo($value));
+        return array($this->dateProcessing($value));
 
       case 'latitude':
       case 'longitude':
@@ -68,7 +68,16 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
   }
 
-  private function foo($value) {
+  /**
+   * Process the date send via the REST request and re-format it to the matching
+   * format.
+   *
+   * @param $value
+   *   The date value.
+   * @return string
+   *   The date after the processing.
+   */
+  private function dateProcessing($value) {
     list($date, $time) = explode(' ', $value);
     list($day, $month, $year) = explode('/', $date);
 
@@ -82,8 +91,8 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     parent::entityPreSave($wrapper);
     $request = $this->getRequest();
     $wrapper->field_date->set(array(
-      'value' => $this->foo($request['start']),
-//      'value2' => $request['end'],
+      'value' => $this->dateProcessing($request['start']),
+      'value2' => $this->dateProcessing($request['end']),
     ));
 
     $wrapper->field_location->set(array(

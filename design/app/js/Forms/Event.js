@@ -1,6 +1,6 @@
 DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
 
-  var time = moment();
+  $scope.submitResults = false;
 
   $scope.event = {
     label: '',
@@ -63,10 +63,10 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
 
       DrupalHubRequest.localRequest('post', 'event', event)
         .success(function(data) {
-          console.log('succ', data);
+          $scope.submitResults = 'The event has created successfully. You are now redirected.';
+          window.location = data.data[0].url;
         })
         .error(function(data) {
-          console.log('foo', data);
         });
     }
   };

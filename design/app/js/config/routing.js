@@ -58,6 +58,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'EventFormCtrl'
   });
 
+  $routeProvider.when('/event/:id', {
+    templateUrl: 'pages/event.html',
+    controller: 'eventCtrl'
+  });
+
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
     controller: 'pageNotFound'
