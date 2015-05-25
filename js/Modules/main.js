@@ -7,5 +7,7 @@ var DrupalHub = angular.module('DrupalHub', [
   'ngCkeditor',
   'ngSanitize',
   'flagDirective',
-  'ui.bootstrap'
+  'ui.bootstrap',
+  'ui.bootstrap.datetimepicker',
+  'gm'
 ]);

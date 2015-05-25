@@ -1,1 +1,7 @@
-<div class="user-directive"><span class="fa fa-user" data-toggle="dropdown" role="button" aria-expanded="false" ng-cloak="userName">{{userName}} <span class="caret"></span></span><ul class="dropdown-menu" role="menu"><li><a href="#/profile">Profile</a></li><li><a href="#/" ng-click="$event.preventDefault(); logout()">Logout</a></li></ul></div>
+<div class="user-directive">
+  <span class="fa fa-user" data-toggle="dropdown" role="button" aria-expanded="false" ng-cloak="userName">{{userName}} <span class="caret"></span></span>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#/profile">Profile</a></li>
+    <li><a href='#/' ng-click="$event.preventDefault(); logout()">Logout</a></li>
+  </ul>
+</div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="ngMap">
+<head>
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+<script src="scripts/app.js"></script>
+<script src="scripts/ng-map.min.js"></script>
+</head>
+
+<body>
+      <map zoom="4" center="-25, 133">
+        <fusion-tables-layer 
+          query= "{
+            select: 'geometry',
+            from: '1ertEwm-1bMBhpEwHhtNYT47HQ9k2ki_6sRa-UQ'}",
+          styles="[{
+            polygonOptions: {
+              fillColor: '#00FF00',
+              fillOpacity: 0.3
+            }
+          }, {
+            where: 'birds > 300',
+            polygonOptions: {
+              fillColor: '#0000FF'
+            }
+          }, {
+            where: 'population > 5',
+            polygonOptions: {
+              fillOpacity: 1.0
+            }
+          }]">
+        </fusion-tables-layer>
+      </map>
+</body>
+</html>

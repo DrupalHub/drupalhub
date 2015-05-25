@@ -1,1 +1,37 @@
-<section class="container page-question"><ul class="breadcrumb"><li><a href="../index.html">Home</a></li><li class="active">Questions</li></ul><div class="row" ng-controller="questionCtrl"><div class="col-md-12"><div class="page-header questions-header clearfix"><h3>Questions</h3></div><div class="questions-wrapper clearfix" ng-cloak="question" ng-repeat="question in questions"><div class="question row"><div class="col-md-2 col-sm-2"><img ng-src="{{question.image}}" class="images img-responsive question"></div><div class="col-md-10 col-sm-10 col-xs-8"><div class="content"><a href="{{question.url}}">{{question.label}}</a><div class="meta-info"><span class="first fa fa-clock-o"></span>{{question.date}} <span class="fa fa-user"></span>{{question.user}} <span class="fa fa-eye"></span>{{question.viewed}} <span class="fa fa-thumbs-o-up"></span>{{question.like}} <span ng-show="question.tags" ng-repeat="tag in question.tags"><span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span></span></div><div class="text" ng-bind-html="question.intro | fullHtml"></div></div></div></div></div></div></div></section>
+<section class="container page-question">
+  <ul class="breadcrumb">
+    <li><a href="../index.html">Home</a></li>
+    <li class="active">Questions</li>
+  </ul>
+
+  <div class="row" ng-controller="questionCtrl">
+    <div class="col-md-12">
+      <div class="page-header questions-header clearfix"><h3>Questions</h3></div>
+
+      <div class="questions-wrapper clearfix" ng-cloak="question" ng-repeat="question in questions">
+        <div class="question row">
+          <div class="col-md-2 col-sm-2">
+            <img ng-src="{{question.image}}" class="images img-responsive question" />
+          </div>
+          <div class="col-md-10 col-sm-10 col-xs-8">
+            <div class="content">
+              <a href="{{question.url}}">{{question.label}}</a>
+              <div class="meta-info">
+                <span class="first fa fa-clock-o"></span>{{question.date}}
+                <span class="fa fa-user"></span>{{question.user}}
+                <span class="fa fa-eye"></span>{{question.viewed}}
+                <span class="fa fa-thumbs-o-up"></span>{{question.like}}
+                <span ng-show="question.tags" ng-repeat="tag in question.tags">
+                  <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>
+                </span>
+              </div>
+              <div class="text" ng-bind-html="question.intro | fullHtml"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section>

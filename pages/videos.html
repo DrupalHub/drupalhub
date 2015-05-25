@@ -1,1 +1,60 @@
-<section class="container page-videos"><ul class="breadcrumb"><li><a href="../index.html">Home</a></li><li class="active">Videos</li></ul><div class="page-header videos-header clearfix"><h3 class="pull-left">Videos</h3><form class="navbar-form navbar-left pull-right" role="search"><div class="form-group"><input type="text" class="form-control" id="video-search" placeholder="Search"></div></form></div><section class="videos clearfix"><div class="row">{% for video in site.data.videos %}<div class="col-md-3"><div class="video-wrapper"><a href="{{ video.url }}">{{ video.title | truncatewords: 5 }}</a> <a href="{{ video.url }}"><img class="img-responsive image" src="{{ video.image }}"></a><div class="meta-info"><span class="first fa fa-clock-o"></span>{{ video.duration }} <span class="fa fa-eye"></span>{{ video.viewed }} <span class="fa fa-thumbs-o-up"></span>{{ video.like }}</div></div></div>{% endfor %}</div></section><div class="page-header playlist-header clearfix"><h3 class="pull-left">Playlists</h3><form class="navbar-form navbar-left pull-right" role="search"><div class="form-group"><input type="text" class="form-control" id="playlist-search" placeholder="Search"></div></form></div><section class="playlist clearfix"><div class="row">{% for playlist in site.data.playlists %}<div class="col-md-3 playlist-wrapper"><a href="{{ playlist.url }}"><img class="img-responsive image" src="{{ playlist.image }}"></a><div class="meta-info"><a href="{{ playlist.url }}"><b>{{ playlist.title }}</b></a> - {{ playlist.description }}<div class="meta-info"><span class="fa fa-clock-o"></span> Duration: {{ playlist.time }} <span class="fa fa-file-o"></span> Videos: {{ playlist.videos }}</div></div></div>{% endfor %}</div></section></section>
+<section class="container page-videos">
+  <ul class="breadcrumb">
+    <li><a href="../index.html">Home</a></li>
+    <li class="active">Videos</li>
+  </ul>
+
+  <div class="page-header videos-header clearfix">
+    <h3 class="pull-left">Videos</h3>
+    <form class="navbar-form navbar-left pull-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" id="video-search" placeholder="Search">
+      </div>
+    </form>
+  </div>
+
+  <section class="videos clearfix">
+    <div class="row">
+      {% for video in site.data.videos %}
+      <div class="col-md-3">
+        <div class="video-wrapper">
+          <a href="{{ video.url }}">{{ video.title | truncatewords: 5 }}</a>
+          <a href="{{ video.url }}"><img class="img-responsive image" src="{{ video.image }}" /></a>
+          <div class="meta-info">
+            <span class="first fa fa-clock-o"></span>{{ video.duration }}
+            <span class="fa fa-eye"></span>{{ video.viewed }}
+            <span class="fa fa-thumbs-o-up"></span>{{ video.like }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <div class="page-header playlist-header clearfix">
+    <h3 class="pull-left">Playlists</h3>
+    <form class="navbar-form navbar-left pull-right" role="search">
+      <div class="form-group">
+        <input type="text" class="form-control" id="playlist-search" placeholder="Search">
+      </div>
+    </form>
+  </div>
+
+  <section class="playlist clearfix">
+    <div class="row">
+      {% for playlist in site.data.playlists %}
+      <div class="col-md-3 playlist-wrapper">
+        <a href="{{ playlist.url }}"><img class="img-responsive image" src="{{ playlist.image }}" /></a>
+        <div class="meta-info">
+          <a href="{{ playlist.url }}"><b>{{ playlist.title }}</b></a> - {{ playlist.description }}
+          <div class="meta-info">
+            <span class="fa fa-clock-o"></span> Duration: {{ playlist.time }}
+            <span class="fa fa-file-o"></span> Videos: {{ playlist.videos }}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+</section>
