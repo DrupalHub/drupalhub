@@ -155,10 +155,9 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     foreach ($nodes as $node) {
       $wrapper = entity_metadata_Wrapper('node', $node);
 
-      $author = $wrapper->field_user_reference;
       $users[] = array(
-        'name' => $author->label(),
-        'image' => $this->authorImage($author->value()),
+        'name' => $wrapper->author->label(),
+        'image' => $this->authorImage($wrapper->author->value()),
       );
     }
 

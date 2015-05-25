@@ -1,0 +1,31 @@
+<?php
+
+class DrupalHubRSVP extends \DrupalHubRestfulNode {
+
+  /**
+   * Overrides RestfulExampleArticlesResource::publicFieldsInfo().
+   */
+  public function publicFieldsInfo() {
+    $public_fields = parent::publicFieldsInfo();
+
+    $public_fields['rsvp_status'] = array(
+      'property' => 'field_status',
+    );
+
+    $public_fields['event'] = array(
+      'property' => 'field_node_reference',
+    );
+
+    return $public_fields;
+  }
+
+  public function queryForListFilter(\EntityFieldQuery $query) {
+    parent::queryForListFilter($query);
+
+    if ($this->getMethod() == RestfulBase::GET) {
+      $query->propertyCondition('uid', $this->getAccount()->uid);
+    }
+
+  }
+
+}
