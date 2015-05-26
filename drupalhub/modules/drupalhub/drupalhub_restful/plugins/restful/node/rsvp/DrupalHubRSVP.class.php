@@ -14,9 +14,16 @@ class DrupalHubRSVP extends \DrupalHubRestfulNode {
 
     $public_fields['event'] = array(
       'property' => 'field_node_reference',
+      'process_callbacks' => array(
+        array($this, 'labelEvent'),
+      ),
     );
 
     return $public_fields;
+  }
+
+  public function labelEvent($node) {
+    return $node->title;
   }
 
   public function queryForListFilter(\EntityFieldQuery $query) {
