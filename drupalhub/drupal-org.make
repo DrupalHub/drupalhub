@@ -102,9 +102,10 @@ projects[og][subdir] = contrib
 projects[og][version] = 2.7
 
 projects[restful][subdir] = "contrib"
-projects[restful][download][type] = git
-projects[restful][download][url] = "https://github.com/RESTful-Drupal/restful.git"
-projects[restful][download][branch] = "7.x-1.x"
+projects[restful][version] = "1.0"
+;projects[restful][download][type] = git
+;projects[restful][download][url] = "https://github.com/RESTful-Drupal/restful.git"
+;projects[restful][download][branch] = "7.x-1.x"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0
@@ -112,12 +113,13 @@ projects[strongarm][version] = 2.0
 projects[views][subdir] = "contrib"
 projects[views][version] = 3.10
 
+projects[views_bulk_operations][subdir] = "contrib"
+
 projects[token][subdir] = "contrib"
 projects[token][version] = 1.6
 
 projects[twitter][version] = "5.8"
 projects[twitter][subdir] = contrib
-
 
 projects[search_api][version] = "1.14"
 projects[search_api][subdir] = contrib
