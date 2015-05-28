@@ -11,33 +11,39 @@ DrupalHub.controller('eventCtrl', function($scope, DrupalHubRequest, $routeParam
   DrupalHubRequest.localRequest('get', 'rsvp').then(function (data) {
     if (data.data.count != 0) {
       var rsvp = data.data.data[0];
-      $scope.rsvpID = rsvp.id;
 
-      if (rsvp.rsvp_status == 'coming') {
-        $scope.rsvpStatus = 'yes';
-      }
+      $scope.rsvpID = rsvp.id;
+      $scope.rsvpStatus = rsvp.rsvp_status;
     }
   });
 
   $scope.rsvp = function(status) {
-    if (status == 'yes') {
-      if ($scope.rsvpID) {
 
-        $modal.open({
-          animation: $scope.animationsEnabled,
-          template: '<div class="text-center">You cannot create the same entry</div>',
-          size: 'small'
-        });
-        return;
-      }
-      DrupalHubRequest.localRequest('post', 'rsvp', {
-        'rsvp_status': 'coming',
-        'event': $scope.event.id
-      }).then(function (data) {
-        $scope.rsvpStatus = 'yes';
+    var method, path;
 
-        // todo: push the value to the $scope.event.rsvp.coming.
-      });
+    if ($scope.rsvpID) {
+      method = 'patch';
+      path = 'rsvp/' + $scope.rsvpID;
+
     }
+    else {
+      method = 'post';
+      path = 'rsvp';
+    }
+
+    DrupalHubRequest.localRequest(method, path, {
+      'rsvp_status': status,
+      'event': $scope.event.id
+    }).then(function (data) {
+      $scope.rsvpStatus = status;
+
+      DrupalHubRequest.localRequest('get', 'event/' + $routeParams.id).then(function(data) {
+        var new_event = data.data.data[0];
+
+        // Updating the rsvp with the new data.
+        $scope.event.rsvp = new_event.rsvp;
+      });
+
+    });
   };
 });

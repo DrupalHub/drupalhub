@@ -28,6 +28,8 @@
 /* global google */
 (function() {
   'use strict';
+  var parser;
+  var directionsService = new google.maps.DirectionsService();
 
   var getDirectionsRenderer = function(options, events) {
     if (options.panel) {
@@ -41,13 +43,12 @@
   };
 
   var directions = function(Attr2Options, $timeout) {
-    var parser = Attr2Options;
-    var directionsService = new google.maps.DirectionsService();
+    parser = Attr2Options;
+    directionsService = new google.maps.DirectionsService();
 
     var updateRoute = function(renderer, options) {
       /* filter out valid keys only for DirectionsRequest object*/
       var request = options;
-      request.travelMode = request.travelMode || 'DRIVING';
       var validKeys = [
         'origin', 'destination', 'travelMode', 'transitOptions', 'unitSystem',
         'durationInTraffic', 'waypoints', 'optimizeWaypoints', 

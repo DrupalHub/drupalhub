@@ -1,6 +1,6 @@
 {
   "name": "ngmap",
-  "version": "1.7.9",
+  "version": "1.7.0",
   "main": "build/scripts/ng-map.js",
   "dependencies": {
     "glob": "~4.0.2",
@@ -31,8 +31,7 @@
     "gulp-tap": "~0.1.1",
     "gulp-uglify": "~0.3.0",
     "gulp-util": "~2.2.16",
-    "jsdoc": "^3.3.0-beta3",
-    "karma": "^0.12.31",
+    "jsdoc": "~3.3.0-alpha8",
     "karma-chrome-launcher": "~0.1.4",
     "karma-jasmine": "~0.1.5",
     "karma-ng-html2js-preprocessor": "~0.1.0",

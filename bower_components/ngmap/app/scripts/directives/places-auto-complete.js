@@ -4,11 +4,14 @@
  * @requires Attr2Options 
  * @description 
  *   Provides address auto complete feature to an input element
+ *   
  *   Requires: input tag
+ *
  *   Restrict To: Attribute
  *
  * @param {AutoCompleteOptions} Any AutocompleteOptions
  *    https://developers.google.com/maps/documentation/javascript/3.exp/reference#AutocompleteOptions
+ * @param on-place_changed Callback function when a place is selected
  *
  * @example
  * Example: 
@@ -19,42 +22,29 @@
 (function() {
   'use strict';
 
-  var placesAutoComplete = function(Attr2Options, $timeout) {
+  var placesAutoComplete = function(Attr2Options, $parse) {
     var parser = Attr2Options;
+    var autocomplete;
 
-    var linkFunc = function(scope, element, attrs, ngModelCtrl) {
+    var linkFunc = function(scope, element, attrs) {
       var filtered = parser.filter(attrs);
       var options = parser.getOptions(filtered);
-      var events = parser.getEvents(scope, filtered);
-      console.log('autocomplete options', options, 'events', events);
-      var autocomplete = new google.maps.places.Autocomplete(element[0], options);
-      for (var eventName in events) {
-        google.maps.event.addListener(autocomplete, eventName, events[eventName]);
-      }
-      element[0].addEventListener('change', function() {
-        $timeout(function(){
-          ngModelCtrl && ngModelCtrl.$setViewValue(element.val());
-        },100);
-      });
-
-      attrs.$observe('types', function(val) {
-        if (val) {
-          console.log('observing types', val);
-          var optionValue = parser.toOptionValue(val, {key: 'types'});
-          console.log('setting types with value', optionValue);
-          autocomplete.setTypes(optionValue);
-        }
+     
+      autocomplete = new google.maps.places.Autocomplete(element[0]);
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        var place = autocomplete.getPlace();
+        var onPlaceChanged = $parse(attrs.onPlaceChanged);
+        onPlaceChanged(scope, {place: place});
       });
     };
 
     return {
       restrict: 'A',
-      require: '?ngModel',
       link: linkFunc
     };
   };
 
-  placesAutoComplete.$inject = ['Attr2Options', '$timeout'];
+  placesAutoComplete.$inject = ['Attr2Options', '$parse'];
   angular.module('ngMap').directive('placesAutoComplete', placesAutoComplete); 
 
 })();

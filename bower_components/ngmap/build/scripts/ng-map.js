@@ -34,7 +34,7 @@ var ngMap = angular.module('ngMap', []);
     }
   }
 
-  var Attr2Options = function($parse, $timeout, NavigatorGeolocation, GeoCoder) { 
+  var Attr2Options = function($parse, NavigatorGeolocation, GeoCoder) { 
 
     /**
      * Returns the attributes of an element as hash
@@ -202,12 +202,10 @@ var ngMap = angular.module('ngMap', []);
         return function(event) {
           function index(obj,i) {return obj[i];}
           var f = funcName.split('.').reduce(index, scope);
-          f && f.apply(this, [event].concat(args));
-          $timeout( function() {
-            scope.$apply();
-          });
-        };
-      };
+          f.apply(this, [event].concat(args));
+          scope.$apply();
+        }
+      }
 
       for(var key in attrs) {
         if (attrs[key]) {
@@ -306,7 +304,7 @@ var ngMap = angular.module('ngMap', []);
 
   }; 
 
-  angular.module('ngMap').service('Attr2Options', ['$parse', '$timeout', 'NavigatorGeolocation', 'GeoCoder', Attr2Options]);
+  angular.module('ngMap').service('Attr2Options', ['$parse', 'NavigatorGeolocation', 'GeoCoder', Attr2Options]);
 })();
 
 /**
@@ -513,7 +511,7 @@ ngMap.directive('bicyclingLayer', ['Attr2Options', function(Attr2Options) {
       mapController.addObject('bicyclingLayers', layer);
       mapController.observeAttrSetObj(orgAttrs, attrs, layer);  //observers
       element.bind('$destroy', function() {
-        mapController.deleteObject('bicyclingLayers', layer);
+        mapController.deleteObject('biclclingLayers', layer);
       });
     }
    }; // return
@@ -663,6 +661,8 @@ ngMap.directive('customControl', ['Attr2Options', '$compile', function(Attr2Opti
 /* global google */
 (function() {
   'use strict';
+  var parser;
+  var directionsService = new google.maps.DirectionsService();
 
   var getDirectionsRenderer = function(options, events) {
     if (options.panel) {
@@ -676,13 +676,12 @@ ngMap.directive('customControl', ['Attr2Options', '$compile', function(Attr2Opti
   };
 
   var directions = function(Attr2Options, $timeout) {
-    var parser = Attr2Options;
-    var directionsService = new google.maps.DirectionsService();
+    parser = Attr2Options;
+    directionsService = new google.maps.DirectionsService();
 
     var updateRoute = function(renderer, options) {
       /* filter out valid keys only for DirectionsRequest object*/
       var request = options;
-      request.travelMode = request.travelMode || 'DRIVING';
       var validKeys = [
         'origin', 'destination', 'travelMode', 'transitOptions', 'unitSystem',
         'durationInTraffic', 'waypoints', 'optimizeWaypoints', 
@@ -1025,24 +1024,34 @@ ngMap.directive('heatmapLayer', ['Attr2Options', '$window', function(Attr2Option
        }
        infoWindow.__template = template.replace(/\s?ng-non-bindable[='"]+/,"");
 
-       infoWindow.__compile = function(scope, anchor) {
-         anchor && (scope['this'] = anchor);
+       infoWindow.__compile = function(scope) {
          var el = $compile(infoWindow.__template)(scope);
-         infoWindow.setContent(el[0]);
          scope.$apply();
+         infoWindow.setContent(el[0]);
        };
 
-       infoWindow.__open = function(map, scope, anchor) {
+       infoWindow.__eval = function() {
+         var template = infoWindow.__template;
+         var _this = this;
+         template = template.replace(/{{(event|this)[^;\}]+}}/g, function(match) {
+           var expression = match.replace(/[{}]/g, "").replace("this.", "_this.");
+           void 0;
+           return eval(expression);
+         });
+         void 0;
+         return template;
+       };
+
+       infoWindow.__open = function(scope, anchor) {
+         var _this = this;
          $timeout(function() {
            var tempTemplate = infoWindow.__template; // set template in a temporary variable
-           infoWindow.__compile(scope, anchor);
+           infoWindow.__template = infoWindow.__eval.apply(_this);
+           infoWindow.__compile(scope);
            if (anchor && anchor.getPosition) {
-             infoWindow.open(map, anchor);
-           } else if (anchor && anchor instanceof google.maps.LatLng) {
-             infoWindow.open(map);
-             infoWindow.setPosition(anchor);
+             infoWindow.open(infoWindow.map, anchor);
            } else {
-             infoWindow.open(map);
+             infoWindow.open(infoWindow.map);
            }
            infoWindow.__template = tempTemplate; // reset template to the object
          });
@@ -1067,7 +1076,7 @@ ngMap.directive('heatmapLayer', ['Attr2Options', '$window', function(Attr2Option
        if (address) {
          mapController.getGeoLocation(address).then(function(latlng) {
            infoWindow.setPosition(latlng);
-           infoWindow.__open(mapController.map, scope, latlng);
+           infoWindow.__open(scope, latlng);
            var geoCallback = attrs.geoCallback;
            geoCallback && $parse(geoCallback)(scope);
          });
@@ -1075,24 +1084,29 @@ ngMap.directive('heatmapLayer', ['Attr2Options', '$window', function(Attr2Option
 
        mapController.addObject('infoWindows', infoWindow);
        mapController.observeAttrSetObj(orgAttrs, attrs, infoWindow); /* observers */
+       element.bind('$destroy', function() {
+         mapController.deleteObject('infoWindows', infoWindow);
+       });
 
        scope.$on('mapInitialized', function(evt, map) {
-         infoWindow.visible && infoWindow.__open(map, scope);
+         infoWindow.map = map;
+         infoWindow.visible && infoWindow.__open(scope);
          if (infoWindow.visibleOnMarker) {
            var markerId = infoWindow.visibleOnMarker;
-           infoWindow.__open(map, scope, map.markers[markerId]);
+           infoWindow.__open(scope, map.markers[markerId]);
          }
        });
 
        /**
         * provide showInfoWindow method to scope
         */
-
-       scope.showInfoWindow  = function(e, id, marker) {
-         var infoWindow = mapController.map.infoWindows[id];
-         var anchor = marker ? marker : (this.getPosition ? this : null);
-         infoWindow.__open(mapController.map, scope, anchor);
-       };
+       scope.showInfoWindow  = scope.showInfoWindow ||
+         function(event, id, marker) {
+           var infoWindow = mapController.map.infoWindows[id];
+           var anchor = marker ? marker :
+             this.getPosition ? this : null;
+           infoWindow.__open.apply(this, [scope, anchor]);
+         };
 
        /**
         * provide hideInfoWindow method to scope
@@ -1496,9 +1510,9 @@ ngMap.directive('mapType', ['Attr2Options', '$window', function(Attr2Options, $w
          */
         scope.map = map;
         scope.map.scope = scope;
-        google.maps.event.addListenerOnce(map, "idle", function() {
-          scope.$emit('mapInitialized', map);  
-        });
+        //google.maps.event.addListenerOnce(map, "idle", function() {
+        scope.$emit('mapInitialized', map);  
+        //});
 
         // the following lines will be deprecated on behalf of mapInitialized
         // to collect maps, we should use scope.maps in your own controller, i.e. MyCtrl
@@ -1841,7 +1855,7 @@ ngMap.directive('mapsEngineLayer', ['Attr2Options', function(Attr2Options) {
 
       var address;
       if (!(markerOptions.position instanceof google.maps.LatLng)) {
-        address = markerOptions.position;
+        address = markerOptions.position.position;
       }
       var marker = getMarker(markerOptions, markerEvents);
       mapController.addObject('markers', marker);
@@ -1931,11 +1945,14 @@ ngMap.directive('overlayMapType', ['Attr2Options', '$window', function(Attr2Opti
  * @requires Attr2Options 
  * @description 
  *   Provides address auto complete feature to an input element
+ *   
  *   Requires: input tag
+ *
  *   Restrict To: Attribute
  *
  * @param {AutoCompleteOptions} Any AutocompleteOptions
  *    https://developers.google.com/maps/documentation/javascript/3.exp/reference#AutocompleteOptions
+ * @param on-place_changed Callback function when a place is selected
  *
  * @example
  * Example: 
@@ -1946,42 +1963,29 @@ ngMap.directive('overlayMapType', ['Attr2Options', '$window', function(Attr2Opti
 (function() {
   'use strict';
 
-  var placesAutoComplete = function(Attr2Options, $timeout) {
+  var placesAutoComplete = function(Attr2Options, $parse) {
     var parser = Attr2Options;
+    var autocomplete;
 
-    var linkFunc = function(scope, element, attrs, ngModelCtrl) {
+    var linkFunc = function(scope, element, attrs) {
       var filtered = parser.filter(attrs);
       var options = parser.getOptions(filtered);
-      var events = parser.getEvents(scope, filtered);
-      void 0;
-      var autocomplete = new google.maps.places.Autocomplete(element[0], options);
-      for (var eventName in events) {
-        google.maps.event.addListener(autocomplete, eventName, events[eventName]);
-      }
-      element[0].addEventListener('change', function() {
-        $timeout(function(){
-          ngModelCtrl && ngModelCtrl.$setViewValue(element.val());
-        },100);
-      });
-
-      attrs.$observe('types', function(val) {
-        if (val) {
-          void 0;
-          var optionValue = parser.toOptionValue(val, {key: 'types'});
-          void 0;
-          autocomplete.setTypes(optionValue);
-        }
+     
+      autocomplete = new google.maps.places.Autocomplete(element[0]);
+      google.maps.event.addListener(autocomplete, 'place_changed', function() {
+        var place = autocomplete.getPlace();
+        var onPlaceChanged = $parse(attrs.onPlaceChanged);
+        onPlaceChanged(scope, {place: place});
       });
     };
 
     return {
       restrict: 'A',
-      require: '?ngModel',
       link: linkFunc
     };
   };
 
-  placesAutoComplete.$inject = ['Attr2Options', '$timeout'];
+  placesAutoComplete.$inject = ['Attr2Options', '$parse'];
   angular.module('ngMap').directive('placesAutoComplete', placesAutoComplete); 
 
 })();
@@ -2228,18 +2232,12 @@ ngMap.directive('overlayMapType', ['Attr2Options', '$window', function(Attr2Opti
  
       scope.$on('mapInitialized', function(evt, map) {
         var svp = getStreetViewPanorama(map, svpOptions, svpEvents);
+        void 0;
 
         map.setStreetView(svp);
         (!svp.getPosition()) && svp.setPosition(map.getCenter());
         google.maps.event.addListener(svp, 'position_changed', function() {
-          if (svp.getPosition() !== map.getCenter()) {
-            map.setCenter(svp.getPosition());
-          }
-        });
-        //needed for geo-callback
-        var listener = google.maps.event.addListener(map, 'center_changed', function() {
-          svp.setPosition(map.getCenter());
-          google.maps.event.removeListener(listener);
+          map.setCenter(svp.getPosition());
         });
       });
 

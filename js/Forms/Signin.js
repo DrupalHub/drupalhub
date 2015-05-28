@@ -47,7 +47,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
       response.success(function(data) {
         localStorageService.set('access_token', data.access_token);
         $http.get(Config.backend + 'me', {
-          headers: {'access_token': data.access_token}
+          headers: {'access-token': data.access_token}
         }).success(function(data) {
           $rootScope.$broadcast('userLoggedIn', data.data);
           $scope.loginResultsClass = 'alert-success';

@@ -41,7 +41,7 @@ ngMap.directive('bicyclingLayer', ['Attr2Options', function(Attr2Options) {
       mapController.addObject('bicyclingLayers', layer);
       mapController.observeAttrSetObj(orgAttrs, attrs, layer);  //observers
       element.bind('$destroy', function() {
-        mapController.deleteObject('bicyclingLayers', layer);
+        mapController.deleteObject('biclclingLayers', layer);
       });
     }
    }; // return
