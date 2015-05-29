@@ -63,6 +63,14 @@ DrupalHub.config(function($routeProvider) {
     controller: 'eventCtrl'
   });
 
+  // Youtube.
+  $routeProvider.when('/videos', {
+    templateUrl: 'pages/videos.html',
+    controller: 'videosCtrl'
+  });
+
+
+  // 404 and other stanz.
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
     controller: 'pageNotFound'

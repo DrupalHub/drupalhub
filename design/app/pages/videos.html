@@ -1,4 +1,4 @@
-<section class="container page-videos">
+<section class="container page-videos" ng-controller="videosCtrl" ng-show="videos">
   <ul class="breadcrumb">
     <li><a href="../index.html">Home</a></li>
     <li class="active">Videos</li>
@@ -15,19 +15,17 @@
 
   <section class="videos clearfix">
     <div class="row">
-      {% for video in site.data.videos %}
-      <div class="col-md-3">
+      <div ng-repeat="video in videos" class="col-md-3">
         <div class="video-wrapper">
-          <a href="{{ video.url }}">{{ video.title | truncatewords: 5 }}</a>
-          <a href="{{ video.url }}"><img class="img-responsive image" src="{{ video.image }}" /></a>
+          <a href="{{video.url}}">{{video.label | limitTo: 40}}</a>
+          <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
           <div class="meta-info">
-            <span class="first fa fa-clock-o"></span>{{ video.duration }}
-            <span class="fa fa-eye"></span>{{ video.viewed }}
-            <span class="fa fa-thumbs-o-up"></span>{{ video.like }}
+            <span class="first fa fa-clock-o"></span>{{video.duration}}
+            <span class="fa fa-eye"></span>{{video.viewed}}
+            <span class="fa fa-thumbs-o-up"></span>{{video.like}}
           </div>
         </div>
       </div>
-      {% endfor %}
     </div>
   </section>
 
@@ -40,20 +38,20 @@
     </form>
   </div>
 
+
   <section class="playlist clearfix">
     <div class="row">
-      {% for playlist in site.data.playlists %}
-      <div class="col-md-3 playlist-wrapper">
-        <a href="{{ playlist.url }}"><img class="img-responsive image" src="{{ playlist.image }}" /></a>
+      <div ng-repeat="playlist in playlists" class="col-md-3 playlist-wrapper">
+
+        <a href="{{playlist.url}}"><img class="img-responsive image" ng-src="{{playlist.image}}" /></a>
         <div class="meta-info">
-          <a href="{{ playlist.url }}"><b>{{ playlist.title }}</b></a> - {{ playlist.description }}
+          <a href="{{playlist.url}}"><b>{{playlist.label}}</b></a> - {{playlist.text}}
           <div class="meta-info">
-            <span class="fa fa-clock-o"></span> Duration: {{ playlist.time }}
-            <span class="fa fa-file-o"></span> Videos: {{ playlist.videos }}
+            <span class="fa fa-clock-o"></span> Duration: {{playlist.duration}}
+            <span class="fa fa-file-o"></span> Videos: {{playlist.videos_number}}
           </div>
         </div>
       </div>
-      {% endfor %}
     </div>
   </section>
 
