@@ -28,7 +28,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, Config, localStorageServic
       method: method,
       url: Config.backend + address,
       data: data,
-      headers: {'access_token': DrupalHubSvc.accessToken}
+      headers: {'access-token': DrupalHubSvc.accessToken}
     });
   };
 
@@ -45,7 +45,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, Config, localStorageServic
       method: 'get',
       url: Config.backend + 'me',
       headers: {
-        'access_token': DrupalHubSvc.accessToken,
+        'access-token': DrupalHubSvc.accessToken,
         permission: permission
       }
     });
