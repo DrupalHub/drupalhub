@@ -15,14 +15,16 @@
 
   <section class="videos clearfix">
     <div class="row">
-      <div ng-repeat="video in videos" class="col-md-3">
-        <div class="video-wrapper">
-          <a href="{{video.url}}">{{video.label | limitTo: 40}}</a>
-          <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
-          <div class="meta-info">
-            <span class="first fa fa-clock-o"></span>{{video.duration}}
-            <span class="fa fa-eye"></span>{{video.viewed}}
-            <span class="fa fa-thumbs-o-up"></span>{{video.like}}
+      <div ng-repeat="(key, video) in videos">
+        <div class="col-md-3">
+          <div class="video-wrapper">
+            <a href="{{video.url}}">{{video.label | limitTo: 40}}</a>
+            <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
+            <div class="meta-info">
+              <span class="first fa fa-clock-o"></span>{{video.duration}}
+              <span class="fa fa-eye"></span>{{video.viewed}}
+              <span class="fa fa-thumbs-o-up"></span>{{video.like}}
+            </div>
           </div>
         </div>
       </div>

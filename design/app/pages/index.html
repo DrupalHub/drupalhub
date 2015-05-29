@@ -1,148 +1,151 @@
-<section class="top container">
-  <ul class="breadcrumb">
-    <li class="active">Home</li>
-  </ul>
+<div ng-controller="frontPage">
+  <section class="top container">
+    <ul class="breadcrumb">
+      <li class="active">Home</li>
+    </ul>
 
-  <div class="row">
-    <div class="col-md-8 first" ng-controller="questionCtrl">
-      <div class="page-header questions-header clearfix">
-        <h3><a href="#/questions">Questions</a></h3>
-        <a href="#/add-question" class="btn btn-primary btn-md" ng-show="showNewQuestion">Ask a question</a>
-      </div>
+    <div class="row">
+      <div class="col-md-8 first">
+        <div class="page-header questions-header clearfix">
+          <h3><a href="#/questions">Questions</a></h3>
+          <a href="#/add-question" class="btn btn-primary btn-md" ng-show="permission.question_create">Ask a question</a>
+        </div>
 
-      <div class="questions-wrapper clearfix">
-        <div ng-cloak="question" ng-repeat="question in questions">
-          <div class="question row">
-            <div class="col-md-2 col-sm-2">
-              <img ng-src="{{question.image}}" class="images img-responsive question" />
-            </div>
-            <div class="col-md-10 col-sm-10 col-xs-8">
-              <div class="content">
-                <a href="{{question.url}}">{{question.label}}</a>
-                <div class="meta-info">
-                  <span class="first fa fa-clock-o"></span>{{question.date}}
-                  <span class="fa fa-user"></span>{{question.user}}
-                  <span class="fa fa-eye"></span>{{question.viewed}}
-                  <span class="fa fa-thumbs-o-up"></span>{{question.like}}
+        <div class="questions-wrapper clearfix">
+          <div ng-repeat="question in assets.question">
+            <div class="question row">
+              <div class="col-md-2 col-sm-2">
+                <img ng-src="{{question.image}}" class="images img-responsive question" />
+              </div>
+              <div class="col-md-10 col-sm-10 col-xs-8">
+                <div class="content">
+                  <a href="{{question.url}}">{{question.label}}</a>
+                  <div class="meta-info">
+                    <span class="first fa fa-clock-o"></span>{{question.date}}
+                    <span class="fa fa-user"></span>{{question.user}}
+                    <span class="fa fa-eye"></span>{{question.viewed}}
+                    <span class="fa fa-thumbs-o-up"></span>{{question.like}}
                   <span ng-repeat="tag in question.tags">
                     <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>
                   </span>
+                  </div>
+                  <div class="text" ng-bind-html="question.intro | fullHtml"></div>
                 </div>
-                <div class="text" ng-bind-html="question.intro | fullHtml"></div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center" ng-show="waiting">
+            <div class="loader">
+              <div class="loader-inner ball-clip-rotate">
+                <div></div>
               </div>
             </div>
           </div>
         </div>
-        <div class="text-center" ng-show="waiting">
-          <div class="loader">
-            <div class="loader-inner ball-clip-rotate">
-              <div></div>
+      </div>
+      <div class="col-md-4 second">
+
+        <div class="events">
+          <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
+
+          <ul>
+            <li ng-repeat="event in assets.events" ng-cloak="events">
+              <b><a href="{{event.url}}">{{event.label}}</a></b> - {{event.intro}}<br />
+              {{event.start}} - {{event.end}}, {{event.human_address}}.
+            </li>
+          </ul>
+          <div class="text-center" ng-show="waiting">
+            <div class="loader">
+              <div class="loader-inner ball-clip-rotate">
+                <div></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4 second">
 
-      <div class="events" ng-controller="eventsCtrl">
-        <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
+        <div class="videos">
+          <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
 
-        <ul>
-          <li ng-repeat="event in events" ng-cloak="events">
-            <b><a href="{{event.url}}">{{event.label}}</a></b> - {{event.intro}}<br />
-            {{event.start}} - {{event.end}}, {{event.human_address}}.
-          </li>
-        </ul>
-        <div class="text-center" ng-show="waiting">
-          <div class="loader">
-            <div class="loader-inner ball-clip-rotate">
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="videos" ng-controller="videoCtrl">
-        <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
-
-        <ul>
-          <li ng-cloak="videos" ng-repeat="video in videos">
-            <b><a href="{{video.url}}">{{video.label}}</a></b>- {{video.text}}
-            <div class="meta-info">
-              <span class="first fa fa-user"></span>{{video.author}}
-              <span class="fa fa-eye"></span>{{video.viewed}}
-              <span class="fa fa-thumbs-o-up"></span>{{video.like}}
-            </div>
-          </li>
-        </ul>
-        <div class="text-center" ng-show="waiting">
-          <div class="loader">
-            <div class="loader-inner ball-clip-rotate">
-              <div></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!--<div class="users">-->
-      <!--<div class="page-header users-header"><h4 class="fa fa-users">Most active users</h4></div>-->
-
-      <!--<ul>-->
-      <!--{% for item in site.data.active_users %}-->
-      <!--<li class="clearfix">-->
-      <!--<div class="row">-->
-      <!--<div class="col-md-3"><img class="img-responsive" src="{{ item.img }}" /></div>-->
-      <!--<div class="col-md-9">-->
-      <!--<div>-->
-      <!--<b><a href="{{ item.url }}">{{ item.name }}</a></b>-->
-      <!--<div class="meta-info">-->
-      <!--<span class="fa fa-thumbs-o-up"></span>{{ item.reputation }}-->
-      <!--<span class="fa fa-eye"></span>{{ item.viewed }}-->
-      <!--</div>-->
-      <!--</div>-->
-      <!--</div>-->
-      <!--</div>-->
-      <!--</li>-->
-      <!--{% endfor %}-->
-      <!--</ul>-->
-      <!--</div>-->
-
-    </div>
-  </div>
-</section>
-
-<section class="bottom container">
-  <div class="row">
-    <div class="col-md-12" ng-controller="blogCtrl">
-      <div class="page-header blog-header clearfix">
-        <h3><a href="#/blogs">Blogs</a></h3>
-        <a ng-show="canPostNewBlogs" href="#/add-blog" class="btn btn-warning btn-md">Create a blog post</a>
-      </div>
-
-      <div class="blogs-wrapper clearfix">
-        <div class="blog row" ng-show="blogs" ng-repeat="blog in blogs">
-          <div class="col-md-2 col-sm-2"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
-          <div class="col-md-10 col-sm-10">
-            <div class="content">
-              <a href="{{blog.url}}">{{blog.label}}</a>
+          <ul>
+            <li ng-cloak="videos" ng-repeat="video in assets.videos">
+              <b><a href="{{video.url}}">{{video.label}}</a></b>- {{video.text}}
               <div class="meta-info">
-                <span class="first fa fa-clock-o"></span>{{blog.date}}
-                <span class="fa fa-user"></span>{{blog.author}}
-                <span class="fa fa-eye"></span>{{blog.viewed}}
-                <span class="fa fa-thumbs-o-up"></span>{{blog.like}}
+                <span class="first fa fa-user"></span>{{video.author}}
+                <span class="fa fa-eye"></span>{{video.viewed}}
+                <span class="fa fa-thumbs-o-up"></span>{{video.like}}
               </div>
-              <div class="text" ng-bind-html="blog.intro | fullHtml"></div>
+            </li>
+          </ul>
+          <div class="text-center" ng-show="waiting">
+            <div class="loader">
+              <div class="loader-inner ball-clip-rotate">
+                <div></div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="text-center" ng-show="waiting">
-          <div class="loader">
-            <div class="loader-inner ball-clip-rotate">
-              <div></div>
+
+        <!--<div class="users">-->
+        <!--<div class="page-header users-header"><h4 class="fa fa-users">Most active users</h4></div>-->
+
+        <!--<ul>-->
+        <!--{% for item in site.data.active_users %}-->
+        <!--<li class="clearfix">-->
+        <!--<div class="row">-->
+        <!--<div class="col-md-3"><img class="img-responsive" src="{{ item.img }}" /></div>-->
+        <!--<div class="col-md-9">-->
+        <!--<div>-->
+        <!--<b><a href="{{ item.url }}">{{ item.name }}</a></b>-->
+        <!--<div class="meta-info">-->
+        <!--<span class="fa fa-thumbs-o-up"></span>{{ item.reputation }}-->
+        <!--<span class="fa fa-eye"></span>{{ item.viewed }}-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</li>-->
+        <!--{% endfor %}-->
+        <!--</ul>-->
+        <!--</div>-->
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bottom container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-header blog-header clearfix">
+          <h3><a href="#/blogs">Blogs</a></h3>
+          <a ng-show="permission.blog_create" href="#/add-blog" class="btn btn-warning btn-md">Create a blog post</a>
+        </div>
+
+        <div class="blogs-wrapper clearfix">
+          <div class="blog row" ng-show="assets.blog" ng-repeat="blog in assets.blog">
+            <div class="col-md-2 col-sm-2"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
+            <div class="col-md-10 col-sm-10">
+              <div class="content">
+                <a href="{{blog.url}}">{{blog.label}}</a>
+                <div class="meta-info">
+                  <span class="first fa fa-clock-o"></span>{{blog.date}}
+                  <span class="fa fa-user"></span>{{blog.author}}
+                  <span class="fa fa-eye"></span>{{blog.viewed}}
+                  <span class="fa fa-thumbs-o-up"></span>{{blog.like}}
+                </div>
+                <div class="text" ng-bind-html="blog.intro | fullHtml"></div>
+              </div>
+            </div>
+          </div>
+          <div class="text-center" ng-show="waiting">
+            <div class="loader">
+              <div class="loader-inner ball-clip-rotate">
+                <div></div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</div>
