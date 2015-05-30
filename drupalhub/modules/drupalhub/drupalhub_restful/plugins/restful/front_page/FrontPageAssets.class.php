@@ -51,7 +51,11 @@ class FrontPageAssets extends \RestfulBase implements RestfulDataProviderInterfa
 
   private function getPermission(array $permissions) {
     foreach ($permissions as &$permission) {
-      $permission = user_access($permission, $this->getAccount());
+      try {
+        $permission = user_access($permission, $this->getAccount());
+      } catch (\Exception $e) {
+        $permission = FALSE;
+      }
     }
 
     return $permissions;
