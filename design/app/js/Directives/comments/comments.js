@@ -22,9 +22,14 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
         $scope.title = 'Help this question';
         $scope.btnType = 'btn-primary';
       }
+      else if (type == 'video') {
+        $scope.title = 'What do you think on this video?';
+        $scope.btnType = 'btn-danger';
+      }
       else {
         $scope.title = 'What do you think on this blog?';
         $scope.btnType = 'btn-warning';
+
       }
 
       // Submit a comment part.

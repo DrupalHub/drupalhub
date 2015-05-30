@@ -1,4 +1,4 @@
-DrupalHub.controller('eventCtrl', function($scope, DrupalHubRequest, $routeParams, $modal) {
+DrupalHub.controller('eventCtrl', function($scope, DrupalHubRequest, $routeParams) {
   $scope.event = false;
 
   DrupalHubRequest.localRequest('get', 'event/' + $routeParams.id).then(function(data) {

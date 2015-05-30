@@ -63,12 +63,16 @@ DrupalHub.config(function($routeProvider) {
     controller: 'eventCtrl'
   });
 
-  // Youtube.
+  // Video.
   $routeProvider.when('/videos', {
     templateUrl: 'pages/videos.html',
     controller: 'videosCtrl'
   });
 
+  $routeProvider.when('/video/:id', {
+    templateUrl: 'pages/video.html',
+    controller: 'videoCtrl'
+  });
 
   // 404 and other stanz.
   $routeProvider.otherwise({

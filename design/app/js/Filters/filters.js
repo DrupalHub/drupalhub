@@ -11,6 +11,6 @@ DrupalHub.filter('countAttendees', ['$sce', function($sce) {
       return 0;
     }
 
-    return object.count();
+    return object.length;
   };
 }]);
