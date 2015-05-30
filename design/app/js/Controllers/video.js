@@ -8,9 +8,11 @@ DrupalHub.controller('videoCtrl', function($scope, DrupalHubRequest, $routeParam
 
   var id = $routeParams['id'];
 
+  console.log($routeParams);
+
   DrupalHubRequest.localRequest('get', 'video/' + id).success(function(data, status) {
     $scope.video = data.data[0];
-    $scope.youtube = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + $scope.video.embed  + '?autoplay=true" frameborder="0" allowfullscreen></iframe>'
+    $scope.youtube = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + $scope.video.embed  + '?autoplay=true" frameborder="0" allowfullscreen></iframe>';
   });
 
   DrupalHubRequest.localRequest('get', 'video?filter[id][value]=' + id + '&filter[id][operator]=<>&range=10').success(function(data, status) {

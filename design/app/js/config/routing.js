@@ -74,6 +74,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'videoCtrl'
   });
 
+  $routeProvider.when('/playlist/:id/:delta', {
+    templateUrl: 'pages/playlist.html',
+    controller: 'PlaylistCtrl'
+  });
+
   // 404 and other stanz.
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',

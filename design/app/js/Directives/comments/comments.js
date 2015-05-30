@@ -22,7 +22,7 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
         $scope.title = 'Help this question';
         $scope.btnType = 'btn-primary';
       }
-      else if (type == 'video') {
+      else if (['video', 'playlist'].indexOf(type) >= 0) {
         $scope.title = 'What do you think on this video?';
         $scope.btnType = 'btn-danger';
       }
