@@ -8,6 +8,13 @@
 class DrupalHubVideos extends \DrupalHubRestfulNode {
 
   /**
+   * @var integer
+   *
+   * The playlist ID. When dealing with a playlist the url should be different.
+   */
+  public $playlist;
+
+  /**
    * Overrides \RestfulEntityBase::publicFieldsInfo().
    */
   public function publicFieldsInfo() {

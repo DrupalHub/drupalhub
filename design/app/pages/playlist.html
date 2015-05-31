@@ -43,7 +43,7 @@
         <ul>
           <li class="clearfix" ng-repeat="video in playlist.videos" ng-class>
             <div class="col-md-3">
-              <a href="{{video.url}}"><img class="img-responsive image" src="{{video.image}}" /></a>
+              <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
             </div>
             <div class="col-md-9">
               <a href="{{video.url}}">{{video.label}}</a>

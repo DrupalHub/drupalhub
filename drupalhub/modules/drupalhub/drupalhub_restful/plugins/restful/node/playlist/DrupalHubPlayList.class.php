@@ -51,7 +51,11 @@ class DrupalHubPlayList extends \DrupalHubRestfulNode {
     $ids = $wrapper->field_videos->value(array('identifier' => TRUE));
 
     $videos = array();
-    foreach ($ids as $id) {
+    foreach ($ids as $delta => $id) {
+      $handler->playlist = array(
+        'nid' => $nid,
+        'delta' => $delta + 1,
+      );
       $videos[] = $handler->viewEntity($id);
     }
     return $videos;

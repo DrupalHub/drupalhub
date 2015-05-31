@@ -81,6 +81,9 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
         return '#/question/' . $nid;
 
       case 'youtube':
+        if (!empty($this->playlist)) {
+          return '#/playlist/' . $this->playlist['nid'] . '/' . $this->playlist['delta'];
+        }
         return '#/video/' . $nid;
 
       case 'playlist':

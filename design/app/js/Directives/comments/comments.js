@@ -14,9 +14,11 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
       var nid = path[2];
       var type = path[1];
 
-      DrupalHubRequest.localRequest('get', 'comments?nid=' + nid).success(function(data, status) {
-        $scope.comments = data.data;
-      });
+      if (type != 'playlist') {
+        DrupalHubRequest.localRequest('get', 'comments?nid=' + nid).success(function(data, status) {
+          $scope.comments = data.data;
+        });
+      }
 
       if (type == 'question') {
         $scope.title = 'Help this question';
@@ -25,11 +27,19 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
       else if (['video', 'playlist'].indexOf(type) >= 0) {
         $scope.title = 'What do you think on this video?';
         $scope.btnType = 'btn-danger';
+
+        if (type == 'playlist') {
+          DrupalHubRequest.localRequest('get', 'playlist/' + nid).success(function (data) {
+
+            DrupalHubRequest.localRequest('get', 'comments?nid=' + data.data[0].videos[path[3] - 1].id).success(function(data, status) {
+              $scope.comments = data.data;
+            });
+          });
+        }
       }
       else {
         $scope.title = 'What do you think on this blog?';
         $scope.btnType = 'btn-warning';
-
       }
 
       // Submit a comment part.

@@ -3,6 +3,8 @@
   .playlist {
 
     ul {
+      height: 460px;
+      overflow-x: hidden;
 
       li {
         padding-bottom: 10px;
