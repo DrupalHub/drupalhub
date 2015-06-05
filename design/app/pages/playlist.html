@@ -7,7 +7,6 @@
     <li class="active">{{video.label}}</li>
   </ul>
 
-
   <div class="row">
     <div class="video col-md-12 col-sm-12 col-xs-12">
       <div class="embed-responsive embed-responsive-16by9">
@@ -41,12 +40,13 @@
 
       <div class="row">
         <ul>
-          <li class="clearfix" ng-repeat="video in playlist.videos" ng-class>
-            <div class="col-md-3">
+          <li class="clearfix" ng-repeat="video in playlist.videos">
+            <div class="col-md-3" >
               <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
             </div>
             <div class="col-md-9">
               <a href="{{video.url}}">{{video.label}}</a>
+              <strong ng-show="$index == delta"> (Currently play)</strong>
               <div class="meta-info">
                 <span class="fa fa-clock-o"></span> {{video.duration}}
                 <span class="fa fa-calendar"></span> {{video.date}}

@@ -48,6 +48,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
         localStorageService.set('access_token', data.access_token);
         localStorageService.set('refresh_token', data.refresh_token);
         localStorageService.set('expire_in', new Date().getTime() + data.expires_in);
+
         $http.get(Config.backend + 'me', {
           headers: {'access-token': data.access_token}
         }).success(function(data) {
