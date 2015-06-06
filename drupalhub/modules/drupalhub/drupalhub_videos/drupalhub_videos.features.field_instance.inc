@@ -261,6 +261,10 @@ function drupalhub_videos_field_default_field_instances() {
     'label' => 'Address',
     'required' => 0,
     'settings' => array(
+      'allowed_providers' => array(
+        'vimeo' => 'vimeo',
+        'youtube' => 'youtube',
+      ),
       'description_field' => 0,
       'description_length' => 128,
       'user_register_form' => FALSE,

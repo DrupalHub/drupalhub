@@ -7,5 +7,5 @@ $plugin = array(
   'resource' => 'front_page',
   'class' => 'FrontPageAssets',
   // Try to authenticate users with all available authentication types.
-  'authentication_types' => TRUE,
+  'authentication_types' => array(),
 );

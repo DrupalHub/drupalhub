@@ -36,10 +36,6 @@ class FrontPageAssets extends \RestfulBase implements RestfulDataProviderInterfa
   public function frontPageAsset() {
     $this->getAccount();
     return array(
-      'permissions' => $this->getPermission(array(
-        'question_create' => 'create question content',
-        'blog_create' => 'create blog content',
-      )),
       'content' => array(
         'question' => $this->getContent('question'),
         'blog' => $this->getContent('blog'),
@@ -50,13 +46,13 @@ class FrontPageAssets extends \RestfulBase implements RestfulDataProviderInterfa
   }
 
   private function getPermission(array $permissions) {
-    foreach ($permissions as &$permission) {
-      try {
-        $permission = user_access($permission, $this->getAccount());
-      } catch (\Exception $e) {
-        $permission = FALSE;
-      }
-    }
+//    foreach ($permissions as &$permission) {
+//      try {
+//        $permission = user_access($permission, $this->getAccount());
+//      } catch (\Exception $e) {
+//        $permission = FALSE;
+//      }
+//    }
 
     return $permissions;
   }

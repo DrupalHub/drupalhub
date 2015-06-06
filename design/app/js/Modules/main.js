@@ -12,7 +12,7 @@ var DrupalHub = angular.module('DrupalHub', [
   'gm'
 ]).controller('bodyController', function($scope, $http, Config, localStorageService) {
 
-  if (localStorageService.get('expire_in') == null) {
+  if (localStorageService.get('expire_in') == null || localStorageService.get('refresh_token') == null) {
     return;
   }
 
