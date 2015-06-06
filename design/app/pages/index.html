@@ -8,7 +8,7 @@
       <div class="col-md-8 first">
         <div class="page-header questions-header clearfix">
           <h3><a href="#/questions">Questions</a></h3>
-          <a href="#/add-question" class="btn btn-primary btn-md" ng-show="permission.question_create">Ask a question</a>
+          <a href="#/add-question" class="btn btn-primary btn-md" ng-show="addQuestion">Ask a question</a>
         </div>
 
         <div class="questions-wrapper clearfix">
@@ -117,7 +117,7 @@
       <div class="col-md-12">
         <div class="page-header blog-header clearfix">
           <h3><a href="#/blogs">Blogs</a></h3>
-          <a ng-show="permission.blog_create" href="#/add-blog" class="btn btn-warning btn-md">Create a blog post</a>
+          <a ng-show="addBlog" href="#/add-blog" class="btn btn-warning btn-md">Create a blog post</a>
         </div>
 
         <div class="blogs-wrapper clearfix">
