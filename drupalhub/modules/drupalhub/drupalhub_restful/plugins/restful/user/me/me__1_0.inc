@@ -9,4 +9,5 @@ $plugin = array(
   'bundle' => 'user',
   // Try to authenticate users with all available authentication types.
   'authentication_types' => TRUE,
+  'authentication_optional' => TRUE,
 );

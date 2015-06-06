@@ -50,7 +50,10 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
         localStorageService.set('expire_in', new Date().getTime() + data.expires_in);
 
         $http.get(Config.backend + 'me', {
-          headers: {'access-token': data.access_token}
+          headers: {
+            'access-token': data.access_token,
+            'access_token': data.access_token
+          }
         }).success(function(data) {
           $rootScope.$broadcast('userLoggedIn', data.data);
           $scope.loginResultsClass = 'alert-success';

@@ -36,25 +36,11 @@ class FrontPageAssets extends \RestfulBase implements RestfulDataProviderInterfa
   public function frontPageAsset() {
     $this->getAccount();
     return array(
-      'content' => array(
-        'question' => $this->getContent('question'),
-        'blog' => $this->getContent('blog'),
-        'videos' => $this->getContent('video'),
-        'events' => $this->getContent('event'),
-      ),
+      'question' => $this->getContent('question'),
+      'blog' => $this->getContent('blog'),
+      'videos' => $this->getContent('video'),
+      'events' => $this->getContent('event'),
     );
-  }
-
-  private function getPermission(array $permissions) {
-//    foreach ($permissions as &$permission) {
-//      try {
-//        $permission = user_access($permission, $this->getAccount());
-//      } catch (\Exception $e) {
-//        $permission = FALSE;
-//      }
-//    }
-
-    return $permissions;
   }
 
   private function getContent($bundle) {
