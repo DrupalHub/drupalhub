@@ -1,4 +1,4 @@
-<section class="container page-playlist" ng-controller="PlaylistCtrl" ng-show="playlist">
+<section class="container page-playlist" ng-controller="PlaylistCtrl" ng-show="playlistObject">
 
   <ul class="breadcrumb">
     <li><a href="#/">Home</a></li>
@@ -33,14 +33,14 @@
         <h2>Comments</h2>
       </div>
 
-      <div drupal-hub-comments></div>
+      <div drupal-hub-comments nid="video.id" type="playlist"></div>
     </div>
     <div class="col-md-4 col-xs-12 col-sm-12 other-videos">
       <div class="page-header"><h2>Other videos</h2></div>
 
       <div class="row">
         <ul>
-          <li class="clearfix" ng-repeat="video in playlist.videos">
+          <li class="clearfix" ng-repeat="video in playlistObject.videos">
             <div class="col-md-3" >
               <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
             </div>

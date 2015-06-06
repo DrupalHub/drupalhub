@@ -105,7 +105,7 @@ form legend {
 }
 
 // Spinners.
-.blogs-wrapper {
+.blogs-wrapper, .page-blog {
 
   .ball-clip-rotate > div {
     border: solid 2px $blogs-border;
@@ -113,7 +113,7 @@ form legend {
   }
 }
 
-.questions-wrapper {
+.questions-wrapper, .page-question {
 
   .ball-clip-rotate > div {
     border: solid 2px $question-border;
@@ -121,7 +121,7 @@ form legend {
   }
 }
 
-.events, .page-events {
+.events, .page-events, .page-event {
 
   .ball-clip-rotate > div {
     border: solid 2px $events-border;
@@ -129,7 +129,7 @@ form legend {
   }
 }
 
-.videos {
+.videos, .page-playlist, .page-video {
 
   .ball-clip-rotate > div {
     border: solid 2px $video-border;
