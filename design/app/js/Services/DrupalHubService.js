@@ -28,7 +28,6 @@ DrupalHub.factory('DrupalHubRequest', function($http, Config, localStorageServic
       method: method,
       url: Config.backend + address,
       data: data,
-      cache: true,
       headers: {
         'access-token': DrupalHubSvc.accessToken,
         'access_token': DrupalHubSvc.accessToken
