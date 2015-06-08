@@ -1,11 +1,13 @@
-DrupalHub.controller('videosCtrl', function($scope, DrupalHubRequest) {
+DrupalHub.controller('videosCtrl', function($scope, DrupalHubRequest, $location) {
 
   $scope.videos = {};
   $scope.playlists = {};
   $scope.page = 1;
   $scope.show_more = false;
 
-  DrupalHubRequest.localRequest('get', 'video?range=12').success(function(data) {
+  var page = $location.search().page == undefined ? 0 : $location.search().page;
+
+  DrupalHubRequest.localRequest('get', 'video?range=12&page=' + page).success(function(data) {
     $scope.videos = data.data;
     $scope.show_more = true;
     $scope.page++;

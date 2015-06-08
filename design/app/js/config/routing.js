@@ -66,7 +66,8 @@ DrupalHub.config(function($routeProvider) {
   // Video.
   $routeProvider.when('/videos', {
     templateUrl: 'pages/videos.html',
-    controller: 'videosCtrl'
+    controller: 'videosCtrl',
+    reloadOnSearch: false
   });
 
   $routeProvider.when('/video/:id', {

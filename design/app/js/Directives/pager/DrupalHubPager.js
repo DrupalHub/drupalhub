@@ -33,8 +33,7 @@ DrupalHub.directive('drupalhubPager', function(DrupalHubRequest, $location) {
 
           this.$parent.currentPage = page - 1;
 
-          // todo: check ho to change the url without reload the page.
-          //$location.search('page', page);
+          $location.search('page', page);
 
           // Get the items which belong to this page.
           DrupalHubRequest.localRequest('get', this.$parent.endpoint + '?range=' + this.$parent.perpage + '&page=' + page).then(function(data) {
