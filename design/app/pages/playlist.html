@@ -3,7 +3,7 @@
   <ul class="breadcrumb">
     <li><a href="#/">Home</a></li>
     <li><a href="#/videos">Videos</a></li>
-    <li>{{playlist.label}}</li>
+    <li>{{playlistObject.label}}</li>
     <li class="active">{{video.label}}</li>
   </ul>
 
@@ -36,17 +36,16 @@
       <div drupal-hub-comments nid="video.id" type="playlist"></div>
     </div>
     <div class="col-md-4 col-xs-12 col-sm-12 other-videos">
-      <div class="page-header"><h2>Other videos</h2></div>
+      <div class="page-header"><h2>More videos in this playlist.</h2></div>
 
       <div class="row">
         <ul>
-          <li class="clearfix" ng-repeat="video in playlistObject.videos">
+          <li class="clearfix" ng-class="{'current':$index == delta}" ng-repeat="video in playlistObject.videos">
             <div class="col-md-3" >
               <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
             </div>
             <div class="col-md-9">
               <a href="{{video.url}}">{{video.label}}</a>
-              <strong ng-show="$index == delta"> (Currently play)</strong>
               <div class="meta-info">
                 <span class="fa fa-clock-o"></span> {{video.duration}}
                 <span class="fa fa-calendar"></span> {{video.date}}

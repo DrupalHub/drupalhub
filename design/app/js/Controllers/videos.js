@@ -5,7 +5,7 @@ DrupalHub.controller('videosCtrl', function($scope, DrupalHubRequest, $location)
   $scope.page = 1;
   $scope.show_more = false;
 
-  var page = $location.search().page == undefined ? 0 : $location.search().page;
+  var page = $location.search().page == undefined ? 1 : $location.search().page;
 
   DrupalHubRequest.localRequest('get', 'video?range=12&page=' + page).success(function(data) {
     $scope.videos = data.data;

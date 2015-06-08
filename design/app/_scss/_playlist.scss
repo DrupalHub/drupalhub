@@ -21,6 +21,10 @@
 
   .other-videos {
 
+    .current {
+      @include opacity(0.6);
+    }
+
     .page-header {
       border-bottom: solid 1px red;
     }
