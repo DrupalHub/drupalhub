@@ -9,11 +9,10 @@ DrupalHub.directive('drupalHubUser', function($location, DrupalHubRequest, local
         $scope.template = 'js/Directives/userLink/loggedin.html';
       });
 
-      if (DrupalHubRequest.accessToken) {
-        var userObject;
-
-        if (userObject = DrupalHubRequest.get('userObject')) {
-          $scope.userName = userObject.label;
+      // Check first the access token works.
+      DrupalHubRequest.localRequest('get', 'me').success(function (data) {
+        if (data.data.id == null) {
+          $scope.template = 'js/Directives/userLink/anonymous.html';
         }
         else {
           DrupalHubRequest.localRequest('GET', 'me')
@@ -22,13 +21,9 @@ DrupalHub.directive('drupalHubUser', function($location, DrupalHubRequest, local
               DrupalHubRequest.set('userObject', user);
               $scope.userName = user.label;
             });
+          $scope.template = 'js/Directives/userLink/loggedin.html';
         }
-
-        $scope.template = 'js/Directives/userLink/loggedin.html';
-      }
-      else {
-        $scope.template = 'js/Directives/userLink/anonymous.html';
-      }
+      });
 
       $scope.logout = function() {
         localStorage.clear();

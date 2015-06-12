@@ -10,7 +10,7 @@ var DrupalHub = angular.module('DrupalHub', [
   'ui.bootstrap',
   'ui.bootstrap.datetimepicker',
   'gm'
-]).controller('bodyController', function($scope, $http, Config, localStorageService) {
+]).controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest) {
 
   if (localStorageService.get('expire_in') == null || localStorageService.get('refresh_token') == null) {
     return;
@@ -18,7 +18,7 @@ var DrupalHub = angular.module('DrupalHub', [
 
   if (new Date().getTime() > localStorageService.get('expire_in')) {
     // Get the new refresh token.
-    $http.get(Config.backend + 'refresh-token/' + localStorageService.get('refresh_token')).
+    DrupalHubRequest.localRequest('get', 'refresh-token/' + localStorageService.get('refresh_token')).
       success(function(data) {
         localStorageService.set('access_token', data.access_token);
         localStorageService.set('refresh_token', data.refresh_token);
