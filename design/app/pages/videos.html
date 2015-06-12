@@ -4,63 +4,69 @@
     <li class="active">Videos</li>
   </ul>
 
-  <div class="page-header videos-header clearfix">
-    <h3 class="pull-left">Videos</h3>
-    <form class="navbar-form navbar-left pull-right" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" id="video-search" placeholder="Search">
-      </div>
-    </form>
-  </div>
+  <tabset justified="true">
+    <tab heading="Videos" class="tab-item">
+      <section class="clearfix top">
+        <div class="pull-left">
+          <a href="#" class="btn btn-danger"><span class="fa fa-plus"></span> Add new video</a>
+        </div>
+        <form class="navbar-form navbar-left pull-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" id="video-search" placeholder="Search">
+          </div>
+        </form>
+      </section>
 
-  <section class="videos clearfix">
-    <div class="row">
-      <div ng-repeat="(key, video) in videos">
+      <section class="videos clearfix">
+        <div class="row">
+          <div ng-repeat="(key, video) in videos">
 
-        <div ng-if="$index % 4 == 0" class="clearfix"></div>
+            <div ng-if="$index % 4 == 0" class="clearfix"></div>
 
-        <div class="col-md-3">
-          <div class="video-wrapper">
-            <a href="{{video.url}}">{{video.label | limitTo: 40}}</a>
-            <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
-            <div class="meta-info">
-              <span class="first fa fa-clock-o"></span>{{video.duration}}
-              <span class="fa fa-eye"></span>{{video.viewed}}
-              <span class="fa fa-thumbs-o-up"></span>{{video.like}}
+            <div class="col-md-3">
+              <div class="video-wrapper">
+                <a href="{{video.url}}">{{video.label | limitTo: 40}}</a>
+                <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
+                <div class="meta-info">
+                  <span class="first fa fa-clock-o"></span>{{video.duration}}
+                  <span class="fa fa-eye"></span>{{video.viewed}}
+                  <span class="fa fa-thumbs-o-up"></span>{{video.like}}
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    <div drupalhub-pager perpage="12" object="videos" endpoint="video"></div>
-  </section>
+        <div drupalhub-pager perpage="12" object="videos" endpoint="video"></div>
+      </section>
+    </tab>
+    <tab heading="Playlist">
 
-  <div class="page-header playlist-header clearfix">
-    <h3 class="pull-left">Playlists</h3>
-    <form class="navbar-form navbar-left pull-right" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" id="playlist-search" placeholder="Search">
-      </div>
-    </form>
-  </div>
+      <section class="clearfix top">
+        <form class="navbar-form navbar-left pull-right clearfix" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" id="playlist-search" placeholder="Search">
+          </div>
+        </form>
+      </section>
 
+      <section class="playlist clearfix">
+        <div class="row">
+          <div ng-repeat="playlist in playlists" class="col-md-3 playlist-wrapper">
 
-  <section class="playlist clearfix">
-    <div class="row">
-      <div ng-repeat="playlist in playlists" class="col-md-3 playlist-wrapper">
+            <div ng-if="$index % 4 == 0" class="clearfix"></div>
 
-        <div ng-if="$index % 4 == 0" class="clearfix"></div>
-
-        <a href="{{playlist.url}}"><img class="img-responsive image" ng-src="{{playlist.image}}" /></a>
-        <div class="meta-info">
-          <a href="{{playlist.url}}"><b>{{playlist.label}}</b></a> - {{playlist.text}}
-          <div class="meta-info">
-            <span class="fa fa-clock-o"></span> Duration: {{playlist.duration}}
-            <span class="fa fa-file-o"></span> Videos: {{playlist.videos_number}}
+            <a href="{{playlist.url}}"><img class="img-responsive image" ng-src="{{playlist.image}}" /></a>
+            <div class="meta-info">
+              <a href="{{playlist.url}}"><b>{{playlist.label}}</b></a> - {{playlist.text}}
+              <div class="meta-info">
+                <span class="fa fa-clock-o"></span> Duration: {{playlist.duration}}
+                <span class="fa fa-file-o"></span> Videos: {{playlist.videos_number}}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
+    </tab>
+  </tabset>
 
 </section>

@@ -5,8 +5,11 @@
     border-bottom-color: $videos-header;
   }
 
+  .top {
+    margin-top: 10px;
+  }
+
   .videos {
-    margin-bottom: 10px;
 
     .video-wrapper {
       position: relative;
@@ -27,7 +30,7 @@
   }
 
   .playlist {
-    padding-bottom: 30px;
+    padding-top: 10px;
 
     .playlist-wrapper {
       margin-bottom: 20px;
@@ -36,9 +39,5 @@
     .image {
       border: solid 1px $video-border;
     }
-  }
-
-  .playlist-header {
-    margin-top: 40px;
   }
 }
