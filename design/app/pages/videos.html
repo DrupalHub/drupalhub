@@ -25,7 +25,7 @@
 
             <div class="col-md-3">
               <div class="video-wrapper">
-                <a href="{{video.url}}">{{video.label | limitTo: 40}}</a>
+                <a href="{{video.url}}">{{video.label | limitTo: 35}}</a>
                 <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
                 <div class="meta-info">
                   <span class="first fa fa-clock-o"></span>{{video.duration}}
@@ -42,6 +42,9 @@
     <tab heading="Playlist">
 
       <section class="clearfix top">
+        <div class="pull-left">
+          <a href="#" class="btn btn-danger"><span class="fa fa-plus"></span> Compile a new playlist</a>
+        </div>
         <form class="navbar-form navbar-left pull-right clearfix" role="search">
           <div class="form-group">
             <input type="text" class="form-control" id="playlist-search" placeholder="Search">
