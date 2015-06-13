@@ -109,15 +109,15 @@
         </form>
 
         <ul class="nav navbar-nav secondary-menu">
-          <li class="dropdown social-up">
-            <a class="dropdown-toggle fa fa-share-square-o" data-toggle="dropdown" role="button" aria-expanded="false">Social up! <span class="caret"></span></a>
-            <ul class="dropdown-menu" role="menu">
-              <li class="first youtube"><a href="https://www.youtube.com/channel/UCJe3SCokovJBxxe-etjWhtA" class="fa fa-youtube-play">Youtube</a></li>
-              <li class="twitter"><a href="https://twitter.com/DrupalIsrael" class="fa fa-twitter">Twitter</a></li>
-              <li class="gplus"><a href="https://plus.google.com/communities/116473259616645148688" class="fa fa-google-plus">Google Plus</a></li>
-              <li class="facebook"><a href="https://www.facebook.com/groups/drupalil" class="fa fa-facebook-square">Facebook</a></li>
-              <li class="last github"><a href="http://github.com/drupalhub/drupalhub" class="fa fa-github-alt">Github</a></li>
-            </ul>
+          <li class="dropdown social-up" dropdown is-open="status.isopen">
+            <a dropdown-toggle ng-disabled="disabled" class="dropdown-toggle fa fa-share-square-o">Social up! <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li class="first youtube"><a href="https://www.youtube.com/channel/UCJe3SCokovJBxxe-etjWhtA" class="fa fa-youtube-play">Youtube</a></li>
+                <li class="twitter"><a href="https://twitter.com/DrupalIsrael" class="fa fa-twitter">Twitter</a></li>
+                <li class="gplus"><a href="https://plus.google.com/communities/116473259616645148688" class="fa fa-google-plus">Google Plus</a></li>
+                <li class="facebook"><a href="https://www.facebook.com/groups/drupalil" class="fa fa-facebook-square">Facebook</a></li>
+                <li class="last github"><a href="http://github.com/drupalhub/drupalhub" class="fa fa-github-alt">Github</a></li>
+              </ul>
           </li>
           <li class="dropdown">
             <span drupal-hub-user></span>
