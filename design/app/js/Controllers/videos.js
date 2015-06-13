@@ -3,13 +3,14 @@ DrupalHub.controller('videosCtrl', function($scope, DrupalHubRequest, $location)
   $scope.videos = {};
   $scope.playlists = {};
   $scope.page = 1;
-  $scope.show_more = false;
+  $scope.videosSearch = '';
+  $scope.playlistSearch = '';
+  $scope.showPager = true;
 
   var page = $location.search().page == undefined ? 1 : $location.search().page;
 
   DrupalHubRequest.localRequest('get', 'video?range=12&page=' + page).success(function(data) {
     $scope.videos = data.data;
-    $scope.show_more = true;
     $scope.page++;
   });
 
@@ -17,18 +18,34 @@ DrupalHub.controller('videosCtrl', function($scope, DrupalHubRequest, $location)
     $scope.playlists = data.data;
   });
 
-  $scope.loadMoreVideos = function() {
-
-    DrupalHubRequest.localRequest('get', 'video?range=12&page=' + $scope.page).success(function(data) {
-      var heap_videos = $scope.videos;
-
-      angular.forEach(data.data, function(value, key) {
-        heap_videos.push(value);
+  // Search for videos.
+  $scope.searchVideo = function() {
+    if (this.videosSearch.length == 0) {
+      DrupalHubRequest.localRequest('get', 'video?range=12&page=' + page).success(function(data) {
+        $scope.videos = data.data;
+        $scope.showPager = true;
       });
-
-      $scope.videos = heap_videos;
-      $scope.show_more = !($scope.videos.length == data.count);
-      $scope.page++;
-    });
+    }
+    else {
+      DrupalHubRequest.localRequest('get', 'video?autocomplete[string]=' + this.videosSearch).success(function(data) {
+        $scope.videos = data.data;
+        $scope.showPager = false;
+      });
+    }
   };
+
+  // Search for playlists.
+  $scope.searchPlaylist = function() {
+    if (this.playlistSearch.length == 0) {
+      DrupalHubRequest.localRequest('get', 'playlist').success(function(data) {
+        $scope.playlists = data.data;
+      });
+    }
+    else {
+      DrupalHubRequest.localRequest('get', 'playlist?autocomplete[string]=' + this.playlistSearch).success(function(data) {
+        $scope.playlists = data.data;
+      });
+    }
+  };
+
 });

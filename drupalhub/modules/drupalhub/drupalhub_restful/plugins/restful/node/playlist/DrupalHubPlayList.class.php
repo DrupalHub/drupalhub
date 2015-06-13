@@ -84,4 +84,15 @@ class DrupalHubPlayList extends \DrupalHubRestfulNode {
     return "http://img.youtube.com/vi/{$embed}/0.jpg";;
   }
 
+  protected function getListForAutocomplete() {
+    $nodes = node_load_multiple(array_keys(parent::getListForAutocomplete()));
+    $return = array();
+
+    foreach ($nodes as $node) {
+      $return[] = $this->viewEntity($node->nid);
+    }
+
+    return $return;
+  }
+
 }

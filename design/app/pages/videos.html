@@ -12,7 +12,7 @@
         </div>
         <form class="navbar-form navbar-left pull-right" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" id="video-search" placeholder="Search">
+            <input type="text" class="form-control" id="video-search" placeholder="Search" ng-model="videosSearch" ng-keyup="searchVideo();">
           </div>
         </form>
       </section>
@@ -36,7 +36,7 @@
             </div>
           </div>
         </div>
-        <div drupalhub-pager perpage="12" object="videos" endpoint="video"></div>
+        <div ng-show="showPager" drupalhub-pager perpage="12" object="videos" endpoint="video"></div>
       </section>
     </tab>
     <tab heading="Playlist">
@@ -47,7 +47,7 @@
         </div>
         <form class="navbar-form navbar-left pull-right clearfix" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" id="playlist-search" placeholder="Search">
+            <input type="text" class="form-control" id="playlist-search" placeholder="Search" ng-model="playlistSearch" ng-keyup="searchPlaylist();">
           </div>
         </form>
       </section>
