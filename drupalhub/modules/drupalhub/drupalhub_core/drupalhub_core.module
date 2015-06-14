@@ -5,3 +5,10 @@
  */
 
 include_once 'drupalhub_core.features.inc';
+
+/**
+ * Load the socket IO class when needed.
+ */
+function drupalhub_core_load_socketio() {
+  require_once libraries_get_path('sokcetio') . '/socket.io.php';
+}

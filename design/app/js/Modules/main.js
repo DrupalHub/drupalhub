@@ -12,6 +12,11 @@ var DrupalHub = angular.module('DrupalHub', [
   'gm'
 ]).controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest) {
 
+  var socket = io(Config.socket);
+  socket.on('newNode', function(data){
+    console.log('A new node was created!', JSON.parse(data).title);
+  });
+
   if (localStorageService.get('expire_in') == null || localStorageService.get('refresh_token') == null) {
     return;
   }
