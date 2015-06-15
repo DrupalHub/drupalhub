@@ -13,8 +13,19 @@ var DrupalHub = angular.module('DrupalHub', [
 ]).controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest) {
 
   var socket = io(Config.socket);
-  socket.on('newNode', function(data){
-    console.log('A new node was created!', JSON.parse(data).title);
+
+  // Create a notification.
+  function createNotification(type, message) {
+    return '<div class="alert alert-dismissible alert-' + type + '">' +
+      '<button type="button" class="close" ng-click="hideNotification()" data-dismiss="alert">×</button>' +
+        message +
+    '</div>';
+  }
+
+  socket.on('newNode', function(data) {
+    var json = JSON.parse(data);
+    var message = 'WOW! there is a new content. Go <a class="notification-link" href="#/question/' + json.nid + '">' + json.title + "</a>";
+    document.getElementById('notification').innerHTML = createNotification('info', message);
   });
 
   if (localStorageService.get('expire_in') == null || localStorageService.get('refresh_token') == null) {

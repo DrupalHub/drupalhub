@@ -7,20 +7,43 @@
 include_once('drupalhub_notify.features.inc');
 
 /**
- * Implements hook_node_insert().
+ * Implements hook_entity_insert().
  */
-function drupalhub_notify_node_insert($node) {
+function drupalhub_notify_entity_insert($entity, $type) {
+  $action = $send = '';
+
+  if ($type == 'node') {
+    $action = 'new node';
+    $send = array(
+      'title' => $entity->title,
+      'uid' => $entity->uid,
+      'nid' => $entity->nid,
+    );
+  }
+  else if ($type == 'comment') {
+    $action = 'new comment';
+    $send = array(
+      'nid' => $entity->nid,
+      'uid' => $entity->uid,
+    );
+  }
+
+  drupalhub_core_socket_io_send($action, $send);
+}
+
+function drupalhub_core_socket_io_send($action, $message) {
   drupalhub_core_load_socketio();
 
-  // Creating an object to notify other listeners.
-  $json = json_encode((object) [
-    'title' => $node->title,
-    'uid' => $node->uid,
-    'nid' => $node->nid,
-  ]);
+  if (!is_object($message)) {
+    $message = json_encode((object) $message);
+  }
 
   // Notify.
   // todo: don't hard code the address.
-  $socketio = new SocketIO();
-  $socketio->send('localhost', 3000, 'new node', $json);
+  try {
+    $socketio = new SocketIO();
+    $socketio->send(variable_get('socketio_host'), variable_get('socketio_port'), $action, $message);
+  } catch (Exception $e) {
+
+  }
 }

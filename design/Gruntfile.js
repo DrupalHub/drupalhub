@@ -1,12 +1,4 @@
-// Generated on 2014-06-30 using generator-jekyllrb 1.2.1
 'use strict';
-
-// Directory reference:
-//   css: css
-//   compass: _scss
-//   javascript: js
-//   images: images
-//   fonts: fonts
 
 module.exports = function (grunt) {
   // Show elapsed time after tasks run
