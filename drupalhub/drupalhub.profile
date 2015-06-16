@@ -121,6 +121,8 @@ function drupalhub_variables_set() {
     'site_frontpage' => 'front',
     'entity_view_count_track_user' => array(),
     'user_picture_path' => '',
+    'socketio_host' => 'localhost',
+    'socketio_port' => 3000,
   );
 
   foreach ($variables as $name => $value) {
