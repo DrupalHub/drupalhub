@@ -10,22 +10,21 @@ var DrupalHub = angular.module('DrupalHub', [
   'ui.bootstrap',
   'ui.bootstrap.datetimepicker',
   'gm',
-  'toaster',
+  'ngToast',
   'btford.socket-io'
-]).controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, toaster, DrupalHubSocket) {
+]);
+
+DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubSocket) {
 
   DrupalHubSocket.on('newQuestion', function(data) {
     var json = JSON.parse(data);
-    toaster.pop({
-      type: 'info',
-      title: 'There is a new question in the site',
-      body: "There is a new question in the site: " + json.title + "<br /><a href='ynet.co.il'></a>",
-      showCloseButton: true,
-      allowHtml: true,
-      bodyOutputType: 'trustedHtml'
+    ngToast.create({
+      className: 'info',
+      content: "There is a new question in the site: <a href='#/question/" + json.nid + "'>" + json.title + "</a>",
+      dismissButton: true,
+      timeout: 5000
     });
   });
-
 
   if (localStorageService.get('expire_in') == null || localStorageService.get('refresh_token') == null) {
     return;
@@ -40,13 +39,14 @@ var DrupalHub = angular.module('DrupalHub', [
         localStorageService.set('expire_in', new Date().getTime() + data.expires_in);
       });
   }
-}).factory('DrupalHubSocket', function (socketFactory, Config) {
-    var myIoSocket = io.connect(Config.socket);
+});
 
-    DrupalHubSocket = socketFactory({
-      ioSocket: myIoSocket
-    });
+DrupalHub.factory('DrupalHubSocket', function (socketFactory, Config) {
+  var myIoSocket = io.connect(Config.socket);
 
-    return DrupalHubSocket;
+  DrupalHubSocket = socketFactory({
+    ioSocket: myIoSocket
   });
 
+  return DrupalHubSocket;
+});

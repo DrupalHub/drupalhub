@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="bower_components/loaders.css/loaders.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
   <link rel="stylesheet" href="bower_components/angular-bootstrap-datetimepicker/src/css/datetimepicker.css"/>
-  <link rel="stylesheet" href="bower_components/angularjs-toaster/toaster.min.css"/>
+  <link rel="stylesheet" href="bower_components/ngtoast/dist/ngToast.min.css"/>
 
   <link href="bower_components/angular-loading-bar/build/loading-bar.min.css" rel="stylesheet">
   <!-- build:css({app,.tmp}) css/main.css -->
@@ -40,7 +40,7 @@
   <script src="bower_components/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
   <script src="bower_components/socket.io-client/socket.io.js"></script>
   <script src="bower_components/angular-socket-io/socket.min.js"></script>
-  <script src="bower_components/angularjs-toaster/toaster.min.js"></script>
+  <script src="bower_components/ngtoast/dist/ngToast.min.js"></script>
 
   <!-- Libraries -->
   <script src="js/Libraries/jquery.gmap.min.js"></script>
@@ -131,7 +131,7 @@
     </div>
   </div>
 
-  <toaster-container toaster-options="{'close-button': true, 'time-out': 10000}"></toaster-container>
+  <toast></toast>
 
   <div ng-view></div>
   <section class="container">
