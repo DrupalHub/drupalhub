@@ -39,6 +39,7 @@
   <script src="http://maps.googleapis.com/maps/api/js?sensor=false&libraries=places"></script>
   <script src="bower_components/angularjs-google-maps/dist/angularjs-google-maps.js"></script>
   <script src="bower_components/socket.io-client/socket.io.js"></script>
+  <script src="bower_components/angular-socket-io/socket.min.js"></script>
   <script src="bower_components/angularjs-toaster/toaster.min.js"></script>
 
   <!-- Libraries -->
@@ -130,7 +131,7 @@
     </div>
   </div>
 
-  <toaster-container toaster-options="{'time-out': 3000}"></toaster-container>
+  <toaster-container toaster-options="{'close-button': true, 'time-out': 10000}"></toaster-container>
 
   <div ng-view></div>
   <section class="container">

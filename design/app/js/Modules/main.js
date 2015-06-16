@@ -10,15 +10,20 @@ var DrupalHub = angular.module('DrupalHub', [
   'ui.bootstrap',
   'ui.bootstrap.datetimepicker',
   'gm',
-  'toaster'
-]).controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, toaster) {
+  'toaster',
+  'btford.socket-io'
+]).controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, toaster, DrupalHubSocket) {
 
-  var socket = io(Config.socket);
-
-  socket.on('newNode', function(data) {
+  DrupalHubSocket.on('newQuestion', function(data) {
     var json = JSON.parse(data);
-    var message = 'WOW! there is a new content. Go <a class="notification-link" href="#/question/' + json.nid + '">' + json.title + "</a>";
-    toaster.pop('success', "title", "text");
+    toaster.pop({
+      type: 'info',
+      title: 'There is a new question in the site',
+      body: "There is a new question in the site: " + json.title + "<br /><a href='ynet.co.il'></a>",
+      showCloseButton: true,
+      allowHtml: true,
+      bodyOutputType: 'trustedHtml'
+    });
   });
 
 
@@ -35,5 +40,13 @@ var DrupalHub = angular.module('DrupalHub', [
         localStorageService.set('expire_in', new Date().getTime() + data.expires_in);
       });
   }
-});
+}).factory('DrupalHubSocket', function (socketFactory, Config) {
+    var myIoSocket = io.connect(Config.socket);
+
+    DrupalHubSocket = socketFactory({
+      ioSocket: myIoSocket
+    });
+
+    return DrupalHubSocket;
+  });
 

@@ -3,8 +3,8 @@ var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
 io.on('connection', function(socket) {
-  socket.on('new node', function(msg) {
-    io.emit('newNode', msg);
+  socket.on('new question', function(msg) {
+    io.emit('newQuestion', msg);
   });
 
   socket.on('new comment', function(msg) {

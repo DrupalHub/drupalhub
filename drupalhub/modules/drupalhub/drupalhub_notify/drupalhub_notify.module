@@ -13,7 +13,7 @@ function drupalhub_notify_entity_insert($entity, $type) {
   $action = $send = '';
 
   if ($type == 'node') {
-    $action = 'new node';
+    $action = 'new ' . $entity->type;
     $send = array(
       'title' => $entity->title,
       'uid' => $entity->uid,
