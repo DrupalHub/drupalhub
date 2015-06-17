@@ -80,6 +80,12 @@ DrupalHub.config(function($routeProvider) {
     controller: 'PlaylistCtrl'
   });
 
+  // User.
+  $routeProvider.when('/profile', {
+    templateUrl: 'pages/user.html',
+    controller: 'UserProfileCtrl'
+  });
+
   // 404 and other stanz.
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
