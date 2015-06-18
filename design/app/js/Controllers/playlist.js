@@ -1,7 +1,5 @@
-DrupalHub.controller('PlaylistCtrl', function($scope, DrupalHubRequest,  $routeParams) {
+DrupalHub.controller('PlaylistCtrl', function($scope, DrupalHubRequest, $routeParams) {
 
-  $scope.playlistObject = {};
-  $scope.video = {};
   $scope.playlistId = $routeParams['id'];
 
   DrupalHubRequest.localRequest('get', 'playlist/' + $scope.playlistId).success(function(data) {
