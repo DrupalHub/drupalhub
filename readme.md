@@ -1,5 +1,7 @@
 DrupalHub
 ----------
+
+[![Join the chat at https://gitter.im/DrupalHub/drupalhub](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/DrupalHub/drupalhub?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 ![image](https://travis-ci.org/DrupalHub/drupalhub.svg)
 
 Drupal is a code name for the Drupal community in Israel. The project is fully
