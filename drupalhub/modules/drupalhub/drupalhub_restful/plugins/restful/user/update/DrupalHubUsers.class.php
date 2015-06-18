@@ -2,6 +2,8 @@
 
 class DrupalHubUsers extends \RestfulEntityBaseUser {
 
+  private $ownMessageTypes = array();
+
   /**
    * Overrides RestfulEntityBaseUser::publicFieldsInfo().
    */
@@ -48,6 +50,14 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       'process_callbacks' => array(
         array($this, 'activityFeed'),
       ),
+    );
+
+    $public_fields['first_name'] = array(
+      'property'=> 'field_first_name',
+    );
+
+    $public_fields['last_name'] = array(
+      'property'=> 'field_last_name',
     );
 
     return $public_fields;
@@ -121,6 +131,7 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
         'user' => $display_name,
         'image' => $this->processImage($wrapper->user->getIdentifier()),
         'text' => $message->getText(),
+        'date' => format_date($message->timestamp, 'custom', 'd/m/Y H:i'),
       );
     }
 

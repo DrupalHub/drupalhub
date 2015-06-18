@@ -7,16 +7,15 @@
 
   <section class="user">
     <div class="page-header user-header clearfix">
-      <h3>{{user.label}} - {{user.full_label}}</h3>
+      <h3>{{user.label}} <span ng-show="user.first_name">- {{user.first_name}} {{user.last_name}}</span></h3>
     </div>
     <div class="row">
 
       <div class="col-md-4 about">
-        <img mg-src="{{user.image}}" class="images img-responsive profile" />
+        <img ng-src="{{user.image}}" class="images img-responsive profile" />
         <div class="meta-info">
-          <i class="fa fa-users first"></i> {{user.company}}
-          <i class="fa fa-star"></i> {{user.reputation}}
-          <i class="fa fa-eye"></i> {{user.viewed}}
+          <!--<i class="fa fa-users first"></i> {{user.company}}-->
+          <i class="fa fa-star first"></i> {{user.reputation}}
           <i class="fa fa-calendar"></i> {{user.joined}}
           <i class="fa fa-question"></i> {{user.number.questions}}
           <i class="fa fa-comments"></i> {{user.number.comments}}
@@ -24,25 +23,27 @@
 
         <p>
           {{user.about}}
+          <span ng-show="showEditButton">
+            <span class="text-center">You don't have any information about your self. <a href="#/profile/edit"><strong>You can start and do it!</strong></a></span>
+          </span>
         </p>
       </div>
 
       <div class="col-md-8 activity">
-        {% for activity in user.activity %}
-          <div class="row">
-            <div class="col-md-2 col-sm-2 col-xs-2">
-              <img src="{{activity.image}}" class="images img-responsive profile" />
+        <div class="row" ng-repeat="activity in user.activity">
+          <div class="col-md-2 col-sm-2 col-xs-2">
+            <img ng-src="activity.image" class="images img-responsive profile" />
+          </div>
+
+          <div class="col-md-10 col-sm-10 col-xs-10 text">
+            <p ng-bind-html="activity.user | fullHtml"></p>
+            <div class="meta-info">
+              <i class="fa fa-calendar first"></i> {{activity.date}}
             </div>
 
-            <div class="col-md-10 col-sm-10 col-xs-10 text">
-              {{activity.user}}
-              <div class="meta-info">
-                <i class="fa fa-calendar first"></i> 1/1/2010
-              </div>
-              {{activity.text}}
-            </div>
+            <p ng-bind-html="activity.text | fullHtml"></p>
           </div>
-        {% endfor %}
+        </div>
       </div>
     </div>
   </section>
