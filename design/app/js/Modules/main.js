@@ -9,10 +9,18 @@ var DrupalHub = angular.module('DrupalHub', [
   'flagDirective',
   'ui.bootstrap',
   'ui.bootstrap.datetimepicker',
-  'gm',
   'ngToast',
-  'btford.socket-io'
+  'btford.socket-io',
+  'uiGmapgoogle-maps'
 ]);
+
+DrupalHub.config(function(uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    //    key: 'your api key',
+    v: '3.17',
+    libraries: 'weather,geometry,visualization'
+  });
+})
 
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubSocket) {
 
