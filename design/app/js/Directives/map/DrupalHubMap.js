@@ -1,18 +1,16 @@
 DrupalHub.directive('drupalhubMap', function() {
   return {
     restrict: 'AE',
-    scope: {
-      latitude: '=',
-      longitude: '=',
-      address: '='
-    },
     templateUrl: 'js/Directives/map/element.html',
     controller: function($scope, uiGmapGoogleMapApi) {
+      var vm = this;
+
       // Do stuff with your $scope.
       // Note: Some of the directives require at least something to be defined originally!
       // e.g. $scope.markers = []
 
-      $scope.map = { center: { latitude: 45, longitude: -73 }, zoom: 8 };
+      vm.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };;
+      vm.map = {center: {latitude: 51.219053, longitude: 4.404418 }, zoom: 14 };;
 
       // uiGmapGoogleMapApi is a promise.
       // The "then" callback function provides the google.maps object.
@@ -40,9 +38,11 @@ DrupalHub.directive('drupalhubMap', function() {
        //}]
        });
       */
-
-
     },
-    controllerAs: 'drupalhubMapCtrl'
+    controllerAs: 'drupalhubMapCtrl',
+    bindToController: true,
+    scope: {
+      event: '='
+    }
   };
 });

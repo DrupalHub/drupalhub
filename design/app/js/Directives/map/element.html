@@ -1,7 +1,19 @@
-<div class="map-wrap">
-  <div class="">
-    <div id="maps" class="google-maps">
-      <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
-    </div>
-  </div>
-</div>
+<ui-gmap-google-map center='drupalhubMapCtrl.map.center' zoom='drupalhubMapCtrl.map.zoom'></ui-gmap-google-map>
+
+<!-- Debug -->
+<style>
+  pre.debug {
+    font-size: 11px;
+    position: fixed;
+    top: 130px;
+    left: 40px;
+    overflow-y: scroll;
+    direction: ltr;
+    max-height: 80%;
+    background-color: indigo;
+    color: white;
+  };
+</style>
+<pre class="debug">
+  map: {{drupalhubMapCtrl.map}}
+</pre>
