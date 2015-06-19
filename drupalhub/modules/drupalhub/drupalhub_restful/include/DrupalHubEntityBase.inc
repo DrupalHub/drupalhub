@@ -85,7 +85,7 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
    * Process a user.
    */
   protected function processAuthor($value) {
-    return $value->name;
+    return "<a href='#/user/{$value->uid}'>" . $value->name . "</a>";
   }
 
   /**

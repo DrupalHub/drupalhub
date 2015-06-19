@@ -1,6 +1,4 @@
 DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest) {
-  $scope.user = false;
-
   // todo: check permission for this actions.
   $scope.showEditButton = true;
 

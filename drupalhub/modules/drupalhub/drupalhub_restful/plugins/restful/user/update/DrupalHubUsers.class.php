@@ -2,8 +2,6 @@
 
 class DrupalHubUsers extends \RestfulEntityBaseUser {
 
-  private $ownMessageTypes = array();
-
   /**
    * Overrides RestfulEntityBaseUser::publicFieldsInfo().
    */
@@ -74,7 +72,7 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
 
   protected function processImage($uid) {
     $author = user_load($uid);
-    return drupalhub_users_user_picture($author, 'thumbnail');
+    return drupalhub_users_user_picture($author);
   }
 
   protected function processJoined($created) {
