@@ -11,7 +11,6 @@ DrupalHub.directive('drupalhubMap', function() {
         }
 
         vm.map = {center: {latitude: event.latitude, longitude: event.longitude }, zoom: 14 };
-
       });
       // Do stuff with your $scope.
       // Note: Some of the directives require at least something to be defined originally!
@@ -23,8 +22,6 @@ DrupalHub.directive('drupalhubMap', function() {
       uiGmapGoogleMapApi.then(function(maps) {
 
       });
-
-      */
     },
     controllerAs: 'drupalhubMapCtrl',
     bindToController: true,
