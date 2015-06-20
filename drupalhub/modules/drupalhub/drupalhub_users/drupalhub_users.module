@@ -86,16 +86,14 @@ function drupalhub_users_votingapi_insert($votes) {
  *
  * @param $user
  *   The user object.
- * @param $style_name
- *   The style name.
  *
  * @return string
  *   HTML of the user picture.
  */
-function drupalhub_users_user_picture($user, $style_name) {
+function drupalhub_users_user_picture($user) {
 
   if ($user->picture) {
-    return image_style_url($style_name, $user->picture->uri);
+    return file_create_url($user->picture->uri);
   }
 
   if ($image = _gravatar_get_account_user_picture($user)) {

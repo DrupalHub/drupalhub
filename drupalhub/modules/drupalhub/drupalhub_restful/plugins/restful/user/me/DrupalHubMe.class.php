@@ -30,15 +30,39 @@ class DrupalHubMe extends \DrupalHubUsers {
         $return = array();
 
         foreach ($permissions as $permission) {
-          $return[$permission] = user_access($permission, $account);
+          $return[$permission] = $this->userAccess($permission, $account);
         }
 
         return $return;
       }
 
-      return array('access' => user_access($permission, $account));
+      return array('access' => $this->userAccess($permission, $account));
     }
 
     return parent::viewEntity($account->uid);
+  }
+
+  /**
+   * Check user access for special cases.
+   *
+   * @param $permission
+   *   The permission string.
+   * @param $account
+   *   The account of the user.
+   *
+   * @return bool
+   */
+  private function userAccess($permission, $account) {
+    $id = 0;
+
+    if (strpos($permission, ':') !== FALSE) {
+      list($permission, $id) = explode(':', $permission);
+    }
+
+    if ($permission == 'edit user') {
+      return user_edit_access($id ? user_load($id) : $account);
+    }
+
+    return user_access($permission, $account);
   }
 }

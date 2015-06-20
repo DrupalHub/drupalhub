@@ -50,6 +50,14 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       ),
     );
 
+    $public_fields['first_name'] = array(
+      'property'=> 'field_first_name',
+    );
+
+    $public_fields['last_name'] = array(
+      'property'=> 'field_last_name',
+    );
+
     return $public_fields;
   }
 
@@ -64,7 +72,7 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
 
   protected function processImage($uid) {
     $author = user_load($uid);
-    return drupalhub_users_user_picture($author, 'thumbnail');
+    return drupalhub_users_user_picture($author);
   }
 
   protected function processJoined($created) {
@@ -121,6 +129,7 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
         'user' => $display_name,
         'image' => $this->processImage($wrapper->user->getIdentifier()),
         'text' => $message->getText(),
+        'date' => format_date($message->timestamp, 'custom', 'd/m/Y H:i'),
       );
     }
 
