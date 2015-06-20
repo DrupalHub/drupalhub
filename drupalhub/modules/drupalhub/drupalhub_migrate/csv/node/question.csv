@@ -18,4 +18,3 @@ question16,Building a link with l() and t(),"I'm trying to build this:",category
 question17,Content type creation with table of fields,"I want to be able to create a content type with a number of fields (naturally). One section of the content type needs to be like the attached image with the ability to: ",category5|category2|category4,user4
 question18,Question and Answer web page idea,"I am making a website and i'm trying to add a Q and A page where questions can be asked but how would I add it where each questions have their on divs and comments sections are allowed ",category5|category2|category4,user3
 question19,Search inside title and body,"This is my code to print the result and search the link title in the array. I need to add the body field (views-field-description) to result display and need to search the keyword ($serch = $_GET['combine'];) inside the body (views-field-description) content.",category5|category2|category4,user4
-question20,

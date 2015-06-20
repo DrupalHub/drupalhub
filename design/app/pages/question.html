@@ -14,7 +14,7 @@
         <h2>{{question.label}}</h2>
         <div class="meta-info">
           <span class="first fa fa-clock-o"></span>{{question.date}}
-          <span class="fa fa-user"></span>{{question.author}}
+          <span class="fa fa-user"></span><span class="author-link" ng-bind-html="question.author | fullHtml"></span>
           <span class="fa fa-eye"></span>{{question.viewed}}
           <span flag type="like" likes="{{question.like}}" entity="node" id="{{question.id}}"></span>
 
