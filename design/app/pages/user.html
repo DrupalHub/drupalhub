@@ -7,7 +7,7 @@
 
   <section class="user">
     <div class="page-header user-header clearfix">
-      <h3>{{user.label}} <span ng-show="user.first_name">- {{user.first_name}} {{user.last_name}}</span></h3>
+      <h3>{{user.label}} <span ng-show="user.first_name">- {{user.first_name}} {{user.last_name}}</span> <span ng-bind-html="editButton | fullHtml"></span></h3>
     </div>
     <div class="row">
 
@@ -22,9 +22,6 @@
         </div>
 
         <p ng-bind-html="user.about | fullHtml"></p>
-        <span ng-show="showEditButton && !user.about">
-          <span class="text-center">You don't have any information about your self. <a href="#/profile/edit"><strong>You can start and do it!</strong></a></span>
-        </span>
       </div>
 
       <div class="col-md-8 activity">
