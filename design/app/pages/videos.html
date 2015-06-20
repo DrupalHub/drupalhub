@@ -7,7 +7,7 @@
   <tabset justified="true">
     <tab heading="Videos" class="tab-item">
       <section class="clearfix top">
-        <div class="pull-left">
+        <div class="pull-left" ng-show="suggestYoutube">
           <a href="#" class="btn btn-danger"><span class="fa fa-plus"></span> Add new video</a>
         </div>
         <form class="navbar-form navbar-left pull-right" role="search">
@@ -42,7 +42,7 @@
     <tab heading="Playlist">
 
       <section class="clearfix top">
-        <div class="pull-left">
+        <div class="pull-left" ng-show="suggestPlaylist">
           <a href="#" class="btn btn-danger"><span class="fa fa-plus"></span> Compile a new playlist</a>
         </div>
         <form class="navbar-form navbar-left pull-right clearfix" role="search">
