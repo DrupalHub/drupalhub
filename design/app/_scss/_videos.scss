@@ -1,9 +1,9 @@
-.page-videos {
+.videos-header,
+.playlist-header {
+  border-bottom-color: $videos-header;
+}
 
-  .videos-header,
-  .playlist-header {
-    border-bottom-color: $videos-header;
-  }
+.page-videos {
 
   .top {
     margin-top: 10px;

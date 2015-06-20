@@ -80,6 +80,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'PlaylistCtrl'
   });
 
+  $routeProvider.when('/add-video', {
+    templateUrl: 'pages/add-video.html',
+    controller: 'VideoFormCtrl'
+  });
+
   // User.
   $routeProvider.when('/profile', {
     templateUrl: 'pages/user.html',

@@ -20,8 +20,8 @@ DrupalHub.controller('frontPage', function($scope, DrupalHubRequest) {
       $scope.waiting = false;
 
       DrupalHubRequest.userAccess(['create question content', 'create blog content']).then(function(data) {
-        $scope.addBlog = data.data.data['create blog content'];
-        $scope.addQuestion = data.data.data['create question content'];
+        $scope.addBlog = data.data.data['create_blog_content'];
+        $scope.addQuestion = data.data.data['create_question_content'];
       });
     });
 });

@@ -1,0 +1,53 @@
+<section class="container form-video" ng-controller="VideoFormCtrl">
+  <ul class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li class="active">Add Video</li>
+  </ul>
+
+  <section class="form">
+    <form class="form-horizontal" name="videoForm" ng-submit="video.askQuestion()" novalidate>
+      <fieldset>
+        <legend class="videos-header">Suggest a video</legend>
+
+        <div ng-show="showUrl">
+          <div class="form-group">
+            <label for="inputURL" class="control-label hidden">Video address</label>
+            <div class="col-sm-12 col-md-12">
+              <input type="text" ng-model="video.address" ng-keyup="getVideoDetails()" class="form-control" id="inputURL" required placeholder="Video address">
+            </div>
+          </div>
+        </div>
+
+        <div ng-hide="showUrl">
+
+          <div class="form-group">
+            <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Title</label>
+            <div class="col-sm-11 col-md-10">
+              <input type="text" name="label" class="form-control" ng-model="video.label" id="inputTitle" placeholder="Title" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputAddress" class="col-sm-1 col-md-2 control-label">Address</label>
+            <div class="col-sm-11 col-md-10">
+              <input type="text" name="label" class="form-control" ng-keyup="getVideoDetails()" ng-model="video.address" id="inputAddress" placeholder="Address" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="inputBody" class="col-sm-1 col-md-2 control-label">Description</label>
+            <div class="col-sm-11 col-md-10">
+              <textarea ckeditor="editorOptions" ng-model="video.text" required class="form-control" rows="3" id="inputBody"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-lg-12">
+              <button type="submit" class="btn btn-primary pull-right">Submit</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+</section>
