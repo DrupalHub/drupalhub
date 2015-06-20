@@ -86,6 +86,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'UserProfileCtrl'
   });
 
+  $routeProvider.when('/user/:id', {
+    templateUrl: 'pages/user.html',
+    controller: 'UserProfileCtrl'
+  });
+
   // 404 and other stanz.
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',

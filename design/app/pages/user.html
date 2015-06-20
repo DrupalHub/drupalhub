@@ -21,12 +21,10 @@
           <i class="fa fa-comments"></i> {{user.number.comments}}
         </div>
 
-        <p>
-          {{user.about}}
-          <span ng-show="showEditButton">
-            <span class="text-center">You don't have any information about your self. <a href="#/profile/edit"><strong>You can start and do it!</strong></a></span>
-          </span>
-        </p>
+        <p ng-bind-html="user.about | fullHtml"></p>
+        <span ng-show="showEditButton && !user.about">
+          <span class="text-center">You don't have any information about your self. <a href="#/profile/edit"><strong>You can start and do it!</strong></a></span>
+        </span>
       </div>
 
       <div class="col-md-8 activity">

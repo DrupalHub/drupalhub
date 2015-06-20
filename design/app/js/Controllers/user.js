@@ -1,9 +1,23 @@
-DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest) {
-  // todo: check permission for this actions.
-  $scope.showEditButton = true;
+DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $routeParams) {
 
-  DrupalHubRequest.localRequest('get', 'me').success(function(data) {
-    $scope.user = data.data;
-    console.log($scope.user);
+  var path, access;
+
+  if ($routeParams.id) {
+    path = 'users/' + $routeParams.id;
+    access = 'edit user:' + $routeParams.id;
+  }
+  else {
+    path = 'me';
+    access = 'edit user';
+  }
+
+  DrupalHubRequest.userAccess(access).then(function(data) {
+    $scope.showEditButton = data.data.data.access;
+
+    console.log($scope.showEditButton);
+  });
+
+  DrupalHubRequest.localRequest('get', path).success(function(data) {
+    $scope.user = $routeParams.id ? data.data[0] : data.data;
   });
 });
