@@ -5,8 +5,6 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http) 
     label: ''
   };
 
-  $scope.showUrl = true;
-
   $scope.getVideoDetails = function() {
     var split = $scope.video.address.split('v=');
     $http({
@@ -17,14 +15,25 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http) 
         part: "snippet,contentDetails,statistics,status"
       }
     }).then(function(data) {
-      $scope.showUrl = false;
+      $scope.showResults = true;
       var result = data.data.items[0];
 
       $scope.video.label = result.snippet.title;
-      $scope.video.text = result.snippet.description;
+      $scope.video.text = result.snippet.description.replace(/(\r\n|\n|\r)/gm, "<br>");
 
-      console.log(result);
+      $scope.image = result.snippet.thumbnails.high.url;
     });
   };
+
+  $scope.toggleLabel = function() {
+    $scope.showLabel = true;
+  };
+
+  $scope.updateVideoLabel = function(event) {
+    if (event.keyCode == 13) {
+      $scope.showLabel = false;
+    }
+  };
+
 
 });

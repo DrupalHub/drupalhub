@@ -9,36 +9,23 @@
       <fieldset>
         <legend class="videos-header">Suggest a video</legend>
 
-        <div ng-show="showUrl">
           <div class="form-group">
             <label for="inputURL" class="control-label hidden">Video address</label>
             <div class="col-sm-12 col-md-12">
               <input type="text" ng-model="video.address" ng-keyup="getVideoDetails()" class="form-control" id="inputURL" required placeholder="Video address">
             </div>
           </div>
-        </div>
 
-        <div ng-hide="showUrl">
+        <div ng-show="showResults">
 
-          <div class="form-group">
-            <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Title</label>
-            <div class="col-sm-11 col-md-10">
-              <input type="text" name="label" class="form-control" ng-model="video.label" id="inputTitle" placeholder="Title" required>
+          <div class="row">
+            <div class="col-md-12 title-container">
+              <h3 ng-hide="showLabel" ng-dblclick="showLabel = true">{{video.label}}</h3>
+              <input type="text" ng-model="video.label" ng-show="showLabel" ng-keyup="updateVideoLabel($event)" class="form-control" id="inputLabel" required placeholder="Title">
             </div>
-          </div>
 
-          <div class="form-group">
-            <label for="inputAddress" class="col-sm-1 col-md-2 control-label">Address</label>
-            <div class="col-sm-11 col-md-10">
-              <input type="text" name="label" class="form-control" ng-keyup="getVideoDetails()" ng-model="video.address" id="inputAddress" placeholder="Address" required>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <label for="inputBody" class="col-sm-1 col-md-2 control-label">Description</label>
-            <div class="col-sm-11 col-md-10">
-              <textarea ckeditor="editorOptions" ng-model="video.text" required class="form-control" rows="3" id="inputBody"></textarea>
-            </div>
+            <div class="col-md-4"><img ng-src="{{image}}" class="img-responsive" /></div>
+            <div class="col-md-8 text-box" ng-bind-html="video.text | fullHtml"></div>
           </div>
 
           <div class="form-group">
