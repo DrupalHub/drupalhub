@@ -1,12 +1,13 @@
 DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http) {
 
   $scope.video = {
-    address: '',
-    label: ''
+    embed: '',
+    label: '',
+    text: ''
   };
 
   $scope.getVideoDetails = function() {
-    var split = $scope.video.address.split('v=');
+    var split = $scope.video.embed.split('v=');
     $http({
       url: "https://www.googleapis.com/youtube/v3/videos",
       params: {
@@ -29,11 +30,15 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http) 
     $scope.showLabel = true;
   };
 
-  $scope.updateVideoLabel = function(event) {
-    if (event.keyCode == 13) {
-      $scope.showLabel = false;
-    }
-  };
-
+  $scope.post = function() {
+    $scope.errors = [];
+    DrupalHubRequest.localRequest('post', 'video', $scope.video)
+      .success(function(data) {
+        console.log(data, 'bar');
+      })
+      .error(function(data) {
+        $scope.errors.push(data.title);
+      });
+  }
 
 });
