@@ -37,7 +37,13 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http) 
         console.log(data, 'bar');
       })
       .error(function(data) {
-        $scope.errors.push(data.title);
+        if (data.detail == 'Bad Request.') {
+          $scope.errors.push(data.errors.embed[0]);
+        }
+        else {
+          $scope.errors.push(data.title);
+        }
+
       });
   }
 

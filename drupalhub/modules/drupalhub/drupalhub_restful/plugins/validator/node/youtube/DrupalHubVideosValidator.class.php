@@ -38,7 +38,7 @@ class DrupalHubVideosValidator extends EntityValidateBase {
 
     $params = array(
       '@title' => $node->title,
-      '@url' => url('node/' . $node->nid),
+      '@url' => '#/video/' . $node->nid,
     );
 
     $this->setError($field_name, 'There is already a video with this youtube address: <a href="@url">@title</a>.', $params);

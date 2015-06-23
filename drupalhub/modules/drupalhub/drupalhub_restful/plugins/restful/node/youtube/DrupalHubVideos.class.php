@@ -69,4 +69,14 @@ class DrupalHubVideos extends \DrupalHubRestfulNode {
     return $return;
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
+    if ($public_field_name == 'embed') {
+      return array('video_url' => $value);
+    }
+    return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
+  }
+
 }
