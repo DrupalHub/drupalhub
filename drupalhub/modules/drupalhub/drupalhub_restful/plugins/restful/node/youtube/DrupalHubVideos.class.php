@@ -74,15 +74,10 @@ class DrupalHubVideos extends \DrupalHubRestfulNode {
    */
   public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
     if ($public_field_name == 'embed') {
-      $id = _video_embed_field_get_youtube_id($value);
-      $data = drupal_http_request('https://www.googleapis.com/youtube/v3/videos?id=' . $id . '&key=AIzaSyB9GaMYWcFitmreglsphxlBIm1WO5IXUeM&part=snippet,contentDetails,statistics,status');
-      $video_info = drupal_json_decode($data->data);
-      $data = array(
-        'video_url' => $value,
-        'video_data' => $video_info + array('handler' => 'youtube'),
-      );
+      $data = array('video_url' => $value);
       return $data;
     }
+
     return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
   }
 
