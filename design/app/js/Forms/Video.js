@@ -34,7 +34,7 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http) 
     $scope.errors = [];
     DrupalHubRequest.localRequest('post', 'video', $scope.video)
       .success(function(data) {
-        console.log(data, 'bar');
+        window.location = '#/video/' + data.data[0].id;
       })
       .error(function(data) {
         if (data.detail == 'Bad Request.') {
