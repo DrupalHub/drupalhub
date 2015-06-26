@@ -30,7 +30,7 @@ class DrupalHubMe extends \DrupalHubUsers {
         $return = array();
 
         foreach ($permissions as $permission) {
-          $return[$permission] = $this->userAccess($permission, $account);
+          $return[str_replace(' ', '_', $permission)] = $this->userAccess($permission, $account);
         }
 
         return $return;

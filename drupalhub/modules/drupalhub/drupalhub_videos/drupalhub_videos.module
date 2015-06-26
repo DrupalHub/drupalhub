@@ -47,3 +47,32 @@ function drupalhub_videos_permission() {
     ),
   );
 }
+
+/**
+ * Implements hook_node_presave().
+ */
+function drupalhub_videos_node_presave($node) {
+
+  if ($node->type != 'youtube') {
+    return;
+  }
+
+  $wrapper = entity_metadata_wrapper('node', $node);
+
+  $value = $wrapper->field_address->value();
+
+  $id = _video_embed_field_get_youtube_id($value['video_url']);
+  $data = drupal_http_request('https://www.googleapis.com/youtube/v3/videos?id=' . $id . '&key=AIzaSyB9GaMYWcFitmreglsphxlBIm1WO5IXUeM&part=snippet,contentDetails,statistics,status');
+  $video_info = drupal_json_decode($data->data);
+  $video_info = $video_info['items'][0];
+
+  $value['video_data'] = serialize(array(
+    'handler' => 'youtube',
+    'duration' => $video_info['contentDetails']['duration'],
+    'channel_title' => $video_info['snippet']['channelTitle'],
+    'channel_id' => $video_info['snippet']['channelId'],
+    'stats' => $video_info['statistics'],
+  ));
+
+  $wrapper->field_address->set($value);
+}
