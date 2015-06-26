@@ -46,7 +46,10 @@ class DrupalHubVideos extends \DrupalHubRestfulNode {
 
   protected function processDuration($field_address) {
     $data = unserialize($field_address['video_data']);
-    return gmdate("H:i:s", $data['media$group']['media$content'][0]['duration']);
+    $start = new DateTime();
+    $start->add(new DateInterval($data['duration']));
+    $start->format('H:i:s');
+    return $start->format('H:i:s');
   }
 
   protected function processVideoId($field_address) {
