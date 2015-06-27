@@ -2,10 +2,19 @@
 
   .documentation-header {
     border-bottom-color: $documentation-header;
+
+    h3 {
+      margin-top: 0px;
+    }
   }
 
   .tags {
     padding-bottom: 10px;
+  }
+
+  .tag {
+    margin-left: 5px;
+    margin-right: 5px;
   }
 
   .documentation-list {
