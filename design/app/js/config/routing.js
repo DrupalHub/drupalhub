@@ -96,10 +96,17 @@ DrupalHub.config(function($routeProvider) {
     controller: 'UserProfileCtrl'
   });
 
+  // Documentation.
+  $routeProvider.when('/documentations', {
+    templateUrl: 'pages/documentations.html',
+    controller: 'documentationsCtrl'
+  });
+
   // 404 and other stanz.
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
-    controller: 'pageNotFound'
+    controller: 'pageNotFound',
+    reloadOnSearch: false
   });
 });
 

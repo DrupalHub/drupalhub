@@ -121,9 +121,13 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
   protected function processTags($terms) {
     $tags = array();
 
+    if (!is_array($terms)) {
+      return array(array('label' => $terms->name, 'id' => $terms->tid));
+    }
+
     foreach ($terms as $term) {
       $tags[] = array(
-        'title' => $term->name,
+        'label' => $term->name,
         'url' => 'tags.html#' . $term->tid,
       );
     }

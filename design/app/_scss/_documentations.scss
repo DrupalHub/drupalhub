@@ -2,6 +2,10 @@
 
   .documentation-header {
     border-bottom-color: $documentation-header;
+
+    h3 {
+      margin-top: 0px;
+    }
   }
 
   .tags {

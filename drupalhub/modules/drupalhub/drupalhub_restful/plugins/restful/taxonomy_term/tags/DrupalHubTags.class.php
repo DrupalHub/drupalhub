@@ -14,6 +14,7 @@ class DrupalHubTags extends RestfulEntityBaseTaxonomyTerm {
         array($this, 'processUrl'),
       ),
     );
+
     return $public_fields;
   }
 
