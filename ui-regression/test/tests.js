@@ -50,6 +50,7 @@ describe('Search engine tests', function() {
   it('should show the drupalhub home page',function(done) {
     client
       .url(url)
+      .pause(9000)
       .webdrivercss(testName, {
         name: 'hompage'
       }, shoovWebdrivercss.processResults)
