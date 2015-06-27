@@ -7,7 +7,7 @@
 
   <div class="page-header documentation-header clearfix">
     <h3 class="pull-left">Documentation</h3>
-    <a href="#/add-wiki" class="btn btn-primary btn-md pull-right" ng-show="showCreate">Add documentation</a>
+    <a href="#/add-documentation" class="btn btn-primary btn-md pull-right" ng-show="showCreate">Add documentation</a>
   </div>
 
   <div class="row">
@@ -19,7 +19,7 @@
   <div class="documentation-list" ng-show="documentations">
     <div class="row" ng-repeat="documentation in documentations">
       <div class="col-md-1 col-xs-3 col-sm-3">
-        <img class="images blog img-responsive" src="{{documentation.image}}" />
+        <img class="images blog img-responsive" ng-src="{{documentation.image}}" />
       </div>
       <div class="col-md-11 col-xs-9 col-sm-9">
         <a href="{{documentation.url}}">{{documentation.label}}</a>
@@ -29,7 +29,7 @@
           <span class="fa fa-user"></span><span class="author-link" ng-bind-html="documentation.author | fullHtml"></span>
           <span class="fa fa-eye"></span>{{documentation.viewed}}
         </div>
-        {{documentation.intro}}
+        <span ng-bind-html="documentation.intro | fullHtml"></span>
       </div>
     </div>
 
