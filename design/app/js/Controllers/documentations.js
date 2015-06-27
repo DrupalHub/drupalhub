@@ -9,7 +9,7 @@ DrupalHub.controller('documentationsCtrl', function($scope, DrupalHubRequest, $l
     });
   });
 
-  DrupalHubRequest.localRequest('get', 'wiki_tags?range=5').success(function(data) {
+  DrupalHubRequest.localRequest('get', 'wiki_category?range=5').success(function(data) {
     $scope.documentation_tags = data.data;
   });
 });
