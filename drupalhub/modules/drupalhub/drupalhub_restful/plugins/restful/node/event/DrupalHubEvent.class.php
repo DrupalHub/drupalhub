@@ -92,7 +92,7 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     $request = $this->getRequest();
     $wrapper->field_date->set(array(
       'value' => $this->dateProcessing($request['start']),
-      'value2' => $this->dateProcessing($request['end']),
+//      'value2' => $this->dateProcessing($request['end']),
     ));
 
     $wrapper->field_location->set(array(
