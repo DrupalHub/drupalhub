@@ -112,6 +112,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'DocumentationFormCtrl'
   });
 
+  $routeProvider.when('/documentation/:id', {
+    templateUrl: 'pages/documentation.html',
+    controller: 'documentationCtrl'
+  });
+
   // 404 and other stanz.
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',

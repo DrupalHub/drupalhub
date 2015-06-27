@@ -13,7 +13,7 @@
       <div class="col-md-10 col-sm-10">
         <div class="meta-info">
           <span class="first fa fa-clock-o"></span>{{comment.date}}
-          <span class="fa fa-user"></span>{{comment.author}}
+          <span class="fa fa-user"></span><span class="author-link" ng-bind-html="comment.author | fullHtml"></span>
           <span flag type="like_comment" likes="{{comment.point}}" entity="comment" id="{{comment.id}}"></span>
 
         </div>
