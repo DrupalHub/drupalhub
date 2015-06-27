@@ -32,7 +32,7 @@ var caps = selectedCaps ? capsConfig[selectedCaps] : undefined;
 var providerPrefix = process.env.PROVIDER_PREFIX ? process.env.PROVIDER_PREFIX + '-' : '';
 var testName = selectedCaps ? providerPrefix + selectedCaps : providerPrefix + 'default';
 
-var url ='http://33e177bf.ngrok.com';
+var baseUrl = process.env.PROVIDER_BASE_URL ? process.env.PROVIDER_BASE_URL : 'http://localhost:9000/';
 
 describe('Search engine tests', function() {
 
