@@ -102,6 +102,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'documentationsCtrl'
   });
 
+  $routeProvider.when('/documentations/term/:filter_id', {
+    templateUrl: 'pages/documentations.html',
+    controller: 'documentationsCtrl'
+  });
+
   $routeProvider.when('/add-documentation', {
     templateUrl: 'pages/add-documentation.html',
     controller: 'DocumentationFormCtrl'

@@ -42,7 +42,7 @@ class DrupalHubWiki extends DrupalHubRestfulNode {
         $term = reset(array_keys($results['taxonomy_term']));
       }
 
-      return $term->tid;
+      return $term;
     }
     return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
   }
