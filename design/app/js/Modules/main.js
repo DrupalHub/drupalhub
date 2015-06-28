@@ -11,7 +11,8 @@ var DrupalHub = angular.module('DrupalHub', [
   'ui.bootstrap.datetimepicker',
   'gm',
   'ngToast',
-  'btford.socket-io'
+  'btford.socket-io',
+  'ui.select'
 ]);
 
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubSocket) {

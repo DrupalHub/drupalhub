@@ -19,16 +19,21 @@
           </div>
         </div>
 
+        <ui-select-choices repeat="address in addresses track by $index"
+                           refresh="refreshAddresses($select.search)"
+                           refresh-delay="0">
+        </ui-select-choices>
+
         <div class="form-group">
-          <label for="inputTags" class="col-sm-1 col-md-2 control-label">Tags</label>
-          <div class="col-sm-11 col-md-10">
-            <input type="text"
-               id="inputTags" placeholder="Tags" ng-model="question.tags"
-               typeahead="result for result in getTags($viewValue)"
-               typeahead-loading="loadingLocations" class="form-control">
-            <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-          </div>
+        <label for="inputTags" class="col-sm-1 col-md-2 control-label">Tags</label>
+        <div class="col-sm-11 col-md-10">
+          <input type="text"
+                 id="inputTags" placeholder="Tags" ng-model="question.tags"
+                 typeahead="result for result in getTags($viewValue)"
+                 typeahead-loading="loadingLocations" class="form-control">
+          <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
         </div>
+      </div>
 
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Question</label>
