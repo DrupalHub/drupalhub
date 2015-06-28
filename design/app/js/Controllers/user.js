@@ -1,6 +1,6 @@
 DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $routeParams) {
 
-  var path, access, id;
+  var path, access;
 
   if ($routeParams.id) {
     path = 'users/' + $routeParams.id;
@@ -17,7 +17,7 @@ DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $rout
     DrupalHubRequest.userAccess(access).then(function(data) {
 
       if (data.data.data.access) {
-        $scope.editButton = "<a href='#/profile/edit/" +  $scope.user.id + "'>Edit</a>";
+        $scope.editButton = "<a href='#/user/edit/" +  $scope.user.id + "'>Control panel</a>";
       }
 
     });
