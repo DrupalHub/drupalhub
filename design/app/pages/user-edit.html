@@ -1,0 +1,70 @@
+<section class="form">
+  <form class="form-horizontal" name="userDetailsForm" ng-controller="UserEditCtrl" ng-submit="userDetailsSave()" novalidate>
+    <fieldset>
+
+      <div class="alert alert-dismissible alert-danger text-center" ng-show="errors.length > 0">
+        <div ng-repeat="error in errors">{{error}}</div>
+      </div>
+
+      <div class="col-md-12 input-wrapper">
+        <label>Username</label>
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="user.label" required>
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        </div>
+      </div>
+
+      <div class="col-md-6 input-wrapper">
+        <label>Password</label>
+        <div class="input-group">
+          <input type="password" class="form-control" name="passOne" ng-model="password.one">
+          <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        </div>
+      </div>
+
+      <div class="col-md-6 input-wrapper">
+        <label>Password(again)</label>
+        <div class="input-group">
+          <input type="password" class="form-control" name="passTwo" ng-model="password.two">
+          <span class="input-group-addon"><i class="fa fa-key"></i></span>
+        </div>
+      </div>
+
+      <div class="col-md-12 input-wrapper">
+        <label>E-mail</label>
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="user.mail">
+          <span class="input-group-addon"><i class="fa fa-envelope-o"></i></span>
+        </div>
+      </div>
+
+      <div class="col-md-6 input-wrapper">
+        <label>First name</label>
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="user.first_name">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        </div>
+      </div>
+
+      <div class="col-md-6 input-wrapper">
+        <label>Last name</label>
+        <div class="input-group">
+          <input type="text" class="form-control" ng-model="user.last_name">
+          <span class="input-group-addon"><i class="fa fa-user"></i></span>
+        </div>
+      </div>
+
+      <div class="col-md-12 input-wrapper">
+        <label>About you</label>
+        <textarea ckeditor="editorOptions" ng-model="user.about" required class="form-control" rows="3" id="textArea"></textarea>
+      </div>
+
+      <div>
+        <div class="col-md-12">
+          <button type="submit" class="btn btn-info pull-right">Submit</button>
+        </div>
+      </div>
+
+    </fieldset>
+  </form>
+</section>

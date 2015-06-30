@@ -9,16 +9,12 @@
   <div class="main-wrapper clearfix">
     <div class="col-md-2 menu">
 
-      <div class="img-wrapper">
-        <img ng-src="{{user.image}}" class="small-image" />
-      </div>
-
       <ul class="links">
-        <li><span class="fa fa-cog"></span> <a href="">Edit</a></li>
-        <li><i class="fa fa-bell-o"></i> <a href="">Notifications</a></li>
+        <li><span class="fa fa-cog"></span> <a href="" ng-click="switchTemplate('edit')">Edit</a></li>
+        <li><i class="fa fa-bell-o"></i> <a href="" ng-click="switchTemplate('notification')">Notifications</a></li>
       </ul>
     </div>
-    <div class="col-md-10">asdasd</div>
+    <div class="col-md-10" ng-include="selectedForm"></div>
   </div>
 
 </section>
