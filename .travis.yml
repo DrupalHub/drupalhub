@@ -47,7 +47,6 @@ before_script:
   - java -jar selenium-server-standalone-2.44.0.jar > ~/selenium.log 2>&1 &
   - sleep 30
 
-
 script:
   # Run behat.
 #  - bin/behat --tags=~wip
