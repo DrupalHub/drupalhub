@@ -41,15 +41,13 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
       $scope.user.password = $scope.password.one;
     }
 
-    var id = $scope.user.id;
-
     var data = {
       'label': $scope.user.label,
       'mail': $scope.user.mail,
       'about': $scope.user.about
     };
 
-    DrupalHubRequest.localRequest('put', 'users/' + id, data)
+    DrupalHubRequest.localRequest('put', 'users/' + $scope.user.id, data)
       .success(function (data) {
         console.log(data, 'bar');
       })
