@@ -162,4 +162,16 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     parent::entityPreSave($wrapper);
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
+
+    if ($public_field_name == 'about') {
+      return array('value' => $value);
+    }
+
+    return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
+  }
+
 }

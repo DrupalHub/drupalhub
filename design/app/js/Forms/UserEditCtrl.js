@@ -44,11 +44,10 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
     var id = $scope.user.id;
 
     var data = {
-      'about' : $scope.user.about,
-      'label': 'roy',
-      'mail': 'roy@gmail.com'
+      'label': $scope.user.label,
+      'mail': $scope.user.mail,
+      'about': $scope.user.about
     };
-
 
     DrupalHubRequest.localRequest('put', 'users/' + id, data)
       .success(function (data) {
