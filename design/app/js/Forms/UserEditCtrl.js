@@ -41,20 +41,29 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
       $scope.user.password = $scope.password.one;
     }
 
+    if (!$scope.userDetailsForm.$valid) {
+      return;
+    }
+
     var data = {
       'label': $scope.user.label,
       'mail': $scope.user.mail,
-      'about': $scope.user.about
+      'about': $scope.user.about,
+      'first_name': $scope.user.first_name,
+      'last_name': $scope.user.last_name
     };
+
+    if ($scope.password.one) {
+      data.password = $scope.password.one;
+    }
 
     DrupalHubRequest.localRequest('put', 'users/' + $scope.user.id, data)
       .success(function (data) {
         console.log(data, 'bar');
       })
       .error(function (data) {
+        // $scope.userDetailsForm.email.$setValidity("email", false);
         console.log(data, 'foo');
       });
-
   }
-
 });
