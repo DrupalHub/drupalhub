@@ -32,6 +32,7 @@ dependencies[] = devel
 dependencies[] = entityreference
 dependencies[] = entity_view_count
 dependencies[] = entity_validator
+dependencies[] = entity_token
 dependencies[] = email
 dependencies[] = facetapi
 dependencies[] = features
@@ -54,6 +55,7 @@ dependencies[] = restful
 dependencies[] = search_api
 dependencies[] = search_api_facetapi
 dependencies[] = search_api_solr
+dependencies[] = token
 dependencies[] = geolocation_googlemaps
 dependencies[] = video_embed_field
 
