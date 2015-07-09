@@ -80,6 +80,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'PlaylistCtrl'
   });
 
+  $routeProvider.when('/add-video', {
+    templateUrl: 'pages/add-video.html',
+    controller: 'VideoFormCtrl'
+  });
+
   // User.
   $routeProvider.when('/profile', {
     templateUrl: 'pages/user.html',
@@ -91,10 +96,32 @@ DrupalHub.config(function($routeProvider) {
     controller: 'UserProfileCtrl'
   });
 
+  // Documentation.
+  $routeProvider.when('/documentations', {
+    templateUrl: 'pages/documentations.html',
+    controller: 'documentationsCtrl'
+  });
+
+  $routeProvider.when('/documentations/term/:filter_id', {
+    templateUrl: 'pages/documentations.html',
+    controller: 'documentationsCtrl'
+  });
+
+  $routeProvider.when('/add-documentation', {
+    templateUrl: 'pages/add-documentation.html',
+    controller: 'DocumentationFormCtrl'
+  });
+
+  $routeProvider.when('/documentation/:id', {
+    templateUrl: 'pages/documentation.html',
+    controller: 'documentationCtrl'
+  });
+
   // 404 and other stanz.
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
-    controller: 'pageNotFound'
+    controller: 'pageNotFound',
+    reloadOnSearch: false
   });
 });
 

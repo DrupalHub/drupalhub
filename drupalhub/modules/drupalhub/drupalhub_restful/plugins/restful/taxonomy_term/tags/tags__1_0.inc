@@ -2,7 +2,7 @@
 
 $plugin = array(
   'label' => t('Tags'),
-  'description' => t('Restuling tags terms'),
+  'description' => t('Restfuling tags terms'),
   'resource' => 'tags',
   'class' => 'DrupalHubTags',
   'name' => 'tags__1_0',

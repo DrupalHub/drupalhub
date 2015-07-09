@@ -1,6 +1,6 @@
 <?php
 
-class DrupalHubTags extends RestfulEntityBaseTaxonomyTerm {
+class DrupalHubTagsWiki extends RestfulEntityBaseTaxonomyTerm {
 
   /**
    * {@inheritdoc}

@@ -1,13 +1,16 @@
 DrupalHub.controller('videosCtrl', function($scope, DrupalHubRequest, $location) {
 
-  $scope.videos = {};
-  $scope.playlists = {};
   $scope.page = 1;
   $scope.videosSearch = '';
   $scope.playlistSearch = '';
   $scope.showPager = true;
 
   var page = $location.search().page == undefined ? 1 : $location.search().page;
+
+  DrupalHubRequest.userAccess(['create youtube content', 'create playlist content']).then(function(data) {
+    $scope.suggestYoutube = data.data.data.create_youtube_content;
+    $scope.suggestPlaylist = data.data.data.create_playlist_content;
+  });
 
   DrupalHubRequest.localRequest('get', 'video?range=12&page=' + page).success(function(data) {
     $scope.videos = data.data;

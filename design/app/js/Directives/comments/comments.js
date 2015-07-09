@@ -32,6 +32,10 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
           $scope.title = 'What do you think on this event?';
           $scope.btnType = 'btn-success';
         }
+        else if (type == 'documentation') {
+          $scope.title = 'Any thoughts for this documentation?';
+          $scope.btnType = 'btn-info';
+        }
         else {
           $scope.title = 'What do you think on this blog?';
           $scope.btnType = 'btn-warning';

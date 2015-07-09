@@ -46,7 +46,15 @@ class DrupalHubVideos extends \DrupalHubRestfulNode {
 
   protected function processDuration($field_address) {
     $data = unserialize($field_address['video_data']);
-    return gmdate("H:i:s", $data['media$group']['media$content'][0]['duration']);
+
+    if (empty($data['duration'])) {
+      // In case the request failed we don't have the video information.
+      return;
+    }
+
+    $start = new DateTime('@0');
+    $start->add(new DateInterval($data['duration']));
+    return $start->format('H:i:s');
   }
 
   protected function processVideoId($field_address) {
@@ -67,6 +75,18 @@ class DrupalHubVideos extends \DrupalHubRestfulNode {
     }
 
     return $return;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
+    if ($public_field_name == 'embed') {
+      $data = array('video_url' => $value);
+      return $data;
+    }
+
+    return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
   }
 
 }
