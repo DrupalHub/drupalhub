@@ -27,6 +27,7 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
 
   $scope.userDetailsSave = function() {
     $scope.errors = [];
+    $scope.pass = false;
 
     if ($scope.password.one != $scope.password.two) {
       $scope.errors.push('The passwords are not matching!');
@@ -48,7 +49,6 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
     var data = {
       'label': $scope.user.label,
       'mail': $scope.user.mail,
-      'about': $scope.user.about,
       'first_name': $scope.user.first_name,
       'last_name': $scope.user.last_name
     };
@@ -57,13 +57,23 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
       data.password = $scope.password.one;
     }
 
+    if ($scope.user.about) {
+      data.about = $scope.user.about;
+    }
+
     DrupalHubRequest.localRequest('put', 'users/' + $scope.user.id, data)
       .success(function (data) {
-        console.log(data, 'bar');
+        $scope.pass = true;
       })
       .error(function (data) {
-        // $scope.userDetailsForm.email.$setValidity("email", false);
-        console.log(data, 'foo');
+        angular.forEach(data.errors, function(value, key) {
+          console.log(key);
+          $scope.userDetailsForm[key].$setValidity(key, false);
+
+          angular.forEach(value, function(value, key) {
+            $scope.errors.push(value);
+          });
+        });
       });
   }
 });
