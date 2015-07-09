@@ -37,6 +37,10 @@ function drupalhub_restful_entity_property_info_alter(&$info) {
  * Setter callback; Set user password.
  */
 function drupalhub_restful_set_user_pass($account, $name, $value) {
+  if (!$value) {
+    return;
+  }
+
   require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
   $account->pass = user_hash_password($value);
 }

@@ -141,6 +141,10 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       return TRUE;
     }
 
+    if ($this->getMethod() == \RestfulBase::PATCH) {
+      return $this->getAccount()->uid == $entity->uid || user_access('administer users', $this->getAccount());
+    }
+
     return parent::checkEntityAccess($op, $entity_type, $entity);
   }
 
@@ -156,6 +160,18 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     $wrapper->status->set(1);
 
     parent::entityPreSave($wrapper);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
+
+    if ($public_field_name == 'about') {
+      return array('value' => $value);
+    }
+
+    return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
   }
 
 }
