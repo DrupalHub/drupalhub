@@ -34,25 +34,14 @@ class RestfulRecoverPassword extends \RestfulBase implements RestfulDataProvider
    * @see user_pass_submit()
    */
   public function recoverPassword() {
-    if (empty($this->request['name'])) {
-      throw new \RestfulBadRequestException('You need to provide email address or user name.');
+    $email = $this->request['email'];
+
+    if (!$account = user_load_by_mail($email)) {
+      throw new \RestfulBadRequestException('Email does\'t exists.');
     }
 
-    // Validating the request.
-    $name = $this->request['name'];
+    drupalhub_send_token_to_user('reset_password', $account);
 
-    $users = user_load_multiple(array(), array('mail' => $name, 'status' => '1'));
-    $account = reset($users);
-    if (!$account) {
-      // No success, try to load by name.
-      $users = user_load_multiple(array(), array('name' => $name, 'status' => '1'));
-      $account = reset($users);
-    }
-
-    if (!isset($account->uid)) {
-      throw new \RestfulBadRequestException(format_string('Sorry, @name is not recognized as a user name or an e-mail address.', array('@name' => $name)));
-    }
-
-    _user_mail_notify('password_reset', $account);
+    throw new \DrupalHubRestfulEmptyResponse();
   }
 }

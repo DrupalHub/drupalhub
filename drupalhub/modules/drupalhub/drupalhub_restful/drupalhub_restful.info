@@ -6,5 +6,6 @@ core = 7.x
 files[] = include/DrupalHubEntityBase.inc
 files[] = include/DrupalHubRestfulNode.inc
 files[] = include/DrupalHubRestfulFlagMetadata.inc
+files[] = include/DrupalHubRestfulEmptyResponse.inc
 
 dependencies[] = restful_token_auth
