@@ -9,7 +9,7 @@ DrupalHub.directive('drupalhubMap', function() {
         if (angular.isUndefined(event)) {
           return;
         }
-        
+
         vm.map = {center: {latitude: event.latitude, longitude: event.longitude }, zoom: 18 };
         vm.marker = {id: event.id, geo: {latitude: event.latitude, longitude: event.longitude }}
       });
