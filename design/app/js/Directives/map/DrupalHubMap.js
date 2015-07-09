@@ -9,8 +9,9 @@ DrupalHub.directive('drupalhubMap', function() {
         if (angular.isUndefined(event)) {
           return;
         }
-
-        vm.map = {center: {latitude: event.latitude, longitude: event.longitude }, zoom: 14 };
+        
+        vm.map = {center: {latitude: event.latitude, longitude: event.longitude }, zoom: 18 };
+        vm.marker = {id: event.id, geo: {latitude: event.latitude, longitude: event.longitude }}
       });
       // Do stuff with your $scope.
       // Note: Some of the directives require at least something to be defined originally!
