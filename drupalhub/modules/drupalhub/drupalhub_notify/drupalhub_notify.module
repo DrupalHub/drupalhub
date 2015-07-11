@@ -31,6 +31,7 @@ function drupalhub_notify_entity_insert($entity, $type) {
     $send = array(
       'nid' => $entity->nid,
       'uid' => $entity->uid,
+      'cid' => $entity->cid,
     );
   }
   else {

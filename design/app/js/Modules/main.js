@@ -14,12 +14,9 @@ var DrupalHub = angular.module('DrupalHub', [
   'pusher-angular'
 ]);
 
-DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, $pusher) {
+DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubPusher) {
 
-  var client = new Pusher(Config.pusher_key);
-  var pusher = $pusher(client);
-  pusher.subscribe(Config.pusher_channel);
-  pusher.bind('new question',
+  DrupalHubPusher.bind('new question',
     function(data) {
       ngToast.create({
         className: 'info',
@@ -43,4 +40,12 @@ DrupalHub.controller('bodyController', function($scope, $http, Config, localStor
         localStorageService.set('expire_in', new Date().getTime() + data.expires_in);
       });
   }
+});
+
+DrupalHub.factory('DrupalHubPusher', function ($pusher, Config) {
+  var client = new Pusher(Config.pusher_key);
+  var pusher = $pusher(client);
+  pusher.subscribe(Config.pusher_channel);
+
+  return pusher;
 });
