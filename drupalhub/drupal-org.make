@@ -127,7 +127,6 @@ projects[search_api][subdir] = contrib
 projects[search_api_solr][version] = "1.6"
 projects[search_api_solr][subdir] = contrib
 
-libraries[sokcetio][type] = "libraries"
-libraries[sokcetio][download][type] = git
-libraries[sokcetio][download][url] = "https://github.com/DrupalHub/PHP_SocketIO_Client.git"
-libraries[sokcetio][download][branch] = "fix"
+libraries[pusher][type] = "libraries"
+libraries[pusher][download][type] = git
+libraries[pusher][download][url] = "https://github.com/pusher/pusher-http-php.git"

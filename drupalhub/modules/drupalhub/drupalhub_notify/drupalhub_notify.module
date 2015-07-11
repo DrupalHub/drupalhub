@@ -10,14 +10,20 @@ include_once('drupalhub_notify.features.inc');
  * Implements hook_entity_insert().
  */
 function drupalhub_notify_entity_insert($entity, $type) {
-  $action = $send = '';
 
   if ($type == 'node') {
+
+    if (in_array($entity->type, array('drupalhub_group', 'group_banner', 'playlist', 'project', 'recommendation'))) {
+      // Not the node type we are listen to.
+      return;
+    }
+
     $action = 'new ' . $entity->type;
     $send = array(
       'title' => $entity->title,
       'uid' => $entity->uid,
       'nid' => $entity->nid,
+      'bundle' => $entity->type,
     );
   }
   else if ($type == 'comment') {
@@ -27,23 +33,37 @@ function drupalhub_notify_entity_insert($entity, $type) {
       'uid' => $entity->uid,
     );
   }
+  else {
+    // No an entity type we need to notify user about.
+    return;
+  }
 
   drupalhub_core_socket_io_send($action, $send);
 }
 
-function drupalhub_core_socket_io_send($action, $message) {
-  drupalhub_core_load_socketio();
+/**
+ * Sending message to pusher for other users could be notify.
+ *
+ * @param $action
+ *   The action that caused this notify: new node, new comment etc. etc.
+ * @param $data
+ *   The data we need to send to pusher. The listener, front end or nodeJS,
+ *   should tear it down and act according to the content.
+ */
+function drupalhub_core_socket_io_send($action, $data) {
+  // Include the pusher library.
+  drupalhub_core_load_pusher();
 
-  if (!is_object($message)) {
-    $message = json_encode((object) $message);
-  }
+  // Get the pusher settings.
+  $pusher_settings = variable_get('pusher');
 
-  // Notify.
-  // todo: don't hard code the address.
-  try {
-    $socketio = new SocketIO();
-    $socketio->send(variable_get('socketio_host'), variable_get('socketio_port'), $action, $message);
-  } catch (Exception $e) {
+  $pusher = new Pusher(
+    $pusher_settings['key'],
+    $pusher_settings['secret'],
+    $pusher_settings['app_id'],
+    array('encrypted' => true)
+  );
 
-  }
+  // Trigger pusher.
+  $pusher->trigger('drupalhub_drupalhub', $action, $data);
 }

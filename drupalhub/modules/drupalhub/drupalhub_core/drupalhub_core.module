@@ -7,8 +7,8 @@
 include_once 'drupalhub_core.features.inc';
 
 /**
- * Load the socket IO class when needed.
+ * Loading the pusher library.
  */
-function drupalhub_core_load_socketio() {
-  require_once libraries_get_path('sokcetio') . '/socket.io.php';
+function drupalhub_core_load_pusher() {
+  require_once libraries_get_path('pusher') . '/lib/Pusher.php';
 }
