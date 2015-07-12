@@ -14,17 +14,6 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
     $scope.selectedForm = 'pages/user-' + template + '.html';
   };
 
-  $scope.notifications = {
-    new_question :{
-      label: 'New question',
-      value: false
-    },
-    new_video: {
-      label: 'New video',
-      value: true
-    }
-  };
-
   $scope.userDetailsSave = function() {
     $scope.errors = [];
     $scope.pass = false;
@@ -75,5 +64,27 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
           });
         });
       });
-  }
+  };
+
+  $scope.notifications = {
+    new_question :{
+      label: 'New question',
+      value: false
+    },
+    new_video: {
+      label: 'New video',
+      value: true
+    }
+  };
+
+  $scope.userNotificationUpdate = function() {
+    var data = {
+      'settings': ($scope.notifications)
+    };
+    DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data).success(function(data) {
+      console.log('foo', data);
+    }).error(function(data) {
+      console.log('bar', data);
+    });
+  };
 });
