@@ -48,13 +48,12 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
         DrupalHubPusher.bind('new comment',
           function(data) {
 
-            if (parseInt(data.nid) != nid) {
+            if (+data.nid != nid) {
               return;
             }
 
-            DrupalHubRequest.localRequest('get', 'comments/' + parseInt(data.cid)).success(function(data) {
-              $scope.comments.push(data.data[0]);
-            });
+            $scope.comments.push(data.object);
+
           }
         );
 

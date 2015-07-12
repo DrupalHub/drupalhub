@@ -27,11 +27,12 @@ function drupalhub_notify_entity_insert($entity, $type) {
     );
   }
   else if ($type == 'comment') {
+    $handler = restful_get_restful_handler('comments');
     $action = 'new comment';
     $send = array(
       'nid' => $entity->nid,
       'uid' => $entity->uid,
-      'cid' => $entity->cid,
+      'object' => $handler->viewEntity($entity->cid),
     );
   }
   else {
