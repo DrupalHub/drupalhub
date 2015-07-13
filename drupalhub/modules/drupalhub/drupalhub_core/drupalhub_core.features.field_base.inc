@@ -25,7 +25,7 @@ function drupalhub_core_field_default_field_bases() {
       'show_textarea' => 0,
     ),
     'translatable' => 0,
-    'type' => 'entity_settings',
+    'type' => 'serialized',
   );
 
   return $field_bases;

@@ -8,6 +8,23 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
 
   DrupalHubRequest.localRequest('get', 'me').then(function(data) {
     $scope.user = data.data.data;
+
+    if ($scope.user.settings == null) {
+      $scope.notifications = {
+        new_question :{
+          label: 'New question',
+          value: false
+        },
+        new_video: {
+          label: 'New video',
+          value: true
+        }
+      };
+    }
+    else {
+      console.log('a');
+      $scope.notifications = $scope.user.settings;
+    }
   });
 
   $scope.switchTemplate = function(template) {
@@ -64,17 +81,6 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
           });
         });
       });
-  };
-
-  $scope.notifications = {
-    new_question :{
-      label: 'New question',
-      value: false
-    },
-    new_video: {
-      label: 'New video',
-      value: true
-    }
   };
 
   $scope.userNotificationUpdate = function() {

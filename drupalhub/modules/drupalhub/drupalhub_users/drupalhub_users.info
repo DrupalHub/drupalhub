@@ -10,6 +10,7 @@ dependencies[] = features
 dependencies[] = field_config
 dependencies[] = image
 dependencies[] = message
+dependencies[] = serialized_field
 dependencies[] = views
 features[ctools][] = page_manager:pages_default:1
 features[ctools][] = strongarm:strongarm:1

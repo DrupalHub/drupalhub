@@ -54,11 +54,8 @@ projects[flag][subdir] = "contrib"
 projects[flag][branch] = 7.x-3.x
 projects[flag][patch][] = https://www.drupal.org/files/issues/entity_metadata_wrapper_flagging_support.patch
 
-projects[field_config][download][type] = "git"
-projects[field_config][download][url] = "https://github.com/RoySegall/field_config.git"
-projects[field_config][download][branch] = master
-projects[field_config][subdir] = "contrib"
-projects[field_config][type] = "module"
+projects[serialized_field][version] = "1.0-beta1"
+projects[serialized_field][subdir] = contrib
 
 projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x

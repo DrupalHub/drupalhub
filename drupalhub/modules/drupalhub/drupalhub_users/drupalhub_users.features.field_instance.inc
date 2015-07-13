@@ -296,24 +296,25 @@ function drupalhub_users_field_default_field_instances() {
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => NULL,
         'settings' => array(),
-        'type' => 'field_config_entity_settings_formatter',
+        'type' => 'hidden',
         'weight' => 7,
       ),
     ),
     'entity_type' => 'user',
     'field_name' => 'field_settings',
-    'label' => 'Settings',
+    'label' => 'settings',
     'required' => 0,
     'settings' => array(
+      'namespace' => 1,
+      'serialization' => 'serialize',
       'user_register_form' => 0,
     ),
     'widget' => array(
       'active' => 0,
-      'module' => 'field_config',
+      'module' => 'serialized_field',
       'settings' => array(),
-      'type' => 'field_config_entity_field_settings',
+      'type' => 'serialized_hidden',
       'weight' => 17,
     ),
   );
@@ -327,7 +328,7 @@ function drupalhub_users_field_default_field_instances() {
   t('First name');
   t('Last name');
   t('Node');
-  t('Settings');
+  t('settings');
 
   return $field_instances;
 }
