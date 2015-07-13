@@ -35,6 +35,7 @@ dependencies[] = entity_validator
 dependencies[] = email
 dependencies[] = facetapi
 dependencies[] = features
+dependencies[] = serialized_field
 dependencies[] = flag
 dependencies[] = gravatar
 dependencies[] = inline_devel

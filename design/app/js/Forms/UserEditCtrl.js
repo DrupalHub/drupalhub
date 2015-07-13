@@ -8,21 +8,27 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
 
   DrupalHubRequest.localRequest('get', 'me').then(function(data) {
     $scope.user = data.data.data;
+
+    if ($scope.user.settings == null) {
+      $scope.notifications = {
+        new_question :{
+          label: 'New question',
+          value: false
+        },
+        new_video: {
+          label: 'New video',
+          value: true
+        }
+      };
+    }
+    else {
+      console.log('a');
+      $scope.notifications = $scope.user.settings;
+    }
   });
 
   $scope.switchTemplate = function(template) {
     $scope.selectedForm = 'pages/user-' + template + '.html';
-  };
-
-  $scope.notifications = {
-    new_question :{
-      label: 'New question',
-      value: false
-    },
-    new_video: {
-      label: 'New video',
-      value: true
-    }
   };
 
   $scope.userDetailsSave = function() {
@@ -75,5 +81,16 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
           });
         });
       });
-  }
+  };
+
+  $scope.userNotificationUpdate = function() {
+    var data = {
+      'settings': ($scope.notifications)
+    };
+    DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data).success(function(data) {
+      console.log('foo', data);
+    }).error(function(data) {
+      console.log('bar', data);
+    });
+  };
 });

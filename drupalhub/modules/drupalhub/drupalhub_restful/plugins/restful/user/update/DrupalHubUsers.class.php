@@ -58,6 +58,13 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       'property'=> 'field_last_name',
     );
 
+    $public_fields['settings'] = array(
+      'property' => 'field_settings',
+      'process_callbacks' => array(
+        array($this, 'settingsProcess'),
+      ),
+    );
+
     return $public_fields;
   }
 
@@ -171,7 +178,15 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       return array('value' => $value);
     }
 
+    if ($public_field_name == 'settings') {
+      return array('value' => $value);
+    }
+
     return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
+  }
+
+  public function settingsProcess($value) {
+    return $value['value'];
   }
 
 }
