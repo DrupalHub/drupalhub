@@ -25,6 +25,10 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       ),
     );
 
+    $public_fields['image_fid'] = array(
+      'property' => 'picture',
+    );
+
     $public_fields['reputation'] = array(
       'property' => 'field_reputation',
     );
@@ -180,6 +184,10 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
 
     if ($public_field_name == 'settings') {
       return array('value' => $value);
+    }
+
+    if ($public_field_name == 'image_fid') {
+      return file_load($value);
     }
 
     return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
