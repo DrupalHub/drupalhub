@@ -1,7 +1,7 @@
 DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) {
 
   $scope.endpoint = Config.backend + 'drupalhub-file-upload';
-  $scope.selectedForm = 'pages/user-picture.html';
+  $scope.selectedForm = 'pages/user-edit.html';
   $scope.password = {
     one: '',
     two: ''
@@ -23,15 +23,22 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
       };
     }
     else {
-      console.log('a');
       $scope.notifications = $scope.user.settings;
     }
   });
 
+  /**
+   * Switch between the forms.
+   *
+   * @param template
+   */
   $scope.switchTemplate = function(template) {
     $scope.selectedForm = 'pages/user-' + template + '.html';
   };
 
+  /**
+   * Update the use details.
+   */
   $scope.userDetailsSave = function() {
     $scope.errors = [];
     $scope.pass = false;
@@ -84,14 +91,33 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
       });
   };
 
+  /**
+   * Update the user notifications.
+   */
   $scope.userNotificationUpdate = function() {
     var data = {
       'settings': ($scope.notifications)
     };
-    DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data).success(function(data) {
-      console.log('foo', data);
-    }).error(function(data) {
-      console.log('bar', data);
-    });
+    // todo: add message.
+    DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data);
   };
+
+  /**
+   * Update the user picture file ID.
+   */
+  $scope.updateUserFid = function($file, $message, $flow) {
+    $scope.user.image = JSON.parse($message).data[0].id;
+    $scope.showSaveButton = true;
+  };
+
+  /**
+   * Updating the picture relation in the DB.
+   */
+  $scope.userPictureUpdate = function() {
+    var data = {
+      'image_fid': $scope.user.image
+    };
+    // todo: add message.
+    DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data);
+  }
 });
