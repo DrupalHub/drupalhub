@@ -1,6 +1,7 @@
-DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest) {
+DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) {
 
-  $scope.selectedForm = 'pages/user-edit.html';
+  $scope.endpoint = Config.backend + 'drupalhub-file-upload';
+  $scope.selectedForm = 'pages/user-picture.html';
   $scope.password = {
     one: '',
     two: ''

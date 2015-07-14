@@ -1,0 +1,20 @@
+<section class="form">
+  <form class="form-horizontal" name="userProfilePictureForm" ng-submit="userNotificationUpdate()">
+
+    <div flow-init="{target: endpoint}"
+         flow-files-submitted="$flow.upload()"
+         flow-file-success="$file.msg = $message">
+
+      <input type="file" flow-btn/>
+      Input OR Other element as upload button
+      <span class="btn" flow-btn>Upload File</span>
+
+      <div>
+        {{$flow.files[0]|json}}
+        <img flow-img="$flow.files[0]" />
+
+      </div>
+    </div>
+
+  </form>
+</section>

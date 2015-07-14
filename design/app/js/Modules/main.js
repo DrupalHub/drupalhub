@@ -11,7 +11,8 @@ var DrupalHub = angular.module('DrupalHub', [
   'ui.bootstrap.datetimepicker',
   'gm',
   'ngToast',
-  'pusher-angular'
+  'pusher-angular',
+  'flow'
 ]);
 
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubPusher) {
