@@ -196,5 +196,4 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
   public function settingsProcess($value) {
     return $value['value'];
   }
-
 }
