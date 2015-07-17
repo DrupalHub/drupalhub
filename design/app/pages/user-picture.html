@@ -1,7 +1,7 @@
 <section class="form">
   <form class="form-horizontal" name="userProfilePictureForm" ng-submit="userPictureUpdate()">
 
-    <div flow-init="{target: endpoint}"
+    <div flow-init="{target: endpoint, query:{access_token: access_token}}"
          flow-drop
          flow-files-submitted="$flow.upload()"
          flow-file-success="updateUserFid($file, $message, $flow)"

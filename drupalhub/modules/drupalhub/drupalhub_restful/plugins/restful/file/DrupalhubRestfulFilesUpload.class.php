@@ -9,6 +9,7 @@ class DrupalHubRestfulFilesUpload extends \RestfulFilesUpload {
     return array(
       '' => array(
         \RestfulInterface::POST => 'createEntity',
+        \RestfulInterface::GET => 'getList',
       ),
       '^.*$' => array(
         \RestfulInterface::GET => 'viewEntities',
@@ -24,6 +25,11 @@ class DrupalHubRestfulFilesUpload extends \RestfulFilesUpload {
 
     $fields['url'] = array(
       'property' => 'url',
+    );
+
+    $fields['uid'] = array(
+      'property' => 'owner',
+      'wrapper_method' => 'getIdentifier',
     );
 
     return $fields;
