@@ -33,10 +33,17 @@ class DrupalHubUsersValidate extends EntityValidateBase {
   }
 
   public function validateSingle($field, $value) {
+    global $user;
     $query = new EntityFieldQuery();
-    $number = $query
+    $query
       ->entityCondition('entity_type', 'user')
-      ->propertyCondition($field, $value)
+      ->propertyCondition($field, $value);
+
+    if ($user->uid) {
+      $query->propertyCondition('uid', $user->uid, '<>');
+    }
+
+    $number = $query
       ->count()
       ->execute();
 

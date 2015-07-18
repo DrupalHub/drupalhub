@@ -54,6 +54,9 @@ projects[flag][subdir] = "contrib"
 projects[flag][branch] = 7.x-3.x
 projects[flag][patch][] = https://www.drupal.org/files/issues/entity_metadata_wrapper_flagging_support.patch
 
+projects[serialized_field][version] = "1.0-beta1"
+projects[serialized_field][subdir] = contrib
+
 projects[github_connect][download][type] = git
 projects[github_connect][download][branch] = 7.x-1.x
 projects[github_connect][download][revision] = e091c59
@@ -127,7 +130,6 @@ projects[search_api][subdir] = contrib
 projects[search_api_solr][version] = "1.6"
 projects[search_api_solr][subdir] = contrib
 
-libraries[sokcetio][type] = "libraries"
-libraries[sokcetio][download][type] = git
-libraries[sokcetio][download][url] = "https://github.com/DrupalHub/PHP_SocketIO_Client.git"
-libraries[sokcetio][download][branch] = "fix"
+libraries[pusher][type] = "libraries"
+libraries[pusher][download][type] = git
+libraries[pusher][download][url] = "https://github.com/pusher/pusher-http-php.git"

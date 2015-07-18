@@ -96,6 +96,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'UserProfileCtrl'
   });
 
+  $routeProvider.when('/user/edit/:id', {
+    templateUrl: 'pages/edit-user.html',
+    controller: 'UserEditCtrl'
+  });
+
   // Documentation.
   $routeProvider.when('/documentations', {
     templateUrl: 'pages/documentations.html',
