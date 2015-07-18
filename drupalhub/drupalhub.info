@@ -32,6 +32,7 @@ dependencies[] = devel
 dependencies[] = entityreference
 dependencies[] = entity_view_count
 dependencies[] = entity_validator
+dependencies[] = entity_token
 dependencies[] = email
 dependencies[] = facetapi
 dependencies[] = features
@@ -57,6 +58,7 @@ dependencies[] = search_api_facetapi
 dependencies[] = search_api_solr
 dependencies[] = geolocation_googlemaps
 dependencies[] = video_embed_field
+dependencies[] = token
 
 ; DrupalHub
 dependencies[] = drupalhub_core
