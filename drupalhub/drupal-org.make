@@ -47,6 +47,9 @@ projects[facetapi][version] = 1.5
 projects[features][subdir] = "contrib"
 projects[features][version] = 2.2
 
+projects[file_entity][subdir] = "contrib"
+projects[file_entity][version] = 2.0-beta2
+
 projects[fboauth][version] = "1.6"
 projects[fboauth][subdir] = contrib
 

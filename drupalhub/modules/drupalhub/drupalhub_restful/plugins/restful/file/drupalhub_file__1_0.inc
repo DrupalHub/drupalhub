@@ -6,7 +6,7 @@ $plugin = array(
   'class' => 'DrupalHubRestfulFilesUpload',
   'entity_type' => 'file',
   'authentication_types' => TRUE,
-  'authentication_optional' => variable_get('restful_file_upload_allow_anonymous_user', FALSE),
+  'authentication_optional' => TRUE,
   // We will implement hook_menu() with custom settings.
   'menu_item' => variable_get('restful_hook_menu_base_path', 'api') . '/drupalhub-file-upload',
   // Set the default validators, scheme, and replace as used in

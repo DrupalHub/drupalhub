@@ -1,6 +1,7 @@
-DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) {
+DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, localStorageService) {
 
-  $scope.endpoint = Config.backend + 'drupalhub-file-upload';
+  $scope.endpoint = Config.backend + 'drupalhub-file-upload?profile_picture=1';
+  $scope.access_token = localStorageService.get('access_token');
   $scope.selectedForm = 'pages/user-edit.html';
   $scope.password = {
     one: '',
@@ -119,5 +120,6 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
     };
     // todo: add message.
     DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data);
-  }
+  };
+
 });

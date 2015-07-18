@@ -69,6 +69,13 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       ),
     );
 
+    $public_fields['profile_pictures'] = array(
+      'property' => 'uid',
+      'process_callbacks' => array(
+        array($this, 'profilePictureProcess'),
+      ),
+    );
+
     return $public_fields;
   }
 
@@ -187,7 +194,13 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     }
 
     if ($public_field_name == 'image_fid') {
-      return file_load($value);
+
+      $file = file_load($value);
+
+      $wrapper = entity_metadata_wrapper('file', $file);
+      $wrapper->field_profile_picture->set(1);
+      $wrapper->save();
+      return $file;
     }
 
     return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
@@ -195,5 +208,31 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
 
   public function settingsProcess($value) {
     return $value['value'];
+  }
+
+  public function profilePictureProcess($uid) {
+    $query = new EntityFieldQuery();
+    $results = $query
+      ->entityCondition('entity_type', 'file')
+      ->propertyCondition('uid', $uid)
+      ->fieldCondition('field_profile_picture', 'value', TRUE)
+      ->execute();
+
+    if (empty($results['file'])) {
+      return;
+    }
+
+    $files = file_load_multiple(array_keys($results['file']));
+
+    $return = array();
+
+    foreach ($files as $file) {
+      $return[] = array(
+        'id' => $file->fid,
+        'url' => file_create_url($file->uri),
+      );
+    }
+
+    return $return;
   }
 }
