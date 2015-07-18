@@ -28,11 +28,6 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, 
     }
   });
 
-  // Get all the profile pictures.
-  $scope.profilePictures = DrupalHubRequest.localRequest('get', 'drupalhub-file-upload').then(function(data) {
-    console.log(data);
-  });
-
   /**
    * Switch between the forms.
    *

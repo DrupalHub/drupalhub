@@ -71,7 +71,7 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
 
     $public_fields['profile_pictures'] = array(
       'property' => 'uid',
-      'access_callbacks' => array(
+      'process_callbacks' => array(
         array($this, 'profilePictureProcess'),
       ),
     );

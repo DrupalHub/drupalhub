@@ -126,6 +126,7 @@ function drupalhub_variables_set() {
       'key' => '46b578a29d7e3df90f07',
       'secret' => '5405552fa65b0fe8cd0a'
     ),
+    'restful_file_upload' => TRUE,
   );
 
   foreach ($variables as $name => $value) {

@@ -17,22 +17,4 @@ class DrupalHubRestfulFilesUpload extends \RestfulFilesUpload {
     );
   }
 
-  /**
-   * Overrides \RestfulBase::publicFieldsInfo().
-   */
-  public function publicFieldsInfo() {
-    $fields = parent::publicFieldsInfo();
-
-    $fields['url'] = array(
-      'property' => 'url',
-    );
-
-    $fields['uid'] = array(
-      'property' => 'owner',
-      'wrapper_method' => 'getIdentifier',
-    );
-
-    return $fields;
-  }
-
 }
