@@ -15,6 +15,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'recoverCtrl'
   });
 
+  $routeProvider.when('/reset-password/:access', {
+    templateUrl: 'pages/reset-password.html',
+    controller: 'resetPasswordCtrl'
+  });
+
   // Question.
   $routeProvider.when('/questions', {
     templateUrl: 'pages/questions.html',
