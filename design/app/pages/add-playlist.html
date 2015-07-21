@@ -1,0 +1,36 @@
+<section class="container form-video" ng-controller="PlayListFormCtrl">
+  <ul class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li class="active">Compile playlist</li>
+  </ul>
+
+  <section class="form">
+    <form class="form-horizontal" name="PlaylistForm" ng-submit="post()" novalidate>
+      <fieldset>
+        <legend class="videos-header">Compile a playlist</legend>
+
+        <div class="alert alert-dismissible alert-danger text-center" ng-show="errors.length > 0">
+          <div ng-repeat="error in errors">{{error}}</div>
+        </div>
+
+        <angucomplete id="members"
+                      placeholder="Search members"
+                      pause="400"
+                      selectedobject="testObj"
+                      url="http://localhost/drupalhub/www/api/video?autocomplete[string]="
+                      datafield="data"
+                      titlefield="label"
+                      descriptionfield="email"
+                      imagefield="image"
+                      inputclass="form-control form-control-small"/>
+
+        <div class="form-group">
+            <div class="col-lg-12">
+              <button type="submit" class="btn btn-danger pull-right">Submit</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+</section>
