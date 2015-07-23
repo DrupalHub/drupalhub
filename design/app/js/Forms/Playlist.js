@@ -19,4 +19,9 @@ DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest) {
     console.log($scope.videos);
   };
 
+  $scope.alterRemoterResponse = function() {
+    console.log('foo');
+    debugger;
+  };
+
 });

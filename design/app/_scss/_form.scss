@@ -74,3 +74,18 @@
     }
   }
 }
+
+.form-playlist {
+
+  .angucomplete-dropdown {
+    width: 100%;
+  }
+
+  .angucomplete-row {
+    @include clearfix();
+  }
+
+  .videos-row {
+    padding-bottom: 5px;
+  }
+}

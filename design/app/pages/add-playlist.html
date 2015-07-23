@@ -1,4 +1,4 @@
-<section class="container form-video" ng-controller="PlayListFormCtrl">
+<section class="container form-playlist" ng-controller="PlayListFormCtrl">
   <ul class="breadcrumb">
     <li><a href="#/">Home</a></li>
     <li class="active">Compile playlist</li>
@@ -33,13 +33,12 @@
                           descriptionfield="email"
                           imagefield="image"
                           inputclass="form-control form-control-small"
-                          clear-selected="true"/>
+                          clear-selected="true"
+                          remote-url-response-formatter="alterRemoterResponse"/>
 
-            <div ng-repeat="video in videos">
-              <div class="row">
-                <div class="col-md-2"><img ng-src="{{video.image}}" class="img-responsive"/></div>
-                <div class="col-md-10">{{video.label}}</div>
-              </div>
+            <div ng-repeat="video in videos" class="row videos-row">
+              <div class="col-md-2"><img ng-src="{{video.image}}" class="img-responsive"/></div>
+              <div class="col-md-10">{{video.label}}</div>
             </div>
           </div>
         </div>
