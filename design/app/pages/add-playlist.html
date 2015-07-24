@@ -23,18 +23,16 @@
         <div class="form-group">
           <label for="inputPlaylist" class="col-sm-1 col-md-2 control-label">Videos</label>
           <div class="col-sm-11 col-md-10">
-            <angucomplete id="inputPlaylist"
-                          placeholder="Search videos"
-                          pause="400"
-                          selectedobject="results"
-                          url="http://localhost/drupalhub/www/api/video?autocomplete[string]="
-                          datafield="data"
-                          titlefield="label"
-                          descriptionfield="email"
-                          imagefield="image"
-                          inputclass="form-control form-control-small"
-                          clear-selected="true"
-                          remote-url-response-formatter="alterRemoterResponse"/>
+            <angucomplete-alt id="members"
+                              placeholder="Search members"
+                              pause="400"
+                              selected-object="testObj"
+                              remote-url="http://localhost/drupalhub/www/api/video?autocomplete[string]="
+                              remote-url-data-field="data"
+                              title-field="firstName,surname"
+                              description-field="email"
+                              image-field="profilePic"
+                              input-class="form-control form-control-small"/>
 
             <div ng-repeat="video in videos" class="row videos-row">
               <div class="col-md-2"><img ng-src="{{video.image}}" class="img-responsive"/></div>

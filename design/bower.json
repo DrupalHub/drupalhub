@@ -30,9 +30,7 @@
     "ngtoast": "~1.5.4",
     "pusher-angular": "~0.1.5",
     "pusher": "~2.2.4",
-    "ng-flow": "~2"
-  },
-  "devDependencies": {
-    "angucomplete": "*"
+    "ng-flow": "~2",
+    "angucomplete-alt": "~1.1.0"
   }
 }
