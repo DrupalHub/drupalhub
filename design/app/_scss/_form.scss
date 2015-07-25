@@ -74,3 +74,25 @@
     }
   }
 }
+
+.form-playlist {
+
+  .angucomplete-dropdown {
+    width: 100%;
+  }
+
+  .angucomplete-row {
+    @include clearfix();
+  }
+
+  .videos-wrapper {
+    overflow-y: overlay;
+    max-height: 230px;
+    overflow-x: hidden;
+    margin-top: 15px;
+  }
+
+  .videos-row {
+    padding-top: 5px;
+  }
+}

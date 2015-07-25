@@ -1,0 +1,56 @@
+.main-wrapper {
+  border: $question-border solid 1px;
+
+  .menu {
+    padding: 0px;
+
+    .img-wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+
+      .small-image {
+        margin: 5px;
+        width: 80px;
+        border: solid 1px #0D71D2;
+      }
+    }
+
+    .links {
+      padding-top: 5px;
+
+      li {
+        padding-top: 5px;
+        padding-bottom: 5px;
+
+        .fa {
+          padding-left: 10px;
+        }
+      }
+    }
+  }
+
+  .form {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .input-wrapper {
+    padding-bottom: 10px;
+  }
+
+  .notifications {
+
+    .toggle {
+      text-align: right;
+
+      .fa-toggle-off,
+      .fa-toggle-on {
+        font-size: 40px;
+      }
+
+      .fa-toggle-on {
+        color: #0DA114;
+      }
+    }
+  }
+}

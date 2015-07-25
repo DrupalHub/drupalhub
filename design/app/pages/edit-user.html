@@ -1,0 +1,21 @@
+<section class="container form-user" ng-controller="UserEditCtrl" ng-show="user">
+  <ul class="breadcrumb">
+    <li><a href="#/">Home</a></li>
+    <li><a href="#/profile">{{user.label}}</a></li>
+    <li class="active">Edit</li>
+  </ul>
+
+
+  <div class="main-wrapper clearfix">
+    <div class="col-md-2 menu">
+
+      <ul class="links">
+        <li><i class="fa fa-cog"></i> <a href="" ng-click="switchTemplate('edit')">Edit</a></li>
+        <li><i class="fa fa-bell-o"></i> <a href="" ng-click="switchTemplate('notification')">Notifications</a></li>
+        <li><i class="fa fa-picture-o"></i> <a href="" ng-click="switchTemplate('picture')">Profile picture</a></li>
+      </ul>
+    </div>
+    <div class="col-md-10" ng-include="selectedForm"></div>
+  </div>
+
+</section>

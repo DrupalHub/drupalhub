@@ -15,6 +15,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'recoverCtrl'
   });
 
+  $routeProvider.when('/reset-password/:access', {
+    templateUrl: 'pages/reset-password.html',
+    controller: 'resetPasswordCtrl'
+  });
+
   // Question.
   $routeProvider.when('/questions', {
     templateUrl: 'pages/questions.html',
@@ -85,6 +90,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'VideoFormCtrl'
   });
 
+  $routeProvider.when('/add-playlist', {
+    templateUrl: 'pages/add-playlist.html',
+    controller: 'PlayListFormCtrl'
+  });
+
   // User.
   $routeProvider.when('/profile', {
     templateUrl: 'pages/user.html',
@@ -94,6 +104,11 @@ DrupalHub.config(function($routeProvider) {
   $routeProvider.when('/user/:id', {
     templateUrl: 'pages/user.html',
     controller: 'UserProfileCtrl'
+  });
+
+  $routeProvider.when('/user/edit/:id', {
+    templateUrl: 'pages/edit-user.html',
+    controller: 'UserEditCtrl'
   });
 
   // Documentation.
