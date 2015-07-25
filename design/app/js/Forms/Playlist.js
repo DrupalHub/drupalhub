@@ -3,10 +3,15 @@ DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest) {
   $scope.results = '';
   $scope.videos = [];
   $scope.ids = [];
+  $scope.playlist = {
+    'label': '',
+    'text': '',
+    'videos': []
+  };
 
   $scope.updateVideos = function(value) {
-    $scope.videos.push(value);
-    $scope.ids.push(value.originalObject.id);
+    $scope.videos.push(value.originalObject);
+    $scope.ids.push(+value.originalObject.id);
   };
 
   /**
@@ -22,7 +27,7 @@ DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest) {
     var results = [];
 
     for (var i = 0; i < value.data.length; i++) {
-      if ($scope.ids.indexOf(value.data[i].id) == -1) {
+      if ($scope.ids.indexOf(+value.data[i].id) == -1) {
         results.push(value.data[i]);
       }
     }
@@ -34,7 +39,57 @@ DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest) {
    * Delete the selected video from the list.
    */
   $scope.removeSelectedVideo = function(video) {
+    var id = +video.id;
+    var index = $scope.ids.indexOf(id);
+    $scope.ids.splice(index, 1);
 
-  }
+    var videos = [];
+
+    for (var i = 0; i < $scope.videos.length; i++) {
+
+      if ($scope.videos[i].id == id) {
+        continue;
+      }
+
+      videos.push($scope.videos[i]);
+    }
+
+    $scope.videos = videos;
+  };
+
+  /**
+   * Submitting the playlist.
+   */
+  $scope.compilePlaylist = function() {
+    $scope.errors = [];
+
+    angular.forEach($scope.PlaylistForm.$error.required, function(value, key) {
+      $scope.errors.push('The field ' + value.$name + ' is required.');
+    });
+
+    if ($scope.ids.length < 3) {
+      $scope.errors.push('Playlist should be more then 3 videos');
+      $scope.PlaylistForm.videos.$setValidity("videos", false);
+    }
+    else {
+      $scope.PlaylistForm.videos.$setValidity("videos", true);
+    }
+
+    if (!$scope.PlaylistForm.$valid) {
+      return;
+    }
+
+    // Submit the form.
+    $scope.playlist.videos = $scope.ids;
+
+    DrupalHubRequest.localRequest('post', 'playlist', $scope.playlist)
+      .success(function(data) {
+        window.location = "#/playlist/" + data.data[0].id + "/1";
+      })
+      .error(function(data) {
+        $scope.error.push(data.title);
+      });
+
+  };
 
 });

@@ -14,7 +14,7 @@ class DrupalHubPlayList extends \DrupalHubRestfulNode {
     $public_fields = parent::publicFieldsInfo();
 
     $public_fields['videos'] = array(
-      'property' => 'nid',
+      'property' => 'field_videos',
       'process_callbacks' => array(
         array($this, 'videosProcess'),
       ),
@@ -44,21 +44,14 @@ class DrupalHubPlayList extends \DrupalHubRestfulNode {
     return $public_fields;
   }
 
-  public function videosProcess($nid) {
+  public function videosProcess($videos) {
     $handler = restful_get_restful_handler('video');
-    $wrapper = entity_metadata_wrapper('node', $nid);
 
-    $ids = $wrapper->field_videos->value(array('identifier' => TRUE));
-
-    $videos = array();
-    foreach ($ids as $delta => $id) {
-      $handler->playlist = array(
-        'nid' => $nid,
-        'delta' => $delta + 1,
-      );
-      $videos[] = $handler->viewEntity($id);
+    $return = array();
+    foreach ($videos as $video) {
+      $return[] = $handler->viewEntity($video->nid);
     }
-    return $videos;
+    return $return;
   }
 
   public function countVideos($field_videos) {
