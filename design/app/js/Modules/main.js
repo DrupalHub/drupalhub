@@ -12,7 +12,8 @@ var DrupalHub = angular.module('DrupalHub', [
   'gm',
   'ngToast',
   'pusher-angular',
-  'flow'
+  'flow',
+  'angucomplete-alt'
 ]);
 
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubPusher) {
