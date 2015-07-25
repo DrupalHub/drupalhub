@@ -92,7 +92,7 @@ function drupalhub_core_tokens($type, $tokens, array $data = array(), array $opt
     $path = str_replace('-link', '', $name);
 
     $options = array(
-      'fragment' => $path . '/' . $token,
+      'fragment' => '/' . $path . '/' . $token,
     );
     $replacements[$original] = url(variable_get('drupalhub_default_client_domain', 'http://localhost:9000/'), $options);
   }

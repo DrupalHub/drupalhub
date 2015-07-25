@@ -81,7 +81,6 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
       })
       .error(function (data) {
         angular.forEach(data.errors, function(value, key) {
-          console.log(key);
           $scope.userDetailsForm[key].$setValidity(key, false);
 
           angular.forEach(value, function(value, key) {
