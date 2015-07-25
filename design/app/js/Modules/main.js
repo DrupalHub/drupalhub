@@ -10,6 +10,7 @@ var DrupalHub = angular.module('DrupalHub', [
   'ui.bootstrap',
   'ui.bootstrap.datetimepicker',
   'ngToast',
+  'gm',
   'pusher-angular',
   'flow',
   'angucomplete-alt',
