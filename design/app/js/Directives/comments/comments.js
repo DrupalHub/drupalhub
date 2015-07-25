@@ -1,4 +1,4 @@
-DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
+DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, DrupalHubPusher) {
   return {
     restrict: 'AE',
     templateUrl: 'js/Directives/comments/element.html',
@@ -45,6 +45,18 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
           $scope.comments = data.data;
         });
 
+        DrupalHubPusher.bind('new comment',
+          function(data) {
+
+            if (+data.nid != nid) {
+              return;
+            }
+
+            $scope.comments.push(data.object);
+
+          }
+        );
+
         // Submit a comment part.
         $scope.newComment = {
           text: '',
@@ -59,7 +71,6 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest) {
 
           if ($scope.commentForm.$valid) {
             DrupalHubRequest.localRequest('post', 'comments', $scope.newComment).success(function(data) {
-              $scope.comments.push(data.data[0]);
               $scope.newComment = {
                 text: '',
                 nid: nid

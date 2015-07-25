@@ -359,7 +359,8 @@ module.exports = function (grunt) {
         constants: {
           Config: {
             'backend': 'http://localhost/drupalhub/www/api/',
-            'socket': 'http://127.0.0.1:3000'
+            'pusher_key': '46b578a29d7e3df90f07',
+            'pusher_channel': 'drupalhub_drupalhub'
           }
         }
       },

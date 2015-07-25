@@ -30,6 +30,14 @@ function drupalhub_restful_entity_property_info_alter(&$info) {
     'schema field' => 'pass',
   );
 
+  $info['user']['bundles']['user']['properties']['picture'] = array(
+    'label' => t('Picture'),
+    'setter callback' => 'entity_property_verbatim_set',
+    'getter callback' => 'entity_property_verbatim_get',
+    'type' => 'struct',
+    'schema field' => 'picture',
+  );
+
   $info['user']['properties']['name']['getter callback'] = 'drupalhub_restful_get_user_name';
 }
 
@@ -37,6 +45,10 @@ function drupalhub_restful_entity_property_info_alter(&$info) {
  * Setter callback; Set user password.
  */
 function drupalhub_restful_set_user_pass($account, $name, $value) {
+  if (!$value) {
+    return;
+  }
+
   require_once DRUPAL_ROOT . '/' . variable_get('password_inc', 'includes/password.inc');
   $account->pass = user_hash_password($value);
 }

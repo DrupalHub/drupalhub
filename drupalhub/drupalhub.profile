@@ -121,8 +121,12 @@ function drupalhub_variables_set() {
     'site_frontpage' => 'front',
     'entity_view_count_track_user' => array(),
     'user_picture_path' => '',
-    'socketio_host' => 'localhost',
-    'socketio_port' => 3000,
+    'pusher' => array(
+      'app_id' => 125415,
+      'key' => '46b578a29d7e3df90f07',
+      'secret' => '5405552fa65b0fe8cd0a'
+    ),
+    'drupalhub_default_client_domain' => 'http://127.0.0.1:9000/',
   );
 
   foreach ($variables as $name => $value) {

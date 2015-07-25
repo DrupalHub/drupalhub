@@ -287,6 +287,38 @@ function drupalhub_users_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'user-user-field_settings'
+  $field_instances['user-user-field_settings'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 7,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_settings',
+    'label' => 'settings',
+    'required' => 0,
+    'settings' => array(
+      'namespace' => 1,
+      'serialization' => 'serialize',
+      'user_register_form' => 0,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'serialized_field',
+      'settings' => array(),
+      'type' => 'serialized_hidden',
+      'weight' => 17,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('About');
@@ -296,6 +328,7 @@ function drupalhub_users_field_default_field_instances() {
   t('First name');
   t('Last name');
   t('Node');
+  t('settings');
 
   return $field_instances;
 }

@@ -25,6 +25,10 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       ),
     );
 
+    $public_fields['image_fid'] = array(
+      'property' => 'picture',
+    );
+
     $public_fields['reputation'] = array(
       'property' => 'field_reputation',
     );
@@ -58,7 +62,25 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       'property'=> 'field_last_name',
     );
 
+    $public_fields['settings'] = array(
+      'property' => 'field_settings',
+      'process_callbacks' => array(
+        array($this, 'settingsProcess'),
+      ),
+    );
+
     return $public_fields;
+  }
+
+  protected function setPropertyValues(EntityMetadataWrapper $wrapper, $null_missing_fields = FALSE) {
+    $request = $this->request;
+    self::cleanRequest($request);
+
+    if (count($request) == 1 && isset($request)) {
+      $null_missing_fields = FALSE;
+    }
+
+    parent::setPropertyValues($wrapper, $null_missing_fields);
   }
 
   /**
@@ -141,6 +163,10 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       return TRUE;
     }
 
+    if ($this->getMethod() == \RestfulBase::PATCH) {
+      return $this->getAccount()->uid == $entity->uid || user_access('administer users', $this->getAccount());
+    }
+
     return parent::checkEntityAccess($op, $entity_type, $entity);
   }
 
@@ -158,4 +184,27 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     parent::entityPreSave($wrapper);
   }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function propertyValuesPreprocess($property_name, $value, $public_field_name) {
+
+    if ($public_field_name == 'about') {
+      return array('value' => $value);
+    }
+
+    if ($public_field_name == 'settings') {
+      return array('value' => $value);
+    }
+
+    if ($public_field_name == 'image_fid') {
+      return file_load($value);
+    }
+
+    return parent::propertyValuesPreprocess($property_name, $value, $public_field_name);
+  }
+
+  public function settingsProcess($value) {
+    return $value['value'];
+  }
 }
