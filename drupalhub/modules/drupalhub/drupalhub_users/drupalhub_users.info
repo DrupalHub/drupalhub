@@ -1,7 +1,6 @@
 name = drupalhub_users
 core = 7.x
 package = Features
-dependencies[] = drupalhub
 dependencies[] = drupalhub_core
 dependencies[] = drupalhub_notify
 dependencies[] = entity_view_count

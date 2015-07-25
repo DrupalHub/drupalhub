@@ -1,7 +1,7 @@
 name = DrupalHub search
 core = 7.x
 package = DrupalHub
-dependencies[] = drupalhub
+dependencies[] = drupalhub_core
 features[ctools][] = facetapi:facetapi_defaults:1
 features[ctools][] = page_manager:pages_default:1
 features[facetapi][] = search_api@comments:block:author

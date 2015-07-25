@@ -12,7 +12,7 @@ DrupalHub.controller('recoverCtrl', function($scope, DrupalHubRequest) {
     }
 
     DrupalHubRequest.localRequest('post', 'recover_password', {
-      'name': $scope.mail
+      'email': $scope.mail
       })
       .error(function(data) {
         $scope.error = data.title;

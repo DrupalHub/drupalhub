@@ -5,7 +5,6 @@ version = 7.x-2.4
 project = drupalhub_core
 dependencies[] = comment
 dependencies[] = ctools
-dependencies[] = drupalhub
 dependencies[] = features
 dependencies[] = field_config
 dependencies[] = flag

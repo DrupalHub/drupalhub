@@ -72,6 +72,17 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     return $public_fields;
   }
 
+  protected function setPropertyValues(EntityMetadataWrapper $wrapper, $null_missing_fields = FALSE) {
+    $request = $this->request;
+    self::cleanRequest($request);
+
+    if (count($request) == 1 && isset($request)) {
+      $null_missing_fields = FALSE;
+    }
+
+    parent::setPropertyValues($wrapper, $null_missing_fields);
+  }
+
   /**
    * Hide the field value.
    *

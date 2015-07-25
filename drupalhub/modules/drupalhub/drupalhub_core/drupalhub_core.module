@@ -12,3 +12,133 @@ include_once 'drupalhub_core.features.inc';
 function drupalhub_core_load_pusher() {
   require_once libraries_get_path('pusher') . '/lib/Pusher.php';
 }
+
+/**
+ * Implements hook_menu().
+ */
+function drupalhub_core_menu() {
+  $items = array();
+
+  $items['admin/config/drupalhub/settings'] = array(
+    'title' => t('DrupalHub Settings'),
+    'description' => t('DrupalHub Settings'),
+    'page callback' => 'drupal_get_form',
+    'page arguments' => array('drupalhub_core_settings_form'),
+    'access arguments' => array('manage drupalhub settings'),
+  );
+
+  return $items;
+}
+
+/**
+ * Form builder; Settings form.
+ *
+ * @param $form
+ * @param $form_state
+ */
+function drupalhub_core_settings_form($form, &$form_state) {
+  $form['drupalhub_default_client_domain'] = array(
+    '#type' => 'textfield',
+    '#title' => t('Default client domain'),
+    '#description' => t('The domain of the client.'),
+    '#default_value' => variable_get('drupalhub_default_client_domain', 'http://localhost:9000/'),
+  );
+
+  return system_settings_form($form);
+}
+
+/**
+ * Implements hook_token_info().
+ */
+function drupalhub_core_token_info() {
+  $info = array();
+
+  $info['tokens']['drupalhub']['reset-password-link'] = array(
+    'name' => t('Reset Password Link'),
+    'description' => t('Display the link for resetting a password.'),
+  );
+
+  $info['tokens']['drupalhub']['verify-email-link'] = array(
+    'name' => t('Verify Email Link'),
+    'description' => t('Display the link for verifying an email.'),
+  );
+
+  $info['types']['drupalhub'] = array(
+    'name' => t('DrupalHub'),
+    'description' => t('Tokens related to DrupalHub.'),
+  );
+
+  return $info;
+}
+
+/**
+ * Implements hook_tokens().
+ */
+function drupalhub_core_tokens($type, $tokens, array $data = array(), array $options = array()) {
+
+  $replacements = array();
+  if ($type != 'drupalhub') {
+    return $replacements;
+  }
+
+  foreach ($tokens as $name => $original) {
+    if (!in_array($name, array('reset-password-link', 'verify-email-link'))) {
+      continue;
+    }
+
+    $message = reset($data);
+    $token = $message->arguments['@token'];
+
+    $path = str_replace('-link', '', $name);
+
+    $options = array(
+      'fragment' => '/' . $path . '/' . $token,
+    );
+    $replacements[$original] = url(variable_get('drupalhub_default_client_domain', 'http://localhost:9000/'), $options);
+  }
+
+  return $replacements;
+}
+
+
+/**
+ * Implements hook_user_insert().
+ */
+function drupalhub_core_user_insert(&$edit, $account, $category) {
+  // Check the site settings if we should send a verification email.
+  if (variable_get('user_email_verification', TRUE)) {
+    drupalhub_send_token_to_user('verify_email', user_load($account->uid));
+  }
+}
+
+/**
+ * Create a token and send it to the user.
+ *
+ * @param $message_type
+ *  The type of the message to send.
+ * @param $account
+ *  The user account.
+ */
+function drupalhub_send_token_to_user($message_type, $account) {
+  $controller = new RestfulTokenAuthController('restful_token_auth');
+  $token = $controller->generateAccessToken($account->uid);
+
+  // Sending Email with instructions to the user.
+  drupalhub_notify_user($message_type, $account, $token->token);
+}
+
+/**
+ * Send an email to the user with the token.
+ *
+ * @param $message_type
+ *  The type of the message.
+ * @param $account
+ *  The account of the user to notify.
+ * @param $token
+ *  The token of the user.
+ */
+function drupalhub_notify_user($message_type, $account, $token) {
+  $message = message_create($message_type, array('arguments' => array('@token' => $token)), $account);
+  $wrapper = entity_metadata_wrapper('message', $message);
+  message_notify_send_message($wrapper->value(), array('mail' => $account->mail));
+}
