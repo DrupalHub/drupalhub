@@ -14,7 +14,8 @@ var DrupalHub = angular.module('DrupalHub', [
   'pusher-angular',
   'flow',
   'angucomplete-alt',
-  'uiGmapgoogle-maps'
+  'uiGmapgoogle-maps',
+  'ui.select'
 ]);
 
 DrupalHub.config(function(uiGmapGoogleMapApiProvider) {
