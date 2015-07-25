@@ -46,9 +46,14 @@
         }
       }
     }
-  }
 
-  .google-maps {
-    height: 300px;
+    .angular-google-map-container {
+      margin: 0;
+      padding: 0;
+      height: 400px;
+      min-height: 400px;
+    }
+
   }
 }
+
