@@ -63,6 +63,11 @@ function drupalhub_core_token_info() {
     'description' => t('Display the link for verifying an email.'),
   );
 
+  $info['tokens']['node']['decouple-url'] = array(
+    'name' => t('Decouple node URL'),
+    'description' => t('Full url to the decouple node address'),
+  );
+
   $info['types']['drupalhub'] = array(
     'name' => t('DrupalHub'),
     'description' => t('Tokens related to DrupalHub.'),
@@ -77,24 +82,34 @@ function drupalhub_core_token_info() {
 function drupalhub_core_tokens($type, $tokens, array $data = array(), array $options = array()) {
 
   $replacements = array();
-  if ($type != 'drupalhub') {
-    return $replacements;
+
+  if ($type == 'drupalhub') {
+    foreach ($tokens as $name => $original) {
+      if (!in_array($name, array('reset-password-link', 'verify-email-link'))) {
+        continue;
+      }
+
+      $message = reset($data);
+      $token = $message->arguments['@token'];
+
+      $path = str_replace('-link', '', $name);
+
+      $options = array(
+        'fragment' => '/' . $path . '/' . $token,
+      );
+      $replacements[$original] = url(variable_get('drupalhub_default_client_domain', 'http://localhost:9000/'), $options);
+    }
   }
 
-  foreach ($tokens as $name => $original) {
-    if (!in_array($name, array('reset-password-link', 'verify-email-link'))) {
-      continue;
+  if ($type == 'node') {
+    foreach ($tokens as $name => $original) {
+      if ($name == 'decouple-url') {
+        $options = array(
+          'fragment' => '/' . $data['node']->type . '/' . $data['node']->nid,
+        );
+        $replacements[$original] = url(variable_get('drupalhub_default_client_domain', 'http://localhost:9000/'), $options);
+      }
     }
-
-    $message = reset($data);
-    $token = $message->arguments['@token'];
-
-    $path = str_replace('-link', '', $name);
-
-    $options = array(
-      'fragment' => '/' . $path . '/' . $token,
-    );
-    $replacements[$original] = url(variable_get('drupalhub_default_client_domain', 'http://localhost:9000/'), $options);
   }
 
   return $replacements;
