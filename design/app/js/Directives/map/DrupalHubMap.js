@@ -1,32 +1,39 @@
 DrupalHub.directive('drupalhubMap', function() {
   return {
     restrict: 'AE',
-    scope: {
-      latitude: '=',
-      longitude: '=',
-      address: '='
-    },
     templateUrl: 'js/Directives/map/element.html',
-    link: function($scope) {
-      angular.element('#maps').gMap({
-        address: $scope.address,
-        zoom: 16,
-        controls: {
-          panControl: true,
-          zoomControl: true,
-          mapTypeControl: true,
-          scaleControl: true,
-          streetViewControl: true,
-          overviewMapControl: true
+    controller: function($scope, uiGmapGoogleMapApi, uiGmapIsReady) {
+      var vm = this;
+      uiGmapIsReady.promises(1).then(function (instances) {
+      })
+
+      $scope.$watch('drupalhubMapCtrl.event', function(event) {
+        if (angular.isUndefined(event)) {
+          return;
         }
-        //markers: [{
-        //  latitude: $scope.latitude,
-        //  longitude: $scope.longitude,
-        //  html: "Tel aviv",
-        //  popup: true
-        //}]
+
+        vm.map = {center: {latitude: event.latitude, longitude: event.longitude }, zoom: 18 };
+        vm.marker = {id: event.id, geo: {latitude: event.latitude, longitude: event.longitude }}
+
+
       });
 
+
+      // Do stuff with your $scope.
+      // Note: Some of the directives require at least something to be defined originally!
+      // e.g. $scope.markers = []
+
+
+      // uiGmapGoogleMapApi is a promise.
+      // The "then" callback function provides the google.maps object.
+      //uiGmapGoogleMapApi.then(function(maps) {
+      //  debugger;
+      //});
+    },
+    controllerAs: 'drupalhubMapCtrl',
+    bindToController: true,
+    scope: {
+      event: '='
     }
   };
 });

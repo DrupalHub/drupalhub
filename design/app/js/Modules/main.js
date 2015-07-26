@@ -9,11 +9,22 @@ var DrupalHub = angular.module('DrupalHub', [
   'flagDirective',
   'ui.bootstrap',
   'ui.bootstrap.datetimepicker',
-  'gm',
   'ngToast',
+  'gm',
   'pusher-angular',
-  'flow'
+  'flow',
+  'angucomplete-alt',
+  'uiGmapgoogle-maps',
+  'ui.select'
 ]);
+
+DrupalHub.config(function(uiGmapGoogleMapApiProvider) {
+  uiGmapGoogleMapApiProvider.configure({
+    //    key: 'your api key',
+    v: '3.17',
+    libraries: 'weather,geometry,visualization'
+  });
+});
 
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubPusher) {
 

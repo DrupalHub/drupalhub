@@ -32,14 +32,12 @@ class DrupalHubQuestion extends \DrupalHubRestfulNode {
     $request = $this->getRequest();
 
     // Tear down the string.
-    $terms = explode(',', $request['tags']);
-
     $vocabulary = taxonomy_vocabulary_machine_name_load('tags');
 
     // Look for terms object with that name.
     $tids = array();
 
-    foreach ($terms as $term) {
+    foreach ($request['tags'] as $term) {
       if ($tid = taxonomy_get_term_by_name(trim($term), 'tags')) {
         $tids[] = reset($tid)->tid;
       }

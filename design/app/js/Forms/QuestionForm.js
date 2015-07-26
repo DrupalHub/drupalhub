@@ -1,26 +1,17 @@
-DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest) {
+DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $http, Config) {
   $scope.loadingLocations = false;
-  $scope.getTags = function(val) {
+  $scope.tags = [];
+  $scope.refreshAddresses = function(address) {
+    return DrupalHubRequest.localRequest('get', 'tags?autocomplete[string]=' + address).then(function(response) {
 
-    var split = val.split(',').map(function(n) {
-      return n.trim();
-    });
+      var ret = [];
 
-    return DrupalHubRequest.localRequest('get', 'tags?autocomplete[string]=' + _.last(split).trim())
-      .then(function(response) {
-
-        var results = [];
-
-        angular.forEach(response.data.data, function(value, key) {
-
-          if (split.indexOf(value) == -1) {
-            results.push(value);
-          }
-
-        });
-
-        return _.unique(results);
+      angular.forEach(response.data.data, function(value, key) {
+        ret.push(value);
       });
+
+      $scope.tags = ret;
+    });
   };
 
   $scope.question = {
