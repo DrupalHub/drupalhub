@@ -75,9 +75,9 @@ function drupalhub_users_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n",
+          "value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-comment:node:decouple-url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
           "format" : "full_html",
-          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-comment:node:url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003E\\u003Ca href=\\u0022@{message:field-comment:url}\\u0022\\u003ECommented\\u003C\\/a\\u003E to the @{message:field-comment:node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-comment:node:decouple-url}\\u0022\\u003E@{message:field-comment:node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     },
@@ -97,9 +97,9 @@ function drupalhub_users_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "\\u003Cp\\u003ECreated the @{message:field-node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-node:url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n",
+          "value" : "\\u003Cp\\u003ECreated the @{message:field-node:content-type:name}\\u0026nbsp;\\u003Ca href=\\u0022@{message:field-node:decouple-url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\r\\n",
           "format" : "full_html",
-          "safe_value" : "\\u003Cp\\u003ECreated the @{message:field-node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-node:url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003ECreated the @{message:field-node:content-type:name}\\u00a0\\u003Ca href=\\u0022@{message:field-node:decouple-url}\\u0022\\u003E@{message:field-node:title}\\u003C\\/a\\u003E\\u003C\\/p\\u003E\\n"
         }
       ]
     },
@@ -119,9 +119,9 @@ function drupalhub_users_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "\\u003Cp\\u003E\\n\\tJoined DrupalHub\\u003C\\/p\\u003E\\n",
+          "value" : "Joined DrupalHub",
           "format" : "filtered_html",
-          "safe_value" : "\\u003Cp\\u003E\\n\\tJoined DrupalHub\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EJoined DrupalHub\\u003C\\/p\\u003E\\n"
         }
       ]
     },
