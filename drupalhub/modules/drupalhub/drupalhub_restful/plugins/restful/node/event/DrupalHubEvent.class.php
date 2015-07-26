@@ -163,4 +163,19 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
 
     return $users;
   }
+
+  /**
+   * Override parent::queryForListFilter().
+   */
+  public function queryForListFilter(\EntityFieldQuery $query) {
+    parent::queryForListFilter($query);
+
+    $operator = '<';
+    if (!empty($this->request['type']) && $this->request['type'] == 'past') {
+      $operator = '>';
+    }
+
+    $query->fieldCondition('field_date', 'value', date('Y-m-D H:i:s'), $operator);
+
+  }
 }
