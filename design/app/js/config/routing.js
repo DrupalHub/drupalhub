@@ -2,28 +2,33 @@ DrupalHub.config(function($routeProvider) {
   // Configure the route.
   $routeProvider.when('/', {
     templateUrl: 'pages/index.html',
-    controller: 'headerCtrl'
+    controller: 'headerCtrl',
+    title: 'Home page'
   });
 
   $routeProvider.when('/register-signin', {
     templateUrl: 'pages/login-signup.html',
-    controller: 'loginCtrl'
+    controller: 'loginCtrl',
+    title: 'Login/Sign in'
   });
 
   $routeProvider.when('/recover-password', {
     templateUrl: 'pages/recover-password.html',
-    controller: 'recoverCtrl'
+    controller: 'recoverCtrl',
+    title: 'Recover password'
   });
 
   $routeProvider.when('/reset-password/:access', {
     templateUrl: 'pages/reset-password.html',
-    controller: 'resetPasswordCtrl'
+    controller: 'resetPasswordCtrl',
+    title: 'Reset password'
   });
 
   // Question.
   $routeProvider.when('/questions', {
     templateUrl: 'pages/questions.html',
-    controller: 'questionCtrl'
+    controller: 'questionCtrl',
+    title: 'Questions'
   });
 
   $routeProvider.when('/question/:id', {
@@ -33,18 +38,21 @@ DrupalHub.config(function($routeProvider) {
 
   $routeProvider.when('/add-question', {
     templateUrl: 'pages/add-question.html',
-    controller: 'QuestionFormCtrl'
+    controller: 'QuestionFormCtrl',
+    title: 'Asking a question'
   });
 
   // Blogs.
   $routeProvider.when('/add-blog', {
     templateUrl: 'pages/add-blog.html',
-    controller: 'BlogFormCtrl'
+    controller: 'BlogFormCtrl',
+    title: 'Blogging on something'
   });
 
   $routeProvider.when('/blogs', {
     templateUrl: 'pages/blogs.html',
-    controller: 'blogCtrl'
+    controller: 'blogCtrl',
+    title: 'Blogs'
   });
 
   $routeProvider.when('/blog/:id', {
@@ -55,12 +63,14 @@ DrupalHub.config(function($routeProvider) {
   // Events.
   $routeProvider.when('/events', {
     templateUrl: 'pages/events.html',
-    controller: 'eventsCtrl'
+    controller: 'eventsCtrl',
+    title: 'Upcoming events'
   });
 
   $routeProvider.when('/add-event', {
     templateUrl: 'pages/add-event.html',
-    controller: 'EventFormCtrl'
+    controller: 'EventFormCtrl',
+    title: 'Creating event'
   });
 
   $routeProvider.when('/event/:id', {
@@ -72,7 +82,8 @@ DrupalHub.config(function($routeProvider) {
   $routeProvider.when('/videos', {
     templateUrl: 'pages/videos.html',
     controller: 'videosCtrl',
-    reloadOnSearch: false
+    reloadOnSearch: false,
+    title: 'Looking for a video'
   });
 
   $routeProvider.when('/video/:id', {
@@ -87,18 +98,21 @@ DrupalHub.config(function($routeProvider) {
 
   $routeProvider.when('/add-video', {
     templateUrl: 'pages/add-video.html',
-    controller: 'VideoFormCtrl'
+    controller: 'VideoFormCtrl',
+    title: 'Submitting a video'
   });
 
   $routeProvider.when('/add-playlist', {
     templateUrl: 'pages/add-playlist.html',
-    controller: 'PlayListFormCtrl'
+    controller: 'PlayListFormCtrl',
+    title: 'Compiling a playlist'
   });
 
   // User.
   $routeProvider.when('/profile', {
     templateUrl: 'pages/user.html',
-    controller: 'UserProfileCtrl'
+    controller: 'UserProfileCtrl',
+    title: 'Watching your profile'
   });
 
   $routeProvider.when('/user/:id', {
@@ -114,7 +128,8 @@ DrupalHub.config(function($routeProvider) {
   // Documentation.
   $routeProvider.when('/documentations', {
     templateUrl: 'pages/documentations.html',
-    controller: 'documentationsCtrl'
+    controller: 'documentationsCtrl',
+    title: 'All documentations'
   });
 
   $routeProvider.when('/documentations/term/:filter_id', {
@@ -124,7 +139,8 @@ DrupalHub.config(function($routeProvider) {
 
   $routeProvider.when('/add-documentation', {
     templateUrl: 'pages/add-documentation.html',
-    controller: 'DocumentationFormCtrl'
+    controller: 'DocumentationFormCtrl',
+    title: 'Sharing information '
   });
 
   $routeProvider.when('/documentation/:id', {
@@ -136,7 +152,8 @@ DrupalHub.config(function($routeProvider) {
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
     controller: 'pageNotFound',
-    reloadOnSearch: false
+    reloadOnSearch: false,
+    title: '404'
   });
 });
 
