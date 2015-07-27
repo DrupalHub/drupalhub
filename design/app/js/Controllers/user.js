@@ -1,4 +1,4 @@
-DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $routeParams) {
+DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope) {
 
   var path, access;
 
@@ -13,6 +13,14 @@ DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $rout
 
   DrupalHubRequest.localRequest('get', path).success(function(data) {
     $scope.user = $routeParams.id ? data.data[0] : data.data;
+
+    if ($routeParams.id) {
+      $scope.user = data.data[0];
+      $rootScope.$emit('titleAlter', $scope.user.label);
+    }
+    else {
+      $scope.user = data.data;
+    }
 
     DrupalHubRequest.userAccess(access).then(function(data) {
 

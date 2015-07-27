@@ -1,4 +1,4 @@
-DrupalHub.controller('PlaylistCtrl', function($scope, DrupalHubRequest, $routeParams) {
+DrupalHub.controller('PlaylistCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope) {
 
   $scope.playlistId = $routeParams['id'];
 
@@ -8,6 +8,7 @@ DrupalHub.controller('PlaylistCtrl', function($scope, DrupalHubRequest, $routePa
     $scope.nextVideo = $scope.playlistObject.videos[$scope.delta + 1] ? $scope.delta + 2 : false;
     $scope.previousVideo = $scope.playlistObject.videos[$scope.delta - 1] ? $scope.delta : false;
     $scope.video = $scope.playlistObject.videos[$scope.delta];
+    $rootScope.$emit('titleAlter', $scope.video.label);
     $scope.youtube = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + $scope.video.embed  + '?autoplay=1" frameborder="0" allowfullscreen></iframe>';
   });
 });

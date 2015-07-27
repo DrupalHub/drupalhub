@@ -1,4 +1,4 @@
-DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
+DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $location, $routeParams, $rootScope) {
 
   var path = $location.path();
   var endpoint;
@@ -25,6 +25,7 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
       }
       else {
         $scope.question = data.data[0];
+        $rootScope.$emit('titleAlter', data.data[0].label);
       }
       $scope.waiting = false;
     });

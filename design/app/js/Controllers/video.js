@@ -1,4 +1,4 @@
-DrupalHub.controller('videoCtrl', function($scope, DrupalHubRequest, $routeParams) {
+DrupalHub.controller('videoCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope) {
 
   $scope.video = {};
   $scope.youtube = '';
@@ -13,6 +13,7 @@ DrupalHub.controller('videoCtrl', function($scope, DrupalHubRequest, $routeParam
   DrupalHubRequest.localRequest('get', 'video/' + id).success(function(data, status) {
     $scope.video = data.data[0];
     $scope.youtube = '<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/' + $scope.video.embed  + '?autoplay=true" frameborder="0" allowfullscreen></iframe>';
+    $rootScope.$emit('titleAlter', $scope.video.label);
   });
 
   DrupalHubRequest.localRequest('get', 'video?filter[id][value]=' + id + '&filter[id][operator]=<>&range=10').success(function(data, status) {
