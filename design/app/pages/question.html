@@ -9,6 +9,8 @@
     <div class="row">
       <div class="col-md-2 col-sm-2 pull-left image">
         <img class="images question img-responsive" ng-src="{{question.image}}" />
+        <a ng-show="showEditButton">Edit</a>
+        <a ng-show="showDeleteButton">Delete</a>
       </div>
       <div class="col-md-10 col-sm-10 question-content">
         <h2>{{question.label}}</h2>

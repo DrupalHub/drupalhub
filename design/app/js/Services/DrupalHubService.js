@@ -56,6 +56,20 @@ DrupalHub.factory('DrupalHubRequest', function($http, Config, localStorageServic
   };
 
   /**
+   * Get the user operation access.
+   */
+  DrupalHubSvc.entityAccess = function(op, type, id) {
+    return $http({
+      method: 'get',
+      url: Config.backend + 'entity_access?op=' + op + '&type=' + type + '&id=' + id,
+      headers: {
+        'access-token': DrupalHubSvc.accessToken,
+        'access_token': DrupalHubSvc.accessToken
+      }
+    });
+  };
+
+  /**
    * Set a value to the local storage.
    *
    * @param key
