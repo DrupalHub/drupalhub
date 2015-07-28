@@ -7,19 +7,19 @@ DrupalHub.config(function($routeProvider) {
   });
 
   $routeProvider.when('/register-signin', {
-    templateUrl: 'pages/login-signup.html',
+    templateUrl: 'pages/forms/login-signup.html',
     controller: 'loginCtrl',
     title: 'Login/Sign in'
   });
 
   $routeProvider.when('/recover-password', {
-    templateUrl: 'pages/recover-password.html',
+    templateUrl: 'pages/forms/recover-password.html',
     controller: 'recoverCtrl',
     title: 'Recover password'
   });
 
   $routeProvider.when('/reset-password/:access', {
-    templateUrl: 'pages/reset-password.html',
+    templateUrl: 'pages/forms/reset-password.html',
     controller: 'resetPasswordCtrl',
     title: 'Reset password'
   });
@@ -37,14 +37,14 @@ DrupalHub.config(function($routeProvider) {
   });
 
   $routeProvider.when('/add-question', {
-    templateUrl: 'pages/add-question.html',
+    templateUrl: 'pages/forms/add-question.html',
     controller: 'QuestionFormCtrl',
     title: 'Asking a question'
   });
 
   // Blogs.
   $routeProvider.when('/add-blog', {
-    templateUrl: 'pages/add-blog.html',
+    templateUrl: 'pages/forms/add-blog.html',
     controller: 'BlogFormCtrl',
     title: 'Blogging on something'
   });
@@ -68,7 +68,7 @@ DrupalHub.config(function($routeProvider) {
   });
 
   $routeProvider.when('/add-event', {
-    templateUrl: 'pages/add-event.html',
+    templateUrl: 'pages/forms/add-event.html',
     controller: 'EventFormCtrl',
     title: 'Creating event'
   });
@@ -97,13 +97,13 @@ DrupalHub.config(function($routeProvider) {
   });
 
   $routeProvider.when('/add-video', {
-    templateUrl: 'pages/add-video.html',
+    templateUrl: 'pages/forms/add-video.html',
     controller: 'VideoFormCtrl',
     title: 'Submitting a video'
   });
 
   $routeProvider.when('/add-playlist', {
-    templateUrl: 'pages/add-playlist.html',
+    templateUrl: 'pages/forms/add-playlist.html',
     controller: 'PlayListFormCtrl',
     title: 'Compiling a playlist'
   });
@@ -121,7 +121,7 @@ DrupalHub.config(function($routeProvider) {
   });
 
   $routeProvider.when('/user/edit/:id', {
-    templateUrl: 'pages/edit-user.html',
+    templateUrl: 'pages/forms/edit-user.html',
     controller: 'UserEditCtrl'
   });
 
@@ -138,7 +138,7 @@ DrupalHub.config(function($routeProvider) {
   });
 
   $routeProvider.when('/add-documentation', {
-    templateUrl: 'pages/add-documentation.html',
+    templateUrl: 'pages/forms/add-documentation.html',
     controller: 'DocumentationFormCtrl',
     title: 'Sharing information '
   });
