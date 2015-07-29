@@ -49,8 +49,15 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
       entity_view_count_create($params)->save();
     }
 
+    $entity = parent::viewEntity($id);
+    $wrapper = entity_metadata_wrapper($this->getEntityType(), $id);
 
-    return parent::viewEntity($id);
+    foreach (array('view', 'create', 'update', 'delete') as $op) {
+      // This one return always true. Check it.
+      $entity['access'][$op] = $wrapper->access($op, $this->getAccount());
+    }
+
+    return $entity;
   }
 
   /**

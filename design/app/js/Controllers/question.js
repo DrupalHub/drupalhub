@@ -26,14 +26,8 @@ DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $locatio
       else {
         $scope.question = data.data[0];
         $rootScope.$emit('titleAlter', data.data[0].label);
-
-        DrupalHubRequest.entityAccess('update', 'node', $routeParams['id']).then(function(data) {
-          $scope.showEditButton = data.data.data[0];
-        });
-
-        DrupalHubRequest.entityAccess('delete', 'node', $routeParams['id']).then(function(data) {
-          $scope.showDeleteButton = data.data.data[0];
-        });
+        $scope.showEditButton = data.data[0].access.update;
+        $scope.showDeleteButton = data.data[0].access.delete;
       }
       $scope.waiting = false;
     });
