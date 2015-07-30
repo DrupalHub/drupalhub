@@ -65,6 +65,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'blogCtrl'
   });
 
+  $routeProvider.when('/blog/:id/edit', {
+    templateUrl: 'pages/forms/add-blog.html',
+    controller: 'BlogFormCtrl'
+  });
+
   // Events.
   $routeProvider.when('/events', {
     templateUrl: 'pages/events.html',
