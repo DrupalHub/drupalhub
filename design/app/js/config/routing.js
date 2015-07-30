@@ -27,7 +27,7 @@ DrupalHub.config(function($routeProvider) {
   // Question.
   $routeProvider.when('/questions', {
     templateUrl: 'pages/questions.html',
-    controller: 'questionCtrl',
+    controller: 'questionsCtrl',
     title: 'Questions'
   });
 
@@ -38,7 +38,7 @@ DrupalHub.config(function($routeProvider) {
 
   $routeProvider.when('/question/:id/edit', {
     templateUrl: 'pages/forms/add-question.html',
-    controller: 'QuestionFormCtrl',
+    controller: 'QuestionFormCtrl'
   });
 
   $routeProvider.when('/add-question', {
@@ -56,7 +56,7 @@ DrupalHub.config(function($routeProvider) {
 
   $routeProvider.when('/blogs', {
     templateUrl: 'pages/blogs.html',
-    controller: 'blogCtrl',
+    controller: 'blogsCtrl',
     title: 'Blogs'
   });
 
