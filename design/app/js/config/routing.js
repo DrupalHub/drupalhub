@@ -36,6 +36,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'questionCtrl'
   });
 
+  $routeProvider.when('/question/:id/edit', {
+    templateUrl: 'pages/forms/add-question.html',
+    controller: 'QuestionFormCtrl',
+  });
+
   $routeProvider.when('/add-question', {
     templateUrl: 'pages/forms/add-question.html',
     controller: 'QuestionFormCtrl',

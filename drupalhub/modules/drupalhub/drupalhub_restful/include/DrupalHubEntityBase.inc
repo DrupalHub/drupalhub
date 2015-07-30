@@ -54,7 +54,7 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
 
     foreach (array('view', 'create', 'update', 'delete') as $op) {
       // This one return always true. Check it.
-      $entity['access'][$op] = $wrapper->access($op, $this->getAccount());
+      $entity['access'][$op] = entity_access($op, $this->getEntityType(), $wrapper->value(), $this->getAccount());
     }
 
     return $entity;
