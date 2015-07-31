@@ -16,6 +16,9 @@
             <span class="fa fa-eye"></span>{{documentation.viewed}}
             <span class="label label-info" ng-repeat="tag in documentation.tags"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
           </div>
+          <div>
+            <a href="#/documentation/{{documentation.id}}/edit" ng-show="documentation.access.update">Edit</a>
+          </div>
 
           <span ng-bind-html="documentation.text | fullHtml"></span>
         </div>

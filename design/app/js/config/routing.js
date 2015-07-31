@@ -160,6 +160,11 @@ DrupalHub.config(function($routeProvider) {
     title: 'Sharing information '
   });
 
+  $routeProvider.when('/documentation/:id/edit', {
+    templateUrl: 'pages/forms/add-documentation.html',
+    controller: 'DocumentationFormCtrl'
+  });
+
   $routeProvider.when('/documentation/:id', {
     templateUrl: 'pages/documentation.html',
     controller: 'documentationCtrl'

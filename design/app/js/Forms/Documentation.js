@@ -1,4 +1,4 @@
-DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest) {
+DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
 
   $scope.documentation = {
     label: '',
@@ -6,22 +6,27 @@ DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest)
     tags: ''
   };
 
-  $scope.getTags = function(val) {
+  if ($location.path() != '/add-documentation') {
+    DrupalHubRequest.localRequest('get', 'wiki/' + $routeParams['id']).then(function(data) {
+      var documentation = data.data.data[0];
+      $scope.documentation.label = documentation.label;
+      $scope.documentation.text = documentation.text;
+      $scope.documentation.tags = documentation.tags.label;
+    });
+  }
 
-    return DrupalHubRequest.localRequest('get', 'wiki_category?autocomplete[string]=' + val)
-      .then(function(response) {
+  $scope.refreshAddresses = function(address) {
+    return DrupalHubRequest.localRequest('get', 'wiki_category?autocomplete[string]=' + address).then(function(response) {
 
-        var results = [];
+      var ret = [];
 
-        angular.forEach(response.data.data, function(value, key) {
-          results.push(value);
-        });
-
-        return _.unique(results);
+      angular.forEach(response.data.data, function(value, key) {
+        ret.push(value);
       });
-  };
 
-  $scope.errors = [];
+      $scope.tags = ret;
+    });
+  };
 
   // Processing the form.
   $scope.submit = function() {
@@ -40,8 +45,17 @@ DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest)
     }
 
     if ($scope.documentationForm.$valid) {
-      DrupalHubRequest.localRequest('post', 'wiki', $scope.documentation)
-        .success(function(data) {
+
+      var request;
+
+      if ($routeParams['id'] != undefined) {
+        request = DrupalHubRequest.localRequest('patch', 'wiki/' + $routeParams['id'], $scope.documentation);
+      }
+      else {
+        request = DrupalHubRequest.localRequest('post', 'wiki', $scope.documentation);
+      }
+
+      request.success(function(data) {
           window.location = "#/documentation/" + data.data[0].id;
         })
         .error(function(data) {
