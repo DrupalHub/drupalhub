@@ -24,6 +24,13 @@ DrupalHub.config(function($routeProvider) {
     title: 'Reset password'
   });
 
+  // Comments edit.
+  $routeProvider.when('/comment/:id/edit', {
+    templateUrl: 'pages/forms/comment-edit.html',
+    controller: 'CommentFormCtrl',
+    title: 'Editing comment'
+  });
+
   // Question.
   $routeProvider.when('/questions', {
     templateUrl: 'pages/questions.html',
