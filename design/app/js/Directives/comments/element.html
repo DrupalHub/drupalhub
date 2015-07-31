@@ -9,15 +9,13 @@
 <ul>
   <li ng-repeat="comment in comments" ng-show="comments" class="comment">
     <div class="row">
-      <div class="col-md-2 col-sm-2">
-        <img class="images comments img-responsive" ng-src="{{comment.image}}" />
-        <a href="#/comment/{{comment.id}}/edit" ng-show="comment.access.update">Edit</a>
-      </div>
+      <div class="col-md-2 col-sm-2"><img class="images comments img-responsive" ng-src="{{comment.image}}" /></div>
       <div class="col-md-10 col-sm-10">
         <div class="meta-info">
           <span class="first fa fa-clock-o"></span>{{comment.date}}
           <span class="fa fa-user"></span><span class="author-link" ng-bind-html="comment.author | fullHtml"></span>
           <span flag type="like_comment" likes="{{comment.point}}" entity="comment" id="{{comment.id}}"></span>
+          <span ng-show="comment.access.update" class="fa fa-pencil"><a href="#/comment/{{comment.id}}/edit">Edit</a></span>
 
         </div>
 
