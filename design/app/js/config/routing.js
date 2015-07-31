@@ -24,16 +24,28 @@ DrupalHub.config(function($routeProvider) {
     title: 'Reset password'
   });
 
+  // Comments edit.
+  $routeProvider.when('/comment/:id/edit', {
+    templateUrl: 'pages/forms/comment-edit.html',
+    controller: 'CommentFormCtrl',
+    title: 'Editing comment'
+  });
+
   // Question.
   $routeProvider.when('/questions', {
     templateUrl: 'pages/questions.html',
-    controller: 'questionCtrl',
+    controller: 'questionsCtrl',
     title: 'Questions'
   });
 
   $routeProvider.when('/question/:id', {
     templateUrl: 'pages/question.html',
     controller: 'questionCtrl'
+  });
+
+  $routeProvider.when('/question/:id/edit', {
+    templateUrl: 'pages/forms/add-question.html',
+    controller: 'QuestionFormCtrl'
   });
 
   $routeProvider.when('/add-question', {
@@ -51,13 +63,18 @@ DrupalHub.config(function($routeProvider) {
 
   $routeProvider.when('/blogs', {
     templateUrl: 'pages/blogs.html',
-    controller: 'blogCtrl',
+    controller: 'blogsCtrl',
     title: 'Blogs'
   });
 
   $routeProvider.when('/blog/:id', {
     templateUrl: 'pages/blog.html',
     controller: 'blogCtrl'
+  });
+
+  $routeProvider.when('/blog/:id/edit', {
+    templateUrl: 'pages/forms/add-blog.html',
+    controller: 'BlogFormCtrl'
   });
 
   // Events.
@@ -89,6 +106,11 @@ DrupalHub.config(function($routeProvider) {
   $routeProvider.when('/video/:id', {
     templateUrl: 'pages/video.html',
     controller: 'videoCtrl'
+  });
+
+  $routeProvider.when('/video/:id/edit', {
+    templateUrl: 'pages/forms/add-video.html',
+    controller: 'VideoFormCtrl'
   });
 
   $routeProvider.when('/playlist/:id/:delta', {
@@ -141,6 +163,11 @@ DrupalHub.config(function($routeProvider) {
     templateUrl: 'pages/forms/add-documentation.html',
     controller: 'DocumentationFormCtrl',
     title: 'Sharing information '
+  });
+
+  $routeProvider.when('/documentation/:id/edit', {
+    templateUrl: 'pages/forms/add-documentation.html',
+    controller: 'DocumentationFormCtrl'
   });
 
   $routeProvider.when('/documentation/:id', {

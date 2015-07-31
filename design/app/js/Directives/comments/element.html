@@ -15,6 +15,7 @@
           <span class="first fa fa-clock-o"></span>{{comment.date}}
           <span class="fa fa-user"></span><span class="author-link" ng-bind-html="comment.author | fullHtml"></span>
           <span flag type="like_comment" likes="{{comment.point}}" entity="comment" id="{{comment.id}}"></span>
+          <span ng-show="comment.access.update" class="fa fa-pencil"><a href="#/comment/{{comment.id}}/edit">Edit</a></span>
 
         </div>
 

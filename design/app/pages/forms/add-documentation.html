@@ -28,11 +28,12 @@
         <div class="form-group">
           <label for="inputTags" class="col-sm-1 col-md-2 control-label">Tags</label>
           <div class="col-sm-11 col-md-10">
-            <input type="text"
-                   id="inputTags" placeholder="Tags" ng-model="documentation.tags"
-                   typeahead="result for result in getTags($viewValue)"
-                   typeahead-loading="loadingLocations" class="form-control" required>
-            <i ng-show="loadingLocations" class="fa fa-refresh fa-spin"></i>
+            <ui-select ng-model="documentation.tags" theme="bootstrap" reset-search-input="true">
+              <ui-select-match placeholder="Select catagory">{{$select.selected}}</ui-select-match>
+              <ui-select-choices repeat="tag in tags" refresh="refreshAddresses($select.search)" refresh-delay="0" id="inputTags">
+                <div ng-bind-html="tag | highlight: $select.search"></div>
+              </ui-select-choices>
+            </ui-select>
           </div>
         </div>
 
