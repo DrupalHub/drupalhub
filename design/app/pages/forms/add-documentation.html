@@ -29,7 +29,7 @@
           <label for="inputTags" class="col-sm-1 col-md-2 control-label">Tags</label>
           <div class="col-sm-11 col-md-10">
             <ui-select ng-model="documentation.tags" theme="bootstrap" reset-search-input="true">
-              <ui-select-match placeholder="Enter an address...">{{$select.selected}}</ui-select-match>
+              <ui-select-match placeholder="Select catagory">{{$select.selected}}</ui-select-match>
               <ui-select-choices repeat="tag in tags" refresh="refreshAddresses($select.search)" refresh-delay="0" id="inputTags">
                 <div ng-bind-html="tag | highlight: $select.search"></div>
               </ui-select-choices>

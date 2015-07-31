@@ -11,7 +11,7 @@ DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest,
       var documentation = data.data.data[0];
       $scope.documentation.label = documentation.label;
       $scope.documentation.text = documentation.text;
-      $scope.documentation.tags = documentation.tags.label;
+      $scope.documentation.tags = documentation.tags[0].label;
     });
   }
 

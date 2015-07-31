@@ -15,9 +15,7 @@
             <span class="fa fa-user"></span><span class="author-link" ng-bind-html="documentation.author | fullHtml"></span>
             <span class="fa fa-eye"></span>{{documentation.viewed}}
             <span class="label label-info" ng-repeat="tag in documentation.tags"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
-          </div>
-          <div>
-            <a href="#/documentation/{{documentation.id}}/edit" ng-show="documentation.access.update">Edit</a>
+            <span class="fa fa-pencil" ><a href="#/documentation/{{documentation.id}}/edit" ng-show="documentation.access.update">Edit</a></span>
           </div>
 
           <span ng-bind-html="documentation.text | fullHtml"></span>
