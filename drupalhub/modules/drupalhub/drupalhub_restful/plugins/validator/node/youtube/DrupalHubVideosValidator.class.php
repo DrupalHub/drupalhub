@@ -23,15 +23,24 @@ class DrupalHubVideosValidator extends EntityValidateBase {
    */
   public function validateYouTubeAddress($field_name, $value) {
     $query = new EntityFieldQuery();
-    $results = $query
+    $query
       ->entityCondition('entity_type', 'node')
-      ->fieldCondition('field_address', 'video_url', $value['video_url'])
-      ->execute();
+      ->fieldCondition('field_address', 'video_url', $value['video_url']);
+
+    $menu = menu_get_item();
+
+    if (count($menu['map']) == 3) {
+      // We are editing the video. Exclude the current nid.
+      $query->propertyCondition('nid', $menu['map'][2], '<>');
+    }
+
+    $results = $query->execute();
+
 
     if (empty($results['node'])) {
       return;
     }
 
-    $this->setError($field_name, 'There is already a video with this youtube address.', $params);
+    $this->setError($field_name, 'There is already a video with this youtube address.');
   }
 }

@@ -108,6 +108,11 @@ DrupalHub.config(function($routeProvider) {
     controller: 'videoCtrl'
   });
 
+  $routeProvider.when('/video/:id/edit', {
+    templateUrl: 'pages/forms/add-video.html',
+    controller: 'VideoFormCtrl'
+  });
+
   $routeProvider.when('/playlist/:id/:delta', {
     templateUrl: 'pages/playlist.html',
     controller: 'PlaylistCtrl'

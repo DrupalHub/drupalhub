@@ -1,10 +1,21 @@
-DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http) {
+DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, $location, $routeParams) {
 
   $scope.video = {
     embed: '',
     label: '',
     text: ''
   };
+
+  if ($location.path() != '/add-video') {
+    DrupalHubRequest.localRequest('get', 'video/' + $routeParams['id']).then(function(data) {
+      var video = data.data.data[0];
+
+      $scope.video.label = video.label;
+      $scope.video.text = video.text;
+      $scope.video.embed = "https://www.youtube.com/watch?v=" + video.embed;
+      $scope.getVideoDetails();
+    });
+  }
 
   $scope.getVideoDetails = function() {
     var split = $scope.video.embed.split('v=');
@@ -32,19 +43,28 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http) 
 
   $scope.post = function() {
     $scope.errors = [];
-    DrupalHubRequest.localRequest('post', 'video', $scope.video)
-      .success(function(data) {
-        window.location = '#/video/' + data.data[0].id;
-      })
-      .error(function(data) {
-        if (data.detail == 'Bad Request.') {
-          $scope.errors.push(data.errors.embed[0]);
-        }
-        else {
-          $scope.errors.push(data.title);
-        }
 
-      });
+    var request;
+
+    if ($routeParams['id'] != undefined) {
+      request = DrupalHubRequest.localRequest('patch', 'video/' + $routeParams['id'], $scope.video);
+    }
+    else {
+      request = DrupalHubRequest.localRequest('post', 'video', $scope.video);
+    }
+
+    request.success(function(data) {
+      window.location = '#/video/' + data.data[0].id;
+    })
+    .error(function(data) {
+      if (data.detail == 'Bad Request.') {
+        $scope.errors.push(data.errors.embed[0]);
+      }
+      else {
+        $scope.errors.push(data.title);
+      }
+
+    });
   }
 
 });
