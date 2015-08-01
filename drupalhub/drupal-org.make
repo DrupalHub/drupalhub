@@ -130,6 +130,9 @@ projects[search_api][subdir] = contrib
 projects[search_api_solr][version] = "1.6"
 projects[search_api_solr][subdir] = contrib
 
+projects[video_embed_field][version] = "2.0-beta10"
+projects[video_embed_field][subdir] = contrib
+
 libraries[pusher][type] = "libraries"
 libraries[pusher][download][type] = git
 libraries[pusher][download][url] = "https://github.com/pusher/pusher-http-php.git"
