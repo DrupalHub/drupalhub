@@ -26,14 +26,25 @@ before_script:
   - drush mi --all --user=1
 #
 #  # Minor setup.
-  - drush vset drupalhub_files_available TRUE
-  - drush vset drupalhub_push_notifications TRUE
+  - drush vset drupalhub_files_available 1
+  - drush vset drupalhub_push_notifications 1
   - drush cc all
+
+  # Fire up the server
+  - drush rs &
 
   # Behat setup.
 #  - cd profiles/drupalhub/behat
 #  - cp behat.local.yml.travis behat.local.yml
 #  - bin/behat --init
+
+  # Running the front end.
+  - cd ../design
+
+  - bundle install
+  - npm install
+  - bower install
+  - grunt serve
 
 script:
   - echo 'hello!'
