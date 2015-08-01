@@ -22,13 +22,13 @@ before_script:
   - cd /home/travis/build/DrupalHub/drupalhub/www
 
   # Install and migrate.
-  - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal drupalhub_migrate_content.dummy_content=TRUE drupalhub_migrate_content.he_default_language=FALSE
-  - drush mi --all --user=1
-
-  # Minor setup.
-  - drush vset drupalhub_files_available TRUE
-  - drush vset drupalhub_push_notifications TRUE
-  - drush cc all
+  - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal
+#  - drush mi --all --user=1
+#
+#  # Minor setup.
+#  - drush vset drupalhub_files_available TRUE
+#  - drush vset drupalhub_push_notifications TRUE
+#  - drush cc all
 
   # Behat setup.
 #  - cd profiles/drupalhub/behat
