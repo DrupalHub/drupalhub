@@ -23,7 +23,7 @@ before_script:
 
   # Install and migrate.
   - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal
-#  - drush mi --all --user=1
+  - drush mi --all --user=1
 #
 #  # Minor setup.
 #  - drush vset drupalhub_files_available TRUE
