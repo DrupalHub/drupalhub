@@ -43,10 +43,12 @@ before_script:
   - bundle install
   - npm install
   - bower install
-  - grunt serve
+
+  # Run grnt
+  - grunt serve > ~/grunt.log 2>&1 &
 
 script:
-  - echo 'hello!'
+  - echo 'hello world'
   # Run behat.
 #  - bin/behat --tags=~wip
 
