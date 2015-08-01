@@ -26,9 +26,9 @@ before_script:
   - drush mi --all --user=1
 #
 #  # Minor setup.
-#  - drush vset drupalhub_files_available TRUE
-#  - drush vset drupalhub_push_notifications TRUE
-#  - drush cc all
+  - drush vset drupalhub_files_available TRUE
+  - drush vset drupalhub_push_notifications TRUE
+  - drush cc all
 
   # Behat setup.
 #  - cd profiles/drupalhub/behat
