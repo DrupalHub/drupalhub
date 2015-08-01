@@ -28,6 +28,11 @@ drush si -y drupalhub --account-name=$ADMIN_USERNAME --account-pass=$ADMIN_PASSW
 # Comment out both lines if you wish to have a clean OpenScholar installation.
 drush mi --all --user=1
 
+drush vset drupalhub_files_available TRUE
+drush vset drupalhub_push_notifications TRUE
+drush cc all
+
+
 # This command does the login for you when the build script is done. It will
 # open a new tab in your default browser and login to your project as the
 # Administrator. Comment out this line if you do not want the login to happen
