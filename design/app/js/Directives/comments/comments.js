@@ -1,4 +1,4 @@
-DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, DrupalHubPusher) {
+DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, DrupalHubPusher, dialogs) {
   return {
     restrict: 'AE',
     templateUrl: 'js/Directives/comments/element.html',
@@ -63,6 +63,9 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
           nid: nid
         };
 
+        /**
+         * Posting the comment.
+         */
         $scope.submit = function() {
           $scope.commentsError = '';
           if ($scope.newComment.body == '') {
@@ -79,6 +82,19 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
           }
         };
       });
+
+      /**
+       * Delete the comment.
+       */
+      $scope.deleteComment = function(id, delta) {
+        var dlg = dialogs.confirm('Delete the comment', 'Are you sure you want to delete this comment?');
+
+        dlg.result.then(function() {
+          DrupalHubRequest.localRequest('delete', 'comments/' + id);
+          _.pullAt($scope.comments, delta);
+          dialogs.notify('Deleted', 'The comment has deleted.');
+        });
+      }
     }
   };
 });
