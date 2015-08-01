@@ -90,4 +90,7 @@ function drupalhub_install() {
     ->fields(array('uid' => 1, 'rid' => $admin_role->rid))
     ->execute();
 
+  variable_set('drupalhub_files_available', TRUE);
+  menu_rebuild();
+
 }
