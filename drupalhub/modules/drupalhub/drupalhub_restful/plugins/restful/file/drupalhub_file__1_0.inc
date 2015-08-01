@@ -3,7 +3,6 @@ $plugin = array(
   'label' => t('Drupalhub file upload'),
   'description' => t('A file upload wrapped with RESTful.'),
   'resource' => 'drupalhub_file',
-  'name' => 'drupalhub_file__1_0',
   'class' => 'DrupalHubRestfulFilesUpload',
   'entity_type' => 'file',
   'authentication_types' => TRUE,
