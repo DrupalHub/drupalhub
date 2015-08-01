@@ -5,7 +5,7 @@ projects[admin_menu][subdir] = "contrib"
 projects[admin_menu][version] = 3.0-rc4
 
 projects[ctools][subdir] = "contrib"
-projects[ctools][version] = 1.6
+projects[ctools][version] = 1.7
 
 projects[date][subdir] = "contrib"
 projects[date][version] = 2.8
@@ -108,7 +108,7 @@ projects[restful][subdir] = "contrib"
 projects[restful][download][type] = git
 projects[restful][download][url] = "https://github.com/RESTful-Drupal/restful.git"
 projects[restful][download][branch] = "7.x-1.x"
-projects[restful][download][revision] = "f0f981a8552a8c8b429bce2991d06e551661adff"
+projects[restful][download][revision] = "9dae54204eef0925081abcfaaa20faa6191a3a4c"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0
