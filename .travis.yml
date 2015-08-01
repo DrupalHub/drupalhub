@@ -26,6 +26,7 @@ before_script:
   - drush mi --all --user=1
 #
 #  # Minor setup.
+  - drush cc all
   - drush vset drupalhub_files_available 1
   - drush vset drupalhub_push_notifications 1
   - drush cc all
