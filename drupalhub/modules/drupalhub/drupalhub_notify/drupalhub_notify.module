@@ -11,6 +11,10 @@ include_once('drupalhub_notify.features.inc');
  */
 function drupalhub_notify_entity_insert($entity, $type) {
 
+  if (!variable_get('drupalhub_push_notifications', FALSE)) {
+    return;
+  }
+
   if ($type == 'node') {
 
     if (in_array($entity->type, array('drupalhub_group', 'group_banner', 'playlist', 'project', 'recommendation'))) {
