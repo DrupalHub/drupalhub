@@ -91,6 +91,5 @@ function drupalhub_install() {
     ->execute();
 
   variable_set('drupalhub_files_available', TRUE);
-  menu_rebuild();
-
+  drupal_flush_all_caches();
 }
