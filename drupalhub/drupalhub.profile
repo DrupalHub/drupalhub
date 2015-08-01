@@ -127,6 +127,7 @@ function drupalhub_variables_set() {
       'secret' => '5405552fa65b0fe8cd0a'
     ),
     'drupalhub_default_client_domain' => 'http://127.0.0.1:9000/',
+    'restful_file_upload_allow_anonymous_user' => TRUE,
   );
 
   foreach ($variables as $name => $value) {
