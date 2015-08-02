@@ -1,4 +1,4 @@
-DrupalHub.controller('videoCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope) {
+DrupalHub.controller('videoCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope, dialogs) {
 
   $scope.video = {};
   $scope.youtube = '';
@@ -33,6 +33,19 @@ DrupalHub.controller('videoCtrl', function($scope, DrupalHubRequest, $routeParam
       $scope.other_videos = heap_videos;
       $scope.show_more = !(heap_videos.length == data.count);
       $scope.page++;
+    });
+  };
+
+  /**
+   * Delete the video.
+   */
+  $scope.deleteVideo = function() {
+    var dlg = dialogs.confirm('Delete the video', 'Are you sure you want to delete this video?');
+
+    dlg.result.then(function() {
+      DrupalHubRequest.localRequest('delete', 'video/' + $scope.video.id);
+      dialogs.notify('Deleted', 'The video has deleted.');
+      window.location = "#/";
     });
   };
 });

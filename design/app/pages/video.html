@@ -17,6 +17,8 @@
         <span class="fa fa-eye"></span> {{video.like}}
         <span class="fa fa-thumbs-o-up"></span> {{video.viewed}}
         <span ng-show="video.access.update" class="fa fa-pencil"><a href="#/video/{{video.id}}/edit">Edit</a></span>
+        <span ng-show="video.access.delete" class="fa fa-trash-o"><a ng-click="deleteVideo();">Delete</a></span>
+
       </div>
       <div>
         <div class="text" ng-bind-html="video.text | fullHtml"></div>

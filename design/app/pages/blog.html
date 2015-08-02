@@ -18,7 +18,7 @@
           <span class="fa fa-eye"></span>{{blog.viewed}}
           <span flag type="like" likes="{{blog.like}}" entity="node" id="{{blog.id}}"></span>
           <span ng-show="blog.access.update" class="fa fa-pencil"><a href="#/blog/{{blog.id}}/edit">Edit</a></span>
-
+          <span ng-show="blog.access.delete" class="fa fa-trash-o"><a ng-click="blogQuestion();">Delete</a></span>
         </div>
 
         <span ng-bind-html="blog.text | fullHtml"></span>

@@ -15,7 +15,8 @@ var DrupalHub = angular.module('DrupalHub', [
   'flow',
   'angucomplete-alt',
   'uiGmapgoogle-maps',
-  'ui.select'
+  'ui.select',
+  'dialogs.main'
 ]);
 
 DrupalHub.config(function(uiGmapGoogleMapApiProvider) {
@@ -26,7 +27,6 @@ DrupalHub.config(function(uiGmapGoogleMapApiProvider) {
 });
 
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubPusher) {
-
   DrupalHubPusher.bind('new question',
     function(data) {
       ngToast.create({

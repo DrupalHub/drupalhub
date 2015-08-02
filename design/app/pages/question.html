@@ -18,6 +18,7 @@
           <span class="fa fa-eye"></span>{{question.viewed}}
           <span flag type="like" likes="{{question.like}}" entity="node" id="{{question.id}}"></span>
           <span ng-show="question.access.update" class="fa fa-pencil"><a href="#/question/{{question.id}}/edit">Edit</a></span>
+          <span ng-show="question.access.delete" class="fa fa-trash-o"><a ng-click="deleteQuestion();">Delete</a></span>
           <span ng-repeat="tag in question.tags"><span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span></span>
         </div>
 
