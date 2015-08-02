@@ -2,7 +2,12 @@ DrupalHub.config(function($routeProvider) {
   // Configure the route.
   $routeProvider.when('/', {
     templateUrl: 'pages/index.html',
-    title: 'Home page'
+    title: 'Home page',
+    resolve: {
+      loadMyService: ['$ocLazyLoad', function($ocLazyLoad) {
+        return $ocLazyLoad.load('js/Controllers/frontPage.js');
+      }]
+    }
   });
 
   $routeProvider.when('/register-signin', {
