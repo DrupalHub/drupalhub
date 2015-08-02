@@ -2,177 +2,147 @@ DrupalHub.config(function($routeProvider) {
   // Configure the route.
   $routeProvider.when('/', {
     templateUrl: 'pages/index.html',
-    controller: 'headerCtrl',
     title: 'Home page'
   });
 
   $routeProvider.when('/register-signin', {
     templateUrl: 'pages/forms/login-signup.html',
-    controller: 'loginCtrl',
     title: 'Login/Sign in'
   });
 
   $routeProvider.when('/recover-password', {
     templateUrl: 'pages/forms/recover-password.html',
-    controller: 'recoverCtrl',
     title: 'Recover password'
   });
 
   $routeProvider.when('/reset-password/:access', {
     templateUrl: 'pages/forms/reset-password.html',
-    controller: 'resetPasswordCtrl',
     title: 'Reset password'
   });
 
   // Comments edit.
   $routeProvider.when('/comment/:id/edit', {
     templateUrl: 'pages/forms/comment-edit.html',
-    controller: 'CommentFormCtrl',
     title: 'Editing comment'
   });
 
   // Question.
   $routeProvider.when('/questions', {
     templateUrl: 'pages/questions.html',
-    controller: 'questionsCtrl',
     title: 'Questions'
   });
 
   $routeProvider.when('/question/:id', {
-    templateUrl: 'pages/question.html',
-    controller: 'questionCtrl'
+    templateUrl: 'pages/question.html'
   });
 
   $routeProvider.when('/question/:id/edit', {
-    templateUrl: 'pages/forms/add-question.html',
-    controller: 'QuestionFormCtrl'
+    templateUrl: 'pages/forms/add-question.html'
   });
 
   $routeProvider.when('/add-question', {
     templateUrl: 'pages/forms/add-question.html',
-    controller: 'QuestionFormCtrl',
     title: 'Asking a question'
   });
 
   // Blogs.
   $routeProvider.when('/add-blog', {
     templateUrl: 'pages/forms/add-blog.html',
-    controller: 'BlogFormCtrl',
     title: 'Blogging on something'
   });
 
   $routeProvider.when('/blogs', {
     templateUrl: 'pages/blogs.html',
-    controller: 'blogsCtrl',
     title: 'Blogs'
   });
 
   $routeProvider.when('/blog/:id', {
-    templateUrl: 'pages/blog.html',
-    controller: 'blogCtrl'
+    templateUrl: 'pages/blog.html'
   });
 
   $routeProvider.when('/blog/:id/edit', {
-    templateUrl: 'pages/forms/add-blog.html',
-    controller: 'BlogFormCtrl'
+    templateUrl: 'pages/forms/add-blog.html'
   });
 
   // Events.
   $routeProvider.when('/events', {
     templateUrl: 'pages/events.html',
-    controller: 'eventsCtrl',
     title: 'Upcoming events'
   });
 
   $routeProvider.when('/add-event', {
     templateUrl: 'pages/forms/add-event.html',
-    controller: 'EventFormCtrl',
     title: 'Creating event'
   });
 
   $routeProvider.when('/event/:id', {
-    templateUrl: 'pages/event.html',
-    controller: 'eventCtrl'
+    templateUrl: 'pages/event.html'
   });
 
   // Video.
   $routeProvider.when('/videos', {
     templateUrl: 'pages/videos.html',
-    controller: 'videosCtrl',
     reloadOnSearch: false,
     title: 'Looking for a video'
   });
 
   $routeProvider.when('/video/:id', {
-    templateUrl: 'pages/video.html',
-    controller: 'videoCtrl'
+    templateUrl: 'pages/video.html'
   });
 
   $routeProvider.when('/video/:id/edit', {
-    templateUrl: 'pages/forms/add-video.html',
-    controller: 'VideoFormCtrl'
+    templateUrl: 'pages/forms/add-video.html'
   });
 
   $routeProvider.when('/playlist/:id/:delta', {
-    templateUrl: 'pages/playlist.html',
-    controller: 'PlaylistCtrl'
+    templateUrl: 'pages/playlist.html'
   });
 
   $routeProvider.when('/add-video', {
     templateUrl: 'pages/forms/add-video.html',
-    controller: 'VideoFormCtrl',
     title: 'Submitting a video'
   });
 
   $routeProvider.when('/add-playlist', {
     templateUrl: 'pages/forms/add-playlist.html',
-    controller: 'PlayListFormCtrl',
     title: 'Compiling a playlist'
   });
 
   // User.
   $routeProvider.when('/profile', {
     templateUrl: 'pages/user.html',
-    controller: 'UserProfileCtrl',
     title: 'Watching your profile'
   });
 
   $routeProvider.when('/user/:id', {
-    templateUrl: 'pages/user.html',
-    controller: 'UserProfileCtrl'
+    templateUrl: 'pages/user.html'
   });
 
   $routeProvider.when('/user/edit/:id', {
-    templateUrl: 'pages/forms/edit-user.html',
-    controller: 'UserEditCtrl'
+    templateUrl: 'pages/forms/edit-user.html'
   });
 
   // Documentation.
   $routeProvider.when('/documentations', {
     templateUrl: 'pages/documentations.html',
-    controller: 'documentationsCtrl',
     title: 'All documentations'
   });
 
   $routeProvider.when('/documentations/term/:filter_id', {
-    templateUrl: 'pages/documentations.html',
-    controller: 'documentationsCtrl'
+    templateUrl: 'pages/documentations.html'
   });
 
   $routeProvider.when('/add-documentation', {
     templateUrl: 'pages/forms/add-documentation.html',
-    controller: 'DocumentationFormCtrl',
     title: 'Sharing information '
   });
 
   $routeProvider.when('/documentation/:id/edit', {
-    templateUrl: 'pages/forms/add-documentation.html',
-    controller: 'DocumentationFormCtrl'
+    templateUrl: 'pages/forms/add-documentation.html'
   });
 
   $routeProvider.when('/documentation/:id', {
-    templateUrl: 'pages/documentation.html',
-    controller: 'documentationCtrl'
+    templateUrl: 'pages/documentation.html'
   });
 
   // 404 and other stanz.
