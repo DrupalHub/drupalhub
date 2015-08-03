@@ -1,9 +1,10 @@
-DrupalHub.controller('eventCtrl', function($scope, DrupalHubRequest, $routeParams) {
-  $scope.event = false;
+DrupalHub.controller('eventCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope) {
 
-  DrupalHubRequest.localRequest('get', 'event/' + $routeParams.id).then(function(data) {
-    $scope.event = data.data.data[0];
-  });
+  DrupalHubRequest.localRequest('get', 'event/' + $routeParams.id)
+    .then(function(data) {
+      $scope.event = data.data.data[0];
+      $rootScope.$emit('titleAlter', $scope.event.label);
+    });
 
   $scope.rsvpStatus = 'Unknown';
   $scope.rsvpID = 0;

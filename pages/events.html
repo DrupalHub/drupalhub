@@ -8,8 +8,16 @@
     <div class="col-md-12" ng-controller="eventsCtrl">
 
       <div class="page-header events-header clearfix">
-        <h3>Events</h3>
-        <a href="#/add-event" class="btn btn-success btn-md">Suggest event</a>
+        <div class="row">
+          <div class="col-md-8"><h3>Events</h3></div>
+          <div class="col-md-2"><a href="#/add-event" class="btn btn-success btn-md pull-left">Suggest event</a></div>
+          <div class="col-md-2">
+            <a class="btn btn-info" ng-click="switchEvent()"><span
+              ng-class="{'fa fa-arrow-left': type == 'future', 'fa fa-arrow-right': type != 'future'}"></span>
+              Switch to: {{type == 'future' ? 'past events' : 'future event'}}
+            </a>
+          </div>
+        </div>
       </div>
 
       <div class="events-wrapper clearfix">
@@ -20,6 +28,7 @@
             </div>
           </div>
         </div>
+
         <div class="event row" ng-show="events" ng-repeat="event in events">
           <div class="col-md-10 col-sm-10">
             <div class="content">
@@ -27,7 +36,7 @@
               <div class="meta-info">
                 <span class="first fa fa-clock-o"></span>{{event.date}}
                 <span class="fa fa-map-marker"></span>{{event.human_address}}
-                <span class="fa fa-user"></span>{{event.author}}
+                <span class="fa fa-user"></span><span class="author-link" ng-bind-html="event.author | fullHtml"></span>
                 <span class="fa fa-thumbs-o-up"></span>{{event.like}}
               </div>
               <div>

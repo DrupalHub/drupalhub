@@ -1,0 +1,19 @@
+<section class="form">
+  <form class="form-horizontal" name="userDetailsForm" ng-submit="userNotificationUpdate()">
+    <table class="table table-striped table-hover notifications">
+      <tbody>
+      <tr ng-repeat="notification in notifications">
+        <td>{{notification.label}}</td>
+        <td class="toggle"><i
+          ng-class="{ 'fa fa-toggle-off': notification.value == false, 'fa fa-toggle-on': notification.value == true }"
+          ng-click="notification.value = notification.value ? false : true"
+          ng-model="notification.value"></i></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td><button type="submit" class="btn btn-info pull-right">Submit</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </form>
+</section>

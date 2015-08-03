@@ -16,9 +16,12 @@
         <span class="fa fa-calendar"></span> {{video.date}}
         <span class="fa fa-eye"></span> {{video.like}}
         <span class="fa fa-thumbs-o-up"></span> {{video.viewed}}
+        <span ng-show="video.access.update" class="fa fa-pencil"><a href="#/video/{{video.id}}/edit">Edit</a></span>
+        <span ng-show="video.access.delete" class="fa fa-trash-o"><a ng-click="deleteVideo();">Delete</a></span>
+
       </div>
       <div>
-        {{video.description}}
+        <div class="text" ng-bind-html="video.text | fullHtml"></div>
       </div>
     </div>
 
@@ -27,7 +30,7 @@
         <h2>Comments</h2>
       </div>
 
-      <div drupal-hub-comments></div>
+      <div drupal-hub-comments nid="video.id" type="video"></div>
     </div>
 
     <div class="col-md-4 other-videos">

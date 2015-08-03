@@ -4,7 +4,7 @@
     <li class="active">Questions</li>
   </ul>
 
-  <div class="row" ng-controller="questionCtrl">
+  <div class="row" ng-controller="questionsCtrl">
     <div class="col-md-12">
       <div class="page-header questions-header clearfix"><h3>Questions</h3></div>
 
@@ -22,7 +22,7 @@
                 <span class="fa fa-eye"></span>{{question.viewed}}
                 <span class="fa fa-thumbs-o-up"></span>{{question.like}}
                 <span ng-show="question.tags" ng-repeat="tag in question.tags">
-                  <span class="label label-info"><a href="{{tag.url}}">{{tag.title}}</a></span>
+                  <span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span>
                 </span>
               </div>
               <div class="text" ng-bind-html="question.intro | fullHtml"></div>

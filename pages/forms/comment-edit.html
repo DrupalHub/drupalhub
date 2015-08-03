@@ -1,0 +1,26 @@
+<section class="container form-comment" ng-controller="CommentFormCtrl">
+  <ul class="breadcrumb">
+    <li><a href="#/index.html">Home</a></li>
+    <li class="active">Edit comment</li>
+  </ul>
+
+  <section class="form">
+    <form class="form-horizontal" name="commentForm" ng-submit="FormSubmit()" novalidate>
+      <fieldset>
+        <legend class="comment-header">Editing a comment</legend>
+
+          <div class="form-group">
+            <div class="col-lg-12">
+              <textarea ckeditor="editorOptions" ng-model="comment.text" ng-required class="form-control"  required rows="3" id="textArea"></textarea>
+            </div>
+          </div>
+
+        <div class="form-group">
+          <div class="col-lg-12">
+            <button type="submit" class="btn btn-primary pull-right">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </section>
+</section>

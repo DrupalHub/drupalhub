@@ -1,30 +1,22 @@
-DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
-
-  var path;
-  if ($location.url() == '/') {
-    // Check if the user can post new blogs.
-    $scope.canPostNewBlogs = false;
-    DrupalHubRequest.userAccess('create blog content').success(function(data) {
-      $scope.canPostNewBlogs = data.data.access;
-    });
-
-    path = 'blog?range=5';
-  }
-  else {
-    path = 'blog';
-    if ($routeParams['id']) {
-      path += '/' + $routeParams['id'];
-    }
-  }
-
+DrupalHub.controller('blogCtrl', function($scope, DrupalHubRequest, $location, $routeParams, $rootScope, dialogs) {
 
   // Get the blogs.
   $scope.blogs = {};
-  $scope.waiting = true;
 
-  DrupalHubRequest.localRequest('get', path).success(function(data) {
-    $scope.blogs = $routeParams['id'] ? data.data[0] : data.data;
-    $scope.waiting = false;
+  DrupalHubRequest.localRequest('get', 'blog/' + $routeParams['id']).success(function(data) {
+    $scope.blog = data.data[0];
+    $rootScope.$emit('titleAlter', data.data[0].label);
   });
+
+  // Delete the blog.
+  $scope.blogQuestion = function() {
+    var dlg = dialogs.confirm('Delete the blog', 'Are you sure you want to delete this blog?');
+
+    dlg.result.then(function() {
+      DrupalHubRequest.localRequest('delete', 'blog/' + $scope.blog.id);
+      dialogs.notify('Deleted', 'The blog has deleted.');
+      window.location = "#/";
+    });
+  };
 
 });

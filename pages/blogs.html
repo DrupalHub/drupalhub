@@ -5,7 +5,7 @@
   </ul>
 
   <div class="row">
-    <div class="col-md-12" ng-controller="blogCtrl">
+    <div class="col-md-12" ng-controller="blogsCtrl">
 
       <div class="page-header blog-header clearfix"><h3>Blogs</h3></div>
 
@@ -17,7 +17,7 @@
               <a href="{{blog.url}}">{{blog.label}}</a>
               <div class="meta-info">
                 <span class="first fa fa-clock-o"></span>{{blog.date}}
-                <span class="fa fa-user"></span>{{blog.author}}
+                <span class="fa fa-user"></span><span class="author-link" ng-bind-html="blog.author | fullHtml"></span>
                 <span class="fa fa-eye"></span>{{blog.viewed}}
                 <span class="fa fa-thumbs-o-up"></span>{{blog.like}}
               </div>

@@ -2,7 +2,7 @@
 
   <ul class="breadcrumb">
     <li><a href="#/">Home</a></li>
-    <li><a href="#/events">Calendar</a></li>
+    <li><a href="#/events">Events</a></li>
     <li class="active">{{event.label}}</li>
   </ul>
 
@@ -69,7 +69,7 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <ul class="data">
           <li class="first">
-            <div drupalhub-map latitude="event.latitude" longitude="event.longitude" address="event.google_address"></div>
+            <div drupalhub-map event="event"></div>
           </li>
           <li><i class="fa fa-map-marker"></i> {{event.human_address}}</li>
           <li class="last"><i class="fa fa-clock-o"></i> {{event.date}}</li>
@@ -81,7 +81,7 @@
           <h2>Comments</h2>
         </div>
 
-        <div drupal-hub-comments></div>
+        <div drupal-hub-comments nid="event.id" type="event"></div>
       </section>
     </div>
   </section>

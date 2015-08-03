@@ -1,31 +1,20 @@
-DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
+DrupalHub.controller('questionCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope, dialogs) {
 
-  var path = $location.path();
-  var endpoint;
-
-  // Determine if the user can ask a question.
-  $scope.showNewQuestion = false;
-
-  DrupalHubRequest.userAccess('create question content').success(function(data) {
-    $scope.showNewQuestion = data.data.access;
+  DrupalHubRequest.localRequest('get', 'question/' + $routeParams['id'] + '?add_view=add').then(function(data) {
+    $scope.question = data.data.data[0];
+    $rootScope.$emit('titleAlter', $scope.question.label);
   });
 
-  if (path != '/add-question') {
-    endpoint = $location.path() != '/questions' ? 'question?range=5' : 'question';
-  }
-  else {
-    endpoint = 'question/' + $routeParams['id'] + '?add_view=add';
-  }
+  /**
+   * Delete the question.
+   */
+  $scope.deleteQuestion = function() {
+    var dlg = dialogs.confirm('Delete the question', 'Are you sure you want to delete this question?');
 
-  $scope.waiting = true;
-  DrupalHubRequest.localRequest('get', endpoint).
-    success(function(data) {
-      if (['/', '/questions'].indexOf(path) != -1) {
-        $scope.questions = data.data;
-      }
-      else {
-        $scope.question = data.data[0];
-      }
-      $scope.waiting = false;
+    dlg.result.then(function() {
+      DrupalHubRequest.localRequest('delete', 'question/' + $scope.question.id);
+      dialogs.notify('Deleted', 'The question has deleted.');
+      window.location = "#/";
     });
+  };
 });

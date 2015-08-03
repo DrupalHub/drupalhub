@@ -1,26 +1,16 @@
-DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest) {
-  $scope.loadingLocations = false;
-  $scope.getTags = function(val) {
+DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
+  $scope.tags = [];
+  $scope.refreshAddresses = function(address) {
+    return DrupalHubRequest.localRequest('get', 'tags?autocomplete[string]=' + address).then(function(response) {
 
-    var split = val.split(',').map(function(n) {
-      return n.trim();
-    });
+      var ret = [];
 
-    return DrupalHubRequest.localRequest('get', 'tags?autocomplete[string]=' + _.last(split).trim())
-      .then(function(response) {
-
-        var results = [];
-
-        angular.forEach(response.data.data, function(value, key) {
-
-          if (split.indexOf(value) == -1) {
-            results.push(value);
-          }
-
-        });
-
-        return _.unique(results);
+      angular.forEach(response.data.data, function(value, key) {
+        ret.push(value);
       });
+
+      $scope.tags = ret;
+    });
   };
 
   $scope.question = {
@@ -28,6 +18,21 @@ DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest) {
     tags: '',
     text: ''
   };
+
+  if ($location.path() != '/add-question') {
+    DrupalHubRequest.localRequest('get', 'question/' + $routeParams['id']).then(function(data) {
+      var question = data.data.data[0];
+
+      var tags = [];
+      angular.forEach(question.tags, function(value) {
+        tags.push(value.label);
+      });
+
+      $scope.question.label = question.label;
+      $scope.question.tags = tags;
+      $scope.question.text = question.text;
+    });
+  }
 
   $scope.question.askQuestion = function() {
     $scope.titleError = false;
@@ -42,10 +47,18 @@ DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest) {
     }
 
     if ($scope.questionForm.$valid) {
-      DrupalHubRequest.localRequest('post', 'question', $scope.question).
-        success(function(data) {
-          window.location = "#/question/" + data.data[0].id;
-        });
+      var request;
+
+      if ($routeParams['id'] != undefined) {
+        request = DrupalHubRequest.localRequest('PATCH', 'question/' + $routeParams['id'], $scope.question);
+      }
+      else {
+        request = DrupalHubRequest.localRequest('post', 'question', $scope.question);
+      }
+
+      request.success(function(data) {
+        window.location = "#/question/" + data.data[0].id;
+      })
     }
   }
 });
