@@ -1,7 +1,1 @@
-<div class="text-center clearfix">
-  <ul class="pagination">
-    <li ng-class="{ 'active': $index == currentPage }" ng-repeat="n in pages track by $index" ng-init="page=$index + 1">
-      <a href="#" ng-click="$event.preventDefault($index); loadPage(page);">{{page}}</a>
-    </li>
-  </ul>
-</div>
+<div class="text-center clearfix"><ul class="pagination"><li ng-class="{ 'active': $index == currentPage }" ng-repeat="n in pages track by $index" ng-init="page=$index + 1"><a href="#" ng-click="$event.preventDefault($index); loadPage(page);">{{page}}</a></li></ul></div>

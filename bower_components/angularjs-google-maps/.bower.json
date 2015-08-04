@@ -16,6 +16,7 @@
     "commit": "846dba1cc093fc1cb7d1580b1a91aa7c39e32bda"
   },
   "_source": "git://github.com/jvandemo/angularjs-google-maps.git",
-  "_target": "0.4.0",
-  "_originalSource": "angularjs-google-maps"
+  "_target": "~0.4.0",
+  "_originalSource": "angularjs-google-maps",
+  "_direct": true
 }
