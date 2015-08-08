@@ -50,8 +50,8 @@
 
           <ul>
             <li ng-repeat="event in assets.events" ng-cloak="events">
-              <b><a href="{{event.url}}">{{event.label}}</a></b> - {{event.intro}}<br />
-              {{event.start}} - {{event.end}}, {{event.human_address}}.
+              <b><a href="{{event.url}}">{{event.label}}</a></b> - {{event.start}} <span ng-show="event.end">- {{event.end}}</span><span ng-show="event.human_address">, {{event.human_address}}.</span>
+              <div class="text" ng-bind-html="event.intro | fullHtml"></div><br />
             </li>
           </ul>
           <div class="text-center" ng-show="waiting">

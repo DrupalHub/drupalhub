@@ -112,7 +112,7 @@
   <div class="navbar navbar-default navbar-fixed-top" ng-controller="headerCtrl">
     <div class="container">
       <div class="navbar-header ">
-        <img src="img/logo.png" />
+        <a href="#/"><img src="img/logo.png" /></a>
         <a href="#/" class="navbar-brand">DrupalHub</a>
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
           <span class="icon-bar"></span>
@@ -122,9 +122,9 @@
       </div>
       <div class="navbar-collapse collapse" id="navbar-main">
         <ul class="nav navbar-nav inner-pages">
-          <li class="calendar"><a href="#events" class="fa fa-calendar-o">Events</a></li>
-          <li class="videos"><a href="#videos" class="fa fa-youtube-play">Videos</a></li>
-          <li class="documentation"><a href="#documentations" class="fa fa-book">Documentation</a></li>
+          <li class="calendar"><a href="#events" class="fa fa-calendar-o" data-toggle="collapse" data-target=".navbar-collapse">Events</a></li>
+          <li class="videos"><a href="#videos" class="fa fa-youtube-play" data-toggle="collapse" data-target=".navbar-collapse">Videos</a></li>
+          <li class="documentation"><a href="#documentations" class="fa fa-book" data-toggle="collapse" data-target=".navbar-collapse">Documentation</a></li>
         </ul>
 
         <form class="navbar-form navbar-left visible-lg" role="search">
@@ -161,7 +161,6 @@
     <a class="fa fa-facebook" href="http://www.facebook.com/roy.segall"></a>
     <a class="fa fa-twitter" href="http://www.twitter.com/RoySegall"></a>
   </section>
-
 
 </body>
 </html>
