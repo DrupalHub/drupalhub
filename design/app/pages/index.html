@@ -14,10 +14,10 @@
         <div class="questions-wrapper clearfix">
           <div ng-repeat="question in assets.question">
             <div class="question row">
-              <div class="col-md-2 col-sm-2 col-xs-2">
+              <div class="col-md-2 col-sm-3 hidden-xs">
                 <img ng-src="{{question.image}}" class="images img-responsive question" />
               </div>
-              <div class="col-md-10 col-sm-10 col-xs-8">
+              <div class="col-md-10 col-sm-9 col-xs-12">
                 <div class="content">
                   <a href="{{question.url}}">{{question.label}}</a>
                   <div class="meta-info">
@@ -43,7 +43,7 @@
           </div>
         </div>
       </div>
-      <div class="col-md-4 second">
+      <div class="col-md-4 col-xs-12 second">
 
         <div class="events">
           <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
@@ -98,8 +98,8 @@
 
         <div class="blogs-wrapper clearfix">
           <div class="blog row" ng-show="assets.blog" ng-repeat="blog in assets.blog">
-            <div class="col-md-2 col-sm-2 col-xs-2"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
-            <div class="col-md-10 col-sm-10 col-xs-10">
+            <div class="col-md-2 col-sm-3 hidden-xs"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
+            <div class="col-md-10 col-sm-9 col-xs-12">
               <div class="content">
                 <a href="{{blog.url}}">{{blog.label}}</a>
                 <div class="meta-info">

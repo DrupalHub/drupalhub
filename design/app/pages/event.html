@@ -1,4 +1,4 @@
-<section class="container page-event" ng-controller="eventsCtrl" ng-show="event">
+<section class="container page-event" ng-controller="eventCtrl" ng-show="event">
 
   <ul class="breadcrumb">
     <li><a href="#/">Home</a></li>
@@ -22,11 +22,11 @@
               <ul>
                 <li ng-repeat="user in event.rsvp.coming">
                   <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-6"><img class="images event img-responsive" ng-src="{{user.image}}" /></div>
-                    <div class="col-md-9 col-sm-6 col-xs-6">{{user.name}}</div>
+                    <div class="col-md-2 col-sm-3 hidden-xs"><img class="images event img-responsive" ng-src="{{user.image}}" /></div>
+                    <div class="col-md-9 col-sm-6 col-xs-12">{{user.name}}</div>
                   </div>
                 </li>
-                <li ng-show="!event.rsvp.coming" class="text-center">
+                <li ng-show="event.rsvp.coming == null" class="text-center">
                   No one is coming. Why don't you join in?
                   <button class="btn btn-success" ng-click="rsvp('coming')">I'll join!</button>
                 </li>
@@ -36,8 +36,8 @@
               <ul>
                 <li ng-repeat="user in event.rsvp.maybe">
                   <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-6"><img class="images event img-responsive" ng-src="{{user.image}}" /></div>
-                    <div class="col-md-9 col-sm-6 col-xs-6">{{user.name}}</div>
+                    <div class="col-md-2 col-sm-3 hidden-xs"><img class="images event img-responsive" ng-src="{{user.image}}" /></div>
+                    <div class="col-md-9 col-sm-6 col-xs-12">{{user.name}}</div>
                   </div>
                 </li>
               </ul>
@@ -46,8 +46,8 @@
               <ul>
                 <li ng-repeat="user in event.rsvp.not">
                   <div class="row">
-                    <div class="col-md-3 col-sm-6 col-xs-6"><img class="images event img-responsive" ng-src="{{user.image}}" /></div>
-                    <div class="col-md-9 col-sm-6 col-xs-6">{{user.name}}</div>
+                    <div class="col-md-2 col-sm-3 hidden-xs"><img class="images event img-responsive" ng-src="{{user.image}}" /></div>
+                    <div class="col-md-9 col-sm-6 col-xs-12">{{user.name}}</div>
                   </div>
                 </li>
               </ul>
@@ -75,15 +75,15 @@
           <li class="last"><i class="fa fa-clock-o"></i> {{event.date}}</li>
         </ul>
       </div>
-
-      <section class="comments">
-        <div class="page-header events-header clearfix">
-          <h2>Comments</h2>
-        </div>
-
-        <div drupal-hub-comments nid="event.id" type="event"></div>
-      </section>
     </div>
+  </section>
+
+  <section class="comments">
+    <div class="page-header events-header clearfix">
+      <h2>Comments</h2>
+    </div>
+
+    <div drupal-hub-comments nid="event.id" type="event"></div>
   </section>
 
 </section>

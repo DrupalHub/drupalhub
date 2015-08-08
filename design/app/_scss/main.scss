@@ -64,24 +64,6 @@ body {
     }
   }
 
-  .navbar-collapse.in {
-
-    .navbar-nav {
-      margin: 0 -15px;
-
-      &.secondary-menu {
-        float: left;
-      }
-    }
-
-    .account {
-
-      .btn-group {
-        padding: 0px 15px;
-      }
-    }
-  }
-
   .page-header {
     margin-top: 15px;
   }
@@ -131,3 +113,5 @@ body {
     }
   }
 }
+
+@import "responsive";
