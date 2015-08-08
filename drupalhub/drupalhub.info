@@ -59,6 +59,7 @@ dependencies[] = search_api_solr
 dependencies[] = token
 dependencies[] = geolocation_googlemaps
 dependencies[] = video_embed_field
+dependencies[] = votingapi
 dependencies[] = token
 
 ; DrupalHub

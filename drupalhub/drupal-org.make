@@ -118,6 +118,9 @@ projects[views][version] = 3.10
 
 projects[views_bulk_operations][subdir] = "contrib"
 
+projects[votingapi][subdir] = "contrib"
+projects[votingapi][version] = "2.12"
+
 projects[token][subdir] = "contrib"
 projects[token][version] = 1.6
 
