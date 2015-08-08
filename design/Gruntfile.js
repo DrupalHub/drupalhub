@@ -359,6 +359,7 @@ module.exports = function (grunt) {
         constants: {
           Config: {
             'backend': 'http://localhost/drupalhub/www/api/',
+            'front': 'http://0.0.0.0:9000',
             'pusher_key': '46b578a29d7e3df90f07',
             'pusher_channel': 'drupalhub_drupalhub'
           }
@@ -371,6 +372,7 @@ module.exports = function (grunt) {
         constants: {
           Config: {
             'backend': 'http://dev-drupalhub.gotpantheon.com/api/',
+            'front': 'http://drupalhub.github.io/drupalhub',
             'pusher_key': '46b578a29d7e3df90f07',
             'pusher_channel': 'drupalhub_drupalhub'
           }
