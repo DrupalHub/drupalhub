@@ -11,17 +11,21 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12 tags">
-      <span class="label label-info tag" ng-repeat="tag in documentation_tags"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
+    <div class="tags">
+      <div class="col-md-12">
+        <div ng-repeat="tag in documentation_tags">
+          <span class="label label-info tag"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
+        </div>
+      </div>
     </div>
   </div>
 
   <div class="documentation-list" ng-show="documentations">
     <div class="row" ng-repeat="documentation in documentations">
-      <div class="col-md-1 col-xs-3 col-sm-3">
+      <div class="col-md-1 col-sm-3 col-xs-3">
         <img class="images blog img-responsive" ng-src="{{documentation.image}}" />
       </div>
-      <div class="col-md-11 col-xs-9 col-sm-9">
+      <div class="col-md-11 col-sm-9 col-xs-9">
         <a href="{{documentation.url}}">{{documentation.label}}</a>
         <span class="label label-info" ng-repeat="tag in documentation.tags"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
         <div class="meta-info">

@@ -9,8 +9,8 @@
 <ul>
   <li ng-repeat="(key, comment) in comments" ng-show="comments" class="comment">
     <div class="row">
-      <div class="col-md-2 col-sm-2"><img class="images comments img-responsive" ng-src="{{comment.image}}" /></div>
-      <div class="col-md-10 col-sm-10">
+      <div class="col-md-2 col-sm-3 hidden-xs"><img class="images comments img-responsive" ng-src="{{comment.image}}" /></div>
+      <div class="col-md-10 col-sm-9 col-xs-12">
         <div class="meta-info">
           <span class="first fa fa-clock-o"></span>{{comment.date}}
           <span class="fa fa-user"></span><span class="author-link" ng-bind-html="comment.author | fullHtml"></span>

@@ -3,8 +3,8 @@
     <span class="dropdown-toggle fa fa-user" dropdown-toggle ng-disabled="disabled" ng-cloak="userName">{{userName}} <span class="caret"></span></span>
 
     <ul class="dropdown-menu" role="menu">
-    <li><a href="#/profile">Profile</a></li>
-    <li><a href='#/' ng-click="$event.preventDefault(); logout()">Logout</a></li>
+    <li><a href="#/profile" data-toggle="collapse" data-target=".navbar-collapse">Profile</a></li>
+    <li><a href='#/' ng-click="$event.preventDefault(); logout()" data-toggle="collapse" data-target=".navbar-collapse">Logout</a></li>
     </ul>
   </div>
 </div>

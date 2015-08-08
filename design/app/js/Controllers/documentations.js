@@ -1,12 +1,6 @@
 DrupalHub.controller('documentationsCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
   var page = $location.search().page == undefined ? 1 : $location.search().page;
 
-  console.log($routeParams);
-
-  if ($routeParams['filter_id'] != undefined) {
-    console.log($routeParams['filter_id']);
-  }
-
   var filter = $routeParams['filter_id'] != undefined ? '&filter[tags]=' + $routeParams['filter_id'] : '';
 
   $scope.endpoint = 'wiki?range=5&page=' + page + filter;
