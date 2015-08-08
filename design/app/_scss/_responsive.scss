@@ -67,4 +67,26 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
       }
     }
   }
+
+  .page-videos {
+
+    .video-wrapper,
+    .playlist-wrapper {
+      text-align: center;
+
+      .image {
+        margin: 0px auto;
+      }
+    }
+  }
+
+  .page-events {
+
+    .events-header {
+
+      .btn {
+        float: none;
+      }
+    }
+  }
 }

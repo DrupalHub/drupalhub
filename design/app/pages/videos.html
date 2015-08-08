@@ -23,9 +23,10 @@
 
             <div ng-if="$index % 4 == 0" class="clearfix"></div>
 
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-12 col-xs-12">
               <div class="video-wrapper">
-                <a href="{{video.url}}">{{video.label | limitTo: 35}}</a>
+                <a href="{{video.url}}" class="hidden-sm hidden-xs">{{video.label | limitTo: 35}}</a>
+                <a href="{{video.url}}" class="visible-sm visible-xs">{{video.label}}</a>
                 <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
                 <div class="meta-info">
                   <span class="first fa fa-clock-o"></span>{{video.duration}}
@@ -54,7 +55,7 @@
 
       <section class="playlist clearfix">
         <div class="row">
-          <div ng-repeat="playlist in playlists" class="col-md-3 playlist-wrapper">
+          <div ng-repeat="playlist in playlists" class="col-md-3 col-sm-12 col-xs-12 playlist-wrapper">
 
             <div ng-if="$index % 4 == 0" class="clearfix"></div>
 

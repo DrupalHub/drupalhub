@@ -39,10 +39,10 @@
       <div class="row">
         <ul>
           <li class="clearfix" ng-repeat="other_video in other_videos" ng-show="other_videos">
-            <div class="col-md-3">
+            <div class="col-md-3 col-sm-3 hidden-xs">
               <a href="{{other_video.url}}"><img class="img-responsive image" src="{{other_video.image}}" /></a>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 col-sm-9 col-xs-12">
               <a href="{{other_video.url}}">{{other_video.label}}</a>
               <div class="meta-info">
                 <span class="fa fa-clock-o"></span> {{other_video.duration}}
