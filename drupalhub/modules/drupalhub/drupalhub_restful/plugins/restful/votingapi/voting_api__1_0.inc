@@ -10,4 +10,6 @@ $plugin = array(
   ),
   'description' => t('Expose the content along with the author name.'),
   'class' => 'VotingAPIDrupalHub',
+  'authentication_types' => TRUE,
+  'authentication_optional' => TRUE,
 );

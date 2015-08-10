@@ -26,4 +26,21 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
     return $public_fields;
   }
 
+  public function create() {
+    $request = $this->getRequest();
+    static::cleanRequest($request);
+
+    foreach (array('entity_type', 'entity_id', 'value') as $required) {
+      if (empty($request[$required])) {
+        throw new \RestfulBadRequestException(format_string('The field @field cannot be empty.', array('@field' => $required)));
+      }
+    }
+
+    if (!in_array($request['value'], array(-1, 1))) {
+      throw new \RestfulBadRequestException('The value need to be between -1 or 1.');
+    }
+
+    return parent::create();
+  }
+
 }
