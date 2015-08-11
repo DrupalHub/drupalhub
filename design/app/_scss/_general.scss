@@ -194,11 +194,24 @@ span.author-link {
 
   div {
     display: inline-block;
+    font-size: 20px;
 
-    &.point {
-      padding-right: 5px;
-      font-size: 20px;
+
+    .vote {
+
+      &.up {
+        &:hover,
+        &:active {
+          color: #55d24b;
+        }
+      }
+
+      &.down {
+        &:hover,
+        &:active {
+          color: #d2423e;
+        }
+      }
     }
   }
-
 }
