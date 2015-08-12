@@ -20,6 +20,13 @@ class DrupalHubQuestion extends \DrupalHubRestfulNode {
       ),
     );
 
+    $public_fields['vote'] = array(
+      'property' => 'nid',
+      'process_callbacks' => array(
+        array($this, 'processVotes'),
+      ),
+    );
+
     return $public_fields;
   }
 
@@ -51,6 +58,21 @@ class DrupalHubQuestion extends \DrupalHubRestfulNode {
     }
 
     $wrapper->field_tags->set($tids);
+  }
+
+  public function processVotes($id) {
+    $query = db_select('votingapi_vote', 'v')
+      ->fields('v')
+      ->condition('entity_type', $this->getEntityType())
+      ->condition('entity_id', $id);
+
+    $query->addExpression('SUM(value)', 'sum_value');
+
+    $rows = $query
+      ->execute()
+      ->fetchAssoc();
+
+    return $rows['sum_value'];
   }
 
 }
