@@ -13,6 +13,18 @@ DrupalHub.directive('drupalhubUpDown', function(DrupalHubRequest, $location) {
        * Vote against up or down.
        */
       $scope.vote = function(type) {
+        var object = {
+          entity_type: $scope.type,
+          entity_id: $scope.id,
+          value: type == 'up' ? 1 : -1
+        };
+        DrupalHubRequest.localRequest('post', 'voting_api', object)
+          .success(function(data) {
+            console.log(data, 'bar');
+          })
+          .error(function(data) {
+            console.log(data, 'foo');
+          });
       };
     }
   };
