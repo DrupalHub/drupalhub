@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="messages">
+    <div ng-repeat="(type, messages) in types" ng-show="messages.length != 0" class="alert alert-dismissible alert-{{type}}">
+      <button type="button" class="close" data-dismiss="alert">×</button>
+      <div ng-repeat="message in messages">{{message}}</div>
+    </div>
+  </div>
+
+</div>
