@@ -93,6 +93,7 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
       ->fields('v')
       ->condition('entity_type', $this->request['entity_type'])
       ->condition('entity_id', $this->request['entity_id'])
+      ->condition('uid' , $this->account->uid)
       ->execute()
       ->fetchAssoc();
 
@@ -106,6 +107,17 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
       ->condition('vote_id', $row['vote_id'])
       ->execute();
     }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function mapDbRowToPublicFields($row) {
+    $parent = parent::mapDbRowToPublicFields($row);
+
+    $parent['new_value'] = \DrupalHubEntityBase::processEntityVotes($parent['entity_id'], $parent['entity_type']);
+
+    return $parent;
   }
 
 }

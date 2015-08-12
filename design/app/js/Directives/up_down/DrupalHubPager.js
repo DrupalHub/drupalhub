@@ -20,7 +20,7 @@ DrupalHub.directive('drupalhubUpDown', function(DrupalHubRequest, $location) {
         };
         DrupalHubRequest.localRequest('post', 'voting_api', object)
           .success(function(data) {
-            console.log(data, 'bar');
+            $scope.points = data.data[0].new_value;
           })
           .error(function(data) {
             console.log(data, 'foo');

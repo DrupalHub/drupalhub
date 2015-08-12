@@ -119,9 +119,42 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
     return drupalhub_users_user_picture($author, 'thumbnail');
   }
 
-  protected function processPoint($cid) {
-    // todo: do.
-    return 0;
+  /**
+   * Process callback for the entity points.
+   *
+   * @param $id
+   *   The entity ID.
+   *
+   * @return int
+   */
+  public function processVotes($id) {
+    return self::processEntityVotes($id, $this->getEntityType());
+  }
+
+  /**
+   * Check how many points the entity have.
+   *
+   * @param $id
+   *   The entity ID.
+   * @param $entity_type
+   *   The entity type.
+   *
+   * @return integer
+   *   The final points the entity have.
+   */
+  public static function processEntityVotes($id, $entity_type) {
+    $query = db_select('votingapi_vote', 'v')
+      ->fields('v')
+      ->condition('entity_type', $entity_type)
+      ->condition('entity_id', $id);
+
+    $query->addExpression('SUM(value)', 'sum_value');
+
+    $rows = $query
+      ->execute()
+      ->fetchAssoc();
+
+    return $rows['sum_value'] == null ? 0 : $rows['sum_value'];
   }
 
 }
