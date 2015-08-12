@@ -8,6 +8,20 @@
 class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \RestfulDataProviderDbQueryInterface {
 
   /**
+   * @var String
+   *
+   * The type of the vote.
+   */
+  private $type;
+
+  /**
+   * @var \StdClass
+   *
+   * The user object.
+   */
+  private $account;
+
+  /**
    * {@inheritdoc}
    */
   public function publicFieldsInfo() {
@@ -40,6 +54,8 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
       throw new \RestfulBadRequestException('The value need to be between -1 or 1.');
     }
 
+    $this->request['uid'] = $this->getAccount()->uid;
+
     $this->processRequest();
 
     return parent::create();
@@ -49,20 +65,47 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
    * Checking a couple of things before creating the vote.
    */
   private function processRequest() {
-    $account = $this->getAccount();
+    $this->account = $this->getAccount();
 
     // Check what's the type of the request.
-    $type = $this->request['value'] == 1 ? 'up' : 'down';
+    $this->type = $this->request['value'] == 1 ? 'up' : 'down';
 
     $this->checkIfUserCanVote();
     $this->checkIfTypeHasCommitted();
   }
 
+  /**
+   * User can vote up or down from a certain amount of point. We need to check
+   * it.
+   */
   private function checkIfUserCanVote() {
-    
+
   }
 
+  /**
+   * Check if the user already did this voted up or down. If voted up already
+   * then he cannot vote again. The same goes for voting down. If the user
+   * voted up and voting down we need to remove the old vote and create the new
+   * one.
+   */
   private function checkIfTypeHasCommitted() {
+    $row = db_select('votingapi_vote', 'v')
+      ->fields('v')
+      ->condition('entity_type', $this->request['entity_type'])
+      ->condition('entity_id', $this->request['entity_id'])
+      ->execute()
+      ->fetchAssoc();
+
+    $args['@type'] = $this->type;
+
+    if ($row['value'] == $this->request['value']) {
+      throw new \RestfulBadRequestException(format_string('You cannot vote @type again for this entry', $args));
+    }
+    else {
+      db_delete('votingapi_vote')
+      ->condition('vote_id', $row['vote_id'])
+      ->execute();
+    }
   }
 
 }

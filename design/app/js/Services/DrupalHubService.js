@@ -26,7 +26,7 @@ DrupalHub.factory('DrupalHubRequest', function($http, Config, localStorageServic
   DrupalHubSvc.localRequest = function(method, address, data) {
     return $http({
       method: method,
-      url: Config.backend + address,
+      url: Config.backend + address + '?XDEBUG_SESSION_START=12295',
       data: data,
       headers: {
         'access-token': DrupalHubSvc.accessToken,
