@@ -1,13 +1,17 @@
 /**
  * Sign up controller.
  */
-DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope) {
+DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope, vcRecaptchaService) {
 
   $scope.user = {
     mail: '',
     label: '',
     pass: '',
     pass2: ''
+  };
+
+  $scope.model = {
+    key: '6Le8PAsTAAAAAElF_dS-x94G9TRRPrU4qf59usSh'
   };
 
   $scope.RegisterSuccess = false;
