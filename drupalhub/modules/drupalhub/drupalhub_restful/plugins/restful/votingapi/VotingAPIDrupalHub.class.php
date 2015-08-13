@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains RestfulExampleNodeUserResource.
+ * Contains VotingAPIDrupalHub.
  */
 
 class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \RestfulDataProviderDbQueryInterface {
@@ -79,7 +79,23 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
    * it.
    */
   private function checkIfUserCanVote() {
+    $wrapper = entity_metadata_wrapper('user', $this->account);
+    $points = $wrapper->field_reputation->value();
 
+    if (user_access('can bypass vote limitation', $this->account)) {
+      // This user can by pass the voting limitation.
+      return;
+    }
+
+    // todo: add those variables as something to set in the admin.
+
+    if ($this->type == 'down' && variable_get('drupalhub_min_points_downvote', 20) < 20) {
+      // User under 20 points cannot vote against something.
+    }
+
+    if ($this->type == 'up' && variable_get('drupalhub_max_points_downvote', 20) < 5) {
+      // User with less than 5 points cannot vote for a question.
+    }
   }
 
   /**

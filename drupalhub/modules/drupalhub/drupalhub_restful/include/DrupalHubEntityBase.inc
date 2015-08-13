@@ -156,5 +156,4 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
 
     return $rows['sum_value'] == null ? 0 : $rows['sum_value'];
   }
-
 }
