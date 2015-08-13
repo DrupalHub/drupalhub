@@ -17,6 +17,14 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
   $scope.RegisterSuccess = false;
 
   $scope.register = function() {
+    if (vcRecaptchaService.getResponse() === "") { //if string is empty
+      alert("Please resolve the captcha and submit!")
+    }
+    else {
+      // todo request a restful handler for validate captcha.
+      vcRecaptchaService.getResponse();
+    }
+
     $scope.errors = {
       mail: '',
       label: '',
