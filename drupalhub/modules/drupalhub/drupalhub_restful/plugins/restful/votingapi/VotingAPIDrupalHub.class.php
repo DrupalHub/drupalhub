@@ -58,7 +58,11 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
 
     $this->processRequest();
 
-    return parent::create();
+    $results = parent::create();
+
+    module_invoke_all('drupalhub_vote', $results[0], $this->account);
+
+    return $results;
   }
 
   /**
@@ -93,7 +97,7 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
       // User under 20 points cannot vote against something.
     }
 
-    if ($this->type == 'up' && variable_get('drupalhub_max_points_downvote', 20) < 5) {
+    if ($this->type == 'up' && variable_get('drupalhub_min_points_upvote', 20) < 5) {
       // User with less than 5 points cannot vote for a question.
     }
   }
