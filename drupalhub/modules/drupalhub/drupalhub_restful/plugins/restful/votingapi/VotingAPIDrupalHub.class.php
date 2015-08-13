@@ -86,19 +86,23 @@ class VotingAPIDrupalHub extends \RestfulDataProviderDbQuery implements \Restful
     $wrapper = entity_metadata_wrapper('user', $this->account);
     $points = $wrapper->field_reputation->value();
 
+    if (!$this->account->uid) {
+      throw new \RestfulBadRequestException("Anonymous users can't vote. Please login.");
+    }
+
     if (user_access('can bypass vote limitation', $this->account)) {
       // This user can by pass the voting limitation.
       return;
     }
 
-    // todo: add those variables as something to set in the admin.
-
-    if ($this->type == 'down' && variable_get('drupalhub_min_points_downvote', 20) < 20) {
+    if ($this->type == 'down' && variable_get('drupalhub_min_points_downvote', 20) >= $points) {
       // User under 20 points cannot vote against something.
+      throw new \RestfulBadRequestException("You need at lest 20 points for down voting.");
     }
 
-    if ($this->type == 'up' && variable_get('drupalhub_min_points_upvote', 20) < 5) {
+    if ($this->type == 'up' && variable_get('drupalhub_max_points_upvote', 5) >= $points) {
       // User with less than 5 points cannot vote for a question.
+      throw new \RestfulBadRequestException("You need at lest 5 points for up voting.");
     }
   }
 

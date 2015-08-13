@@ -37,16 +37,16 @@ function drupalhub_reputation_menu() {
  */
 function drupalhub_reputation_admin_settings($form, $form_state) {
 
+  $form['drupalhub_max_points_upvote'] = array(
+    '#type' => 'textfield',
+    '#title' => t("Maximum votes for upvoting"),
+    '#default_value' => variable_get('drupalhub_max_points_upvote', 5),
+  );
+
   $form['drupalhub_min_points_downvote'] = array(
     '#type' => 'textfield',
     '#title' => t("Minimum votes for downvoting"),
-    '#default_value' => variable_get('drupalhub_min_points_downvote', 1),
-  );
-
-  $form['drupalhub_min_points_upvote'] = array(
-    '#type' => 'textfield',
-    '#title' => t("Minimum votes for upvoting"),
-    '#default_value' => variable_get('drupalhub_min_points_upvote', 1),
+    '#default_value' => variable_get('drupalhub_min_points_downvote', 20),
   );
 
   $form['drupalhub_points_for_question_create'] = array(
