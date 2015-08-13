@@ -1,4 +1,4 @@
-DrupalHub.directive('drupalhubUpDown', function(DrupalHubRequest, $location) {
+DrupalHub.directive('drupalhubUpDown', function(DrupalHubRequest, drupalMessagesService) {
   return {
     restrict: 'AE',
     scope: {
@@ -21,9 +21,12 @@ DrupalHub.directive('drupalhubUpDown', function(DrupalHubRequest, $location) {
         DrupalHubRequest.localRequest('post', 'voting_api', object)
           .success(function(data) {
             $scope.points = data.data[0].new_value;
+            drupalMessagesService.reset();
+            drupalMessagesService.success('Your vote has been applied.');
           })
           .error(function(data) {
-            console.log(data, 'foo');
+            drupalMessagesService.reset();
+            drupalMessagesService.danger(data.title);
           });
       };
     }
