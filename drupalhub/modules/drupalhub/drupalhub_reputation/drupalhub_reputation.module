@@ -36,21 +36,37 @@ function drupalhub_reputation_menu() {
  * Setting the amount of points when a comment/node was updated.
  */
 function drupalhub_reputation_admin_settings($form, $form_state) {
+
+  $form['drupalhub_max_points_upvote'] = array(
+    '#type' => 'textfield',
+    '#title' => t("Maximum votes for upvoting"),
+    '#default_value' => variable_get('drupalhub_max_points_upvote', 5),
+  );
+
+  $form['drupalhub_min_points_downvote'] = array(
+    '#type' => 'textfield',
+    '#title' => t("Minimum votes for downvoting"),
+    '#default_value' => variable_get('drupalhub_min_points_downvote', 20),
+  );
+
   $form['drupalhub_points_for_question_create'] = array(
     '#type' => 'textfield',
     '#title' => t('Set the number of points user get when posting for a question'),
     '#default_value' => variable_get('drupalhub_points_for_question_create', 1),
   );
+
   $form['drupalhub_points_for_comment_create'] = array(
     '#type' => 'textfield',
     '#title' => t('Set the number of points user get when commenting for a question'),
     '#default_value' => variable_get('drupalhub_points_for_comment_create', 1),
   );
+
   $form['drupalhub_points_for_vote_question_node'] = array(
     '#type' => 'textfield',
     '#title' => t('Set the number of points user get when voting for his question'),
     '#default_value' => variable_get('drupalhub_points_for_vote_question', 1),
   );
+
   $form['drupalhub_points_for_vote_question_comment'] = array(
     '#type' => 'textfield',
     '#title' => t("Set the number of points user get when voting for his question's comment"),
@@ -78,28 +94,26 @@ function drupalhub_reputation_update_score($user, $amount) {
 }
 
 /**
- * Implements hook_votingapi_insert().
+ * Implements hook_drupalhub_vote().
  */
-function drupalhub_reputation_votingapi_insert($votes) { 
-  foreach ($votes as $vote) {
-    $wrapper = entity_metadata_wrapper($vote['entity_type'], $vote['entity_id']);
+function drupalhub_reputation_drupalhub_vote($vote, $account) {
+  $wrapper = entity_metadata_wrapper($vote['entity_type'], $vote['entity_id']);
 
-    $type = '';
+  $type = '';
 
-    if ($vote['entity_type'] == 'comment') {
-       $type = $wrapper->node->getBundle();
-    }
-    elseif ($vote['entity_type'] == 'node') {
-      $type = $wrapper->getBundle();
-    }
-      
-    if ($type != 'question') {
-      continue;
-    }
-      
-    $add_points = $vote['value'] * variable_get('drupalhub_points_for_vote_question_' . $vote['entity_type'], 1);
-    drupalhub_reputation_update_score($wrapper->author->getIdentifier(), $add_points);
+  if ($vote['entity_type'] == 'comment') {
+    $type = $wrapper->node->getBundle();
   }
+  elseif ($vote['entity_type'] == 'node') {
+    $type = $wrapper->getBundle();
+  }
+
+  if ($type != 'question') {
+    return;
+  }
+
+  $add_points = $vote['value'] * variable_get('drupalhub_points_for_vote_question_' . $vote['entity_type'], 1);
+  drupalhub_reputation_update_score($wrapper->author->getIdentifier(), $add_points);
 }
 
 /**
