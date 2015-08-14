@@ -82,7 +82,7 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
       })
       .then(function() {
         // Display the message.
-          drupalMessagesService.success('Welcome ' + $scope.user.label + '!');
+        drupalMessagesService.success('Welcome ' + $scope.user.label + '!');
 
         // Login the user and redirect him the front page.
         $http.get(DrupalHubRequest.getConfig().backend + 'login-token',{

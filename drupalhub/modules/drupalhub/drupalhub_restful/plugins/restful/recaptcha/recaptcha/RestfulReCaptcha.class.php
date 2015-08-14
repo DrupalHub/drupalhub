@@ -33,22 +33,23 @@ class RestfulReCaptcha extends \RestfulBase implements RestfulDataProviderInterf
       array(
         'secret' => variable_get('recaptcha_secret'),
         'response' => $this->request['response'],
-        'remoteip' => $_SERVER['REMOTE_ADDR']
+        'remoteip' => $_SERVER['REMOTE_ADDR'],
       )
     );
 
     $opts = array('http' =>
       array(
-        'method'  => 'POST',
-        'header'  => 'Content-type: application/x-www-form-urlencoded',
-        'content' => $postdata
-      )
+        'method' => 'POST',
+        'header' => 'Content-type: application/x-www-form-urlencoded',
+        'content' => $postdata,
+      ),
     );
 
     // Verify the response.
     $context  = stream_context_create($opts);
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify",false,$context);
+    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify", false, $context);
     $response = json_decode($response, true);
+
     return array('passed' => $response['success']);
   }
 }
