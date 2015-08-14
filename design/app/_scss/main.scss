@@ -23,6 +23,15 @@ body {
   padding-top: 80px;
   padding-bottom: 30px;
 
+  // Minor fix to the site name distance from logo.
+  .navbar > .container .navbar-brand {
+    margin-left: 15px;
+  }
+
+  .label-info {
+    margin-right: 5px;
+  }
+
   .navbar-fixed-top {
     border-color: $light-blue;
     border-right: none;
@@ -49,10 +58,18 @@ body {
 
     img {
       width: 45px;
+      float: left;
     }
 
     .navbar-brand {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .navbar-toggle {
       float: right;
+      margin-left: 10px;
+      margin-right: 10px;
     }
   }
 
@@ -105,3 +122,5 @@ body {
     }
   }
 }
+
+@import "responsive";

@@ -187,3 +187,31 @@ span.author-link {
 .angucomplete-image {
   border-radius: 0%;
 }
+
+.up-down-wrapper {
+  display: inline-block;
+  margin-top: 10px;
+
+  div {
+    display: inline-block;
+    font-size: 20px;
+
+
+    .vote {
+
+      &.up {
+        &:hover,
+        &:active {
+          color: #55d24b;
+        }
+      }
+
+      &.down {
+        &:hover,
+        &:active {
+          color: #d2423e;
+        }
+      }
+    }
+  }
+}

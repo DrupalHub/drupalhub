@@ -59,7 +59,7 @@ module.exports = function (grunt) {
         port: 9000,
         livereload: 35729,
         // change this to '0.0.0.0' to access the server from outside
-        hostname: '127.0.0.1'
+        hostname: '0.0.0.0'
       },
       livereload: {
         options: {
@@ -359,6 +359,7 @@ module.exports = function (grunt) {
         constants: {
           Config: {
             'backend': 'http://localhost/drupalhub/www/api/',
+            'front': 'http://0.0.0.0:9000',
             'pusher_key': '46b578a29d7e3df90f07',
             'pusher_channel': 'drupalhub_drupalhub'
           }
@@ -371,6 +372,7 @@ module.exports = function (grunt) {
         constants: {
           Config: {
             'backend': 'http://dev-drupalhub.gotpantheon.com/api/',
+            'front': 'http://drupalhub.github.io/drupalhub',
             'pusher_key': '46b578a29d7e3df90f07',
             'pusher_channel': 'drupalhub_drupalhub'
           }

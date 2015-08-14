@@ -60,8 +60,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
           $scope.showLoginInput = false;
           $scope.showLoginResultsSucess = true;
           $scope.loginResults = 'Welcome ' + data.data.label + '!';
-          window.location.href = '/#';
-          window.location.reload();
+          window.location.href = (Config.front);
         });
       });
     }

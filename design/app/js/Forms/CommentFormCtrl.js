@@ -10,10 +10,8 @@ DrupalHub.controller('CommentFormCtrl', function($scope, DrupalHubRequest, $rout
 
   $scope.FormSubmit = function() {
     DrupalHubRequest.localRequest('patch', 'comments/' + $routeParams['id'], $scope.comment).then(function(data) {
-      console.log(data);
       window.location = "#/" + data.data.data[0].nid.type + "/" + data.data.data[0].nid.nid;
     });
-
   };
 
 });

@@ -43,10 +43,10 @@
       <div class="row">
         <ul>
           <li class="clearfix" ng-class="{'current':$index == delta}" ng-repeat="video in playlistObject.videos">
-            <div class="col-md-3" >
+            <div class="col-md-3 col-sm-3 col-xs-2">
               <a href="{{video.url}}"><img class="img-responsive image" ng-src="{{video.image}}" /></a>
             </div>
-            <div class="col-md-9">
+            <div class="col-md-9 col-sm-9 col-xs-10">
               <a href="{{video.url}}">{{video.label}}</a>
               <div class="meta-info">
                 <span class="fa fa-clock-o"></span> {{video.duration}}
