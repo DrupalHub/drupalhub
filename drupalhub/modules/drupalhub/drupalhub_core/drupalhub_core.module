@@ -68,6 +68,11 @@ function drupalhub_core_token_info() {
     'description' => t('Full url to the decouple node address'),
   );
 
+  $info['tokens']['user']['decouple-url'] = array(
+    'name' => t('Decouple user URL'),
+    'description' => t('Full url to the decouple user profile.'),
+  );
+
   $info['types']['drupalhub'] = array(
     'name' => t('DrupalHub'),
     'description' => t('Tokens related to DrupalHub.'),
@@ -106,6 +111,17 @@ function drupalhub_core_tokens($type, $tokens, array $data = array(), array $opt
       if ($name == 'decouple-url') {
         $options = array(
           'fragment' => '/' . $data['node']->type . '/' . $data['node']->nid,
+        );
+        $replacements[$original] = url(variable_get('drupalhub_default_client_domain', 'http://localhost:9000/'), $options);
+      }
+    }
+  }
+
+  if ($type == 'user') {
+    foreach ($tokens as $name => $original) {
+      if ($name == 'decouple-url') {
+        $options = array(
+          'fragment' => '/user/' . $data['user']->uid,
         );
         $replacements[$original] = url(variable_get('drupalhub_default_client_domain', 'http://localhost:9000/'), $options);
       }
