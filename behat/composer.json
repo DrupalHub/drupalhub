@@ -1,0 +1,10 @@
+{
+  "name": "Behat tests for http://drupalhub.github.io/drupalhub/",
+  "description": "Functional testing for http://drupalhub.github.io/drupalhub/ site.",
+  "require": {
+    "drupal/drupal-extension": "~3.0"
+  },
+  "config": {
+    "bin-dir": "bin/"
+  }
+}
