@@ -79,7 +79,7 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
     $results = $query
       ->entityCondition('entity_type', 'flagging')
       ->propertyCondition('entity_type', $request['entity_type'])
-      ->propertyCondition('entity_id', $request['entity_id'])
+      ->propertyCondition('entity_id', $request['id'])
       ->propertyCondition('uid', $this->getUserId())
       ->count()
       ->execute();

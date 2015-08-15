@@ -32,14 +32,14 @@ function drupalhub_notify_default_message_type() {
     "arguments" : null,
     "message_text" : { "und" : [
         {
-          "value" : "Hello [message:user:name] - new comment",
+          "value" : "New comment for [message:field-node:title]",
           "format" : "filtered_html",
-          "safe_value" : "\\u003Cp\\u003EHello [message:user:name] - new comment\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003ENew comment for [message:field-node:title]\\u003C\\/p\\u003E\\n"
         },
         {
-          "value" : "Hello [message:user:name],\\r\\n\\r\\n\\u003Ca href=\\u0022[message:field-user:url]\\u0022\\u003E[message:field-user:name]\\u003C\\/a\\u003E has made a comment on \\u003Ca href=\\u0022[message:field-node:decouple-url]\\u0022\\u003E[message:field-node:title]\\u003C\\/a\\u003E.",
+          "value" : "Hi there!\\r\\n\\r\\n\\u003Ca href=\\u0022[message:field-comment:author:decouple-url]\\u0022\\u003E[message:field-comment:author:name]\\u003C\\/a\\u003E has made a comment on \\u003Ca href=\\u0022[message:field-node:decouple-url]\\u0022\\u003E[message:field-node:title]\\u003C\\/a\\u003E.",
           "format" : "full_html",
-          "safe_value" : "\\u003Cp\\u003EHello [message:user:name],\\u003C\\/p\\u003E\\n\\u003Cp\\u003E\\u003Ca href=\\u0022[message:field-user:url]\\u0022\\u003E[message:field-user:name]\\u003C\\/a\\u003E has made a comment on \\u003Ca href=\\u0022[message:field-node:decouple-url]\\u0022\\u003E[message:field-node:title]\\u003C\\/a\\u003E.\\u003C\\/p\\u003E\\n"
+          "safe_value" : "\\u003Cp\\u003EHi there!\\u003C\\/p\\u003E\\n\\u003Cp\\u003E\\u003Ca href=\\u0022[message:field-comment:author:decouple-url]\\u0022\\u003E[message:field-comment:author:name]\\u003C\\/a\\u003E has made a comment on \\u003Ca href=\\u0022[message:field-node:decouple-url]\\u0022\\u003E[message:field-node:title]\\u003C\\/a\\u003E.\\u003C\\/p\\u003E\\n"
         }
       ]
     },

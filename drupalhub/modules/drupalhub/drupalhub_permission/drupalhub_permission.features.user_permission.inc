@@ -44,7 +44,9 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'create question content'.
   $permissions['create question content'] = array(
     'name' => 'create question content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -79,7 +81,9 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'delete any question content'.
   $permissions['delete any question content'] = array(
     'name' => 'delete any question content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -115,7 +119,9 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'delete own question content'.
   $permissions['delete own question content'] = array(
     'name' => 'delete own question content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -150,7 +156,9 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'edit any question content'.
   $permissions['edit any question content'] = array(
     'name' => 'edit any question content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -186,7 +194,9 @@ function drupalhub_permission_user_default_permissions() {
   // Exported permission: 'edit own question content'.
   $permissions['edit own question content'] = array(
     'name' => 'edit own question content',
-    'roles' => array(),
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
     'module' => 'node',
   );
 
@@ -198,6 +208,56 @@ function drupalhub_permission_user_default_permissions() {
       'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'flag like'.
+  $permissions['flag like'] = array(
+    'name' => 'flag like',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'flag like_comments'.
+  $permissions['flag like_comments'] = array(
+    'name' => 'flag like_comments',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'flag subscribe_node'.
+  $permissions['flag subscribe_node'] = array(
+    'name' => 'flag subscribe_node',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag like'.
+  $permissions['unflag like'] = array(
+    'name' => 'unflag like',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
+  );
+
+  // Exported permission: 'unflag like_comments'.
+  $permissions['unflag like_comments'] = array(
+    'name' => 'unflag like_comments',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
+    ),
+    'module' => 'flag',
   );
 
   return $permissions;

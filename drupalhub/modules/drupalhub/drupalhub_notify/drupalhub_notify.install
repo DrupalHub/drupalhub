@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * @file drupalhub_notify.install
+ */
+
+/**
+ * Implements hook_install().
+ */
+function drupalhub_notify_install() {
+  // Enabling the question follow flag.
+
+  // Enable flags.
+  $flags = flag_get_default_flags(TRUE);
+
+  $flag = $flags['subscribe_node'];
+  $flag->types[] = 'question';
+  $flag->save();
+  $flag->enable();
+}
