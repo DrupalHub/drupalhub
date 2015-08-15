@@ -12,6 +12,7 @@
         </div>
 
         <div class="questions-wrapper clearfix">
+          <span class="text-center" ng-show="assets.question.length == 0"><h3>There is no question to display.</h3></span>
           <div ng-repeat="question in assets.question">
             <div class="question row">
               <div class="col-md-2 col-sm-3 hidden-xs">
@@ -49,6 +50,9 @@
           <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
 
           <ul>
+            <li class="text-center" ng-show="assets.events.length == 0">
+              <h3>There is no events to display.</h3>
+            </li>
             <li ng-repeat="event in assets.events" ng-cloak="events">
               <b><a href="{{event.url}}">{{event.label}}</a></b> - {{event.start}} <span ng-show="event.end">- {{event.end}}</span><span ng-show="event.human_address">, {{event.human_address}}.</span>
               <div class="text" ng-bind-html="event.intro | fullHtml"></div><br />
@@ -67,6 +71,9 @@
           <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
 
           <ul>
+            <li class="text-center" ng-show="assets.videos.length == 0">
+              <h3>There is no videos to display.</h3>
+            </li>
             <li ng-cloak="videos" ng-repeat="video in assets.videos">
               <b><a href="{{video.url}}">{{video.label}}</a></b>- {{video.text}}
               <div class="meta-info">
@@ -97,6 +104,9 @@
         </div>
 
         <div class="blogs-wrapper clearfix">
+          <div class="text-center" ng-show="assets.blog.length == 0">
+            <h3>There is no events to display.</h3>
+          </div>
           <div class="blog row" ng-show="assets.blog" ng-repeat="blog in assets.blog">
             <div class="col-md-2 col-sm-3 hidden-xs"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
             <div class="col-md-10 col-sm-9 col-xs-12">

@@ -13,7 +13,7 @@
   <div class="row">
     <div class="tags">
       <div class="col-md-12">
-        <div ng-repeat="tag in documentation_tags">
+        <div ng-repeat="tag in documentation_tags" ng-show="tag.label">
           <span class="label label-info tag"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
         </div>
       </div>
@@ -21,6 +21,9 @@
   </div>
 
   <div class="documentation-list" ng-show="documentations">
+    <div class="text-center" ng-show="documentations.length == 0">
+      <h3>There is no documentations to display.</h3>
+    </div>
     <div class="row" ng-repeat="documentation in documentations">
       <div class="col-md-1 col-sm-3 col-xs-3">
         <img class="images blog img-responsive" ng-src="{{documentation.image}}" />

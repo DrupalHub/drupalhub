@@ -19,6 +19,9 @@
 
       <section class="videos clearfix">
         <div class="row">
+          <div class="text-center" ng-show="videos == 0">
+            <h3>There is no videos to display.</h3>
+          </div>
           <div ng-repeat="(key, video) in videos">
 
             <div ng-if="$index % 4 == 0" class="clearfix"></div>
@@ -55,6 +58,9 @@
 
       <section class="playlist clearfix">
         <div class="row">
+          <div class="text-center" ng-show="playlists == 0">
+            <h3>There is no playlists to display.</h3>
+          </div>
           <div ng-repeat="playlist in playlists" class="col-md-3 col-sm-12 col-xs-12 playlist-wrapper">
 
             <div ng-if="$index % 4 == 0" class="clearfix"></div>

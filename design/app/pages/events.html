@@ -29,6 +29,9 @@
           </div>
         </div>
 
+        <div class="text-center" ng-show="events.length == 0">
+          <h3>There is no events to display.</h3>
+        </div>
         <div class="event row" ng-show="events" ng-repeat="event in events">
           <div class="col-md-10 col-sm-10">
             <div class="content">
