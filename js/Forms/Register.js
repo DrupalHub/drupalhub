@@ -1,7 +1,7 @@
 /**
  * Sign up controller.
  */
-DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope) {
+DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope, vcRecaptchaService, drupalMessagesService) {
 
   $scope.user = {
     mail: '',
@@ -10,9 +10,27 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
     pass2: ''
   };
 
+  $scope.model = {
+    key: '6Le8PAsTAAAAAElF_dS-x94G9TRRPrU4qf59usSh'
+  };
+
   $scope.RegisterSuccess = false;
 
   $scope.register = function() {
+    drupalMessagesService.reset();
+
+    if (vcRecaptchaService.getResponse() === "") {
+      drupalMessagesService.danger("Please resolve the captcha and submit!")
+    }
+    else {
+      DrupalHubRequest.localRequest('post', 'recaptcha', {response: vcRecaptchaService.getResponse()})
+        .then(function(data) {
+          if (!data.data.data.passed) {
+            drupalMessagesService.danger('The reacptcha process has failed.');
+          }
+        });
+    }
+
     $scope.errors = {
       mail: '',
       label: '',
@@ -20,29 +38,15 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
       pass2: ''
     };
 
-    if (!$scope.registerForm.mail.$dirty) {
-      $scope.errors.mail = 'The field is required';
-    }
+    drupalMessagesService.checkRequired($scope.registerForm);
 
     if ($scope.registerForm.mail.$dirty && $scope.registerForm.mail.$invalid) {
-      $scope.errors.mail = 'The field is not valid';
-    }
-
-    if (!$scope.registerForm.label.$dirty) {
-      $scope.errors.label = 'The field is required';
-    }
-
-    if (!$scope.registerForm.pass.$dirty) {
-      $scope.errors.pass = 'The field is required';
-    }
-
-    if (!$scope.registerForm.pass2.$dirty) {
-      $scope.errors.pass2 = 'The field is required';
+      drupalMessagesService.danger('E-mail: The field is not valid');
     }
 
     if ($scope.user.pass != $scope.user.pass2) {
       $scope.registerForm.pass2.$setValidity('required', false);
-      $scope.errors.pass2 = 'The pass are not matching!';
+      drupalMessagesService.danger('Password: The passwords are not matching!');
     }
 
     if ($scope.registerForm.$valid) {
@@ -55,16 +59,16 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
         var errors = data.errors;
 
         if (errors.mail != undefined) {
-          $scope.errors.mail = errors.mail.join();
+          drupalMessagesService.danger(errors.mail.join());
         }
 
         if (errors.label != undefined) {
-          $scope.errors.label = errors.label.join();
+          drupalMessagesService.danger(errors.label.join());
         }
       })
       .then(function() {
         // Display the message.
-        $scope.RegisterSuccess = 'Welcome ' + $scope.user.label + '!';
+        drupalMessagesService.success('Welcome ' + $scope.user.label + '!');
 
         // Login the user and redirect him the front page.
         $http.get(DrupalHubRequest.getConfig().backend + 'login-token',{

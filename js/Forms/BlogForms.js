@@ -1,4 +1,4 @@
-DrupalHub.controller('BlogFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
+DrupalHub.controller('BlogFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService) {
 
   $scope.blog = {
     label: '',
@@ -16,16 +16,9 @@ DrupalHub.controller('BlogFormCtrl', function($scope, DrupalHubRequest, $locatio
 
   // Processing the form.
   $scope.publishBlog = function() {
-    $scope.labelErrors = '';
-    $scope.textErrors = '';
 
-    if (!$scope.blog.label) {
-      $scope.labelErrors = 'The field is required';
-    }
-
-    if (!$scope.blog.text) {
-      $scope.textErrors = 'The field is required';
-    }
+    drupalMessagesService.reset();
+    drupalMessagesService.checkRequired($scope.blogForm);
 
     if ($scope.blogForm.$valid) {
       var request;
