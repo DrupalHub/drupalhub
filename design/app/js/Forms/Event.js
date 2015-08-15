@@ -27,9 +27,7 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest, drupalM
 
     drupalMessagesService.reset();
 
-    if (!$scope.eventForm.label.$valid) {
-      drupalMessagesService.danger('The label is required field.');
-    }
+    drupalMessagesService.checkRequired($scope.eventForm);
 
     if (!$scope.event.location && !$scope.event.latitude) {
       drupalMessagesService.danger('The location is required field.');
@@ -37,10 +35,6 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest, drupalM
 
     if (!$scope.event.start_date.date) {
       drupalMessagesService.danger('The date is required field.');
-    }
-
-    if (!$scope.eventForm.text.$valid) {
-      drupalMessagesService.danger('The text is required field.');
     }
 
     if (drupalMessagesService.valid()) {

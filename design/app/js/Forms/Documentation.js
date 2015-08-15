@@ -33,13 +33,7 @@ DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest,
     drupalMessagesService.reset();
     var tags = true;
 
-    if (!$scope.documentation.label) {
-      drupalMessagesService.danger('The label is a required field.');
-    }
-
-    if (!$scope.documentation.text) {
-      drupalMessagesService.danger('The text field is required.');
-    }
+    drupalMessagesService.checkRequired($scope.documentationForm);
 
     if (!$scope.documentation.tags) {
       drupalMessagesService.danger('The category field is required.');
