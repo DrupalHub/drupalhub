@@ -73,3 +73,22 @@ function drupalhub_core_socket_io_send($action, $data) {
   // Trigger pusher.
   $pusher->trigger('drupalhub_drupalhub', $action, $data);
 }
+
+/**
+ * Implements hook_comment_insert().
+ */
+function drupalhub_notify_comment_insert($comment) {
+  global $user;
+  $account = clone $user;
+
+  // todo: Flag the user the node if not flagged.
+
+  $message = message_create('comment_on_followed_node', array('uid' => $account->uid));
+  $wrapper = entity_metadata_wrapper('message', $message);
+  $wrapper->field_node->set($comment->nid);
+  $wrapper->field_comment->set($comment);
+  $wrapper->field_user->set($user);
+  $wrapper->save();
+
+  message_subscribe_send_message('node', node_load($comment->nid), $message);
+}

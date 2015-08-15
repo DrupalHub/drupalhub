@@ -289,8 +289,8 @@ DrupalHub.config(function($routeProvider) {
   $routeProvider.when('/documentation/:id', {
     templateUrl: 'pages/documentation.html',
     resolve: {
-      message: function (messageService) {
-        return messageService.getMessage();
+      message: function (drupalMessagesService) {
+        return drupalMessagesService.reset();
       }
     }
   });
