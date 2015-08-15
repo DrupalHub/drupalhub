@@ -90,5 +90,5 @@ function drupalhub_notify_comment_insert($comment) {
   $wrapper->field_user->set($user);
   $wrapper->save();
 
-  message_subscribe_send_message('comment', $comment, $message);
+  message_subscribe_send_message('node', node_load($comment->nid), $message);
 }
