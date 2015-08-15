@@ -43,4 +43,4 @@ bundle install
 npm install
 bower install
 nohup node app/js/Nodejs/socket.js > output.log &
-grunt serve
+grunt serve &
