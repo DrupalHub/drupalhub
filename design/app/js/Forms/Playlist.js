@@ -1,4 +1,4 @@
-DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest) {
+DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService) {
 
   $scope.results = '';
   $scope.videos = [];
@@ -61,14 +61,12 @@ DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest) {
    * Submitting the playlist.
    */
   $scope.compilePlaylist = function() {
-    $scope.errors = [];
+    drupalMessagesService.reset();
 
-    angular.forEach($scope.PlaylistForm.$error.required, function(value, key) {
-      $scope.errors.push('The field ' + value.$name + ' is required.');
-    });
+    drupalMessagesService.checkRequired($scope.PlaylistForm);
 
     if ($scope.ids.length < 3) {
-      $scope.errors.push('Playlist should be more then 3 videos');
+      drupalMessagesService.danger('Playlist should be more then 3 videos');
       $scope.PlaylistForm.videos.$setValidity("videos", false);
     }
     else {

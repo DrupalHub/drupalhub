@@ -18,7 +18,7 @@
                 <div class="input-area-wrapper col-md-6">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                    <input type="email" name="mail"
+                    <input type="email" name="Mail"
                            ng-model="user.mail" class="form-control"
                            placeholder="Email" id="InputEmail" required>
                   </div>
@@ -26,7 +26,7 @@
                 <div class="input-area-wrapper col-md-6">
                   <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                    <input type="text" name="label"
+                    <input type="text" name="Name"
                            ng-model="user.label" class="form-control"
                            placeholder="User Name" id="InputUserName" required>
                   </div>
@@ -36,7 +36,7 @@
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     <input type="password" name="pass"
                            class="form-control" placeholder="Password"
-                           id="InputPassword" ng-model="user.pass" required>
+                           id="InputPassword" ng-model="user.pass" name="Password" required>
                   </div>
                 </div>
                 <div class="input-area-wrapper col-md-6">
@@ -44,7 +44,7 @@
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     <input type="password" name="pass2"
                            class="form-control" placeholder="Confirm password"
-                           id="InputPassword1" ng-model="user.pass2" required>
+                           id="InputPassword1" ng-model="user.pass2" name="Password(confirm)" required>
                   </div>
                 </div>
               </div>
@@ -76,23 +76,14 @@
           <form role="form" name="loginForm" ng-submit="user.login()" ng-controller="loginCtrl" novalidate>
             <div class="form-group">
 
-              <div class="alert alert-dismissible alert-danger text-center" ng-show="error.name || error.pass">
-                <div ng-cloak ng-show="error.name">Username: {{error.name}}<br /></div>
-                <div ng-cloak ng-show="error.pass">password: {{error.pass}}<br /></div>
-              </div>
-
-              <div class="alert alert-dismissible {{loginResultsClass}} text-center" ng-show="loginResultsClass">
-                {{loginResults}}
-              </div>
-
               <div ng-show="showLoginInput">
                 <div class="input-group login-input input-area-wrapper">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" placeholder="Username" ng-model="user.name" required>
+                  <input type="text" class="form-control" name="Username" placeholder="Username" ng-model="user.name" required>
                 </div>
                 <div class="input-group login-input input-area-wrapper">
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" class="form-control" placeholder="Password" ng-model="user.pass" required>
+                  <input type="password" class="form-control" name="Password" placeholder="Password" ng-model="user.pass" required>
                 </div>
                 <hr />
                 <input type="submit" class="btn btn-primary pull-right" />

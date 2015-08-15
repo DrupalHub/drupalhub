@@ -1,4 +1,4 @@
-DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) {
+DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, drupalMessagesService) {
 
   $scope.endpoint = Config.backend + 'drupalhub-file-upload';
   $scope.selectedForm = 'pages/forms/user-edit.html';
@@ -33,6 +33,7 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
    * @param template
    */
   $scope.switchTemplate = function(template) {
+    drupalMessagesService.reset();
     $scope.selectedForm = 'pages/forms/user-' + template + '.html';
   };
 
@@ -40,11 +41,11 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
    * Update the use details.
    */
   $scope.userDetailsSave = function() {
-    $scope.errors = [];
+    drupalMessagesService.reset();
     $scope.pass = false;
 
     if ($scope.password.one != $scope.password.two) {
-      $scope.errors.push('The passwords are not matching!');
+      drupalMessagesService.danger('The passwords are not matching!');
 
       $scope.userDetailsForm.passOne.$setValidity("passOne", false);
       $scope.userDetailsForm.passTwo.$setValidity("passTwo", false);
@@ -77,16 +78,21 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
 
     DrupalHubRequest.localRequest('put', 'users/' + $scope.user.id, data)
       .success(function (data) {
-        $scope.pass = true;
+        drupalMessagesService.success('All the details were updated successfully');
       })
       .error(function (data) {
-        angular.forEach(data.errors, function(value, key) {
-          $scope.userDetailsForm[key].$setValidity(key, false);
+        if (data.errors instanceof Array) {
+          angular.forEach(data.errors, function(value, key) {
+            $scope.userDetailsForm[key].$setValidity(key, false);
 
-          angular.forEach(value, function(value, key) {
-            $scope.errors.push(value);
+            angular.forEach(value, function(value, key) {
+              drupalMessagesService.danger(value);
+            });
           });
-        });
+        }
+        else {
+          drupalMessagesService.danger(data.title);
+        }
       });
   };
 
@@ -94,11 +100,12 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
    * Update the user notifications.
    */
   $scope.userNotificationUpdate = function() {
+    drupalMessagesService.reset();
     var data = {
       'settings': ($scope.notifications)
     };
-    // todo: add message.
     DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data);
+    drupalMessagesService.success('Your settings has been updated.');
   };
 
   /**
@@ -113,10 +120,11 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config) 
    * Updating the picture relation in the DB.
    */
   $scope.userPictureUpdate = function() {
+    drupalMessagesService.reset();
     var data = {
       'image_fid': $scope.user.image
     };
-    // todo: add message.
+    drupalMessagesService.success('Your profile picture has updated.');
     DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data);
   }
 });

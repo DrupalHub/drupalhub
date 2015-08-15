@@ -1,4 +1,4 @@
-DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, $location, $routeParams) {
+DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, $location, $routeParams, drupalMessagesService) {
 
   $scope.video = {
     embed: '',
@@ -42,7 +42,7 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, 
   };
 
   $scope.post = function() {
-    $scope.errors = [];
+    drupalMessagesService.reset();
 
     var request;
 
@@ -58,10 +58,10 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, 
     })
     .error(function(data) {
       if (data.detail == 'Bad Request.') {
-        $scope.errors.push(data.errors.embed[0]);
+        drupalMessagesService.danger(data.errors.embed[0]);
       }
       else {
-        $scope.errors.push(data.title);
+        drupalMessagesService.danger(data.title);
       }
 
     });

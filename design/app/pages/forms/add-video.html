@@ -9,10 +9,6 @@
       <fieldset>
         <legend class="videos-header">Suggest a video</legend>
 
-        <div class="alert alert-dismissible alert-danger text-center" ng-show="errors.length > 0">
-          <div ng-repeat="error in errors">{{error}}</div>
-        </div>
-
           <div class="form-group">
             <label for="inputURL" class="control-label hidden">Video address</label>
             <div class="col-sm-12 col-md-12">
@@ -24,12 +20,12 @@
 
           <div class="row">
             <div class="col-md-12 title-container">
-              <input type="text" ng-model="video.label" class="form-control" id="inputLabel" required placeholder="Title">
+              <input type="Title" ng-model="video.label" class="form-control" id="inputLabel" required placeholder="Title">
             </div>
 
             <div class="col-md-4"><img ng-src="{{image}}" class="img-responsive" /></div>
             <div class="col-md-8 text-box">
-              <textarea ckeditor="editorOptions" ng-model="video.text" required class="form-control" rows="3" id="textArea"></textarea>
+              <textarea ckeditor="editorOptions" ng-model="video.text" name="Description" required class="form-control" rows="3" id="textArea"></textarea>
             </div>
           </div>
 

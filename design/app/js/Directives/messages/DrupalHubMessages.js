@@ -41,10 +41,38 @@ DrupalHub.factory('drupalMessagesService', function($rootScope) {
   var drupalHubMessagesSvc = {};
 
   /**
+   * Keeping all the errors.
+   *
+   * @type {Array}
+   */
+  var errors = [];
+
+  /**
+   * Check if there any errors.
+   *
+   * @returns {boolean}
+   */
+  drupalHubMessagesSvc.valid = function() {
+    return errors.length == 0;
+  };
+
+  /**
+   * Check if all the required fields are pouplated.
+   *
+   * @param form
+   */
+  drupalHubMessagesSvc.checkRequired = function(form) {
+    angular.forEach(form.$error.required, function(value, key) {
+      drupalHubMessagesSvc.danger('The field ' + value.$name + ' is required.');
+    });
+  };
+
+  /**
    * Reset all the messages. Should be called when setting up new messages.
    */
   drupalHubMessagesSvc.reset = function() {
     $rootScope.$broadcast('DrupalHubMessagesReset');
+    errors = [];
   };
 
   /**
@@ -67,6 +95,7 @@ DrupalHub.factory('drupalMessagesService', function($rootScope) {
    */
   drupalHubMessagesSvc.danger = function(message) {
     this.sendMessage('Danger', message);
+    errors.push(message);
   };
 
   /**

@@ -38,24 +38,10 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
       pass2: ''
     };
 
-    if (!$scope.registerForm.mail.$dirty) {
-      drupalMessagesService.danger('E-mail: The field is required');
-    }
+    drupalMessagesService.checkRequired($scope.registerForm);
 
     if ($scope.registerForm.mail.$dirty && $scope.registerForm.mail.$invalid) {
       drupalMessagesService.danger('E-mail: The field is not valid');
-    }
-
-    if (!$scope.registerForm.label.$dirty) {
-      drupalMessagesService.danger('Name: The field is required');
-    }
-
-    if (!$scope.registerForm.pass.$dirty) {
-      drupalMessagesService.danger('Password: The field is required');
-    }
-
-    if (!$scope.registerForm.pass2.$dirty) {
-      drupalMessagesService.danger('Password(again): The field is required');
     }
 
     if ($scope.user.pass != $scope.user.pass2) {

@@ -1,4 +1,4 @@
-DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
+DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService) {
 
   $scope.documentation = {
     label: '',
@@ -30,21 +30,17 @@ DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest,
 
   // Processing the form.
   $scope.submit = function() {
-    $scope.errors = [];
+    drupalMessagesService.reset();
+    var tags = true;
 
-    if (!$scope.documentation.label) {
-      $scope.errors.push('The label field is required');
-    }
-
-    if (!$scope.documentation.text) {
-      $scope.errors.push('The text field is required');
-    }
+    drupalMessagesService.checkRequired($scope.documentationForm);
 
     if (!$scope.documentation.tags) {
-      $scope.errors.push('The category field is required');
+      drupalMessagesService.danger('The category field is required.');
+      tags = false;
     }
 
-    if ($scope.documentationForm.$valid) {
+    if ($scope.documentationForm.$valid && tags) {
 
       var request;
 
