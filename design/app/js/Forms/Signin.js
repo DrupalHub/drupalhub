@@ -1,7 +1,7 @@
 /**
  * Login controller.
  */
-DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageService, $rootScope) {
+DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageService, $rootScope, drupalMessagesService) {
   $scope.user = {
     name: '',
     pass: ''
@@ -10,27 +10,14 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
   $scope.showLoginInput = true;
 
   $scope.user.login = function() {
-    $scope.nameError = false;
-    $scope.passError = false;
-    $scope.showLoginResultsFail = false;
-    $scope.showLoginResultsSucess = false;
-    $scope.loginResults = '';
-    $scope.loginResultsClass = false;
 
     $scope.error = {
       name: '',
       pass: ''
     };
 
-    if ($scope.user.name == '') {
-      $scope.nameError = true;
-      $scope.error.name = 'You need to provide user name!';
-    }
-
-    if ($scope.user.pass == '') {
-      $scope.passError = true;
-      $scope.error.pass = 'You need to provide a password';
-    }
+    drupalMessagesService.reset();
+    drupalMessagesService.checkRequired($scope.loginForm);
 
     if ($scope.loginForm.$valid) {
       var response = $http.get(Config.backend + 'login-token', {
@@ -39,8 +26,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
 
       response.error(function(data) {
         if (data.title == 'Bad credentials') {
-          $scope.loginResultsClass = 'alert-danger';
-          $scope.loginResults = 'The credentials you passed are wrong.';
+          drupalMessagesService.danger('The username/password are wrong.');
         }
       });
 
@@ -56,10 +42,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
           }
         }).success(function(data) {
           $rootScope.$broadcast('userLoggedIn', data.data);
-          $scope.loginResultsClass = 'alert-success';
-          $scope.showLoginInput = false;
-          $scope.showLoginResultsSucess = true;
-          $scope.loginResults = 'Welcome ' + data.data.label + '!';
+          drupalMessagesService.success('Welcome ' + data.data.label + '!');
           window.location.href = (Config.front);
         });
       });

@@ -1,4 +1,4 @@
-DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams) {
+DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService) {
   $scope.tags = [];
   $scope.refreshAddresses = function(address) {
     return DrupalHubRequest.localRequest('get', 'tags?autocomplete[string]=' + address).then(function(response) {
@@ -35,16 +35,8 @@ DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $loc
   }
 
   $scope.question.askQuestion = function() {
-    $scope.titleError = false;
-    $scope.bodyError = false;
-
-    if ($scope.question.label == "") {
-      $scope.titleError = 'You need to populate the title.';
-    }
-
-    if ($scope.question.text == null) {
-      $scope.bodyError = 'You need to populate the text';
-    }
+    drupalMessagesService.reset();
+    drupalMessagesService.checkRequired($scope.questionForm);
 
     if ($scope.questionForm.$valid) {
       var request;

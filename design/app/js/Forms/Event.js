@@ -1,4 +1,4 @@
-DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
+DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService) {
 
   $scope.submitResults = false;
 
@@ -25,25 +25,25 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
 
   $scope.submit = function() {
 
-    $scope.errors = [];
+    drupalMessagesService.reset();
 
     if (!$scope.eventForm.label.$valid) {
-      $scope.errors.push('The label is required field.');
+      drupalMessagesService.danger('The label is required field.');
     }
 
-    if ($scope.event.location == "") {
-      $scope.errors.push('The location is required field.');
+    if (!$scope.event.location && !$scope.event.latitude) {
+      drupalMessagesService.danger('The location is required field.');
     }
 
     if (!$scope.event.start_date.date) {
-      $scope.errors.push('The date is required field.');
+      drupalMessagesService.danger('The date is required field.');
     }
 
     if (!$scope.eventForm.text.$valid) {
-      $scope.errors.push('The text is required field.');
+      drupalMessagesService.danger('The text is required field.');
     }
 
-    if ($scope.errors.length == 0) {
+    if (drupalMessagesService.valid()) {
 
       // Processing the date into a new date.
       if ($scope.event.start instanceof Object) {
@@ -63,7 +63,8 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest) {
 
       DrupalHubRequest.localRequest('post', 'event', event)
         .success(function(data) {
-          $scope.submitResults = 'The event has created successfully. You are now redirected.';
+          drupalMessagesService.reset();
+          drupalMessagesService.success('The event has created successfully. You are now redirected.');
           window.location = data.data[0].url;
         })
         .error(function(data) {

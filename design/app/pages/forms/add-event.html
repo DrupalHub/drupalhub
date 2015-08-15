@@ -7,14 +7,6 @@
   <section class="form">
     <form class="form-horizontal" ng-controller="EventFormCtrl" name="eventForm" ng-submit="submit()" novalidate>
 
-      <div class="alert alert-dismissible alert-danger text-center" ng-show="errors.length > 0">
-        <div ng-repeat="error in errors" ng-bind-html="error | fullHtml"></div>
-      </div>
-
-      <div class="alert alert-dismissible alert-success text-center" ng-show="submitResults">
-        {{submitResults}}
-      </div>
-
       <fieldset>
         <legend class="event-header">Create a event</legend>
 

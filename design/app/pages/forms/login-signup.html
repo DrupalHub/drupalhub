@@ -76,23 +76,14 @@
           <form role="form" name="loginForm" ng-submit="user.login()" ng-controller="loginCtrl" novalidate>
             <div class="form-group">
 
-              <div class="alert alert-dismissible alert-danger text-center" ng-show="error.name || error.pass">
-                <div ng-cloak ng-show="error.name">Username: {{error.name}}<br /></div>
-                <div ng-cloak ng-show="error.pass">password: {{error.pass}}<br /></div>
-              </div>
-
-              <div class="alert alert-dismissible {{loginResultsClass}} text-center" ng-show="loginResultsClass">
-                {{loginResults}}
-              </div>
-
               <div ng-show="showLoginInput">
                 <div class="input-group login-input input-area-wrapper">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" placeholder="Username" ng-model="user.name" required>
+                  <input type="text" class="form-control" name="name" placeholder="Username" ng-model="user.name" required>
                 </div>
                 <div class="input-group login-input input-area-wrapper">
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" class="form-control" placeholder="Password" ng-model="user.pass" required>
+                  <input type="password" class="form-control" name="password" placeholder="Password" ng-model="user.pass" required>
                 </div>
                 <hr />
                 <input type="submit" class="btn btn-primary pull-right" />
