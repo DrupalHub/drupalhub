@@ -13,6 +13,9 @@ projects[date][version] = 2.8
 projects[devel][subdir] = "contrib"
 projects[devel][version] = 1.5
 
+projects[doctor][subdir] = "contrib"
+projects[doctor][version] = "1.4"
+
 projects[diff][subdir] = "contrib"
 projects[diff][version] = 3.2
 
