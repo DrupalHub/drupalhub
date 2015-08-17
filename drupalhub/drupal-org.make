@@ -142,3 +142,7 @@ projects[video_embed_field][subdir] = contrib
 libraries[pusher][type] = "libraries"
 libraries[pusher][download][type] = git
 libraries[pusher][download][url] = "https://github.com/pusher/pusher-http-php.git"
+
+libraries[reCaptcha][type] = "libraries"
+libraries[reCaptcha][download][type] = git
+libraries[reCaptcha][download][url] = "https://github.com/google/recaptcha.git"

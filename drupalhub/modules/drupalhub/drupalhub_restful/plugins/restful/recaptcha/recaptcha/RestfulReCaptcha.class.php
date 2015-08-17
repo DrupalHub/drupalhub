@@ -28,28 +28,17 @@ class RestfulReCaptcha extends \RestfulBase implements RestfulDataProviderInterf
    * Verify the reCaptcha results.
    */
   public function verifyCaptcha() {
-    $payload = array(
-      'secret' => variable_get('recaptcha_secret'),
-      'response' => $this->request['response'],
-    );
-    // Build the process.
-    $postdata = http_build_query($payload);
 
-    $opts = array('http' => array(
-      'method' => 'POST',
-      'header' => 'Content-type: application/x-www-form-urlencoded',
-      'content' => $postdata,
-    ));
+    $path = libraries_get_path('reCaptcha') . '/src/';
+    require_once $path . 'autoload.php';
 
-    // Verify the response.
-    $context  = stream_context_create($opts);
-    $response = file_get_contents("https://www.google.com/recaptcha/api/siteverify", false, $context);
-    $response = json_decode($response, true);
+    $recaptcha = new \ReCaptcha\ReCaptcha(variable_get('recaptcha_secret'));
+    $resp = $recaptcha->verify($this->request['response']);
 
-    if (!$response['success']) {
-      doctor_create($response + $payload)->save();
+    if (!$resp->isSuccess()) {
+      doctor_create($resp->getErrorCodes())->save();
     }
 
-    return array('passed' => $response['success']);
+    return array('passed' => $resp->isSuccess());
   }
 }

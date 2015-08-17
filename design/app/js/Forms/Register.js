@@ -40,7 +40,7 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
 
     drupalMessagesService.checkRequired($scope.registerForm);
 
-    if ($scope.registerForm.mail.$dirty && $scope.registerForm.mail.$invalid) {
+    if ($scope.registerForm.Mail.$dirty && $scope.registerForm.Mail.$invalid) {
       drupalMessagesService.danger('E-mail: The field is not valid');
     }
 
