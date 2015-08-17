@@ -1,7 +1,7 @@
 /**
  * Sign up controller.
  */
-DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope, vcRecaptchaService, drupalMessagesService) {
+DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope, vcRecaptchaService, drupalMessagesService, Config) {
 
   $scope.user = {
     mail: '',
@@ -80,6 +80,7 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
             headers: {'access_token': data.access_token}
           }).success(function(data) {
             $rootScope.$broadcast('userLoggedIn', data.data);
+            window.location.href = (Config.front);
           });
         });
       });
