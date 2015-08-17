@@ -1,6 +1,6 @@
 <?php
 
-class DrupalHubRestfulFilesUpload extends \RestfulFilesUpload {
+class DrupalhubRestfulFilesUpload extends \RestfulFilesUpload {
 
   /**
    * Overrides \RestfulBase::controllersInfo().

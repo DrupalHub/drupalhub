@@ -26,8 +26,7 @@ before_script:
   - drush mi --all --user=1
 #
 #  # Minor setup.
-  - drush vset drupalhub_push_notifications 1
-  - drush cc all
+  - drush vset drupalhub_push_notifications TRUE
 
   # Fire up the server
   - drush rs &
