@@ -7,6 +7,5 @@ files[] = include/DrupalHubEntityBase.inc
 files[] = include/DrupalHubRestfulNode.inc
 files[] = include/DrupalHubRestfulFlagMetadata.inc
 files[] = include/DrupalHubRestfulEmptyResponse.inc
-files[] = plugins/restful/file/DrupalhubRestfulFilesUpload.class.php
 
 dependencies[] = restful_token_auth
