@@ -7,5 +7,6 @@ drupalhub/behat/bin
 drupalhub/libraries
 drupalhub/modules/contrib/*
 drupalhub/themes/bootstrap
+design/app/js/config/flag.js
 install.sh
 www

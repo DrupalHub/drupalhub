@@ -279,6 +279,14 @@ module.exports = function (grunt) {
           src: '*.*'
         }]
       },
+      flagDev: {
+        src: '<%= yeoman.app %>/_settings/dev.js',
+        dest: '<%= yeoman.app %>/js/config/flag.js'
+      },
+      flagLive: {
+        src: '<%= yeoman.app %>/_settings/live.js',
+        dest: '<%= yeoman.app %>/_settings/flag.js'
+      },
       // Copy CSS into .tmp directory for Autoprefixer processing
       stageCss: {
         files: [{
@@ -388,6 +396,7 @@ module.exports = function (grunt) {
     }
 
     grunt.task.run([
+      'copy:flagDev',
       'ngconstant:serve',
       'bower_install',
       'clean:server',
@@ -403,6 +412,7 @@ module.exports = function (grunt) {
     grunt.task.run(['serve']);
   });
 
+  grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('check', [
     'clean:server',
@@ -411,6 +421,7 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'copy:flagDev',
     'bower_install',
     'clean',
     'jekyll:dist',
