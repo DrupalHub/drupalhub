@@ -285,7 +285,7 @@ module.exports = function (grunt) {
       },
       flagLive: {
         src: '<%= yeoman.app %>/_settings/live.js',
-        dest: '<%= yeoman.app %>/_settings/flag.js'
+        dest: '<%= yeoman.dist %>/js/config/flag.js'
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
       stageCss: {
@@ -415,6 +415,7 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-copy');
 
   grunt.registerTask('check', [
+    'copy:flagLive',
     'clean:server',
     'jekyll:check',
     'compass:server'
