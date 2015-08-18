@@ -422,7 +422,6 @@ module.exports = function (grunt) {
   ]);
 
   grunt.registerTask('build', [
-    'copy:flagLive',
     'bower_install',
     'clean',
     'jekyll:dist',
@@ -437,6 +436,7 @@ module.exports = function (grunt) {
     ]);
 
   grunt.registerTask('deploy', [
+    'copy:flagLive',
     'check',
     'build',
     'buildcontrol'
