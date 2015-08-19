@@ -7,50 +7,6 @@
 include_once 'drupalhub_search.features.inc';
 
 /**
- * Running search against a given query.
- *
- * @param $index
- *   The index which the query will run against.
- * @param $value
- *   The value to search.
- * @return array
- *   Array of results.
- */
-function drupalhub_search_get_results($index, $value) {
-  $search = new DrupalHubSearch($index);
-  $results = array();
-
-  foreach ($search->getFields() as $field) {
-    $search->OrCondition($field, $value);
-  }
-
-  $entities = $search->execute();
-
-  if (!$entities) {
-    return array();
-  }
-
-  foreach ($entities as $entity) {
-    $wrapper = entity_metadata_wrapper($search->getEntityType(), $entity);
-
-    if (in_array($search->getEntityType(), array('comment', 'user'))) {
-      $handler = $search->getEntityType();
-    }
-    elseif ($search->getEntityType() == 'node') {
-      $handler = $wrapper->getBundle();
-    }
-    else {
-      continue;
-    }
-
-    $restful_handler = restful_get_restful_handler($handler);
-    $results[] = $restful_handler->viewEntity($wrapper->getIdentifier());
-  }
-
-  return $results;
-}
-
-/**
  *  Implements hook_search_api_index_items_alter().
  */
 function drupalhub_search_search_api_index_items_alter(array &$items, SearchApiIndex $index) {
