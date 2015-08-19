@@ -49,6 +49,10 @@ body {
       .calendar a {
         @include hover(#009102);
       }
+
+      .search a {
+        @include hover(#a7448e);
+      }
     }
 
     #search {
