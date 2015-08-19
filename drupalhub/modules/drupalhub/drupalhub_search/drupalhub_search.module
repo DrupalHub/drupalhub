@@ -7,52 +7,6 @@
 include_once 'drupalhub_search.features.inc';
 
 /**
- * Implements hook_ctools_plugin_directory().
- */
-function drupalhub_search_ctools_plugin_directory($module, $plugin) {
-  if ($module == 'ctools' && !empty($plugin)) {
-    return "plugins/$plugin";
-  }
-}
-
-/**
- * Implements hook_theme().
- */
-function drupalhub_search_theme() {
-  return array(
-    'drupalhub_search_box' => array(
-      'template' => 'search-box',
-      'path' => drupal_get_path('module', 'drupalhub_search') . '/template',
-    ),
-  );
-}
-
-/**
- * Title callback; Display the search keyword as part of the word.
- */
-function drupalhub_search_results_title_callback($value) {
-  return t('Search result for @q', array('@q' => $value));
-}
-
-/**
- * Page callback. Return the search results.
- */
-function drupalhub_search_results($index, $value) {
-  $results = drupalhub_search_get_results($index, $value);
-
-  $content = '';
-  foreach ($results as $result) {
-    $content .= theme('drupalhub_search_box', $result);
-  }
-
-  if (!$content) {
-    return t("There are no search results for <b>@q</b>. Try other keywords.", array('@q' => $value));
-  }
-
-  return $content;
-}
-
-/**
  * Running search against a given query.
  *
  * @param $index
@@ -78,43 +32,19 @@ function drupalhub_search_get_results($index, $value) {
 
   foreach ($entities as $entity) {
     $wrapper = entity_metadata_wrapper($search->getEntityType(), $entity);
-    $body = '';
 
-    if ($wrapper->type() == 'comment' && $wrapper->__isset('comment_body') && $wrapper->comment_body->value()) {
-      $body = views_trim_text(array('max_length' => 50, 'ellipsis' => TRUE), filter_xss($wrapper->comment_body->value->value()));
+    if (in_array($search->getEntityType(), array('comment', 'user'))) {
+      $handler = $search->getEntityType();
     }
-    else if ($wrapper->type() != 'comment' && $wrapper->__isset('body') && $wrapper->body->value()) {
-      $body = views_trim_text(array('max_length' => 50, 'ellipsis' => TRUE), filter_xss($wrapper->body->value->value()));
-    }
-
-    $uri = entity_uri($search->getEntityType(), $wrapper->value());
-
-    if ($wrapper->type() == 'user') {
-      $image = theme('image_style', array(
-        'style_name' => 'front_page_question',
-        'path' => _drupalhub_users_user_uri($wrapper->value()),
-      ));
-    }
-    else if ($search->getEntityType() == 'taxonomy_term') {
-      $image = $wrapper->vocabulary->label();
+    elseif ($search->getEntityType() == 'node') {
+      $handler = $wrapper->getBundle();
     }
     else {
-      $image = '';
-
-      if ($wrapper->__isset('author')) {
-        $image = theme('image_style', array(
-          'style_name' => 'front_page_question',
-          'path' => _drupalhub_users_user_uri($wrapper->author->value())
-        ));
-      }
+      continue;
     }
 
-    $results[] = array(
-      'image' => $image,
-      'self' => url($uri['path']),
-      'label' => $wrapper->label(),
-      'body' => $body,
-    );
+    $restful_handler = restful_get_restful_handler($handler);
+    $results[] = $restful_handler->viewEntity($wrapper->getIdentifier());
   }
 
   return $results;

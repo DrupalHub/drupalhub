@@ -109,7 +109,7 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
     $flag = flag_get_counts($this->getEntityType(), $nid);
     $flag_type = $this->getEntityType() == 'node' ? 'like' : 'like_comments';
 
-    return $flag[$flag_type] ? $flag[$flag_type] : 0;
+    return !empty($flag[$flag_type]) ? $flag[$flag_type] : 0;
   }
 
   /**
