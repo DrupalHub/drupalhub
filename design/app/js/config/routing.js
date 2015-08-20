@@ -295,9 +295,10 @@ DrupalHub.config(function($routeProvider) {
     }
   });
 
-  // Search
+  // Search.
   $routeProvider.when('/search', {
     templateUrl: 'pages/forms/search.html',
+    'title': 'Search',
     resolve: {
       message: function (drupalMessagesService) {
         return drupalMessagesService.reset();
@@ -305,6 +306,14 @@ DrupalHub.config(function($routeProvider) {
     }
   });
 
+  $routeProvider.when('/search-results/:value/:types', {
+    templateUrl: 'pages/search-results.html',
+    resolve: {
+      message: function (drupalMessagesService) {
+        return drupalMessagesService.reset();
+      }
+    }
+  });
 
   // 404 and other stanz.
   $routeProvider.otherwise({

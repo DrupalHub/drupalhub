@@ -6,27 +6,27 @@
   </ul>
 
   <div class="row">
-    <div class="col-lg-12 col-md-12" ng-controller="resetPasswordCtrl">
+    <div class="col-lg-12 col-md-12" ng-controller="searchForm">
       <div class="panel panel-info">
         <div class="panel-heading">Search</div>
         <div class="panel-body">
-          <form role="form" name="ResetPasswordForm" ng-submit="resetPassword()" novalidate>
+          <form role="form" name="searchForm" ng-submit="commitSearch()" novalidate>
 
             <div class="form-group">
               <div class="input-group login-input">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="password" placeholder="What would you like to search?" name="Password(confirm)" class="form-control" ng-model="search" required>
+                <input type="text" placeholder="What would you like to search?" name="Search" class="form-control" ng-model="search" required>
               </div>
               <hr>
               <label class="control-label">Where would you like to search?</label>
-              <div class="checkbox">
-                <label><input type="checkbox">Questions</label>
-                <label><input type="checkbox">Blogs</label>
-                <label><input type="checkbox">Documentation</label>
-                <label><input type="checkbox">Videos</label>
-                <label><input type="checkbox">Users</label>
-                <label><input type="checkbox">Comments</label>
-              </div>
+              <ul class="list-inline">
+                <li><input type="checkbox" ng-model="searchType.questions">Questions</li>
+                <li><input type="checkbox" ng-model="searchType.blogs">Blogs</li>
+                <li><input type="checkbox" ng-model="searchType.documentation">Documentation</li>
+                <li><input type="checkbox" ng-model="searchType.videos">Videos</li>
+                <li><input type="checkbox" ng-model="searchType.users">Users</li>
+                <li><input type="checkbox" ng-model="searchType.comments">Comments</li>
+              </ul>
             </div>
 
             <input type="submit" class="btn btn-info pull-right" />
