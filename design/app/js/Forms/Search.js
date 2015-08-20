@@ -1,4 +1,4 @@
-DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMessagesService) {
+DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMessagesService, $routeParams) {
 
   $scope.searchType = {};
   $scope.search = '';
@@ -7,15 +7,19 @@ DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMess
     drupalMessagesService.reset();
     drupalMessagesService.checkRequired($scope.searchForm);
 
+    var types = [];
+    angular.forEach($scope.searchType, function(value, key) {
+
+      if (value) {
+        types.push(key);
+      }
+    });
+
+    if (types.length == 0) {
+      drupalMessagesService.danger('You need to select filters!');
+    }
+
     if (drupalMessagesService.valid()) {
-      var types = [];
-      angular.forEach($scope.searchType, function(value, key) {
-
-        if (value) {
-          types.push(key);
-        }
-      });
-
       window.location = '#/search-results/' + $scope.search + '/' + types.join(',');
     }
   };
