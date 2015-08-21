@@ -11,8 +11,7 @@ DrupalHub.controller('searchResults', function($scope, DrupalHubRequest, $routeP
 
     angular.forEach(types, function(value) {
       if (['questions', 'blogs', 'documentation', 'videos'].indexOf(value) > -1) {
-
-        DrupalHubRequest.localRequest('get', 'search?entity_type=node&value=' + $scope.search)
+        DrupalHubRequest.localRequest('get', 'search?entity_type=node&value=' + $scope.search + '&bundles=' + types)
           .then(function(data) {
             $scope.results.node = data.data.data.results;
           });

@@ -8,9 +8,11 @@
 
   <div class="row">
     <div class="col-lg-12 col-md-12">
-      <div ng-repeat="node in results.node">
-        <a href="#/question/{{node.id}}">{{node.label}}</a>
-        <p>{{node.text}}</p>
+      <div ng-repeat="node in results.node" class="sesrch-{{node.type}}">
+        <div class="label-wrapping clearfix">
+          <div class="title"><h4><a href="#/{{node.type}}/{{node.id}}">{{node.label}}</a></h4></div>
+        </div>
+        <div class="text" ng-bind-html="node.intro | fullHtml"></div>
       </div>
     </div>
   </div>

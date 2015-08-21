@@ -71,13 +71,42 @@ class RestfulSearchApi extends \RestfulBase implements RestfulDataProviderInterf
       }
       elseif ($search->getEntityType() == 'node') {
         $handler = $wrapper->getBundle();
+
+        if ($index == 'node' && !empty($this->request['bundles'])) {
+          $types = str_replace('videos', 'youtube', $this->request['bundles']);
+          $types = str_replace('questions', 'question', $types);
+          $types = str_replace('blogs', 'blog', $types);
+          $types = str_replace('documentation', 'wiki', $types);
+          $types = explode(',', $types);
+
+          if (!in_array($wrapper->getBundle(), $types)) {
+            continue;
+          }
+
+        }
       }
       else {
         continue;
       }
 
-      $restful_handler = restful_get_restful_handler($handler);
-      $results[] = $restful_handler->viewEntity($wrapper->getIdentifier());
+      if ($handler == 'youtube') {
+        $handler = 'video';
+      }
+
+      if ($handler == 'youtube') {
+        $handler = 'video';
+      }
+
+      if (!$restful_handler = restful_get_restful_handler($handler)) {
+        continue;
+      }
+
+      $entity = $restful_handler->viewEntity($wrapper->getIdentifier());
+
+      if ($wrapper->getBundle() == 'wiki') {
+        $handler = 'documentation';
+      }
+      $results[] = $entity + array('type' => $handler);
     }
 
     return $results;
