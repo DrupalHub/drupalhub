@@ -13,18 +13,17 @@
           <form role="form" name="searchForm" ng-submit="commitSearch()" novalidate>
 
             <div class="form-group">
-              <div class="input-group login-input">
+              <div class="input-group serch-input">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
                 <input type="text" placeholder="What would you like to search?" name="Search" class="form-control" ng-model="search" required>
               </div>
               <hr>
               <label class="control-label">Where would you like to search?</label>
-              <ul class="list-inline">
-                <li><input type="checkbox" ng-model="searchType.questions">Questions</li>
-                <li><input type="checkbox" ng-model="searchType.blogs">Blogs</li>
-                <li><input type="checkbox" ng-model="searchType.documentation">Documentation</li>
-                <li><input type="checkbox" ng-model="searchType.videos">Videos</li>
-                <li><input type="checkbox" ng-model="searchType.comments">Comments</li>
+              <ul class="filters list-inline">
+                <li><input type="checkbox" ng-model="searchType.questions" title="Questions" />Questions</li>
+                <li><input type="checkbox" ng-model="searchType.blogs" title="Blogs" />Blogs</li>
+                <li><input type="checkbox" ng-model="searchType.documentation" title="Documentation">Documentation</li>
+                <li><input type="checkbox" ng-model="searchType.videos" title="Videos">Videos</li>
               </ul>
             </div>
 

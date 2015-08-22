@@ -66,7 +66,7 @@ class RestfulSearchApi extends \RestfulBase implements RestfulDataProviderInterf
     foreach ($entities as $entity) {
       $wrapper = entity_metadata_wrapper($search->getEntityType(), $entity);
 
-      if (in_array($search->getEntityType(), array('comment', 'user'))) {
+      if (in_array($search->getEntityType(), array('comment'))) {
         $handler = $search->getEntityType();
       }
       elseif ($search->getEntityType() == 'node') {
@@ -83,18 +83,13 @@ class RestfulSearchApi extends \RestfulBase implements RestfulDataProviderInterf
             continue;
           }
 
+          if ($handler == 'youtube') {
+            $handler = 'video';
+          }
         }
       }
       else {
         continue;
-      }
-
-      if ($handler == 'youtube') {
-        $handler = 'video';
-      }
-
-      if ($handler == 'youtube') {
-        $handler = 'video';
       }
 
       if (!$restful_handler = restful_get_restful_handler($handler)) {
