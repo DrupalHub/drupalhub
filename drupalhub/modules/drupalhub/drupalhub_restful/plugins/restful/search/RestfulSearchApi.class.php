@@ -73,10 +73,7 @@ class RestfulSearchApi extends \RestfulBase implements RestfulDataProviderInterf
         $handler = $wrapper->getBundle();
 
         if ($index == 'node' && !empty($this->request['bundles'])) {
-          $types = str_replace('videos', 'youtube', $this->request['bundles']);
-          $types = str_replace('questions', 'question', $types);
-          $types = str_replace('blogs', 'blog', $types);
-          $types = str_replace('documentation', 'wiki', $types);
+          $types = str_replace(array('videos','questions', 'blogs','documentation'), array('youtube','question', 'blog', 'wiki'), $this->request['bundles']);
           $types = explode(',', $types);
 
           if (!in_array($wrapper->getBundle(), $types)) {
