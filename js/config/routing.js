@@ -295,6 +295,26 @@ DrupalHub.config(function($routeProvider) {
     }
   });
 
+  // Search.
+  $routeProvider.when('/search', {
+    templateUrl: 'pages/forms/search.html',
+    'title': 'Search',
+    resolve: {
+      message: function (drupalMessagesService) {
+        return drupalMessagesService.reset();
+      }
+    }
+  });
+
+  $routeProvider.when('/search-results/:value/:types', {
+    templateUrl: 'pages/search-results.html',
+    resolve: {
+      message: function (drupalMessagesService) {
+        return drupalMessagesService.reset();
+      }
+    }
+  });
+
   // 404 and other stanz.
   $routeProvider.otherwise({
     templateUrl: 'pages/404.html',
