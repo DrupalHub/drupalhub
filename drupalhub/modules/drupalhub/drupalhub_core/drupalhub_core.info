@@ -6,7 +6,6 @@ project = drupalhub_core
 dependencies[] = comment
 dependencies[] = ctools
 dependencies[] = features
-dependencies[] = field_config
 dependencies[] = flag
 scripts[] = js/underscore.js
 scripts[] = js/drupalhub_core.js

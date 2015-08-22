@@ -6,7 +6,6 @@ dependencies[] = drupalhub_notify
 dependencies[] = entity_view_count
 dependencies[] = entityreference
 dependencies[] = features
-dependencies[] = field_config
 dependencies[] = image
 dependencies[] = message
 dependencies[] = serialized_field
