@@ -100,6 +100,7 @@
   <script src="js/Controllers/user.js"></script>
   <script src="js/Controllers/documentations.js"></script>
   <script src="js/Controllers/documentation.js"></script>
+  <script src="js/Controllers/searchResults.js"></script>
 
   <!-- Forms -->
   <script src="js/Forms/QuestionForm.js"></script>
@@ -114,6 +115,7 @@
   <script src="js/Forms/Playlist.js"></script>
   <script src="js/Forms/Documentation.js"></script>
   <script src="js/Forms/UserEditCtrl.js"></script>
+  <script src="js/Forms/Search.js"></script>
 
 </head>
 <body ng-controller="bodyController">
@@ -133,14 +135,8 @@
           <li class="calendar"><a href="#events" class="fa fa-calendar-o" data-toggle="collapse" data-target=".navbar-collapse">Events</a></li>
           <li class="videos"><a href="#videos" class="fa fa-youtube-play" data-toggle="collapse" data-target=".navbar-collapse">Videos</a></li>
           <li class="documentation"><a href="#documentations" class="fa fa-book" data-toggle="collapse" data-target=".navbar-collapse">Documentation</a></li>
+          <li class="search"><a href="#search" class="fa fa-search" data-toggle="collapse" data-target=".navbar-collapse">Search</a></li>
         </ul>
-
-        <form class="navbar-form navbar-left visible-lg" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" id="search" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
 
         <ul class="nav navbar-nav secondary-menu">
           <li class="dropdown social-up" dropdown is-open="status.isopen">

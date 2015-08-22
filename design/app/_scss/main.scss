@@ -18,6 +18,7 @@
 @import 'autocomplete';
 @import 'register_signup';
 @import 'user_cp';
+@import 'search';
 
 body {
   padding-top: 80px;
@@ -49,11 +50,10 @@ body {
       .calendar a {
         @include hover(#009102);
       }
-    }
 
-    #search {
-      width: 250px;
-      color: #45A4CC;
+      .search a {
+        @include hover(#a7448e);
+      }
     }
 
     img {
