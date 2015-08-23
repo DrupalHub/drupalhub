@@ -21,6 +21,12 @@ before_script:
   - bash scripts/build.sh
   - cd /home/travis/build/DrupalHub/drupalhub/www
 
+  # Add solr.
+  - git clone https://github.com/RoySegall/solr-script.git
+  - cd solr-script
+  - bash solr.sh &
+  - cd -
+
   # Install and migrate.
   - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal
   - drush mi --all --user=1
@@ -38,6 +44,8 @@ before_script:
   - bin/behat --init
 
   # Running the front end.
+  - pwd
+  - ls -al
   - cd ../design
 
   - bundle install
