@@ -47,7 +47,7 @@ class FeatureContext extends DrupalContext {
   protected function throwException($text) {
     $page = $this->getSession();
     $this->saveScreenshot();
-    $text .= sprintf('Look on the screen shot at %s', $this->screenShotPath);
+    $text .= sprintf(' Look on the screen shot at %s', $this->screenShotPath);
 
     print_r($page->getPage()->getHtml());
 

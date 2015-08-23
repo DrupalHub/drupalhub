@@ -30,8 +30,8 @@ before_script:
   # Install and migrate.
   - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal
   - drush mi --all --user=1
-#
-#  # Minor setup.
+
+  # Minor setup.
   - drush vset drupalhub_push_notifications TRUE
 
   # Fire up the server
@@ -45,7 +45,7 @@ before_script:
   - bower install
 
   # Run grnt
-  - grunt serve > ~/grunt.log 2>&1 &
+  - grunt serve > /dev/null &
 
   - cd -
 
