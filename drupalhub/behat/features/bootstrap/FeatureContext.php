@@ -9,6 +9,16 @@ use Drupal\DrupalExtension\Context\DrupalContext;
 class FeatureContext extends DrupalContext {
 
   /**
+   * {@inheritdoc}
+   */
+  public function beforeScenario($event) {
+    // Set up the browser width.
+    $this->getSession()->resizeWindow(1440, 900, 'current');
+    // todo Check if we testing mobile.
+    parent::beforeScenario($event);
+  }
+
+  /**
    * @var String
    *
    * The screen shot path.
