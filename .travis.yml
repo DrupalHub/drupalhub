@@ -34,6 +34,7 @@ before_script:
   # Behat setup.
   - cd profiles/drupalhub/behat
   - cp behat.local.yml.travis behat.local.yml
+  - composer install
   - bin/behat --init
 
   # Running the front end.
@@ -50,7 +51,6 @@ before_script:
   - phantomjs --webdriver=4444 > ~/phantomjs.log 2>&1 &
 
 script:
-  - echo 'hello world'
   # Run behat.
   - bin/behat --tags=~wip
 
