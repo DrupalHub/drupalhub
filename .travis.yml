@@ -32,9 +32,9 @@ before_script:
   - drush rs &
 
   # Behat setup.
-#  - cd profiles/drupalhub/behat
-#  - cp behat.local.yml.travis behat.local.yml
-#  - bin/behat --init
+  - cd profiles/drupalhub/behat
+  - cp behat.local.yml.travis behat.local.yml
+  - bin/behat --init
 
   # Running the front end.
   - cd ../design
@@ -52,7 +52,7 @@ before_script:
 script:
   - echo 'hello world'
   # Run behat.
-#  - bin/behat --tags=~wip
+  - bin/behat --tags=~wip
 
 #after_script:
 #  - cat ~/selenium.log
