@@ -37,15 +37,7 @@ before_script:
   # Fire up the server
   - drush rs &
 
-  # Behat setup.
-  - cd profiles/drupalhub/behat
-  - cp behat.local.yml.travis behat.local.yml
-  - composer install
-  - bin/behat --init
-
   # Running the front end.
-  - pwd
-  - ls -al
   - cd ../design
 
   - bundle install
@@ -57,6 +49,12 @@ before_script:
 
   # Run phatomJs
   - phantomjs --webdriver=4444 > ~/phantomjs.log 2>&1 &
+
+  # Behat setup.
+  - cd profiles/drupalhub/behat
+  - cp behat.local.yml.travis behat.local.yml
+  - composer install
+  - bin/behat --init
 
 script:
   # Run behat.
