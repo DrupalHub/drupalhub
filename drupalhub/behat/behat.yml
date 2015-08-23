@@ -20,11 +20,9 @@ default:
     features: 'features'
   extensions:
     Behat\MinkExtension\Extension:
-      show_cmd: 'open -a Firefox.app %s'
       goutte: ~
-      selenium2: ~
-    Drupal\DrupalExtension\Extension:
-      blackbox: ~
+      selenium2:
+        wd_host: "http://127.0.0.1:4444/"
 
 imports:
   - behat.local.yml

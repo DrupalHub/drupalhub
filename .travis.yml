@@ -46,6 +46,9 @@ before_script:
   # Run grnt
   - grunt serve > ~/grunt.log 2>&1 &
 
+  # Run phatomJs
+  - phantomjs --webdriver=4444 > ~/phantomjs.log 2>&1 &
+
 script:
   - echo 'hello world'
   # Run behat.
