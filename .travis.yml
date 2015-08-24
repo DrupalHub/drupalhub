@@ -47,7 +47,6 @@ before_script:
 
   # Fire up the server
   - drush rs > ~/rs.log 2>&1 &
-  - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
 
   # Running the front end.
   - cd ../design
@@ -58,7 +57,6 @@ before_script:
 
   # Run grnt
   - grunt travis > ~/grunt.log 2>&1 &
-  - until $(curl --output /dev/null --silent --head --fail http://0.0.0.0:9000; do sleep 1; echo '.'; done
 
   - cd -
 
