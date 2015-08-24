@@ -45,7 +45,7 @@ before_script:
   - bower install
 
   # Run grnt
-  - grunt serve > /dev/null &
+  - grunt travis > ~/grunt.log 2>&1 &
 
   - cd -
 
