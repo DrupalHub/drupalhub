@@ -15,6 +15,10 @@ class FeatureContext extends DrupalContext {
     // Set up the browser width.
     $this->getSession()->resizeWindow(1440, 900, 'current');
     // todo Check if we testing mobile.
+
+    // todo: Clean the local storage.
+    $this->getSession()->reset();
+
     parent::beforeScenario($event);
   }
 
@@ -65,5 +69,34 @@ class FeatureContext extends DrupalContext {
         $this->throwException(sprintf('The tests did not find the text %s', $row[0]));
       }
     }
+  }
+
+  /**
+   * @Given /^I sleep for "([^"]*)"$/
+   */
+  public function iSleepFor($sleep) {
+    sleep($sleep);
+  }
+
+  /**
+   * @Given /^I capture page$/
+   */
+  public function iCapturePage() {
+    $this->saveScreenShot();
+  }
+
+  /**
+   * @When /^I fill in "([^"]*)" with "([^"]*)" under "([^"]*)"$/
+   */
+  public function iFillInWithUnder($name, $value, $form_name) {
+    $page = $this->getSession();
+    $element = $page->getPage()->find('xpath', "//form[@name='{$form_name}']//input[@name='{$name}']");
+
+    if (!$element) {
+      $this->throwException(sprintf('The element %s was not fond', $name));
+    }
+
+    $element->setValue($value);
+
   }
 }
