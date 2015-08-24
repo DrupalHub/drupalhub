@@ -4,13 +4,24 @@ sudo: false
 php:
   - 5.4
 
+addons:
+  apt:
+    packages:
+      - php5-cgi
+      - php5-mysql
+      - php5-curl
+
 mysql:
   database: drupal
   username: root
 
-before_script:
+before_install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer global require drush/drush:6.*@dev
+ # Install phantom JS.
+  - npm install -g phantomjs
+
+before_script:
 
   # Create the database.
   - "mysql -e 'create database drupal;'"
@@ -21,20 +32,21 @@ before_script:
   - bash scripts/build.sh
   - cd /home/travis/build/DrupalHub/drupalhub/www
 
+  # Add solr.
+  - git clone https://github.com/RoySegall/solr-script.git
+  - cd solr-script
+  - bash solr.sh &
+  - cd -
+
   # Install and migrate.
   - drush si -y drupalhub --account-name=admin --account-pass=admin --db-url=mysql://root:@127.0.0.1/drupal
   - drush mi --all --user=1
-#
-#  # Minor setup.
+
+  # Minor setup.
   - drush vset drupalhub_push_notifications TRUE
 
   # Fire up the server
-  - drush rs &
-
-  # Behat setup.
-#  - cd profiles/drupalhub/behat
-#  - cp behat.local.yml.travis behat.local.yml
-#  - bin/behat --init
+  - drush rs > ~/rs.log 2>&1 &
 
   # Running the front end.
   - cd ../design
@@ -44,12 +56,28 @@ before_script:
   - bower install
 
   # Run grnt
-  - grunt serve > ~/grunt.log 2>&1 &
+  - grunt travis > ~/grunt.log 2>&1 &
+
+  - cd -
+
+  # Run phatomJs
+  - phantomjs --webdriver=4444 > ~/phantomjs.log 2>&1 &
+
+  # Create display.
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3 # give xvfb some time to start
+
+  # Behat setup.
+  - cd profiles/drupalhub/behat
+  - cp behat.local.yml.travis behat.local.yml
+  - composer install
+  - bin/behat --init
 
 script:
-  - echo 'hello world'
   # Run behat.
-#  - bin/behat --tags=~wip
+  - bin/behat --tags=~wip
 
 #after_script:
-#  - cat ~/selenium.log
+#  - cat ~/grunt.log
+#  - cat ~/rs.log

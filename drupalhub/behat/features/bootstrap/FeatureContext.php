@@ -1,11 +1,6 @@
 <?php
 
-use Behat\Behat\Context\ClosuredContextInterface,
-    Behat\Behat\Context\TranslatedContextInterface,
-    Behat\Behat\Context\BehatContext,
-    Behat\Behat\Exception\PendingException;
-use Behat\Gherkin\Node\PyStringNode,
-    Behat\Gherkin\Node\TableNode;
+use Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\DrupalContext;
 
 /**
@@ -13,102 +8,62 @@ use Drupal\DrupalExtension\Context\DrupalContext;
  */
 class FeatureContext extends DrupalContext {
 
-  protected $DrupalHubUsers = array();
+  /**
+   * {@inheritdoc}
+   */
+  public function beforeScenario($event) {
+    // Set up the browser width.
+    $this->getSession()->resizeWindow(1440, 900, 'current');
+    // todo Check if we testing mobile.
+    parent::beforeScenario($event);
+  }
 
   /**
-   * Initializes context.
-   * Every scenario gets its own context object.
+   * @var String
    *
-   * @param array $parameters context parameters (set them up through behat.yml)
+   * The screen shot path.
    */
-  public function __construct(array $parameters) {
-    $this->DrupalHubUsers = $parameters['users'];
+  public $screenShotPath;
 
+  /**
+   * Overrides the class save screen shoot method.
+   */
+  public function saveScreenShot($filename = null, $filepath = null) {
+    $driver = $this->getSession()->getDriver();
+    $screen_shot = $driver->getScreenshot();
+    $this->screenShotPath = getcwd() . '/screenshots/' . time() . '.png';
+
+    file_put_contents($this->screenShotPath, $screen_shot);
   }
 
   /**
-   * @Given /^I should print page$/
+   * Throw exception with picture.
+   *
+   * @param $text
+   *   The text. The screen shot image will be added.
+   *
+   * @throws Exception
    */
-  public function iShouldPrintPage() {
+  protected function throwException($text) {
     $page = $this->getSession();
-    print_r($page->getPage()->getContent());
+    $this->saveScreenshot();
+    $text .= sprintf(' Look on the screen shot at %s', $this->screenShotPath);
+
+    print_r($page->getPage()->getHtml());
+
+    throw new \Exception($text);
   }
 
   /**
-   * @Given /^I am logging in as "([^"]*)"$/
+   * @Then /^I should see the links:$/
    */
-  public function iAmLoggingInAs($user) {
-    // Check if logged in.
-    if ($this->loggedIn()) {
-      $this->logout();
+  public function iShouldSeeTheLinks(TableNode $table) {
+    foreach ($table->getRows() as $row) {
+      try {
+        $this->assertSession()->pageTextContains($this->fixStepArgument($row[0]));
+      } catch (\Exception $e) {
+        $this->throwException(sprintf('The tests did not find the text %s', $row[0]));
+      }
     }
-
-    if (empty($this->DrupalHubUsers[$user])) {
-      throw new \Exception(sprintf('The user name was not found', $user));
-    }
-
-    $this->getSession()->visit($this->locatePath('/user'));
-    $element = $this->getSession()->getPage();
-    $element->fillField('name', $user);
-    $element->fillField('pass', $this->DrupalHubUsers[$user]);
-    $submit = $element->findButton($this->getDrupalText('log_in'));
-    if (empty($submit)) {
-      throw new \Exception(sprintf("No submit button at %s", $this->getSession()->getCurrentUrl()));
-    }
-
-    // Log in.
-    $submit->click();
-
-    if (!$this->loggedIn()) {
-      throw new \Exception(sprintf("Failed to log in as user '%s' with role '%s'", $this->user->name, $this->user->role));
-    }
-  }
-
-  /**
-   * @Given /^I fill in "([^"]*)" with the date format "([^"]*)"$/
-   */
-  public function iFillInWithTheDateFormat($field, $format) {
-    $this->fillField($field, date($format, time()));
-  }
-
-  /**
-   * @Given /^I sleep for "([^"]*)"$/
-   */
-  public function iSleepFor($time) {
-    sleep($time);
-  }
-
-  /**
-   * @Given /^I add video to plyalist$/
-   */
-  public function iAddVideoToPlyalist() {
-    $page = $this->getSession();
-    $element = $page->getPage()->find('xpath', '//i[@class="fa fa-plus"]');
-
-    if (!$element) {
-      throw new \Exception("There are no elements to add to the plyalist");
-    }
-
-    $element->click();
-  }
-
-  /**
-   * @Given /^I should see "([^"]*)" under "([^"]*)"$/
-   */
-  public function iShouldSeeUnder($content, $selector) {
-    $page = $this->getSession();
-    $element = $page->getPage()->find('xpath', "//*[contains(@class, '{$selector}') and contains(., '{$content}')]");
-
-    if (empty($element)) {
-      throw new PendingException("The requested element was not found in the page.");
-    }
-  }
-
-  /**
-   * @Given /^I fill in the ckeditor "([^"]*)" with "([^"]*)"$/
-   */
-  public function iFillInTheCkeditorWith($instance, $body) {
-    $selenium = $this->getSession()->getDriver();
-    $selenium->evaluateScript("CKEDITOR.instances['{$instance}'].setData('{$body}');");
   }
 }

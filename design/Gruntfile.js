@@ -373,6 +373,19 @@ module.exports = function (grunt) {
           }
         }
       },
+      travis: {
+        options: {
+          dest: '<%= yeoman.app %>/js/config/config.js'
+        },
+        constants: {
+          Config: {
+            'backend': 'http://127.0.0.1:8888/api/',
+            'front': 'http://0.0.0.0:9000',
+            'pusher_key': '46b578a29d7e3df90f07',
+            'pusher_channel': 'drupalhub_drupalhub'
+          }
+        }
+      },
       build: {
         options: {
           dest: '<%= yeoman.dist %>/js/config/config.js'
@@ -398,6 +411,23 @@ module.exports = function (grunt) {
     grunt.task.run([
       'copy:flagDev',
       'ngconstant:serve',
+      'bower_install',
+      'clean:server',
+      'concurrent:server',
+      'autoprefixer:server',
+      'connect:livereload',
+      'watch'
+    ]);
+  });
+
+  grunt.registerTask('travis', function (target) {
+    if (target === 'dist') {
+      return grunt.task.run(['build', 'connect:dist:keepalive']);
+    }
+
+    grunt.task.run([
+      'copy:flagDev',
+      'ngconstant:travis',
       'bower_install',
       'clean:server',
       'concurrent:server',
