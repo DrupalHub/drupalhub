@@ -35,7 +35,7 @@ before_script:
   - drush vset drupalhub_push_notifications TRUE
 
   # Fire up the server
-  - drush rs &
+  - drush rs > ~/rs.log 2>&1 &
 
   # Running the front end.
   - cd ../design
@@ -45,7 +45,7 @@ before_script:
   - bower install
 
   # Run grnt
-  - grunt serve > /dev/null &
+  - grunt serve > ~/grunt.log 2>&1 &
 
   - cd -
 
@@ -63,4 +63,5 @@ script:
   - bin/behat --tags=~wip
 
 #after_script:
-#  - cat ~/selenium.log
+  - cat ~/grunt.log
+  - cat ~/rs.log
