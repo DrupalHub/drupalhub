@@ -373,6 +373,19 @@ module.exports = function (grunt) {
           }
         }
       },
+      travis: {
+        options: {
+          dest: '<%= yeoman.app %>/js/config/config.js'
+        },
+        constants: {
+          Config: {
+            'backend': 'http://127.0.0.1:8888/api/',
+            'front': 'http://0.0.0.0:9000',
+            'pusher_key': '46b578a29d7e3df90f07',
+            'pusher_channel': 'drupalhub_drupalhub'
+          }
+        }
+      },
       build: {
         options: {
           dest: '<%= yeoman.dist %>/js/config/config.js'
