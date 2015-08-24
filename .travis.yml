@@ -4,16 +4,24 @@ sudo: false
 php:
   - 5.4
 
+addons:
+  apt:
+    packages:
+      - php5-cgi
+      - php5-mysql
+      - php5-curl
+
 mysql:
   database: drupal
   username: root
 
-before_script:
+before_install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer global require drush/drush:6.*@dev
+ # Install phantom JS.
+  - npm install -g phantomjs
 
-#  install php packages required for running a web server from drush on php 5.3
-#  - sudo apt-get install -y --force-yes php5-cgi php5-mysql
+before_script:
 
   # Create the database.
   - "mysql -e 'create database drupal;'"
@@ -50,12 +58,11 @@ before_script:
 
   # Run grnt
   - grunt travis > ~/grunt.log 2>&1 &
-  - until $(curl --output /dev/null --silent --head --fail http://localhost:9001); do sleep 1; echo '.'; done
+  - until $(curl --output /dev/null --silent --head --fail http://0.0.0.0:9000; do sleep 1; echo '.'; done
 
   - cd -
 
   # Run phatomJs
-  - npm install -g phantomjs
   - phantomjs --webdriver=4444 > ~/phantomjs.log 2>&1 &
 
   # Create display.
