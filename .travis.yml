@@ -47,7 +47,7 @@ before_script:
 
   # Fire up the server
   - drush rs > ~/rs.log 2>&1 &
-  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
+  - until netstat -an 2>/dev/null | grep '8888.*LISTEN'; do true; done
 
   # Running the front end.
   - cd ../design
