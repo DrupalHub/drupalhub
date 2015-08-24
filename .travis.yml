@@ -18,6 +18,7 @@ mysql:
 before_install:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer global require drush/drush:6.*@dev
+
  # Install phantom JS.
   - npm install -g phantomjs
 
@@ -63,10 +64,10 @@ before_script:
   # Run phatomJs
   - phantomjs --webdriver=4444 > ~/phantomjs.log 2>&1 &
 
-  # Create display.
-  - export DISPLAY=:99.0
-  - sh -e /etc/init.d/xvfb start
-  - sleep 3 # give xvfb some time to start
+#  # Create display.
+#  - export DISPLAY=:99.0
+#  - sh -e /etc/init.d/xvfb start
+#  - sleep 3 # give xvfb some time to start
 
   # Behat setup.
   - cd profiles/drupalhub/behat
@@ -79,5 +80,5 @@ script:
   - bin/behat --tags=~wip
 
 #after_script:
-  - cat ~/grunt.log
-  - cat ~/rs.log
+#  - cat ~/grunt.log
+#  - cat ~/rs.log
