@@ -1,5 +1,5 @@
 language: php
-sudo: false
+#sudo: false
 
 php:
   - 5.4
@@ -11,6 +11,9 @@ mysql:
 before_script:
   - export PATH="$HOME/.composer/vendor/bin:$PATH"
   - composer global require drush/drush:6.*@dev
+
+  # install php packages required for running a web server from drush on php 5.3
+  - sudo apt-get install -y --force-yes php5-cgi php5-mysql
 
   # Create the database.
   - "mysql -e 'create database drupal;'"
@@ -36,6 +39,7 @@ before_script:
 
   # Fire up the server
   - drush rs > ~/rs.log 2>&1 &
+  - until netstat -an 2>/dev/null | grep '8080.*LISTEN'; do true; done
 
   # Running the front end.
   - cd ../design
@@ -46,11 +50,18 @@ before_script:
 
   # Run grnt
   - grunt travis > ~/grunt.log 2>&1 &
+  - until $(curl --output /dev/null --silent --head --fail http://localhost:9001); do sleep 1; echo '.'; done
 
   - cd -
 
   # Run phatomJs
+  - npm install -g phantomjs
   - phantomjs --webdriver=4444 > ~/phantomjs.log 2>&1 &
+
+  # Create display.
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3 # give xvfb some time to start
 
   # Behat setup.
   - cd profiles/drupalhub/behat
