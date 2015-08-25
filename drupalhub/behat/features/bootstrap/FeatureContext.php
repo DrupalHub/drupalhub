@@ -14,10 +14,10 @@ class FeatureContext extends DrupalContext {
   public function beforeScenario($event) {
     // Set up the browser width.
     $this->getSession()->resizeWindow(1440, 900, 'current');
-    // todo Check if we testing mobile.
 
-    // todo: Clean the local storage.
-    $this->getSession()->reset();
+    // Clean the local storage.
+    $this->visit($this->getMinkParameter('base_url'));
+    $this->getSession()->evaluateScript('localStorage.clear();');
 
     parent::beforeScenario($event);
   }
