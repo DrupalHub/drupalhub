@@ -1,4 +1,4 @@
-Feature: Sanity check
+Feature: Check login functionallity. 
 
   @javascript
   Scenario: Check the user can login.
