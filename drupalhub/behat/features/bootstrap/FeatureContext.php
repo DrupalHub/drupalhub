@@ -3,10 +3,17 @@
 use Behat\Gherkin\Node\TableNode;
 use Drupal\DrupalExtension\Context\DrupalContext;
 
+require_once 'FeatureHelper.php';
+
 /**
  * Features context.
  */
 class FeatureContext extends DrupalContext {
+
+  /**
+   * @var FeatureHelper
+   */
+  public $helper;
 
   /**
    * {@inheritdoc}
@@ -15,17 +22,12 @@ class FeatureContext extends DrupalContext {
     // Set up the browser width.
     $this->getSession()->resizeWindow(1440, 900, 'current');
 
-    parent::beforeScenario($event);
-  }
+    $this->helper = new FeatureHelper($this);
 
-  /**
-   * {@inheritdoc}
-   */
-  public function afterScenario($event) {
     // Clean the local storage after the work.
-    $this->getSession()->evaluateScript('localStorage.clear();');
+    $this->helper->ClearLocalStorage();
 
-    parent::afterScenario($event);
+    parent::beforeScenario($event);
   }
 
   /**
