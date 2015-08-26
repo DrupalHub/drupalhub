@@ -7,7 +7,7 @@ Feature: Check login functionallity.
      When I fill in "Username" with "ClarkKent" under "loginForm"
       And I fill in "Password" with "LouisLane" under "loginForm"
       And I press "submit"
-      And I sleep for "5"
+      And I sleep for "10"
       And I should see "admin"
 
   @javascript
