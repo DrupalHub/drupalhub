@@ -8,7 +8,7 @@ Feature: Check login functionallity.
       And I fill in "Password" with "LouisLane" under "loginForm"
       And I press "submit"
       And I sleep for "10"
-      And I should see "admin"
+      And I should see "ClarkKent"
 
   @javascript
   Scenario: Check the user can't login with bad credentials.

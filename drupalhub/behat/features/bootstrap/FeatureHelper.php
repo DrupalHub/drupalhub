@@ -12,6 +12,7 @@ class FeatureHelper {
   }
 
   public function ClearLocalStorage() {
+    $this->context->visit($this->context->getMinkParameter('base_url'));
     $this->context->getSession()->evaluateScript('localStorage.clear();');
   }
 }
