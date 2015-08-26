@@ -15,11 +15,17 @@ class FeatureContext extends DrupalContext {
     // Set up the browser width.
     $this->getSession()->resizeWindow(1440, 900, 'current');
 
-    // Clean the local storage.
-    $this->visit($this->getMinkParameter('base_url'));
+    parent::beforeScenario($event);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function afterScenario($event) {
+    // Clean the local storage after the work.
     $this->getSession()->evaluateScript('localStorage.clear();');
 
-    parent::beforeScenario($event);
+    parent::afterScenario($event);
   }
 
   /**

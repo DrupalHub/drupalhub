@@ -1,4 +1,4 @@
-Feature: Check login functionallity. 
+Feature: Check login functionallity.
 
   @javascript
   Scenario: Check the user can login.
