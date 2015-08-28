@@ -4,7 +4,7 @@ default:
       base_url: http://0.0.0.0:9000/#/
     Drupal\DrupalExtension\Extension:
       drupal:
-        drupal_root: "/home/travis/drupal"
+        drupal_root: "/home/travis/build/DrupalHub/drupalhub/www"
       api_driver: "drupal"
       drush:
-        alias: hub
+        alias: self
