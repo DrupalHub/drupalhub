@@ -23,6 +23,8 @@ default:
       goutte: ~
       selenium2:
         wd_host: "http://127.0.0.1:4444/"
+    Drupal\DrupalExtension\Extension:
+          blackbox: ~
 
 imports:
   - behat.local.yml

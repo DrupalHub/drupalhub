@@ -24,6 +24,9 @@ class FeatureContext extends DrupalContext {
 
     $this->helper = new FeatureHelper($this);
 
+    // testing. remove later.
+    print_r(node_load(1));
+
     // Clean the local storage after the work.
     $this->helper->ClearLocalStorage();
 
