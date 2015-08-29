@@ -50,4 +50,33 @@ class FeatureHelper {
       unlink($file);
     }
   }
+
+  /**
+   * Get the node info: ID and label.
+   *
+   * @param $nodeLabel
+   *   The node label.
+   * @return Array
+   *   containing the type of the node and the ID.
+   * @throws Exception
+   */
+  public function getNodeInfo($nodeLabel) {
+    $query = new EntityFieldQuery();
+
+    $results = $query
+      ->entityCondition('entity_type', 'node')
+      ->propertyCondition('title', $nodeLabel)
+      ->execute();
+
+    if (empty($results['node'])) {
+      throw new \Exception(sprintf('A node with the title %s was not found', $nodeLabel));
+    }
+
+    $node = node_load(key($results['node']));
+
+    return [
+      'type' => $node->type,
+      'nid' => $node->nid,
+    ];
+  }
 }

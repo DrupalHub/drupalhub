@@ -25,8 +25,6 @@ class FeatureContext extends DrupalContext {
     $this->helper = new FeatureHelper($this);
 
     $this->helper->wipeScreenShots();
-
-    // Clean the local storage after the work.
     $this->helper->ClearLocalStorage();
 
     parent::beforeScenario($event);
@@ -150,8 +148,11 @@ class FeatureContext extends DrupalContext {
   }
 
   /**
-   * @Given /^I populate "([^"]*)" with "([^"]*)"$/
+   * @When /^I visit the node "([^"]*)"$/
    */
-  public function iPopulateWith($arg1, $arg2) {
+  public function iVisitTheNode($nodeLabel) {
+    $node = $this->helper->getNodeInfo($nodeLabel);
+    $this->visit($node['type'] . '/' . $node['nid']);
+    $this->iSleepFor(5);
   }
 }
