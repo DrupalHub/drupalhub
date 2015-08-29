@@ -15,8 +15,8 @@ Feature: Sanity check
       | Last videos   |
       | Blogs         |
 
-  @javascript @now
-  Scenario: Testing a user can post a question.
+  @javascript
+  Scenario: Testing the user login step.
     Given I logging in as "ClarkKent"
      When I visit "/"
      Then I should see "ClarkKent" in the user directive

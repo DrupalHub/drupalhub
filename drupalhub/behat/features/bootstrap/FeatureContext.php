@@ -24,6 +24,8 @@ class FeatureContext extends DrupalContext {
 
     $this->helper = new FeatureHelper($this);
 
+    $this->helper->wipeScreenShots();
+
     // Clean the local storage after the work.
     $this->helper->ClearLocalStorage();
 

@@ -39,4 +39,15 @@ class FeatureHelper {
 
     return $data['access_token'];
   }
+
+  /**
+   * Removing screen shots from old tests.
+   */
+  public function wipeScreenShots() {
+    $files = glob(getcwd() . '/screenshots/*.png');
+
+    foreach ($files as $file) {
+      unlink($file);
+    }
+  }
 }
