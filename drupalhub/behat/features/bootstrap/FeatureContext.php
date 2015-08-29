@@ -143,6 +143,10 @@ class FeatureContext extends DrupalContext {
       CKEDITOR.instances['{$instance}'].setData('{$body}');
     ");
     $this->getSession()->getPage()->fillField($instance, $body);
+    $selenium->evaluateScript("
+      angular.element('#{$instance}').css('visibility', 'hidden');
+      angular.element('#{$instance}').css('display', 'none');
+    ");
   }
 
   /**
