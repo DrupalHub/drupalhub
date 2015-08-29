@@ -131,4 +131,23 @@ class FeatureContext extends DrupalContext {
       $this->throwException(sprintf('The user name was not found in the user directive.', $xpath));
     }
   }
+
+  /**
+    * @Given /^I fill in the ckeditor "([^"]*)" with "([^"]*)"$/
+    */
+  public function iFillInTheCkeditorWith($instance, $body) {
+    $selenium = $this->getSession()->getDriver();
+    $selenium->evaluateScript("
+      angular.element('#{$instance}').css('visibility', 'visible');
+      angular.element('#{$instance}').css('display', 'block');
+      CKEDITOR.instances['{$instance}'].setData('{$body}');
+    ");
+    $this->getSession()->getPage()->fillField($instance, $body);
+  }
+
+  /**
+   * @Given /^I populate "([^"]*)" with "([^"]*)"$/
+   */
+  public function iPopulateWith($arg1, $arg2) {
+  }
 }
