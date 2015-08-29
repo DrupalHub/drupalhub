@@ -24,9 +24,6 @@ class FeatureContext extends DrupalContext {
 
     $this->helper = new FeatureHelper($this);
 
-    // testing. remove later.
-    print_r(node_load(1));
-
     // Clean the local storage after the work.
     $this->helper->ClearLocalStorage();
 
@@ -60,11 +57,8 @@ class FeatureContext extends DrupalContext {
    * @throws Exception
    */
   protected function throwException($text) {
-    $page = $this->getSession();
     $this->saveScreenshot();
-    $text .= sprintf(' Look on the screen shot at %s', $this->screenShotPath);
-
-    print_r($page->getPage()->getHtml());
+    $text .= sprintf('. Look on the screen shot at %s', $this->screenShotPath);
 
     throw new \Exception($text);
   }
@@ -108,6 +102,31 @@ class FeatureContext extends DrupalContext {
     }
 
     $element->setValue($value);
+  }
 
+  /**
+   * @Given /^I logging in as "([^"]*)"$/
+   */
+  public function iLoggingInAs($username) {
+    $token = $this->helper->getAccessToken($username);
+
+    $this->visit($this->getMinkParameter('base_url'));
+
+    // Set up the access token for the user.
+    $this->getSession()->evaluateScript("localStorage.setItem('ls.access_token', '{$token}');");
+    $this->getSession()->evaluateScript("localStorage.setItem('ls.expire_in', " . strtotime("now + 30 days") . ");");
+    $this->visit($this->getMinkParameter('base_url'));
+  }
+
+  /**
+   * @Then /^I should see "([^"]*)" in the user directive$/
+   */
+  public function iShouldSeeUnder($text) {
+    $xpath = "//span[contains(@class, 'dropdown-toggle') and contains(.,'{$text}')]";
+    $element = $this->getSession()->getPage()->find('xpath', $xpath);
+
+    if (!$element) {
+      $this->throwException(sprintf('The user name was not found in the user directive.', $xpath));
+    }
   }
 }
