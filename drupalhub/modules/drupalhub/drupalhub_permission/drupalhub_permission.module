@@ -14,8 +14,9 @@
  */
 function drupalhub_permission_node_access($node, $op, $account) {
   if (!in_array($op, array('create', 'update'))) {
-    return;
   }
+  // todo: Check if needed.
+  return;
 
   if (is_object($node)) {
     $new = !empty($node->is_new) ? $node->is_new : FALSE;

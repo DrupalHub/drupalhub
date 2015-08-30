@@ -12,9 +12,22 @@ Feature: Testing the question workflow.
      Then I should see "Testing question title"
       And I should see "Testing question body"
 
-  @javascript @now
+  @javascript
   Scenario: Testing edit of question
     Given I logging in as "PeterParker"
      When I visit the node "Testing question title"
       And I should see "Testing question title"
      Then I should not see "Edit"
+
+  @javascript
+  Scenario: Testing edit of question
+    Given I logging in as "ClarkKent"
+     When I visit the node "Testing question title"
+      And I should see "Testing question title"
+     Then I should see "Edit"
+
+  @javascript @now
+  Scenario: Testing edit of question
+    Given I logging in as "ClarkKent"
+     When I edit the node "Testing question title"
+     And I capture page

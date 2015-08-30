@@ -155,4 +155,13 @@ class FeatureContext extends DrupalContext {
     $this->visit($node['type'] . '/' . $node['nid']);
     $this->iSleepFor(5);
   }
+
+  /**
+   * @When /^I edit the node "([^"]*)"$/
+   */
+  public function iEditTheNode($nodeLabel) {
+    $node = $this->helper->getNodeInfo($nodeLabel);
+    $this->visit($node['type'] . '/' . $node['nid'] . '/edit');
+    $this->iSleepFor(5);
+  }
 }
