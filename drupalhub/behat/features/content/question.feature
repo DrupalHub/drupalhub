@@ -29,5 +29,10 @@ Feature: Testing the question workflow.
   @javascript @now
   Scenario: Testing edit of question
     Given I logging in as "ClarkKent"
-     When I edit the node "Testing question title"
-     And I capture page
+      And I edit the node "Testing question title"
+      And I fill in "Title" with "Edited: Testing question title"
+      And I fill in the ckeditor "textArea" with "Edited: Testing question body"
+     When I press "Submit"
+      And I sleep for "10"
+     Then I should see "Edited: Testing question title"
+      And I should see "Edited: Testing question body"
