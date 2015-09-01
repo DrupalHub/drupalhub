@@ -285,7 +285,7 @@ module.exports = function (grunt) {
       },
       flagLive: {
         src: '<%= yeoman.app %>/_settings/live.js',
-        dest: '<%= yeoman.dist %>/js/config/flag.js'
+        dest: '<%= yeoman.app %>/js/config/flag.js'
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
       stageCss: {
