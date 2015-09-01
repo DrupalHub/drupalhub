@@ -14,6 +14,7 @@ class DrupalHubMe extends \DrupalHubUsers {
     ),
   );
 
+
   /**
    * Overrides \RestfulEntityBase::viewEntity().
    *

@@ -46,6 +46,7 @@ function drupalhub_permission_user_default_permissions() {
     'name' => 'create question content',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -121,6 +122,7 @@ function drupalhub_permission_user_default_permissions() {
     'name' => 'delete own question content',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
@@ -196,6 +198,7 @@ function drupalhub_permission_user_default_permissions() {
     'name' => 'edit own question content',
     'roles' => array(
       'administrator' => 'administrator',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );

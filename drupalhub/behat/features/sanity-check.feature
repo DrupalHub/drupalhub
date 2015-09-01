@@ -14,3 +14,9 @@ Feature: Sanity check
       | Events        |
       | Last videos   |
       | Blogs         |
+
+  @javascript
+  Scenario: Testing the user login step.
+    Given I logging in as "ClarkKent"
+     When I visit "/"
+     Then I should see "ClarkKent" in the user directive
