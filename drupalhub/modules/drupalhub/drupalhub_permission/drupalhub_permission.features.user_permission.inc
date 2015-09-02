@@ -21,6 +21,26 @@ function drupalhub_permission_user_default_permissions() {
     'module' => 'user',
   );
 
+  // Exported permission: 'administer entity view count entries'.
+  $permissions['administer entity view count entries'] = array(
+    'name' => 'administer entity view count entries',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content managers' => 'content managers',
+    ),
+    'module' => 'entity_view_count',
+  );
+
+  // Exported permission: 'bypass node access'.
+  $permissions['bypass node access'] = array(
+    'name' => 'bypass node access',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content managers' => 'content managers',
+    ),
+    'module' => 'node',
+  );
+
   // Exported permission: 'create events content'.
   $permissions['create events content'] = array(
     'name' => 'create events content',
@@ -219,6 +239,7 @@ function drupalhub_permission_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'content managers' => 'content managers',
     ),
     'module' => 'flag',
   );
@@ -229,6 +250,7 @@ function drupalhub_permission_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'content managers' => 'content managers',
     ),
     'module' => 'flag',
   );
@@ -239,8 +261,19 @@ function drupalhub_permission_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'content managers' => 'content managers',
     ),
     'module' => 'flag',
+  );
+
+  // Exported permission: 'suggested videos approved'.
+  $permissions['suggested videos approved'] = array(
+    'name' => 'suggested videos approved',
+    'roles' => array(
+      'administrator' => 'administrator',
+      'content managers' => 'content managers',
+    ),
+    'module' => 'drupalhub_videos',
   );
 
   // Exported permission: 'unflag like'.
@@ -249,6 +282,7 @@ function drupalhub_permission_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'content managers' => 'content managers',
     ),
     'module' => 'flag',
   );
@@ -259,6 +293,7 @@ function drupalhub_permission_user_default_permissions() {
     'roles' => array(
       'administrator' => 'administrator',
       'authenticated user' => 'authenticated user',
+      'content managers' => 'content managers',
     ),
     'module' => 'flag',
   );
