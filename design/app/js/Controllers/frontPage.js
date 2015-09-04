@@ -19,9 +19,9 @@ DrupalHub.controller('frontPage', function($scope, DrupalHubRequest) {
 
       $scope.waiting = false;
 
-      DrupalHubRequest.userAccess(['create question content', 'create blog content']).then(function(data) {
-        $scope.addBlog = data.data.data['create_blog_content'];
-        $scope.addQuestion = data.data.data['create_question_content'];
+      DrupalHubRequest.userAccess(['create question content', 'create blog content', 'bypass node access']).then(function(data) {
+        $scope.addBlog = data.data.data['create_blog_content'] || data.data.data['bypass_node_access'];
+        $scope.addQuestion = data.data.data['create_question_content'] || data.data.data['bypass_node_access'];
       });
     });
 });
