@@ -79,15 +79,17 @@ function drupalhub_install() {
   // permissions assigned.
   $admin_role = new stdClass();
   $admin_role->name = 'administrator';
-  $admin_role->weight = 2;
+  $admin_role->weight = 3;
   user_role_save($admin_role);
   user_role_grant_permissions($admin_role->rid, array_keys(module_invoke_all('permission')));
 
   // Adding content managers permission.
-  $admin_role = new stdClass();
-  $admin_role->name = 'content managers';
-  $admin_role->weight = 3;
-  user_role_save($admin_role);
+  $content_managers = new stdClass();
+  $content_managers->name = 'content managers';
+  $content_managers->weight = 2;
+  user_role_save($content_managers);
+
+  user_role_grant_permissions($content_managers->rid, array('bypass node access'));
 
   // Set this as the administrator role.
   variable_set('user_admin_role', $admin_role->rid);

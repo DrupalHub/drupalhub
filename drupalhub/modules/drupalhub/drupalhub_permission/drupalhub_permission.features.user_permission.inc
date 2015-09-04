@@ -26,7 +26,6 @@ function drupalhub_permission_user_default_permissions() {
     'name' => 'administer entity view count entries',
     'roles' => array(
       'administrator' => 'administrator',
-      'content managers' => 'content managers',
     ),
     'module' => 'entity_view_count',
   );
@@ -36,7 +35,6 @@ function drupalhub_permission_user_default_permissions() {
     'name' => 'bypass node access',
     'roles' => array(
       'administrator' => 'administrator',
-      'content managers' => 'content managers',
     ),
     'module' => 'node',
   );
