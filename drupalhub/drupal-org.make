@@ -80,7 +80,7 @@ projects[link][version] = 1.3
 projects[libraries][subdir] = "contrib"
 projects[libraries][version] = 2.2
 
-projects[message][version] = "1.9"
+projects[message][version] = "1.10"
 projects[message][subdir] = contrib
 
 projects[message_ui][version] = "1.4"
