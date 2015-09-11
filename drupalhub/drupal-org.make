@@ -48,7 +48,7 @@ projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = 1.5
 
 projects[features][subdir] = "contrib"
-projects[features][version] = 2.2
+projects[features][version] = 2.6
 
 projects[fboauth][version] = "1.6"
 projects[fboauth][subdir] = contrib
