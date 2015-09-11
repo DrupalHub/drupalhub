@@ -136,7 +136,7 @@ projects[search_api][subdir] = contrib
 projects[search_api_solr][version] = "1.8"
 projects[search_api_solr][subdir] = contrib
 
-projects[video_embed_field][version] = "2.0-beta10"
+projects[video_embed_field][version] = "2.0-beta11"
 projects[video_embed_field][subdir] = contrib
 
 libraries[pusher][type] = "libraries"
