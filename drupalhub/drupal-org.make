@@ -96,7 +96,7 @@ projects[module_filter][subdir] = "contrib"
 projects[module_filter][version] = 1.8
 
 projects[migrate][subdir] = "contrib"
-projects[migrate][version] = 2.7
+projects[migrate][version] = 2.8
 
 projects[migrate_extras][subdir] = "contrib"
 projects[migrate_extras][version] = 2.5
