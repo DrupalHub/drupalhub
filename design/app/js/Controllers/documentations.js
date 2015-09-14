@@ -8,8 +8,8 @@ DrupalHub.controller('documentationsCtrl', function($scope, DrupalHubRequest, $l
   DrupalHubRequest.localRequest('get', $scope.endpoint).success(function(data) {
     $scope.documentations = data.data;
 
-    DrupalHubRequest.userAccess('create wiki content').success(function(data) {
-      $scope.showCreate = data.data.access;
+    DrupalHubRequest.userAccess(['create wiki content', 'bypass node access']).success(function(data) {
+      $scope.showCreate = data.data['create_wiki_content'] || data.data['bypass_node_access'];
     });
   });
 
