@@ -130,7 +130,7 @@ projects[token][version] = 1.6
 projects[twitter][version] = "5.8"
 projects[twitter][subdir] = contrib
 
-projects[search_api][version] = "1.15"
+projects[search_api][version] = "1.16"
 projects[search_api][subdir] = contrib
 
 projects[search_api_solr][version] = "1.9"
