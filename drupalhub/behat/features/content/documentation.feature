@@ -6,6 +6,8 @@ Feature: Testing documentation interactions.
       And I should not see "Add documentation"
      When I logging in as "Utau"
       And I visit "/documentations"
+      And I sleep for "10"
+      And I capture page
      Then I should see "Add documentation"
 
 #  @javascript
