@@ -3,11 +3,9 @@ Feature: Testing documentation interactions.
   @javascript @now
   Scenario: Testing limitation for documentation creation.
     Given I visit "/documentations"
-      And I sleep for "20"
       And I should not see "Add documentation"
      When I logging in as "Utau"
       And I visit "/documentations"
-      And I sleep for "10"
      Then I should see "Add documentation"
 
 #  @javascript
