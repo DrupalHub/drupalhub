@@ -164,4 +164,17 @@ class FeatureContext extends DrupalContext {
     $this->visit($node['type'] . '/' . $node['nid'] . '/edit');
     $this->iSleepFor(5);
   }
+
+  /**
+   * @Given /^I populate the category field with "([^"]*)"$/
+   */
+  public function iPopulateTheCategoryFieldWith($term) {
+    $page = $this->getSession()->getPage();
+    if (!$category = $page->find('xpath', '//span[contains(@class, "ui-select-toggle")]')) {
+      $this->throwException('The category text was not found');
+    }
+
+    $category->click();
+    $this->iCapturePage();
+  }
 }
