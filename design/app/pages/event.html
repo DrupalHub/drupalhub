@@ -1,4 +1,4 @@
-<section class="container page-event" ng-controller="eventCtrl" ng-show="event">
+<section class="container page-event" ng-controller="eventCtrl" ng-if="event">
 
   <ul class="breadcrumb">
     <li><a href="#/">Home</a></li>
@@ -26,7 +26,7 @@
                     <div class="col-md-9 col-sm-6 col-xs-12">{{user.name}}</div>
                   </div>
                 </li>
-                <li ng-show="event.rsvp.coming == null" class="text-center">
+                <li ng-if="event.rsvp.coming == null" class="text-center">
                   No one is coming. Why don't you join in?
                   <button class="btn btn-success" ng-click="rsvp('coming')">I'll join!</button>
                 </li>

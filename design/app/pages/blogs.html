@@ -10,10 +10,10 @@
       <div class="page-header blog-header clearfix"><h3>Blogs</h3></div>
 
       <div class="blogs-wrapper clearfix">
-        <div class="text-center" ng-show="blogs.length == 0">
+        <div class="text-center" ng-if="blogs.length == 0">
           <h3>There is no blogs to display.</h3>
         </div>
-        <div class="blog row" ng-show="blogs" ng-repeat="blog in blogs">
+        <div class="blog row" ng-if="blogs" ng-repeat="blog in blogs">
           <div class="col-md-2 col-sm-3 hidden-xs"><img src="{{blog.image}}" class="images img-responsive blog" /></div>
           <div class="col-md-10 col-sm-9 col-xs-12">
             <div class="content">

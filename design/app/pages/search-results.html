@@ -15,7 +15,7 @@
         <div class="text" ng-bind-html="node.intro | fullHtml"></div>
       </div>
 
-      <div ng-show="noResults">
+      <div ng-if="noResults">
         <h2>Your search has no results. Please try another search.</h2>
       </div>
 

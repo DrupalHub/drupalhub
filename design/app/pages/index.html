@@ -8,11 +8,11 @@
       <div class="col-md-8 col-xs-12 first">
         <div class="page-header questions-header clearfix">
           <h3><a href="#/questions">Questions</a></h3>
-          <a href="#/add-question" class="btn btn-primary btn-md" ng-show="addQuestion">Ask a question</a>
+          <a href="#/add-question" class="btn btn-primary btn-md" ng-if="addQuestion">Ask a question</a>
         </div>
 
         <div class="questions-wrapper clearfix">
-          <span class="text-center" ng-show="assets.question.length == 0"><h3>There is no question to display.</h3></span>
+          <span class="text-center" ng-if="assets.question.length == 0"><h3>There is no question to display.</h3></span>
           <div ng-repeat="question in assets.question">
             <div class="question row">
               <div class="col-md-2 col-sm-3 hidden-xs">
@@ -35,7 +35,7 @@
               </div>
             </div>
           </div>
-          <div class="text-center" ng-show="waiting">
+          <div class="text-center" ng-if="waiting">
             <div class="loader">
               <div class="loader-inner ball-clip-rotate">
                 <div></div>
@@ -50,15 +50,15 @@
           <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
 
           <ul>
-            <li class="text-center" ng-show="assets.events.length == 0">
+            <li class="text-center" ng-if="assets.events.length == 0">
               <h3>There is no events to display.</h3>
             </li>
             <li ng-repeat="event in assets.events" ng-cloak="events">
-              <b><a href="{{event.url}}">{{event.label}}</a></b> - {{event.start}} <span ng-show="event.end">- {{event.end}}</span><span ng-show="event.human_address">, {{event.human_address}}.</span>
+              <b><a href="{{event.url}}">{{event.label}}</a></b> - {{event.start}} <span ng-if="event.end">- {{event.end}}</span><span ng-if="event.human_address">, {{event.human_address}}.</span>
               <div class="text" ng-bind-html="event.intro | fullHtml"></div><br />
             </li>
           </ul>
-          <div class="text-center" ng-show="waiting">
+          <div class="text-center" ng-if="waiting">
             <div class="loader">
               <div class="loader-inner ball-clip-rotate">
                 <div></div>
@@ -71,7 +71,7 @@
           <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
 
           <ul>
-            <li class="text-center" ng-show="assets.videos.length == 0">
+            <li class="text-center" ng-if="assets.videos.length == 0">
               <h3>There is no videos to display.</h3>
             </li>
             <li ng-cloak="videos" ng-repeat="video in assets.videos">
@@ -83,7 +83,7 @@
               </div>
             </li>
           </ul>
-          <div class="text-center" ng-show="waiting">
+          <div class="text-center" ng-if="waiting">
             <div class="loader">
               <div class="loader-inner ball-clip-rotate">
                 <div></div>
@@ -100,14 +100,14 @@
       <div class="col-md-12">
         <div class="page-header blog-header clearfix">
           <h3><a href="#/blogs">Blogs</a></h3>
-          <a ng-show="addBlog" href="#/add-blog" class="btn btn-warning btn-md">Create a blog post</a>
+          <a ng-if="addBlog" href="#/add-blog" class="btn btn-warning btn-md">Create a blog post</a>
         </div>
 
         <div class="blogs-wrapper clearfix">
-          <div class="text-center" ng-show="assets.blog.length == 0">
+          <div class="text-center" ng-if="assets.blog.length == 0">
             <h3>There is no events to display.</h3>
           </div>
-          <div class="blog row" ng-show="assets.blog" ng-repeat="blog in assets.blog">
+          <div class="blog row" ng-if="assets.blog" ng-repeat="blog in assets.blog">
             <div class="col-md-2 col-sm-3 hidden-xs"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
             <div class="col-md-10 col-sm-9 col-xs-12">
               <div class="content">
@@ -122,7 +122,7 @@
               </div>
             </div>
           </div>
-          <div class="text-center" ng-show="waiting">
+          <div class="text-center" ng-if="waiting">
             <div class="loader">
               <div class="loader-inner ball-clip-rotate">
                 <div></div>

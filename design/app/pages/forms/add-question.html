@@ -25,7 +25,7 @@
               <div ng-bind-html="tag | highlight: $select.search"></div>
             </ui-select-choices>
           </ui-select>
-          <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+          <i ng-if="loadingLocations" class="glyphicon glyphicon-refresh"></i>
         </div>
       </div>
 

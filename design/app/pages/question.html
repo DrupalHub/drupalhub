@@ -1,4 +1,4 @@
-<section class="container page-question" ng-controller="questionCtrl" ng-show="question">
+<section class="container page-question" ng-controller="questionCtrl" ng-if="question">
   <ul class="breadcrumb">
     <li><a href="/#">Home</a></li>
     <li><a href="/#questions">Questions</a></li>
@@ -30,8 +30,8 @@
             class-unflagged="fa fa-envelope-o"
 
           ></flag-toggle>
-          <span ng-show="question.access.update" class="fa fa-pencil"><a href="#/question/{{question.id}}/edit">Edit</a></span>
-          <span ng-show="question.access.delete" class="fa fa-trash-o"><a ng-click="deleteQuestion();">Delete</a></span>
+          <span ng-if="question.access.update" class="fa fa-pencil"><a href="#/question/{{question.id}}/edit">Edit</a></span>
+          <span ng-if="question.access.delete" class="fa fa-trash-o"><a ng-click="deleteQuestion();">Delete</a></span>
           <span ng-repeat="tag in question.tags"><span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span></span>
         </div>
 
