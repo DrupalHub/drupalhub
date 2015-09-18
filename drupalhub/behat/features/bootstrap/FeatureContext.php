@@ -24,8 +24,8 @@ class FeatureContext extends DrupalContext {
 
     $this->helper = new FeatureHelper($this);
 
-    $this->helper->wipeScreenShots();
     $this->helper->ClearLocalStorage();
+    $this->helper->wipeScreenShots();
 
     parent::beforeScenario($event);
   }
@@ -163,5 +163,25 @@ class FeatureContext extends DrupalContext {
     $node = $this->helper->getNodeInfo($nodeLabel);
     $this->visit($node['type'] . '/' . $node['nid'] . '/edit');
     $this->iSleepFor(5);
+  }
+
+  /**
+   * @Given /^I populate the category field with "([^"]*)"$/
+   */
+  public function iPopulateTheCategoryFieldWith($term) {
+    $page = $this->getSession()->getPage();
+    if (!$category = $page->find('xpath', '//span[contains(@class, "ui-select-toggle")]')) {
+      $this->throwException('The category text was not found');
+    }
+
+    $category->click();
+    $page->find('xpath', "//div[contains(@class,'ui-select-container')]//input")->setValue($term);
+    sleep(3);
+
+    if (!$element = $page->find('xpath', "//div[contains(@class, 'ui-select-choices-row')]")) {
+      $this->throwException('The terms we not found.');
+    }
+
+    $element->click();
   }
 }

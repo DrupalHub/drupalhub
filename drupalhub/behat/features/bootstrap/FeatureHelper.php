@@ -17,6 +17,15 @@ class FeatureHelper {
   }
 
   public function ClearLocalStorage() {
+    $query = new EntityFieldQuery();
+    $results = $query
+      ->entityCondition('entity_type', 'restful_token_auth')
+      ->execute();
+
+    if (!empty($results['restful_token_auth'])) {
+      entity_delete_multiple('restful_token_auth', array_keys($results['restful_token_auth']));
+    }
+
     $this->context->visit($this->context->getMinkParameter('base_url'));
     $this->context->getSession()->evaluateScript('localStorage.clear();');
   }
