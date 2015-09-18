@@ -39,7 +39,7 @@
                 <div class="col-md-10">{{video.label}}</div>
                 <div class="col-md-1"><a href="#" ng-click="$event.preventDefault();removeSelectedVideo(video)" class="pull-right"><i class="fa fa-minus-square"></i></a></div>
               </div>
-              <p ng-show="videos.length == 0">
+              <p ng-if="videos.length == 0">
                 No videos were selected.
               </p>
             </div>

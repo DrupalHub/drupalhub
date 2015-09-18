@@ -7,7 +7,7 @@
 
   <section class="user">
     <div class="page-header user-header clearfix">
-      <h3>{{user.label}} <span ng-show="user.first_name">- {{user.first_name}} {{user.last_name}}</span> <span ng-bind-html="editButton | fullHtml"></span></h3>
+      <h3>{{user.label}} <span ng-if="user.first_name">- {{user.first_name}} {{user.last_name}}</span> <span ng-bind-html="editButton | fullHtml"></span></h3>
     </div>
     <div class="row">
 

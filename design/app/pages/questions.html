@@ -8,7 +8,7 @@
     <div class="col-md-12">
       <div class="page-header questions-header clearfix"><h3>Questions</h3></div>
 
-      <div class="text-center" ng-show="questions.length == 0">
+      <div class="text-center" ng-if="questions.length == 0">
         <h3>There is no questions to display.</h3>
       </div>
 
@@ -25,7 +25,7 @@
                 <span class="fa fa-user"></span>{{question.user}}
                 <span class="fa fa-eye"></span>{{question.viewed}}
                 <span class="fa fa-thumbs-o-up"></span>{{question.like}}
-                <span ng-show="question.tags" ng-repeat="tag in question.tags">
+                <span ng-if="question.tags" ng-repeat="tag in question.tags">
                   <span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span>
                 </span>
               </div>

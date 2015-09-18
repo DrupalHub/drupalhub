@@ -16,8 +16,8 @@
         <span class="fa fa-calendar"></span> {{video.date}}
         <span class="fa fa-eye"></span> {{video.like}}
         <span class="fa fa-thumbs-o-up"></span> {{video.viewed}}
-        <span ng-show="video.access.update" class="fa fa-pencil"><a href="#/video/{{video.id}}/edit">Edit</a></span>
-        <span ng-show="video.access.delete" class="fa fa-trash-o"><a ng-click="deleteVideo();">Delete</a></span>
+        <span ng-if="video.access.update" class="fa fa-pencil"><a href="#/video/{{video.id}}/edit">Edit</a></span>
+        <span ng-if="video.access.delete" class="fa fa-trash-o"><a ng-click="deleteVideo();">Delete</a></span>
 
       </div>
       <div>
@@ -38,7 +38,7 @@
 
       <div class="row">
         <ul>
-          <li class="clearfix" ng-repeat="other_video in other_videos" ng-show="other_videos">
+          <li class="clearfix" ng-repeat="other_video in other_videos" ng-if="other_videos">
             <div class="col-md-3 col-sm-3 hidden-xs">
               <a href="{{other_video.url}}"><img class="img-responsive image" src="{{other_video.image}}" /></a>
             </div>
@@ -53,7 +53,7 @@
             </div>
           </li>
           <li class="text-center clearfix">
-            <button ng-show="show_more" class="btn btn-info" ng-click="loadMoreVideos()">Load more</button>
+            <button ng-if="show_more" class="btn btn-info" ng-click="loadMoreVideos()">Load more</button>
           </li>
         </ul>
       </div>

@@ -22,13 +22,13 @@
             </div>
           </div>
 
-          <button type="submit" ng-show="showSaveButton" class="btn btn-info pull-right">Submit</button>
+          <button type="submit" ng-if="showSaveButton" class="btn btn-info pull-right">Submit</button>
 
         </div>
 
         <div class="col-md-3">
           <img ng-hide="$flow.files[0]" class="img-responsive clearfix" ng-src="{{user.image}}" />
-          <img ng-show="$flow.files[0]" class="img-responsive clearfix" flow-img="$flow.files[0]" />
+          <img ng-if="$flow.files[0]" class="img-responsive clearfix" flow-img="$flow.files[0]" />
         </div>
       </div>
     </div>

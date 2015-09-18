@@ -7,7 +7,7 @@
   <tabset justified="true">
     <tab heading="Videos" class="tab-item">
       <section class="clearfix top">
-        <div class="pull-left" ng-show="suggestYoutube">
+        <div class="pull-left" ng-if="suggestYoutube">
           <a href="#/add-video" class="btn btn-danger"><span class="fa fa-plus"></span> Add new video</a>
         </div>
         <form class="navbar-form navbar-left pull-right" role="search">
@@ -19,7 +19,7 @@
 
       <section class="videos clearfix">
         <div class="row">
-          <div class="text-center" ng-show="videos == 0">
+          <div class="text-center" ng-if="videos == 0">
             <h3>There is no videos to display.</h3>
           </div>
           <div ng-repeat="(key, video) in videos">
@@ -40,13 +40,13 @@
             </div>
           </div>
         </div>
-        <div ng-show="showPager" drupalhub-pager perpage="12" object="videos" endpoint="video"></div>
+        <div ng-if="showPager" drupalhub-pager perpage="12" object="videos" endpoint="video"></div>
       </section>
     </tab>
     <tab heading="Playlist">
 
       <section class="clearfix top">
-        <div class="pull-left" ng-show="suggestPlaylist">
+        <div class="pull-left" ng-if="suggestPlaylist">
           <a href="#/add-playlist" class="btn btn-danger"><span class="fa fa-plus"></span> Compile a new playlist</a>
         </div>
         <form class="navbar-form navbar-left pull-right clearfix" role="search">
@@ -58,7 +58,7 @@
 
       <section class="playlist clearfix">
         <div class="row">
-          <div class="text-center" ng-show="playlists == 0">
+          <div class="text-center" ng-if="playlists == 0">
             <h3>There is no playlists to display.</h3>
           </div>
           <div ng-repeat="playlist in playlists" class="col-md-3 col-sm-12 col-xs-12 playlist-wrapper">
