@@ -175,6 +175,13 @@ class FeatureContext extends DrupalContext {
     }
 
     $category->click();
-    $this->iCapturePage();
+    $page->find('xpath', "//div[contains(@class,'ui-select-container')]//input")->setValue($term);
+    sleep(3);
+
+    if (!$element = $page->find('xpath', "//div[contains(@class, 'ui-select-choices-row')]")) {
+      $this->throwException('The terms we not found.');
+    }
+
+    $element->click();
   }
 }
