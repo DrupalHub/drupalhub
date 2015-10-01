@@ -279,6 +279,7 @@ module.exports = function (grunt) {
           src: '*.*'
         }]
       },
+      // Copying flag settings.
       flagDev: {
         src: '<%= yeoman.app %>/_settings/dev.js',
         dest: '<%= yeoman.app %>/js/config/flag.js'
@@ -286,6 +287,16 @@ module.exports = function (grunt) {
       flagLive: {
         src: '<%= yeoman.app %>/_settings/live.js',
         dest: '<%= yeoman.app %>/js/config/flag.js'
+      },
+
+      // Copy language files.
+      languageDev: {
+        src: '<%= yeoman.app %>/_language/en.js',
+        dest: '<%= yeoman.app %>/js/config/language.js'
+      },
+      languageLive: {
+        src: '<%= yeoman.app %>/_language/he.js',
+        dest: '<%= yeoman.app %>/js/config/language.js'
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
       stageCss: {
@@ -410,6 +421,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'copy:flagDev',
+      'copy:languageDev',
       'ngconstant:serve',
       'bower_install',
       'clean:server',
@@ -427,6 +439,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'copy:flagDev',
+      'copy:languageDev',
       'ngconstant:travis',
       'bower_install',
       'clean:server',
@@ -446,6 +459,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('check', [
     'copy:flagLive',
+    'copy:languageLive',
     'clean:server',
     'jekyll:check',
     'compass:server'
@@ -467,6 +481,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('deploy', [
     'copy:flagLive',
+    'copy:languageLive',
     'check',
     'build',
     'buildcontrol'
