@@ -1,4 +1,5 @@
-DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest, $rootScope) {
+DrupalHub
+  .controller('headerCtrl', function($scope, DrupalHubRequest, $rootScope) {
 
   $scope.headerTitle = 'Drupal.org.il';
 

@@ -17,7 +17,8 @@ var DrupalHub = angular.module('DrupalHub', [
   'uiGmapgoogle-maps',
   'ui.select',
   'dialogs.main',
-  'vcRecaptcha'
+  'vcRecaptcha',
+  'DrupalHubI18n'
 ]);
 
 DrupalHub.config(function(uiGmapGoogleMapApiProvider) {
