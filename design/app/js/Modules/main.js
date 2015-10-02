@@ -28,10 +28,11 @@ DrupalHub.config(function(uiGmapGoogleMapApiProvider, $translateProvider, langua
     libraries: 'weather,geometry,visualization'
   });
 
-  $translateProvider.translations(language.code, {
-    'Built and designed by': 'Built and designed by',
-    'WITH_VALUES': 'The following value is dynamic: {{value}}'
-  }).preferredLanguage(language.code);
+  $translateProvider.useStaticFilesLoader({
+    prefix: '/_languages/',
+    suffix: '.json'
+  });
+  $translateProvider.preferredLanguage(language.code);
 });
 
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubPusher) {

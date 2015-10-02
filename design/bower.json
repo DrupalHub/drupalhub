@@ -34,7 +34,7 @@
     "pusher-angular": "~0.1.5",
     "sass-bootstrap-glyphicons": "1.0.0",
     "typicons": "~2.0.7",
-    "angular-translate": "~2.8.1",
-    "angular-translate-loader-static-files": "~2.8.1"
+    "angular-translate": "^2.6.1",
+    "angular-translate-loader-static-files": "^2.6.1"
   }
 }
