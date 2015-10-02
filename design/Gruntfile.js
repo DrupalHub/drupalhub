@@ -281,21 +281,21 @@ module.exports = function (grunt) {
       },
       // Copying flag settings.
       flagDev: {
-        src: '<%= yeoman.app %>/_settings/dev.js',
+        src: '<%= yeoman.app %>/_settings/flag/dev.js',
         dest: '<%= yeoman.app %>/js/config/flag.js'
       },
       flagLive: {
-        src: '<%= yeoman.app %>/_settings/live.js',
+        src: '<%= yeoman.app %>/_settings/flag/live.js',
         dest: '<%= yeoman.app %>/js/config/flag.js'
       },
 
       // Copy language files.
       languageDev: {
-        src: '<%= yeoman.app %>/_language/en.js',
+        src: '<%= yeoman.app %>/_settings/language/en.js',
         dest: '<%= yeoman.app %>/js/config/language.js'
       },
       languageLive: {
-        src: '<%= yeoman.app %>/_language/he.js',
+        src: '<%= yeoman.app %>/_settings/language/he.js',
         dest: '<%= yeoman.app %>/js/config/language.js'
       },
       // Copy CSS into .tmp directory for Autoprefixer processing
