@@ -56,6 +56,8 @@
   <script src="bower_components/angular-dialog-service/dist/dialogs.min.js"></script>
   <script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
   <script type="text/javascript" src="bower_components/angular-recaptcha/release/angular-recaptcha.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-translate/angular-translate.min.js"></script>
+  <script type="text/javascript" src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
 
   <!-- Libraries -->
   <script src="js/Libraries/jquery.gmap.min.js"></script>
@@ -165,7 +167,7 @@
 
   <div ng-view></div>
   <section class="container">
-    Built and designed by: <a href="http://www.twitter.com/RoySegall"><b>Roy Segall</b></a>
+    <span translate>Built and designed by</span>: <a href="http://www.twitter.com/RoySegall"><b>Roy Segall</b></a>
     And the <a href="https://github.com/DrupalHub/drupalhub/graphs/contributors"><b>project contributors</b></a>
   </section>
 

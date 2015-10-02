@@ -18,14 +18,20 @@ var DrupalHub = angular.module('DrupalHub', [
   'ui.select',
   'dialogs.main',
   'vcRecaptcha',
+  'pascalprecht.translate',
   'DrupalHubI18n'
 ]);
 
-DrupalHub.config(function(uiGmapGoogleMapApiProvider) {
+DrupalHub.config(function(uiGmapGoogleMapApiProvider, $translateProvider, language) {
   uiGmapGoogleMapApiProvider.configure({
     v: '3.17',
     libraries: 'weather,geometry,visualization'
   });
+
+  $translateProvider.translations(language.code, {
+    'Built and designed by': 'Built and designed by',
+    'WITH_VALUES': 'The following value is dynamic: {{value}}'
+  }).preferredLanguage(language.code);
 });
 
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubPusher) {
