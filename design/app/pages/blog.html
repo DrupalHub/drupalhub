@@ -1,7 +1,7 @@
 <section class="container page-blog" ng-controller="blogCtrl" ng-show="blog">
   <ul class="breadcrumb">
-    <li><a href="/#">Home</a></li>
-    <li><a href="/#blogs">blogs</a></li>
+    <li><a href="/#" translate>Home</a></li>
+    <li><a href="/#blogs" translate>Blogs</a></li>
     <li class="active">{{blog.label}}</li>
   </ul>
 
@@ -28,7 +28,7 @@
 
   <section class="comments">
     <div class="page-header blogs-header clearfix">
-      <h2>Comments</h2>
+      <h2 translate>Comments</h2>
     </div>
 
     <div drupal-hub-comments nid="blog.id" type="blog"></div>
