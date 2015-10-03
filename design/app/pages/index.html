@@ -1,18 +1,18 @@
 <div ng-controller="frontPage">
   <section class="top container">
     <ul class="breadcrumb">
-      <li class="active">Home</li>
+      <li class="active" translate>Home</li>
     </ul>
 
     <div class="row">
       <div class="col-md-8 col-xs-12 first">
         <div class="page-header questions-header clearfix">
-          <h3><a href="#/questions">Questions</a></h3>
-          <a href="#/add-question" class="btn btn-primary btn-md" ng-if="addQuestion">Ask a question</a>
+          <h3><a href="#/questions" translate>Questions</a></h3>
+          <a href="#/add-question" class="btn btn-primary btn-md" ng-if="addQuestion" translate>Ask a question</a>
         </div>
 
         <div class="questions-wrapper clearfix">
-          <span class="text-center" ng-if="assets.question.length == 0"><h3>There is no question to display.</h3></span>
+          <span class="text-center" ng-if="assets.question.length == 0"><h3 translate>There is no question to display.</h3></span>
           <div ng-repeat="question in assets.question">
             <div class="question row">
               <div class="col-md-2 col-sm-3 hidden-xs">
@@ -47,11 +47,11 @@
       <div class="col-md-4 col-xs-12 second">
 
         <div class="events">
-          <div class="page-header events-header"><h4 class="fa fa-calendar-o">Events</h4></div>
+          <div class="page-header events-header"><h4 class="fa fa-calendar-o" translate>Events</h4></div>
 
           <ul>
             <li class="text-center" ng-if="assets.events.length == 0">
-              <h3>There is no events to display.</h3>
+              <h3 translate>There is no events to display.</h3>
             </li>
             <li ng-repeat="event in assets.events" ng-cloak="events">
               <b><a href="{{event.url}}">{{event.label}}</a></b> - {{event.start}} <span ng-if="event.end">- {{event.end}}</span><span ng-if="event.human_address">, {{event.human_address}}.</span>
@@ -68,11 +68,11 @@
         </div>
 
         <div class="videos">
-          <div class="page-header video-header"><h4 class="fa fa-play">Last videos</h4></div>
+          <div class="page-header video-header"><h4 class="fa fa-play" translate>videos</h4></div>
 
           <ul>
             <li class="text-center" ng-if="assets.videos.length == 0">
-              <h3>There is no videos to display.</h3>
+              <h3 translate>There is no videos to display.</h3>
             </li>
             <li ng-cloak="videos" ng-repeat="video in assets.videos">
               <b><a href="{{video.url}}">{{video.label}}</a></b>- {{video.text}}
@@ -99,13 +99,13 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-header blog-header clearfix">
-          <h3><a href="#/blogs">Blogs</a></h3>
-          <a ng-if="addBlog" href="#/add-blog" class="btn btn-warning btn-md">Create a blog post</a>
+          <h3><a href="#/blogs" translate>Blogs</a></h3>
+          <a ng-if="addBlog" href="#/add-blog" class="btn btn-warning btn-md" translate>Create a blog post</a>
         </div>
 
         <div class="blogs-wrapper clearfix">
           <div class="text-center" ng-if="assets.blog.length == 0">
-            <h3>There is no events to display.</h3>
+            <h3 translate>There is no events to display.</h3>
           </div>
           <div class="blog row" ng-if="assets.blog" ng-repeat="blog in assets.blog">
             <div class="col-md-2 col-sm-3 hidden-xs"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>

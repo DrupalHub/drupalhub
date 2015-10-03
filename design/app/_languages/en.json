@@ -4,5 +4,11 @@
   "Documentation": "Documentation",
   "Search": "Search",
   "Social": "Social up!",
-  "Built and designed by": "Built and designed by <a href=\"{{lead_url}}\"><b>Roy Segall</b></a> And the <a href=\"{{contributors_url}}\"><b>project contributors</b></a>"
+  "Built and designed by": "Built and designed by <a href=\"{{lead_url}}\"><b>Roy Segall</b></a> And the <a href=\"{{contributors_url}}\"><b>project contributors</b></a>",
+
+  "Home": "Home",
+  "Questions": "Questions",
+  "Ask a question": "Ask a question",
+  "There is no question to display.": "There is no question to display.",
+  "There is no events to display.": "There is no events to display."
 }
