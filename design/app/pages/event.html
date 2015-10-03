@@ -1,8 +1,8 @@
 <section class="container page-event" ng-controller="eventCtrl" ng-show="event">
 
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/events">Events</a></li>
+    <li><a href="#/" translate>Home</a></li>
+    <li><a href="#/events" translate>Events</a></li>
     <li class="active">{{event.label}}</li>
   </ul>
 
@@ -27,8 +27,8 @@
                   </div>
                 </li>
                 <li ng-if="event.rsvp.coming == null" class="text-center">
-                  No one is coming. Why don't you join in?
-                  <button class="btn btn-success" ng-click="rsvp('coming')">I'll join!</button>
+                  <translate>No one is coming. Why don't you join in?</translate>
+                  <button class="btn btn-success" ng-click="rsvp('coming')" translate>I'll join!</button>
                 </li>
               </ul>
             </tab>
@@ -54,11 +54,11 @@
             </tab>
             <tab heading="RSVP">
               <div class="text-center">
-                <p>Are you coming to the event? For now the status is: <b>{{rsvpStatus}}</b></p>
+                <p><translate translate-values="{rsvpStatus: rsvpStatus}">Are you coming to the event? For now the status is:</translate></p>
                 <ul class="list-inline">
-                  <li><button class="btn btn-success" ng-click="rsvp('coming')">Coming</button></li>
-                  <li><button class="btn btn-info" ng-click="rsvp('maybe')">Maybe</button></li>
-                  <li><button class="btn btn-danger" ng-click="rsvp('not')">No</button></li>
+                  <li><button class="btn btn-success" ng-click="rsvp('coming')" translate>Coming</button></li>
+                  <li><button class="btn btn-info" ng-click="rsvp('maybe')" translate>Maybe</button></li>
+                  <li><button class="btn btn-danger" ng-click="rsvp('not')" translate>No</button></li>
                 </ul>
               </div>
             </tab>
@@ -80,7 +80,7 @@
 
   <section class="comments">
     <div class="page-header events-header clearfix">
-      <h2>Comments</h2>
+      <h2 translate>Comments</h2>
     </div>
 
     <div drupal-hub-comments nid="event.id" type="event"></div>

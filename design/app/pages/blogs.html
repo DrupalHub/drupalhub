@@ -1,17 +1,17 @@
 <section class="container page-blogs">
   <ul class="breadcrumb">
-    <li><a href="../index.html">Home</a></li>
-    <li class="active">Blogs</li>
+    <li><a href="../index.html" translate>Home</a></li>
+    <li class="active" translate>Blogs</li>
   </ul>
 
   <div class="row">
     <div class="col-md-12" ng-controller="blogsCtrl">
 
-      <div class="page-header blog-header clearfix"><h3>Blogs</h3></div>
+      <div class="page-header blog-header clearfix"><h3 translate>Blogs</h3></div>
 
       <div class="blogs-wrapper clearfix">
         <div class="text-center" ng-if="blogs.length == 0">
-          <h3>There is no blogs to display.</h3>
+          <h3 translate>There is no blogs to display.</h3>
         </div>
         <div class="blog row" ng-if="blogs" ng-repeat="blog in blogs">
           <div class="col-md-2 col-sm-3 hidden-xs"><img src="{{blog.image}}" class="images img-responsive blog" /></div>

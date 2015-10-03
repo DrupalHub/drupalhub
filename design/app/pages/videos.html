@@ -1,14 +1,14 @@
 <section class="container page-videos" ng-controller="videosCtrl" ng-show="videos">
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li class="active">Videos</li>
+    <li><a href="#/" translate>Home</a></li>
+    <li class="active" translate>Videos</li>
   </ul>
 
   <tabset justified="true">
     <tab heading="Videos" class="tab-item">
       <section class="clearfix top">
         <div class="pull-left" ng-if="suggestYoutube">
-          <a href="#/add-video" class="btn btn-danger"><span class="fa fa-plus"></span> Add new video</a>
+          <a href="#/add-video" class="btn btn-danger"><span class="fa fa-plus"></span> <translate>Add new video</translate></a>
         </div>
         <form class="navbar-form navbar-left pull-right" role="search">
           <div class="form-group">
@@ -20,7 +20,7 @@
       <section class="videos clearfix">
         <div class="row">
           <div class="text-center" ng-if="videos == 0">
-            <h3>There is no videos to display.</h3>
+            <h3 translate>There is no videos to display.</h3>
           </div>
           <div ng-repeat="(key, video) in videos">
 
@@ -47,7 +47,7 @@
 
       <section class="clearfix top">
         <div class="pull-left" ng-if="suggestPlaylist">
-          <a href="#/add-playlist" class="btn btn-danger"><span class="fa fa-plus"></span> Compile a new playlist</a>
+          <a href="#/add-playlist" class="btn btn-danger"><span class="fa fa-plus"></span> <translate>Compile a new playlist</translate></a>
         </div>
         <form class="navbar-form navbar-left pull-right clearfix" role="search">
           <div class="form-group">
@@ -59,7 +59,7 @@
       <section class="playlist clearfix">
         <div class="row">
           <div class="text-center" ng-if="playlists == 0">
-            <h3>There is no playlists to display.</h3>
+            <h3 translate>There is no playlists to display.</h3>
           </div>
           <div ng-repeat="playlist in playlists" class="col-md-3 col-sm-12 col-xs-12 playlist-wrapper">
 
@@ -69,8 +69,8 @@
             <div class="meta-info">
               <a href="{{playlist.url}}"><b>{{playlist.label}}</b></a> - {{playlist.text}}
               <div class="meta-info">
-                <span class="fa fa-clock-o"></span> Duration: {{playlist.duration}}
-                <span class="fa fa-file-o"></span> Videos: {{playlist.videos_number}}
+                <span class="fa fa-clock-o"></span> <translate translate-values="{duration: playlist.duration}">Duration</translate>
+                <span class="fa fa-file-o"></span> <translate translate-values="{number: playlist.videos_number}">Videos: number</translate>
               </div>
             </div>
           </div>

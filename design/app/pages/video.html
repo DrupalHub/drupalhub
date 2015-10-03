@@ -1,8 +1,8 @@
 <section class="container page-video" ng-controller="videoCtrl" ng-show="video">
 
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/videos">Videos</a></li>
+    <li><a href="#/" translate>Home</a></li>
+    <li><a href="#/videos" translate>Videos</a></li>
     <li class="active">{{video.label}}</li>
   </ul>
 
@@ -27,14 +27,14 @@
 
     <div class="col-md-8 comments">
       <div class="page-header video-header clearfix">
-        <h2>Comments</h2>
+        <h2 translate>Comments</h2>
       </div>
 
       <div drupal-hub-comments nid="video.id" type="video"></div>
     </div>
 
     <div class="col-md-4 other-videos">
-      <div class="page-header"><h2>Other videos</h2></div>
+      <div class="page-header"><h2 translate>Other videos</h2></div>
 
       <div class="row">
         <ul>
@@ -53,7 +53,7 @@
             </div>
           </li>
           <li class="text-center clearfix">
-            <button ng-if="show_more" class="btn btn-info" ng-click="loadMoreVideos()">Load more</button>
+            <button ng-if="show_more" class="btn btn-info" ng-click="loadMoreVideos()" translate>Load more</button>
           </li>
         </ul>
       </div>

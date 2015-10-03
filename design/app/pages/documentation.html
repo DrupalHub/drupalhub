@@ -1,8 +1,8 @@
 <section class="container page-documentation" ng-controller="documentationCtrl" ng-show="documentation">
 
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/documentations">Documentation</a></li>
+    <li><a href="#/" translate>Home</a></li>
+    <li><a href="#/documentations" translate>Documentation</a></li>
     <li class="active">{{documentation.label}}</li>
   </ul>
 
@@ -25,7 +25,7 @@
 
   <section class="comments">
     <div class="page-header documentation-header clearfix">
-      <h2>Comments</h2>
+      <h2 translate>Comments</h2>
     </div>
 
     <div drupal-hub-comments nid="documentation.id" type="documentation"></div>

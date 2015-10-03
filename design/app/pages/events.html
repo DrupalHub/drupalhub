@@ -1,7 +1,7 @@
 <section class="container page-events">
   <ul class="breadcrumb">
-    <li><a href="../index.html">Home</a></li>
-    <li class="active">Events</li>
+    <li><a href="../index.html" translate>Home</a></li>
+    <li class="active" translate>Events</li>
   </ul>
 
   <div class="row">
@@ -9,8 +9,8 @@
 
       <div class="page-header events-header clearfix">
         <div class="row">
-          <div class="col-md-8 col-sm-12 col-xs-12"><h3>Events</h3></div>
-          <div class="col-md-2 col-sm-6 col-xs-12"><a href="#/add-event" class="btn btn-success btn-md pull-left">Suggest event</a></div>
+          <div class="col-md-8 col-sm-12 col-xs-12"><h3 translate>Events</h3></div>
+          <div class="col-md-2 col-sm-6 col-xs-12"><a href="#/add-event" class="btn btn-success btn-md pull-left" translate>Suggest event</a></div>
           <div class="col-md-2 col-sm-6 col-xs-12">
             <a class="btn btn-info" ng-click="switchEvent()"><span
               ng-class="{'fa fa-arrow-left': type == 'future', 'fa fa-arrow-right': type != 'future'}"></span>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="text-center" ng-if="events.length == 0">
-          <h3>There is no events to display.</h3>
+          <h3 translate>There is no events to display.</h3>
         </div>
         <div class="event row" ng-if="events" ng-repeat="event in events">
           <div class="col-md-10 col-sm-10">
