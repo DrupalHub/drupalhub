@@ -1,33 +1,33 @@
 <section class="container form-search">
 
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li class="active">Search</li>
+    <li><a href="#/" translate>Home</a></li>
+    <li class="active" translate>Search</li>
   </ul>
 
   <div class="row">
     <div class="col-lg-12 col-md-12" ng-controller="searchForm">
       <div class="panel panel-info">
-        <div class="panel-heading">Search</div>
+        <div class="panel-heading" translate>Search</div>
         <div class="panel-body">
           <form role="form" name="searchForm" ng-submit="commitSearch()" novalidate>
 
             <div class="form-group">
               <div class="input-group serch-input">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" placeholder="What would you like to search?" name="Search" class="form-control" ng-model="search" required>
+                <input type="text" translate translate-attr-placeholder="What would you like to search?" name="Search" class="form-control" ng-model="search" required>
               </div>
               <hr>
-              <label class="control-label">Where would you like to search?</label>
+              <label class="control-label" translate>Where would you like to search?</label>
               <ul class="filters list-inline">
-                <li><input type="checkbox" ng-model="searchType.questions" title="Questions" />Questions</li>
-                <li><input type="checkbox" ng-model="searchType.blogs" title="Blogs" />Blogs</li>
-                <li><input type="checkbox" ng-model="searchType.documentation" title="Documentation">Documentation</li>
-                <li><input type="checkbox" ng-model="searchType.videos" title="Videos">Videos</li>
+                <li><input type="checkbox" ng-model="searchType.questions" title="Questions" /><translate>Questions</translate></li>
+                <li><input type="checkbox" ng-model="searchType.blogs" title="Blogs" /><translate>Blogs</translate></li>
+                <li><input type="checkbox" ng-model="searchType.documentation" title="Documentation"><translate>Documentation</translate></li>
+                <li><input type="checkbox" ng-model="searchType.videos" title="Videos"><translate>Videos</translate></li>
               </ul>
             </div>
 
-            <input type="submit" class="btn btn-info pull-right" />
+            <input type="submit" class="btn btn-info pull-right" translate translate-attr-value="Submit" />
 
           </form>
         </div>
