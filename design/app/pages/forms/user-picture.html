@@ -8,7 +8,7 @@
          flow-drag-enter="class='dragndrop-image'" flow-drag-leave="class=''" ng-class="class">
       <div class="row">
         <div class="col-md-9">
-          <span class="btn" flow-btn>Upload File</span> or drag an image
+          <span class="btn" flow-btn translate>Upload File</span> <translate>or drag an image</translate>
 
           <div ng-repeat="file in $flow.files" class="transfer-box">
             <div class="progress progress-striped" ng-class="{active: file.isUploading()}">
@@ -22,7 +22,7 @@
             </div>
           </div>
 
-          <button type="submit" ng-if="showSaveButton" class="btn btn-info pull-right">Submit</button>
+          <button type="submit" ng-if="showSaveButton" class="btn btn-info pull-right" translate>Submit</button>
 
         </div>
 

@@ -1,8 +1,8 @@
 <section class="container page-documentation" ng-controller="documentationCtrl" ng-show="documentation">
 
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/documentations">Documentation</a></li>
+    <li><a href="#/" translate>Home</a></li>
+    <li><a href="#/documentations" translate>Documentation</a></li>
     <li class="active">{{documentation.label}}</li>
   </ul>
 
@@ -14,8 +14,8 @@
             <span class="first fa fa-clock-o"></span>{{documentation.date}}
             <span class="fa fa-user"></span><span class="author-link" ng-bind-html="documentation.author | fullHtml"></span>
             <span class="fa fa-eye"></span>{{documentation.viewed}}
-            <span class="label label-info" ng-repeat="tag in documentation.tags"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
-            <span class="fa fa-pencil" ng-if="documentation.access.update"><a href="#/video/{{documentation.id}}/edit">Edit</a></span>
+            <span class="label label-info" ng-repeat="tag in documentation.tags"><a href="#/documentations/term/{{tag.id}}" translate>{{tag.label}}</a></span>
+            <span class="fa fa-pencil" ng-if="documentation.access.update"><a href="#/video/{{documentation.id}}/edit" translate>Edit</a></span>
           </div>
 
           <span ng-bind-html="documentation.text | fullHtml"></span>
@@ -25,7 +25,7 @@
 
   <section class="comments">
     <div class="page-header documentation-header clearfix">
-      <h2>Comments</h2>
+      <h2 translate>Comments</h2>
     </div>
 
     <div drupal-hub-comments nid="documentation.id" type="documentation"></div>

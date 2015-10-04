@@ -1,25 +1,24 @@
 <section class="container form-event">
   <ul class="breadcrumb">
-    <li><a href="../../index.html">Home</a></li>
-    <li class="active">Add event</li>
+    <li><a href="#/" translate>Home</a></li>
+    <li class="active" translate>Add event</li>
   </ul>
 
   <section class="form">
     <form class="form-horizontal" ng-controller="EventFormCtrl" name="eventForm" ng-submit="submit()" novalidate>
 
       <fieldset>
-        <legend class="event-header">Create a event</legend>
+        <legend class="event-header" translate>Create a event</legend>
 
         <div class="form-group">
-          <label for="inputTitle" class="col-sm-1 col-md-2 control-label">Title</label>
+          <label for="inputTitle" class="col-sm-1 col-md-2 control-label" translate>Title</label>
           <div class="col-sm-11 col-md-10">
-            <input type="text" name="Title" class="form-control" ng-model="event.label" id="inputTitle" placeholder="Title" required>
+            <input type="text" name="Title" class="form-control" ng-model="event.label" id="inputTitle" translate translate-attr-placeholder="Title" required>
           </div>
         </div>
 
         <div class="form-group">
-
-          <label for="inputLocation" class="col-sm-1 col-md-2 control-label">Location</label>
+          <label for="inputLocation" class="col-sm-1 col-md-2 control-label" translate>Location</label>
           <div class="col-sm-11 col-md-10 input-group">
             <div drupalhub-geo-location name="Location" id="inputLocation" longitude="event.longitude" latitude="event.latitude"></div>
             <span class="input-group-addon"><i class="fa fa-map-marker first"></i></span>
@@ -27,7 +26,7 @@
         </div>
 
         <div class="form-group">
-          <label for="inputDate" class="col-sm-1 col-md-2 control-label">Date</label>
+          <label for="inputDate" class="col-sm-1 col-md-2 control-label" translate>Date</label>
           <div class="col-sm-11 col-md-10 start-time-input row">
             <div class="col-md-6">
               <input type="text" name="start_date"
@@ -48,7 +47,7 @@
         </div>
 
         <div class="form-group">
-          <label for="inputTitle" class="col-sm-1 col-md-2 control-label">event</label>
+          <label for="inputTitle" class="col-sm-1 col-md-2 control-label" translate>Event</label>
           <div class="col-sm-11 col-md-10">
             <textarea name="Event" ckeditor="editorOptions" ng-model="event.text" required class="form-control" rows="3" id="textArea"></textarea>
           </div>
@@ -56,7 +55,7 @@
 
         <div class="form-group">
           <div class="col-md-12">
-            <button type="submit" class="btn btn-success pull-right">Submit</button>
+            <button type="submit" class="btn btn-success pull-right" translate>Submit</button>
           </div>
         </div>
       </fieldset>

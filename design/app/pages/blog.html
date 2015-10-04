@@ -1,7 +1,7 @@
 <section class="container page-blog" ng-controller="blogCtrl" ng-show="blog">
   <ul class="breadcrumb">
-    <li><a href="/#">Home</a></li>
-    <li><a href="/#blogs">blogs</a></li>
+    <li><a href="/#" translate>Home</a></li>
+    <li><a href="/#blogs" translate>Blogs</a></li>
     <li class="active">{{blog.label}}</li>
   </ul>
 
@@ -17,8 +17,8 @@
           <span class="fa fa-user" ng-bind-html="blog.author | fullHtml"></span>
           <span class="fa fa-eye"></span>{{blog.viewed}}
           <flag-like type="like" likes="{{blog.like}}" entity="node" id="{{blog.id}}"></flag-like>
-          <span ng-if="blog.access.update" class="fa fa-pencil"><a href="#/blog/{{blog.id}}/edit">Edit</a></span>
-          <span ng-if="blog.access.delete" class="fa fa-trash-o"><a ng-click="blogQuestion();">Delete</a></span>
+          <span ng-if="blog.access.update" class="fa fa-pencil"><a href="#/blog/{{blog.id}}/edit" translate>Edit</a></span>
+          <span ng-if="blog.access.delete" class="fa fa-trash-o"><a ng-click="blogQuestion();" translate>Delete</a></span>
         </div>
 
         <span ng-bind-html="blog.text | fullHtml"></span>
@@ -28,7 +28,7 @@
 
   <section class="comments">
     <div class="page-header blogs-header clearfix">
-      <h2>Comments</h2>
+      <h2 translate>Comments</h2>
     </div>
 
     <div drupal-hub-comments nid="blog.id" type="blog"></div>

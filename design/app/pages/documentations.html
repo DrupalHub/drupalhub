@@ -1,13 +1,13 @@
 <section class="container page-documentations" ng-controller="documentationsCtrl">
 
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li class="active">Documentation</li>
+    <li><a href="#/" translate>Home</a></li>
+    <li class="active" translate>Documentation</li>
   </ul>
 
   <div class="page-header documentation-header clearfix">
-    <h3 class="pull-left">Documentation</h3>
-    <a href="#/add-documentation" class="btn btn-primary btn-md pull-right" ng-if="showCreate">Add documentation</a>
+    <h3 class="pull-left" translate>Documentation</h3>
+    <a href="#/add-documentation" class="btn btn-primary btn-md pull-right" ng-if="showCreate" translate>Add documentation</a>
   </div>
 
   <div class="row">
@@ -22,7 +22,7 @@
 
   <div class="documentation-list" ng-if="documentations">
     <div class="text-center" ng-if="documentations.length == 0">
-      <h3>There is no documentations to display.</h3>
+      <h3 translate>There is no documentations to display.</h3>
     </div>
     <div class="row" ng-repeat="documentation in documentations">
       <div class="col-md-1 col-sm-3 col-xs-3">

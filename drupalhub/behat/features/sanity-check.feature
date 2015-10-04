@@ -12,7 +12,7 @@ Feature: Sanity check
       | Social Up!    |
       | Login/Sign in |
       | Events        |
-      | Last videos   |
+      | Videos        |
       | Blogs         |
 
   @javascript
