@@ -87,5 +87,8 @@
   "Upload File": "Upload File",
   "or drag an image": "or drag an image",
   "Add question": "Add question",
-  "Delete": "Delete"
+  "Delete": "Delete",
+  "Login/Sign in": "Login/Sign in",
+  "Profile": "Profile",
+  "Logout": "Logout"
 }
