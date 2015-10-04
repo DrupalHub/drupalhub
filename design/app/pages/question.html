@@ -29,8 +29,8 @@
             class-flagged="fa fa-envelope"
             class-unflagged="fa fa-envelope-o"
           ></flag-toggle>
-          <span ng-if="question.access.update" class="fa fa-pencil"><a href="#/question/{{question.id}}/edit">Edit</a></span>
-          <span ng-if="question.access.delete" class="fa fa-trash-o"><a ng-click="deleteQuestion();">Delete</a></span>
+          <span ng-if="question.access.update" class="fa fa-pencil"><a href="#/question/{{question.id}}/edit" translate>Edit</a></span>
+          <span ng-if="question.access.delete" class="fa fa-trash-o"><a ng-click="deleteQuestion();" translate>Delete</a></span>
           <span ng-repeat="tag in question.tags"><span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span></span>
         </div>
 

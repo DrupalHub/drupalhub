@@ -16,8 +16,8 @@
         <span class="fa fa-calendar"></span> {{video.date}}
         <span class="fa fa-eye"></span> {{video.like}}
         <span class="fa fa-thumbs-o-up"></span> {{video.viewed}}
-        <span ng-if="video.access.update" class="fa fa-pencil"><a href="#/video/{{video.id}}/edit">Edit</a></span>
-        <span ng-if="video.access.delete" class="fa fa-trash-o"><a ng-click="deleteVideo();">Delete</a></span>
+        <span ng-if="video.access.update" class="fa fa-pencil"><a href="#/video/{{video.id}}/edit" translate>Edit</a></span>
+        <span ng-if="video.access.delete" class="fa fa-trash-o"><a ng-click="deleteVideo();" translate>Delete</a></span>
 
       </div>
       <div>
