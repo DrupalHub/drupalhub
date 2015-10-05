@@ -10,9 +10,9 @@
         <div class="pull-left" ng-if="suggestYoutube">
           <a href="#/add-video" class="btn btn-danger"><span class="fa fa-plus"></span> <translate>Add new video</translate></a>
         </div>
-        <form class="navbar-form navbar-left pull-right" role="search">
+        <form class="navbar-form  pull-right" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" id="video-search" placeholder="Search" ng-model="videosSearch" ng-keyup="searchVideo();">
+            <input type="text" class="form-control" id="video-search" translate translate-attr-placeholder="Search" ng-model="videosSearch" ng-keyup="searchVideo();">
           </div>
         </form>
       </section>
@@ -49,9 +49,9 @@
         <div class="pull-left" ng-if="suggestPlaylist">
           <a href="#/add-playlist" class="btn btn-danger"><span class="fa fa-plus"></span> <translate>Compile a new playlist</translate></a>
         </div>
-        <form class="navbar-form navbar-left pull-right clearfix" role="search">
+        <form class="navbar-form  pull-right clearfix" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" id="playlist-search" placeholder="Search" ng-model="playlistSearch" ng-keyup="searchPlaylist();">
+            <input type="text" class="form-control" id="playlist-search" translate translate-attr-placeholder="Search" ng-model="playlistSearch" ng-keyup="searchPlaylist();">
           </div>
         </form>
       </section>

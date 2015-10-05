@@ -3,6 +3,7 @@ html[dir="rtl"] {
   @import "rtl/bootstrap-rtl.min";
   @import "rtl/bootstrap-flipped.min";
   @import "rtl/front";
+  @import "rtl/videos";
 
   .navbar > .container .navbar-brand,
   .navbar > .container-fluid .navbar-brand {
@@ -13,4 +14,25 @@ html[dir="rtl"] {
     margin-left: 5px;
   }
 
+  .nav-tabs > li {
+    float: none;
+  }
+
+  .pagination {
+    & > li:first-child > a,
+    & > li:first-child > span {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+
+    & > li:last-child > a,
+    & > li:last-child > span {
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px;
+      border-bottom-right-radius: 0;
+      border-top-right-radius: 0;
+    }
+  }
 }
