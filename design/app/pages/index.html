@@ -7,8 +7,8 @@
     <div class="row">
       <div class="col-md-8 col-xs-12 first">
         <div class="page-header questions-header clearfix">
-          <h3><a href="#/questions" translate>Questions</a></h3>
-          <a href="#/add-question" class="btn btn-primary btn-md" ng-if="addQuestion" translate>Ask a question</a>
+          <h3 class="pull-left"><a href="#/questions" translate>Questions</a></h3>
+          <a href="#/add-question" class="btn btn-primary btn-md pull-right" ng-if="addQuestion" translate>Ask a question</a>
         </div>
 
         <div class="questions-wrapper clearfix">
@@ -21,15 +21,15 @@
               <div class="col-md-10 col-sm-9 col-xs-12">
                 <div class="content">
                   <a href="{{question.url}}">{{question.label}}</a>
-                  <div class="meta-info">
-                    <span class="first fa fa-clock-o"></span>{{question.date}}
-                    <span class="fa fa-user"></span><span class="author-link" ng-bind-html="question.author | fullHtml"></span>
-                    <span class="fa fa-eye"></span>{{question.viewed}}
-                    <span class="fa fa-thumbs-o-up"></span>{{question.like}}
-                  <span ng-repeat="tag in question.tags">
-                    <span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span>
-                  </span>
-                  </div>
+                  <ul class="meta-info list-inline">
+                    <li class="date"><span class="first fa fa-clock-o"></span>{{question.date}}</li>
+                    <li class="author"><span class="fa fa-user"></span><span class="author-link" ng-bind-html="question.author | fullHtml"></span></li>
+                    <li class="viewed"><span class="fa fa-eye"></span>{{question.viewed}}</li>
+                    <li class="likes"><span class="fa fa-thumbs-o-up"></span>{{question.like}}</li>
+                    <li ng-repeat="tag in question.tags">
+                      <span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span>
+                    </li>
+                  </ul>
                   <div class="text" ng-bind-html="question.intro | fullHtml"></div>
                 </div>
               </div>
@@ -47,7 +47,7 @@
       <div class="col-md-4 col-xs-12 second">
 
         <div class="events">
-          <div class="page-header events-header"><h4 class="fa fa-calendar-o" translate>Events</h4></div>
+          <div class="page-header events-header"><i class="fa fa-calendar-o pull-left"></i><h4 translate>Events</h4></div>
 
           <ul>
             <li class="text-center" ng-if="assets.events.length == 0">
@@ -68,7 +68,7 @@
         </div>
 
         <div class="videos">
-          <div class="page-header video-header"><h4 class="fa fa-play" translate>Videos</h4></div>
+          <div class="page-header video-header"><i class="fa fa-play pull-left"></i><h4 translate>Videos</h4></div>
 
           <ul>
             <li class="text-center" ng-if="assets.videos.length == 0">
@@ -76,11 +76,11 @@
             </li>
             <li ng-cloak="videos" ng-repeat="video in assets.videos">
               <b><a href="{{video.url}}">{{video.label}}</a></b>- {{video.text}}
-              <div class="meta-info">
-                <span class="first fa fa-user"></span><span class="author-link" ng-bind-html="video.author | fullHtml"></span>
-                <span class="fa fa-eye"></span>{{video.viewed}}
-                <span class="fa fa-thumbs-o-up"></span>{{video.like}}
-              </div>
+              <ul class="meta-info list-inline">
+                <li class="author"><span class="first fa fa-user"></span><span class="author-link" ng-bind-html="video.author | fullHtml"></span></li>
+                <li class="viewed"><span class="fa fa-eye"></span>{{video.viewed}}</li>
+                <li class="like"><span class="fa fa-thumbs-o-up"></span>{{video.like}}</li>
+              </ul>
             </li>
           </ul>
           <div class="text-center" ng-if="waiting">
@@ -99,8 +99,8 @@
     <div class="row">
       <div class="col-md-12">
         <div class="page-header blog-header clearfix">
-          <h3><a href="#/blogs" translate>Blogs</a></h3>
-          <a ng-if="addBlog" href="#/add-blog" class="btn btn-warning btn-md" translate>Create a blog post</a>
+          <h3 class="pull-left"><a href="#/blogs" translate>Blogs</a></h3>
+          <a ng-if="addBlog" href="#/add-blog" class="btn btn-warning btn-md pull-right" translate>Create a blog post</a>
         </div>
 
         <div class="blogs-wrapper clearfix">
@@ -112,12 +112,12 @@
             <div class="col-md-10 col-sm-9 col-xs-12">
               <div class="content">
                 <a href="{{blog.url}}">{{blog.label}}</a>
-                <div class="meta-info">
-                  <span class="first fa fa-clock-o"></span>{{blog.date}}
-                  <span class="fa fa-user"></span><span class="author-link" ng-bind-html="blog.author | fullHtml"></span>
-                  <span class="fa fa-eye"></span>{{blog.viewed}}
-                  <span class="fa fa-thumbs-o-up"></span>{{blog.like}}
-                </div>
+                <ul class="meta-info list-inline">
+                  <li class="data"><span class="first fa fa-clock-o"></span>{{blog.date}}</li>
+                  <li class="author"><span class="fa fa-user"></span><span class="author-link" ng-bind-html="blog.author | fullHtml"></span></li>
+                  <li class="viewed"><span class="fa fa-eye"></span>{{blog.viewed}}</li>
+                  <li class="likes"><span class="fa fa-thumbs-o-up"></span>{{blog.like}}</li>
+                </ul>
                 <div class="text" ng-bind-html="blog.intro | fullHtml"></div>
               </div>
             </div>

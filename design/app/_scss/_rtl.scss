@@ -1,7 +1,6 @@
 html[dir="rtl"] {
 
   @import "rtl/bootstrap-rtl.min";
-
-  body {
-  }
+  @import "rtl/bootstrap-flipped.min";
+  @import "rtl/front";
 }
