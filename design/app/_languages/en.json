@@ -87,5 +87,20 @@
   "Login/Sign in": "Login/Sign in",
   "Profile": "Profile",
   "Logout": "Logout",
-  "Any thoughts for this documentation?": "מה דעתך על המסמך הזה?"
+  "Help this question": "Help this question",
+  "What do you think on this video?": "What do you think on this video?",
+  "What do you think on this event?": "What do you think on this event?",
+  "Any thoughts for this documentation?": "Any thoughts for this documentation?",
+  "What do you think on this blog?": "What do you think on this blog?",
+  "Playlists": "Playlists",
+  "Yes:": "Yes:",
+  "Maybe:": "Maybe:",
+  "No:": "No:",
+  "Not": "Not",
+  "Coming": "Coming",
+  "coming": "coming",
+  "maybe": "maybe",
+  "not": "not",
+  "Unknown": "Unknown",
+  "Status": "Status"
 }
