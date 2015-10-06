@@ -12,14 +12,14 @@
       </div>
       <div class="col-md-10 col-sm-9 col-xs-12 blog-content">
         <h2>{{blog.label}}</h2>
-        <div class="meta-info" ng-if="blog.date">
-          <span class="first fa fa-clock-o"></span>{{blog.date}}
-          <span class="fa fa-user" ng-bind-html="blog.author | fullHtml"></span>
-          <span class="fa fa-eye"></span>{{blog.viewed}}
-          <flag-like type="like" likes="{{blog.like}}" entity="node" id="{{blog.id}}"></flag-like>
-          <span ng-if="blog.access.update" class="fa fa-pencil"><a href="#/blog/{{blog.id}}/edit" translate>Edit</a></span>
-          <span ng-if="blog.access.delete" class="fa fa-trash-o"><a ng-click="blogQuestion();" translate>Delete</a></span>
-        </div>
+        <ul class="meta-info list-inline" ng-if="blog.date">
+          <li><span class="first fa fa-clock-o"></span>{{blog.date}}</li>
+          <li><span class="fa fa-user" ng-bind-html="blog.author | fullHtml"></span></li>
+          <li><span class="fa fa-eye"></span>{{blog.viewed}}</li>
+          <li><flag-like type="like" likes="{{blog.like}}" entity="node" id="{{blog.id}}"></flag-like></li>
+          <li><span ng-if="blog.access.update" class="fa fa-pencil"><a href="#/blog/{{blog.id}}/edit" translate>Edit</a></span></li>
+          <li><span ng-if="blog.access.delete" class="fa fa-trash-o"><a ng-click="blogQuestion();" translate>Delete</a></span></li>
+        </ul>
 
         <span ng-bind-html="blog.text | fullHtml"></span>
       </div>

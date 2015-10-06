@@ -68,10 +68,10 @@
             <a href="{{playlist.url}}"><img class="img-responsive image" ng-src="{{playlist.image}}" /></a>
             <div class="meta-info">
               <a href="{{playlist.url}}"><b>{{playlist.label}}</b></a> - {{playlist.text}}
-              <div class="meta-info">
-                <span class="fa fa-clock-o"></span> <translate translate-values="{duration: playlist.duration}">Duration</translate>
-                <span class="fa fa-file-o"></span> <translate translate-values="{number: playlist.videos_number}">Videos: number</translate>
-              </div>
+              <ul class="meta-info list-inline">
+                <li><span class="fa fa-clock-o"></span> <translate translate-values="{duration: playlist.duration}">Duration</translate></li>
+                <li><span class="fa fa-file-o"></span> <translate translate-values="{number: playlist.videos_number}">Videos: number</translate></li>
+              </ul>
             </div>
           </div>
         </div>

@@ -11,15 +11,14 @@
       <div class="embed-responsive embed-responsive-16by9">
         <div ng-bind-html="youtube | fullHtml"></div>
       </div>
-      <div class="meta-info">
-        <span class="fa fa-clock-o"></span> {{video.duration}}
-        <span class="fa fa-calendar"></span> {{video.date}}
-        <span class="fa fa-eye"></span> {{video.like}}
-        <span class="fa fa-thumbs-o-up"></span> {{video.viewed}}
-        <span ng-if="video.access.update" class="fa fa-pencil"><a href="#/video/{{video.id}}/edit" translate>Edit</a></span>
-        <span ng-if="video.access.delete" class="fa fa-trash-o"><a ng-click="deleteVideo();" translate>Delete</a></span>
-
-      </div>
+      <ul class="meta-info list-inline">
+        <li><span class="fa fa-clock-o"></span> {{video.duration}}</li>
+        <li><span class="fa fa-calendar"></span> {{video.date}}</li>
+        <li><span class="fa fa-eye"></span> {{video.like}}</li>
+        <li><span class="fa fa-thumbs-o-up"></span> {{video.viewed}}</li>
+        <li><span ng-if="video.access.update" class="fa fa-pencil"><a href="#/video/{{video.id}}/edit" translate>Edit</a></span></li>
+        <li><span ng-if="video.access.delete" class="fa fa-trash-o"><a ng-click="deleteVideo();" translate>Delete</a></span></li>
+      </ul>
       <div>
         <div class="text" ng-bind-html="video.text | fullHtml"></div>
       </div>
@@ -44,12 +43,12 @@
             </div>
             <div class="col-md-9 col-sm-9 col-xs-12">
               <a href="{{other_video.url}}">{{other_video.label}}</a>
-              <div class="meta-info">
-                <span class="fa fa-clock-o"></span> {{other_video.duration}}
-                <span class="fa fa-calendar"></span> {{other_video.date}}
-                <span class="fa fa-eye"></span> {{other_video.like}}
-                <span class="fa fa-thumbs-o-up"></span> {{other_video.viewed}}
-              </div>
+              <ul class="meta-info list-inline">
+                <li><span class="fa fa-clock-o"></span> {{other_video.duration}}</li>
+                <li><span class="fa fa-calendar"></span> {{other_video.date}}</li>
+                <li><span class="fa fa-eye"></span> {{other_video.like}}</li>
+                <li><span class="fa fa-thumbs-o-up"></span> {{other_video.viewed}}</li>
+              </ul>
             </div>
           </li>
           <li class="text-center clearfix">

@@ -15,12 +15,12 @@
           <div class="title pull-left"><h2>{{question.label}}</h2></div>
           <drupalhub-up-down class="pull-right" id="{{question.id}}" type="node" points="{{question.vote}}"></drupalhub-up-down>
         </div>
-        <div class="meta-info">
-          <span class="first fa fa-clock-o"></span>{{question.date}}
-          <span class="fa fa-user"></span><span class="author-link" ng-bind-html="question.author | fullHtml"></span>
-          <span class="fa fa-eye"></span>{{question.viewed}}
-          <flag-like type="like" likes="{{question.like}}" entity="node" id="{{question.id}}"></flag-like>
-          <flag-toggle
+        <ul class="meta-info list-inline">
+          <li><span class="first fa fa-clock-o"></span>{{question.date}}</li>
+          <li><span class="fa fa-user"></span><span class="author-link" ng-bind-html="question.author | fullHtml"></span></li>
+          <li><span class="fa fa-eye"></span>{{question.viewed}}</li>
+          <li><flag-like type="like" likes="{{question.like}}" entity="node" id="{{question.id}}"></flag-like></li>
+          <li><flag-toggle
             endpoint="question_follow"
             entity="node"
             entity-id="{{question.id}}"
@@ -28,11 +28,11 @@
             text-unflagged="Follow"
             class-flagged="fa fa-envelope"
             class-unflagged="fa fa-envelope-o"
-          ></flag-toggle>
-          <span ng-if="question.access.update" class="fa fa-pencil"><a href="#/question/{{question.id}}/edit" translate>Edit</a></span>
-          <span ng-if="question.access.delete" class="fa fa-trash-o"><a ng-click="deleteQuestion();" translate>Delete</a></span>
-          <span ng-repeat="tag in question.tags"><span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span></span>
-        </div>
+          ></flag-toggle></li>
+          <li><span ng-if="question.access.update" class="fa fa-pencil"><a href="#/question/{{question.id}}/edit" translate>Edit</a></span></li>
+          <li><span ng-if="question.access.delete" class="fa fa-trash-o"><a ng-click="deleteQuestion();" translate>Delete</a></span></li>
+          <li><span ng-repeat="tag in question.tags"><span class="label label-info"><a href="{{tag.url}}">{{tag.label}}</a></span></span></li>
+        </ul>
 
         <p ng-bind-html="question.text | fullHtml"></p>
       </div>
