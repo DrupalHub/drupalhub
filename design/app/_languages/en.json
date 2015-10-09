@@ -108,5 +108,9 @@
   "past events": "past events",
   "future event": "future event",
   "User Name": "User Name",
-  "Confirm password": "Confirm password"
+  "Confirm password": "Confirm password",
+  "label": "label",
+  "empty field": "The field {{name}} is required.",
+  "select tags": "select tags",
+  "Select category": "Select category"
 }

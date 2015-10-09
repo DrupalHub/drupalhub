@@ -108,5 +108,9 @@
   "past events": "אירועים קודמים",
   "future event": "אירועים עתידיים",
   "User Name": "שם משתמש",
-  "Confirm password": "אימות סיסמא"
+  "Confirm password": "אימות סיסמא",
+  "label": "כותרת",
+  "empty field": "השדה {{name}} הוא שדה חובה.",
+  "select tags": "בחר תגיות",
+  "Select category": "בחר קטגוריה"
 }

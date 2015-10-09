@@ -66,4 +66,13 @@ html[dir="rtl"] {
   .input-group-addon:first-child {
     border: none;
   }
+
+  .ui-select-bootstrap > .ui-select-match > .btn {
+
+    span {
+      position: absolute;
+      right: 20px
+    }
+  }
+
 }
