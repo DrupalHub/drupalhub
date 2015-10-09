@@ -9,12 +9,12 @@
 
       <div class="page-header events-header clearfix">
         <div class="row">
-          <div class="col-md-8 col-sm-12 col-xs-12"><h3 translate>Events</h3></div>
+          <div class="col-md-8 col-sm-12 col-xs-12 pull-left"><h3 translate>Events</h3></div>
           <div class="col-md-2 col-sm-6 col-xs-12"><a href="#/add-event" class="btn btn-success btn-md pull-left" translate>Suggest event</a></div>
           <div class="col-md-2 col-sm-6 col-xs-12">
-            <a class="btn btn-info" ng-click="switchEvent()"><span
+            <a class="btn btn-info pull-right" ng-click="switchEvent()"><span
               ng-class="{'fa fa-arrow-left': type == 'future', 'fa fa-arrow-right': type != 'future'}"></span>
-              Switch to: {{type == 'future' ? 'past events' : 'future event'}}
+              <translate translate-values="{status: status}">Switch to</translate>
             </a>
           </div>
         </div>
@@ -36,14 +36,14 @@
           <div class="col-md-10 col-sm-10">
             <div class="content">
               <a href="{{event.url}}" class="link">{{event.label}}</a>
-              <div class="meta-info">
-                <span class="first fa fa-clock-o"></span>{{event.date}}
-                <span class="fa fa-map-marker"></span>{{event.human_address}}
-                <span class="fa fa-user"></span><span class="author-link" ng-bind-html="event.author | fullHtml"></span>
-                <span class="fa fa-thumbs-o-up"></span>{{event.like}}
-              </div>
+              <ul class="meta-info list-inline">
+                <li><span class="first fa fa-clock-o"></span>{{event.date}}</li>
+                <li ng-if="event.human_address"><span class="fa fa-map-marker"></span>{{event.human_address}}</li>
+                <li><span class="fa fa-user"></span><span class="author-link" ng-bind-html="event.author | fullHtml"></span></li>
+                <li><span class="fa fa-thumbs-o-up"></span>{{event.like}}</li>
+              </ul>
               <div>
-                RSVP - Yes: {{event.rsvp.comming | countAttendees}} | Maybe: {{event.rsvp.maybe | countAttendees}} | No: {{event.rsvp.not | countAttendees}}
+                RSVP - <translate>Yes:</translate> {{event.rsvp.comming | countAttendees}} | <translate>Maybe:</translate> {{event.rsvp.maybe | countAttendees}} | <translate>No:</translate> {{event.rsvp.not | countAttendees}}
               </div>
               <div class="text">
                 {{event.description}}

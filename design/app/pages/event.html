@@ -18,7 +18,7 @@
         <div role="tabpanel" class="rsvp">
 
           <tabset justified="true">
-            <tab heading="Coming">
+            <tab heading="{{tablLalbes.Coming}}">
               <ul>
                 <li ng-repeat="user in event.rsvp.coming">
                   <div class="row">
@@ -32,7 +32,7 @@
                 </li>
               </ul>
             </tab>
-            <tab heading="Maybe">
+            <tab heading="{{tablLalbes.Maybe}}">
               <ul>
                 <li ng-repeat="user in event.rsvp.maybe">
                   <div class="row">
@@ -42,7 +42,7 @@
                 </li>
               </ul>
             </tab>
-            <tab heading="Not">
+            <tab heading="{{tablLalbes.Not}}">
               <ul>
                 <li ng-repeat="user in event.rsvp.not">
                   <div class="row">

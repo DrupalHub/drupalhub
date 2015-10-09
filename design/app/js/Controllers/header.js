@@ -1,11 +1,11 @@
-DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest, $rootScope) {
+DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest, $rootScope, $filter) {
 
   $scope.headerTitle = 'Drupal.org.il';
 
   $scope.$on('$routeChangeStart', function(value, route) {
 
     if (route.title) {
-      $scope.headerTitle = 'Drupal.org.il: ' + route.title;
+      $scope.headerTitle = 'Drupal.org.il: ' + $filter('translate')(route.title);
     }
     else {
       $rootScope.$on('titleAlter', function(info, value) {

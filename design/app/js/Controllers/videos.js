@@ -1,9 +1,12 @@
-DrupalHub.controller('videosCtrl', function($scope, DrupalHubRequest, $location) {
+DrupalHub.controller('videosCtrl', function($scope, DrupalHubRequest, $location, $filter) {
 
   $scope.page = 1;
   $scope.videosSearch = '';
   $scope.playlistSearch = '';
   $scope.showPager = true;
+
+  $scope.videos_title = $filter('translate')('Videos');
+  $scope.playlist_title = $filter('translate')('Playlists');
 
   var page = $location.search().page == undefined ? 1 : $location.search().page;
 
