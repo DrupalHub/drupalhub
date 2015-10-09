@@ -83,11 +83,11 @@
               <div ng-if="showLoginInput">
                 <div class="input-group login-input input-area-wrapper">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="Username" translate translate-attr-placeholder="Username" ng-model="user.name" required>
+                  <input type="text" class="form-control" name="{{'Username' | translate}}" translate translate-attr-placeholder="Username" ng-model="user.name" required>
                 </div>
                 <div class="input-group login-input input-area-wrapper">
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" class="form-control" name="Password" translate translate-attr-placeholder="Password" ng-model="user.pass" required>
+                  <input type="password" class="form-control" name="{{'Password' | translate}}" translate translate-attr-placeholder="Password" ng-model="user.pass" required>
                 </div>
                 <hr />
                 <input type="submit" id="submit" class="btn btn-primary pull-right" translate-attr-value="Submit" translate />
