@@ -1,4 +1,4 @@
-DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, $location, $routeParams, drupalMessagesService) {
+DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, $location, $routeParams, drupalMessagesService, language) {
 
   $scope.video = {
     embed: '',
@@ -47,10 +47,10 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, 
     var request;
 
     if ($routeParams['id'] != undefined) {
-      request = DrupalHubRequest.localRequest('patch', 'video/' + $routeParams['id'], $scope.video);
+      request = DrupalHubRequest.localRequest('patch', 'video/' + $routeParams['id'] + '?lang=' + language.code, $scope.video);
     }
     else {
-      request = DrupalHubRequest.localRequest('post', 'video', $scope.video);
+      request = DrupalHubRequest.localRequest('post', 'video' + '?lang=' + language.code, $scope.video);
     }
 
     request.success(function(data) {

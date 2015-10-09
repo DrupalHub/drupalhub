@@ -112,5 +112,8 @@
   "label": "כותרת",
   "empty field": "השדה {{name}} הוא שדה חובה.",
   "select tags": "בחר תגיות",
-  "Select category": "בחר קטגוריה"
+  "Select category": "בחר קטגוריה",
+  "Start date": "תאריך התחלה",
+  "location": "מיקום",
+  "date": "תאריך"
 }

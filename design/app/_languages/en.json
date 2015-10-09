@@ -112,5 +112,8 @@
   "label": "label",
   "empty field": "The field {{name}} is required.",
   "select tags": "select tags",
-  "Select category": "Select category"
+  "Select category": "Select category",
+  "Start date": "Start date",
+  "location": "location",
+  "date": "date"
 }

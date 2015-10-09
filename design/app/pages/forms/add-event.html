@@ -13,15 +13,14 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label" translate>Title</label>
           <div class="col-sm-11 col-md-10">
-            <input type="text" name="Title" class="form-control" ng-model="event.label" id="inputTitle" translate translate-attr-placeholder="Title" required>
+            <input type="text" name="{{'Title' | translate}}" class="form-control" ng-model="event.label" id="inputTitle" translate translate-attr-placeholder="Title" required>
           </div>
         </div>
 
         <div class="form-group">
           <label for="inputLocation" class="col-sm-1 col-md-2 control-label" translate>Location</label>
           <div class="col-sm-11 col-md-10 input-group">
-            <div drupalhub-geo-location name="Location" id="inputLocation" longitude="event.longitude" latitude="event.latitude"></div>
-            <span class="input-group-addon"><i class="fa fa-map-marker first"></i></span>
+            <div drupalhub-geo-location name="{{'Location' | translate}}" id="inputLocation" longitude="event.longitude" latitude="event.latitude"></div>
           </div>
         </div>
 
@@ -29,9 +28,9 @@
           <label for="inputDate" class="col-sm-1 col-md-2 control-label" translate>Date</label>
           <div class="col-sm-11 col-md-10 start-time-input row">
             <div class="col-md-6">
-              <input type="text" name="start_date"
+              <input type="text" name="{{'Start date' | translate}}"
                      class="form-control" id="inputDate"
-                     ng-model="event.start_date.date" placeholder="Date"
+                     ng-model="event.start_date.date" placeholder="{{'Date' | translate}}"
                      datepicker-popup="{{format}}" is-open="opened"
                      min-date="minDate" datepicker-options="dateOptions"
                      ng-required="true" close-text="Close"
@@ -49,7 +48,7 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label" translate>Event</label>
           <div class="col-sm-11 col-md-10">
-            <textarea name="Event" ckeditor="editorOptions" ng-model="event.text" required class="form-control" rows="3" id="textArea"></textarea>
+            <textarea name="{{'Event' | translate}}" ckeditor="editorOptions" ng-model="event.text" required class="form-control" rows="3" id="textArea"></textarea>
           </div>
         </div>
 
