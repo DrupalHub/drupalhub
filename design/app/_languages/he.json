@@ -103,5 +103,8 @@
   "maybe": "אולי",
   "Unknown": "לא ידוע",
   "Status": "מצב",
-  "What would you like to search?": "מה תרצה לחפש?"
+  "What would you like to search?": "מה תרצה לחפש?",
+  "Switch to": "עבור אל: {{status}}",
+  "past events": "אירועים קודמים",
+  "future event": "אירועים עתידיים"
 }

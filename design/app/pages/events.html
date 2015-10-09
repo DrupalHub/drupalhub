@@ -14,7 +14,7 @@
           <div class="col-md-2 col-sm-6 col-xs-12">
             <a class="btn btn-info pull-right" ng-click="switchEvent()"><span
               ng-class="{'fa fa-arrow-left': type == 'future', 'fa fa-arrow-right': type != 'future'}"></span>
-              Switch to: {{type == 'future' ? 'past events' : 'future event'}}
+              <translate translate-values="{status: status}">Switch to</translate>
             </a>
           </div>
         </div>
@@ -38,7 +38,7 @@
               <a href="{{event.url}}" class="link">{{event.label}}</a>
               <ul class="meta-info list-inline">
                 <li><span class="first fa fa-clock-o"></span>{{event.date}}</li>
-                <li><span class="fa fa-map-marker"></span>{{event.human_address}}</li>
+                <li ng-if="event.human_address"><span class="fa fa-map-marker"></span>{{event.human_address}}</li>
                 <li><span class="fa fa-user"></span><span class="author-link" ng-bind-html="event.author | fullHtml"></span></li>
                 <li><span class="fa fa-thumbs-o-up"></span>{{event.like}}</li>
               </ul>

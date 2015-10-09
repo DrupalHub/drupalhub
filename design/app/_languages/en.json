@@ -103,5 +103,8 @@
   "not": "not",
   "Unknown": "Unknown",
   "Status": "Status",
-  "What would you like to search?": "What would you like to search?"
+  "What would you like to search": "What would you like to search?",
+  "Switch to": "Switch to {{status}}",
+  "past events": "past events",
+  "future event": "future event"
 }
