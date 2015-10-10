@@ -41,6 +41,13 @@ class DrupalHubVideosValidator extends EntityValidateBase {
       return;
     }
 
-    $this->setError($field_name, 'There is already a video with this youtube address.');
+    $errors = array(
+      'en' => 'There is already a video with this youtube address.',
+      'he' => 'קיים כבר סרטון עם הכתובת הזאת.',
+    );
+
+    $lang = empty($_GET['lang']) ? 'en' : $_GET['lang'];
+
+    $this->setError($field_name, $errors[$lang]);
   }
 }

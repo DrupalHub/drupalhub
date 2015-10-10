@@ -1,4 +1,4 @@
-DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope) {
+DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope, $filter) {
 
   var path, access;
 
@@ -25,7 +25,7 @@ DrupalHub.controller('UserProfileCtrl', function($scope, DrupalHubRequest, $rout
     DrupalHubRequest.userAccess(access).then(function(data) {
 
       if (data.data.data.access) {
-        $scope.editButton = "<a href='#/user/edit/" +  $scope.user.id + "'>Control panel</a>";
+        $scope.editButton = "<a href='#/user/edit/" +  $scope.user.id + "'>" + $filter('translate')('Control panel') + "</a>";
       }
 
     });

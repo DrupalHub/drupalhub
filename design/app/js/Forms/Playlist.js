@@ -1,4 +1,4 @@
-DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService) {
+DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter) {
 
   $scope.results = '';
   $scope.videos = [];
@@ -66,7 +66,7 @@ DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drup
     drupalMessagesService.checkRequired($scope.PlaylistForm);
 
     if ($scope.ids.length < 3) {
-      drupalMessagesService.danger('Playlist should be more then 3 videos');
+      drupalMessagesService.danger($filter('translate')('Playlist should be more then 3 videos.'));
       $scope.PlaylistForm.videos.$setValidity("videos", false);
     }
     else {

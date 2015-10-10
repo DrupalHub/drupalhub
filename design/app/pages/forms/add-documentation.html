@@ -13,7 +13,7 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label" translate>Title</label>
           <div class="col-sm-11 col-md-10">
-            <input type="text" name="Title" class="form-control" ng-model="documentation.label" id="inputTitle" translate-attr-placeholder="Title" translate required>
+            <input type="text" name="{{'Title' | translate}}" class="form-control" ng-model="documentation.label" id="inputTitle" placeholder="{{'Title' | translate}}" required>
           </div>
         </div>
 
@@ -21,7 +21,7 @@
           <label for="inputTags" class="col-sm-1 col-md-2 control-label" translate>Tags</label>
           <div class="col-sm-11 col-md-10">
             <ui-select ng-model="documentation.tags" theme="bootstrap" reset-search-input="true">
-              <ui-select-match placeholder="Select catagory">{{$select.selected}}</ui-select-match>
+              <ui-select-match placeholder="{{'Select category' | translate}}">{{$select.selected}}</ui-select-match>
               <ui-select-choices repeat="tag in tags" refresh="refreshAddresses($select.search)" refresh-delay="0" id="inputTags">
                 <div ng-bind-html="tag | highlight: $select.search"></div>
               </ui-select-choices>
@@ -32,7 +32,7 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label" translate>Text</label>
           <div class="col-sm-11 col-md-10">
-            <textarea name="Text" ckeditor="editorOptions" ng-model="documentation.text" required class="form-control" rows="3" id="textArea"></textarea>
+            <textarea name="{{'Text' | translate}}" ckeditor="editorOptions" ng-model="documentation.text" required class="form-control" rows="3" id="textArea"></textarea>
           </div>
         </div>
 
