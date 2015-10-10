@@ -1,4 +1,4 @@
-DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService) {
+DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService, $filter) {
   $scope.tags = [];
   $scope.refreshAddresses = function(address) {
     return DrupalHubRequest.localRequest('get', 'tags?autocomplete[string]=' + address).then(function(response) {

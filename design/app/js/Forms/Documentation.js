@@ -1,4 +1,4 @@
-DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService) {
+DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService, $filter) {
 
   $scope.documentation = {
     label: '',
@@ -36,7 +36,7 @@ DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest,
     drupalMessagesService.checkRequired($scope.documentationForm);
 
     if (!$scope.documentation.tags) {
-      drupalMessagesService.danger('The category field is required.');
+      drupalMessagesService.danger($filter('translate')('empty field', {'name': $filter('translate')('Tags')}));
       tags = false;
     }
 

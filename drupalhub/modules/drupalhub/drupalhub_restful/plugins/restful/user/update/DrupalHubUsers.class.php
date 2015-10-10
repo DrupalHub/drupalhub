@@ -127,6 +127,8 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     $results = $query
       ->entityCondition('entity_type', 'message')
       ->propertyCondition('uid', $uid)
+      ->propertyCondition('type', array('commented_to_node', 'created_node', 'new_user', 'user_down_up_voted'))
+      ->propertyOrderBy('timestamp', 'DESC')
       ->execute();
 
     if (empty($results['message'])) {

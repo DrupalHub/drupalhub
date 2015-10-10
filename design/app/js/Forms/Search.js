@@ -1,4 +1,4 @@
-DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMessagesService) {
+DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMessagesService, $filter) {
 
   $scope.searchType = {};
   $scope.search = {};
@@ -16,7 +16,7 @@ DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMess
     });
 
     if (types.length == 0) {
-      drupalMessagesService.danger('You need to select filters!');
+      drupalMessagesService.danger($filter('translate')('You need to select filters!'));
     }
 
     if (drupalMessagesService.valid()) {

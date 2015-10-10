@@ -1,20 +1,20 @@
-DrupalHub.controller('resetPasswordCtrl', function($scope, DrupalHubRequest, $routeParams, localStorageService, drupalMessagesService) {
+DrupalHub.controller('resetPasswordCtrl', function($scope, DrupalHubRequest, $routeParams, localStorageService, drupalMessagesService, $filter) {
 
   $scope.resetPassword = function() {
     drupalMessagesService.reset();
+    drupalMessagesService.checkRequired($scope.ResetPasswordForm);
+
+    var translations = {
+      'password1': $filter('translate')('Password'),
+      'password2': $filter('translate')('Password - verification')
+    };
 
     if ($scope.password1 != $scope.password2) {
-      drupalMessagesService.danger('The password are not matching.');
-      $scope.ResetPasswordForm.password1.$setValidity("password1", false);
-      $scope.ResetPasswordForm.password2.$setValidity("password2", false);
+      drupalMessagesService.danger($filter('translate')('The password are not matching.'));
+      $scope.ResetPasswordForm[translations.password1].$setValidity(translations.password1, false);
+      $scope.ResetPasswordForm[translations.password2].$setValidity(translations.password2, false);
     }
     else {
-      $scope.ResetPasswordForm.password1.$setValidity("password1", true);
-      $scope.ResetPasswordForm.password2.$setValidity("password2", true);
-      angular.forEach($scope.ResetPasswordForm.$error.required, function(value, key) {
-        drupalMessagesService.danger('The field ' + value.$name + ' is required.');
-      });
-
       localStorageService.set('access_token', $routeParams['access']);
       DrupalHubRequest.accessToken = $routeParams['access'];
       DrupalHubRequest.localRequest('get', 'me').then(function(data) {

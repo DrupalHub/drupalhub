@@ -12,7 +12,7 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label" translate>Title</label>
           <div class="col-sm-11 col-md-10">
-            <input type="Title" ng-model="question.label" name="label" class="form-control" id="inputTitle" required translate-attr-placeholder="Title" translate>
+            <input type="Title" ng-model="question.label" name="{{'label' | translate}}" class="form-control" id="inputTitle" required placeholder="{{'label' | translate}}">
           </div>
         </div>
 
@@ -20,7 +20,7 @@
         <label for="inputTags" class="col-sm-1 col-md-2 control-label" translate>Tags</label>
         <div class="col-sm-11 col-md-10">
           <ui-select ng-model="question.tags" ng-disabled="disabled" multiple reset-search-input="true" tagging="true">
-            <ui-select-match placeholder="Select tags">{{$item}}</ui-select-match>
+            <ui-select-match placeholder="{{'select tags' | translate}}">{{$item}}</ui-select-match>
             <ui-select-choices repeat="tag in tags | filter:$select.search" refresh="refreshAddresses($select.search)" refresh-delay="0" id="inputTags">
               <div ng-bind-html="tag | highlight: $select.search"></div>
             </ui-select-choices>
@@ -32,7 +32,10 @@
         <div class="form-group">
           <label for="inputTitle" class="col-sm-1 col-md-2 control-label" translate>Question</label>
           <div class="col-sm-11 col-md-10">
-            <textarea ckeditor="editorOptions" ng-model="question.text" name="Question" required class="form-control" rows="3" id="textArea"></textarea>
+            <textarea ckeditor="editorOptions"
+              ng-model="question.text" name="{{'Question' | translate}}"
+              required class="form-control"
+              rows="3" id="textArea"></textarea>
           </div>
         </div>
 

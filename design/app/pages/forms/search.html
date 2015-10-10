@@ -15,7 +15,7 @@
             <div class="form-group">
               <div class="input-group serch-input">
                 <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="Title" name="Search" class="form-control" ng-model="search.search" required translate-attr-placeholder="What would you like to search?" translate>
+                <input type="Title" name="{{'search' | translate}}" class="form-control" ng-model="search.search" required placeholder="{{'What would you like to search?' | translate}}">
               </div>
               <hr>
               <label class="control-label" translate>Where would you like to search?</label>
@@ -27,7 +27,7 @@
               </ul>
             </div>
 
-            <input type="submit" class="btn btn-info pull-right" translate translate-attr-value="Submit" />
+            <input type="submit" class="btn btn-info pull-right" value="{{'Submit' | translate}}" />
 
           </form>
         </div>
