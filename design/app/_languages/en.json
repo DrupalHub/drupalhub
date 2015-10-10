@@ -115,5 +115,10 @@
   "Select category": "Select category",
   "Start date": "Start date",
   "location": "location",
-  "date": "date"
+  "date": "date",
+  "Please resolve the captcha and submit!": "Please resolve the captcha and submit!",
+  "The reacptcha process has failed.": "The reacptcha process has failed.",
+  "E-mail: The field is not valid": "E-mail: The field is not valid",
+  "Password: The passwords are not matching!": "Password: The passwords are not matching!",
+  "welcome user": "Welcome {{user}}!"
 }

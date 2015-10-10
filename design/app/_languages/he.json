@@ -115,5 +115,10 @@
   "Select category": "בחר קטגוריה",
   "Start date": "תאריך התחלה",
   "location": "מיקום",
-  "date": "תאריך"
+  "date": "תאריך",
+  "Please resolve the captcha and submit!": "אנא פתור את הreCaptcha לפני שתמשיך!",
+  "The reacptcha process has failed.": "תהליך אימות הreCapthca נכשל.",
+  "E-mail: The field is not valid": "דואר אלקטרוני: הערך בשדה לא תקין",
+  "Password: The passwords are not matching!": "סיסמה: הסיסמאות לא תואמות!",
+  "welcome user": "ברוך הבא {{user}}!"
 }
