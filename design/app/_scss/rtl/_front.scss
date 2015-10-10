@@ -1,0 +1,23 @@
+@mixin fa {
+
+  .fa {
+    padding-top: 5px;
+    padding-left: 5px;
+  }
+}
+
+.events {
+
+  .events-header {
+    @include fa();
+  }
+
+}
+
+.videos {
+
+  .video-header {
+    @include fa();
+  }
+
+}

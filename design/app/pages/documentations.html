@@ -1,13 +1,13 @@
 <section class="container page-documentations" ng-controller="documentationsCtrl">
 
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li class="active">Documentation</li>
+    <li><a href="#/" translate>Home</a></li>
+    <li class="active" translate>Documentation</li>
   </ul>
 
   <div class="page-header documentation-header clearfix">
-    <h3 class="pull-left">Documentation</h3>
-    <a href="#/add-documentation" class="btn btn-primary btn-md pull-right" ng-if="showCreate">Add documentation</a>
+    <h3 class="pull-left" translate>Documentation</h3>
+    <a href="#/add-documentation" class="btn btn-primary btn-md pull-right" ng-if="showCreate" translate>Add documentation</a>
   </div>
 
   <div class="row">
@@ -22,7 +22,7 @@
 
   <div class="documentation-list" ng-if="documentations">
     <div class="text-center" ng-if="documentations.length == 0">
-      <h3>There is no documentations to display.</h3>
+      <h3 translate>There is no documentations to display.</h3>
     </div>
     <div class="row" ng-repeat="documentation in documentations">
       <div class="col-md-1 col-sm-3 col-xs-3">
@@ -31,11 +31,11 @@
       <div class="col-md-11 col-sm-9 col-xs-9">
         <a href="{{documentation.url}}">{{documentation.label}}</a>
         <span class="label label-info" ng-repeat="tag in documentation.tags"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
-        <div class="meta-info">
-          <span class="first fa fa-clock-o"></span>{{documentation.date}}
-          <span class="fa fa-user"></span><span class="author-link" ng-bind-html="documentation.author | fullHtml"></span>
-          <span class="fa fa-eye"></span>{{documentation.viewed}}
-        </div>
+        <ul class="meta-info list-inline">
+          <li><span class="first fa fa-clock-o"></span>{{documentation.date}}</li>
+          <li><span class="fa fa-user"></span><span class="author-link" ng-bind-html="documentation.author | fullHtml"></span></li>
+          <li><span class="fa fa-eye"></span>{{documentation.viewed}}</li>
+        </ul>
         <span ng-bind-html="documentation.intro | fullHtml"></span>
       </div>
     </div>

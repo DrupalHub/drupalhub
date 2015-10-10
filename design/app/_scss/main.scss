@@ -20,9 +20,12 @@
 @import 'user_cp';
 @import 'search';
 
+@import url("http://fonts.googleapis.com/earlyaccess/alefhebrew.css");
+
 body {
   padding-top: 80px;
   padding-bottom: 30px;
+  font-family: 'Alef Hebrew', sans-serif;
 
   // Minor fix to the site name distance from logo.
   .navbar > .container .navbar-brand {
@@ -58,7 +61,7 @@ body {
 
     img {
       width: 45px;
-      float: left;
+
     }
 
     .navbar-brand {
@@ -67,7 +70,6 @@ body {
     }
 
     .navbar-toggle {
-      float: right;
       margin-left: 10px;
       margin-right: 10px;
     }
@@ -124,3 +126,4 @@ body {
 }
 
 @import "responsive";
+@import "rtl";

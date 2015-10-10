@@ -37,7 +37,7 @@ DrupalHub.directive('drupalhubMessages', function() {
   };
 });
 
-DrupalHub.factory('drupalMessagesService', function($rootScope) {
+DrupalHub.factory('drupalMessagesService', function($rootScope, $filter) {
   var drupalHubMessagesSvc = {};
 
   /**
@@ -63,7 +63,7 @@ DrupalHub.factory('drupalMessagesService', function($rootScope) {
    */
   drupalHubMessagesSvc.checkRequired = function(form) {
     angular.forEach(form.$error.required, function(value, key) {
-      drupalHubMessagesSvc.danger('The field ' + value.$name + ' is required.');
+      drupalHubMessagesSvc.danger($filter('translate')('empty field', {'name': value.$name}));
     });
   };
 

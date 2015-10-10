@@ -146,7 +146,7 @@ form legend {
 
 // User directive
 .user-directive {
-  padding-top: 13px;
+  padding-top: 15px;
   padding-bottom: 15px;
   color: #999999;
 
@@ -212,6 +212,17 @@ span.author-link {
           color: #d2423e;
         }
       }
+    }
+  }
+}
+
+.meta-info {
+
+  &.list-inline {
+
+    li {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 }

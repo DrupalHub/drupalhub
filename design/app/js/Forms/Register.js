@@ -1,7 +1,7 @@
 /**
  * Sign up controller.
  */
-DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope, vcRecaptchaService, drupalMessagesService, Config) {
+DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $rootScope, vcRecaptchaService, drupalMessagesService, Config, $filter) {
 
   $scope.user = {
     mail: '',
@@ -20,13 +20,13 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
     drupalMessagesService.reset();
 
     if (vcRecaptchaService.getResponse() === "") {
-      drupalMessagesService.danger("Please resolve the captcha and submit!")
+      drupalMessagesService.danger($filter('translate')('Please resolve the captcha and submit!'));
     }
     else {
       DrupalHubRequest.localRequest('post', 'recaptcha', {response: vcRecaptchaService.getResponse()})
         .then(function(data) {
           if (!data.data.data.passed) {
-            drupalMessagesService.danger('The reacptcha process has failed.');
+            drupalMessagesService.danger($filter('translate')('The reacptcha process has failed.'));
           }
         });
     }
@@ -38,15 +38,19 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
       pass2: ''
     };
 
+    var translations = {
+      'email': $filter('translate')('Email')
+    };
+
     drupalMessagesService.checkRequired($scope.registerForm);
 
-    if ($scope.registerForm.Mail.$dirty && $scope.registerForm.Mail.$invalid) {
-      drupalMessagesService.danger('E-mail: The field is not valid');
+    if ($scope.registerForm[translations.email].$dirty && $scope.registerForm[translations.email].$invalid) {
+      drupalMessagesService.danger($filter('translate')('E-mail: The field is not valid'));
     }
 
     if ($scope.user.pass != $scope.user.pass2) {
       $scope.registerForm.pass2.$setValidity('required', false);
-      drupalMessagesService.danger('Password: The passwords are not matching!');
+      drupalMessagesService.danger($filter('translate')('Password: The passwords are not matching!'));
     }
 
     if ($scope.registerForm.$valid) {
@@ -68,7 +72,7 @@ DrupalHub.controller('registerCtrl', function($scope, DrupalHubRequest, $http, $
       })
       .then(function() {
         // Display the message.
-        drupalMessagesService.success('Welcome ' + $scope.user.label + '!');
+        drupalMessagesService.success($filter('translate')('welcome user', {'user': $scope.user.label}));
 
         // Login the user and redirect him the front page.
         $http.get(DrupalHubRequest.getConfig().backend + 'login-token',{

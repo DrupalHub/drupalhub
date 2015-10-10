@@ -1,9 +1,9 @@
 <section class="container page-search" ng-controller="searchResults">
 
   <ul class="breadcrumb">
-    <li><a href="#/">Home</a></li>
-    <li><a href="#/search">Search</a></li>
-    <li class="active">Search results for <b>{{search}}</b></li>
+    <li><a href="#/" translate>Home</a></li>
+    <li><a href="#/search" translate>Search</a></li>
+    <li class="active"><translate translate-values="{search: search}">Search results for</translate></li>
   </ul>
 
   <div class="row">
@@ -16,7 +16,7 @@
       </div>
 
       <div ng-if="noResults">
-        <h2>Your search has no results. Please try another search.</h2>
+        <h2 translate>Your search has no results. Please try another search.</h2>
       </div>
 
     </div>
