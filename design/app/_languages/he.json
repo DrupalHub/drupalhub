@@ -130,5 +130,12 @@
   "Playlist should be more then 3 videos.": "רשימת השמעה צריכה להכיל יותר מ-3 סרטונים.",
   "Compile a playlist": "הרכב רשימת השמעה",
   "You need to select filters!": "אתה צריך לבחור סינונים עבור החיפוש!",
-  "Control panel": "לוח בקרה"
+  "Control panel": "לוח בקרה",
+  "The passwords are not matching!": "הסיסמאות לא תואמות!",
+  "All the details were updated successfully": "כל הפרטים עודכנו בהצלחה.",
+  "Your settings has been updated.": "ההגדרות שלך נשמרו בהצלחה.",
+  "Your profile picture has updated.": "תמונת הפרופיל עודכנה.",
+  "Invalid value in field mail.": "ערך לא תקין בשדה הדואר האלקטרוני. אנא צור קשר עם המנהל.",
+  "A user with that mail address already exists.": "כבר קיים משתמש עם כתובת הדואר האלקטרונית הזאת.",
+  "A user with that name already exists." : "כבר קיים שם משתמש כזה. אנא בחר אחר."
 }

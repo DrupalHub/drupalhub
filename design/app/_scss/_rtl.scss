@@ -63,8 +63,12 @@ html[dir="rtl"] {
     border-top-left-radius: 4px;
   }
 
-  .input-group-addon:first-child {
-    border: none;
+  .input-group-addon {
+
+    &:last-child,
+    &:first-child {
+      border: none;
+    }
   }
 
   .ui-select-bootstrap > .ui-select-match > .btn {
