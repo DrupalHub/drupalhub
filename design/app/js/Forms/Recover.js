@@ -1,4 +1,4 @@
-DrupalHub.controller('recoverCtrl', function($scope, DrupalHubRequest, drupalMessagesService) {
+DrupalHub.controller('recoverCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter) {
   $scope.recoverPassed = false;
   $scope.showSubmit = true;
   $scope.mail = '';
@@ -6,9 +6,10 @@ DrupalHub.controller('recoverCtrl', function($scope, DrupalHubRequest, drupalMes
   $scope.recoverPassword = function() {
     drupalMessagesService.reset();
 
+    var email = $filter('translate')('Email');
 
-    if (!$scope.RecoverPasswordForm.email.$valid) {
-      drupalMessagesService.danger('You need to populate the email field');
+    if (!$scope.RecoverPasswordForm[email].$valid) {
+      drupalMessagesService.danger($filter('translate')('empty field', {'name': email}));
       return;
     }
 
@@ -19,7 +20,7 @@ DrupalHub.controller('recoverCtrl', function($scope, DrupalHubRequest, drupalMes
         drupalMessagesService.danger(data.title);
       })
       .then(function() {
-        drupalMessagesService.success('Further instructions have been sent to your e-mail address.');
+        drupalMessagesService.success($filter('translate')('Further instructions have been sent to your e-mail address.'));
       });
   };
 

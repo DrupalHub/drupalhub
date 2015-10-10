@@ -120,5 +120,13 @@
   "The reacptcha process has failed.": "תהליך אימות הreCapthca נכשל.",
   "E-mail: The field is not valid": "דואר אלקטרוני: הערך בשדה לא תקין",
   "Password: The passwords are not matching!": "סיסמה: הסיסמאות לא תואמות!",
-  "welcome user": "ברוך הבא {{user}}!"
+  "welcome user": "ברוך הבא {{user}}!",
+  "The username/password are wrong.": "שם המשתמש או הסיסמא לא נכונים.",
+  "Further instructions have been sent to your e-mail address.": "הוראות נוספות נשלחו אל הדואר האלקטרוני.",
+  "Password - verification": "סיסמא - אימות",
+  "The password are not matching.": "הסיסמאות לא תואמות.",
+  "Search videos": "חפש סרטונים",
+  "Description": "תיאור",
+  "Playlist should be more then 3 videos.": "רשימת השמעה צריכה להכיל יותר מ-3 סרטונים.",
+  "Compile a playlist": "הרכב רשימת השמעה"
 }

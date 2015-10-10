@@ -120,5 +120,13 @@
   "The reacptcha process has failed.": "The reacptcha process has failed.",
   "E-mail: The field is not valid": "E-mail: The field is not valid",
   "Password: The passwords are not matching!": "Password: The passwords are not matching!",
-  "welcome user": "Welcome {{user}}!"
+  "welcome user": "Welcome {{user}}!",
+  "The username/password are wrong.": "The username/password are wrong.",
+  "Further instructions have been sent to your e-mail address.": "Further instructions have been sent to your e-mail address.",
+  "Password - verification": "Password - verification",
+  "The password are not matching.": "The password are not matching.",
+  "Search videos": "Search videos",
+  "Description": "Description",
+  "Playlist should be more then 3 videos.": "Playlist should be more then 3 videos.",
+  "Compile a playlist": "Compile a playlist"
 }
