@@ -1,7 +1,7 @@
-DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMessagesService, $routeParams) {
+DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMessagesService, $filter) {
 
   $scope.searchType = {};
-  $scope.search = '';
+  $scope.search = {};
 
   $scope.commitSearch = function() {
     drupalMessagesService.reset();
@@ -16,11 +16,11 @@ DrupalHub.controller('searchForm', function($scope, DrupalHubRequest, drupalMess
     });
 
     if (types.length == 0) {
-      drupalMessagesService.danger('You need to select filters!');
+      drupalMessagesService.danger($filter('translate')('You need to select filters!'));
     }
 
     if (drupalMessagesService.valid()) {
-      window.location = '#/search-results/' + $scope.search + '/' + types.join(',');
+      window.location = '#/search-results/' + $scope.search.search + '/' + types.join(',');
     }
   };
 });

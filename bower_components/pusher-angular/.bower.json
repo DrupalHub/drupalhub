@@ -1,7 +1,7 @@
 {
   "name": "pusher-angular",
   "main": "lib/pusher-angular.js",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "homepage": "https://github.com/pusher/pusher-angular",
   "authors": [
     "Hamilton Chapman <hamilton@pusher.com>"
@@ -28,11 +28,11 @@
   "dependencies": {
     "angular": "latest"
   },
-  "_release": "0.1.6",
+  "_release": "0.1.8",
   "_resolution": {
     "type": "version",
-    "tag": "v0.1.6",
-    "commit": "512955e5cad2f9f858f4f90f88be6bc8e9660f99"
+    "tag": "v0.1.8",
+    "commit": "7f70a82fc1f63301ff6ba9e0d36f145e77bdb673"
   },
   "_source": "git://github.com/pusher/pusher-angular.git",
   "_target": "~0.1.5",

@@ -1,4 +1,4 @@
-DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService) {
+DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter) {
 
   $scope.submitResults = false;
 
@@ -30,11 +30,11 @@ DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest, drupalM
     drupalMessagesService.checkRequired($scope.eventForm);
 
     if (!$scope.event.location && !$scope.event.latitude) {
-      drupalMessagesService.danger('The location is required field.');
+      drupalMessagesService.danger($filter('translate')('empty field', {'name': $filter('translate')('location')}));
     }
 
     if (!$scope.event.start_date.date) {
-      drupalMessagesService.danger('The date is required field.');
+      drupalMessagesService.danger($filter('translate')('empty field', {'name': $filter('translate')('date')}));
     }
 
     if (drupalMessagesService.valid()) {

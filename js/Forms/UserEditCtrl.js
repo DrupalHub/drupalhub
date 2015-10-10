@@ -1,10 +1,16 @@
-DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, drupalMessagesService) {
+DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, drupalMessagesService, $filter) {
 
   $scope.endpoint = Config.backend + 'drupalhub-file-upload';
   $scope.selectedForm = 'pages/forms/user-edit.html';
   $scope.password = {
     one: '',
     two: ''
+  };
+
+  $scope.translations = {
+    'password1': $filter('translate')('Password'),
+    'password2': $filter('translate')('Password(again)'),
+    'mail':  $filter('translate')('Email')
   };
 
   DrupalHubRequest.localRequest('get', 'me').then(function(data) {
@@ -45,17 +51,23 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, 
     $scope.pass = false;
 
     if ($scope.password.one != $scope.password.two) {
-      drupalMessagesService.danger('The passwords are not matching!');
+      drupalMessagesService.danger($filter('translate')('The passwords are not matching!'));
 
-      $scope.userDetailsForm.passOne.$setValidity("passOne", false);
-      $scope.userDetailsForm.passTwo.$setValidity("passTwo", false);
+      $scope.userDetailsForm[$scope.translations.password1].$setValidity("passOne", false);
+      $scope.userDetailsForm[$scope.translations.password2].$setValidity("passTwo", false);
     }
     else {
-      $scope.userDetailsForm.passOne.$setValidity("passOne", true);
-      $scope.userDetailsForm.passTwo.$setValidity("passTwo", true);
+      $scope.userDetailsForm[$scope.translations.password1].$setValidity("passOne", true);
+      $scope.userDetailsForm[$scope.translations.password2].$setValidity("passTwo", true);
 
       $scope.user.password = $scope.password.one;
     }
+
+    if ($scope.userDetailsForm[$scope.translations.mail].$invalid) {
+      drupalMessagesService.danger($filter('translate')('E-mail: The field is not valid'));
+    }
+
+    drupalMessagesService.checkRequired($scope.userDetailsForm);
 
     if (!$scope.userDetailsForm.$valid) {
       return;
@@ -78,20 +90,18 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, 
 
     DrupalHubRequest.localRequest('put', 'users/' + $scope.user.id, data)
       .success(function (data) {
-        drupalMessagesService.success('All the details were updated successfully');
+        drupalMessagesService.success($filter('translate')('All the details were updated successfully'));
       })
       .error(function (data) {
-        if (data.errors instanceof Array) {
+        if (data.errors instanceof Object) {
           angular.forEach(data.errors, function(value, key) {
-            $scope.userDetailsForm[key].$setValidity(key, false);
-
             angular.forEach(value, function(value, key) {
-              drupalMessagesService.danger(value);
+              drupalMessagesService.danger($filter('translate')(value));
             });
           });
         }
         else {
-          drupalMessagesService.danger(data.title);
+          drupalMessagesService.danger($filter('translate')(data.title));
         }
       });
   };
@@ -105,7 +115,7 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, 
       'settings': ($scope.notifications)
     };
     DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data);
-    drupalMessagesService.success('Your settings has been updated.');
+    drupalMessagesService.success($filter('translate')('Your settings has been updated.'));
   };
 
   /**
@@ -124,7 +134,7 @@ DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, 
     var data = {
       'image_fid': $scope.user.image
     };
-    drupalMessagesService.success('Your profile picture has updated.');
+    drupalMessagesService.success($filter('translate')('Your profile picture has updated.'));
     DrupalHubRequest.localRequest('patch', 'users/' + $scope.user.id, data);
   }
 });

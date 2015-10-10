@@ -21,6 +21,12 @@
                     $scope.widgetId = widgetId;
                 };
 
+                $scope.cbExpiration = function() {
+                    console.info('Captcha expired. Resetting response object');
+
+                    $scope.response = null;
+                 };
+
                 $scope.submit = function () {
                     var valid;
 
@@ -43,4 +49,4 @@
                         vcRecaptchaService.reload($scope.widgetId);
                     }
                 };
-            });</script></head><body><div class="container" ng-app="testApp" ng-controller="testCtrl"><h1>VividCortex reCaptcha Directive Example</h1><p>This the <b>recommended</b> way of using the reCaptcha directive. Instead of using ng-model to get the challenge and response, you use a service. This way it's safer because we don't depend on a timeout hack that we are currently using in the directive.</p><!-- Call a method in the scope of your controller to handle data submit --><form ng-submit="submit()"><div vc-recaptcha="" theme="'light'" key="model.key" on-create="setWidgetId(widgetId)" on-success="setResponse(response)"></div><button class="btn" type="submit">Submit</button></form></div></body></html>
+            });</script></head><body><div class="container" ng-app="testApp" ng-controller="testCtrl"><h1>VividCortex reCaptcha Directive Example</h1><p>This the <b>recommended</b> way of using the reCaptcha directive. Instead of using ng-model to get the challenge and response, you use a service. This way it's safer because we don't depend on a timeout hack that we are currently using in the directive.</p><!-- Call a method in the scope of your controller to handle data submit --><form ng-submit="submit()"><div vc-recaptcha="" theme="'light'" key="model.key" on-create="setWidgetId(widgetId)" on-success="setResponse(response)" on-expire="cbExpiration()"></div><button class="btn" type="submit">Submit</button></form></div></body></html>

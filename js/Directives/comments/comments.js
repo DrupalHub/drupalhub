@@ -1,4 +1,4 @@
-DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, DrupalHubPusher, dialogs) {
+DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, DrupalHubPusher, dialogs, $filter) {
   return {
     restrict: 'AE',
     templateUrl: 'js/Directives/comments/element.html',
@@ -7,6 +7,7 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
       type: '@'
     },
     link: function($scope) {
+
       $scope.$watch('nid', function(nid) {
 
         if (nid == undefined) {
@@ -40,6 +41,8 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
           $scope.title = 'What do you think on this blog?';
           $scope.btnType = 'btn-warning';
         }
+
+        $scope.title = $filter('translate')($scope.title);
 
         DrupalHubRequest.localRequest('get', 'comments?nid=' + nid).success(function(data) {
           $scope.comments = data.data;

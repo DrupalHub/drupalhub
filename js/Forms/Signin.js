@@ -1,7 +1,7 @@
 /**
  * Login controller.
  */
-DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageService, $rootScope, drupalMessagesService) {
+DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageService, $rootScope, drupalMessagesService, $filter) {
   $scope.user = {
     name: '',
     pass: ''
@@ -26,7 +26,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
 
       response.error(function(data) {
         if (data.title == 'Bad credentials') {
-          drupalMessagesService.danger('The username/password are wrong.');
+          drupalMessagesService.danger($filter('translate')('The username/password are wrong.'));
         }
       });
 
@@ -42,7 +42,7 @@ DrupalHub.controller('loginCtrl', function($scope, $http, Config, localStorageSe
           }
         }).success(function(data) {
           $rootScope.$broadcast('userLoggedIn', data.data);
-          drupalMessagesService.success('Welcome ' + data.data.label + '!');
+          drupalMessagesService.success($filter('translate')('welcome user', {'user': data.data.label}));
           window.location.href = (Config.front);
         });
       });

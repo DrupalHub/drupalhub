@@ -1,33 +1,26 @@
-VividCortex reCaptcha AngularJS Directive
-=========================================
+AngularJS reCaptcha
+===================
 
-Use this directive to be able to submit with XHR a form that contains a reCaptcha.
-
-
-Demo
-----
-
-See [the demo file](demo/usage.html) for an usage example.
-
-Keep in mind that the captcha only works when used from a real domain and with a valid re-captcha key, so this file won't work if you just load it in your browser.
+Add a [reCaptcha](https://www.google.com/recaptcha/intro/index.html) to your [AngularJS](angularjs.org) project.
 
 
-Install
------
+Demo: http://vividcortex.github.io/angular-recaptcha/
 
-You'll need `release/angular-recaptcha.js` and/or `release/angular-recaptcha.min.js`.
 
-### Manual
+Installation
+------------
+
+#### Manual
 
 Download the [latest release](https://github.com/VividCortex/angular-recaptcha/releases/latest).
 
-### Bower
+#### Bower
 
 ```
 bower install --save angular-recaptcha
 ```
 
-### npm
+#### npm
 
 ```
 npm install --save angular-recaptcha
@@ -37,17 +30,26 @@ npm install --save angular-recaptcha
 Usage
 -----
 
-First, you need to get a valid public key for your domain. See http://www.google.com/recaptcha.
+See [the demo file](demo/usage.html) for a quick usage example.
 
-Then, include the reCaptcha [API](https://developers.google.com/recaptcha/docs/display#AJAX) using this script in your HTML:
+    IMPORTANT: Keep in mind that the captcha only works when used from a real domain
+    and with a valid re-captcha key, so this file won't work if you just load it in
+    your browser.
+
+- First, you need to get a valid recaptcha key for your domain. Go to http://www.google.com/recaptcha.
+
+- Include the reCaptcha [API](https://developers.google.com/recaptcha/docs/display#AJAX) using this script in your HTML:
 
 ```html
-<script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async defer></script>
+<script
+  src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit"
+  async defer
+></script>
 ```
-
-_As you can see, we are specifying a `onload` callback, which will notify the angular service once the api is ready for usage._
-
-Also include the vc-recaptcha script and make your angular app depend on the `vcRecaptcha` module.
+    As you can see, we are specifying a `onload` callback, which will notify the
+    angular service once the api is ready for usage.
+    
+- Also include the vc-recaptcha script and make your angular app depend on the `vcRecaptcha` module.
 
 ```html
 <script type="text/javascript" src="angular-recaptcha.js"></script>
@@ -57,7 +59,7 @@ Also include the vc-recaptcha script and make your angular app depend on the `vc
 var app = angular.module('myApp', ['vcRecaptcha']);
 ```
 
-After that, you can place a container for the captcha widget in your view, and call the `vc-recaptcha` directive on it like this:
+- After that, you can place a container for the captcha widget in your view, and call the `vc-recaptcha` directive on it like this:
 
 ```html
 <div
@@ -97,11 +99,11 @@ In this case we are specifying that the captcha should use the theme named _ligh
 Listeners
 ---------
 
-There are two listeners you can use with the directive, `on-create` and `on-success`.
+There are three listeners you can use with the directive, `on-create`, `on-success`, and `on-expire`.
 
 * __on-create__: It's called right after the widget is created. It receives a widget ID, which could be helpful if you have more than one reCaptcha in your site.
 * __on-success__: It's called once the user resolves the captcha. It receives the response string you would need for verifying the response.
-
+* __on-expire__: It's called when the captcha response expires and the user needs to solve a new captcha.
 
 ```html
 <div
@@ -109,6 +111,7 @@ There are two listeners you can use with the directive, `on-create` and `on-succ
     key="'---- YOUR PUBLIC KEY GOES HERE ----'"
     on-create="setWidgetId(widgetId)"
     on-success="setResponse(response)"
+    on-expire="cbExpiration()"
 ></div>
 ```
 
@@ -125,18 +128,24 @@ app.controller('myController', ['$scope', 'vcRecaptchaService', function ($scope
     $scope.setResponse = function (response) {
         // send the `response` to your server for verification.
     };
+    
+    $scope.cbExpiration = function() {
+        // reset the 'response' object that is on scope 
+    };
 }]);
 ```
+
 
 Differences with the old reCaptcha
 ----------------------------------
 
-- The _lang_ parameter in the directive is no longer used by reCaptcha. If you want to force a language, you'd need to add a `hl` parameter to the script of the reCaptcha API (`?onload=onloadCallback&render=explicit&hl=es`).
+- If you want to force a language, you'll need to add a `hl` parameter to the script of the reCaptcha API (`?onload=onloadCallback&render=explicit&hl=es`).
 - Parameter _tabindex_ is no longer used by reCaptcha and its usage has no effect.
 - Access to the input text is no longer supported.
 - _Challenge_ is no longer provided by reCaptcha. The response text is used along with the private key and user's IP address for verification.
 - Switching between image and audio is now handled by reCaptcha.
 - Help display is now handled by reCaptcha.
+
 
 Recent Changelog
 ----------------
