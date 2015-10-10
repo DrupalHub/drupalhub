@@ -9,5 +9,6 @@ drupalhub/libraries
 drupalhub/modules/contrib/*
 drupalhub/themes/bootstrap
 design/app/js/config/flag.js
+design/app/js/config/language.js
 install.sh
 www
