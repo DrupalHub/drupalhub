@@ -20,7 +20,7 @@
                     <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
                     <input type="email" name="{{'Email' | translate}}"
                            ng-model="user.mail" class="form-control"
-                           translate translate-attr-placeholder="Email"
+                            placeholder="{{'Email' | translate}}"
                            id="InputEmail" required>
                   </div>
                 </div>
@@ -29,7 +29,7 @@
                     <span class="input-group-addon"><i class="fa fa-user"></i></span>
                     <input type="text" name="{{'User Name' | translate}}"
                            ng-model="user.label" class="form-control"
-                           translate translate-attr-placeholder="User Name"
+                           placeholder="{{'User Name' | translate}}"
                            id="InputUserName" required>
                   </div>
                 </div>
@@ -38,8 +38,8 @@
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     <input type="password" name="{{'Password' | translate}}"
                            class="form-control"
-                           translate translate-attr-placeholder="Password"
-                           id="InputPassword" ng-model="user.pass" name="Password" required>
+                           placeholder="{{'Password' | translate}}"
+                           id="InputPassword" ng-model="user.pass" required>
                   </div>
                 </div>
                 <div class="input-area-wrapper col-md-6">
@@ -47,8 +47,8 @@
                     <span class="input-group-addon"><i class="fa fa-lock"></i></span>
                     <input type="password" name="{{'Confirm password' | translate}}"
                            class="form-control"
-                           translate translate-attr-placeholder="Confirm password"
-                           id="InputPassword1" ng-model="user.pass2" name="Password(confirm)" required>
+                           placeholder="{{'Confirm password' | translate}}"
+                           id="InputPassword1" ng-model="user.pass2" required>
                   </div>
                 </div>
               </div>
@@ -64,7 +64,7 @@
                     on-expire="cbExpiration()"
                     class="pull-left"
                     ></div>
-                  <input type="submit" class="btn btn-primary pull-right" translate-attr-value="Submit" translate />
+                  <input type="submit" class="btn btn-primary pull-right" value="{{'Submit' | translate}}" />
                 </div>
               </div>
             </div>
@@ -83,14 +83,14 @@
               <div ng-if="showLoginInput">
                 <div class="input-group login-input input-area-wrapper">
                   <span class="input-group-addon"><i class="fa fa-user"></i></span>
-                  <input type="text" class="form-control" name="{{'Username' | translate}}" translate translate-attr-placeholder="Username" ng-model="user.name" required>
+                  <input type="text" class="form-control" name="{{'Username' | translate}}" placeholder="{{'Username' | translate}}" ng-model="user.name" required>
                 </div>
                 <div class="input-group login-input input-area-wrapper">
                   <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-                  <input type="password" class="form-control" name="{{'Password' | translate}}" translate translate-attr-placeholder="Password" ng-model="user.pass" required>
+                  <input type="password" class="form-control" name="{{'Password' | translate}}" placeholder="{{'Password' | translate}}" ng-model="user.pass" required>
                 </div>
                 <hr />
-                <input type="submit" id="submit" class="btn btn-primary pull-right" translate-attr-value="Submit" translate />
+                <input type="submit" id="submit" class="btn btn-primary pull-right" value="{{'Submit' | translate}}" />
                 <a href="/#recover-password" class="btn btn-warning" translate>Password Recovery</a>
               </div>
             </div>
