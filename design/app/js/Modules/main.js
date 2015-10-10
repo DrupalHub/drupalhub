@@ -29,7 +29,7 @@ DrupalHub.config(function(uiGmapGoogleMapApiProvider, $translateProvider, langua
   });
 
   $translateProvider.useStaticFilesLoader({
-    prefix: '/languages/',
+    prefix: 'languages/',
     suffix: '.json'
   });
   $translateProvider.preferredLanguage(language.code);
