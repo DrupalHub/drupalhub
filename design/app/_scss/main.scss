@@ -41,27 +41,46 @@ body {
     border-right: none;
 
     .navbar-nav.inner-pages {
+      padding-top: 15px;
 
-      .videos a {
-        @include hover(red);
+      a {
+        padding: 0;
       }
 
-      .documentation a {
-        @include hover(#0075B2);
+      .fa {
+        padding-top: 3px;
       }
 
-      .calendar a {
-        @include hover(#009102);
+      .videos {
+
+        a, .fa {
+          @include hover(red);
+        }
       }
 
-      .search a {
-        @include hover(#a7448e);
+      .documentation {
+
+        a, .fa {
+          @include hover(#0075B2);
+        }
+      }
+
+      .calendar {
+
+        a, .fa {
+          @include hover(#009102);
+        }
+      }
+
+      .search {
+        a, .fa {
+          @include hover(#a7448e);
+        }
       }
     }
 
     img {
       width: 45px;
-
     }
 
     .navbar-brand {
@@ -80,7 +99,15 @@ body {
   }
 
   .secondary-menu {
-    float: right;
+
+    a {
+      padding: 0;
+    }
+
+    .social-up {
+      padding-top: 15px;
+      padding-right: 10px;
+    }
 
     .dropdown-menu {
 
