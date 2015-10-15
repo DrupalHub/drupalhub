@@ -97,4 +97,27 @@ html[dir="rtl"] {
     }
   }
 
+  @media (max-width: $screen-sm) {
+    .inner-pages,
+    .secondary-menu {
+
+      li {
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+
+    .navbar-nav .open .dropdown-menu > li > a {
+      padding: 0;
+    }
+
+    .navbar-collapse .navbar-nav.secondary-menu {
+      float: right !important;
+    }
+
+    .secondary-menu {
+      margin-right: -25px;
+    }
+  }
+
 }
