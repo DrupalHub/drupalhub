@@ -107,8 +107,35 @@ html[dir="rtl"] {
       }
     }
 
-    .navbar-nav .open .dropdown-menu > li > a {
-      padding: 0;
+    .account {
+
+      .user-directive {
+        padding-top: 0;
+        padding-bottom: 0;
+
+        &.logged-out {
+          padding-right: 15px;
+        }
+
+        .btn-group {
+
+          &.open {
+            padding: 0 15px;
+          }
+
+          a {
+            background: transparent;
+          }
+
+          .dropdown-menu {
+
+            li {
+              padding: 0;
+              margin: 0;
+            }
+          }
+        }
+      }
     }
 
     .navbar-collapse .navbar-nav.secondary-menu {
