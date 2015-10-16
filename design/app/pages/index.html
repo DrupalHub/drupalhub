@@ -15,10 +15,10 @@
           <span class="text-center" ng-if="assets.question.length == 0"><h3 translate>There is no question to display.</h3></span>
           <div ng-repeat="question in assets.question">
             <div class="question row">
-              <div class="col-md-2 col-sm-3 hidden-xs">
+              <div class="col-md-2 col-sm-3 col-xs-2">
                 <img ng-src="{{question.image}}" class="images img-responsive question" />
               </div>
-              <div class="col-md-10 col-sm-9 col-xs-12">
+              <div class="col-md-10 col-sm-9 col-xs-10">
                 <div class="content">
                   <a href="{{question.url}}">{{question.label}}</a>
                   <ul class="meta-info list-inline">
@@ -108,8 +108,8 @@
             <h3 translate>There is no events to display.</h3>
           </div>
           <div class="blog row" ng-if="assets.blog" ng-repeat="blog in assets.blog">
-            <div class="col-md-2 col-sm-3 hidden-xs"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
-            <div class="col-md-10 col-sm-9 col-xs-12">
+            <div class="col-md-2 col-sm-3 col-xs-2"><img ng-src="{{blog.image}}" class="images img-responsive blog" /></div>
+            <div class="col-md-10 col-sm-9 col-xs-10">
               <div class="content">
                 <a href="{{blog.url}}">{{blog.label}}</a>
                 <ul class="meta-info list-inline">

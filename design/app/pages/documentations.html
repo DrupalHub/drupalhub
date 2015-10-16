@@ -25,10 +25,10 @@
       <h3 translate>There is no documentations to display.</h3>
     </div>
     <div class="row" ng-repeat="documentation in documentations">
-      <div class="col-md-1 col-sm-3 col-xs-3">
+      <div class="col-md-1 col-sm-3 col-xs-3 col-xs-2">
         <img class="images blog img-responsive" ng-src="{{documentation.image}}" />
       </div>
-      <div class="col-md-11 col-sm-9 col-xs-9">
+      <div class="col-md-11 col-sm-9 col-xs-9 col-xs-10">
         <a href="{{documentation.url}}">{{documentation.label}}</a>
         <span class="label label-info" ng-repeat="tag in documentation.tags"><a href="#/documentations/term/{{tag.id}}">{{tag.label}}</a></span>
         <ul class="meta-info list-inline">
