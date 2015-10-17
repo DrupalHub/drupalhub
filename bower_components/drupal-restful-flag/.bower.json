@@ -1,7 +1,6 @@
 {
   "name": "drupal-restful-flag",
   "main": "flag.js",
-  "version": "0.0.5",
   "homepage": "https://github.com/DrupalHub/flag-directive",
   "authors": [
     "Roy Segall <roy.segall@gizra.com>"
@@ -13,13 +12,13 @@
     "Flag"
   ],
   "license": "MIT",
-  "_release": "0.0.5",
+  "_release": "1.0",
   "_resolution": {
-    "type": "version",
-    "tag": "0.0.5",
-    "commit": "0bc50e27bb221fc330e6f261724a94061137adda"
+    "type": "tag",
+    "tag": "1.0",
+    "commit": "e0b8dfc81b045f2f80564995765f21ce3c3da1e7"
   },
   "_source": "git://github.com/DrupalHub/flag-directive.git",
-  "_target": "0.0.5",
+  "_target": "1.0",
   "_originalSource": "drupal-restful-flag"
 }

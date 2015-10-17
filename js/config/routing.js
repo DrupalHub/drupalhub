@@ -162,7 +162,6 @@ DrupalHub.config(function($routeProvider) {
   // Video.
   $routeProvider.when('/videos', {
     templateUrl: 'pages/videos.html',
-    reloadOnSearch: false,
     title: 'Looking for a video',
     resolve: {
       message: function (drupalMessagesService) {

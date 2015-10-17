@@ -137,5 +137,7 @@
   "Your profile picture has updated.": "תמונת הפרופיל עודכנה.",
   "Invalid value in field mail.": "ערך לא תקין בשדה הדואר האלקטרוני. אנא צור קשר עם המנהל.",
   "A user with that mail address already exists.": "כבר קיים משתמש עם כתובת הדואר האלקטרונית הזאת.",
-  "A user with that name already exists." : "כבר קיים שם משתמש כזה. אנא בחר אחר."
+  "A user with that name already exists." : "כבר קיים שם משתמש כזה. אנא בחר אחר.",
+  "Unfollow": "בטל רישום לעדכונים",
+  "Follow": "הירשם לעדכונים"
 }
