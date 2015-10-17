@@ -160,7 +160,7 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
   /**
    * Filtering XSS code.
    */
-  protected function filterXss($value) {
-    return filter_xss($value);
+  public function filterXss($value) {
+    return ($value);
   }
 }
