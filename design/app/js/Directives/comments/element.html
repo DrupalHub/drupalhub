@@ -11,14 +11,13 @@
     <div class="row">
       <div class="col-md-2 col-sm-3 col-xs-2"><img class="images comments img-responsive" ng-src="{{comment.image}}" /></div>
       <div class="col-md-10 col-sm-9 col-xs-10">
-        <div class="meta-info">
-          <span class="first fa fa-clock-o"></span>{{comment.date}}
-          <span class="fa fa-user"></span><span class="author-link" ng-bind-html="comment.author | fullHtml"></span>
-          <flag-like type="like_comment" likes="{{comment.point}}" entity="comment" id="{{comment.id}}"></flag-like>
-          <span ng-show="comment.access.update" class="fa fa-pencil"><a href="#/comment/{{comment.id}}/edit" translate>Edit</a></span>
-          <span ng-show="comment.access.delete" class="fa fa-trash-o"><a ng-click="deleteComment(comment.id, key)" translate>Delete</a></span>
-
-        </div>
+        <ul class="meta-info list-inline">
+          <li><span class="first fa fa-clock-o"></span>{{comment.date}}</li>
+          <li><span class="fa fa-user"></span><span class="author-link" ng-bind-html="comment.author | fullHtml"></span></li>
+          <li><flag-like type="like_comment" likes="{{comment.point}}" entity="comment" id="{{comment.id}}"></flag-like></li>
+          <li><span ng-show="comment.access.update" class="fa fa-pencil"><a href="#/comment/{{comment.id}}/edit" translate>Edit</a></span></li>
+          <li><span ng-show="comment.access.delete" class="fa fa-trash-o"><a ng-click="deleteComment(comment.id, key)" translate>Delete</a></span></li>
+        </ul>
 
         <p ng-bind-html="comment.text | fullHtml"></p>
       </div>

@@ -137,5 +137,7 @@
   "Your profile picture has updated.": "Your profile picture has updated.",
   "Invalid value in field mail.": "Invalid value in field mail.",
   "A user with that mail address already exists.": "A user with that mail address already exists.",
-  "A user with that name already exists." : "A user with that name already exists."
+  "A user with that name already exists." : "A user with that name already exists.",
+  "Unfollow": "Unfollow",
+  "Follow": "Follow"
 }
