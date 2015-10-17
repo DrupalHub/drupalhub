@@ -26,6 +26,9 @@ projects[entity][subdir] = "contrib"
 projects[entity][branch] = 7.x-1.x
 projects[entity][patch][] = https://www.drupal.org/files/issues/2086225-entity-access-check-18.patch
 
+projects[entitycache][subdir] = "contrib"
+projects[entitycache][version] = "1.2"
+
 projects[entityreference][subdir] = "contrib"
 projects[entityreference][version] = 1.1
 
@@ -48,7 +51,7 @@ projects[facetapi][subdir] = "contrib"
 projects[facetapi][version] = 1.5
 
 projects[features][subdir] = "contrib"
-projects[features][version] = 2.6
+projects[features][version] = 2.7
 
 projects[fboauth][version] = "1.6"
 projects[fboauth][subdir] = contrib
@@ -111,7 +114,7 @@ projects[restful][subdir] = "contrib"
 projects[restful][download][type] = git
 projects[restful][download][url] = "https://github.com/RESTful-Drupal/restful.git"
 projects[restful][download][branch] = "7.x-1.x"
-projects[restful][download][revision] = "9dae54204eef0925081abcfaaa20faa6191a3a4c"
+projects[restful][download][revision] = "14a145e4423df8bc3975c18bb50c4aae6d82f7ca"
 
 projects[strongarm][subdir] = "contrib"
 projects[strongarm][version] = 2.0

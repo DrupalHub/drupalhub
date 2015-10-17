@@ -1,6 +1,6 @@
 Feature: Testing blog interactions.
 
-  @javascript
+  @javascript @now
   Scenario: Testing limitation for blog creation.
     Given I visit "/"
       And I should not see "Create a blog post"

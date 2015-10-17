@@ -16,7 +16,7 @@ class DrupalHubRSVP extends \DrupalHubRestfulNode {
       'property' => 'field_node_reference',
       'process_callbacks' => array(
         array($this, 'labelEvent'),
-        array($this, 'processAuthor'),
+        array($this, 'filterXss'),
       ),
     );
 

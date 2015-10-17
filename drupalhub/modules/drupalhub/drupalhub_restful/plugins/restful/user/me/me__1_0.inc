@@ -10,4 +10,7 @@ $plugin = array(
   // Try to authenticate users with all available authentication types.
   'authentication_types' => TRUE,
   'authentication_optional' => TRUE,
+  'render_cache' => array(
+    'render' => FALSE,
+  ),
 );

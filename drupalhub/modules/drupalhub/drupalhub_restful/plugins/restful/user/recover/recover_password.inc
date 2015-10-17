@@ -6,4 +6,7 @@ $plugin = array(
   'name' => 'recover_password',
   'resource' => 'recover_password',
   'class' => 'RestfulRecoverPassword',
+  'render_cache' => array(
+    'render' => FALSE,
+  ),
 );
