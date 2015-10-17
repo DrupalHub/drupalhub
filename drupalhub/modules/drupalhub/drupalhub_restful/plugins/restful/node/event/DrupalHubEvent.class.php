@@ -34,7 +34,7 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     $public_fields['human_address'] = array(
       'property' => 'field_human_address',
       'process_callbacks' => array(
-        array($this, 'processAuthor'),
+        array($this, 'filterXss'),
       ),
     );
 

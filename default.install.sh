@@ -30,6 +30,7 @@ drush mi --all --user=1
 
 drush vset drupalhub_push_notifications TRUE
 drush cc all
+drush uli --uri=$BASE_DOMAIN_URL > /dev/null &
 
 # This command does the login for you when the build script is done. It will
 # open a new tab in your default browser and login to your project as the
@@ -40,5 +41,4 @@ cd ../design
 bundle install
 npm install
 bower install
-nohup node app/js/Nodejs/socket.js > output.log &
 grunt serve

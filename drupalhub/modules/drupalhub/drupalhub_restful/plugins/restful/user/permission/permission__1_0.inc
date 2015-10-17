@@ -9,4 +9,7 @@ $plugin = array(
   'bundle' => 'user',
   // Try to authenticate users with all available authentication types.
   'authentication_types' => TRUE,
+  'render_cache' => array(
+    'render' => FALSE,
+  ),
 );
