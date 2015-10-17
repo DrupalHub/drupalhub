@@ -129,12 +129,6 @@ function drupalhub_variables_set() {
     'drupalhub_default_client_domain' => 'http://127.0.0.1:9000/',
     'restful_file_upload_allow_anonymous_user' => TRUE,
     'recaptcha_secret' => '6Le8PAsTAAAAAHBBtatEJOCEkPBAwkQgRFnEEKvp',
-    'cache' => TRUE,
-    'cache_flush_cache_block' => 1445080325,
-    'cache_flush_cache_page' => 1445080325,
-    'cache_lifetime' => 3600,
-    'entitycache_enabled' => TRUE,
-    'restful_render_cache' => TRUE,
   );
 
   foreach ($variables as $name => $value) {
