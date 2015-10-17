@@ -11,6 +11,9 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
     $public_fields['about'] = array(
       'property' => 'field_about',
       'sub_property' => 'value',
+      'process_callbacks' => array(
+        array($this, 'processAuthor'),
+      ),
     );
 
     $public_fields['password'] = array(

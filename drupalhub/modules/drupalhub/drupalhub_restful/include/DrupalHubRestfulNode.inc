@@ -31,6 +31,7 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
       'property' => 'body',
       'process_callbacks' => array(
         array($this, 'bodyIntro'),
+        array($this, 'processAuthor'),
       ),
     );
 
@@ -38,6 +39,7 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
       'property' => 'body',
       'process_callbacks' => array(
         array($this, 'body'),
+        array($this, 'processAuthor'),
       ),
     );
 

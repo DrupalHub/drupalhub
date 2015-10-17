@@ -23,6 +23,7 @@ class DrupalHubComments extends \DrupalHubEntityBase {
       'property' => 'comment_body',
       'process_callbacks' => array(
         array($this, 'body'),
+        array($this, 'processAuthor'),
       ),
     );
 

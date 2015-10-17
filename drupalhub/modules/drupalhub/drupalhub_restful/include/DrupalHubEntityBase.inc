@@ -156,4 +156,11 @@ class DrupalHubEntityBase extends \RestfulEntityBase {
 
     return $rows['sum_value'] == null ? 0 : $rows['sum_value'];
   }
+
+  /**
+   * Filtering XSS code.
+   */
+  protected function filterXss($value) {
+    return filter_xss($value);
+  }
 }
