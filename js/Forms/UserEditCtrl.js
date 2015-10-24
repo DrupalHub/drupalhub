@@ -1,10 +1,15 @@
-DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, drupalMessagesService, $filter) {
+DrupalHub.controller('UserEditCtrl', function($scope, DrupalHubRequest, Config, drupalMessagesService, $filter, language) {
 
   $scope.endpoint = Config.backend + 'drupalhub-file-upload';
   $scope.selectedForm = 'pages/forms/user-edit.html';
   $scope.password = {
     one: '',
     two: ''
+  };
+
+  $scope.editorOptions = {
+    contentsLangDirection: language.direction,
+    language: language.code
   };
 
   $scope.translations = {

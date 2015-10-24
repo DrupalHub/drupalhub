@@ -6,6 +6,11 @@ DrupalHub.controller('VideoFormCtrl', function($scope, DrupalHubRequest, $http, 
     text: ''
   };
 
+  $scope.editorOptions = {
+    contentsLangDirection: language.direction,
+    language: language.code
+  };
+
   if ($location.path() != '/add-video') {
     DrupalHubRequest.localRequest('get', 'video/' + $routeParams['id']).then(function(data) {
       var video = data.data.data[0];

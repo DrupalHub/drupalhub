@@ -139,5 +139,6 @@
   "A user with that mail address already exists.": "A user with that mail address already exists.",
   "A user with that name already exists." : "A user with that name already exists.",
   "Unfollow": "Unfollow",
-  "Follow": "Follow"
+  "Follow": "Follow",
+  "OOPS... It's look the comment is empty.": "OOPS... It's look the comment is empty."
 }
