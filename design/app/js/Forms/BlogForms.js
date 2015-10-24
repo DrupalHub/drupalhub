@@ -1,8 +1,13 @@
-DrupalHub.controller('BlogFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService) {
+DrupalHub.controller('BlogFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService, language) {
 
   $scope.blog = {
     label: '',
     text: ''
+  };
+
+  $scope.editorOptions = {
+    contentsLangDirection: language.direction,
+    language: language.code
   };
 
   if ($location.path() != '/add-blog') {

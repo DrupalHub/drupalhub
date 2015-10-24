@@ -27,7 +27,6 @@
     "jquery": "2.1.3",
     "loaders.css": "0.1.0",
     "lodash": "*",
-    "ng-ckeditor": "*",
     "ng-flow": "~2",
     "ngtoast": "~1.5.4",
     "pusher": "~2.2.4",
@@ -35,6 +34,8 @@
     "sass-bootstrap-glyphicons": "1.0.0",
     "typicons": "~2.0.7",
     "angular-translate": "^2.6.1",
-    "angular-translate-loader-static-files": "^2.6.1"
+    "angular-translate-loader-static-files": "^2.6.1",
+    "angular-ckeditor": "~1.0.0",
+    "ckeditor": "~4.5.4"
   }
 }

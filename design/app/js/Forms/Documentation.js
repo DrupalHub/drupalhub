@@ -1,9 +1,14 @@
-DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService, $filter) {
+DrupalHub.controller('DocumentationFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService, $filter, language) {
 
   $scope.documentation = {
     label: '',
     text: '',
     tags: ''
+  };
+
+  $scope.editorOptions = {
+    contentsLangDirection: language.direction,
+    language: language.code
   };
 
   if ($location.path() != '/add-documentation') {

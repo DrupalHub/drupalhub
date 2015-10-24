@@ -1,6 +1,11 @@
-DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter) {
+DrupalHub.controller('EventFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter, language) {
 
   $scope.submitResults = false;
+
+  $scope.editorOptions = {
+    contentsLangDirection: language.direction,
+    language: language.code
+  };
 
   $scope.event = {
     label: '',

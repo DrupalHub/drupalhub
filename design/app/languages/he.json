@@ -139,5 +139,6 @@
   "A user with that mail address already exists.": "כבר קיים משתמש עם כתובת הדואר האלקטרונית הזאת.",
   "A user with that name already exists." : "כבר קיים שם משתמש כזה. אנא בחר אחר.",
   "Unfollow": "בטל רישום לעדכונים",
-  "Follow": "הירשם לעדכונים"
+  "Follow": "הירשם לעדכונים",
+  "OOPS... It's look the comment is empty.": "אופס... נראה שהתגובה שלך ריקה."
 }

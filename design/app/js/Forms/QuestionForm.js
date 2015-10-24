@@ -1,5 +1,11 @@
-DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService, $filter) {
+DrupalHub.controller('QuestionFormCtrl', function($scope, DrupalHubRequest, $location, $routeParams, drupalMessagesService, language) {
   $scope.tags = [];
+
+  $scope.editorOptions = {
+    contentsLangDirection: language.direction,
+    language: language.code
+  };
+
   $scope.refreshAddresses = function(address) {
     return DrupalHubRequest.localRequest('get', 'tags?autocomplete[string]=' + address).then(function(response) {
 

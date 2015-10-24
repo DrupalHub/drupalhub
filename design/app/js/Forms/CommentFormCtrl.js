@@ -1,4 +1,9 @@
-DrupalHub.controller('CommentFormCtrl', function($scope, DrupalHubRequest, $routeParams) {
+DrupalHub.controller('CommentFormCtrl', function($scope, DrupalHubRequest, $routeParams, language) {
+
+  $scope.editorOptions = {
+    contentsLangDirection: language.direction,
+    language: language.code
+  };
 
   $scope.comment = {
     text: ''

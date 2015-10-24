@@ -1,4 +1,9 @@
-DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter) {
+DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter, language) {
+
+  $scope.editorOptions = {
+    contentsLangDirection: language.direction,
+    language: language.code
+  };
 
   $scope.results = '';
   $scope.videos = [];

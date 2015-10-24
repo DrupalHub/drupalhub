@@ -14,6 +14,11 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
           return;
         }
 
+        $scope.editorOptions = {
+          contentsLangDirection: 'rtl',
+          language: 'he'
+        };
+
         var type = $scope.type;
 
         $scope.canComment = false;
@@ -71,8 +76,9 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
          */
         $scope.submit = function() {
           $scope.commentsError = '';
-          if ($scope.newComment.body == '') {
-            $scope.commentsError = "OOPS... It's look the comment is empty.";
+          if ($scope.newComment.text == '' || $scope.newComment.text == undefined) {
+            $scope.commentsError = $filter('translate')("OOPS... It's look the comment is empty.");
+            return;
           }
 
           if ($scope.commentForm.$valid) {
@@ -81,6 +87,7 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
                 text: '',
                 nid: nid
               };
+              $scope.commentsError = '';
             });
           }
         };

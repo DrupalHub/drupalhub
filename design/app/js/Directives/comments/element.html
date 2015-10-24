@@ -25,7 +25,7 @@
   </li>
 </ul>
 
-<form class="form-horizontal" ng-show="canComment" name="commentForm" ng-submit="submit()" novalidate>
+<form class="form-horizontal" name="commentForm" ng-submit="submit()" novalidate>
   <fieldset>
     <legend>
       {{title}}
@@ -33,10 +33,10 @@
     </legend>
     <div class="form-group">
       <div class="col-lg-12">
-        <textarea ckeditor="editorOptions" ng-model="newComment.text" ng-required class="form-control"  required rows="3" id="textArea"></textarea>
-        <span ng-show="commentsError" class="text-danger">
+        <div class="alert alert-danger" ng-show="commentsError" role="alert">
           {{commentsError}}
-        </span>
+        </div>
+        <textarea ckeditor="editorOptions" ng-model="newComment.text" ng-required class="form-control"></textarea>
       </div>
     </div>
   </fieldset>
