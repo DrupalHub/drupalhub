@@ -405,7 +405,7 @@ module.exports = function (grunt) {
           Config: {
             'backend': 'http://dev-drupalhub.gotpantheon.com/api/',
             'front': 'http://drupalhub.github.io/drupalhub',
-            'pusher_key': '46b578a29d7e3df90f07',
+            'pusher_key': 'e6a9bebbe115306b1de2',
             'pusher_channel': 'drupalhub_drupalhub'
           }
         }
