@@ -1,11 +1,19 @@
 DrupalHub.controller('bodyController', function($scope, $http, Config, localStorageService, DrupalHubRequest, ngToast, DrupalHubPusher) {
+
   DrupalHubPusher.bind('new question',
     function(data) {
-      ngToast.create({
-        className: 'info',
-        content: "There is a new question in the site: <a href='#/question/" + data.nid + "'>" + data.title + "</a>",
-        dismissButton: true,
-        timeout: 5000
+      $scope.pushed = data;
+      DrupalHubRequest.localRequest('get', 'me').success(function(data) {
+        if ($scope.pushed.uid == data.data.id) {
+          return;
+        }
+
+        ngToast.create({
+          className: 'info',
+          content: "There is a new question in the site: <a href='#/question/" + $scope.pushed.nid + "'>" + $scope.pushed.title + "</a>",
+          dismissButton: true,
+          timeout: 5000
+        });
       });
     }
   );
