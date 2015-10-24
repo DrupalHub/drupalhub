@@ -12,7 +12,7 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
       'property' => 'field_about',
       'sub_property' => 'value',
       'process_callbacks' => array(
-        array($this, 'processAuthor'),
+        array($this, 'cleanXss'),
       ),
     );
 
@@ -211,5 +211,9 @@ class DrupalHubUsers extends \RestfulEntityBaseUser {
 
   public function settingsProcess($value) {
     return $value['value'];
+  }
+
+  public function cleanXss($value) {
+    return filter_xss($value['value']);
   }
 }
