@@ -5,6 +5,7 @@
   "Search": "חיפוש",
   "Social": "רשתות חברתיות",
   "Built and designed by": "נבנה ועוצב על ידי <a href=\"{{lead_url}}\"><b>רועי סגל</b></a> ו-<a href=\"{{contributors_url}}\"><b>התורמים לפרויקט</b></a>",
+  "powered by": "מאוכסן על ידי <b><a href=\"{{pantheon}}\">Pantheon</a></b>",
   "Comments": "תגובות",
   "Home": "עמוד הבית",
   "Questions": "שאלות",
