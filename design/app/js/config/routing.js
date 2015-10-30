@@ -1,4 +1,5 @@
-DrupalHub.config(function($routeProvider) {
+DrupalHub.config(function($routeProvider, $locationProvider) {
+
   // Configure the route.
   $routeProvider.when('/', {
     templateUrl: 'pages/index.html',
@@ -325,5 +326,10 @@ DrupalHub.config(function($routeProvider) {
         return drupalMessagesService.reset();
       }
     }
+  });
+
+  $locationProvider.html5Mode({
+    enabled: true,
+    requireBase: false
   });
 });

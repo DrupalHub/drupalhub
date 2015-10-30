@@ -141,5 +141,17 @@
   "A user with that name already exists." : "כבר קיים שם משתמש כזה. אנא בחר אחר.",
   "Unfollow": "בטל רישום לעדכונים",
   "Follow": "הירשם לעדכונים",
-  "OOPS... It's look the comment is empty.": "אופס... נראה שהתגובה שלך ריקה."
+  "OOPS... It's look the comment is empty.": "אופס... נראה שהתגובה שלך ריקה.",
+  "Home page": "דף הבית",
+  "Editing comment": "עורך תגובה",
+  "Asking a question": "שואל שאלה",
+  "Blogging on something": "כותב בלוג",
+  "Upcoming events": "אירועים עתידיים",
+  "Creating event": "יוצר אירוע",
+  "Looking for a video": "מחפש סרטון",
+  "Submitting a video": "מציע סרטון",
+  "Compiling a playlist": "מרכיב רשימת השמעה",
+  "Watching your profile": "צופה בפרופיל",
+  "All documentations": "כל הדוקומנטציה",
+  "Sharing information": "חולק מידע"
 }

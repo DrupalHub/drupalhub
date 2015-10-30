@@ -141,5 +141,17 @@
   "A user with that name already exists." : "A user with that name already exists.",
   "Unfollow": "Unfollow",
   "Follow": "Follow",
-  "OOPS... It's look the comment is empty.": "OOPS... It's look the comment is empty."
+  "OOPS... It's look the comment is empty.": "OOPS... It's look the comment is empty.",
+  "Home page": "Home page",
+  "Editing comment": "Editing comment",
+  "Asking a question": "Asking a question",
+  "Blogging on something": "Blogging on something",
+  "Upcoming events": "Upcoming events",
+  "Creating event": "Creating event",
+  "Looking for a video": "Looking for a video",
+  "Submitting a video": "Submitting a video",
+  "Compiling a playlist": "Compiling a playlist",
+  "Watching your profile": "Watching your profile",
+  "All documentations": "All documentations",
+  "Sharing information": "Sharing information",
 }
