@@ -12,10 +12,8 @@ DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest, $rootScope
     }
     else {
       $rootScope.$on('titleAlter', function(info, value) {
-        $translate(value).then(function(translation) {
-          $scope.headerTitle = 'Drupal.org.il: ' + translation;
-          $scope.headerDescription = translation;
-        });
+        $scope.headerTitle = 'Drupal.org.il: ' + value;
+        $scope.headerDescription = value;
       });
     }
   });
