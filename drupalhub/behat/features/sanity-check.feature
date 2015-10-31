@@ -9,7 +9,7 @@ Feature: Sanity check
       | Videos        |
       | Documentation |
       | Search        |
-      | Social Up!    |
+      | Social        |
       | Login/Sign in |
       | Events        |
       | Videos        |

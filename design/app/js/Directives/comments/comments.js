@@ -14,17 +14,11 @@ DrupalHub.directive('drupalHubComments', function($location, DrupalHubRequest, D
         };
       },
       post: function postLink($scope, iElement, iAttrs, controller) {
-        console.log('bar');
         $scope.$watch('nid', function(nid) {
 
           if (nid == undefined) {
             return;
           }
-
-          $scope.editorOptions = {
-            contentsLangDirection: 'rtl',
-            language: 'he'
-          };
 
           var type = $scope.type;
 

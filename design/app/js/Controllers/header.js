@@ -1,15 +1,19 @@
-DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest, $rootScope, $filter) {
+DrupalHub.controller('headerCtrl', function($scope, DrupalHubRequest, $rootScope, $translate) {
 
   $scope.headerTitle = 'Drupal.org.il';
 
   $scope.$on('$routeChangeStart', function(value, route) {
 
     if (route.title) {
-      $scope.headerTitle = 'Drupal.org.il: ' + $filter('translate')(route.title);
+      $translate(route.title).then(function(translation) {
+        $scope.headerTitle = 'Drupal.org.il: ' + translation;
+        $scope.headerDescription = translation;
+      });
     }
     else {
       $rootScope.$on('titleAlter', function(info, value) {
         $scope.headerTitle = 'Drupal.org.il: ' + value;
+        $scope.headerDescription = value;
       });
     }
   });
