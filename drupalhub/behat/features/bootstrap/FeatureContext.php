@@ -122,7 +122,7 @@ class FeatureContext extends DrupalContext {
    * @Then /^I should see "([^"]*)" in the user directive$/
    */
   public function iShouldSeeUnder($text) {
-    $xpath = "//span[contains(@class, 'dropdown-toggle') and contains(.,'{$text}')]";
+    $xpath = "//a[contains(@class, 'dropdown-toggle') and contains(.,'{$text}')]";
     $element = $this->getSession()->getPage()->find('xpath', $xpath);
 
     if (!$element) {
