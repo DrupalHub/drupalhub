@@ -27,12 +27,17 @@ function drupalhub_migrate_migrate_api() {
   $api = array(
     'api' => 2,
     'migrations' => array(),
+    'groups' => array(
+      'drupalhub_demo' => array(
+        'title' => t('Drupalhub demo'),
+      ),
+    ),
   );
 
   foreach ($classes as $class) {
     $api['migrations'][$class] = array(
       'class_name' => $class,
-      'group_name' => 'default',
+      'group_name' => 'drupalhub_demo',
     );
   }
 
