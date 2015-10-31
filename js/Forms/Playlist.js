@@ -1,4 +1,4 @@
-DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter, language) {
+DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drupalMessagesService, $filter, language, Config) {
 
   $scope.editorOptions = {
     contentsLangDirection: language.direction,
@@ -13,6 +13,7 @@ DrupalHub.controller('PlayListFormCtrl', function($scope, DrupalHubRequest, drup
     'text': '',
     'videos': []
   };
+  $scope.address = Config.backend + 'video?autocomplete[string]=';
 
   $scope.updateVideos = function(value) {
     $scope.videos.push(value.originalObject);
