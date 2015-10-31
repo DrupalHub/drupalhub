@@ -75,7 +75,7 @@
               <h3 translate>There is no videos to display.</h3>
             </li>
             <li ng-cloak="videos" ng-repeat="video in assets.videos">
-              <b><a href="{{video.url}}">{{video.label}}</a></b>- {{video.text}}
+              <b><a href="{{video.url}}">{{video.label}}</a></b>- <span ng-bind-html="video.text | fullHtml"></span>
               <ul class="meta-info list-inline">
                 <li class="author"><span class="first fa fa-user"></span><span class="author-link" ng-bind-html="video.author | fullHtml"></span></li>
                 <li class="viewed"><span class="fa fa-eye"></span>{{video.viewed}}</li>
