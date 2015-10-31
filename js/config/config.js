@@ -1,5 +1,5 @@
 angular.module('DrupalHubConfig', [])
 
-.constant('Config', {backend:'http://dev-drupalhub.gotpantheon.com/api/',front:'http://drupalhub.github.io/drupalhub',pusher_key:'e6a9bebbe115306b1de2',pusher_channel:'drupalhub_drupalhub'})
+.constant('Config', {backend:'http://live-drupalhub.gotpantheon.com/api/',front:'http://www.drupal.org.il',pusher_key:'1de96d1569d9d0cbc313',pusher_channel:'drupalhub_drupalhub'})
 
 ;
