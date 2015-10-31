@@ -7,7 +7,7 @@ Feature: Check login functionality.
      When I fill in "Username" with "ClarkKent" under "loginForm"
       And I fill in "Password" with "LouisLane" under "loginForm"
       And I press "submit"
-      And I sleep for "10"
+      And I sleep for "20"
       And I should see "ClarkKent"
 
   @javascript
