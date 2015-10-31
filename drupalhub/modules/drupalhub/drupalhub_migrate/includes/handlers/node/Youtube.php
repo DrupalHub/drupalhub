@@ -9,10 +9,8 @@ class Youtube extends DrupalHubMigrate {
     array('title', 'Title'),
     array('youtube', 'Address'),
     array('field_show_in_videos', 'Display in library'),
-    array(OG_AUDIENCE_FIELD, 'Group')
+    array(OG_AUDIENCE_FIELD, 'Group'),
   );
-
-  public $dependencies = array('Group');
 
   public function __construct() {
     parent::__construct();

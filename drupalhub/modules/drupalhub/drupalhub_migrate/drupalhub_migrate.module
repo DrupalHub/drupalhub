@@ -30,7 +30,10 @@ function drupalhub_migrate_migrate_api() {
   );
 
   foreach ($classes as $class) {
-    $api['migrations'][$class] = array('class_name' => $class);
+    $api['migrations'][$class] = array(
+      'class_name' => $class,
+      'group_name' => 'default',
+    );
   }
 
   return $api;
