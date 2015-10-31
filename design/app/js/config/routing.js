@@ -1,4 +1,4 @@
-DrupalHub.config(function($routeProvider, $locationProvider) {
+DrupalHub.config(function($routeProvider) {
 
   // Configure the route.
   $routeProvider.when('/', {
@@ -327,10 +327,5 @@ DrupalHub.config(function($routeProvider, $locationProvider) {
       }
     }
   });
-
-  //$locationProvider.html5Mode({
-  //  enabled: true,
-  //  requireBase: false
-  //});
 
 });
