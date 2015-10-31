@@ -48,9 +48,14 @@ class DrupalHubPlayList extends \DrupalHubRestfulNode {
     $handler = restful_get_restful_handler('video');
 
     $return = array();
-    foreach ($videos as $video) {
+    foreach ($videos as $delta => $video) {
+      $handler->playlist = array(
+        'nid' => $video->nid,
+        'delta' => $delta + 1,
+      );
       $return[] = $handler->viewEntity($video->nid);
     }
+
     return $return;
   }
 
@@ -64,7 +69,8 @@ class DrupalHubPlayList extends \DrupalHubRestfulNode {
     foreach ($wrapper->field_videos as $video) {
       $address = $video->field_address->value();
       $data = unserialize($address['video_data']);
-      $duration += $data['media$group']['media$content'][0]['duration'];
+      $date = new DateInterval($data['duration']);
+      $duration += $date->s + ($date->i * 60) + ($date->h * 60 * 60);;
     }
 
     return gmdate("H:i:s", $duration);
@@ -74,7 +80,7 @@ class DrupalHubPlayList extends \DrupalHubRestfulNode {
     $wrapper = entity_metadata_wrapper('node', $nid);
     $address = $wrapper->field_videos->get(0)->field_address->value();
     $embed = _video_embed_field_get_youtube_id($address['video_url']);
-    return "http://img.youtube.com/vi/{$embed}/0.jpg";;
+    return "http://img.youtube.com/vi/{$embed}/0.jpg";
   }
 
   protected function getListForAutocomplete() {
