@@ -1,6 +1,6 @@
 DrupalHub.controller('eventCtrl', function($scope, DrupalHubRequest, $routeParams, $rootScope, $filter) {
 
-  DrupalHubRequest.localRequest('get', 'event/' + $routeParams.id)
+  DrupalHubRequest.localRequest('get', 'event/' + $routeParams.id + '?add_view=add')
     .then(function(data) {
       $scope.event = data.data.data[0];
       $rootScope.$emit('titleAlter', $scope.event.label);
