@@ -1,4 +1,5 @@
 DrupalHub.config(function($routeProvider) {
+
   // Configure the route.
   $routeProvider.when('/', {
     templateUrl: 'pages/index.html',
@@ -326,4 +327,5 @@ DrupalHub.config(function($routeProvider) {
       }
     }
   });
+
 });
