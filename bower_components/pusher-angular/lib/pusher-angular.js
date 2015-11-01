@@ -53,16 +53,12 @@ angular.module('pusher-angular', [])
        *
        * @param {String} eventName name of the event you want to bind to
        * @param {Function|undefined} callback callback that you want called upon the event occurring
-       * @param {Object} context used as the `this` value when calling a handler
-       * @returns {Function} the decorated version of the callback provided
        */
-      bind: function (eventName, callback, context) {
-        var decoratedCallback = function (data) {
+      bind: function (eventName, callback) {
+        this.client.bind(eventName, function (data) {
           callback(data);
           $rootScope.$digest();
-        };
-        this.client.bind(eventName, decoratedCallback, context);
-        return decoratedCallback;
+        });
       },
 
       /**
@@ -81,11 +77,10 @@ angular.module('pusher-angular', [])
        * Unbinds from global events on the pusher client.
        *
        * @param {String} eventName name of the event you want to bind from
-       * @param {Function|undefined} decoratedCallback the decorated version of the callback that you want to unbind
-       * @param {Object} context used as the `this` value when calling a handler
+       * @param {Function|undefined} callback callback that you want to unbind
        */
-      unbind: function (eventName, decoratedCallback, context) {
-        this.client.unbind(eventName, decoratedCallback, context);
+      unbind: function (eventName, callback) {
+        this.client.unbind(eventName, callback);
       },
 
       /**
@@ -168,27 +163,22 @@ angular.module('pusher-angular', [])
        *
        * @param {String} eventName name of the event you want to bind to
        * @param {Function|undefined} callback callback that you want called upon the event occurring
-       * @param {Object} context used as the `this` value when calling a handler
-       * @returns {Function} the decorated version of the callback provided
        */
       bind: function (eventName, callback, context) {
-        var decoratedCallback = function (data) {
+        this.baseChannel.bind(eventName, function (data) {
           callback(data);
           $rootScope.$digest();
-        };
-        this.baseChannel.bind(eventName, decoratedCallback, context);
-        return decoratedCallback;
+        }, context);
       },
 
       /**
        * Unbinds from the given event name on the channel.
        *
        * @param {String} eventName name of the event you want to bind from
-       * @param {Function|undefined} decoratedCallback the decorated version of the callback that you want to unbind
-       * @param {Object} context used as the `this` value when calling a handler
+       * @param {Function|undefined} callback callback that you want to unbind
        */
-      unbind: function (eventName, decoratedCallback, context) {
-        this.baseChannel.unbind(eventName, decoratedCallback, context);
+      unbind: function (eventName, callback, context) {
+        this.baseChannel.unbind(eventName, callback, context);
       },
 
       /**
