@@ -25,7 +25,7 @@
   </li>
 </ul>
 
-<form class="form-horizontal" name="commentForm" ng-submit="submit()" novalidate>
+<form ng-if="canComment" class="form-horizontal" name="commentForm" ng-submit="submit()" novalidate>
   <fieldset>
     <legend>
       {{title}}

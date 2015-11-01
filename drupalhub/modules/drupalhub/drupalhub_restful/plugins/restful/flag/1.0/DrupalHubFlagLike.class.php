@@ -75,11 +75,17 @@ class DrupalHubFlagLike extends \RestfulEntityBase {
   public function entityValidate(\EntityMetadataWrapper $wrapper) {
     $request = $this->getRequest();
 
+    doctor_create(
+      array(
+        'request' => $request,
+      )
+    )->save();
+
     $query = new EntityFieldQuery();
     $results = $query
       ->entityCondition('entity_type', 'flagging')
       ->propertyCondition('entity_type', $request['entity_type'])
-      ->propertyCondition('entity_id', $request['id'])
+      ->propertyCondition('entity_id', $request['entity_id'])
       ->propertyCondition('uid', $this->getUserId())
       ->count()
       ->execute();
