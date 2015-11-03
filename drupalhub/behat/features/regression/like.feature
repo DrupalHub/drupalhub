@@ -1,6 +1,6 @@
 Feature: Verify a user can like a question.
 
-  @javascript @now
+  @javascript @wip
   Scenario: Testing limitation for blog creation.
     Given I logging in as "Utau"
       And I visit "/question/73"
