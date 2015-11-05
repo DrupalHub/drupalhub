@@ -26,7 +26,7 @@
 </ul>
 
 <form class="form-horizontal" name="commentForm" ng-submit="submit()" novalidate>
-  <fieldset>
+  <fieldset ng-if="canComment">
     <legend>
       {{title}}
       <button type="submit" class="btn {{btnType}} pull-right" translate>Submit</button>

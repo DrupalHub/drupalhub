@@ -1,6 +1,8 @@
-.blog-content {
+.page-blog {
 
   h2 {
     margin-top: 0px;
   }
+
+  @include comments();
 }

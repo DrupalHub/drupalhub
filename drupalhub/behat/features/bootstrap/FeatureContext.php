@@ -184,4 +184,49 @@ class FeatureContext extends DrupalContext {
 
     $element->click();
   }
+
+  /**
+   * @Given /^I grant a like$/
+   */
+  public function iGrantLike() {
+    $element = $this->waitForelementVisible("//section[@class='question']//flag-like//a", 'The like was not found.');
+    $element->click();
+  }
+
+  /**
+   * Waiting for an element to be visible up to 30 seconds. If wasn't found
+   * under 30 seconds throw exception.
+   *
+   * @param $xpath
+   *   The xpath expression.
+   * @param $message
+   *   The message to be thrown if the element doesn't exists.
+   *
+   * @return \Behat\Mink\Element\NodeElement|null
+   * @throws Exception
+   */
+  protected function waitForElementVisible($xpath, $message) {
+    $page = $this->getSession()->getPage();
+    $times = 0;
+
+    while ($times < 30) {
+      if ($element = $page->find('xpath', $xpath)) {
+        if ($element->isVisible()) {
+          return $element;
+        }
+      }
+
+      $times++;
+      sleep(1);
+    }
+
+    throw new \Exception($message);
+  }
+
+  /**
+   * @Then /^I verify the like has granted$/
+   */
+  public function iVerifyTheLikeHasGranted() {
+    $this->waitForelementVisible("//section[@class='question']//flag-like//a[not(.=0)]", 'The like was not granted.');
+  }
 }
