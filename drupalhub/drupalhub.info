@@ -65,6 +65,7 @@ dependencies[] = votingapi
 dependencies[] = token
 
 ; DrupalHub
+dependencies[] = drupalhub_company
 dependencies[] = drupalhub_core
 dependencies[] = drupalhub_events
 dependencies[] = drupalhub_blog

@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the drupahub_company feature.
+ */
+
+include_once 'drupahub_company.features.inc';
