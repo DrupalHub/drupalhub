@@ -4,4 +4,4 @@
  * Code for the drupahub_company feature.
  */
 
-include_once 'drupahub_company.features.inc';
+include_once 'drupalhub_company.features.inc';

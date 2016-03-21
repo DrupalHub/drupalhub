@@ -1,0 +1,16 @@
+name = drupalhub_company_projects
+core = 7.x
+package = Features
+dependencies[] = drupalhub_questions
+dependencies[] = features
+dependencies[] = link
+dependencies[] = node
+dependencies[] = og
+dependencies[] = og_ui
+dependencies[] = text
+features[features_api][] = api:2
+features[field_base][] = field_live_address
+features[field_instance][] = node-company_projects-body
+features[field_instance][] = node-company_projects-field_live_address
+features[field_instance][] = node-company_projects-og_group_ref
+features[node][] = company_projects
