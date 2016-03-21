@@ -77,6 +77,12 @@ body {
           @include hover(#a7448e);
         }
       }
+
+      .companies {
+        a, .fa {
+          @include hover(#ff4a99);
+        }
+      }
     }
 
     img {

@@ -68,7 +68,6 @@ dependencies[] = token
 dependencies[] = drupalhub_core
 dependencies[] = drupalhub_events
 dependencies[] = drupalhub_blog
-dependencies[] = drupalhub_group
 dependencies[] = drupalhub_migrate
 dependencies[] = drupalhub_notify
 dependencies[] = drupalhub_social
