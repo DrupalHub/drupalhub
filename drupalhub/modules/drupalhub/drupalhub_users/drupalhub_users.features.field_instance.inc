@@ -10,7 +10,7 @@
 function drupalhub_users_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'message-commented_to_node-field_comment'
+  // Exported field_instance: 'message-commented_to_node-field_comment'.
   $field_instances['message-commented_to_node-field_comment'] = array(
     'bundle' => 'commented_to_node',
     'default_value' => NULL,
@@ -59,7 +59,7 @@ function drupalhub_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-created_node-field_node'
+  // Exported field_instance: 'message-created_node-field_node'.
   $field_instances['message-created_node-field_node'] = array(
     'bundle' => 'created_node',
     'default_value' => NULL,
@@ -108,7 +108,8 @@ function drupalhub_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'message-user_down_up_voted-field_entity_identifier'
+  // Exported field_instance:
+  // 'message-user_down_up_voted-field_entity_identifier'.
   $field_instances['message-user_down_up_voted-field_entity_identifier'] = array(
     'bundle' => 'user_down_up_voted',
     'default_value' => NULL,
@@ -154,7 +155,96 @@ function drupalhub_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_about'
+  // Exported field_instance:
+  // 'og_membership-company_membership-field_role_title'.
+  $field_instances['og_membership-company_membership-field_role_title'] = array(
+    'bundle' => 'company_membership',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'og_membership',
+    'field_name' => 'field_role_title',
+    'label' => 'Role title',
+    'required' => FALSE,
+    'settings' => array(
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-company_group_ref'.
+  $field_instances['user-user-company_group_ref'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'og_ui',
+        'settings' => array(),
+        'type' => 'og_list_default',
+        'weight' => 8,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'company_group_ref',
+    'label' => 'Groups audience',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'og_widget' => array(
+          'access_override' => 0,
+          'admin' => array(
+            'widget_type' => 'entityreference_autocomplete',
+          ),
+          'default' => array(
+            'widget_type' => 'options_select',
+          ),
+          'status' => TRUE,
+        ),
+      ),
+      'user_register_form' => 0,
+    ),
+    'view modes' => array(
+      'full' => array(
+        'custom settings' => FALSE,
+        'label' => 'Full',
+        'type' => 'og_list_default',
+      ),
+      'teaser' => array(
+        'custom settings' => FALSE,
+        'label' => 'Teaser',
+        'type' => 'og_list_default',
+      ),
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'og',
+      'settings' => array(),
+      'type' => 'og_complex',
+      'weight' => 18,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_about'.
   $field_instances['user-user-field_about'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -188,7 +278,7 @@ function drupalhub_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_entity_view_count'
+  // Exported field_instance: 'user-user-field_entity_view_count'.
   $field_instances['user-user-field_entity_view_count'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -219,7 +309,7 @@ function drupalhub_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_first_name'
+  // Exported field_instance: 'user-user-field_first_name'.
   $field_instances['user-user-field_first_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -253,7 +343,7 @@ function drupalhub_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_last_name'
+  // Exported field_instance: 'user-user-field_last_name'.
   $field_instances['user-user-field_last_name'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -287,7 +377,7 @@ function drupalhub_users_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'user-user-field_settings'
+  // Exported field_instance: 'user-user-field_settings'.
   $field_instances['user-user-field_settings'] = array(
     'bundle' => 'user',
     'default_value' => NULL,
@@ -326,8 +416,10 @@ function drupalhub_users_field_default_field_instances() {
   t('Entity identifier');
   t('Entity view count');
   t('First name');
+  t('Groups audience');
   t('Last name');
   t('Node');
+  t('Role title');
   t('settings');
 
   return $field_instances;

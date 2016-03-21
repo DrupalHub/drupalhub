@@ -31,17 +31,9 @@ function drupalhub_users_image_default_styles() {
 
   // Exported image style: small.
   $styles['small'] = array(
-    'name' => 'small',
     'label' => 'Small',
     'effects' => array(
       1 => array(
-        'label' => 'Resize',
-        'help' => 'Resizing will make images an exact set of dimensions. This may cause images to be stretched or shrunk disproportionately.',
-        'effect callback' => 'retina_images_image_resize_effect',
-        'dimensions callback' => 'image_resize_dimensions',
-        'form callback' => 'retina_images_image_resize_form',
-        'summary theme' => 'retina_images_image_resize_summary',
-        'module' => 'image',
         'name' => 'image_resize',
         'data' => array(
           'width' => 32,
@@ -147,6 +139,20 @@ function drupalhub_users_default_message_type() {
         }
       ]
     },
+    "rdf_mapping" : []
+  }');
+  return $items;
+}
+
+/**
+ * Implements hook_default_og_membership_type().
+ */
+function drupalhub_users_default_og_membership_type() {
+  $items = array();
+  $items['company_membership'] = entity_import('og_membership_type', '{
+    "name" : "company_membership",
+    "description" : "Company membership",
+    "language" : "",
     "rdf_mapping" : []
   }');
   return $items;
