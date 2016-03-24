@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * drupahub_company.features.field_instance.inc
+ * drupalhub_company.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function drupahub_company_field_default_field_instances() {
+function drupalhub_company_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'node-company-body'.

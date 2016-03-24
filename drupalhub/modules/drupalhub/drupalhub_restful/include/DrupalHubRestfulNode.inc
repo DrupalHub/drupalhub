@@ -161,4 +161,18 @@ class DrupalHubRestfulNode extends \DrupalHubEntityBase {
     node_object_prepare($node);
     $node->uid = $this->getAccount()->uid;
   }
+
+  /**
+   * Property callback; Processing a location entry to lat and lng.
+   *
+   * @param $location
+   *   The field location.
+   *
+   * @return array
+   */
+  protected function processGoogleAddress($location) {
+    $Maps = new DrupalHubGoogleMapsApi($location['lat'], $location['lng']);
+    return $Maps->GetAddress('formatted_address');
+  }
+
 }

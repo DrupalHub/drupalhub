@@ -111,11 +111,6 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
     return date('d/m/Y H:i', $value);
   }
 
-  protected function processGoogleAddress($location) {
-    $Maps = new DrupalHubGoogleMapsApi($location['lat'], $location['lng']);
-    return $Maps->GetAddress('formatted_address');
-  }
-
   /**
    * Get all the RSVP of the event.
    */

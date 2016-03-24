@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * drupahub_company.features.inc
+ * drupalhub_company.features.inc
  */
 
 /**
  * Implements hook_node_info().
  */
-function drupahub_company_node_info() {
+function drupalhub_company_node_info() {
   $items = array(
     'company' => array(
       'name' => t('Company'),
