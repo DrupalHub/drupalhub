@@ -7,7 +7,7 @@ $plugin = array(
   'class' => 'DrupalHubCompany',
   'name' => 'company__1_0',
   'entity_type' => 'node',
-  'bundle' => 'companies',
+  'bundle' => 'company',
   'authentication_types' => TRUE,
   'authentication_optional' => TRUE,
 );
