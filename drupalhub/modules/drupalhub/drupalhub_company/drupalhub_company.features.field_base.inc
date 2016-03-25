@@ -138,6 +138,21 @@ function drupalhub_company_field_default_field_bases() {
     'type' => 'link_field',
   );
 
+  // Exported field_base: 'field_social_networks'.
+  $field_bases['field_social_networks'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_social_networks',
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'serialized_field',
+    'settings' => array(),
+    'translatable' => 0,
+    'type' => 'serialized',
+  );
+
   // Exported field_base: 'field_technologies'.
   $field_bases['field_technologies'] = array(
     'active' => 1,

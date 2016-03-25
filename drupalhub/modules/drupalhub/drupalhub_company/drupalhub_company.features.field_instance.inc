@@ -322,6 +322,44 @@ function drupalhub_company_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-company-field_social_networks'.
+  $field_instances['node-company-field_social_networks'] = array(
+    'bundle' => 'company',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_social_networks',
+    'label' => 'Social networks',
+    'required' => 0,
+    'settings' => array(
+      'namespace' => 1,
+      'serialization' => 'json_encode',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'serialized_field',
+      'settings' => array(),
+      'type' => 'serialized_hidden',
+      'weight' => 10,
+    ),
+  );
+
   // Exported field_instance: 'node-company-field_technologies'.
   $field_instances['node-company-field_technologies'] = array(
     'bundle' => 'company',
@@ -479,6 +517,7 @@ function drupalhub_company_field_default_field_instances() {
   t('Hiring');
   t('Logo');
   t('Site address');
+  t('Social networks');
   t('Technologies');
   t('Telephone');
 

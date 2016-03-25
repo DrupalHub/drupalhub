@@ -38,6 +38,9 @@ class DrupalHubCompany extends \DrupalHubRestfulNode {
 
     $public_fields['logo'] = array(
       'property' => 'field_logo',
+      'process_callbacks' => array(
+        array($this, 'processImage'),
+      ),
     );
 
     $public_fields['addresses'] = array(
@@ -47,9 +50,16 @@ class DrupalHubCompany extends \DrupalHubRestfulNode {
       ),
     );
 
+    $public_fields['social_links'] = array(
+      'property' => 'field_social_networks',
+    );
+
     return $public_fields;
   }
 
+  /**
+   * Display only the lng and lat of the offices.
+   */
   protected function processAddresses($value) {
     array_walk($value, function(&$value) {
       $value = array(
@@ -59,6 +69,14 @@ class DrupalHubCompany extends \DrupalHubRestfulNode {
     });
 
     return $value;
+  }
+
+  /**
+   * Get the logo of the group.
+   */
+  protected function processImage($value) {
+    // todo use image style.
+    return file_create_url($value['uri']);
   }
 
 }
