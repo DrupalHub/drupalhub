@@ -19,10 +19,27 @@ class DrupalHubCompanyMembership extends \RestfulEntityBase {
 
     $fields['uid'] = array(
       'property' => 'entity',
-      'sub_property' => 'uid',
+      'process_callbacks' => array(
+        array($this, 'userEndpoint'),
+      ),
     );
 
     return $fields;
+  }
+
+  /**
+   * Display a single group member after processed by the me endpoint handler.
+   *
+   * @param $entity
+   *   The user object.
+   *
+   * @return array
+   *   The user information.
+   */
+  protected function userEndpoint($entity) {
+    /** @var DrupalHubMe $handler */
+    $handler = restful_get_restful_handler('me');
+    return $handler->viewEntity($entity->uid);
   }
 
 }

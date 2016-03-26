@@ -54,6 +54,13 @@ class DrupalHubCompany extends \DrupalHubRestfulNode {
       'property' => 'field_social_networks',
     );
 
+    $public_fields['members'] = array(
+      'property' => 'nid',
+      'process_callbacks' => array(
+        array($this, 'getCompanyMembers'),
+      ),
+    );
+
     return $public_fields;
   }
 
@@ -77,6 +84,39 @@ class DrupalHubCompany extends \DrupalHubRestfulNode {
   protected function processImage($value) {
     // todo use image style.
     return file_create_url($value['uri']);
+  }
+
+  /**
+   * Get the company employees in the site.
+   *
+   * @param $nid
+   *   The company nid.
+   *
+   * @return array
+   *   List of employees.
+   */
+  public function getCompanyMembers($nid) {
+    $query = new \EntityFieldQuery();
+    $results = $query
+      ->entityCondition('entity_type', 'og_membership')
+      ->propertyCondition('type', 'company_membership')
+      ->propertyCondition('gid', $nid)
+      ->execute();
+
+    if (empty($results['og_membership'])) {
+      return array();
+    }
+
+    /** @var DrupalHubCompanyMembership $handler */
+    $handler = restful_get_restful_handler('companies_membership');
+
+    $members = array();
+
+    foreach (array_keys($results['og_membership']) as $mid) {
+      $members[] = $handler->viewEntity($mid);
+    }
+
+    return $members;
   }
 
 }
