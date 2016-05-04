@@ -173,12 +173,12 @@ class DrupalHubEvent extends \DrupalHubRestfulNode {
   public function queryForListFilter(\EntityFieldQuery $query) {
     parent::queryForListFilter($query);
 
-    $operator = '<';
+    $operator = '>';
     if (!empty($this->request['type']) && $this->request['type'] == 'past') {
-      $operator = '>';
+      $operator = '<';
     }
 
-    $query->fieldCondition('field_date', 'value', date('Y-m-D H:i:s'), $operator);
+    $query->fieldCondition('field_date', 'value', date('Y-m-d H:i:s', time()-86400), $operator);
 
   }
 }
