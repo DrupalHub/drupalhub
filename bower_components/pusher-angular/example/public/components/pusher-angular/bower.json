@@ -1,7 +1,7 @@
 {
   "name": "pusher-angular",
   "main": "lib/pusher-angular.js",
-  "version": "0.1.7",
+  "version": "0.1.1",
   "homepage": "https://github.com/pusher/pusher-angular",
   "authors": [
     "Hamilton Chapman <hamilton@pusher.com>"
@@ -23,9 +23,7 @@
     "LICENSE"
   ],
   "devDependencies": {
+    "angular": "latest",
     "angular-mocks": "latest"
-  },
-  "dependencies": {
-    "angular": "latest"
   }
 }

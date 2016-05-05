@@ -12,13 +12,13 @@
     "Flag"
   ],
   "license": "MIT",
-  "_release": "1.2",
+  "_release": "1.0",
   "_resolution": {
     "type": "tag",
-    "tag": "1.2",
-    "commit": "950c8b7185310960975c8730e37878e9277483d8"
+    "tag": "1.0",
+    "commit": "e0b8dfc81b045f2f80564995765f21ce3c3da1e7"
   },
   "_source": "git://github.com/DrupalHub/flag-directive.git",
-  "_target": "1.2",
+  "_target": "1.0",
   "_originalSource": "drupal-restful-flag"
 }

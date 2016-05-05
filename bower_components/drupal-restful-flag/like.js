@@ -26,8 +26,7 @@ flag.directive('flagLike', function($http, flagConfig, $rootScope) {
       $scope.like = function() {
 
         // Get the token from other controllers.
-        $rootScope.$broadcast('flagAccessToken', $scope.token);
-
+        $rootScope.$broadcast('flagAccessToken', $scope.token.accessToken);
         // Check if the current user already flagged the entity.
         var request = {
           method: 'get',
@@ -91,7 +90,7 @@ flag.directive('flagLike', function($http, flagConfig, $rootScope) {
             $scope.likes++;
           }
           else {
-            $scope.likes = $scope.likes <= 1 ? 0 : ($scope.likes - 1);
+            $scope.likes = $scope.likes <= 1 ? 0 : $scope.likes--;
           }
         });
       };
